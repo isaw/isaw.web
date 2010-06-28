@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="facultycv.facultycv">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".profile.profile">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.Iprofile"
+        />
+  </class>
+  <class class=".cv.CV">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.ICV"
+        />
+  </class>
+
+</configure>
