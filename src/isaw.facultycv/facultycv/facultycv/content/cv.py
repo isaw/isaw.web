@@ -12,6 +12,17 @@ from facultycv.facultycv.config import PROJECTNAME
 
 CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
+    atapi.ReferenceField(
+        name = 'ProfileRef',
+
+        widget = atapi.ReferenceWidget(
+            label = u'Profile reference',
+        ),
+        relationship = 'owned_profile',
+        multiValued=False,
+    ),
+
+
 	atapi.TextField(
 		name = 'Address',
 		widget = atapi.RichWidget(
@@ -121,23 +132,6 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	### OK, so realistically this isn't supposed to work like this
-	### Unfortunately what I wanted to use (Zotero) lacks a useful API
-	### So the data stored here is explicit to a Plone instance
-	### Will update about this more later
-	### Christopher Warner - christopher.warner@nyu.edu 
-
-	atapi.StringField(
-		name = 'Publication Type',
-		widget = atapi.SelectionWidget(
-			label = u'Type of Publication',
-			label_msgid = 'FacultyCV_label_TypeOfPublications',
-			il8n_domain='FacultyCV',
-			),
-		
-		required = False,
-		searchable = True
-	),
 
 	atapi.LinesField(
 		name = 'Publications',
@@ -173,6 +167,24 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 		required = False,
 		searchable = True
+	),
+
+	### OK, so realistically this isn't supposed to work like this
+	### Unfortunately what I wanted to use (Zotero) lacks a useful API
+	### So the data stored here is explicit to a Plone instance
+	### Will update about this more later
+	### Christopher Warner - christopher.warner@nyu.edu 
+
+	atapi.StringField(
+		name = 'Publication List',
+		widget = atapi.SelectionWidget(
+			label = u'Publications',
+			label_msgid = 'FacultyCV_label_TypeOfPublications',
+			il8n_domain='FacultyCV',
+			),
+		
+		required = False,
+		searchable = True
 	)
 
 
@@ -180,6 +192,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 CVSchema['title'].storage = atapi.AnnotationStorage()
 CVSchema['description'].storage = atapi.AnnotationStorage()
+
+# We don't need to show the reference field
+CVSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
 
 schemata.finalizeATCTSchema(
     CVSchema,
@@ -197,8 +212,5 @@ class CV(folder.ATFolder):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-
-    def initializeArchetype(self, **kwargs):
-        self.invokeFactory("profile", id="profile", title='profile', )
 
 atapi.registerType(CV, PROJECTNAME)

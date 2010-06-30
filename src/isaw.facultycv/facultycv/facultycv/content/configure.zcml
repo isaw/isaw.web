@@ -5,7 +5,6 @@
 
   <!-- configure your content components here -->
   
-  <!-- -*- extra stuff goes here -*- -->
   <class class=".profile.profile">
     <require
         permission="zope2.View"
@@ -18,5 +17,10 @@
         interface="..interfaces.ICV"
         />
   </class>
+
+  <subscriber
+    for="..interfaces.ICV
+    Products.Archetypes.interfaces.IObjectInitializedEvent"
+    handler=".actions.initial_setup" />
 
 </configure>

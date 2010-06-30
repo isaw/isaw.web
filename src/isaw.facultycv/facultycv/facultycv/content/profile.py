@@ -29,30 +29,27 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	atapi.TextField(
 		name = 'Profile',
 		widget = atapi.RichWidget(
-			label=u'Faculty Profile',
+			label=u'Short Profile Blurb',
 			label_msgid='FacultyCV_label_Profile',
 			il8n_domain='FacultyCV',
 			),
 		
 		required = False,
 		searchable = True
-	),
-
-	atapi.ReferenceField(
-		name = 'cvref',
-		relationship = 'OwnedBy',
-
-		required = False,
-		searchable = True
 	)
 
 ))
 
-# Set storage on fields copied from ATFolderSchema, making sure
-# they work well with the python bridge properties.
-
 profileSchema['title'].storage = atapi.AnnotationStorage()
 profileSchema['description'].storage = atapi.AnnotationStorage()
+
+# We hide the Title because it isn't needed or required even though
+# it is initally set at creation of a new CV
+# Description is null, realistically it's not needed but I may add some default stock
+
+profileSchema['title'].required = 0
+profileSchema['title'].widget.visible = {"edit": "invisible"}
+profileSchema['description'].widget.visible = {"edit": "invisible"}
 
 schemata.finalizeATCTSchema(
     profileSchema,
@@ -70,7 +67,5 @@ class profile(folder.ATFolder):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-
-    # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
 atapi.registerType(profile, PROJECTNAME)
