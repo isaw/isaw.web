@@ -35,9 +35,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Education and Degrees',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label=u'Education and Degrees',
 			label_msgid='FacultyCV_label_Eddegrees',
 			il8n_domain='FacultyCV',
@@ -47,9 +47,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Positions held',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label=u'Positions Held',
 			label_msgid='FacultyCV_label_Positions',
 			il8n_domain='FacultyCV',
@@ -59,9 +59,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Honours',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label=u'Honours',
 			label_msgid='FacultyCV_label_Honours',
 			il8n_domain='FacultyCV',
@@ -71,9 +71,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name= 'Professional Affiliations',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label=u'Professional Affiliations',
 			label_msgid='FacultyCV_label_ProfessionalAffiliations',
 			il8n_domain='FacultyCV',
@@ -95,9 +95,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Research Awards',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'Research Awards',
 			label_msgid = 'FacultyCV_label_ResearchAwards',
 			il8n_domain='FacultyCV',
@@ -107,9 +107,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'List of Courses',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'List of Courses taught',
 			label_msgid = 'FacultyCV_label_CoursesTaught',
 			il8n_domain='FacultyCV',
@@ -120,9 +120,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Graduate Supervsion',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'Graduate Supervision',
 			label_msgid = 'FacultyCV_label_GradSupervise',
 			il8n_domain='FacultyCV',
@@ -133,9 +133,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Publications',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'Publications',
 			label_msgid = 'FacultyCV_label_Publications',
 			il8n_domain='FacultyCV',
@@ -145,9 +145,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Papers',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'Papers',
 			label_msgid = 'FacultyCV_label_Papers',
 			il8n_domain='FacultyCV',
@@ -157,9 +157,9 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
-	atapi.LinesField(
+	atapi.TextField(
 		name = 'Lectures',
-		widget = atapi.LinesWidget(
+		widget = atapi.RichWidget(
 			label = u'Lectures',
 			label_msgid = 'FacultyCV_label_Lectures',
 			il8n_domain='FacultyCV',
