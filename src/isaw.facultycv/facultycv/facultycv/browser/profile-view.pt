@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+    <div metal:fill-slot="main">
+    <metal:main-macro define-macro="main">
+
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+
+		<img tal:attributes="src context/profile/Image_thumbnail/absolute_url | nothing" />
+		
+		<div class="cvaddress" tal:content="structure context/Address | nothing" />
+		<div class="cveddegress" tal:content="structure context/Education and Degrees | nothing" />
+
+    </metal:main-macro>
+    </div>
+
+</body>
+</html>
+
