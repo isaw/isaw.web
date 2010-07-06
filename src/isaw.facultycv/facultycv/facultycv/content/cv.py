@@ -194,7 +194,8 @@ CVSchema['title'].storage = atapi.AnnotationStorage()
 CVSchema['description'].storage = atapi.AnnotationStorage()
 
 # We don't need to show the reference field
-CVSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
+CVSchema['ProfileRef'].widget.visible = {"edit": "invisible",
+										 "view": "invisible"}
 
 schemata.finalizeATCTSchema(
     CVSchema,

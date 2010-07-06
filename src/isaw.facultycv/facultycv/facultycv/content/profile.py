@@ -15,6 +15,8 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 	atapi.ImageField(
 		name = 'Image',
+		sizes = { 'thumbnail': (100,100),
+				  'big': (600,600) },
 		widget = atapi.ImageWidget(
 			label = u'Faculty Image',
 			label_msgid='FacultyC_label_ProfileImage',
@@ -48,7 +50,8 @@ profileSchema['description'].storage = atapi.AnnotationStorage()
 # Description is null, realistically it's not needed but I may add some default stock
 
 profileSchema['title'].required = 0
-profileSchema['title'].widget.visible = {"edit": "invisible"}
+profileSchema['title'].widget.visible = {"edit": "invisible",
+										 "view": "invisible"}
 profileSchema['description'].widget.visible = {"edit": "invisible"}
 
 schemata.finalizeATCTSchema(
@@ -62,7 +65,7 @@ class profile(folder.ATFolder):
     """Faculty Profile"""
     implements(Iprofile)
 
-    meta_type = "profile"
+    meta_type = "FacultyCV Profile"
     schema = profileSchema
 
     title = atapi.ATFieldProperty('title')

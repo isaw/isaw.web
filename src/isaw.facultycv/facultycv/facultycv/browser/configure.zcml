@@ -10,4 +10,12 @@
     directory="icons"
     />
 
+  <browser:page
+  	for="*"
+	name="test_view"
+	permission="zope2.View"
+	class=".views.ProfileView"
+	template="profile-view.pt"
+	/>
+
 </configure>
