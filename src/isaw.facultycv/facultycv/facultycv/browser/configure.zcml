@@ -12,7 +12,7 @@
 
   <browser:page
   	for="*"
-	name="test_view"
+	name="profile_view"
 	permission="zope2.View"
 	class=".views.ProfileView"
 	template="profile-view.pt"
