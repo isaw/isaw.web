@@ -16,6 +16,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	atapi.ImageField(
 		name = 'Image',
 		sizes = { 'thumbnail': (100,100),
+				  'profile': (250,250),
 				  'big': (600,600) },
 		widget = atapi.ImageWidget(
 			label = u'Faculty Image',
@@ -29,7 +30,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Profile',
+		name = 'Profile Blurb',
 		widget = atapi.RichWidget(
 			label=u'Short Profile Blurb',
 			label_msgid='FacultyCV_label_Profile',

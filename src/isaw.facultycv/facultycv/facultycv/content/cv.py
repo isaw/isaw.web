@@ -35,6 +35,30 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		searchable = True
 	),
 
+	atapi.StringField(
+		name = 'Email',
+		widget = atapi.StringWidget(
+			label=u'Email Address',
+			label_msgid='FacultyCV_label_Email',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
+	atapi.StringField(
+		name = 'Phone',
+		widget = atapi.StringWidget(
+			label=u'Phone number',
+			label_msgid='FacultyCV_label_Phone',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
 	atapi.TextField(
 		name = 'Education and Degrees',
 		widget = atapi.RichWidget(
@@ -60,10 +84,10 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Honours',
+		name = 'Honors',
 		widget = atapi.RichWidget(
-			label=u'Honours',
-			label_msgid='FacultyCV_label_Honours',
+			label=u'Academic Honors and Awards',
+			label_msgid='FacultyCV_label_Honors',
 			il8n_domain='FacultyCV',
 			),
 		
@@ -76,6 +100,19 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		widget = atapi.RichWidget(
 			label=u'Professional Affiliations',
 			label_msgid='FacultyCV_label_ProfessionalAffiliations',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
+
+	atapi.TextField(
+		name = 'Professional Offices and Service',
+		widget = atapi.RichWidget(
+			label=u'Professional Offices and Service',
+			label_msgid='FacultyCV_label_ProfessionalOffices',
 			il8n_domain='FacultyCV',
 			),
 
@@ -121,7 +158,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Graduate Supervsion',
+		name = 'Graduate Supervision',
 		widget = atapi.RichWidget(
 			label = u'Graduate Supervision',
 			label_msgid = 'FacultyCV_label_GradSupervise',
