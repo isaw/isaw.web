@@ -1,8 +1,8 @@
 from zope.interface import Interface
-# -*- Additional Imports Here -*-
-
+from plone.theme.interfaces import IDefaultPloneLayer
 
 class ICV(Interface):
     """CV of Faculty Member"""
 
-    # -*- schema definition goes here -*-
+class ICVtoc(IDefaultPloneLayer):
+	"""Viewlets"""

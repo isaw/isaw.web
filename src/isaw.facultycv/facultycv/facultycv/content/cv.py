@@ -5,12 +5,14 @@ from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
 
 from facultycv.facultycv.interfaces import ICV
 from facultycv.facultycv.config import PROJECTNAME
+from Products.ATContentTypes import ATCTMessageFactory as _
 
-CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
+CVSchema = folder.ATFolderSchema.copy() +  atapi.Schema((
 
     atapi.ReferenceField(
         name = 'ProfileRef',
