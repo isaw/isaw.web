@@ -12,7 +12,7 @@ from facultycv.facultycv.interfaces import ICV
 from facultycv.facultycv.config import PROJECTNAME
 from Products.ATContentTypes import ATCTMessageFactory as _
 
-CVSchema = folder.ATFolderSchema.copy() +  atapi.Schema((
+CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.ReferenceField(
         name = 'ProfileRef',
