@@ -7,6 +7,7 @@ from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
+from zope.formlib import form
 
 from facultycv.facultycv.interfaces import ICV
 from facultycv.facultycv.config import PROJECTNAME

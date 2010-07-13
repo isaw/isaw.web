@@ -1,20 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
-      metal:use-macro="here/main_template/macros/master"
       i18n:domain="FacultyCV">
 
 <body>
 
-    <div metal:fill-slot="main">
     <metal:main-macro define-macro="main">
 
         <p class="documentDescription"
-           tal:content="here/Description"
-           tal:condition="here/Description">
+           tal:content="context/Description"
+           tal:condition="context/Description">
             Description
         </p>
 
-		<img class="image-right captioned" tal:attributes="src context/profile/Image_profile/absolute_url | nothing" />
+		<img tal:attributes="src context/profile/Image_profile/absolute_url | nothing" />
 		<dl id="cv-toc" class="portlet toc" style="display: none"
     		i18n:domain="plone">
   			<dt class="portletHeader"
@@ -25,7 +23,6 @@
 		</dl>
 
 		<p></p>
-		<a tal:attributes="href string:${context/absolute_url}/pdf_view">Download PDF</a>
 		<h2 for="FacultyCV_label_Address"
 			   il8n:translate="cv_address" 
 			   tal:condition="context/Address">Address</h2>
@@ -108,7 +105,6 @@
 			<div class="cv_listpub" tal:content="structure context/Lectures | nothing" />
 
     </metal:main-macro>
-    </div>
 
 </body>
 </html>

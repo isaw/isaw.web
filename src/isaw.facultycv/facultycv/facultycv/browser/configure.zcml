@@ -18,4 +18,12 @@
 	template="profile-view.pt"
 	/>
 
+
+  <browser:page
+  	for="*"
+	name="pdf_view"
+	permission="zope2.View"
+	class=".views.PdfView"
+	/>
+
 </configure>
