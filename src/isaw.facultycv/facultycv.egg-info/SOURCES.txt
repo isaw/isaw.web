@@ -42,6 +42,7 @@ facultycv/facultycv/content/userdataschema.py
 facultycv/facultycv/interfaces/__init__.py
 facultycv/facultycv/interfaces/cv.py
 facultycv/facultycv/interfaces/profile.py
+facultycv/facultycv/locales/__init__.py
 facultycv/facultycv/portlets/__init__.py
 facultycv/facultycv/portlets/configure.zcml
 facultycv/facultycv/profiles/default/factorytool.xml
