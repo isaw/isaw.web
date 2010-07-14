@@ -207,7 +207,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 		required = False,
 		searchable = True
-	),
+	)
 
 	### OK, so realistically this isn't supposed to work like this
 	### Unfortunately what I wanted to use (Zotero) lacks a useful API
@@ -215,17 +215,17 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	### Will update about this more later
 	### Christopher Warner - christopher.warner@nyu.edu 
 
-	atapi.StringField(
-		name = 'Publication List',
-		widget = atapi.SelectionWidget(
-			label = u'Publications',
-			label_msgid = 'FacultyCV_label_TypeOfPublications',
-			il8n_domain='FacultyCV',
-			),
-		
-		required = False,
-		searchable = True
-	)
+#   atapi.StringField(
+#		name = 'Publication List',
+#		widget = atapi.SelectionWidget(
+#			label = u'Publications',
+#			label_msgid = 'FacultyCV_label_TypeOfPublications',
+#			il8n_domain='FacultyCV',
+#			),
+#		
+#		required = False,
+#		searchable = True
+#	)
 
 
 ))

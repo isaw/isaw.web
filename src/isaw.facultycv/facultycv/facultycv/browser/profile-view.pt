@@ -14,7 +14,7 @@
             Description
         </p>
 
-		<img class="image-right captioned" tal:attributes="src context/profile/Image_profile/absolute_url | context/++resource++cvimages/face-grin.png;
+		<img width=200 class="image-right captioned" tal:attributes="src context/profile/Image_profile/absolute_url | context/++resource++cvimages/face-grin.png;
         image-right.border string:0" />
 		<dl id="cv-toc" class="portlet toc" style="display: none"
     		i18n:domain="plone">

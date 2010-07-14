@@ -15,8 +15,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 	atapi.ImageField(
 		name = 'Image',
-		sizes = { 'thumbnail': (100,100),
-				  'profile': (250,250),
+	    sizes = { 'profile': (250,250),
 				  'big': (600,600) },
 		widget = atapi.ImageWidget(
 			label = u'Profile Image',
