@@ -25,8 +25,10 @@ class PdfView(BrowserView):
         pdf = pisa.CreatePDF(pdf_template.encode("UTF-8"), response)
         f.flush()
         f.close()
-        return response
-        #response.redirect(self.context.absolute_url())
-        #if not pdf.err:
-            #response.setHeader('Content-Disposition', ftitle)
-            #response.setHeader('X-Sendfile', filename) 
+
+        if not pdf.err:
+            return response
+        else:
+            # Something is wrong 
+            # Fledge this out later
+            pass
