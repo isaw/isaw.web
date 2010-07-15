@@ -102,11 +102,12 @@
 			   tal:condition="context/Lectures">Lectures</h2>
 			<div class="cvlectures" tal:content="structure context/Lectures | nothing" />
 
-
+        <!--
 		<h2 for="FacultyCV_label_TypeOfPublications"
 			   il8n:translate="cv_listpub"
 			   tal:condition="context/Publication List">List of Publications</h2>
-			<div class="cv_listpub" tal:content="structure context/Lectures | nothing" />
+			<div class="cv_listpub" tal:content="structure context/Publication List | nothing" />
+          -->
 
     </metal:main-macro>
     </div>
