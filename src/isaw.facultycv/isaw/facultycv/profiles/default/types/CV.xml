@@ -1,13 +1,8 @@
 <?xml version="1.0"?>
 <object name="Faculty CV"
    meta_type="Factory-based Type Information with dynamic views"
-<<<<<<< HEAD:isaw/facultycv/profiles/default/types/CV.xml
    i18n:domain="isaw.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">CV</property>
-=======
-   i18n:domain="facultycv.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Faculty CV</property>
->>>>>>> 0ec1362c55c81d38908cdbd4070ab38c0144b257:facultycv/facultycv/profiles/default/types/CV.xml
   <property name="description"
     i18n:translate="">Curriculum Vitae of Faculty Member</property>
   <property name="content_meta_type">Faculty CV</property>
