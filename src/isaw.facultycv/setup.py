@@ -34,7 +34,7 @@ long_description = (
 
 tests_require = ['zope.testing']
 
-setup(name='facultycv',
+setup(name='isaw.facultycv',
       version=version,
       description="FacultyCV is an educational product that allows one to create curriculum vitae for faculty members. It is along the lines of the products FacultyStaffDirectory and FacultyCV",
       long_description=long_description,
