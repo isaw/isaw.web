@@ -5,10 +5,18 @@ from zope.interface import implements
 
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
+from zope.formlib import form
 
+<<<<<<< HEAD:isaw/facultycv/content/cv.py
 from isaw.facultycv.interfaces import ICV
 from isaw.facultycv.config import PROJECTNAME
+=======
+from facultycv.facultycv.interfaces import ICV
+from facultycv.facultycv.config import PROJECTNAME
+from Products.ATContentTypes import ATCTMessageFactory as _
+>>>>>>> 0ec1362c55c81d38908cdbd4070ab38c0144b257:facultycv/facultycv/content/cv.py
 
 CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
@@ -28,6 +36,30 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		widget = atapi.RichWidget(
 			label=u'Address',
 			label_msgid='FacultyCV_label_Address',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
+	atapi.StringField(
+		name = 'Email',
+		widget = atapi.StringWidget(
+			label=u'Email Address',
+			label_msgid='FacultyCV_label_Email',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
+	atapi.StringField(
+		name = 'Phone',
+		widget = atapi.StringWidget(
+			label=u'Phone number',
+			label_msgid='FacultyCV_label_Phone',
 			il8n_domain='FacultyCV',
 			),
 
@@ -60,10 +92,10 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Honours',
+		name = 'Honors',
 		widget = atapi.RichWidget(
-			label=u'Honours',
-			label_msgid='FacultyCV_label_Honours',
+			label=u'Academic Honors and Awards',
+			label_msgid='FacultyCV_label_Honors',
 			il8n_domain='FacultyCV',
 			),
 		
@@ -76,6 +108,19 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		widget = atapi.RichWidget(
 			label=u'Professional Affiliations',
 			label_msgid='FacultyCV_label_ProfessionalAffiliations',
+			il8n_domain='FacultyCV',
+			),
+
+		required = False,
+		searchable = True
+	),
+
+
+	atapi.TextField(
+		name = 'Professional Offices and Service',
+		widget = atapi.RichWidget(
+			label=u'Professional Offices and Service',
+			label_msgid='FacultyCV_label_ProfessionalOffices',
 			il8n_domain='FacultyCV',
 			),
 
@@ -121,7 +166,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Graduate Supervsion',
+		name = 'Graduate Supervision',
 		widget = atapi.RichWidget(
 			label = u'Graduate Supervision',
 			label_msgid = 'FacultyCV_label_GradSupervise',
@@ -167,7 +212,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 		required = False,
 		searchable = True
-	),
+	)
 
 	### OK, so realistically this isn't supposed to work like this
 	### Unfortunately what I wanted to use (Zotero) lacks a useful API
@@ -175,17 +220,17 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	### Will update about this more later
 	### Christopher Warner - christopher.warner@nyu.edu 
 
-	atapi.StringField(
-		name = 'Publication List',
-		widget = atapi.SelectionWidget(
-			label = u'Publications',
-			label_msgid = 'FacultyCV_label_TypeOfPublications',
-			il8n_domain='FacultyCV',
-			),
-		
-		required = False,
-		searchable = True
-	)
+#   atapi.StringField(
+#		name = 'Publication List',
+#		widget = atapi.SelectionWidget(
+#			label = u'Publications',
+#			label_msgid = 'FacultyCV_label_TypeOfPublications',
+#			il8n_domain='FacultyCV',
+#			),
+#		
+#		required = False,
+#		searchable = True
+#	)
 
 
 ))
@@ -194,7 +239,8 @@ CVSchema['title'].storage = atapi.AnnotationStorage()
 CVSchema['description'].storage = atapi.AnnotationStorage()
 
 # We don't need to show the reference field
-CVSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
+CVSchema['ProfileRef'].widget.visible = {"edit": "invisible",
+										 "view": "invisible"}
 
 schemata.finalizeATCTSchema(
     CVSchema,

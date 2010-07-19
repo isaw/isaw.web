@@ -1,11 +1,16 @@
 <?xml version="1.0"?>
-<object name="CV"
+<object name="Faculty CV"
    meta_type="Factory-based Type Information with dynamic views"
+<<<<<<< HEAD:isaw/facultycv/profiles/default/types/CV.xml
    i18n:domain="isaw.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">CV</property>
+=======
+   i18n:domain="facultycv.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="title" i18n:translate="">Faculty CV</property>
+>>>>>>> 0ec1362c55c81d38908cdbd4070ab38c0144b257:facultycv/facultycv/profiles/default/types/CV.xml
   <property name="description"
     i18n:translate="">Curriculum Vitae of Faculty Member</property>
-  <property name="content_meta_type">CV</property>
+  <property name="content_meta_type">Faculty CV</property>
   <property name="content_icon">++resource++cvimages/faculty.png</property>
   <property name="product">isaw.facultycv</property>
   <property name="factory">addCV</property>
@@ -16,7 +21,7 @@
     <element value="profile" />
   </property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">base_view</property>
+  <property name="default_view">profile_view</property>
   <property name="view_methods">
     <element value="base_view" />
   </property>
@@ -30,6 +35,10 @@
   </action>
   <action title="Edit" action_id="edit" category="object" condition_expr=""
     url_expr="string:${object_url}/edit" visible="True">
+    <permission value="Modify portal content" />
+  </action>
+  <action title="Profile" action_id="edit_profile" category="object" condition_expr=""
+    url_expr="string:${object_url}/profile" visible="True">
     <permission value="Modify portal content" />
   </action>
 </object>

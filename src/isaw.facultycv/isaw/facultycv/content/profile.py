@@ -15,8 +15,10 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 	atapi.ImageField(
 		name = 'Image',
+	    sizes = { 'profile': (250,250),
+				  'big': (600,600) },
 		widget = atapi.ImageWidget(
-			label = u'Faculty Image',
+			label = u'Profile Image',
 			label_msgid='FacultyC_label_ProfileImage',
 			il8n_domain='FacultyCV',
 			),
@@ -27,7 +29,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 	),
 
 	atapi.TextField(
-		name = 'Profile',
+		name = 'Profile Blurb',
 		widget = atapi.RichWidget(
 			label=u'Short Profile Blurb',
 			label_msgid='FacultyCV_label_Profile',
@@ -44,11 +46,13 @@ profileSchema['title'].storage = atapi.AnnotationStorage()
 profileSchema['description'].storage = atapi.AnnotationStorage()
 
 # We hide the Title because it isn't needed or required even though
-# it is initally set at creation of a new CV
+# it is initally set at creation of a new CV and not a profile itself
 # Description is null, realistically it's not needed but I may add some default stock
+# in the future
 
 profileSchema['title'].required = 0
-profileSchema['title'].widget.visible = {"edit": "invisible"}
+profileSchema['title'].widget.visible = {"edit": "invisible",
+										 "view": "invisible"}
 profileSchema['description'].widget.visible = {"edit": "invisible"}
 
 schemata.finalizeATCTSchema(
@@ -59,10 +63,10 @@ schemata.finalizeATCTSchema(
 
 
 class profile(folder.ATFolder):
-    """Faculty Profile"""
+    """Profile"""
     implements(Iprofile)
 
-    meta_type = "profile"
+    meta_type = "Profile"
     schema = profileSchema
 
     title = atapi.ATFieldProperty('title')

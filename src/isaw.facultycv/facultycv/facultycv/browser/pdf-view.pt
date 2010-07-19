@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      i18n:domain="FacultyCV">
+
+<body>
+
+    <metal:main-macro define-macro="main">
+
+        <p class="documentDescription"
+           tal:content="context/Description"
+           tal:condition="context/Description">
+            Description
+        </p>
+
+		<img tal:attributes="src context/profile/Image_profile/absolute_url | nothing" />
+		<dl id="cv-toc" class="portlet toc" style="display: none"
+    		i18n:domain="plone">
+  			<dt class="portletHeader"
+      		i18n:translate="label_tableofcontents">Contents</dt>
+  			<dd class="portletItem">
+			test
+  			</dd>
+		</dl>
+
+		<p></p>
+		<h2 for="FacultyCV_label_Address"
+			   il8n:translate="cv_address" 
+			   tal:condition="context/Address">Address</h2>
+			<div class="cvaddress" tal:content="structure context/Address | nothing" />
+
+		<h2 for="FacultyCV_label_Email"
+			   il8n:translate="cv_email"
+			   tal:condition="context/Email">Email</h2>
+			<div class="cvemail" tal:content="structure context/Email | nothing" />
+
+		<h2 for="FacultyCV_label_Phone"
+			   il8n:translate="cv_phone"
+			   tal:condition="context/Phone">Phone</h2>
+			<div class="cvphone" tal:content="structure context/Phone | nothing" />
+
+		<h2 for="FacultyCV_label_Eddegrees"
+			   il8n:translate="cv_eddegrees"
+			   tal:condition="context/Education and Degrees">Education</h2>
+			<div class="cvdegrees" tal:content="structure context/Education and Degrees | nothing" />
+
+		<h2 for="FacultyCV_label_Positions"
+		       il8n:translate="cv_positions"
+			   tal:condition="context/Positions held">Positions Held</h2>
+			<div class="cvpositions" tal:content="structure context/Positions held | nothing" />
+
+		<h2 for="FacultyCV_label_Honors"
+			   il8n:translate="cv_honors"
+			   tal:condition="context/Honors">Honors</h2>
+			<div class="cvhonors" tal:content="structure context/Honors | nothing" />
+
+		<h2 for="FacultyCV_label_ProfessionalAffiliations"
+			   il8n:translate="cv_profaffils"
+			   tal:condition="context/Professional Affiliations">Professional Affiliations</h2>
+			<div class="cvprofaffils" tal:content="structure context/Professional Affiliations | nothing" />
+
+		<h2 for="FacultyCV_label_ProfessionalOffices"
+		       il8n:translate="cv_profoffices"
+			   tal:condition="context/Professional Offices and Service">Professional Offices and Service</h2>
+			<div class="cvprofoffices" tal:content="structure context/Professional Offices and Service | nothing "/>
+
+		<h2 for="FacultyCV_label_Research"
+			   il8n:translate="cv_research"
+			   tal:condition="context/Research and works in progress">Research and Work in progress</h2>
+			<div class="cvresearch" tal:content="structure context/Research and works in progress | nothing "/>
+
+		<h2 for="FacultyCV_label_ResearchAwards"
+			   il8n:translate="cv_researchawards"
+			   tal:condition="context/Research Awards">Research Awards</h2>
+			<div class="cvresearchawards" tal:content="structure context/Research Awards | nothing "/>
+
+		<h2 for="FacultyCV_label_CoursesTaught"
+		       il8n:translate="cv_coursestaught"
+			   tal:condition="context/List of Courses">List of Courses</h2>
+			<div class="cvcoursestaught" tal:content="structure context/Courses Taught | nothing "/>
+
+		<h2 for="FacultyCV_label_GradSupervise"
+			   il8n:translate="cv_gradsupervise"
+			   tal:condition="context/Graduate Supervision">Graduate Supervision</h2>
+			<div class="cvgradsupervise" tal:content="structure context/Graduate Supervision | nothing "/>
+
+		<h2 for="FacultyCV_label_Publications"
+			   il8n:translate="cv_publications"
+			   tal:condition="context/Publications">Publications</h2>
+			<div class="cvpublications" tal:content="structure context/Publications | nothing "/>
+
+		<h2 for="FacultyCV_label_Papers"
+		       il8n:translate="cv_papers"
+			   tal:condition="context/Papers">Papers</h2>
+			<div class="cvpapers" tal:content="structure context/Papers | nothing" />
+
+		<h2 for="FacultyCV_label_Lectures"
+			   il8n:translate="cv_lectures"
+			   tal:condition="context/Lectures">Lectures</h2>
+			<div class="cvlectures" tal:content="structure context/Lectures | nothing" />
+
+        <!--
+		<h2 for="FacultyCV_label_TypeOfPublications"
+			   il8n:translate="cv_listpub"
+			   tal:condition="context/Publication List">List of Publications</h2>
+			<div class="cv_listpub" tal:content="structure context/Publication List | nothing" />
+           -->
+
+    </metal:main-macro>
+
+</body>
+</html>
+

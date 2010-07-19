@@ -1,7 +1,7 @@
 Metadata-Version: 1.0
 Name: facultycv
 Version: 0.4
-Summary: UNKNOWN
+Summary: FacultyCV allows Faculty or Staff to post their CV's online
 Home-page: http://svn.plone.org/svn/collective/
 Author: UNKNOWN
 Author-email: UNKNOWN
@@ -10,18 +10,9 @@ Description: .. contents::
         
         .. Note!
            -----
-           Update the following URLs to point to your:
-        
-           - code repository
-           - bug tracker
-           - questions/comments feedback mail
-           (do not set a real mail, to avoid spams)
-        
-           Or remove it if not used.
-        
-        - Code repository: http://svn.somewhere.com/...
-        - Questions and comments to somemailing_list
-        - Report bugs at http://bug.somewhere.com/..
+        - Code repository: git://github.com/christophwarner/FacultyCV.git
+        - Questions and comments to http://github.com/christophwarner/FacultyCV/issues
+        - Report bugs at http://github.com/christophwarner/FacultyCV/issues
         
         
         Change history
@@ -30,11 +21,10 @@ Description: .. contents::
         Changelog
         =========
         
-        0.4 (xxxx-xx-xx)
+        0.4 (2010-06-30)
         ----------------
         
-        - Created recipe with ZopeSkel
-          [""]
+        - Created project
         
         Detailed Documentation
         **********************
@@ -345,12 +335,14 @@ Description: .. contents::
         Contributors
         ************
         
-        "", Author
-        
+        Primary Authors
+        Rafael Nunez <rnunez@less.spam.york.cuny.edu>
+        Christopher Warner <christopher.warner@less.spam.nyu.edu>
         
         Download
         ********
         
+Keywords: cv resume facultycv
 Platform: UNKNOWN
 Classifier: Framework :: Plone
 Classifier: Intended Audience :: Developers

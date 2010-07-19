@@ -19,7 +19,7 @@ def initial_setup(obj, event):
     if not memberdata.hasProperty("CVReference"):
         memberdata.manage_addProperty(id="CVReference", value="", type="string")
 
-    obj.setMemberRef(uid)
+    obj.setProfileRef(uid)
     uri = obj.absolute_url()
     # Turn on permissions for membertool
     obj.manage_permission("Manage users", roles=['Manager', 'Authenticated', 'Owner'], acquire = 1)

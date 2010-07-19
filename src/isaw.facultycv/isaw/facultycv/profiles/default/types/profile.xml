@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<object name="profile"
+<object name="Profile"
    meta_type="Factory-based Type Information with dynamic views"
+<<<<<<< HEAD:isaw/facultycv/profiles/default/types/profile.xml
    i18n:domain="isaw.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">profile</property>
   <property name="description"
@@ -8,6 +9,15 @@
   <property name="content_meta_type">profile</property>
   <property name="content_icon">++resource++cvimages/profile.png</property>
   <property name="product">isaw.facultycv</property>
+=======
+   i18n:domain="facultycv.facultycv" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="title" i18n:translate="">Profile</property>
+  <property name="description"
+    i18n:translate="">Profile</property>
+  <property name="content_meta_type">Profile</property>
+  <property name="content_icon">++resource++cvimages/profile.gif</property>
+  <property name="product">facultycv.facultycv</property>
+>>>>>>> 0ec1362c55c81d38908cdbd4070ab38c0144b257:facultycv/facultycv/profiles/default/types/profile.xml
   <property name="factory">addprofile</property>
   <property name="immediate_view">atct_edit</property>
   <property name="global_allow">True</property>
