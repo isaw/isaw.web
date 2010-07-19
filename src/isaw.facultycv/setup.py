@@ -22,7 +22,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('facultycv', 'facultycv', 'README.txt')
+    read('isaw', 'facultycv', 'README.txt')
     + '\n' +
     'Contributors\n'
     '************\n'
@@ -51,7 +51,7 @@ setup(name='facultycv',
       url='http://svn.plone.org/svn/collective/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['facultycv', ],
+      namespace_packages=['isaw', ],
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
@@ -59,7 +59,7 @@ setup(name='facultycv',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite='facultycv.facultycv.tests.test_docs.test_suite',
+      test_suite='isaw.facultycv.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*-
       [z3c.autoinclude.plugin]
