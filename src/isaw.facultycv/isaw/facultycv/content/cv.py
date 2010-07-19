@@ -9,14 +9,8 @@ from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
 from zope.formlib import form
 
-<<<<<<< HEAD:isaw/facultycv/content/cv.py
 from isaw.facultycv.interfaces import ICV
 from isaw.facultycv.config import PROJECTNAME
-=======
-from facultycv.facultycv.interfaces import ICV
-from facultycv.facultycv.config import PROJECTNAME
-from Products.ATContentTypes import ATCTMessageFactory as _
->>>>>>> 0ec1362c55c81d38908cdbd4070ab38c0144b257:facultycv/facultycv/content/cv.py
 
 CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
