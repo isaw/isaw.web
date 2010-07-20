@@ -1,4 +1,4 @@
-  facultycv is copyright (c) Rafael Nunez, Christopher Warner
+  isaw.facultycv is copyright (c) Christopher Warner, New York University
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by

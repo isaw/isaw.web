@@ -1,3 +1,2 @@
 Primary Authors
-Rafael Nunez <rnunez@less.spam.york.cuny.edu>
 Christopher Warner <christopher.warner@less.spam.nyu.edu>
