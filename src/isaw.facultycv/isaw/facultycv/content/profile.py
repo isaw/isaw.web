@@ -20,7 +20,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		widget = atapi.ImageWidget(
 			label = u'Profile Image',
 			label_msgid='FacultyC_label_ProfileImage',
-			il8n_domain='FacultyCV',
+			il8n_domain='isaw.facultycv',
 			),
 
 		required = False,
@@ -32,8 +32,8 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		name = 'Profile Blurb',
 		widget = atapi.RichWidget(
 			label=u'Short Profile Blurb',
-			label_msgid='FacultyCV_label_Profile',
-			il8n_domain='FacultyCV',
+			label_msgid='isaw.facultycv_label_Profile',
+			il8n_domain='isaw.facultycv',
 			),
 		
 		required = False,

@@ -1,11 +1,11 @@
-facultycv Installation
+isaw.facultycv Installation
 ----------------------
 
-To install facultycv into the global Python environment (or a workingenv),
+To install isaw.facultycv into the global Python environment (or a workingenv),
 using a traditional Zope 2 instance, you can do this:
 
 * When you're reading this you have probably already run 
-  ``easy_install facultycv``. Find out how to install setuptools
+  ``easy_install isaw.facultycv``. Find out how to install setuptools
   (and EasyInstall) here:
   http://peak.telecommunity.com/DevCenter/EasyInstall
 
@@ -16,7 +16,7 @@ using a traditional Zope 2 instance, you can do this:
 
 into your Zope instance.
 
-* Create a file called ``facultycv-configure.zcml`` in the
+* Create a file called ``isaw.facultycv-configure.zcml`` in the
   ``/path/to/instance/etc/package-includes`` directory.  The file
   should only contain this::
 
@@ -34,7 +34,7 @@ recipe to manage your project, you can do this:
     ...
     eggs =
         ...
-        facultycv
+        isaw.facultycv
        
 * Tell the plone.recipe.zope2instance recipe to install a ZCML slug:
 

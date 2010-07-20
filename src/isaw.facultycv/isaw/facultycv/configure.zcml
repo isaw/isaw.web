@@ -16,9 +16,9 @@
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="FacultyCV"
+      title="isaw.facultycv"
       directory="profiles/default"
-      description="Allows for the creation of a FacultyCV as well as profile"
+      description="isaw.FacultyCV is an educational product that allows one to create curriculum vitae for faculty members. It is along the lines of the products FacultyStaffDirectory and Products.FacultyCV"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   

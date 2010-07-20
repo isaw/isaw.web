@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.4'
+version = '0.41'
 
 long_description = (
     read('README.txt')
@@ -72,6 +72,5 @@ setup(name='isaw.facultycv',
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
       paster_plugins=["ZopeSkel"],
       )
