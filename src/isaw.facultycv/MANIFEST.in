@@ -1,2 +1,2 @@
 recursive-include facultycv *
-global-exclude *pyc
+global-exclude *pyc *swp
