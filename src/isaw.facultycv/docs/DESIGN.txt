@@ -1,6 +1,6 @@
 Christopher Warner
 christopher.warner@nyu.edu
-Institute for the Study of the Ancient World
+Institute for the Study of the Ancient World @ New York University
 
 Why not use FacultyCV or FacultyStaffDirectory?
 -----------------------------------------------
@@ -10,9 +10,10 @@ It was at this point I took a look at FacultyCV by Rafael Nunez and started pull
 
 This led to isaw.facultycv in it's current form. Currently it is a very basic and simple product. Concentrating completely on Faculty right now I'll most likely add a Staff, Scholar and Team type to accompany the current Faculty option.
 
-On creation of a CV it automatically generates a profile that is completely separate from the User member profile. As this is a Work-In-Progress we will see how it evolves. It's highly unlikely that anything will make use of Membrane or Relation and I will use as much of Plone default tools. So for instance where there are correlations between the default @@personal-information profile and the member profile I will provide options to update there as an option. Or one will have the option to keep them completely separate. This provides several possibitlies but the major one is that should you decide in the future to remove FacultyCV for whatever reason nothing is affected. If you plan to upgrade; again, nothing is affected. If there are problems they will be with the default Plone core tools. So the overall goal is to let the Administrator decide how the CV's are organized themselves. 
+On creation of a CV it automatically generates a profile that is completely separate from the User member profile. As this is a Work-In-Progress we will see how it evolves. It's highly unlikely that anything will make use of Membrane or Relation and I will use as much of Plone default tools as possible. So for instance where there are correlations between the default @@personal-information profile and the member profile I will provide options to update there as an option. Or one will have the option to keep them completely separate. This provides several possibitlies but the major one is that should you decide in the future to remove FacultyCV for whatever reason nothing is affected. If you plan to upgrade; again, nothing is affected. If there are problems they will be with the default Plone core tools. So the overall goal is to let the Administrator decide how the CV's are organized. Creating a directory like FacultyStaffDirectory does automatically turns out to be too problematic. At least in my forseen use cases. 
 
-Should anyone have any questions about the design or would like to see something as we are in the early days. Please feel free to contact me via the email above. In the event that it isn't working for some reason it would mean I'm most likely no longer at NYU in which case you can find me on irc at freenode.net; cwarner. I will do my best to keep this document updated but we all know how that goes.
+Should anyone have any questions about the design or would like to see something as we are in the early days. Please feel free to contact me via the email above. In the event that it isn't working for some reason it would mean I'm most likely no longer at NYU in which case you can find me on irc at freenode.net; cwarner. Or you can search around the web for further contact information. I will do my best to keep this document updated but we all know how that goes.
 
-07/20/2010
+I will accept patches so long as they adhere to not relying on anything that will break or affect the overall longterm viability of the CV.
 
+-CW
