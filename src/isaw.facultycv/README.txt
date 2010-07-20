@@ -33,7 +33,7 @@ Credits
 -------
 
 This work would have not been possible if I didn't work at the Institute for the Study of the Ancient World.
-It was done on the Institutes time and dime; you can find out more about ISAW at http://www.nyu.edu/isaw
+It was done on the Institutes time and dime; The Institute for the Study of the Ancient World (ISAW) at New York University was founded by Shelby White and the Leon Levy Foundation in 2006.
 
 * Christopher Warner - http://cwarner.kernelcode.com
 * Institute for the Study of the Ancient World - http://www.nyu.edu/isaw
