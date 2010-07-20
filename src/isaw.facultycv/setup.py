@@ -22,7 +22,7 @@ long_description = (
     'Detailed Documentation\n'
     '**********************\n'
     + '\n' +
-    read('facultycv', 'facultycv', 'README.txt')
+    read('isaw', 'facultycv', 'README.txt')
     + '\n' +
     'Contributors\n'
     '************\n'
@@ -34,24 +34,28 @@ long_description = (
 
 tests_require = ['zope.testing']
 
-setup(name='facultycv',
+setup(name='isaw.facultycv',
       version=version,
-      description="FacultyCV allows Faculty or Staff to post their CV's online",
+      description="FacultyCV is an educational product that allows one to create curriculum vitae for faculty members. It is along the lines of the products FacultyStaffDirectory and FacultyCV",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        'Development Status :: 4 - Beta',
         'Framework :: Plone',
         'Intended Audience :: Developers',
+        'Intended Audience :: Education',
         'License :: OSI Approved :: GNU General Public License (GPL)',
+        'Topic :: Education',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         ],
-      keywords='cv resume facultycv',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='cv resume facultycv cirriculum vitae employment university college',
+      author='Christopher Warner',
+      author_email='christopher.warner@nyu.edu',
+      url='http://github.com/christophwarner/FacultyCV.git',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['facultycv', ],
+      namespace_packages=['isaw', ],
       include_package_data=True,
       zip_safe=False,
       install_requires=['setuptools',
@@ -62,7 +66,7 @@ setup(name='facultycv',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite='facultycv.facultycv.tests.test_docs.test_suite',
+      test_suite='isaw.facultycv.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*-
       [z3c.autoinclude.plugin]

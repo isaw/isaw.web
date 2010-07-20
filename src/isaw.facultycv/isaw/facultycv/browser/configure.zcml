@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="isaw.facultycv">
+
+  <include package="plone.app.contentmenu" />
+
+  <browser:resourceDirectory
+    name="cvimages"
+    directory="icons"
+    />
+
+  <browser:page
+  	for="*"
+	name="profile_view"
+	permission="zope2.View"
+	class=".views.ProfileView"
+	template="profile-view.pt"
+	/>
+
+
+  <browser:page
+  	for="*"
+	name="pdf_view"
+	permission="zope2.View"
+	class=".views.PdfView"
+	/>
+
+</configure>
