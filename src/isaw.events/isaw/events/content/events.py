@@ -15,46 +15,6 @@ from isaw.events import eventsMessageFactory as _
 from isaw.events.interfaces import Ievents
 from isaw.events.config import PROJECTNAME
 
-"""EVENTS SAMPLE DATA
-
-Date - datetime
-Time - datetime
-Speaker - string/user profile
-Location - string
-Reception - bool (reception to follow?)
-Leadin - string (short description)
-Short description - text
-Long description - text
-Sample pulled from http://www.nyu.edu/isaw/events/fernandez-2010-01-19.htm
-Visiting Research Scholar Lecture
-Living in the Heights: Hilltop settlement and the changing landscape of northern Hispania during late antiquity.
-
-Speaker: Damian Fernandez
-Location: 2nd Floor Lecture Room
-Date: Tuesday, January 19 2010
-Time: 6:00 p.m.
-*reception to follow
-
-Bookmark and Share
-
-Hilltop settlement was one of the most prominent characteristics in the landscape of the northern
-Iberian Peninsula until the Roman conquest. With the establishment of Roman rule in the decades
-around the turn of the era, several of the pre-Roman hilltop forts were abandoned in favor of a
-developed network of lowland cities that became the backbone of the regional settlement hierarchy.
-This process was somewhat reversed after the late-third century CE, when archaeologists have dated
-the beginning of the occupation of hilltops (and, sometimes, the re-occupation of Iron Age sites).
-The movement towards the highlands has traditionally been interpreted either as reemergence of
-indigenous social structures that had survived the Roman conquest or as the result of the
-insecurity provoked by the presence of barbarian armies in the third and fifth centuries.
-
-In the last two decades, piecemeal archaeological research in the northern Iberian Peninsula has
-begun to provide us with new information about these sites. Their material culture and the more
-accurate chronology indicate that traditional interpretations about the phenomenon of hilltop
-occupation are no longer valid. After reviewing some paradigmatic sites, this lecture will offer an
-alternative model to understanding the change in settlement patterns. It will be argued that
-occupation of hilltops must be understood in the context of the administrative reforms of the late
-Roman Empire and the economic changes that occurred in northern Iberia during late antiquity."""
-
 eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 # -*- Events Schema -*- #
@@ -150,6 +110,7 @@ eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.DateTimeField(
     name='event_StartDateTime',
+    accessor='start',
     widget=atapi.CalendarWidget(
         description=_(u'event_startdatetime', default=u'The date and/or time when the event starts.'),
         label=u'Event Start Date and Time',
@@ -164,6 +125,7 @@ eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.DateTimeField(
     name='event_EndDateTime',
+    accessor='end',
     widget=atapi.CalendarWidget(
         description=_(u'event_enddatetime', default=u'The date and/or time when the event ends.'),
         label=u'Event End Date and Time',

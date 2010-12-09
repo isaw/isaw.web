@@ -16,6 +16,6 @@
     <type portal_type="Conference" />
     <type portal_type="Seminar" />
     <type portal_type="Lecture" />
-    <type portal_type="events" />
+    <type portal_type="General" />
   </factorytypes>
 </object>

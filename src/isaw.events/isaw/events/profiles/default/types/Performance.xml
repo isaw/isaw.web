@@ -13,7 +13,7 @@
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="events" />
+    <element value="General" />
     <element value="Exhibition" />
     <element value="Lecture" />
     <element value="Conference" />
