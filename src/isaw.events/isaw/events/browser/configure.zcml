@@ -15,7 +15,7 @@
         for="..interfaces.events.Ievents"
         name="rdf-view"
         class=".browser.RdfView"
-        template="rdf-view.pt"
+        template="templates/rdf-view.pt"
         permission="zope2.View"
         />
 		
@@ -23,7 +23,7 @@
         for="..interfaces.events.Ievents"
         name="hcal-view"
         class=".browser.HcalView"
-        template="hcal-view.pt"
+        template="templates/hcal-view.pt"
         permission="zope2.View"
         />
 	
@@ -31,6 +31,14 @@
         for="..interfaces.events.Ievents"
         name="rsvp_form"
         class=".eventrsvp.EventRsvp"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.events.Ievents"
+        name="event_main"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
         permission="zope2.View"
         />
 

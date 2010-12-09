@@ -69,14 +69,24 @@ eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         
     required=False,
     searchable=False),
-    
+   
+    atapi.StringField(
+    name='event_Image_caption',
+    widget=atapi.TextAreaWidget(
+        label=u'Event Image Caption',
+        description=_(u'event_image_caption', default=u'Optional image caption associated with image.'),
+        label_msgid='ISAW_Event_image_caption',
+        il8n_domain='ISAW_Event',
+        ),
 
+    required=False,
+    searchable=False),
 
     atapi.TextField(
     name='event_Abstract',
     widget=atapi.TextAreaWidget(
         label=u'Event Abstract',
-        description=_(u'event_abstract', default=u'A short description of the event.'),
+        description=_(u'event_abstract', default=u'A summary statement of the description.'),
         label_msgid='ISAW_Event_abstract',
         il8n_domain='ISAW_Event',
         ),
@@ -95,6 +105,18 @@ eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         size=50,
         ),
         
+    required=False,
+    searchable=True),
+
+    atapi.TextField(
+    name='event_Speaker_detail',
+    widget=atapi.TextAreaWidget(
+        label=u'Event Speaker Detail',
+        description=_(u'event_speaker_detail', default=u'Background of the speaker.'),
+        label_msgid='ISAW_Event_Speaker_detail',
+        il8n_domain='ISAW_Event',
+        ),
+
     required=False,
     searchable=True),
 
@@ -134,7 +156,7 @@ eventsSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         label_msgid='ISAW_Event_StartDateTime',
         il8n_domain='ISAW_Event',
         show_hm=True,
-        format='%A, %B %d %Y %X %p %z'
+        format="%A, %B %d %Y %X %p %z",
         ),
 
     required=True,
@@ -319,6 +341,7 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
         schema.moveField('allowDiscussion', after='relatedItems')
 
     schema.moveField('event_Image', after='title')
+    schema.moveField('event_Image_caption', after='event_Image')
 
     # Categorization
     if schema.has_key('subject'):
@@ -372,7 +395,7 @@ class events(folder.ATFolder):
     """Isaw Events Module"""
     implements(Ievents)
 
-    meta_type = "General"
+    meta_type = "General Event"
     schema = eventsSchema
 
     title = atapi.ATFieldProperty('title')

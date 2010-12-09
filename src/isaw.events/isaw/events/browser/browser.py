@@ -5,3 +5,6 @@ class RdfView(BrowserView):
 
 class HcalView(BrowserView):
     pass
+
+class EventMainView(BrowserView):
+    pass

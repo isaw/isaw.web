@@ -44,26 +44,26 @@ def event_publish(post, event):
         else:
             reception = None
             
-        if post.event_Sponsor_Name:
-            sponsor = "Sponsored by <a href=\"%s\">%s</a>" % (post.event_Sponsor_Url, 
-                                                              post.event_Sponsor_Name)
-        else:
-            sponsor = None
+        #if post.event_Sponsor_Name:
+        #    sponsor = "Sponsored by <a href=\"%s\">%s</a>" % (post.event_Sponsor_Url, 
+        #                                                      post.event_Sponsor_Name)
+        #else:
+        #    sponsor = None
         
-        event_date = dt.fromtimestamp(post.event_StartDateTime).strftime('%A, %B %d %Y')
-        event_time = dt.fromtimestamp(post.event_StartDateTime).strftime('%I:%M %p')
-        url = "<a href=\"%s\">Click here for more information.</a>" % post.absolute_url()
-        formatted_post = """Title: <i>%s</i>\n
-                          Speaker: %s\nLocation: %s\n
-                          <b>Date: %s</b>\n
-                          Time: %s\n%s\n%s\n%s""" % (post.title, post.event_Speaker, 
-                                                   post.event_Location, 
-                                                   event_date, 
-                                                   event_time, reception, url, sponsor)
+       # event_date = dt.fromtimestamp(post.event_StartDateTime).strftime('%A, %B %d %Y')
+       # event_time = dt.fromtimestamp(post.event_StartDateTime).strftime('%I:%M %p')
+       # url = "<a href=\"%s\">Click here for more information.</a>" % post.absolute_url()
+       # formatted_post = """Title: <i>%s</i>\n
+       #                   Speaker: %s\nLocation: %s\n
+       #                   <b>Date: %s</b>\n
+       #                   Time: %s\n%s\n%s\n%s""" % (post.title, post.event_Speaker, 
+       #                                            post.Location, 
+       #                                            event_date, 
+       #                                            event_time, reception, url, sponsor)
         
-        content = {'title': post.title, 
-        'description': formatted_post,
-        }
+       # content = {'title': post.title, 
+       # 'description': formatted_post,
+       # }
         
         # We always publish a new blog entry for track 1
         #publish = True
