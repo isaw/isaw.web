@@ -230,18 +230,18 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     required=False,
     searchable=True),
     
-    atapi.BooleanField(
-    schemata='options',
-    name='event_Facebook',
-    widget=atapi.BooleanWidget(
-        description=_(u'event_facebook', default=u'If selected, this event will appear on Facebook.'),
-        label=u'Post this event on Facebook?',
-        label_msgid='ISAW_Event_facebook',
-        il8n_domain='ISAW_Event',
-        ),
-
-    required=False,
-    searchable=True),
+#    atapi.BooleanField(
+#    schemata='options',
+#    name='event_Facebook',
+#    widget=atapi.BooleanWidget(
+#        description=_(u'event_facebook', default=u'If selected, this event will appear on Facebook.'),
+#        label=u'Post this event on Facebook?',
+#        label_msgid='ISAW_Event_facebook',
+#        il8n_domain='ISAW_Event',
+#        ),
+#
+#    required=False,
+#    searchable=True),
 
     atapi.BooleanField(
     schemata='options',
