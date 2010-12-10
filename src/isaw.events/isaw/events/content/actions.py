@@ -1,7 +1,7 @@
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from datetime import datetime as dt
-import xmlrpclib, twitter, tinyurl
+import xmlrpclib, tweepy, tinyurl
 
 # TODO Add more error checking for each type of possible error
 # Eventually remove all print statements when finally complete
@@ -11,7 +11,20 @@ proxy = xmlrpclib.ServerProxy("http://blogs.nyu.edu/movabletype/mt-xmlrpc.cgi")
 username = 'te20'
 password = 'jvexa3dk'
 blog_id = '1463'
-twit = twitter.Api(username='isawnyu', password='r06!2010t')
+
+## TWITTER
+# To auth with OAuth
+consumer_key = '8YhDN65FReDMva2hK2bnQ'
+consumer_secret = 'rxjzTImNGWD6LszoEw7VKMAvY76wX9qKGro9FeZX2k'
+
+# To skip all the rest of that
+single_token_key = '120132383-7LVyjZD17RaxSSX6k4ZVFWEKJ4CHJQvGnIDHqeN4'
+single_token_secret = '5eWa9CV5vwUUc2ROEArFBIiyKRvWwk4AYqcmS34JI'
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(single_token_key, single_token_secret)
+twit = tweepy.API(auth)
+## TWITTER
 
 # Rewrite this later; it's ugly - christopher.warner@nyu.edu
 # The orignal iteration published to blog/twitter etc
@@ -32,10 +45,11 @@ def event_publish(post, event):
                 print "Can't connect to TinyURL service"
                 pass
                 
-            status = twit.PostUpdate("Event - "+ post.title + " " + event_tlink)
-            print status.GetId()
-            f = post.getField("event_TwitterId")
-            f.set(post, status.GetId())
+            twit.update_status("Event - "+ post.title + " " + event_tlink)
+            #print status
+            #print status.GetId()
+            #f = post.getField("event_TwitterId")
+            #f.set(post, status.GetId())
         # TODO: Check post attributes to ensure they exist
        
         if post.event_Reception == True:

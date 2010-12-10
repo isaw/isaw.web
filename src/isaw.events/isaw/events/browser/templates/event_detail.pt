@@ -21,7 +21,8 @@
             <li><a href="#" tal:attributes="href string:${here/absolute_url}/ics_view" title="Add this item to your iCal calendar" class="cal ical">i.Cal</a></li>
             <li><a href="#" tal:attributes="href string:${here/absolute_url}/vcs_view" title="Add this item to your vCal calendar" class="cal vcal">v.Cal</a></li>
             </ul>
-            RSVP: <a href="mailto:isaw@nyu.edu">isaw@nyu.edu</a>
+            <div class="eventRsvp" tal:condition="context/event_Rsvp | nothing"
+                tal:content="structure string:RSVP: <a href=mailto:isaw@nyu.edu?subject=RSVP ${context/title}>isaw@nyu.edu</a> "/>
         </div>
         
         <div class="subheading" tal:content="python: context.event_StartDateTime" />
@@ -38,6 +39,9 @@
             <p tal:content="context/event_Abstract">The aim of this lecture is to inform the interested New York public on recent developments in the study of the written records of ancient 'Indianized' polities in Southeast Asia. We will take as example the epigraphic corpus of the ancient Campa kingdom(s), which lay in what is now central and southern Vietnam. The study of Campa epigraphy involves texts in Sanskrit and in the poorly known vernacular Old Cam language, which belongs to the Austronesian language family. This field of research once flourished in French colonial times, then all but died out after WW II, and has only recently been resuscitated from a coma that lasted for decades. Newly discovered inscriptions have started to be published again, and a census of Campa inscriptions was undertaken last September-October in museums and archaeological sites of Vietnam. The aim of the census was to up-date the general inventory of Campa inscriptions, whose last published installment dates to 1942, and to record essential data of previously known and newly discovered epigraphical documents. The presentation will discuss general aspects of Southeast Asian epigraphy, as well as specific aspects of the Campa corpus and the history of its study. Some new inscriptions, which throw interesting new light on the history of Campa and its place within the larger scale development of Southeast Asian history, will be selected for close inspection.</p>
 
             <p tal:content="context/event_Speaker_detail">Arlo Griffiths holds a PhD in Sanskrit from Leiden University. After holding a position as lecturer in Indian Religions at the University of Groningen (the Netherlands), and holding the chair of Sanskrit at Leiden University, he joined the French School of Asian Studies (L’École française d’Extrême-Orient) in 2008 as Professor of Southeast Asian history. His main fields of interest are Hindu religious/ritual literature in Sanskrit, on the one hand, and inscriptions of Southeast Asia in Sanskrit and vernacular languages, on the other. His approach to the (ancient) history of Southeast Asia is primarily epigraphic, and he is currently involved in projects concerning the inscriptions of ancient Cambodia, ancient Indonesia, and Campa.</p>
+
+            <p tal:condition="context/event_Reception | nothing"
+                tal:content="string:Reception to follow; event is free and open to public" />
 
         </div>
         

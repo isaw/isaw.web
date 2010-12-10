@@ -1,5 +1,5 @@
 setuptools
-python-twitter >= 0.6
+tweepy >= 1.5
 simplejson >= 2.0.9
 tinyurl >= 0.1.0
 
