@@ -12,7 +12,7 @@ from Products.CMFCore.permissions import setDefaultRoles
 # This will be imported with the special name "_" in most modules. Strings
 # like _(u"message") will then be extracted by i18n tools for translation.
 
-eventsMessageFactory = MessageFactory('isaw.events')
+IsawEventMessageFactory = MessageFactory('isaw.events')
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.

@@ -9,11 +9,11 @@ from Products.ATContentTypes.content import schemata
 
 # -*- Message Factory Imported Here -*-
 
-from isaw.events.content import events
+from isaw.events.content import general
 from isaw.events.interfaces import ISponsored
 from isaw.events.config import PROJECTNAME
 
-SponsoredSchema = events.eventsSchema.copy() + atapi.Schema((
+SponsoredSchema = general.GeneralSchema.copy() + atapi.Schema((
 
     ###################
     # SPONSOR

@@ -5,5 +5,5 @@ from sponsored import ISponsored
 from conference import IConference
 from seminar import ISeminar
 from lecture import ILecture
-from events import Ievents
+from general import IGeneral
 

@@ -9,11 +9,11 @@ from Products.ATContentTypes.content import schemata
 
 # -*- Message Factory Imported Here -*-
 
-from isaw.events.content import events
+from isaw.events.content import general
 from isaw.events.interfaces import IPerformance
 from isaw.events.config import PROJECTNAME
 
-PerformanceSchema = events.eventsSchema.copy() + atapi.Schema((
+PerformanceSchema = general.GeneralSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 

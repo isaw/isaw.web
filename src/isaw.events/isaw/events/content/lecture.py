@@ -9,11 +9,11 @@ from Products.ATContentTypes.content import schemata
 
 # -*- Message Factory Imported Here -*-
 
-from isaw.events.content import events
+from isaw.events.content import general
 from isaw.events.interfaces import ILecture
 from isaw.events.config import PROJECTNAME
 
-LectureSchema = events.eventsSchema.copy() + atapi.Schema((
+LectureSchema = general.GeneralSchema.copy() + atapi.Schema((
 
     # -*- Your Archetypes field definitions here ... -*-
 

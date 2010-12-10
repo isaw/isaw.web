@@ -42,19 +42,19 @@
         interface="..interfaces.ILecture"
         />
   </class>
-  <class class=".events.events">
+  <class class=".general.General">
     <require
         permission="zope2.View"
-        interface="..interfaces.Ievents"
+        interface="..interfaces.IGeneral"
         />
     <require
         permission="cmf.ModifyPortalContent"
-        set_schema="..interfaces.Ievents"
+        set_schema="..interfaces.IGeneral"
         />
   </class>
 
 	<subscriber
-		for="..interfaces.Ievents
+		for="..interfaces.IGeneral
 		Products.CMFCore.interfaces.IActionSucceededEvent"
 		handler=".actions.event_publish" />
 		

@@ -10,7 +10,7 @@
         name="icons"
         directory="icons"
         />
-
+    <!--
     <browser:page
         for="..interfaces.events.Ievents"
         name="rdf-view"
@@ -33,9 +33,10 @@
         class=".eventrsvp.EventRsvp"
         permission="zope2.View"
         />
+    -->
 
     <browser:page
-        for="..interfaces.events.Ievents"
+        for="..interfaces.general.IGeneral"
         name="event_main"
         class=".browser.EventMainView"
         template="templates/event_detail.pt"

@@ -11,5 +11,5 @@ ADD_PERMISSIONS = {
     'Conference': 'isaw.events: Add Conference',
     'Seminar': 'isaw.events: Add Seminar',
     'Lecture': 'isaw.events: Add Lecture',
-    'events': 'isaw.events: Add events',
+    'General': 'isaw.events: Add General',
 }
