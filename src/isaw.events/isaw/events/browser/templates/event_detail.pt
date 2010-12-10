@@ -18,7 +18,7 @@
         <div class="eventCal">
             Add to Your Calendar:
             <ul>
-            <li><a href="#" class="cal ical">i.Cal</a></li>
+            <li><a href="#" tal:attributes="href string:${here/absolute_url}/ics_view" title="Add this item to your iCal calendar" class="cal ical">i.Cal</a></li>
             <li><a href="#" class="cal vcal">v.Cal</a></li>
             </ul>
             RSVP: <a href="mailto:isaw@nyu.edu">isaw@nyu.edu</a>
