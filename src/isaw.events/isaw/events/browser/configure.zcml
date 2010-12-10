@@ -43,4 +43,24 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        for="..interfaces.folderview.IFolderView"
+        name="folder_listing"
+        class=".browser.FolderView"
+        template="templates/event_main.pt"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.folderview.IFolderView"
+        menu="plone_displayviews"
+        title="Events view"
+        action="@@folder_listing"
+        description="Events view"
+        />
+
+    <class class="Products.ATContentTypes.interface.folder.IATFolder">
+        <allow interface="..interfaces.folderview.IFolderView" />
+    </class>
+
 </configure>

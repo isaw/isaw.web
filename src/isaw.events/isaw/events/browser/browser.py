@@ -8,3 +8,6 @@ class HcalView(BrowserView):
 
 class EventMainView(BrowserView):
     pass
+
+class FolderView(BrowserView):
+    pass

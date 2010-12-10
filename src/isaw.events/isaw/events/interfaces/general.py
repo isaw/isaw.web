@@ -7,6 +7,6 @@ from zope.app.container.constraints import containers
 from isaw.events import IsawEventMessageFactory as _
 
 class IGeneral(Interface):
-    """ISAW General Event"""
+    """General Event"""
     
     # -*- schema definition goes here -*-
