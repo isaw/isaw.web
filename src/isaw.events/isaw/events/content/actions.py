@@ -45,7 +45,7 @@ def event_publish(post, event):
                 print "Can't connect to TinyURL service"
                 pass
                 
-            twit.update_status("Event - "+ post.title + " " + event_tlink)
+            twit.update_status("Event: "+ post.title + " " + event_tlink)
             #print status
             #print status.GetId()
             #f = post.getField("event_TwitterId")
@@ -56,7 +56,7 @@ def event_publish(post, event):
             # replace this with a string or annotation on the object so this can be changed
             reception = '*reception to follow; event is free and open to the public'
         else:
-            reception = None
+            reception = ''
             
         #if post.event_Sponsor_Name:
         #    sponsor = "Sponsored by <a href=\"%s\">%s</a>" % (post.event_Sponsor_Url, 
@@ -64,20 +64,22 @@ def event_publish(post, event):
         #else:
         #    sponsor = None
         
-       # event_date = dt.fromtimestamp(post.event_StartDateTime).strftime('%A, %B %d %Y')
-       # event_time = dt.fromtimestamp(post.event_StartDateTime).strftime('%I:%M %p')
-       # url = "<a href=\"%s\">Click here for more information.</a>" % post.absolute_url()
-       # formatted_post = """Title: <i>%s</i>\n
-       #                   Speaker: %s\nLocation: %s\n
-       #                   <b>Date: %s</b>\n
-       #                   Time: %s\n%s\n%s\n%s""" % (post.title, post.event_Speaker, 
-       #                                            post.Location, 
-       #                                            event_date, 
-       #                                            event_time, reception, url, sponsor)
+        event_date = dt.fromtimestamp(post.event_StartDateTime).strftime('%A, %B %d %Y')
+        event_time = dt.fromtimestamp(post.event_StartDateTime).strftime('%I:%M %p')
+        location = post.getLocation()
+        print location
+        url = "<a href=\"%s\">Click here for more information.</a>" % post.absolute_url()
+        formatted_post = """Title: <i>%s</i>\n
+                          Speaker: %s\nLocation: %s\n
+                         <b>Date: %s</b>\n
+                          Time: %s\n%s\n%s\n""" % (post.title, post.event_Speaker, 
+                                                   location, 
+                                                   event_date, 
+                                                   event_time, reception, url)
         
-       # content = {'title': post.title, 
-       # 'description': formatted_post,
-       # }
+        content = {'title': post.title, 
+        'description': formatted_post,
+        }
         
         # We always publish a new blog entry for track 1
         #publish = True
@@ -88,9 +90,9 @@ def event_publish(post, event):
             # Res returns the blog id for the new post and then we set event_BlogId 
             # So that we know the id should we have to retract or make the event private
 
-                #res = proxy.metaWeblog.newPost(blog_id, username, password, content, True)
-                #f = post.getField("event_BlogId")
-                #f.set(post, res)
+                res = proxy.metaWeblog.newPost(blog_id, username, password, content, True)
+                f = post.getField("event_BlogId")
+                f.set(post, res)
                 print post.event_BlogId
                 post.plone_utils.addPortalMessage(_(u'This event has been published on the live website as well as the blog website'))
                 # Update category information; there is currently no xml-rpc I can see for this so i'm not sure the below works
@@ -100,22 +102,22 @@ def event_publish(post, event):
                 # Change workflow state to retract and notify user a communication error has occured
                 print "Error occured %s" % x
 
-        ####################################
-        elif (publish_state == 'private'):
-            print 'Removing %s from social networks' % post.title
-            try:
-                if post.event_Twitter == True:
-                    twit.DestroyStatus(post.event_TwitterId)
+            ####################################
+    elif (publish_state == 'private'):
+        print 'Removing %s from social networks' % post.title
+        try:
+        #if post.event_Twitter == True:
+        #    twit.DestroyStatus(post.event_TwitterId)
 
-                if post.event_Blog == True:
-                    print 'Retracting %s with blogid %s' % (post.title, post.event_BlogId)
-                    res = proxy.metaWeblog.deletePost(blog_id, post.event_BlogId, username, password, True)
-                    if (res == True):
-                        post.plone_utils.addPortalMessage(_(u'This event has been removed from the ISAW weblog'))
-                    else:
-                        post.plone_utils.addPortalMessage(_(u'There was a problem removing this from http://blogs.nyu.edu please contact an Administrator immediately'))
-            except xmlrpclib.Fault, x:
-                if (x == True):
-                    print "The blog id was already removed!"
-                else:    
-                    print 'Workflow state not recognized'
+            if post.event_Blog == True:
+                print 'Retracting %s with blogid %s' % (post.title, post.event_BlogId)
+                res = proxy.metaWeblog.deletePost(blog_id, post.event_BlogId, username, password, True)
+                if (res == True):
+                    post.plone_utils.addPortalMessage(_(u'This event has been removed from the ISAW weblog'))
+                else:
+                    post.plone_utils.addPortalMessage(_(u'There was a problem removing this from http://blogs.nyu.edu please contact an Administrator immediately'))
+        except xmlrpclib.Fault, x:
+            if (x == True):
+                print "The blog id was already removed!"
+            else:    
+                print 'Workflow state not recognized'
