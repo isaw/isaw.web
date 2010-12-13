@@ -43,20 +43,21 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     required=False,
     searchable=False),
 
-    atapi.TextField(
-    name='event_Abstract',
-    widget=atapi.TextAreaWidget(
-        label=u'Event Abstract',
-        description=_(u'event_abstract', default=u'A summary statement of the description.'),
-        label_msgid='ISAW_Event_abstract',
-        il8n_domain='ISAW_Event',
-        ),
+#    atapi.TextField(
+#    name='event_Abstract',
+#    widget=atapi.TextAreaWidget(
+#        label=u'Event Abstract',
+#        description=_(u'event_abstract', default=u'A summary statement of the description.'),
+#        label_msgid='ISAW_Event_abstract',
+#        il8n_domain='ISAW_Event',
+#        ),
 
-    required=False,
-    searchable=True),
+#    required=False,
+#    searchable=True),
 
     atapi.StringField(
     name='event_Speaker',
+    accessor='speaker',
     widget=atapi.StringWidget(
         description=_(u'event_Speaker', default=u'The person speaking or holding the event.'),
         label=u'Event Speaker',

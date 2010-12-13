@@ -46,10 +46,9 @@ def event_publish(post, event):
                 pass
                 
             twit.update_status("Event: "+ post.title + " " + event_tlink)
-            #print status
-            #print status.GetId()
+            #print twit.id()
             #f = post.getField("event_TwitterId")
-            #f.set(post, status.GetId())
+            #f.set(post, twit.id())
         # TODO: Check post attributes to ensure they exist
        
         if post.event_Reception == True:
