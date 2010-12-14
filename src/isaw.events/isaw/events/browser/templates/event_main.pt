@@ -16,7 +16,7 @@
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
-                    <p class="eventDate" tal:content="event/start">18 May 2010, 6:00 p.m</p>
+                    <p class="eventDate" tal:content="python:event.start.strftime('%d %B %Y, %I:%M %p')">18 May 2010, 6:00 p.m</p>
                     <p class="grayKeywords" tal:content="event/Type">Visiting Research Scholar Lecture</p>
                     <h2><a class="eventTitle" tal:content="event/Title"
                     tal:attributes="href event/getURL">Rediscovering the inscriptions of Campa (Vietnam)</a></h2>
