@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+    
+<metal:block fill-slot="content-title" />
+    
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+       
+        <!-- 
+        <p class="facultyTitles">Professor of the History of the Exact Sciences in Antiquity</p>
+        <p class="facultyTitles">Professor of Mathematics (Associated Faculty, Courant Institute)</p>
+        -->
+        <div class="facultyTitles" tal:content="structure context/Titles" />
+        
+        <div class="facultyContact">
+            <span class="address" tal:content="context/Address">15 E. 84th Street New York, NY 10028</span>
+            <a tal:attributes="href string:mailto:${context/Email}" tal:content="string:${context/Email}" />
+            <span class="phone">212-922-7840</span>
+            <div class="visualClear"><!-- --></div>
+        </div>
+       
+        <div class="facultyBlurb" tal:content="structure context/Profile Blurb" /> 
+
+        <div id="view-full">
+            <div class="viewButton">
+                <a tal:attributes="href string:${context/absolute_url}/cv" tal:content="string:View Full CV" />
+            </div>
+        
+            <div class="viewButton">
+                <a href="#">View All Publications</a>
+            </div>
+        </div>
+        
+        <h2>Recent Publications</h2>
+        
+        <tal:pubs repeat="faculty python:'1','2','3','4','5','6'">
+        
+            <p>
+                <span class="title">Death and Taxes: Ostraka in the Royal Ontario Museum I</span>
+                (Am.Stud.Pap. 10, Toronto 1971) (with A.E. Samuel, A.K. Bowman and W.K. Hastings)
+                <a href="#">View Publication</a>
+            </p>
+        
+        </tal:pubs>
+        
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+
