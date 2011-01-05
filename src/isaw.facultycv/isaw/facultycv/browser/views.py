@@ -4,7 +4,7 @@ from zope.app.pagetemplate import ViewPageTemplateFile
 #facultycv requires the pisa module for pdf view
 import ho.pisa as pisa
 
-class ProfileView(BrowserView):
+class CvView(BrowserView):
     pass
 
 class PdfView(BrowserView):

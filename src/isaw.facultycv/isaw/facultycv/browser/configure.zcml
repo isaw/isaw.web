@@ -14,8 +14,8 @@
   	for="*"
 	name="profile_view"
 	permission="zope2.View"
-	class=".views.ProfileView"
-	template="profile-view.pt"
+	class=".views.CvView"
+	template="cv-view.pt"
 	/>
 
 
