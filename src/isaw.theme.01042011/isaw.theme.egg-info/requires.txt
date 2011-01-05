@@ -1,3 +1,0 @@
-setuptools
-collective.addthis
-webcouturier.dropdownmenu
