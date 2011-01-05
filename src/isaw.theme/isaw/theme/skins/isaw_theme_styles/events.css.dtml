@@ -1,0 +1,101 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* event detail page */
+.template-event_detail #content {
+    margin-right: 6px;
+}
+
+.eventCal {
+    float: right;
+    text-align: right;
+    width: 275px;
+    margin-bottom: 13px;
+}
+
+#content .eventCal li {
+    display: block;
+    float: right;
+    margin: 0 0 10px 8px;
+    text-align: left;
+}
+
+.eventCal .cal {
+    background: url("&dtml-portal_url;/event_cal.png") no-repeat top left;
+    display: block;
+    width: 28px;
+    height: 28px;
+    text-indent: -99999px;
+}
+
+.eventCal .vcal {
+    background-position: top right;
+}
+
+#content .eventCal div {
+    clear: both;
+}
+
+.eventType {
+    font-size: 12px;
+    font-weight: bold;
+    color: #757575;
+    margin: 3px 0;
+}
+
+.eventSpeaker,
+.eventSpeakerLanding {
+    font-size: 17px;
+    color: &dtml-primaryColor;;
+}
+
+.eventDescription {
+    clear: both;
+    margin-top: 10px;
+}
+
+.eventBody {
+    margin-top: 17px;
+    clear: both;
+}
+
+.eventBody .captioned {
+    float: right;
+    text-align: right;
+    margin: 0 0 10px 10px;
+    border: 1px solid #cdb08a;
+    padding: 5px;
+    color: #42250d;
+}
+#content .eventDate,
+#content .grayKeywords,
+#content .eventTitle,
+#content .eventAim {
+    margin-bottom: 0.1em;
+}
+
+#content .eventSpeakerLanding {
+    margin-bottom: 0.3em;
+}
+
+#content .eventDate {
+    font-size: 16px;
+}
+
+#content .eventDetails,
+#content .grayKeywords {
+    color: #666666;
+    font-size: 12px;
+}
+
+#content .grayKeywords {
+    font-weight: bold;
+}
+
+.eventListing {
+    margin-bottom: 40px;
+}
+
+/* </dtml-with> */

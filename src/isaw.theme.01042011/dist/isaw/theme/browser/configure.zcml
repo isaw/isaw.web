@@ -1,0 +1,56 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="isaw.theme">
+
+  <!-- 'NYU ISAW Theme' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="NYU ISAW Theme"
+      />
+  
+  <!-- For overriding templates, add z3c.jbot to the base.cfg to use -->    
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:templateOverrides
+      directory="template-overrides"
+      layer=".interfaces.IThemeSpecific" />
+  
+  <!-- Viewlets registration -->
+  <browser:viewletManager
+      name="isaw.leftcol"
+      provides=".interfaces.ILeftCol"
+      permission="zope2.View"
+      class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
+      layer=".interfaces.IThemeSpecific"
+      />
+      
+  <!-- The global sections -->
+  <browser:viewlet
+      name="plone.global_sections"
+      manager=".interfaces.ILeftCol"
+      class="webcouturier.dropdownmenu.browser.dropdown.DropdownMenuViewlet"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- social buttons -->
+  <browser:viewlet
+      name="isaw.social"
+      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+      template="viewlets/social.pt"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Utils View -->
+  <browser:page
+     name="utils_view"
+     for="*"
+     class=".utilsview.UtilsView"
+     permission="zope.Public"
+     allowed_interface=".interfaces.IUtilsView"
+     /> 
+
+</configure>

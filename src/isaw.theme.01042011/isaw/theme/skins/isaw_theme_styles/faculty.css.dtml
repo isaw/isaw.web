@@ -1,0 +1,153 @@
+/*
+  <dtml-with base_properties> (do not remove this)
+  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+*/
+
+/* faculty main */
+.template-faculty_main #content-core {
+    margin-top: 10px;
+}
+
+.facultyListing {
+    margin-bottom: 14px;
+}
+
+.facultyListing img {
+    float: left;
+    width: 96px;
+    height: auto;
+    border: 5px solid #ffffff;
+}
+
+.facultyListing .facultyInfo {
+    margin-left: 112px;
+    position: relative;
+}
+
+.facultyInfo h2 {
+    line-height: 1em;
+}
+
+#content .facultyListing p {
+    margin: 0;
+}
+
+.facultyTitle {
+    color: &dtml-primaryColor;;
+    font-size: 17px;
+}
+
+.facultyPosition {
+    color: #757575;
+    font-weight: bold;
+}
+
+.alignBottom {
+    position: relative;
+    bottom: 0;
+}
+
+.facultyEmail {
+    color: &dtml-primaryColor;;
+    line-height: 1em;
+}
+
+.moreInfo {
+    color: #808080;
+    font-size: 12px;
+    background: url("&dtml-portal_url;/gray_bullet.png") no-repeat 0 5px;
+    padding-left: 7px;
+    text-transform: lowercase;
+}
+
+/* faculty detail */
+.template-faculty_detail #portal-column-two {
+    overflow: hidden;
+}
+
+.template-faculty_detail #portal-column-two .visualPadding {
+    background-color: #E2DED5;
+    padding-bottom: 9999999px;
+    margin-bottom: -9999999px;
+}
+
+#content .facultyTitles {
+    font-size: 15px;
+    margin: 0;
+}
+
+.facultyContact {
+    margin: 15px 0;
+    border-color: &dtml-primaryColor;;
+    border-width: 1px 0;
+    border-style: solid;
+    padding: 3px 0;
+    text-align: center;
+}
+
+.facultyContact a {
+    float: left;
+}
+
+.facultyContact .address {
+    float: right;
+}
+
+.viewButton {
+    background-color: #e2ded5;
+    text-align: center;
+    width: 48%;
+    margin: 15px 5px 15px 0;
+    float: left;
+    padding: 4px 0;
+}
+
+.viewButton a {
+    background: url("&dtml-portal_url;/red_arrow.gif") no-repeat right center;
+    padding-right: 15px;
+}
+
+.title {
+    font-style: italic;
+}
+
+/* Publications */
+
+#publicationAuthor {
+    border-top: solid 1px #A44A26;
+    border-bottom: solid 1px #A44A26;
+    padding: 5px 0;
+    margin: 5px 0 20px 0;
+    text-align: center;
+}
+#publicationAuthorEmail {
+    float: left;
+}
+#publicationAuthorAddress {
+    float: right;
+}
+.publicationLeftColumn {
+    float: left;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.bookDisplay,
+.articleDisplay {
+    float: right;
+    width: 80%;
+    margin: 5px 0;
+}
+.publicationTitle {
+    font-style: italic;
+}
+.publicationDetails {
+    color: #666666;
+    font-size: 13px;
+}
+#bookSection,
+#articleSection {
+    margin: 15px 0;
+}
+
+/* </dtml-with> */
