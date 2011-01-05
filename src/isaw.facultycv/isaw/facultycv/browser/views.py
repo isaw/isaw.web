@@ -7,6 +7,9 @@ import ho.pisa as pisa
 class CvView(BrowserView):
     pass
 
+class ProfileView(BrowserView):
+    pass 
+
 class PdfView(BrowserView):
     """ pdf view"""
 

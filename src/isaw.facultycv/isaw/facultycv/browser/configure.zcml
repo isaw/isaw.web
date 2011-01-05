@@ -11,19 +11,26 @@
     />
 
   <browser:page
-  	for="*"
-	name="profile_view"
-	permission="zope2.View"
-	class=".views.CvView"
-	template="cv-view.pt"
+    for="*"
+    name="profile_view"
+    permission="zope2.View"
+    class=".views.CvView"
+    template="faculty_cv.pt"
 	/>
 
+  <browser:page
+    for="*"
+    name="faculty_detail"
+    permission="zope2.View"
+    class=".views.ProfileView"
+    template="faculty_detail.pt"
+    />
 
   <browser:page
-  	for="*"
-	name="pdf_view"
-	permission="zope2.View"
-	class=".views.PdfView"
+    for="*"
+    name="pdf_view"
+    permission="zope2.View"
+    class=".views.PdfView"
 	/>
 
 </configure>

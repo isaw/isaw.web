@@ -19,7 +19,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 				  'big': (600,600) },
 		widget = atapi.ImageWidget(
 			label = u'Profile Image',
-			label_msgid='FacultyC_label_ProfileImage',
+			label_msgid='isaw.facultycv_label_ProfileImage',
 			il8n_domain='isaw.facultycv',
 			),
 
@@ -28,10 +28,71 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 	),
 
+    atapi.ReferenceField(
+        name = 'ProfileRef',
+
+        widget = atapi.ReferenceWidget(
+            label = u'Profile reference',
+        ),  
+        relationship = 'owned_profile',
+        multiValued=False,
+    ),  
+
+	atapi.TextField(
+		name = 'Titles',
+		widget = atapi.RichWidget(
+			label=u'Faculty Titles',
+			label_msgid='isaw.facultycv_label_Titles',
+			il8n_domain='isaw.facultycv',
+			),
+		
+		required = False,
+		searchable = True
+	),
+
+    atapi.StringField(
+        name = 'Phone',
+        widget = atapi.StringWidget(
+            label=u'Phone',
+            label_msgid='isaw.facultycv_label_Phone',
+            il8n_domain='isaw.facultycv',
+            ),
+
+        required = False,
+        searchable = True
+
+    ),
+
+    atapi.StringField(
+        name = 'Email',
+        widget = atapi.StringWidget(
+            label=u'Email',
+            label_msgid='isaw.facultycv_label_Email',
+            il8n_domain='isaw.facultycv',
+            ),
+
+        required = False,
+        searchable = True
+
+    ),
+
+    atapi.StringField(
+        name = 'Address',
+        widget = atapi.StringWidget(
+            label=u'Address Information',
+            label_msgid='isaw.facultycv_label_Address',
+            il8n_domain='isaw.facultycv',
+            ),
+
+        required = False,
+        searchable = True
+
+    ),
+
 	atapi.TextField(
 		name = 'Profile Blurb',
 		widget = atapi.RichWidget(
-			label=u'Short Profile Blurb',
+			label=u'Profile Blurb',
 			label_msgid='isaw.facultycv_label_Profile',
 			il8n_domain='isaw.facultycv',
 			),
@@ -50,10 +111,12 @@ profileSchema['description'].storage = atapi.AnnotationStorage()
 # Description is null, realistically it's not needed but I may add some default stock
 # in the future
 
-profileSchema['title'].required = 0
-profileSchema['title'].widget.visible = {"edit": "invisible",
-										 "view": "invisible"}
+#profileSchema['title'].required = 0
+#profileSchema['title'].widget.visible = {"edit": "invisible",
+#										 "view": "invisible"}
 profileSchema['description'].widget.visible = {"edit": "invisible"}
+profileSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
+
 
 schemata.finalizeATCTSchema(
     profileSchema,

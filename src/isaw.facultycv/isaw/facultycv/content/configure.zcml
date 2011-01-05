@@ -19,7 +19,7 @@
   </class>
 
   <subscriber
-    for="..interfaces.ICV
+    for="..interfaces.Iprofile
     Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".actions.initial_setup" />
 

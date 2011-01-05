@@ -2,12 +2,12 @@ from Products.CMFCore.utils import getToolByName
 
 def initial_setup(obj, event):
     # Create profile for initial CV
-    obj.invokeFactory("profile", id="profile", title="profile")
+    obj.invokeFactory("CV", id="cv", title="Curriculum Vitae")
 
     # Set the reference of profile to the CV
-    print "Setting reference to profile" 
-    profile = obj['profile']
-    uid = profile.UID()
+    print "Setting reference to CV" 
+    cv = obj['cv']
+    uid = cv.UID()
     print "UID OF profile folder " + uid
     obj.setProfileRef(uid)
 
