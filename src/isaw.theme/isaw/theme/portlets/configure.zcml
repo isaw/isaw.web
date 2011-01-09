@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+    <include package="plone.app.portlets" />
+
+    <plone:portlet
+        name="isaw.theme.exhibit"
+        interface=".exhibit.IExhibitPortlet"
+        assignment=".exhibit.Assignment"
+        renderer=".exhibit.Renderer"
+        addview=".exhibit.AddForm"
+        editview=".exhibit.EditForm"
+        />
+
+</configure>

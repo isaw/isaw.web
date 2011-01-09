@@ -32,6 +32,13 @@ class UtilsView(BrowserView):
                                    sort_on='start',
                                    review_state='published')[:limit]
 
+    def getNewsItems(self, limit=3):
+        """Grabbing latests news stuff for the news landing page"""
+        return self.portal_catalog(portal_type='News Item',
+                                   sort_on='Date',
+                                   sort_order='descending',
+                                   review_state='published')[:limit]
+
     def getMonthName(self, month, full=None):
         """ Translates a month int into a short name """
         month_list = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL',

@@ -31,11 +31,17 @@ isaw/theme/browser/template-overrides/webcouturier.dropdownmenu.browser.dropdown
 isaw/theme/browser/viewlets/__init__.py
 isaw/theme/browser/viewlets/addthis.pt
 isaw/theme/browser/viewlets/social.pt
+isaw/theme/portlets/.configure.zcml.swp
+isaw/theme/portlets/__init__.py
+isaw/theme/portlets/configure.zcml
+isaw/theme/portlets/exhibit.pt
+isaw/theme/portlets/exhibit.py
 isaw/theme/profiles/default/actions.xml
 isaw/theme/profiles/default/cssregistry.xml
 isaw/theme/profiles/default/isaw.theme_default.txt
 isaw/theme/profiles/default/jsregistry.xml
 isaw/theme/profiles/default/metadata.xml
+isaw/theme/profiles/default/portlets.xml
 isaw/theme/profiles/default/propertiestool.xml
 isaw/theme/profiles/default/skins.xml
 isaw/theme/profiles/default/tinymce.xml

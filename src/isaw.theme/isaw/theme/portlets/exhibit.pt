@@ -1,0 +1,23 @@
+<dl class="portlet portletExhibition"
+    il8n:domain="isaw.theme">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+            <!-- Exhibitions -->
+        <span class="portletTopRight"></span>
+    </dt>
+
+
+    <div class="portletItem">
+        <img class="ceImage" tal:replace="structure view/image" />
+        <div class="ceTitle" tal:content="view/title" />
+        <div class="ceDescrip" tal:content="view/description" />
+    </div>
+
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+
+

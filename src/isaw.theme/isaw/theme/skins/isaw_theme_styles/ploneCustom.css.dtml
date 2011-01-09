@@ -504,7 +504,7 @@ body {
 }
 
 .homeEvent {
-    width: 165px;
+    width: 345px;
     padding-right: 10px;
     font-size: 12px;
     float: left;

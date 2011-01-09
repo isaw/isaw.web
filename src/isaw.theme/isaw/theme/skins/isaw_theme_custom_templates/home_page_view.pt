@@ -36,11 +36,16 @@
         
             <!-- Current Exhibit -->
             <div id="home-right">
+            <!--
                 <div class="ceTitle">Couple in front of a Portal</div>
                 <div class="ceDescrip">Grey schist</div>
                 <p>Butkara I, second half of the first century AD<br />
                 Swat Museum, Saidu Sharif, <br />
                 inv. # B283</p>
+            -->
+                     <metal:portlets define-slot="portlets_two_slot">
+                       <tal:block replace="structure provider:plone.rightcolumn" />
+                     </metal:portlets>
             </div>
             
             <!-- events -->
@@ -57,7 +62,7 @@
                         <tal:speaker condition="event/speaker">
                             <span class="Speaker" tal:content="event/speaker" />:
                         </tal:speaker>
-                        <span tal:replace="event/Description" />
+                        <span tal:define="words python:event.Description.split(' ')" tal:replace="structure python:' '.join(words[:49]) + ' ... '" />
                         <p>
                             <span class="eventTime" tal:content="python:DateTime(event.start).strftime('%l:%M %p')" /><span tal:condition="event/location">,</span>
                             <span class="eventLocation" tal:content="event/location" />
@@ -67,18 +72,25 @@
             </div>
         
             <!-- news -->
-            <div id="home-news">
+            <div id="home-news"
+                 tal:define="utils_view context/@@utils_view;
+                             news utils_view/getNewsItems"
+                 tal:condition="news">
                 <h2>Latest News</h2>
-                <h4><a href="#">New Faculty: Lillian Tseng</a></h4>
-                <p>The Institute for the Study of the Ancient World at New York University is pleased to announce the appointment of Lillian Tseng as Associate Professor of East Asian Art and Archaeology.</p>
-
-                <h4><a href="#">New Faculty: Soeren Stark</a></h4>
-                <p>The Institute for the Study of the Ancient World at New York University is pleased to announce the appointment of SÃren Stark as Assistant Professor of Central Asian Art and Archaeology.</p>
-
-                <h4><a href="#">Grant Award from the National Endowment for the Humanities</a></h4>
-                <p>The Institute for the Study of the Ancient World is pleased to announce an award the National Endowment for the Humanities.</p>
+                <tal:newsitems>
+                    <div clas="homeNews" tal:repeat="item news">
+                        <h4><a tal:attributes="href item/getURL;
+                                               title item/Description">
+                            <span tal:replace="item/pretty_title_or_id">News Title</span></a></h4>
+                            <p>
+                            <span tal:define="object item/getObject;
+                                             text object/Description"
+                                  tal:replace="text">News Summary</span>
+                            </p>
+                    </div>
+                </tal:newsitems>
             </div>
-        </div>
+            </div>
         
         <div class="visualClear"><!-- --></div>
         

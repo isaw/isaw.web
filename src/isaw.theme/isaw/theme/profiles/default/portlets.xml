@@ -1,0 +1,12 @@
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="isaw.theme.exhibit"
+   title="Exhibitions"
+   description="A portlet which modifies the exhibitions frontpage portlet"
+   />
+
+</portlets>
+
