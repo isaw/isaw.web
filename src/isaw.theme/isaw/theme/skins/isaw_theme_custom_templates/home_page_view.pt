@@ -85,7 +85,7 @@
                             <p>
                             <span tal:define="object item/getObject;
                                              summary python:object.getText(mimetype = 'text/x-web-intelligent');
-                                             words python:summary.partition('.')"
+                                             words python:summary.partition('\n')"
                                   tal:replace="structure python:words[0] + words[1]">News Summary</span>
                             </p>
                     </div>
