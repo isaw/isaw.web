@@ -84,8 +84,9 @@
                             <span tal:replace="item/pretty_title_or_id">News Title</span></a></h4>
                             <p>
                             <span tal:define="object item/getObject;
-                                             text object/Description"
-                                  tal:replace="text">News Summary</span>
+                                             summary python:object.getText(mimetype = 'text/x-web-intelligent');
+                                             words python:summary.partition('.')"
+                                  tal:replace="structure python:words[0] + words[1]">News Summary</span>
                             </p>
                     </div>
                 </tal:newsitems>
