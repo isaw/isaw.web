@@ -21,13 +21,11 @@ isaw/events/browser/browser.py
 isaw/events/browser/configure.zcml
 isaw/events/browser/eventrsvp.py
 isaw/events/browser/icons/event.png
-isaw/events/browser/templates/.event_detail.pt.swp
 isaw/events/browser/templates/event_detail.pt
 isaw/events/browser/templates/event_main.pt
 isaw/events/browser/templates/event_main.pt.metadata
 isaw/events/browser/templates/hcal-view.pt
 isaw/events/browser/templates/rdf-view.pt
-isaw/events/content/.actions.py.swp
 isaw/events/content/__init__.py
 isaw/events/content/actions.py
 isaw/events/content/conference.py
@@ -42,6 +40,7 @@ isaw/events/content/images/appointment-new.png
 isaw/events/interfaces/__init__.py
 isaw/events/interfaces/conference.py
 isaw/events/interfaces/exhibition.py
+isaw/events/interfaces/folderview.py
 isaw/events/interfaces/general.py
 isaw/events/interfaces/lecture.py
 isaw/events/interfaces/performance.py

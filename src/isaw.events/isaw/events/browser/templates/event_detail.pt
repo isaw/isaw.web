@@ -11,7 +11,9 @@
 </head>
 
 <body>
+
 <metal:block fill-slot="content-title" />
+<metal:block fill-slot="content-description" />
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         
@@ -29,9 +31,11 @@
         <div class="eventType" tal:content="context/meta_type">Visiting Research Scholar Lecture</div>
         <div class="eventSpeaker" tal:content="context/event_Speaker | nothing">Arlo Griffiths, French School of Asian Studies</div>
         
+        <div class="eventDescription" tal:content="context/Description" />
+
         <div class="eventBody">
             <!-- the image area may change depending on implementation -->
-            <dl class="captioned">
+            <dl class="captioned" tal:condition="context/event_Image | nothing">
                 <img tal:attributes="src context/event_Image/absolute_url | nothing; width string:400" alt="image title" />
                 <div tal:content="context/event_Image_caption">"The Thinker" from Cernavoda and female figurine. Fired clay, Hamangia, Cernavod.
                 Dated 5,000 - 4,600 bc, MNIR</div>

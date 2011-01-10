@@ -37,7 +37,15 @@
 
     <browser:page
         for="..interfaces.general.IGeneral"
-        name="event_main"
+        name="event_detail"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.lecture.ILecture"
+        name="event_detail"
         class=".browser.EventMainView"
         template="templates/event_detail.pt"
         permission="zope2.View"
