@@ -9,9 +9,6 @@ from Products.ATContentTypes.content import schemata
 from Products.Archetypes.public import DisplayList
 from Products.ATContentTypes.lib.calendarsupport import CalendarSupportMixin
 
-#from Products.DynamicSelect.DynamicSelectWidget import DynamicSelectWidget
-
-
 from isaw.events import IsawEventMessageFactory as _
 from isaw.events.interfaces import IGeneral
 from isaw.events.config import PROJECTNAME

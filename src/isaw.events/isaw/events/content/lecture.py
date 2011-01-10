@@ -12,6 +12,7 @@ from Products.ATContentTypes.content import schemata
 from isaw.events.content import general
 from isaw.events.interfaces import ILecture
 from isaw.events.config import PROJECTNAME
+from Products.ATContentTypes.lib.calendarsupport import CalendarSupportMixin
 
 LectureSchema = general.GeneralSchema.copy() + atapi.Schema((
 
@@ -84,11 +85,11 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
 finalizeATCTSchema(LectureSchema, moveDiscussion=False)
 
 
-class Lecture(folder.ATFolder):
+class Lecture(folder.ATFolder, CalendarSupportMixin):
     """Lecture Event"""
     implements(ILecture)
 
-    meta_type = "Lecture"
+    meta_type = "Lecture Event"
     schema = LectureSchema
 
     title = atapi.ATFieldProperty('title')
