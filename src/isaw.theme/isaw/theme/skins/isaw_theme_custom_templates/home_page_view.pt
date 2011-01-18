@@ -5,6 +5,7 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
+
 <head>
   <metal:block fill-slot="top_slot"
                tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
@@ -12,12 +13,9 @@
 </head>
 
 <body>
-    
 <metal:block fill-slot="content-title" />
-    
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-        
         <div id="home-left">
             <metal:field use-macro="python:context.widget('text', mode='view')">
                 Body text
@@ -25,30 +23,33 @@
         </div>
         
         <div id="home-center">
-            
             <!-- Featured Exhibit -->
-            <h3>The Art of Gandhara: Cultural Interactions in Ancient Pakistan</h3>
+            <!--
+            <h2>The Art of Gandhara: Cultural Interactions in Ancient Pakistan</h2>
             <div class="featuredDate">February 8 - May 15 2011</div>
             <p class="featuredDescrip">
                 In partnership with the Asia Society Museum, this exhibition brings to New York City for the first time more than 200 objects that tell the story of the rich culture of Gandhara (1st - 5th centuries AD), located in present-day northern Pakistan and eastern Afghanistan. This crossroads region served as a gateway through which immigrants, traders, and conquerors traveled into India and central Asia, and its population interacted with a truly international amalgam of peoples and cultures from the Scythians to the Parthians, Romans, and Kushans.
             </p>
-            <a href="#" class="featuredLink">visit this exhibit&gt;</a>
-        
-            <!-- Current Exhibit -->
-            <div id="home-right">
-            <!--
-                <div class="ceTitle">Couple in front of a Portal</div>
-                <div class="ceDescrip">Grey schist</div>
-                <p>Butkara I, second half of the first century AD<br />
-                Swat Museum, Saidu Sharif, <br />
-                inv. # B283</p>
             -->
+            <div class="featured" tal:define="utils_view context/@@utils_view;
+                                              featured utils_view/getFeatured" 
+                                tal:content="structure featured"/>
+            <!--
+            <a href="#" class="featuredLink">visit this exhibit&gt;</a>
+            -->
+        
+            <!-- Featured Portlet -->
+            <div class="home-right">
                      <metal:portlets define-slot="portlets_two_slot">
                        <tal:block replace="structure provider:plone.rightcolumn" />
                      </metal:portlets>
             </div>
-            
+            <!-- animation -->            
+            <div class="scrollable">
+
+            <div class="items">
             <!-- events -->
+            <div> <!-- scrollable item 1 -->
             <div id="home-events"
                  tal:define="utils_view context/@@utils_view;
                          events utils_view/getUpcomingEvents"
@@ -62,7 +63,8 @@
                         <tal:speaker condition="event/speaker">
                             <span class="Speaker" tal:content="event/speaker" />:
                         </tal:speaker>
-                        <span tal:define="words python:event.Description.split(' ')" tal:replace="structure python:' '.join(words[:49]) + ' ... '" />
+                        <span tal:define="words python:event.Description.split(' ')"
+                              tal:replace="structure python:' '.join(words[:49]) + ' ... '" />
                         <p>
                             <span class="eventTime" tal:content="python:DateTime(event.start).strftime('%l:%M %p')" /><span tal:condition="event/location">,</span>
                             <span class="eventLocation" tal:content="event/location" />
@@ -70,8 +72,10 @@
                     </div>
                 </tal:events>
             </div>
-        
+            </div> <!-- scrollable item 1 --> 
+
             <!-- news -->
+            <div> <!-- scrollable item 2 -->
             <div id="home-news"
                  tal:define="utils_view context/@@utils_view;
                              news utils_view/getNewsItems"
@@ -91,13 +95,14 @@
                     </div>
                 </tal:newsitems>
             </div>
-            </div>
-        
-        <div class="visualClear"><!-- --></div>
-        
+            </div> <!-- scrollable item 2 -->
+
+        </div> <!-- items -->        
+        </div> <!-- scrollable -->
+        </div> <!-- content core -->
+       <div class="visualClear"><!-- --></div>
     </metal:content-core>
 </metal:content-core>
 
 </body>
 </html>
-

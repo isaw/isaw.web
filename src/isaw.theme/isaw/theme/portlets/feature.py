@@ -8,25 +8,30 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone import PloneMessageFactory as _
 from isaw.theme.portlets.widget import ImageWidget
 
-class IExhibitPortlet(IPortletDataProvider):
+class IFeaturedPortlet(IPortletDataProvider):
 
     image = schema.Field(
-            title=_(u'Exhibit Image'),
-            description=_(u'A small image from the featured exhibition'),
+            title=_(u'Featured Image'),
+            description=_(u'A small image from the current feature'),
             required=False)
 
-    exhibit_title = schema.TextLine(
-            title=_(u'Title of Current Exhibit'),
-            description=_(u'Title to appear on the front page about current exhibit.'),
+    featured_title = schema.TextLine(
+            title=_(u'Title of Current Feature'),
+            description=_(u'Title to appear on the front page about current feature.'),
             required=False)
             
-    exhibit_description = schema.Text(
-            title=_(u'Description of Current Exhibit'),
-            description=_(u'Description of current exhibit as it will appear on the front page.'),
+    featured_description = schema.Text(
+            title=_(u'Description of Current Feature'),
+            description=_(u'Description of current feature as it will appear on the front page.'),
+            required=False)
+
+    featured_lefttext = schema.TextLine(
+            title=_(u'The text that appears to the left of this portlet'),
+            description=_(u'Text to appear on the left'),
             required=False)
 
 class Assignment(base.Assignment):
-    implements(IExhibitPortlet)
+    implements(IFeaturedPortlet)
 
     header = u''
     image = None
@@ -34,14 +39,16 @@ class Assignment(base.Assignment):
 
     def __init__(self,
                  image=None, 
-                 exhibit_title=None,
-                 exhibit_description=None,
+                 featured_title=None,
+                 featured_description=None,
+                 featured_lefttext=None,
                  header=None,
                  assignment_context_path=None):
 
         self.image = image
-        self.exhibit_title = exhibit_title
-        self.exhibit_description = exhibit_description
+        self.featured_title = featured_title
+        self.featured_description = featured_description
+        self.featured_lefttext = featured_lefttext
         self.header = header
         self.assignment_context_path = assignment_context_path
 
@@ -50,17 +57,20 @@ class Assignment(base.Assignment):
         if self.header:
             return self.header
         else:
-            return _(u"Exhibit Portlet")
+            return _(u"Feature Portlet")
 
 class Renderer(base.Renderer):
 
-    render = ViewPageTemplateFile('exhibit.pt')
+    render = ViewPageTemplateFile('feature.pt')
 
     def title(self):
-        return self.data.exhibit_title
+        return self.data.featured_title
 
     def description(self):
-        return self.data.exhibit_description
+        return self.data.featured_description
+
+    def lefttext(self):
+        return self.data.featured_lefttext
 
     def image(self):
         if self.data.image:
@@ -77,14 +87,13 @@ class Renderer(base.Renderer):
                  self.data.__name__,
                  str(width),
                  str(height),
-                 self.data.exhibit_description)
+                 self.data.featured_description)
         return None
 
 class AddForm(base.AddForm):
-    form_fields = form.Fields(IExhibitPortlet)
+    form_fields = form.Fields(IFeaturedPortlet)
     form_fields['image'].custom_widget = ImageWidget
-    label = _(u"Add Exhibitions Portlet")
-#    description = _(u"This portlet displays exhibition frontpage copy")
+    label = _(u"Add Featured Portlet")
 
     def create(self, data):
         #assignment_context_path = \
@@ -93,7 +102,7 @@ class AddForm(base.AddForm):
 
 class EditForm(base.EditForm):
     
-    form_fields = form.Fields(IExhibitPortlet)
+    form_fields = form.Fields(IFeaturedPortlet)
     form_fields['image'].custom_widget = ImageWidget
-    description = _(u"This portlet displays exhibition front page copy.")
+    description = _(u"This portlet displays featured front page copy.")
 

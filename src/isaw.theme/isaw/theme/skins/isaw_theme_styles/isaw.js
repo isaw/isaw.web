@@ -15,6 +15,13 @@ jq(document).ready(function(){
 
 
 jq(window).load(function(){
+    // initialize scrollable
+    $(function(){ 
+        $(".scrollable").scrollable({circular: true}).autoscroll({interval: 10000});;
+    });
+});
+
+jq(window).load(function(){
     // set width on image <dl>s to be set at the width of the image
     // to keep caption from pushing out the width
     capnum = jq("dl.captioned").length;

@@ -3,9 +3,9 @@
  <!-- Portlet type registrations -->
 
  <portlet
-   addview="isaw.theme.exhibit"
-   title="Exhibitions"
-   description="A portlet which modifies the exhibitions frontpage portlet"
+   addview="isaw.theme.feature"
+   title="Featured"
+   description="A portlet which modifies the feature on the front page"
    />
 
 </portlets>

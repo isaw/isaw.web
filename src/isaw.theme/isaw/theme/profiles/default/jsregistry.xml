@@ -3,4 +3,7 @@
     <javascript authenticated="False" cacheable="True" compression="safe"
        conditionalcomment="" cookable="True" enabled="on" expression=""
        id="isaw.js" inline="False"/>
+    <javascript authenticated="False" cacheable="True" compression="safe"
+      conditionalcomment="" cookable="True" enabled="on" expression=""
+      id="jquery.tools.min.js" inline="False"/>
 </object>

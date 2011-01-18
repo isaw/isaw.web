@@ -19,17 +19,19 @@
     <h1 class="documentFirstHeading"
         i18n:translate="label_site_map">Site map</h1>
 
-    <!--div class="documentDescription" i18n:translate="description_site_map">
+    <div class="documentDescription" i18n:translate="description_site_map">
         An overview of the available content on this site. Keep the pointer still
         over an item for a few seconds to get its description.
-    </div-->
+    </div>
 
     <div id="content-core">
         <ul id="portal-sitemap"
             class="navTreeLevel0 visualNoMarker"
             tal:define="view context/@@sitemap_view;
                         utils_view context/@@utils_view;">
-            <tal:sitemap replace="structure python:utils_view.formatSiteMap(view.createSiteMap())" />
+<!--            <tal:sitemap replace="structure python:utils_view.formatSiteMap(view.createSiteMap())" />
+-->
+                <tal:sitemap replace="structure view/createSiteMap "/>
         </ul>
     </div>
 

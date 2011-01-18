@@ -271,7 +271,7 @@ body {
         border: none;
         background-color: #e6ccac;
         opacity: 0.9;
-        font-size: 11px;
+        font-size: 14px;
     }
     
     #portal-globalnav ul.submenu a,
@@ -422,7 +422,7 @@ body {
 
 #content .image-caption {
     margin: 0;
-    font-size: 11px;
+    font-size: 12px;
     color: #6e5b53;
     text-align: right;
 }
@@ -453,7 +453,7 @@ body {
 
 .learnMore {
     color: #808080;
-    font-size: 11px;
+    font-size: 12px;
     background: url(&dtml-portal_url;/gray_bullet.png) no-repeat 0 4px;
     padding-left: 8px;
 }
@@ -465,6 +465,15 @@ body {
 .learnMore,
 .learnMore a:hover {
     color: &dtml-linkHoverColor;;
+}
+
+.template-manage-portlets #above-content {
+    width: 310px;
+    border: none;
+}
+
+.template-manage-portlets #socialtools {
+    display: none;
 }
 
 /* HOMEPAGE */
@@ -500,19 +509,19 @@ body {
 
 #home-events,
 #home-news {
-    width: 350px;
+    width: 345px;
 }
 
 .homeEvent {
     width: 345px;
     padding-right: 10px;
-    font-size: 12px;
+    font-size: 14px;
     float: left;
 }
 
 .homeEvent p {
     font-size: &dtml-fontSmallSize;;
-    margin-top: 10px;
+    margin-top: 14px;
 }
 
 .homeEvent .speaker {
@@ -530,24 +539,41 @@ body {
 
 #home-news {
     padding-top: 20px;
-    font-size: 11px;
+    font-size: 14px;
     clear: left;
 }
 
-#home-right {
+.home-right {
     float: right;
     width: 180px;
     margin-top: 25px;
     padding-left: 20px;
     min-height: 107px;
-    background: url(&dtml-portal_url;/current_exhibit.png) no-repeat top left;
+    background: Text no-repeat top left;
     text-align: right;
-    font-size: 11px;
+    font-size: 14px;
     color: #6d6e70;
 }
 
+.home-right .annotation {
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -o-transform: rotate(270deg);
+    white-space:nowrap;
+    display:block;
+    font-family:'Arial', Helvetica, sans-serif;
+    font-size:20px;
+    font-weight:normal;
+    position: relative;
+    top: 65px;
+    left: -80px;
+    float: left;
+    color: #CDB08A;
+}
+
 .featuredDate {
-    font-size: 11px;
+    font-size: 12px;
     font-style: italic;
 }
 
@@ -566,7 +592,7 @@ body {
 
 .ceTitle {
     color: #42250d;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .ceDescrip {

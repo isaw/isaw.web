@@ -1150,4 +1150,27 @@ a.link-feed {
     float: none;
 }
 
+.scrollable {
+    position:relative;
+    overflow:hidden;
+    width: 340px;
+    height:380px;
+}
+
+.scrollable .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+}
+
+/*
+    a single item. must be floated in horizontal scrolling.
+    typically, this element is the one that *you* will style
+    the most.
+*/
+.items div {
+    float:left;
+    padding: 0px;
+}
+
 /* </dtml-with> */

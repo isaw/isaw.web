@@ -1,15 +1,19 @@
-<dl class="portlet portletExhibition"
+<span class="annotation" tal:content="view/lefttext">current exhibit</span>
+<dl class="portlet portletFeatured"
     il8n:domain="isaw.theme">
 
     <dt class="portletHeader">
         <span class="portletTopLeft"></span>
-            <!-- Exhibitions -->
+            <!-- Featured -->
         <span class="portletTopRight"></span>
     </dt>
 
 
     <div class="portletItem">
+        <!-- Temporarily disabled
         <img class="ceImage" tal:replace="structure view/image" />
+        -->
+        <img src="http://images-01.delcampe-static.net/img_large/auction/000/063/813/834_001.jpg" width="150" height="200"/>
         <div class="ceTitle" tal:content="view/title" />
         <div class="ceDescrip" tal:content="view/description" />
     </div>
@@ -19,5 +23,3 @@
         <span class="portletBottomRight"></span>
     </dd>
 </dl>
-
-

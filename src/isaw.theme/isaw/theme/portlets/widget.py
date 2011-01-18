@@ -29,4 +29,3 @@ class ImageWidget(FileWidget):
                 or
                 (self.name in self.request.form)
                 ) and not self.request.form.get(self.name+".nochange", '')
-

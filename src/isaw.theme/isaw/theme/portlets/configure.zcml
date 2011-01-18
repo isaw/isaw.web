@@ -6,12 +6,12 @@
     <include package="plone.app.portlets" />
 
     <plone:portlet
-        name="isaw.theme.exhibit"
-        interface=".exhibit.IExhibitPortlet"
-        assignment=".exhibit.Assignment"
-        renderer=".exhibit.Renderer"
-        addview=".exhibit.AddForm"
-        editview=".exhibit.EditForm"
+        name="isaw.theme.feature"
+        interface=".feature.IFeaturedPortlet"
+        assignment=".feature.Assignment"
+        renderer=".feature.Renderer"
+        addview=".feature.AddForm"
+        editview=".feature.EditForm"
         />
 
 </configure>

@@ -17,6 +17,7 @@ class UtilsView(BrowserView):
         self.context = context
         self.request = request
         self.portal_catalog = getToolByName(context, 'portal_catalog')
+        self.portal_root = getToolByName(context, 'portal_url')
 
     def getUpcomingEvents(self, limit=2):
         """Grabbing latests news stuff for the news landing page"""
@@ -39,6 +40,13 @@ class UtilsView(BrowserView):
                                    sort_order='descending',
                                    review_state='published')[:limit]
 
+    def getFeatured(self):
+        """Grab the featured page object"""
+        root = self.portal_root.getPortalObject()
+        featured = getattr(root, "featured")
+        body = featured.CookedBody()
+        return body
+ 
     def getMonthName(self, month, full=None):
         """ Translates a month int into a short name """
         month_list = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL',
