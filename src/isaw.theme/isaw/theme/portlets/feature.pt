@@ -1,4 +1,4 @@
-<span class="annotation" tal:content="view/lefttext">current exhibit</span>
+<span class="annotation" tal:content="view/lefttext">next exhibit</span>
 <dl class="portlet portletFeatured"
     il8n:domain="isaw.theme">
 
@@ -10,10 +10,10 @@
 
 
     <div class="portletItem">
-        <!-- Temporarily disabled
-        <img class="ceImage" tal:replace="structure view/image" />
+        <img class="ceImage" width="150" height="150" tal:replace="structure view/image_tag" />
+        <!--
+        <img src="http://72.5.117.144/fif=fpx/sc2/SC2272.fpx&obj=iip,1.0&wid=400&cvt=jpeg" width="150" height="150"/>
         -->
-        <img src="http://images-01.delcampe-static.net/img_large/auction/000/063/813/834_001.jpg" width="150" height="200"/>
         <div class="ceTitle" tal:content="view/title" />
         <div class="ceDescrip" tal:content="view/description" />
     </div>

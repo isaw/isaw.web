@@ -270,7 +270,7 @@ body {
         margin: -24px 0 0 129px !important;
         border: none;
         background-color: #e6ccac;
-        opacity: 0.9;
+        /* opacity: 0.9; */
         font-size: 14px;
     }
     
@@ -509,12 +509,14 @@ body {
 
 #home-events,
 #home-news {
-    width: 345px;
+    width: 340px;
+    height: 390px;
+    padding-top: 21px;
 }
 
 .homeEvent {
-    width: 345px;
-    padding-right: 10px;
+    width: 340px;
+    padding-right: 40px;
     font-size: 14px;
     float: left;
 }
@@ -538,16 +540,15 @@ body {
 }
 
 #home-news {
-    padding-top: 20px;
     font-size: 14px;
     clear: left;
 }
 
 .home-right {
     float: right;
-    width: 180px;
+    width: 165px;
     margin-top: 25px;
-    padding-left: 20px;
+    padding-left: 5px;
     min-height: 107px;
     background: Text no-repeat top left;
     text-align: right;
@@ -566,8 +567,8 @@ body {
     font-size:20px;
     font-weight:normal;
     position: relative;
-    top: 65px;
-    left: -80px;
+    top: 45px;
+    left: -65px;
     float: left;
     color: #CDB08A;
 }

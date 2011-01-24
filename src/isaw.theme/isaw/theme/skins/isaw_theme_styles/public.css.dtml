@@ -1154,7 +1154,7 @@ a.link-feed {
     position:relative;
     overflow:hidden;
     width: 340px;
-    height:380px;
+    height:390px;
 }
 
 .scrollable .items {
@@ -1170,7 +1170,6 @@ a.link-feed {
 */
 .items div {
     float:left;
-    padding: 0px;
 }
 
 /* </dtml-with> */

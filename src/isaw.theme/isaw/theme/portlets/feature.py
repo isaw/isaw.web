@@ -72,21 +72,21 @@ class Renderer(base.Renderer):
     def lefttext(self):
         return self.data.featured_lefttext
 
-    def image(self):
+    @property
+    def image_tag(self):
         if self.data.image:
             state=getMultiAdapter((self.context, self.request),
                                name="plone_portal_state")
             portal=state.portal()
-            assignment_url = \
-                 portal.unrestrictedTraverse(
-              self.data.assignment_context_path).absolute_url()
+            #assignment_url = \
+            #     portal.unrestrictedTraverse(
+            #  self.data.assignment_context_path).absolute_url()
+            assignment_url = "isaw/++contextportlets++plone.rightcolumn"
             width = self.data.image.width
             height = self.data.image.height
-            return "<img src='%s/%s/@@image' width='%s' height='%s' alt='%s'/>" % \
+            return "<img src='%s/%s/@@image' width='150' height='150' alt='%s'/>" % \
                  (assignment_url,
                  self.data.__name__,
-                 str(width),
-                 str(height),
                  self.data.featured_description)
         return None
 
@@ -96,13 +96,12 @@ class AddForm(base.AddForm):
     label = _(u"Add Featured Portlet")
 
     def create(self, data):
-        #assignment_context_path = \
-        #            '/'.join(self.context.__parent__.getPhysicalPath())
-        return Assignment(**data)
+        assignment_context_path = \
+                    '/'.join(self.context.__parent__.getPhysicalPath())
+        return Assignment(assignment_context_path=assignment_context_path, **data)
 
 class EditForm(base.EditForm):
     
     form_fields = form.Fields(IFeaturedPortlet)
     form_fields['image'].custom_widget = ImageWidget
     description = _(u"This portlet displays featured front page copy.")
-

@@ -31,14 +31,14 @@ class UtilsView(BrowserView):
                                                 'Sponsored'],
                                    end={'query': DateTime(), 'range': 'min'},
                                    sort_on='start',
-                                   review_state='published')[:limit]
+                                   review_state='external')[:limit]
 
     def getNewsItems(self, limit=3):
         """Grabbing latests news stuff for the news landing page"""
         return self.portal_catalog(portal_type='News Item',
                                    sort_on='Date',
                                    sort_order='descending',
-                                   review_state='published')[:limit]
+                                   review_state='external')[:limit]
 
     def getFeatured(self):
         """Grab the featured page object"""

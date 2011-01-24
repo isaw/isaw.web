@@ -54,7 +54,7 @@
                  tal:define="utils_view context/@@utils_view;
                          events utils_view/getUpcomingEvents"
                  tal:condition="events">
-                <h2>Upcoming Events</h2>
+                <a href="events"><h2>Upcoming Events</h2></a>
                 <tal:events>
                     <div class="homeEvent" tal:repeat="event events">
                         <h4><a class="eventTitle" tal:attributes="href event/getURL">
@@ -73,14 +73,13 @@
                 </tal:events>
             </div>
             </div> <!-- scrollable item 1 --> 
-
             <!-- news -->
             <div> <!-- scrollable item 2 -->
             <div id="home-news"
                  tal:define="utils_view context/@@utils_view;
                              news utils_view/getNewsItems"
                  tal:condition="news">
-                <h2>Latest News</h2>
+                <a href="about/news"><h2>Latest News</h2></a>
                 <tal:newsitems>
                     <div clas="homeNews" tal:repeat="item news">
                         <h4><a tal:attributes="href item/getURL;

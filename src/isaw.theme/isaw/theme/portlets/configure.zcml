@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone">
 
     <include package="plone.app.portlets" />
@@ -13,5 +14,13 @@
         addview=".feature.AddForm"
         editview=".feature.EditForm"
         />
+
+    <browser:page
+        for="*"
+        name="image"
+        class=".imageview.ImageView"
+        permission="zope.Public"
+        />
+
 
 </configure>
