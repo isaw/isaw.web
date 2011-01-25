@@ -31,6 +31,7 @@
                 In partnership with the Asia Society Museum, this exhibition brings to New York City for the first time more than 200 objects that tell the story of the rich culture of Gandhara (1st - 5th centuries AD), located in present-day northern Pakistan and eastern Afghanistan. This crossroads region served as a gateway through which immigrants, traders, and conquerors traveled into India and central Asia, and its population interacted with a truly international amalgam of peoples and cultures from the Scythians to the Parthians, Romans, and Kushans.
             </p>
             -->
+            <!-- For the H2 header  -->
             <div class="featured" tal:define="utils_view context/@@utils_view;
                                               featured utils_view/getFeatured" 
                                 tal:content="structure featured"/>
@@ -64,11 +65,12 @@
                             <span class="Speaker" tal:content="event/speaker" />:
                         </tal:speaker>
                         <span tal:define="words python:event.Description.split(' ')"
-                              tal:replace="structure python:' '.join(words[:49]) + ' ... '" />
+                              tal:replace="structure python:' '.join(words[:40]) + ' ... '" />
                         <p>
                             <span class="eventTime" tal:content="python:DateTime(event.start).strftime('%l:%M %p')" /><span tal:condition="event/location">,</span>
                             <span class="eventLocation" tal:content="event/location" />
                         </p>
+                        <br />
                     </div>
                 </tal:events>
             </div>
@@ -91,6 +93,7 @@
                                              words python:summary.partition('\n')"
                                   tal:replace="structure python:words[0] + words[1]">News Summary</span>
                             </p>
+                        <br />
                     </div>
                 </tal:newsitems>
             </div>

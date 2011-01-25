@@ -82,6 +82,13 @@ td {
     vertical-align: top;
 }
 
+/* Featured */
+.featured h2 {
+    font-size: 18px;
+    line-height: 14px;
+    padding-bottom: 10px; 
+
+}
 /* Invisibles */
 .hiddenStructure {
     display: none;
@@ -314,7 +321,9 @@ body#content {
 #content .documentFirstHeading {
     margin-top: 0;
 }
-#content p,
+#content p {
+    margin-right: 2em;
+}
 #content table,
 #content dl {
     margin-bottom: 1em;
@@ -329,11 +338,13 @@ body#content {
 #content ul {
     list-style-type: disc;
     margin-left: 2em;
+    margin-right: 2em;
 }
 #content ol,
 .portlet ol {
     list-style-type: decimal;
     margin-left: 2em;
+    margin-right: 2em;
 }
 #content li,
 .portlet li {

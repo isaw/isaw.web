@@ -28,7 +28,7 @@ body {
 
 #portal-columns {
     width: 911px;
-    margin: 6px 8px 0 1px;
+    margin: 3px 8px 0 1px;
 }
 
 #portal-column-content {
@@ -497,10 +497,17 @@ body {
     width: 176px;
 }
 
+#home-left p {
+    margin-right: 0px;
+}
 #home-center {
     width: 565px;
     margin-right: 5px;
     float: right;
+}
+
+#home-center p {
+    margin-right: 0px;
 }
 
 #home-center h4 a {
@@ -599,7 +606,6 @@ body {
 .ceDescrip {
     color: #404041;
 }
-
 
 /* </dtml-with> */
 
