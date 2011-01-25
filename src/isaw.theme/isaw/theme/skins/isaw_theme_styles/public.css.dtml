@@ -82,13 +82,6 @@ td {
     vertical-align: top;
 }
 
-/* Featured */
-.featured h2 {
-    font-size: 18px;
-    line-height: 14px;
-    padding-bottom: 10px; 
-
-}
 /* Invisibles */
 .hiddenStructure {
     display: none;
@@ -322,7 +315,10 @@ body#content {
     margin-top: 0;
 }
 #content p {
+    margin: 0px;
     margin-right: 2em;
+    margin-bottom: 1em;
+    margin-left: 0px;
 }
 #content table,
 #content dl {
@@ -425,6 +421,22 @@ body#content {
     font-weight: bold;
     width: 190px;
 }
+
+/* Featured */
+#featured h2 {
+    font-size: 18px;
+    line-height: 14px;
+    padding-bottom: 10px; 
+
+}
+
+#featured p {
+    margin-bottom: 0em;
+    margin-left: 0px;
+    margin-right: 2em;
+    margin-top: 0em;
+}
+
 
 /* DATA TABLES                                                               */
 

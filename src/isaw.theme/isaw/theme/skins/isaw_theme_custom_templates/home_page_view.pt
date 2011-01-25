@@ -32,7 +32,7 @@
             </p>
             -->
             <!-- For the H2 header  -->
-            <div class="featured" tal:define="utils_view context/@@utils_view;
+            <div id="featured" tal:define="utils_view context/@@utils_view;
                                               featured utils_view/getFeatured" 
                                 tal:content="structure featured"/>
             <!--
