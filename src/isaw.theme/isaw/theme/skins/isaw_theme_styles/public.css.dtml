@@ -29,7 +29,7 @@ body {
     color: &dtml-fontColor;;
 }
 body.largeText {
-    font-size: 125%;
+    font-size: 120%;
 }
 body.smallText {
     font-size: 85%;
@@ -883,6 +883,56 @@ div.error {
 #fieldset-openid-login .formControls input,
 #login-form .formControls input {
     margin-left: 0.25em;
+}
+
+/* EVENT REQUEST FORM */
+
+#form-widgets-rf_title{
+    width: 23em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-day{
+    width: 2em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-month{
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-year{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_eed-day{
+    width: 2em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_eed-month{
+    font-size: 120%;
+}
+
+#form-widgets-rf_eed-year{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_sponsor{
+    width: 23em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_start_time{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_end_time{
+    width: 2em;
+    font-size: 120%
 }
 
 /* TEMPLATES                                                                 */

@@ -6,6 +6,6 @@
         <a href="http://twitter.com/isawnyu">Twitter</a>
     </li>
     <li class="rss">
-        <a href="" tal:attributes="href string:${context/portal_url}/rss">RSS</a>
+        <a href="" tal:attributes="href string:${context/portal_url}/about/news/RSS">RSS</a>
     </li>
 </ul>
