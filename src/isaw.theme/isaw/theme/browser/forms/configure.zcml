@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="isaw.theme">
+
+  <!-- Events Request Form -->
+  <browser:page
+     name="events_request.htm"
+     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+     class=".eventrequest.RequestForm"
+     permission="zope2.View"
+     /> 
+
+</configure>
