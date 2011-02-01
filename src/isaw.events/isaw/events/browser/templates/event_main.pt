@@ -12,7 +12,8 @@
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         
-        <tal:foldercontents define="folderContents python:context.getFolderContents(batch=True, b_size=3)"> 
+        <tal:foldercontents define="
+            folderContents python:context.getFolderContents(contentFilter={'sort_order': 'descending'}, batch=True, b_size=3)"> 
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
