@@ -5,6 +5,7 @@
     i18n_domain="isaw.theme">
 
   <!-- Events Request Form -->
+  <!-- for="Products.CMFPlone.interfaces.IPloneSiteRoot" -->
   <browser:page
      name="events_request.htm"
      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
