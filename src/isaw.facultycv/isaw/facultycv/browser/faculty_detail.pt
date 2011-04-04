@@ -11,7 +11,8 @@
     
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-       
+        
+
         <!-- 
         <p class="facultyTitles">Professor of the History of the Exact Sciences in Antiquity</p>
         <p class="facultyTitles">Professor of Mathematics (Associated Faculty, Courant Institute)</p>
@@ -21,7 +22,7 @@
         <div class="facultyContact">
             <span class="address" tal:content="context/Address">15 E. 84th Street New York, NY 10028</span>
             <a tal:attributes="href string:mailto:${context/Email}" tal:content="string:${context/Email}" />
-            <span class="phone">212-922-7840</span>
+            <span class="phone" tal:content="string:${context/Phone}"></span>
             <div class="visualClear"><!-- --></div>
         </div>
        
@@ -39,6 +40,17 @@
         
         <h2>Recent Publications</h2>
         
+        <div class="facultyBlurb"> 
+            <span tal:define="pubs context/cv/Publications;
+                              strip python:pubs.strip()"
+                tal:repeat="spaced python:strip.split('\n', 5)"
+                tal:replace="structure spaced">
+            </span>
+           <!-- 
+            <tal:pubs tal:content="structure context/cv/Publications | string:No publications listed" /> 
+            -->
+        </div>
+        <!--
         <tal:pubs repeat="faculty python:'1','2','3','4','5','6'">
         
             <p>
@@ -46,12 +58,17 @@
                 (Am.Stud.Pap. 10, Toronto 1971) (with A.E. Samuel, A.K. Bowman and W.K. Hastings)
                 <a href="#">View Publication</a>
             </p>
-        
-        </tal:pubs>
-        
+       --> 
+
+            <div class="visualClear"><!-- --></div>
+
     </metal:content-core>
 </metal:content-core>
 
+<metal:rightcolumn fill-slot="portlets_two_slot">
+    <img height="140" width="124" class="facultyImage" tal:attributes="src context/Image/absolute_url | nothing" />
+    <tal:block replace="structure provider:plone.rightcolumn" />
+</metal:rightcolumn>
+
 </body>
 </html>
-
