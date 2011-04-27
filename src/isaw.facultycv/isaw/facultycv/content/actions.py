@@ -1,4 +1,10 @@
 from Products.CMFCore.utils import getToolByName
+from zope.component import getUtility, getMultiAdapter
+from zope.app.container.interfaces import INameChooser
+from plone.portlets.interfaces import IPortletAssignmentMapping
+from plone.portlets.interfaces import IPortletManager
+from collective.portlet.relateditems import relateditems
+
 
 def initial_setup(obj, event):
     # Create profile for initial CV
@@ -28,4 +34,17 @@ def initial_setup(obj, event):
     # Turn off permissions for membertool
     obj.manage_permission("Manage users", roles=['Manager', 'Authenticated', 'Owner'], acquire = 0)
 
+    # The below is commented out because the related portlet addon
+    # isn't what was required by the client.
+
+    # Assigned related portlet to Profile
+    #column = getUtility(IPortletManager, name='plone.rightcolumn')                                                      
+    #manager = getMultiAdapter((obj, column,), IPortletAssignmentMapping)
+    #assignment = relateditems.Assignment(
+    #    count = 5,
+    #    states=('published',),
+    #    allowed_types= ('Profile',)
+    #)
+    #chooser = INameChooser(manager)
+    #manager[chooser.chooseName(None, assignment)] = assignment
 

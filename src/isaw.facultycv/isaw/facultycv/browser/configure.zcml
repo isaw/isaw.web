@@ -15,7 +15,7 @@
     name="profile_view"
     permission="zope2.View"
     class=".views.CvView"
-    template="faculty_cv.pt"
+    template="templates/faculty_cv.pt"
 	/>
 
   <browser:page
@@ -23,7 +23,7 @@
     name="faculty_detail"
     permission="zope2.View"
     class=".views.ProfileView"
-    template="faculty_detail.pt"
+    template="templates/faculty_detail.pt"
     />
 
   <browser:page
@@ -32,5 +32,18 @@
     permission="zope2.View"
     class=".views.PdfView"
 	/>
+
+  <browser:page
+    for="..interfaces.folderview.IFolderView"
+    name="folder_listing"
+    permission="zope2.Public"
+    class=".views.PeopleView"
+    template="templates/faculty_list.pt"
+    />
+
+
+    <class class="Products.ATContentTypes.interface.folder.IATFolder">
+        <allow interface="..interfaces.folderview.IFolderView" />
+    </class>
 
 </configure>

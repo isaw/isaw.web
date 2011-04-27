@@ -1,5 +1,6 @@
 from Products.Five.browser import BrowserView
 from zope.app.pagetemplate import ViewPageTemplateFile
+from Products.CMFCore.utils import getToolByName
 
 #facultycv requires the pisa module for pdf view
 import ho.pisa as pisa
@@ -21,7 +22,7 @@ class PdfView(BrowserView):
 
         attachment = 'attachment; filename=%s' % (ftitle)
         f = file(filename, "wb")
-        pdf_template = ViewPageTemplateFile('pdf-view.pt')(self)
+        pdf_template = ViewPageTemplateFile('templates/pdf-view.pt')(self)
 
         response.setHeader('Content-Type', 'application/pdf')
         response.setHeader('Content-Disposition', attachment);
@@ -35,3 +36,14 @@ class PdfView(BrowserView):
             # Something is wrong 
             # Fledge this out later
             pass
+
+class PeopleView(BrowserView):
+
+    def __init__(self, context, request=None):
+        self.context = context
+        self.request = request
+        self.portal_catalog = getToolByName(context, 'portal_catalog')
+
+    def getFacultyList(self, limit=10):
+        return self.portal_catalog(portal_type='profile',
+                                    review_state='external')[:limit]   

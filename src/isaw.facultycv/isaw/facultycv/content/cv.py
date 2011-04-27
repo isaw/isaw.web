@@ -26,42 +26,6 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 
 	atapi.TextField(
-		name = 'Address',
-		widget = atapi.RichWidget(
-			label=u'Address',
-			label_msgid='isaw.facultycv_label_Address',
-			il8n_domain='isaw.facultycv',
-			),
-
-		required = False,
-		searchable = True
-	),
-
-	atapi.StringField(
-		name = 'Email',
-		widget = atapi.StringWidget(
-			label=u'Email Address',
-			label_msgid='isaw.facultycv_label_Email',
-			il8n_domain='isaw.facultycv',
-			),
-
-		required = False,
-		searchable = True
-	),
-
-	atapi.StringField(
-		name = 'Phone',
-		widget = atapi.StringWidget(
-			label=u'Phone number',
-			label_msgid='isaw.facultycv_label_Phone',
-			il8n_domain='isaw.facultycv',
-			),
-
-		required = False,
-		searchable = True
-	),
-
-	atapi.TextField(
 		name = 'Education and Degrees',
 		widget = atapi.RichWidget(
 			label=u'Education and Degrees',
@@ -96,19 +60,6 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 		required = False,
 		searchable = True
 	),
-
-	atapi.TextField(
-		name= 'Professional Affiliations',
-		widget = atapi.RichWidget(
-			label=u'Professional Affiliations',
-			label_msgid='isaw.facultycv_label_ProfessionalAffiliations',
-			il8n_domain='isaw.facultycv',
-			),
-
-		required = False,
-		searchable = True
-	),
-
 
 	atapi.TextField(
 		name = 'Professional Offices and Service',

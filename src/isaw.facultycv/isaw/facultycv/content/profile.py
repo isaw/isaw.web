@@ -24,7 +24,8 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 			),
 
 		required = False,
-		searchable = True
+		searchable = True,
+        accessor = 'profileImage'
 
 	),
 
