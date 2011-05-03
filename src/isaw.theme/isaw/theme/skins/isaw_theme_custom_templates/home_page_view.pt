@@ -83,7 +83,7 @@
                  tal:condition="news">
                 <a href="about/news"><h2>Latest News</h2></a>
                 <tal:newsitems>
-                    <div clas="homeNews" tal:repeat="item news">
+                    <div tal:repeat="item news">
                         <h4><a tal:attributes="href item/getURL;
                                                title item/Description">
                             <span tal:replace="item/pretty_title_or_id">News Title</span></a></h4>
