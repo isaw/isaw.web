@@ -5,6 +5,8 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
+
+<!-- Displays the main event page -->
 <body>
     
 <metal:block fill-slot="content-title" />
@@ -13,7 +15,16 @@
     <metal:content-core define-macro="content-core">
         
         <tal:foldercontents define="
-            folderContents python:context.getFolderContents(contentFilter={'sort_order': 'descending'}, batch=True, b_size=3)"> 
+            folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending', 
+                            'sort_on': 'Date',
+                            'portal_type': ['Conference',
+                                            'Exhibition',
+                                            'General',
+                                            'Lecture', 
+                                            'Performance',
+                                            'Seminar',
+                                            'Sponsored'],
+                            'review_state': 'external'}, batch=True, b_size=7)">
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
