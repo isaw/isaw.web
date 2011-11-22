@@ -16,7 +16,7 @@
         
         <tal:foldercontents define="
             folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending', 
-                            'sort_on': 'Date',
+                            'sort_on': 'start',
                             'portal_type': ['Conference',
                                             'Exhibition',
                                             'General',
