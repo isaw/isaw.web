@@ -40,17 +40,19 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     required=False,
     searchable=False),
 
-#    atapi.TextField(
-#    name='event_Abstract',
-#    widget=atapi.TextAreaWidget(
-#        label=u'Event Abstract',
-#        description=_(u'event_abstract', default=u'A summary statement of the description.'),
-#        label_msgid='ISAW_Event_abstract',
-#        il8n_domain='ISAW_Event',
-#        ),
+    atapi.TextField(
+    name='event_Abstract',
+    accessor='abstract',
+    default_output_type='text/html',
+    widget=atapi.RichWidget(
+        label=u'Event Abstract',
+        description=_(u'event_abstract', default=u'A summary statement of the description.'),
+        label_msgid='ISAW_Event_abstract',
+        il8n_domain='ISAW_Event',
+        ),
 
-#    required=False,
-#    searchable=True),
+    required=False,
+    searchable=True),
 
     atapi.StringField(
     name='event_Speaker',
@@ -405,7 +407,5 @@ class General(folder.ATFolder, CalendarSupportMixin):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
-
-    # -*- Your ATSchema to Python Property Bridges Here ... -*-
 
 atapi.registerType(General, PROJECTNAME)
