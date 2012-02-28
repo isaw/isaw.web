@@ -24,7 +24,9 @@
             <li><a href="#" tal:attributes="href string:${here/absolute_url}/vcs_view" title="Add this item to your vCal calendar" class="cal vcal">v.Cal</a></li>
             </ul>
             <div class="eventRsvp" tal:condition="context/event_Rsvp | nothing"
-                tal:content="structure string:RSVP: <a href=mailto:isaw@nyu.edu?subject=RSVP ${context/title}>isaw@nyu.edu</a> "/>
+                tal:content="structure string:<b>RSVP:</b> <a href=mailto:isaw@nyu.edu?subject=RSVP ${context/title}>isaw@nyu.edu</a> "/>
+            <div class="eventRsvp" tal:condition="context/event_custom_Rsvp | nothing"
+                tal:content="structure string:<b>RSVP:</b> <a href=mailto:${context/event_custom_Rsvp}?subject=RSVP ${context/title}>${context/event_custom_Rsvp}</a>" />
         </div>
         
         <div class="subheading" tal:content="python:context.event_StartDateTime.strftime('%d %B %Y, %I:%M %p')" />

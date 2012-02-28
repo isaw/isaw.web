@@ -26,6 +26,7 @@ isaw/events/browser/templates/event_main.pt
 isaw/events/browser/templates/event_main.pt.metadata
 isaw/events/browser/templates/hcal-view.pt
 isaw/events/browser/templates/rdf-view.pt
+isaw/events/content/.general.py.swp
 isaw/events/content/__init__.py
 isaw/events/content/actions.py
 isaw/events/content/conference.py

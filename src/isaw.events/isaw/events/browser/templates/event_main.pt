@@ -6,6 +6,27 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 
+<head>
+    <metal:block fill-slot="head_slot">
+        <link type="text/css" href="jquery.jscrollpane.css" rel="stylesheet" media="all" />
+        <script type="text/javascript" src="jquery.jscrollpane.min.js"></script>
+        <script type="text/javascript" src="jquery.mousewheel.js"></script>
+        <style type="text/css" id="page-css">
+            .scroll-pane
+            {
+                height: 550px;
+                overflow: auto;
+            }
+        </style>
+        <script type="text/javascript" id="sourcecode">
+            $(function()
+            {
+                $('.scroll-pane').jScrollPane();
+            });
+        </script>
+
+    </metal:block>
+</head>
 <!-- Displays the main event page -->
 <body>
     
@@ -13,7 +34,7 @@
     
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-        
+        <div class="scroll-pane"> 
         <tal:foldercontents define="
             folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending', 
                             'sort_on': 'start',
@@ -39,7 +60,7 @@
             
         </tal:event>
         </tal:foldercontents>
-        
+       </div> <!-- end scroll pane -->
     </metal:content-core>
 </metal:content-core>
 

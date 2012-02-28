@@ -49,6 +49,7 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         description=_(u'event_abstract', default=u'A summary statement of the description.'),
         label_msgid='ISAW_Event_abstract',
         il8n_domain='ISAW_Event',
+        allow_file_upload=True,
         ),
 
     required=False,
@@ -188,15 +189,29 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     name='event_Rsvp',
     schemata='options',
     widget=atapi.BooleanWidget(
-        label=u'Does one need to RSVP for this event?',
-        description=_(u'event_rsvp', default=u'If selected, one will need to RSVP for this event.'),
+        label=u'RSVP for this event?',
+        description=_(u'event_rsvp', default=u'If selected, one will need to RSVP for this event the default address is isaw@nyu.edu.'),
         label_msgid='ISAW_Event_rsvp',
         il8n_domain='ISAW_Event',
         ),
         
     required=False,
     searchable=True),
-    
+
+    atapi.StringField(
+    name='event_custom_Rsvp',
+    schemata='options',
+    validators= ('isEmail'),
+    widget=atapi.StringWidget(
+        label=u'RSVP email address',
+        description=_(u'event_custom_rsvp', default=u'RSVP contact email, default is isaw@nyu.edu'),
+        label_msgid='ISAW_Event_custom_rsvp',
+        il8n_domain='ISAW_Event',
+        ),
+   
+    required=False,
+    searchable=True),
+ 
     # After about 10 minutes deliberation
     # instead of making this an Annotation i've added it to the object itself
     # the reason being is all data should be stored/managed in the object if it's small enough
@@ -285,47 +300,47 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     required=False),
 
     atapi.StringField(
-    name='event_Url',
-    required=False,
-    searchable=True,
-    accessor='event_url',
-    validators=('isURL',),
-    widget = atapi.StringWidget(
-        description = _(u'help_event_url',
-        default=u"Web address with more info about the event. "
-        "Add http:// for external links."),
-         label = _(u'label_event_url', default=u'Event URL')
-         )),
+        name='event_Url',
+        required=False,
+        searchable=True,
+        accessor='event_url',
+        validators=('isURL',),
+        widget = atapi.StringWidget(
+            description = _(u'help_event_url',
+                default=u"Web address with more info about the event. "
+                "Add http:// for external links."),
+                label = _(u'label_event_url', default=u'Event URL')
+             )),
 
     atapi.StringField(
-    name='contactName',
-    required=False,
-    searchable=True,
-    accessor='contact_name',
-    widget = atapi.StringWidget(
-        description = '', 
-        label = _(u'label_contact_name', default=u'Contact Name')
+        name='contactName',
+        required=False,
+        searchable=True,
+        accessor='contact_name',
+        widget = atapi.StringWidget(
+            description = '', 
+                label = _(u'label_contact_name', default=u'Contact Name')
         )), 
 
     atapi.StringField('contactEmail',
-                required=False,
-                searchable=True,
-                accessor='contact_email',
-                validators = ('isEmail',),
-                widget = atapi.StringWidget(
-                        description = '', 
-                        label = _(u'label_contact_email', default=u'Contact E-mail')
-                        )), 
+        required=False,
+        searchable=True,
+        accessor='contact_email',
+        validators = ('isEmail',),
+        widget = atapi.StringWidget(
+            description = '', 
+                label = _(u'label_contact_email', default=u'Contact E-mail')
+        )), 
 
     atapi.StringField('contactPhone',
-                required=False,
-                searchable=True,
-                accessor='contact_phone',
-                validators= (), 
-                widget = atapi.StringWidget(
-                        description = '', 
-                        label = _(u'label_contact_phone', default=u'Contact Phone')
-                        )), 
+        required=False,
+        searchable=True,
+        accessor='contact_phone',
+        validators= (), 
+        widget = atapi.StringWidget(
+            description = '', 
+                label = _(u'label_contact_phone', default=u'Contact Phone')
+        )), 
 
 ))
 
