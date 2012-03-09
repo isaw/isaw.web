@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+    
+<metal:block fill-slot="content-title" />
+
+<metal:content-description fill-slot="content-description">
+    <metal:content-description define-macro="content-description">
+         <div tal:replace="structure provider:plone.belowcontenttitle" />
+    </metal:content-description>
+</metal:content-description>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+           <div class="exhibition_highlight">
+            <p style="text-align: center; ">
+                <a class="internal-link" tal:attributes="href context/absolute_url">
+                    <img tal:define="highlight_url context/absolute_url" tal:attributes="src string:${highlight_url}/image_preview" />
+                </a>
+            </p>
+            <p style="text-align: center; ">
+                <a class="internal-link" tal:attributes="href string:${context/absolute_url}/image_view_fullscreen">
+                (click for larger image) </a>
+            </p>
+            <p class="discreet" tal:content="context/Rights" />
+
+            <p tal:content="context/Description" />
+                                </div>
+            
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+
