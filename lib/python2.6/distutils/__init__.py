@@ -1,21 +1,33 @@
 import os
 import sys
 import warnings 
-import ConfigParser # ConfigParser is not a virtualenv module, so we can use it to find the stdlib
+import imp
+import opcode # opcode is not a virtualenv module, so we can use it to find the stdlib
+              # Important! To work on pypy, this must be a module that resides in the
+              # lib-python/modified-x.y.z directory
 
 dirname = os.path.dirname
 
-distutils_path = os.path.join(os.path.dirname(ConfigParser.__file__), 'distutils')
+distutils_path = os.path.join(os.path.dirname(opcode.__file__), 'distutils')
 if os.path.normpath(distutils_path) == os.path.dirname(os.path.normpath(__file__)):
     warnings.warn(
         "The virtualenv distutils package at %s appears to be in the same location as the system distutils?")
 else:
     __path__.insert(0, distutils_path)
-    exec open(os.path.join(distutils_path, '__init__.py')).read()
+    real_distutils = imp.load_module("_virtualenv_distutils", None, distutils_path, ('', '', imp.PKG_DIRECTORY))
+    # Copy the relevant attributes
+    try:
+        __revision__ = real_distutils.__revision__
+    except AttributeError:
+        pass
+    __version__ = real_distutils.__version__
 
-import dist
-import sysconfig
+from distutils import dist, sysconfig
 
+try:
+    basestring
+except NameError:
+    basestring = str
 
 ## patch build_ext (distutils doesn't know how to get the libs directory
 ## path on windows - it hardcodes the paths around the patched sys.prefix)
@@ -26,6 +38,8 @@ if sys.platform == 'win32':
         def finalize_options (self):
             if self.library_dirs is None:
                 self.library_dirs = []
+            elif isinstance(self.library_dirs, basestring):
+                self.library_dirs = self.library_dirs.split(os.pathsep)
             
             self.library_dirs.insert(0, os.path.join(sys.real_prefix, "Libs"))
             old_build_ext.finalize_options(self)
