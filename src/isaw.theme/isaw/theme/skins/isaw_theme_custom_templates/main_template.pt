@@ -11,6 +11,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       xml:lang="en"
       lang="en"
+      prefix="og: http://ogp.me/ns#"
       tal:define="portal_state context/@@plone_portal_state;
                   context_state context/@@plone_context_state;
                   plone_view context/@@plone;
@@ -66,6 +67,12 @@
         <metal:javascriptslot define-slot="javascript_head_slot" />
     </tal:notajax>
 
+  <!-- Opengraph Support -->
+    <meta property="og:title" tal:attributes="content context/Title | nothing" />
+    <meta property="og:url" tal:attributes="content context/absolute_url | nothing" />
+    <meta property="og:description" tal:attributes="content context/Description | nothing"/>
+    <meta property="og:site_name" content="Institute for the Study of the Ancient World" />
+
   </head>
 
   <body tal:define="isRTL portal_state/is_rtl;
@@ -92,7 +99,7 @@
                     15 East 84th St.
                     New York, NY
                     10028
-                    212-922-7800
+                    212-992-7800
                     isaw@nyu.edu
                 </div>
             </td>
@@ -114,6 +121,7 @@
 
             <tal:comment replace="nothing"> Start of main content block </tal:comment>
             <td id="portal-column-content">
+
 
               <div id="above-content">
                   <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
@@ -221,12 +229,11 @@
       <metal:block i18n:domain="plone" tal:condition="not:ajax_load">
 
         <div tal:replace="structure provider:plone.portalfooter" />
-
+        <div id="kss-spinner" tal:condition="not:ajax_load"><img tal:attributes="src string:${portal_url}/spinner.gif" alt="" /></div>
       </metal:block>
 
       <div class="visualClear"><!-- --></div>
     </div>
-<div id="kss-spinner" tal:condition="not:ajax_load"><img tal:attributes="src string:${portal_url}/spinner.png" alt="" /></div>
 </body>
 </html>
 </metal:page>

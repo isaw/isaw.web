@@ -4,7 +4,7 @@
                  search_input_id view/search_input_id;">
     <form name="searchform"
           action="search"
-          tal:attributes="action string:${navigation_root_url}/search">
+          tal:attributes="action string:${navigation_root_url}/@@search">
 
         <label class="hiddenStructure"
                tal:attributes="for search_input_id"

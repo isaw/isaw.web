@@ -40,7 +40,7 @@ body {
 }
 
 #portal-column-two .visualPadding {
-    margin: 36px 0 0 15px;
+    margin: 55px 0 0 15px;
     padding: 0;
 }
 
@@ -397,7 +397,7 @@ body {
 }
 
 .documentHeading {
-    margin: -6px 0;
+    margin: -10px 0;
     *margin-bottom: -4px;
     max-width: 565px;
 }
@@ -487,7 +487,7 @@ body {
 
 .template-home_page_view #content {
     background: transparent none;
-    line-height: 14px;
+    line-height: 20px;
     margin-top: 0 !important;
     margin-right: 3px;
 }
@@ -574,8 +574,8 @@ body {
     font-size:20px;
     font-weight:normal;
     position: relative;
-    top: 45px;
-    left: -65px;
+    top: 70px;
+    left: -85px;
     float: left;
     color: #CDB08A;
 }
