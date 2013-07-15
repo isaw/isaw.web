@@ -37,7 +37,7 @@ class UtilsView(BrowserView):
         type(catalog)
         if catalog == []:
             print "we are here"
-            return None
+            return False
         else:
             print "we are else"
             return catalog

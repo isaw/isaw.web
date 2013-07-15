@@ -18,6 +18,7 @@ isaw/theme/skins.zcml
 isaw/theme/tests.py
 isaw/theme/version.txt
 isaw/theme/bin/request.py
+isaw/theme/browser/.utilsview.py.swp
 isaw/theme/browser/__init__.py
 isaw/theme/browser/configure.zcml
 isaw/theme/browser/interfaces.py
@@ -87,6 +88,7 @@ isaw/theme/skins/isaw_theme_custom_images/social.png
 isaw/theme/skins/isaw_theme_custom_images/social.png.metadata
 isaw/theme/skins/isaw_theme_custom_images/title_border.png
 isaw/theme/skins/isaw_theme_custom_images/title_border.png.metadata
+isaw/theme/skins/isaw_theme_custom_templates/.home_page_view.pt.swp
 isaw/theme/skins/isaw_theme_custom_templates/CONTENT.txt
 isaw/theme/skins/isaw_theme_custom_templates/batch_macros.pt
 isaw/theme/skins/isaw_theme_custom_templates/event_archive.pt

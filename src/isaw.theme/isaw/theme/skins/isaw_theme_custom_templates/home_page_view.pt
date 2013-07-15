@@ -27,10 +27,7 @@
             <div id="featured" tal:define="utils_view context/@@utils_view;
                                               featured utils_view/getFeatured" 
                                 tal:content="structure featured"/>
-            <!--
-            <a href="#" class="featuredLink">visit this exhibit&gt;</a>
-            -->
-        
+
             <!-- Featured Portlet -->
             <div class="home-right">
                      <metal:portlets define-slot="portlets_two_slot">
@@ -45,8 +42,9 @@
             <div> <!-- scrollable item 1 -->
             <div id="home-events"
                  tal:define="utils_view context/@@utils_view;
-                         events utils_view/getUpcomingEvents"
-                 tal:condition="events">
+                         events utils_view/getUpcomingEvents;
+                         noevents string:There are currently has no upcoming events. "
+                 tal:condition="events | noevents">
                 <a href="events"><h2>Upcoming Events</h2></a>
                 <tal:events>
                     <div class="homeEvent" tal:repeat="event events">
@@ -67,6 +65,22 @@
                 </tal:events>
             </div>
             </div> <!-- scrollable item 1 --> 
+
+            <!-- NO EVENTS -->
+            <div id="home-events"
+                 tal:define="utils_view context/@@utils_view;
+                         events utils_view/getUpcomingEvents;
+                         noevents string:There are currently has no upcoming events. "
+                 tal:condition="exists:events">
+                <a href="events"><h2>Upcoming Events</h2></a>
+                <tal:events>
+                    <div class="homeEvent">
+                        <h4 class="eventTitle">There are no upcoming events</h4>
+                        <p>There are currently no events scheduled, please check back soon for the fall schedule.</p>
+                   </div>
+                </tal:events>
+            </div>
+ 
             <!-- news -->
             <div> <!-- scrollable item 2 -->
             <div id="home-news"
