@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0a1-dev'
+version = '1.0-dev'
 
 long_description = (
-    open('README.txt').read()
+    open('README.rst').read()
     + '\n' +
-    open('CONTRIBUTORS.txt').read()
+    open('CONTRIBUTORS.rst').read()
     + '\n' +
-    open('CHANGES.txt').read()
+    open('CHANGES.rst').read()
     + '\n')
 
 setup(name='isaw.policy',
