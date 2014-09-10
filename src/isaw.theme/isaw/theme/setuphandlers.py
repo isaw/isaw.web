@@ -1,6 +1,6 @@
 from Products.CMFCore.utils import getToolByName
 
-from sixfeetup.utils import helpers as sfutils
+#from sixfeetup.utils import helpers as sfutils
 
 def setupVarious(context):
 
@@ -14,9 +14,9 @@ def setupVarious(context):
 
     # Add additional setup code here
     # automagically run a plone migration if needed
-    sfutils.runPortalMigration()
+    #sfutils.runPortalMigration()
     # automagically run the upgrade steps for this package
-    sfutils.runUpgradeSteps(u'isaw.theme:default')
+    #sfutils.runUpgradeSteps(u'isaw.theme:default')
 
 def set_property(context, prop_name, value):
    if context.hasProperty(prop_name):

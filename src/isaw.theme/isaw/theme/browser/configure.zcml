@@ -13,6 +13,9 @@
   <!-- For overriding templates, add z3c.jbot to the base.cfg to use -->    
   <include package="z3c.jbot" file="meta.zcml" />
 
+  <!-- Forms package for events request etc -->
+  <include package=".forms" />
+
   <browser:templateOverrides
       directory="template-overrides"
       layer=".interfaces.IThemeSpecific" />

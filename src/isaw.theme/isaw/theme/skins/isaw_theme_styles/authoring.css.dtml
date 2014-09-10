@@ -8,7 +8,7 @@
 #edit-bar {
     background-color: &dtml-contentViewBackgroundColor;;
     border: 0.25em solid &dtml-contentViewBorderColor;;
-    font-size: &dtml-fontSmallSize;;
+    font-size: 14px;
     min-height: 2em;
     margin-bottom: 1em;
     padding-top: 0.05em;

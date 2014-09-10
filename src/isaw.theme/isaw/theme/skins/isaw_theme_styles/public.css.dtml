@@ -29,7 +29,7 @@ body {
     color: &dtml-fontColor;;
 }
 body.largeText {
-    font-size: 125%;
+    font-size: 120%;
 }
 body.smallText {
     font-size: 85%;
@@ -314,7 +314,12 @@ body#content {
 #content .documentFirstHeading {
     margin-top: 0;
 }
-#content p,
+#content p {
+    margin: 0px;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    margin-left: 0px;
+}
 #content table,
 #content dl {
     margin-bottom: 1em;
@@ -329,11 +334,13 @@ body#content {
 #content ul {
     list-style-type: disc;
     margin-left: 2em;
+    margin-right: 2em;
 }
 #content ol,
 .portlet ol {
     list-style-type: decimal;
     margin-left: 2em;
+    margin-right: 2em;
 }
 #content li,
 .portlet li {
@@ -414,6 +421,22 @@ body#content {
     font-weight: bold;
     width: 190px;
 }
+
+/* Featured */
+#featured h2 {
+    font-size: 18px;
+    line-height: 14px;
+    padding-bottom: 10px; 
+
+}
+
+#featured p {
+    margin-bottom: 0em;
+    margin-left: 0px;
+    margin-right: 2em;
+    margin-top: 0em;
+}
+
 
 /* DATA TABLES                                                               */
 
@@ -525,9 +548,7 @@ tr.selected {
     border: &dtml-borderWidth; &dtml-borderStyle; #ccc;
 }
 .listingBar a:hover {
-    color: #ffffff;
-    background-color: #329fd7;
-    border-color: #329fd7;
+    color: #000000;
 }
 
 /* Status messages */
@@ -864,6 +885,56 @@ div.error {
     margin-left: 0.25em;
 }
 
+/* EVENT REQUEST FORM */
+
+#form-widgets-rf_title{
+    width: 23em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-day{
+    width: 2em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-month{
+    font-size: 120%;
+}
+
+#form-widgets-rf_esd-year{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_eed-day{
+    width: 2em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_eed-month{
+    font-size: 120%;
+}
+
+#form-widgets-rf_eed-year{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_sponsor{
+    width: 23em;
+    font-size: 120%;
+}
+
+#form-widgets-rf_start_time{
+    width: 2em;
+    font-size: 120%
+}
+
+#form-widgets-rf_end_time{
+    width: 2em;
+    font-size: 120%
+}
+
 /* TEMPLATES                                                                 */
 
 /* folder listings */
@@ -1057,7 +1128,6 @@ form.searchPage {
     text-align: left;
 }
 input.searchPage {
-    margin-left: -6px;
     font-weight: bold;
     font-size: 16px;
     height: 18px;
@@ -1071,12 +1141,14 @@ input.searchPage {
 }
 input.searchPage.searchButton {
     margin-top: 0px;
+    margin-left: -6px;
     padding: 0;
     border-right-color: #d1d1d1;
     border-left-width: 0;
     width: 32px;
     height: 24px;
-    background: url("http://localhost:51089/isaw/search_results_button.png") no-repeat scroll right top #EEECE7;
+    background: url("&dtml-portal_url;/search_results_button.png") no-repeat scroll right top #EEECE7;
+    cursor: pointer;
 }
 #search-result-display {
     color: #A44A26;
@@ -1149,6 +1221,28 @@ a.link-feed {
 
 .listingBar .next {
     float: none;
+}
+
+.scrollable {
+    position:relative;
+    overflow:hidden;
+    width: 340px;
+    height:390px;
+}
+
+.scrollable .items {
+    /* this cannot be too large */
+    width:20000em;
+    position:absolute;
+}
+
+/*
+    a single item. must be floated in horizontal scrolling.
+    typically, this element is the one that *you* will style
+    the most.
+*/
+.items div {
+    float:left;
 }
 
 /* </dtml-with> */

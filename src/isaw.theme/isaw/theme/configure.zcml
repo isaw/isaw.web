@@ -5,6 +5,7 @@
     i18n_domain="isaw.theme">
 
   <include package=".browser" />
+  <include package=".portlets" />
   <include file="skins.zcml" />
   <include file="profiles.zcml" />
 

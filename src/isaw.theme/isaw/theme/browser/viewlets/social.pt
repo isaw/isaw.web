@@ -1,11 +1,11 @@
 <ul id="social-buttons">
     <li class="fb">
-        <a href="http://www.facebook.com/group.php?gid=10685696817&v=wall">Facebook</a>
+        <a href="http://www.facebook.com/isawnyu">Facebook</a>
     </li>
     <li class="tw">
         <a href="http://twitter.com/isawnyu">Twitter</a>
     </li>
     <li class="rss">
-        <a href="" tal:attributes="href string:${context/portal_url}/rss">RSS</a>
+        <a href="" tal:attributes="href string:${context/portal_url}/about/news/RSS">RSS</a>
     </li>
 </ul>

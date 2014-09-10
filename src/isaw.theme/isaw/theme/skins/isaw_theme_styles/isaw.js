@@ -9,9 +9,17 @@ jq(document).ready(function(){
    var titleHeight = jq("#above-content").height();
    jq("#content, #edit-bar").css("margin-top",titleHeight + 9);
    jq("#portal-column-two .visualPadding").css("margin-top",titleHeight + 1);
+   jq("#socialtools").css("padding-top",titleHeight - 44);
    
 });
 
+
+jq(window).load(function(){
+    // initialize scrollable
+    $(function(){ 
+        $(".scrollable").scrollable({circular: true}).autoscroll({interval: 10000});;
+    });
+});
 
 jq(window).load(function(){
     // set width on image <dl>s to be set at the width of the image
@@ -25,10 +33,10 @@ jq(window).load(function(){
     
     // align faculty e-mail/info link to bottom of image if text isn't too tall
     for(i = 0; i < jq(".facultyListing").length; i++) {
-       var imageHeight = jq(".facultyListing img").eq(i).height() + 10;
+       var imageHeight = jq(".facultyListing img").eq(i).height() + 12;
        var descripHeight = jq(".facultyInfo").eq(i).height();
-       if (descripHeight <= imageHeight) {
-           jq(".facultyListing .alignBottom").eq(i).css("position","absolute");
+       if (descripHeight > imageHeight) {
+           jq(".facultyListing .alignBottom").eq(i).css("position","relative");
        }
     }
 });

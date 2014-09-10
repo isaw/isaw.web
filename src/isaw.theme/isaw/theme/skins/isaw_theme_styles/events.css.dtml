@@ -4,15 +4,21 @@
 */
 
 /* event detail page */
+.template-event_detail #content {
+    margin-right: 6px;
+}
+
 .eventCal {
     float: right;
     text-align: right;
     width: 275px;
+    margin-bottom: 13px;
 }
 
 #content .eventCal li {
-    display: inline-block;
-    margin-left: 8px;
+    display: block;
+    float: right;
+    margin: 0 0 10px 8px;
     text-align: left;
 }
 
@@ -28,6 +34,10 @@
     background-position: top right;
 }
 
+#content .eventCal div {
+    clear: both;
+}
+
 .eventType {
     font-size: 12px;
     font-weight: bold;
@@ -39,6 +49,11 @@
 .eventSpeakerLanding {
     font-size: 17px;
     color: &dtml-primaryColor;;
+}
+
+.eventDescription {
+    clear: both;
+    margin-top: 10px;
 }
 
 .eventBody {
@@ -80,7 +95,7 @@
 }
 
 .eventListing {
-    margin-bottom:30px;
+    margin-bottom: 40px;
 }
 
 /* </dtml-with> */
