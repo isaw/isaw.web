@@ -29,6 +29,7 @@ setup(name='isaw.theme',
 #          'sixfeetup.utils',
           'collective.addthis',
           'webcouturier.dropdownmenu',
+          'z3c.jbot',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]
