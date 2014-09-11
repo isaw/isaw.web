@@ -42,6 +42,9 @@ setup(name='isaw.policy',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'isaw.events',
+          'isaw.facultycv',
+          'isaw.theme',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
