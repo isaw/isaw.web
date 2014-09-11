@@ -55,20 +55,19 @@ setup(name='isaw.events',
       include_package_data=True,
       zip_safe=False,
       dependency_links=['http://code.google.com/p/python-twitter/'],
-      install_requires=['setuptools',
-                        'tweepy >= 1.5',
-                        'simplejson >= 2.0.9',
-                        'tinyurl >= 0.1.0',
-                        ],
+      install_requires=[
+        'setuptools',
+        'tweepy >= 1.5',
+        'simplejson >= 2.0.9',
+        'tinyurl >= 0.1.0',
+      ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
-      test_suite = 'isaw.events.tests.test_docs.test_suite',
+      test_suite='isaw.events.tests.test_docs.test_suite',
       entry_points="""
       # -*- entry_points -*-
       [z3c.autoinclude.plugin]
       target = plone
       """,
-      setup_requires=["PasteScript"],
-      paster_plugins=["ZopeSkel"],
       )
  
