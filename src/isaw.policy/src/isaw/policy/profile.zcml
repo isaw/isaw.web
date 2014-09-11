@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="isaw.policy">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="isaw.policy"
+      directory="profiles/default"
+      description="Installs the isaw.policy package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- profile importStep and upgradeStep declarations will go here -->
+
+</configure>

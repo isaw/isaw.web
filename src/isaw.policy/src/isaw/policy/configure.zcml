@@ -9,13 +9,7 @@
 
   <includeDependencies package="." />
 
-  <genericsetup:registerProfile
-      name="default"
-      title="isaw.policy"
-      directory="profiles/default"
-      description="Installs the isaw.policy package"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
+  <include file="profile.zcml" />
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
