@@ -1,7 +1,0 @@
-setuptools
-tweepy >= 1.5
-simplejson >= 2.0.9
-tinyurl >= 0.1.0
-
-[tests]
-zope.testing
