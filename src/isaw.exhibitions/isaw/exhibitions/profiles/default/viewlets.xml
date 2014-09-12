@@ -25,6 +25,9 @@
   <hidden manager="plone.belowcontent" skinname="ISAW Exhibitions">
     <viewlet name="plone.belowcontenttitle.keywords"/>
   </hidden>
+  <hidden manager="plone.belowcontenttitle" skinname="ISAW Exhibitions">
+    <viewlet name="plone.belowcontenttitle.documentbyline"/>
+  </hidden>
   <order manager="plone.portalfooter" skinname="ISAW Exhibitions">
     <viewlet name="plone.footer" />
     <viewlet name="plone.colophon" />

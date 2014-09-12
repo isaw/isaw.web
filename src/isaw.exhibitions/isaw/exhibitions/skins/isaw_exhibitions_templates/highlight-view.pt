@@ -19,10 +19,12 @@
 		<div style="padding:5px; display:inline-block;">
                 <div class="tileItem visualIEFloatFix">
 
+                    <a tal:attributes="href string:http://isaw.nyu.edu/exhibitions/malta/highlight-${repeat/highlights/number}">
                     <img style="float: right; margin: 0.5em 1em 0.5em;" alt=""
                          tal:attributes="src string:${highlights/getURL}/image_thumb" />
+                    </a>
 
-                    <h3 class="tileHeadline"
+                    <h5 class="tileHeadline"
                         metal:define-macro="listitem" tal:content="highlights/Title" />
 
                 </div>

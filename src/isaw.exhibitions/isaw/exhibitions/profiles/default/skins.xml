@@ -9,9 +9,9 @@
  <skin-path name="ISAW Exhibitions" based-on="Plone Default">
  </skin-path>
  
- <skin-path name="isaw_exhibitions_templates">
+ <skin-path name="*">
  <layer name="isaw_exhibitions_templates"
-     insert-after="isaw_theme_styles"/>
+     insert-after="custom"/>
 </skin-path>
 
 </object>
