@@ -1,5 +1,5 @@
 from Products.Five.browser import BrowserView
-from zope.app.pagetemplate import ViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
 #facultycv requires the pisa module for pdf view

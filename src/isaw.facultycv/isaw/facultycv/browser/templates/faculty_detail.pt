@@ -66,7 +66,9 @@
 </metal:content-core>
 
 <metal:rightcolumn fill-slot="portlets_two_slot">
-    <img height="140" width="124" class="facultyImage" tal:attributes="src context/Image/absolute_url | string:portal_url/images/default-person" />
+    <!-- <img height="140" width="124" class="facultyImage" tal:attributes="src context/Image/absolute_url | string:portal_url/images/default-person" />-->
+    <img class="facultyImage" tal:attributes="src context/Image/absolute_url | string:portal_url/images/default-person" />
+    <tal:block replace="structure provider:plone.rightcolumn" />
     <tal:block replace="structure provider:plone.rightcolumn" />
 </metal:rightcolumn>
 

@@ -1,6 +1,6 @@
 from Products.CMFCore.utils import getToolByName
 from zope.component import getUtility, getMultiAdapter
-from zope.app.container.interfaces import INameChooser
+from zope.container.interfaces import INameChooser
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from collective.portlet.relateditems import relateditems

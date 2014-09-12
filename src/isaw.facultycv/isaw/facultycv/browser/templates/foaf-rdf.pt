@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:admin="http://webns.net/mvcb/">
+<foaf:PersonalProfileDocument rdf:about="http://isaw.nyu.edu">
+    <foaf:maker rdf:resource="#profiledata"/>
+    <foaf:primaryTopic rdf:resource="#profiledata"/>
+</foaf:PersonalProfileDocument>
+<foaf:Person rdf:ID="profiledata">
+    <foaf:name tal:attributes="rdf:resource string:${context/Title}"/>
+    <foaf:mbox tal:attributes="rdf:resource string:mailto:${context/Email}"/>
+    <foaf:phone tal:attributes="rdf:resource string:${context/Phone}"/>
+    <foaf:page tal:attributes="rdf:resource string:${context/absolute_url}"/>
+    <foaf:depiction tal:condition="context/Image | nothing" tal:attributes="rdf:resource string:${context/Image/absolute_url}"/>
+
+    <sy:updatePeriod>weekly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <sy:updateBase tal:content="structure context/Date"></sy:updateBase>
+</foaf:Person>
+<foaf:Organization rdf:ID="orgranization">
+    <foaf:name>Institute for the Study of the Ancient World</foaf:name>
+    <foaf:homepage rdf:resource="http://isaw.nyu.edu"/>
+    <foaf:mbox rdf:resource="mailto:isaw@nyu.edu"/>
+    <admin:errorReportsTo rdf:resource="mailto:isaw.it@nyu.edu"/>
+    <admin:generatorAgent rdf:resource="http://isaw.nyu.edu"/>
+</foaf:Organization>
+</rdf:RDF>
