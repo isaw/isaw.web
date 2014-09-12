@@ -53,10 +53,14 @@ def event_publish(post, event):
        
         if post.event_Reception == True:
             # replace this with a string or annotation on the object so this can be changed
-            reception = '*reception to follow; event is free and open to the public'
+            reception = '*reception to follow'
         else:
             reception = ''
-            
+        
+        if post.event_Public == True:
+            public = '*event is free and open to the public'
+        else:
+            public = ''    
         #if post.event_Sponsor_Name:
         #    sponsor = "Sponsored by <a href=\"%s\">%s</a>" % (post.event_Sponsor_Url, 
         #                                                      post.event_Sponsor_Name)
@@ -66,7 +70,7 @@ def event_publish(post, event):
         event_date = dt.fromtimestamp(post.event_StartDateTime).strftime('%A, %B %d %Y')
         event_time = dt.fromtimestamp(post.event_StartDateTime).strftime('%I:%M %p')
         location = post.getLocation()
-        print location
+
         url = "<a href=\"%s\">Click here for more information.</a>" % post.absolute_url()
         formatted_post = """Title: <i>%s</i>\n
                           Speaker: %s\nLocation: %s\n
@@ -74,7 +78,7 @@ def event_publish(post, event):
                           Time: %s\n%s\n%s\n""" % (post.title, post.event_Speaker, 
                                                    location, 
                                                    event_date, 
-                                                   event_time, reception, url)
+                                                   event_time, reception, public)
         
         content = {'title': post.title, 
         'description': formatted_post,

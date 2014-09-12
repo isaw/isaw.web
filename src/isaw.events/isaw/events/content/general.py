@@ -16,6 +16,20 @@ from isaw.events.config import PROJECTNAME
 GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
 # -*- Events Schema -*- #
+
+    atapi.TextField(
+    name='event_Subtitle',
+    accessor='subtitle',
+    widget=atapi.RichWidget(
+        label=u'Event Subtitle',
+        description=_(u'event_subtitle', default=u'Optional subtitle for event.'),
+        label_msgid='ISAW_Event_subtitle',
+        il8n_domain='ISAW_event',
+        ),
+
+    required=False,
+    searchable=False),
+
     atapi.ImageField(
     name='event_Image',
     widget=atapi.ImageWidget(
@@ -28,9 +42,9 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     required=False,
     searchable=False),
    
-    atapi.StringField(
+    atapi.TextField(
     name='event_Image_caption',
-    widget=atapi.TextAreaWidget(
+    widget=atapi.RichWidget(
         label=u'Event Image Caption',
         description=_(u'event_image_caption', default=u'Optional image caption associated with image.'),
         label_msgid='ISAW_Event_image_caption',
@@ -72,7 +86,7 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
     name='event_Speaker_detail',
-    widget=atapi.TextAreaWidget(
+    widget=atapi.RichWidget(
         label=u'Event Speaker Detail',
         description=_(u'event_speaker_detail', default=u'Background of the speaker.'),
         label_msgid='ISAW_Event_Speaker_detail',
@@ -184,13 +198,26 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         
     required=False,
     searchable=False),
+
+    atapi.BooleanField(
+    name='event_Public',
+    schemata='options',
+    widget=atapi.BooleanWidget(
+        description=_(u'event_public', default=u'If selected, the event will be open to the public.'),
+        label=u'Public Event',
+        label_msgid='ISAW_Event_ispublic',
+        il8n_domain='ISAW_Event',
+        ),
+
+    required=False,
+    searchable=False),
     
     atapi.BooleanField(
     name='event_Rsvp',
     schemata='options',
     widget=atapi.BooleanWidget(
         label=u'RSVP for this event?',
-        description=_(u'event_rsvp', default=u'If selected, one will need to RSVP for this event the default address is isaw@nyu.edu.'),
+        description=_(u'event_rsvp', default=u'If selected, one will need to RSVP with ISAW for this event. The default address is isaw@nyu.edu.'),
         label_msgid='ISAW_Event_rsvp',
         il8n_domain='ISAW_Event',
         ),
@@ -204,7 +231,7 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     validators= ('isEmail'),
     widget=atapi.StringWidget(
         label=u'RSVP email address',
-        description=_(u'event_custom_rsvp', default=u'RSVP contact email, default is isaw@nyu.edu'),
+        description=_(u'event_custom_rsvp', default=u'RSVP contact email, one will need to RVSP via this email address'),
         label_msgid='ISAW_Event_custom_rsvp',
         il8n_domain='ISAW_Event',
         ),
@@ -299,18 +326,18 @@ GeneralSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     isMetadata=True,
     required=False),
 
-    atapi.StringField(
-        name='event_Url',
-        required=False,
-        searchable=True,
-        accessor='event_url',
-        validators=('isURL',),
-        widget = atapi.StringWidget(
-            description = _(u'help_event_url',
-                default=u"Web address with more info about the event. "
-                "Add http:// for external links."),
-                label = _(u'label_event_url', default=u'Event URL')
-             )),
+#    atapi.StringField(
+#        name='event_Url',
+#        required=False,
+#        searchable=True,
+#        accessor='event_url',
+#        validators=('isURL',),
+#        widget = atapi.StringWidget(
+#            description = _(u'help_event_url',
+#                default=u"Web address with more info about the event. "
+#                "Add http:// for external links."),
+#                label = _(u'label_event_url', default=u'Event URL')
+#             )),
 
     atapi.StringField(
         name='contactName',
@@ -362,7 +389,8 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
     if moveDiscussion:
         schema.moveField('allowDiscussion', after='relatedItems')
 
-    schema.moveField('event_Image', after='title')
+    schema.moveField('event_Subtitle', after='title')
+    schema.moveField('event_Image', after='event_Subtitle')
     schema.moveField('event_Image_caption', after='event_Image')
 
     # Categorization
@@ -404,6 +432,7 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
     if schema.has_key('nextPreviousEnabled'):
         schema.changeSchemataForField('nextPreviousEnabled', 'options')
 
+    schema['description'].widget.visible['edit'] = 'invisible'
     schemata.marshall_register(schema)
     return schema
 

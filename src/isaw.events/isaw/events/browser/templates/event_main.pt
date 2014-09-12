@@ -45,7 +45,7 @@
                                             'Performance',
                                             'Seminar',
                                             'Sponsored'],
-                            'review_state': 'external'}, batch=True, b_size=7)">
+                            'review_state': 'external'}, batch=True, b_size=100)">
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
@@ -53,8 +53,8 @@
                     <p class="grayKeywords" tal:content="event/Type">Visiting Research Scholar Lecture</p>
                     <h2><a class="eventTitle" tal:content="event/Title"
                     tal:attributes="href event/getURL">Rediscovering the inscriptions of Campa (Vietnam)</a></h2>
+		    <h3 tal:content="event/subtitle" />
                     <p class="eventSpeakerLanding" tal:content="event/speaker">Numitorem, Amulium</p>
-                    <div class="eventAim" tal:replace="structure event/abstract | event/Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in turpis at nisl viverra congue vitae et dui. Praesent vel risus dui. Duis enim metus, bibendum et rutrum at, lobortis nec velit. Sed metus nisi, tristique sed tempor semper, eleifend eget erat. Quisque sem sem, dictum id malesuada elementum, pharetra eu sapien. Suspendisse eget ante magna, et condimentum massa. Phasellus id ligula et metus tristique tincidunt a a ligula. Quisque vel leo augue. Suspendisse potenti. Maecenas non nibh nulla. Cras eget mattis sem. Mauris nec nunc quam. Aliquam cursus turpis quis odio malesuada at consectetur arcu eleifend. Pellentesque aliquet molestie mauris, non consectetur tellus congue id. Praesent vulputate lectus in quam tincidunt pellentesque. Duis mi quam, pharetra id vehicula quis, sagittis sed mauris. Nulla facilisi. Mauris placerat quam lobortis orci sollicitudin tristique. Phasellus ut libero non enim mollis pulvinar id non libero. </div>
                     <a class="eventDetails" tal:attributes="href event/getURL">event details ></a>
             </div>
             

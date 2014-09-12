@@ -6,17 +6,12 @@ from zope.interface import implements
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
-
-# -*- Message Factory Imported Here -*-
-
 from isaw.events.content import general
 from isaw.events.interfaces import ILecture
 from isaw.events.config import PROJECTNAME
 from Products.ATContentTypes.lib.calendarsupport import CalendarSupportMixin
 
 LectureSchema = general.GeneralSchema.copy() + atapi.Schema((
-
-    # -*- Your Archetypes field definitions here ... -*-
 
 ))
 
@@ -38,7 +33,9 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
     if moveDiscussion:
         schema.moveField('allowDiscussion', after='relatedItems')
 
-    schema.moveField('event_Image', after='title')
+    schema.moveField('event_Subtitle', after='title')
+    schema.moveField('event_Image', after='event_Subtitle')
+    schema.moveField('event_Image_caption', after='event_Image')
 
     # Categorization
     if schema.has_key('subject'):

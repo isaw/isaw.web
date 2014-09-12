@@ -37,7 +37,9 @@ def finalizeATCTSchema(schema, folderish=False, moveDiscussion=True):
     if moveDiscussion:
         schema.moveField('allowDiscussion', after='relatedItems')
 
-    schema.moveField('event_Image', after='title')
+    schema.moveField('event_Subtitle', after='title')
+    schema.moveField('event_Image', after='event_Subtitle')
+    schema.moveField('event_Image_caption', after='event_Image')
 
     # Categorization
     if schema.has_key('subject'):
