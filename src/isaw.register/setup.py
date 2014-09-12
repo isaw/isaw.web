@@ -40,6 +40,11 @@ setup(name='isaw.register',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'requests',
+          'mechanize',
+          'pyvirtualdisplay',
+          'selenium',
+          'collective.progressbar'
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

@@ -4,7 +4,7 @@
     i18n:domain="plone">
  <configlet title="Sitewide ISAW Onboarding" action_id="SitewideuserOnboard" appId="SitewideuserOnboard"
     category="Products" condition_expr=""
-    url_expr="string:${portal_url}/@@sitewide-user" visible="True"
+    url_expr="string:${portal_url}/@@sitewide_user" visible="True"
     icon_expr="string:${portal_url}/group.png"
     i18n:attributes="title">
   <permission>Manage portal</permission>
