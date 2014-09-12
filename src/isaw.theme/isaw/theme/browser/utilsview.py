@@ -19,9 +19,10 @@ class UtilsView(BrowserView):
         self.portal_catalog = getToolByName(context, 'portal_catalog')
         self.portal_root = getToolByName(context, 'portal_url')
 
-    def getUpcomingEvents(self, limit=2):
+    def getUpcomingEvents(self, limit=3):
         """Grabbing latests news stuff for the news landing page"""
-        return self.portal_catalog(portal_type=['Conference',
+        
+        catalog = self.portal_catalog(portal_type=['Conference',
                                                 'Exhibition',
                                                 'Event',
                                                 'General',
@@ -32,6 +33,14 @@ class UtilsView(BrowserView):
                                    end={'query': DateTime(), 'range': 'min'},
                                    sort_on='start',
                                    review_state='external')[:limit]
+        print catalog
+        type(catalog)
+        if catalog == []:
+            print "we are here"
+            return False
+        else:
+            print "we are else"
+            return catalog
 
     def getNewsItems(self, limit=3):
         """Grabbing latests news stuff for the news landing page"""

@@ -23,22 +23,11 @@
         </div>
         
         <div id="home-center">
-            <!-- Featured Exhibit -->
-            <!--
-            <h2>The Art of Gandhara: Cultural Interactions in Ancient Pakistan</h2>
-            <div class="featuredDate">February 8 - May 15 2011</div>
-            <p class="featuredDescrip">
-                In partnership with the Asia Society Museum, this exhibition brings to New York City for the first time more than 200 objects that tell the story of the rich culture of Gandhara (1st - 5th centuries AD), located in present-day northern Pakistan and eastern Afghanistan. This crossroads region served as a gateway through which immigrants, traders, and conquerors traveled into India and central Asia, and its population interacted with a truly international amalgam of peoples and cultures from the Scythians to the Parthians, Romans, and Kushans.
-            </p>
-            -->
-            <!-- For the H2 header  -->
+           <!-- For the H2 header  -->
             <div id="featured" tal:define="utils_view context/@@utils_view;
                                               featured utils_view/getFeatured" 
                                 tal:content="structure featured"/>
-            <!--
-            <a href="#" class="featuredLink">visit this exhibit&gt;</a>
-            -->
-        
+
             <!-- Featured Portlet -->
             <div class="home-right">
                      <metal:portlets define-slot="portlets_two_slot">
@@ -53,8 +42,9 @@
             <div> <!-- scrollable item 1 -->
             <div id="home-events"
                  tal:define="utils_view context/@@utils_view;
-                         events utils_view/getUpcomingEvents"
-                 tal:condition="events">
+                         events utils_view/getUpcomingEvents;
+                         noevents string:There are currently has no upcoming events. "
+                 tal:condition="events | noevents">
                 <a href="events"><h2>Upcoming Events</h2></a>
                 <tal:events>
                     <div class="homeEvent" tal:repeat="event events">
@@ -64,26 +54,42 @@
                         <tal:speaker condition="event/speaker">
                             <span class="Speaker" tal:content="event/speaker" />:
                         </tal:speaker>
-                        <span tal:define="words python:event.Description.split(' ')"
+                        <span tal:define="words python:event.abstract.split(' ')"
                               tal:replace="structure python:' '.join(words[:40]) + ' ... '" />
                         <p>
                             <span class="eventTime" tal:content="python:DateTime(event.start).strftime('%l:%M %p')" /><span tal:condition="event/location">,</span>
-                            <span class="eventLocation" tal:content="event/location" />
+                            <span tal:condition="event/location" class="eventLocation" tal:content="event/location" />
                         </p>
                         <br />
                     </div>
                 </tal:events>
             </div>
             </div> <!-- scrollable item 1 --> 
+
+            <!-- NO EVENTS -->
+            <div id="home-events"
+                 tal:define="utils_view context/@@utils_view;
+                         events utils_view/getUpcomingEvents;
+                         noevents string:There are currently has no upcoming events. "
+                 tal:condition="exists:events">
+                <a href="events"><h2>Upcoming Events</h2></a>
+                <tal:events>
+                    <div class="homeEvent">
+                        <h4 class="eventTitle">There are no upcoming events</h4>
+                        <p>There are currently no events scheduled, please check back soon for the fall schedule.</p>
+                   </div>
+                </tal:events>
+            </div>
+ 
             <!-- news -->
             <div> <!-- scrollable item 2 -->
             <div id="home-news"
                  tal:define="utils_view context/@@utils_view;
                              news utils_view/getNewsItems"
                  tal:condition="news">
-                <a href="about/news"><h2>Latest News</h2></a>
+                <a href="/news"><h2>Latest News</h2></a>
                 <tal:newsitems>
-                    <div tal:repeat="item news">
+                    <div class="homeNews" tal:repeat="item news">
                         <h4><a tal:attributes="href item/getURL;
                                                title item/Description">
                             <span tal:replace="item/pretty_title_or_id">News Title</span></a></h4>

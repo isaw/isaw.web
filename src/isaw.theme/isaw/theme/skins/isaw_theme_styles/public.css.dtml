@@ -164,7 +164,7 @@ td {
 }
 #portal-personaltools .actionMenuHeader {
     font-weight: normal;
-    padding: 0.25em 0.5em;
+    padding: 0.50em 0.5em;
 }
 #portal-personaltools .actionMenuHeader a:after {
     content: " ▼";
@@ -425,16 +425,14 @@ body#content {
 /* Featured */
 #featured h2 {
     font-size: 18px;
-    line-height: 14px;
-    padding-bottom: 10px; 
-
+    line-height: 1.5em;
 }
 
 #featured p {
     margin-bottom: 0em;
     margin-left: 0px;
     margin-right: 2em;
-    margin-top: 0em;
+    margin-top: -1em;
 }
 
 
@@ -619,7 +617,7 @@ tr.selected {
 .toc {
     float: right;
     width: 35%;
-    margin: 1em 0 0.5em 1.5em;
+    margin: 1em 0 0.5em 2em;
 }
 .toc dt {
     margin-left: 1em;

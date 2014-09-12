@@ -6,13 +6,12 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 <body>
-    
 <metal:block fill-slot="content-title" />
     
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         
-        <tal:event repeat="event python:'1','2','3'">
+        <tal:event repeat="event python:'1','2','3','4','5','6','7'">
         
             <div class="eventListing">
                     <p class="eventDate">18 May 2010, 6:00 p.m</p>

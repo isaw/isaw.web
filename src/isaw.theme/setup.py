@@ -26,9 +26,9 @@ setup(name='isaw.theme',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+#          'sixfeetup.utils',
           'collective.addthis',
           'webcouturier.dropdownmenu',
-          'z3c.jbot',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]
