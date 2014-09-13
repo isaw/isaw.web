@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+  <object name="dropdown_properties" meta_type="Plone Property Sheet">
+    <property name="dropdown_depth" type="int">1</property>
+  </object>
+  <object name="navtree_properties" meta_type="Plone Property Sheet">
+    <property name="metaTypesNotToList" type="lines">
+      <element value="FSDCourse" remove="True"/>
+      <element value="FSDFacultyStaffDirectoryTool" remove="True"/>
+      <element value="FSDPerson" remove="True"/>
+      <element value="Lecture"/>
+      <element value="General"/>
+      <element value="Conference"/>
+      <element value="Seminar"/>
+      <element value="Image"/>
+    </property>
+  </object>
+  <object name="site_properties" meta_type="Plone Property Sheet">
+    <property name="allowAnonymousViewAbout" type="boolean">True</property>
+    <property name="typesLinkToFolderContentsInFC" type="lines">
+      <element value="Folder" remove="True"/>
+      <element value="Ruleset Collection"/>
+      <element value="Ruleset"/>
+      <element value="Relations Library"/>
+    </property>
+    <property name="visible_ids" type="boolean">True</property>
+    <property name="exposeDCMetaTags" type="boolean">True</property>
+    <property name="disable_nonfolderish_sections"
+              type="boolean">True</property>
+    <property name="forbidden_contenttypes" type="lines">
+      <element value="text/structured" remove="True"/>
+      <element value="text/plain" remove="True"/>
+      <element value="text/x-web-intelligent" remove="True"/>
+      <element value="text/x-web-textile"/>
+      <element value="text/x-tinymce-output-html"/>
+    </property>
+    <property name="enable_sitemap" type="boolean">True</property>
+    <property name="use_email_as_login" type="boolean">True</property>
+    <property name="user_registration_fields" type="lines">
+      <element value="portrait"/>
+      <element value="description"/>
+    </property>
+    <property name="enable_checkout_workflow" type="boolean">False</property>
+    <property name="checkout_workflow_policy"
+              type="string">checkout_workflow_policy</property>
+    <property name="displayPublicationDateInByline"
+              type="boolean">True</property>
+  </object>
+</object>

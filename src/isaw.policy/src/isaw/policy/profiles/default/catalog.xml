@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <index name="getSortableName" meta_type="FieldIndex">
+    <indexed_attr value="getSortableName"/>
+  </index>
+  <index name="subtitle" meta_type="ZCTextIndex">
+    <indexed_attr value="subtitle"/>
+    <extra name="index_type" value="Cosine Measure"/>
+    <extra name="lexicon_id" value="htmltext_lexicon"/>
+  </index>
+  <column value="Email"/>
+  <column value="Phone"/>
+  <column value="Titles"/>
+  <column value="abstract"/>
+  <column value="image"/>
+  <column value="speaker"/>
+  <column value="subtitle"/>
+</object>

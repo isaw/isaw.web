@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<object>
+ <resourcetypes>
+   <linkable>
+     <element value="CV"/>
+     <element value="Exhibition"/>
+     <element value="Seminar"/>
+     <element value="Lecture"/>
+     <element value="General"/>
+     <element value="Sponsored"/>
+     <element value="Performance"/>
+     <element value="profile"/>
+     <element value="Conference"/>
+   </linkable>
+   <containsanchors>
+     <element value="CV"/>
+     <element value="Exhibition"/>
+     <element value="Seminar"/>
+     <element value="Lecture"/>
+     <element value="General"/>
+     <element value="Sponsored"/>
+     <element value="Performance"/>
+     <element value="profile"/>
+     <element value="Conference"/>
+   </containsanchors>
+   <allow_captioned_images value="True"/>
+   <containsobjects>
+     <element value="CV"/>
+     <element value="Exhibition"/>
+     <element value="Seminar"/>
+     <element value="Lecture"/>
+     <element value="General"/>
+     <element value="Sponsored"/>
+     <element value="Performance"/>
+     <element value="profile"/>
+     <element value="Conference"/>
+   </containsobjects>
+ </resourcetypes>
+ <layout>
+   <tablestyles>
+     <element value="Logos and badges|nascar"/>
+   </tablestyles>
+   <autoresize value="True"/>
+ </layout>
+ <toolbar>
+   <toolbar_cut value="True"/>
+   <toolbar_definitionlist value="False"/>
+   <customtoolbarbuttons>
+     <element value="fontsizeselect"/>
+     <element value="delete_table"/>
+   </customtoolbarbuttons>
+   <toolbar_paste value="True"/>
+   <toolbar_nonbreaking value="True"/>
+   <toolbar_removeformat value="True"/>
+   <toolbar_underline value="True"/>
+   <toolbar_preview value="True"/>
+   <toolbar_forecolor value="True"/>
+   <toolbar_replace value="True"/>
+   <toolbar_pasteword value="True"/>
+   <toolbar_width value="1024"/>
+   <toolbar_print value="True"/>
+   <toolbar_spellchecker value="True"/>
+   <toolbar_copy value="True"/>
+   <toolbar_pastetext value="True"/>
+   <toolbar_search value="True"/>
+   <toolbar_attribs value="True"/>
+   <toolbar_pagebreak value="True"/>
+   <toolbar_external value="True"/>
+   <toolbar_cleanup value="True"/>
+ </toolbar>
+</object>

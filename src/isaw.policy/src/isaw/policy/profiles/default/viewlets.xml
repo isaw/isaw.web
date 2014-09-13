@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<object>
+  <order manager="plone.htmlhead" skinname="Sunburst Theme">
+    <viewlet name="plone.resourceregistries"/>
+    <viewlet name="glowormHtmlHeadIncludes"/>
+  </order>
+  <order manager="plone.belowcontentbody" skinname="Sunburst Theme"/>
+  <order manager="plone.portalfooter" skinname="Sunburst Theme"/>
+  <order manager="gloworm.glowormPanel" skinname="Sunburst Theme">
+    <viewlet name="glowormPanelHeader"/>
+    <viewlet name="glowormPanelBody"/>
+    <viewlet name="glowormPanelNavTree"/>
+  </order>
+  <order manager="plone.portalheader" skinname="Sunburst Theme"/>
+  <order manager="plone.portaltop" skinname="Sunburst Theme"/>
+  <order manager="plone.belowcontentbody" skinname="Keep it Simple"/>
+  <order manager="plone.portalheader" skinname="Keep it Simple">
+    <viewlet name="plone.site_actions"/>
+    <viewlet name="plone.skip_links"/>
+    <viewlet name="plone.searchbox"/>
+    <viewlet name="plone.global_sections"/>
+    <viewlet name="plone.logo"/>
+    <viewlet name="plone.intro"/>
+  </order>
+  <order manager="plone.portaltop" skinname="Keep it Simple">
+    <viewlet name="plone.header"/>
+    <viewlet name="plone.app.i18n.locales.languageselector"/>
+    <viewlet name="plone.personal_bar"/>
+    <viewlet name="plone.path_bar"/>
+  </order>
+  <order manager="plone.portalintro" skinname="Keep it Simple">
+    <viewlet name="plone.logo"/>
+    <viewlet name="plone.introtext"/>
+  </order>
+  <order manager="plone.portalheader" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.site_actions"/>
+  </order>
+  <order manager="plone.portaltop" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.personal_bar"/>
+    <viewlet name="plone.app.i18n.locales.languageselector"/>
+    <viewlet name="plone.path_bar"/>
+  </order>
+  <order manager="plone.belowcontentbody" skinname="NYU ISAW Theme"/>
+  <order manager="plone.htmlhead" skinname="Plone Default">
+    <viewlet name="plone.resourceregistries"/>
+    <viewlet name="glowormHtmlHeadIncludes"/>
+  </order>
+  <order manager="gloworm.glowormPanel" skinname="Plone Default">
+    <viewlet name="glowormPanelHeader"/>
+    <viewlet name="glowormPanelBody"/>
+    <viewlet name="glowormPanelNavTree"/>
+  </order>
+  <order manager="plone.belowcontentbody" skinname="Plone Classic Theme"/>
+  <hidden manager="plone.belowcontentbody" skinname="Sunburst Theme"/>
+  <hidden manager="plone.portalheader" skinname="Sunburst Theme"/>
+  <hidden manager="plone.portaltop" skinname="Sunburst Theme"/>
+  <hidden manager="plone.portalfooter" skinname="Keep it Simple"/>
+  <hidden manager="plone.portalheader" skinname="Keep it Simple"/>
+  <hidden manager="plone.abovecontent" skinname="Keep it Simple">
+    <viewlet name="plone.path_bar"/>
+  </hidden>
+  <hidden manager="plone.portalintro" skinname="Keep it Simple"/>
+  <hidden manager="plone.belowcontent" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.belowcontenttitle.keywords"/>
+  </hidden>
+  <hidden manager="plone.portalfooter" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.site_actions"/>
+  </hidden>
+  <hidden manager="plone.portalheader" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.personal_bar"/>
+    <viewlet name="plone.app.i18n.locales.languageselector"/>
+  </hidden>
+  <hidden manager="plone.abovecontent" skinname="Old Plone 3 Custom Theme">
+    <viewlet name="plone.path_bar"/>
+  </hidden>
+  <hidden manager="plone.belowcontenttitle" skinname="NYU ISAW Theme">
+    <viewlet name="plone.belowcontenttitle.documentbyline"/>
+  </hidden>
+  <hidden manager="plone.abovecontent" skinname="NYU ISAW Theme"/>
+  <hidden manager="plone.portalheader" skinname="NYU ISAW Theme">
+    <viewlet name="plone.global_sections"/>
+  </hidden>
+ <hidden manager="plone.portalheader" skinname="NYU ISAW Theme" remove="True" />
+ <hidden manager="plone.belowcontent" skinname="NYU ISAW Theme">
+   <viewlet name="plone.comments"/>
+ </hidden>
+</object>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<site>
+  <property
+      name="title">Institute for the Study of the Ancient World</property>
+  <property name="email_from_address"
+            type="string">isaw.it-group@nyu.edu</property>
+  <property name="email_from_name" type="string">ISAW Administrator</property>
+  <property name="default_page" type="string">isaw-home</property>
+</site>
