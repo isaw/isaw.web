@@ -5,5 +5,17 @@
     <dependency>profile-isaw.theme:default</dependency>
     <dependency>profile-isaw.events:default</dependency>
     <dependency>profile-isaw.facultycv:default</dependency>
+    <dependency>profile-isaw.exhibitions:default</dependency>
+    <dependency>profile-isaw.register:default</dependency>
+    <dependency>profile-webcouturier.dropdownmenu:default</dependency>
+    <dependency>profile-collective.quickupload:default</dependency>
+    <dependency>profile-Products.WebServerAuth:default</dependency>
+    <dependency>profile-Products.Marshall:default</dependency>
+    <dependency>profile-plone.resource:default</dependency>
+    <dependency>profile-plone.session:default</dependency>
+    <dependency>profile-collective.portlet.relateditems:default</dependency>
+    <dependency>profile-Products.CMFPlacefulWorkflow:CMFPlacefulWorkflow</dependency>
+    <dependency>profile-collective.z3cform.datetimewidget:default</dependency>
+    <dependency>profile-plone.app.caching:default</dependency>
   </dependencies>
 </metadata>
