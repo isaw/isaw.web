@@ -49,13 +49,27 @@
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
-                    <p class="eventDate" tal:content="python:event.start.strftime('%d %B %Y, %I:%M %p')">18 May 2010, 6:00 p.m</p>
-                    <p class="grayKeywords" tal:content="event/Type">Visiting Research Scholar Lecture</p>
-                    <h2><a class="eventTitle" tal:content="event/Title"
-                    tal:attributes="href event/getURL">Rediscovering the inscriptions of Campa (Vietnam)</a></h2>
-		    <h3 tal:content="event/subtitle" />
-                    <p class="eventSpeakerLanding" tal:content="event/speaker">Numitorem, Amulium</p>
-                    <a class="eventDetails" tal:attributes="href event/getURL">event details ></a>
+                <p class="eventDate" tal:content="python:DateTime(event.start).strftime('%B %d, %Y &mdash; %l:%M %p')">18 May 2010, 6:00 p.m.</p>
+                <h2 tal:define="event_type event/Type">
+                    <a class="eventTitle" tal:attributes="href event/getURL">
+                        <!-- <span class="itemTypeTitle" 
+                              tal:content="python:str(event_type).replace(' Item', '').replace(' Event', '').replace('General', 'Event') + ':'">Type</span> -->
+                              <span tal:content="event/Title">Rediscovering the inscriptions of Campa (Vietnam)</span></a></h2>
+                <h3 tal:content="event/subtitle" />
+                <p class="eventSpeakerLanding" tal:content="event/speaker">Numitorem, Amulium</p>
+                <tal:details define="abstract event/abstract;
+                                     paragraph python:str(abstract).split('</p>')[0].replace('<p>','');"
+                             condition="python:len(paragraph) > 0">
+                    <p class="eventDetails" tal:define="words python:paragraph.split(' ');
+                                   front python:' '.join(words[:25]);
+                                   back python:' '.join(words[25:]);
+                                   tailindex python:len(back.split('>')[0])+1;
+                                   tail python:str(back[:tailindex] if tailindex > 1 else '');
+                                   tagcount python:front.count('<');
+                                   abridgement python:str(front if tagcount % 2 == 0 else ' '.join((front, tail))) + ' ...';"
+                       tal:condition="python:bool(paragraph[0] != '<')"
+                       tal:content="structure abridgement">Event Summary</p>
+                </tal:details>
             </div>
             
         </tal:event>
@@ -66,4 +80,3 @@
 
 </body>
 </html>
-
