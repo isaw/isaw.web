@@ -6,142 +6,116 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="isaw.facultycv">
 
-<body>
+    <body>
 
-<metal:block fill-slot="content-title" />
-
-<metal:content-core fill-slot="content-core">
-    <metal:content-core define-macro="content-core">
-
-    <!--
-    <div metal:fill-slot="main">
-    <metal:main-macro define-macro="main">
-
-        <p class="documentDescription"
-           tal:content="here/Description"
-           tal:condition="here/Description">
-            Description
-        </p>
-    -->
-
-    <!--
-		<img width=200 class="image-right captioned" tal:attributes="src context/profile/image/absolute_url | context/++resource++cvimages/face-grin.png;
-        image-right.border string:0" />
-		<dl id="cv-toc" class="portlet toc" style="display: none"
-    		i18n:domain="plone">
-  			<dt class="portletHeader"
-      		i18n:translate="label_tableofcontents">Contents</dt>
-  			<dd class="portletItem">
-			test
-  			</dd>
-		</dl>
-    -->
-		<p class="facultyTitles">Curriculum Vitae</p>
-		<a tal:attributes="href string:${context/absolute_url}/pdf_view">Download PDF</a>
-
-        <div class="facultyContact">
-		    <div class="address" tal:content="structure context/aq_parent/Address" />
-		    <a tal:condition="context/Email" tal:attributes="mailto string:${context/aq_parent/Email}" tal:content="string:${context/Email}" />
-            <span class="phone" tal:content="structure context/aq_parent/Phone | nothing" />
-            <div class="visualClear"><!-- --></div>
-        </div>
+        <metal:block fill-slot="content-title" />
     
-        <table id="faculty-cv">
+        <metal:content-core fill-slot="content-core">
+            <metal:content-core define-macro="content-core">
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Education and Degrees">Education and Degrees</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Education and Degrees | nothing" />
+                        <p class="facultyTitles">Curriculum Vitae</p>
+                        <a tal:attributes="href string:${context/absolute_url}/pdf_view">Download PDF</a>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Positions held">Positions Held</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Positions held | nothing" />
-        </tr>
+                <div class="facultyContact">
+                            <div class="address" tal:content="structure context/aq_parent/Address" />
+                            <a tal:condition="context/Email" tal:attributes="mailto string:${context/aq_parent/Email}" tal:content="string:${context/Email}" />
+                    <span class="phone" tal:content="structure context/aq_parent/Phone | nothing" />
+                    <div class="visualClear"><!-- --></div>
+                </div>
+            
+                <table id="faculty-cv">
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Honors">Honors</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Honors | nothing" />
-        </tr>
+                    <!-- education and degrees -->
+                    <tr tal:condition="context/Education and Degrees">
+                        <th tal:attributes="colspan string:2">Education and Degrees</th>
+                    </tr>
+                    <tr tal:condition="context/Education and Degrees">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Education and Degrees | nothing" />
+                    </tr>
 
-        <!--
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Professional Affiliations">Professional Affiliations</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Professional Affiliations | nothing" />
-        </tr>
-        -->
+                    <!-- positions -->
+                    <tr tal:condition="context/Positions held">
+                        <th tal:attributes="colspan string:2" >Positions Held</th>
+                    </tr>
+                    <tr tal:condition="context/Positions held">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Positions held | nothing" />
+                    </tr>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Professional Offices and Service">Professional Offices and Service</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Professional Offices and Service | nothing" />
-        </tr> 
+                    <!-- honors -->
+                    <tr tal:condition="context/Honors">
+                        <th tal:attributes="colspan string:2">Honors</th>
+                    </tr>
+                    <tr tal:condition="context/Honors">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Honors | nothing" />
+                    </tr>
 
+                    <!-- professional offices and services -->
+                    <tr tal:condition="context/Professional Offices and Service">
+                        <th tal:attributes="colspan string:2" tal:condition="context/Professional Offices and Service">Professional Offices and Service</th>
+                    </tr>
+                    <tr tal:condition="context/Professional Offices and Service">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Professional Offices and Service | nothing" />
+                    </tr> 
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Research and works in progress">Research and Work in progress</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Research and works in progress | nothing" />
-        </tr>
+                    <!-- research and work in progress -->
+                    <tr tal:condition="context/Research and works in progress">
+                        <th tal:attributes="colspan string:2">Research and Work in progress</th>
+                    </tr>
+                    <tr tal:condition="context/Research and works in progress">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Research and works in progress | nothing" />
+                    </tr>
 
+                    <!-- awards -->
+                    <tr tal:condition="context/Research Awards">
+                        <th tal:attributes="colspan string:2">Research Awards</th>
+                    </tr>
+                    <tr tal:condition="context/Research Awards">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Research Awards | nothing" />
+                    </tr>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Research Awards">Research Awards</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Research Awards | nothing" />
-        </tr>
+                    <!-- courses taught -->
+                    <tr tal:condition="context/List of Courses">
+                        <th tal:attributes="colspan string:2">List of Courses</th>
+                    </tr>
+                    <tr tal:condition="context/List of Courses">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/List of Courses | nothing "/>
+                    </tr>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/List of Courses">List of Courses</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Courses Taught | nothing "/>
-        </tr>
+                    <!-- graduate supervision -->
+                    <tr tal:condition="context/Graduate Supervision">
+                        <th tal:attributes="colspan string:2">Graduate Supervision</th>
+                    </tr>
+                    <tr tal:condition="context/Graduate Supervision">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Graduate Supervision | nothing "/>
+                    </tr>
 
-        
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Graduate Supervision">Graduate Supervision</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Graduate Supervision | nothing "/>
-        </tr>
+                    <!-- publications -->
+                    <tr tal:condition="context/Publications">
+                        <th tal:attributes="colspan string:2">Publications</th>
+                    </tr>
+                    <tr tal:condition="context/Publications">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Publications | nothing "/>
+                    </tr>
 
+                    <!-- papers -->
+                    <tr tal:condition="context/Papers">
+                        <th tal:attributes="colspan string:2">Papers</th>
+                    </tr>
+                    <tr tal:condition="context/Papers">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Papers | nothing "/>
+                    </tr>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Publications">Publications</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Publications | nothing "/>
-        </tr>
+                    <!-- lectures -->
+                    <tr tal:condition="context/Lectures">
+                        <th tal:attributes="colspan string:2">Lectures</th>
+                    </tr>
+                    <tr tal:condition="context/Lectures">
+                        <td tal:attributes="colspan string:2" tal:content="structure context/Lectures | nothing" />
+                    </tr>
 
+                </table>
+            </metal:content-core>
+        </metal:content-core>
 
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Papers">Papers</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Papers | nothing "/>
-        </tr>
-
-        <tr>
-            <th tal:attributes="colspan string:2" tal:condition="context/Lectures">Lectures</th>
-        </tr>
-        <tr>
-            <td tal:attributes="colspan string:2" tal:content="structure context/Lectures | nothing" />
-        </tr>
-
-    </table>
-    </metal:content-core>
-</metal:content-core>
-
-</body>
+    </body>
 </html>
-

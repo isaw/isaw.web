@@ -13,33 +13,35 @@
     <metal:content-core define-macro="content-core">
         
         <div id="people" tal:define="people python:context.getFolderContents(contentFilter={'portal_type': 'profile'})">
-        <tal:faculty>
+          <tal:faculty>
         
             <div class="facultyListing" tal:repeat="faculty people">
-            <img tal:define="no_image string:portal_url/images/default-person;
-                             image_url string:${faculty/getURL}/Image; 
-                             person_id faculty/id;
+              <tal:foo define="person_id faculty/id;
                              person_path python:getattr(faculty, person_id);
-                             person_image python:getattr(person_path, 'profileImage')"
-                 tal:condition="person_image"
-                 tal:attributes="src image_url | no_image"/>
+                             person_image python:getattr(person_path, 'profileImage');
+                             person_email faculty/Email|nothing">
+                <div class="facultyImage" 
+                    tal:condition="person_image">
+                    <a tal:attributes="href string:${faculty/getURL}">
+                      <img tal:define="no_image string:portal_url/images/default-person;
+                                       image_url string:${faculty/getURL}/Image;"
+                                       tal:attributes="src image_url | no_image"/></a></div>
 
+<!--
             <img tal:define="no_image string:portal_url/images/default-person;
                              person_id faculty/id;
                              person_path python:getattr(faculty, person_id);
                              person_image python:getattr(person_path, 'profileImage')"
                  tal:condition="not:person_image"
                  tal:attributes="src no_image"/>
+-->
 
                 <div class="facultyInfo">
-                    <h2 tal:content=faculty/Title>Roger Bagnall</h2>
+                  <a tal:attributes="href string:${faculty/getURL}"><h2 tal:content=faculty/Title>Roger Bagnall</h2></a>
                     <p tal:content="structure faculty/Titles" class="facultyPosition">Director</p>
-                    <div class="alignBottom">
-                        <p tal:content="faculty/Email" class="facultyEmail">roger.bagnall@nyu.edu</p>
-                        <a class="moreInfo" tal:attributes="href string:${faculty/getURL}">further information</a>
-                    </div>
-                    <div class="visualClear"><!-- --></div>
+                    <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
                 </div>
+              </tal:foo>
             </div>
             
        </tal:faculty>
@@ -50,4 +52,3 @@
 
 </body>
 </html>
-
