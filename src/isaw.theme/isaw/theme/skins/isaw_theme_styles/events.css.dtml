@@ -1,6 +1,6 @@
 /*
-  <dtml-with base_properties> (do not remove this)
-  <dtml-call "REQUEST.set('portal_url', portal_url())"> (not this either)
+   (do not remove this)
+   (not this either)
 */
 
 /* event detail page */
@@ -23,7 +23,7 @@
 }
 
 .eventCal .cal {
-    background: url("&dtml-portal_url;/event_cal.png") no-repeat top left;
+    background: url("http://isaw.nyu.edu:8080/isaw/event_cal.png") no-repeat top left;
     display: block;
     width: 28px;
     height: 28px;
@@ -47,8 +47,11 @@
 
 .eventSpeaker,
 .eventSpeakerLanding {
-    font-size: 17px;
-    color: &dtml-primaryColor;;
+    color: #000000;
+    font-size: 12px;
+    margin: 0 !important;
+    margin-top: 0.3em !important;
+    font-weight: 600;
 }
 
 .eventDescription {
@@ -76,18 +79,25 @@
     margin-bottom: 0.1em;
 }
 
-#content .eventSpeakerLanding {
-    margin-bottom: 0.3em;
-}
 
 #content .eventDate {
-    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    font-size: 11px;
 }
 
-#content .eventDetails,
+#content .eventDetails {
+    font-size: 12px;
+    line-height: 1.3em;
+    margin: 0;
+    margin-top: 0.3em;
+    float: none;
+}
+
 #content .grayKeywords {
     color: #666666;
     font-size: 12px;
+    display: none;
 }
 
 #content .grayKeywords {
@@ -95,7 +105,37 @@
 }
 
 .eventListing {
-    margin-bottom: 40px;
+    margin-top: 1.3em;
+    padding: 0.3em 0.3em 0.5em 0.5em;
+    background-color: white;
 }
 
-/* </dtml-with> */
+.eventListing * {
+    margin: 0;
+    padding: 0;
+}
+
+.section-events .eventListing h2 {
+    font-weight: normal;
+    line-height: 1.3em;
+    font-size: 15px;
+    margin-right: 15px;
+    margin-bottom: 0.3em;
+}
+
+.section-events .eventListing h3 {
+    font-weight: normal;
+    line-height: 1.3em;
+    font-size: 13px;
+    margin-right: 15px;
+    color: #231F20;
+    font-style: italic;
+}
+
+.section-events div.portletWrapper:nth-child(2) {
+    width: 165px;
+    padding-left: 22px;
+    padding-top: 10px;
+}
+
+/*  */

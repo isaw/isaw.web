@@ -67,8 +67,14 @@ a:active {
     color: &dtml-linkActiveColor;;
 }
 a:hover {
-    color: &dtml-linkHoverColor;;
+    text-decoration: underline;
+    /* color: &dtml-linkHoverColor;; */
 }
+.template-home_page_view #home-left a.about, .template-home_page_view #home-left a.about:link, .template-home_page_view #home-left a.about:active, .template-home_page_view #home-left a.about:hover, .template-home_page_view #home-left a.about:visited {
+    text-decoration: none !important;
+}
+
+
 a:focus img {
     outline: none;
 }
@@ -316,7 +322,7 @@ body#content {
 }
 #content p {
     margin: 0px;
-    margin-right: 2em;
+    margin-right: 0px;
     margin-bottom: 1em;
     margin-left: 0px;
 }
@@ -334,13 +340,13 @@ body#content {
 #content ul {
     list-style-type: disc;
     margin-left: 2em;
-    margin-right: 2em;
+    margin-right: 0px;
 }
 #content ol,
 .portlet ol {
     list-style-type: decimal;
     margin-left: 2em;
-    margin-right: 2em;
+    margin-right: 0px;
 }
 #content li,
 .portlet li {
@@ -418,8 +424,8 @@ body#content {
     padding: 0.5em;
     background-color: #666;
     color: #ffffff;
-    font-weight: bold;
     width: 190px;
+    line-height: 1.3em;
 }
 
 /* Featured */
@@ -452,6 +458,10 @@ table.plain {
 .listing th {
     padding: 0.5em 1em;
     vertical-align: top;
+}
+.nascar td,
+.nascar th {
+    padding: 0 0.5em 2em 0 !important;
 }
 .plain th,
 .plain td {
@@ -1225,7 +1235,7 @@ a.link-feed {
     position:relative;
     overflow:hidden;
     width: 340px;
-    height:390px;
+    height:462px;
 }
 
 .scrollable .items {

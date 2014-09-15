@@ -16,7 +16,7 @@
 
 .template-faculty_detail #portal-column-two .visualPadding {
     margin-bottom: 200px;
-    width: 140px;
+    width: 145px;
     float: right;
 }
 
@@ -40,19 +40,20 @@
 .facultyListing {
     margin-bottom: 14px;
     clear: both;
-    width: 550px;
+    *width: 550px;
+    padding-top: 10px;
 }
 
 .facultyListing img {
-    float: left;
+    *float: left;
     width: 96px;
     height: auto;
     border: 5px solid #ffffff;
 }
 
 .facultyListing .facultyInfo {
-    margin-left: 112px;
-    position: relative;
+    *margin-left: 112px;
+    *position: relative;
 }
 
 .facultyInfo h2 {
@@ -93,7 +94,7 @@
 
 /* faculty detail */
 .template-faculty_detail #content-core {
-    width: 560px;
+    *width: 550px;
     padding: 0px;
 }
 
@@ -121,7 +122,7 @@
     border-style: solid;
     padding: 3px 0;
     text-align: center;
-    width: 600px;
+    *width: 600px;
 }
 
 .facultyContact a {
@@ -133,12 +134,19 @@
 }
 
 .facultyBlurb p {
-    width: 600px;
+    *width: 600px;
 }
 
 .facultyImage {
     background-color: #e2ded5;
     margin-bottom: 10px;
+}
+
+.facultyListing .facultyImage {
+    background-color: inherit;
+    float: left;
+    padding: 0;
+    padding-right: 10px;
 }
 
 .viewButton {
@@ -226,6 +234,10 @@
 #faculty-cv .details {
     color: #666666;
     font-size: 12px;
+}
+
+.portaltype-profile #portal-column-two {
+    width: 145px;
 }
 
 /* </dtml-with> */

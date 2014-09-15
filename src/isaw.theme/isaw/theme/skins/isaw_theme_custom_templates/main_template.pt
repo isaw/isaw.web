@@ -96,10 +96,9 @@
             <td id="portal-column-nav">
                 <div tal:replace="structure provider:isaw.leftcol" />
                 <div class="contact">
-                    15 East 84th St.
-                    New York, NY
-                    10028
-                    212-992-7800
+                    15 East 84th St.<br />
+                    New York, NY 10028<br />
+                    212-992-7800<br />
                     isaw@nyu.edu
                 </div>
             </td>
