@@ -130,17 +130,32 @@ following shell environment variables before running `buildout`:
 
 This should pull down additional repositories, install python dependencies,
 and in the end create the scripts to run a local development version of the
-ISAW site.  First you can create and/or set an Admin user password:
+ISAW site.  The services (ZEO server and clients) for the site are run by a
+"supervisor" process.  To start supervisor for the first time run:
 
-    bin/instance adduser <name> <password>
+    bin/supervisord
 
-To run the local instance in development mode, simply run:
-
-    bin/instance fg
-
-At this point you should be able to connect to the instance on:
+At this point you should be able to connect to the zeo clients on:
 
     http://127.0.0.1:8081/
+    http://127.0.0.1:8082/
+
+If you need to restart the services, run:
+
+    bin/supervisorctl restart all
+
+If you need to stop the supervisor, run:
+
+    bin/supervisorctl shutdown
+
+You can create and/or set an Admin user password:
+
+    bin/client1 adduser <name> <password>
+
+To run the local zeo client in development mode, you'll want to stop the supervisor controlled process and start it up in foreground mode:
+
+    bin/supervisorctl stop client1
+    bin/client1 fg
 
 Which should show you a button for creating a new Plone site.  You'll want to
 create a new site and apply the isaw.policy default profile by checking the
