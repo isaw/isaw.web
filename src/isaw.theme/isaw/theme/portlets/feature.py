@@ -82,8 +82,8 @@ class Renderer(base.Renderer):
             #     portal.unrestrictedTraverse(
             #  self.data.assignment_context_path).absolute_url()
             assignment_url = "isaw/++contextportlets++plone.rightcolumn"
-            width = self.data.image.width
-            height = self.data.image.height
+            # width = self.data.image.width
+            # height = self.data.image.height
             return "<img src='%s/%s/@@image' width='150' height='150' alt='%s'/>" % \
                  (assignment_url,
                  self.data.__name__,
