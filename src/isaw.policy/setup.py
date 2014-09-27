@@ -57,6 +57,7 @@ setup(name='isaw.policy',
           'randomdotorg',
           'tweepy',
           'z3c.jbot',
+          'collective.embedly',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
