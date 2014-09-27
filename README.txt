@@ -135,14 +135,7 @@ ISAW site.  The services (ZEO server and clients) for the site are run by a
 
     bin/supervisord
 
-At this point you should be able to connect to the zeo clients on:
-
-    http://127.0.0.1:8081/
-    http://127.0.0.1:8082/
-
-If you need to restart the services, run:
-
-    bin/supervisorctl restart all
+This will start the supervisor and the Zeoserver, but not the zope clients by default
 
 If you need to stop the supervisor, run:
 
@@ -152,14 +145,23 @@ You can create and/or set an Admin user password:
 
     bin/client1 adduser <name> <password>
 
-To run the local zeo client in development mode, you'll want to stop the supervisor controlled process and start it up in foreground mode:
+To run the local zeo client in development mode, you can start it up in
+foreground mode:
 
-    bin/supervisorctl stop client1
     bin/client1 fg
+
+You can now connect to the site at:
+
+    http://127.0.0.1:8081/
 
 Which should show you a button for creating a new Plone site.  You'll want to
 create a new site and apply the isaw.policy default profile by checking the
 corresponding checkbox.
+
+The supervisor can also be used to run the Zeo clients in the background:
+
+    bin/supervisorctl start client1
+    bin/supervisorctl start client2
 
 
 Development
