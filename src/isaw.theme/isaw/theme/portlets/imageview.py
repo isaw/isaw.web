@@ -5,6 +5,7 @@ from Products.Five.browser import BrowserView
 
 from isaw.theme.portlets.interfaces import IFeaturePortletImageView
 
+
 class ImageView(BrowserView):
     '''
     View the image field of the image portlet. We steal header details
@@ -17,4 +18,6 @@ class ImageView(BrowserView):
     def __call__(self):
         context = aq_inner(self.context)
         image = context.image
+        if isinstance(image, basestring):
+            return image
         return image.index_html(self.request, self.request.response)
