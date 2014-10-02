@@ -61,7 +61,7 @@ setup(name='isaw.policy',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
-      # -*- Entry points: -*- 
+      # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
       target = plone
       """
