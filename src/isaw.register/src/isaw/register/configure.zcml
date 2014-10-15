@@ -16,6 +16,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="uninstall isaw.register"
+      directory="profiles/uninstall"
+      description="Removes the isaw.register package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
    <cmf:registerDirectory
         name="skins"
         directory="skins"
