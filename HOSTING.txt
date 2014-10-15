@@ -1,20 +1,14 @@
 The following commands are required to install required software packages and configure the server:
 
-    apt-get install git apache2 varnish haproxy bibutils wv poppler-utils libjpeg-dev libxml2-dev libxslt-dev libtiff5-dev libfreetype6-dev
+    apt-get install git apache2 varnish haproxy python2.7-dev bibutils wv poppler-utils libjpeg-dev libxml2-dev libxslt-dev libtiff5-dev libfreetype6-dev
     a2enmod rewrite ssl headers proxy proxy_http deflate
-
-    # For Python 2.6 (Plone < 4.3)
-    apt-get install software-properties-common
-    add-apt-repository ppa:fkrull/deadsnakes
-    apt-get update
-    apt-get install python2.6 python2.6-dev
 
     cd /srv
     git clone git@github.com:isawnyu/isaw.web
     cd isaw.web
 
-    # For Plone < 4.3
-    python2.6 ./bootstrap.py
+    # For Plone >= 4.3
+    python2.7 ./bootstrap.py
     bin/buildout -c production.cfg
 
     # The buildout should be owned by the plone user, so either run it as "su plone" or
