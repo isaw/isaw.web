@@ -6,7 +6,6 @@
     <dependency>profile-isaw.events:default</dependency>
     <dependency>profile-isaw.facultycv:default</dependency>
     <dependency>profile-isaw.exhibitions:default</dependency>
-    <dependency>profile-isaw.register:default</dependency>
     <dependency>profile-webcouturier.dropdownmenu:default</dependency>
     <dependency>profile-collective.quickupload:default</dependency>
     <dependency>profile-Products.WebServerAuth:default</dependency>
