@@ -1,0 +1,183 @@
+backend balancer {
+        .host = "127.0.0.1";
+        .port = "8080";
+        .first_byte_timeout = 300s;
+        .between_bytes_timeout = 100s;
+        .connect_timeout = 5s;
+}
+
+# This sets an access control list for an action we are calling "purge".
+# We allow the private subnet in full
+acl purge {
+    "127.0.0.1"/24;
+}
+
+# sub vcl_recv is called whenever a request is received by Varnish (i.e. a
+# request is made for a webpage).
+sub vcl_recv {
+# Serve objects up to 2 minutes past their expiry if the Plone backend
+# is slow to respond.
+    set req.grace = 60s;
+    set req.backend = balancer;
+    
+# This uses the ACL action called "purge". Basically if a request to
+# PURGE the cache comes from anywhere other than localhost, ignore it.
+    if (req.request == "PURGE") {
+        if (!client.ip ~ purge) {
+            error 405 "Not allowed.";
+        }
+        ban_url(req.url);
+        error 200 "Purged";
+    }
+
+# Pass any requests that Varnish does not understand straight to the
+# backend (Plone). Ignore any further parts of this request.
+    if (req.request != "GET" &&
+        req.request != "HEAD" &&
+        req.request != "PUT" &&
+        req.request != "POST" &&
+        req.request != "TRACE" &&
+        req.request != "OPTIONS" &&
+        req.request != "DELETE") {
+        /* Non-RFC2616 or CONNECT which is weird. */
+        return(pipe);
+    }
+
+# Pass anything other than GET and HEAD direclty to Plone.
+    if (req.request != "GET" && req.request != "HEAD") {
+        /* We only deal with GET and HEAD by default */
+        return(pass);
+    }
+
+# Pass any requests with the "If-None-Match" header directly to Plone.
+#     if (req.http.If-None-Match) {
+#         return(pass);
+#     }
+#
+# Force lookup if the request is a no-cache request from the client.
+#     if (req.http.Cache-Control ~ "no-cache") {
+#         set req.hash_always_miss = true;
+#     }
+    
+    remove req.http.Accept-Encoding;
+    call annotate_request;
+    return(lookup);
+}
+
+sub vcl_pipe {
+# This is not necessary if you do not do any request rewriting.
+    set req.http.connection = "close";
+}
+
+# Called if the cache has a copy of the page.
+# sub vcl_hit {
+#     if (req.request == "PURGE") {
+#         ban_url(req.url);
+#         error 200 "Purged";
+#     }
+#
+#     if (obj.ttl <= 0s) {
+#         return(pass);
+#     }
+#
+#     if ((req.http.Authorization || req.http.Cookie ~ "__ac=") && !obj.http.Cache-Control ~ "public") {
+#         return(pass);
+#     }
+#     return(pass);
+# }
+#
+# Called if the cache does not have a copy of the page.
+# sub vcl_miss {
+#     if (req.http.If-Modified-Since) {
+#         set bereq.http.If-Modified-Since = req.http.If-Modified-Since;
+#         unset req.http.If-Modified-Since;
+#     }
+#     if (req.request == "PURGE") {
+#         error 404 "Not in cache";
+#     }
+# }
+
+# Called after a document has been successfully retrieved from the backend.
+sub vcl_fetch {
+    set beresp.grace = 60s;
+    call rewrite_s_maxage;
+    
+    if (beresp.ttl <= 0s) {
+        set beresp.ttl = 0s;
+        set beresp.http.X-Varnish-Action = "FETCH (pass - not cacheable)";
+        return(hit_for_pass);
+    }
+    if (beresp.http.Set-Cookie) {
+        set beresp.ttl = 0s;
+        set beresp.http.X-Varnish-Action = "FETCH (pass - response sets cookie)";
+        return(hit_for_pass);
+    }
+    if (!beresp.http.Cache-Control ~ "s-maxage=[1-9]" && beresp.http.Cache-Control ~ "(private|no-cache|no-store)") {
+        set beresp.ttl = 0s;
+        set beresp.http.X-Varnish-Action = "FETCH (pass - response sets private/no-cache/no-store token)";
+        return(hit_for_pass);
+    }
+    if (req.http.X-Anonymous && !beresp.http.Cache-Control) {
+        set beresp.ttl = 300s;
+        set beresp.http.X-Varnish-Action = "FETCH (override - backend not setting cache control)";
+    }
+    if (!req.http.X-Anonymous && !beresp.http.Cache-Control) {
+        set beresp.ttl = 0s;
+        set beresp.http.X-Varnish-Action = "FETCH (pass - not cacheable)";
+        return(hit_for_pass);
+    }
+    return(deliver);
+}
+
+# Called before a cached object is delivered to the client.
+# In this case add an extra header to the HTTP response.
+sub vcl_deliver {
+    call rewrite_age;
+    if (obj.hits > 0) {
+        set resp.http.X-Cache = "HIT";
+    } else {
+        set resp.http.X-Cache = "MISS";
+    }
+}
+
+##########################
+#  Helper Subroutines
+##########################
+
+# We don't use this one since we strip out this header before passing requests back
+# Optimize the Accept-Encoding variant caching
+# sub normalize_accept_encoding {
+#     if (req.http.Accept-Encoding) {
+#         if (req.url ~ "\.(jpe?g|png|gif|swf|pdf|gz|tgz|bz2|tbz|zip)$" || req.url ~ "/image_[^/]*$") {
+#             remove req.http.Accept-Encoding;
+#         } elsif (req.http.Accept-Encoding ~ "gzip") {
+#             set req.http.Accept-Encoding = "gzip";
+#         } else {
+#             remove req.http.Accept-Encoding;
+#         }
+#     }
+# }
+
+# Keep auth/anon variants apart if "Vary: X-Anonymous" is in the response
+sub annotate_request {
+    if (!(req.http.Authorization || req.http.cookie ~ "(^|.*; )__ac=")) {
+        set req.http.X-Anonymous = "True";
+    }
+}
+
+# The varnish response should always declare itself to be fresh
+sub rewrite_age {
+    if (resp.http.Age) {
+        set resp.http.X-Varnish-Age = resp.http.Age;
+        set resp.http.Age = "0";
+    }
+}
+
+# Rewrite s-maxage to exclude from intermediary proxies
+# (to cache *everywhere*, just use 'max-age' token in the response to avoid this override)
+sub rewrite_s_maxage {
+    if (beresp.http.Cache-Control ~ "s-maxage") {
+        set beresp.http.Cache-Control = regsub(beresp.http.Cache-Control, "s-maxage=[0-9]+", "s-maxage=0");
+    }
+}
+
