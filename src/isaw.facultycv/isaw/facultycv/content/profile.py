@@ -13,43 +13,43 @@ from isaw.facultycv.config import PROJECTNAME
 
 profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
-	atapi.ImageField(
-		name = 'Image',
-	    sizes = { 'profile': (250,250),
-				  'big': (600,600) },
-		widget = atapi.ImageWidget(
-			label = u'Profile Image',
-			label_msgid='isaw.facultycv_label_ProfileImage',
-			il8n_domain='isaw.facultycv',
-			),
+    atapi.ImageField(
+        name = 'Image',
+        sizes = { 'profile': (250,250),
+                  'big': (600,600) },
+        widget = atapi.ImageWidget(
+            label = u'Profile Image',
+            label_msgid='isaw.facultycv_label_ProfileImage',
+            il8n_domain='isaw.facultycv',
+            ),
 
-		required = False,
-		searchable = True,
+        required = False,
+        searchable = True,
         accessor = 'profileImage'
 
-	),
+    ),
 
     atapi.ReferenceField(
         name = 'ProfileRef',
 
         widget = atapi.ReferenceWidget(
             label = u'Profile reference',
-        ),  
+        ),
         relationship = 'owned_profile',
         multiValued=False,
-    ),  
+    ),
 
-	atapi.TextField(
-		name = 'Titles',
-		widget = atapi.RichWidget(
-			label=u'Faculty Titles',
-			label_msgid='isaw.facultycv_label_Titles',
-			il8n_domain='isaw.facultycv',
-			),
-		
-		required = False,
-		searchable = True
-	),
+    atapi.TextField(
+        name = 'Titles',
+        widget = atapi.RichWidget(
+            label=u'Faculty Titles',
+            label_msgid='isaw.facultycv_label_Titles',
+            il8n_domain='isaw.facultycv',
+            ),
+
+        required = False,
+        searchable = True
+    ),
 
     atapi.StringField(
         name = 'Phone',
@@ -90,17 +90,17 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     ),
 
-	atapi.TextField(
-		name = 'Profile Blurb',
-		widget = atapi.RichWidget(
-			label=u'Profile Blurb',
-			label_msgid='isaw.facultycv_label_Profile',
-			il8n_domain='isaw.facultycv',
-			),
-		
-		required = False,
-		searchable = True
-	)
+    atapi.TextField(
+        name = 'Profile Blurb',
+        widget = atapi.RichWidget(
+            label=u'Profile Blurb',
+            label_msgid='isaw.facultycv_label_Profile',
+            il8n_domain='isaw.facultycv',
+            ),
+
+        required = False,
+        searchable = True
+    )
 
 ))
 
@@ -114,7 +114,7 @@ profileSchema['description'].storage = atapi.AnnotationStorage()
 
 #profileSchema['title'].required = 0
 #profileSchema['title'].widget.visible = {"edit": "invisible",
-#										 "view": "invisible"}
+#                                        "view": "invisible"}
 profileSchema['description'].widget.visible = {"edit": "invisible"}
 profileSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
 
