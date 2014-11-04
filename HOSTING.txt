@@ -1,24 +1,37 @@
-The following commands are required to install required software packages and configure the server:
+The following commands are required to install required software packages and
+configure the server::
 
-    apt-get install git apache2 varnish haproxy python2.7-dev bibutils wv poppler-utils libjpeg-dev libxml2-dev libxslt-dev libtiff5-dev libfreetype6-dev
-    a2enmod rewrite ssl headers proxy proxy_http deflate
+    apt-get install git apache2 apache2-utils varnish haproxy bibutils wv
+    poppler-utils libjpeg-dev libxml2-dev libxslt-dev libtiff5-dev
+    libfreetype6-dev a2enmod rewrite ssl headers proxy proxy_http deflate
+    munin munin-node
+
+    # For Python 2.6 (Plone < 4.3)
+    apt-get install software-properties-common
+    add-apt-repository ppa:fkrull/deadsnakes
+    apt-get update
+    apt-get install python2.6 python2.6-dev
 
     cd /srv
     git clone git@github.com:isawnyu/isaw.web
     cd isaw.web
+    chown -R plone:jazkarta .
+    chmod -R g+rwX .
 
-    # For Plone >= 4.3
-    python2.7 ./bootstrap.py
+    # For Plone < 4.3
+    python2.6 ./bootstrap.py
     bin/buildout -c production.cfg
 
-    # The buildout should be owned by the plone user, so either run it as "su plone" or
-    chown -R plone:plone .
+    # The buildout should be owned by the plone user, so either run it as "su
+    # plone" or
+
+    chown -R plone:jazkarta .
 
     cp conf/supervisor.conf /etc/init
     service supervisor restart
 
     # Enable haproxy
-    vim /etc/default/haproxy
+    vim /etc/default/hapxroxy
     cp conf/haproxy.cfg /etc/haproxy
     service haproxy restart
 
@@ -26,21 +39,43 @@ The following commands are required to install required software packages and co
     cp conf/varnish.vcl /etc/varnish
     service varnish restart
 
-    # Apache config
-    # Copy certs to /etc/ssl/private
+    # Munin (http://site/munin) the following command will ask for a password
+    # to use for protecting munin
+
+    htpasswd -c /etc/munin/munin-htpasswd Munin
+    cp conf/munin-apache.conf /etc/munin/apache.conf
+    cp conf/munin.conf /etc/munin
+    service munin-node restart
+    
+    # Apache config Copy certs to /etc/ssl/private
+
     cp conf/isaw-apache.conf conf/isaw-apache-ssl.conf /etc/apache2/sites-available
     cd /etc/apache2/sites-enabled
     rm 000-default.conf
     ln -s ../isaw-apache.conf .
     ln -s ../isaw-apache-ssl.conf .
-
     service apache2 restart
 
 
-To deploy new software:
+To deploy new software::
 
     cd /srv/isaw.web
     git pull
     bin/buildout -c production.cfg
-    chown -R plone:plone .
-    service supervisorctl restart client1 client2 client3
+    chown -R plone:jazkarta .
+    su plone -c "bin/supervisorctl restart client1 client2 client3"
+
+
+Syncing Data from ISAW production (currently 66.35.39.43, you will need to
+ensure that your user can read all blobstorage files on the production
+server)::
+
+    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/Plone/zeocluster/var/filestorage/ var/filestorage/
+    sudo rsync -avz --delete -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/Plone/zeocluster/var/blobstorage/ var/blobstorage/
+
+
+Syncing other sites from ISAW production::
+
+    cd /srv/
+    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/www-data/ www-data/
+
