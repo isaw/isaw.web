@@ -178,3 +178,61 @@ And you can update the buildout itself with:
 
     git pull origin master
     bin/buildout -c development.cfg
+
+
+Branches
+--------
+
+The primary buildout branch is currently `jazkarta_plone43`, which will
+eventually become `master`.  This will be the primary branch from which the
+production server is deployed, once migrated to Plone 4.3 (before that
+production will run on `jazkarta_refactor` and `jazkarta_plone43` will
+function as our staging branch).
+
+Once we have Plone 4.3 deployed on production, we will want to develop all new
+features on distinct feature branches.  These branches will be merged as
+needed to a separate `staging` branch for testing.  This process will allow
+for multiple features at different stages of readiness to be tested on the
+staging server, and then deployed individually to production as they are
+ready.  All feature branches should be branched from the master branch, and
+then merged into the `staging` branch when ready for testing. Once tested and
+ready for deploy the feature branch should be merged directly into the master
+branch.
+
+The `staging` branch would be branched from the master and periodically
+updated with merged changes from master.  The `staging` branch should – in
+general – never be modified directly or merged into other branches.  It should
+be considered a repository for merges from feature branches and the master.
+Small fixes should be made on the master branch or on a separate bugfix
+branch, then merged to staging for testing, rather than made directly on
+staging.
+
+This strategy applies to the `master` branches of custom add-ons as well.
+
+The following ASCII diagram attempts to illustrate the branching and merging
+process::
+
+
+    master (jazkarta_plone43)
+       |
+       |----------------------------> staging
+       |                                 |
+       |-------> feature1                |
+       |             |                   |
+       |<------------|------------------>|
+       |                                 |--> deploy
+       |-------> feature2                |
+       |             |                   |
+       |             |                   |
+       |             |                   |
+       |             |                   |
+       |             |                   |
+       |             |------------------>|
+       |             |                   |--> deploy
+       |             |                   |
+       |             |                   |
+       |             |                   |
+       |<------------|------------------>|
+       |                                 |--> deploy
+       |
+       |--> deploy
