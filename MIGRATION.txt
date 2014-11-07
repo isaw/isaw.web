@@ -1,0 +1,18 @@
+Steps for upgrading existing site:
+
+* bootstrap buildout with python 2.6
+* run isaw.web buildout from jazkarta_refactor branch
+* Make copy of Data.fs for pre-change backup
+* start site
+* install isaw.policy (if needed)
+* uninstall isaw.register (if needed)
+* stop the site
+* Make a copy of Data.fs for post-change, pre-upgrade backup
+* re-bootstrap buildout with Python 2.7
+* run isaw.web buildout from jazkarta_plone43 branch
+* start site, run Plone upgrade
+
+Additional Steps post-migration:
+
+At this point, there are no steps required after the Plone upgrade process is
+completed. If any manual steps are identified, please include them here
