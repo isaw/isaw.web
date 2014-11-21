@@ -29,4 +29,14 @@
       handler="isaw.theme.setuphandlers.createHomePage"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="1"
+      destination="2"
+      title="Remove obsolete resources"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry jsregistry"
+      />
+
 </configure>

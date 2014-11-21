@@ -9,4 +9,9 @@
     cacheable="True" compression="safe" conditionalcomment="" cookable="True"
     enabled="True" expression="" id="events.css" media="" rel="stylesheet"
     rendering="import"/>
+
+    <!-- Remove obsolete css -->
+    <stylesheet id="reset.css" remove="True" />
+    <stylesheet id="acl_users/session/refresh?session_refresh=true&amp;type=css&amp;minutes=5" remove="True" />
+
 </object>
