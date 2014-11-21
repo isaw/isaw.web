@@ -35,6 +35,10 @@
      <element value="profile"/>
      <element value="Conference"/>
    </containsobjects>
+   <customplugins>
+     <element value="plonebrowser"/>
+     <element value="ploneimage" remove="True"/>
+   </customplugins>
  </resourcetypes>
  <layout>
    <tablestyles>
