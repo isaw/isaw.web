@@ -15,6 +15,7 @@ Steps for upgrading existing site:
 Additional Steps post-migration:
 
 * remove portal_skins/custom/main_template
+* re-save image in featured portlet
 
 At this point, there are no steps required after the Plone upgrade process is
 completed. If any manual steps are identified, please include them here
