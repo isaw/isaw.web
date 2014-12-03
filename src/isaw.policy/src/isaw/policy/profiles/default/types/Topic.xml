@@ -5,7 +5,7 @@
   <property name="allowed_content_types">
     <element value="Topic"/>
   </property>
-  <property name="view_methods">
+  <property name="view_methods" purge="False">
     <element value="news_view"/>
   </property>
 </object>
