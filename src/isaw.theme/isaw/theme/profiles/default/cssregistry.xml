@@ -9,4 +9,7 @@
     cacheable="True" compression="safe" conditionalcomment="" cookable="True"
     enabled="True" expression="" id="events.css" media="" rel="stylesheet"
     rendering="import"/>
+
+    <stylesheet id="columns.css" media="" enabled="False" />
+
 </object>
