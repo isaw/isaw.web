@@ -36,7 +36,7 @@
     -->
 
     <browser:page
-        for="..interfaces.general.IGeneral"
+        for="..interfaces.IGeneral"
         name="event_detail"
         class=".browser.EventMainView"
         template="templates/event_detail.pt"
@@ -44,7 +44,39 @@
         />
 
     <browser:page
-        for="..interfaces.lecture.ILecture"
+        for="..interfaces.ILecture"
+        name="event_detail"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IPerformance"
+        name="event_detail"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IExhibition"
+        name="event_detail"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ISponsored"
+        name="event_detail"
+        class=".browser.EventMainView"
+        template="templates/event_detail.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ISeminar"
         name="event_detail"
         class=".browser.EventMainView"
         template="templates/event_detail.pt"
@@ -64,6 +96,22 @@
         menu="plone_displayviews"
         title="Events view"
         action="@@folder_listing"
+        description="Events view"
+        />
+
+    <browser:page
+        for="Products.ATContentTypes.interface.folder.IATFolder"
+        name="events-listing"
+        class=".browser.FolderView"
+        template="templates/event_main.pt"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.folder.IATFolder"
+        menu="plone_displayviews"
+        title="Events view"
+        action="@@events-listing"
         description="Events view"
         />
 
