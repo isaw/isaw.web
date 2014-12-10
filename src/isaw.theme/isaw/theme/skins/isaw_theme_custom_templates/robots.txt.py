@@ -14,12 +14,11 @@ response.setHeader('Cache-Control', 'public, max-age=86400')
 
 
 if '//isaw.nyu.edu' in request.get('ACTUAL_URL'):
-    return """Sitemap: /sitemap.xml.gz
-User-agent: *
+    # Sitemap: /sitemap.xml.gz
+    return """User-agent: *
 Disallow: /*sendto_form$
 Disallow: /*folder_factories$
-Disallow: /*-assets
-return printed"""
+Disallow: /*-assets"""
 
 else:
    return """User-agent: *
