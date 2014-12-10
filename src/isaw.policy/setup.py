@@ -56,6 +56,8 @@ setup(name='isaw.policy',
           'tweepy',
           'z3c.jbot',
           'collective.embedly',
+          'collective.contentleadimage',
+          'archetypes.schemaextender',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

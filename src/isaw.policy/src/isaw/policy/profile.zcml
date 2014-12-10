@@ -13,5 +13,14 @@
       />
 
   <!-- profile importStep and upgradeStep declarations will go here -->
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="1"
+      destination="2"
+      title="Install policy layer"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="browserlayer propertiestool"
+      />
 
 </configure>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="isaw.policy"
+      interface="isaw.policy.interfaces.IISAWPolicyLayer"
+      />
+</layers>

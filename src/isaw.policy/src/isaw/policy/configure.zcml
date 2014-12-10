@@ -12,4 +12,10 @@
   <include file="profile.zcml" />
   <!-- -*- extra stuff goes here -*- -->
 
+  <adapter
+      name="isaw.policy.event_extender"
+      factory=".events.ISAWEventExtender"
+      provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+      />
+
 </configure>
