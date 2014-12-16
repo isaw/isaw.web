@@ -23,4 +23,15 @@
       import_steps="browserlayer propertiestool"
       />
 
+  <genericsetup:upgradeSteps
+      source="2"
+      destination="3"
+      sortkey="10"
+      profile="isaw.policy:default">
+    <upgradeStep
+        title="Migrate Events"
+        handler=".setuphandlers.migrate_events"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>
