@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="isaw.policy">
 
@@ -16,6 +17,16 @@
       name="isaw.policy.event_extender"
       factory=".events.ISAWEventExtender"
       provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+      />
+
+  <browser:viewlet
+      name="isaw.opengraph.metadata"
+      template="metadata.pt"
+      for="Products.CMFCore.interfaces.IDublinCore"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".metadata.OpenGraphTagViewlet"
+      layer=".interfaces.IISAWPolicyLayer"
+      permission="zope2.View"
       />
 
 </configure>
