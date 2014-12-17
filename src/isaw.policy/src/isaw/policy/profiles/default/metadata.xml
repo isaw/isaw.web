@@ -18,5 +18,6 @@
     <dependency>profile-collective.embedly:default</dependency>
     <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
     <dependency>profile-collective.contentleadimage:default</dependency>
+    <dependency>profile-plone.app.imagecropping:default</dependency>
   </dependencies>
 </metadata>

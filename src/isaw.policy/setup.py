@@ -58,6 +58,7 @@ setup(name='isaw.policy',
           'collective.embedly',
           'collective.contentleadimage',
           'archetypes.schemaextender',
+          'plone.app.imagecropping',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
