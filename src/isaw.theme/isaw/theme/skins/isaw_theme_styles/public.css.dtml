@@ -1253,4 +1253,13 @@ a.link-feed {
     float:left;
 }
 
+body.template-croppingeditor #content ul.scales {
+    height: auto;
+}
+
+body.template-croppingeditor #content ul.scales li {
+    float: left;
+    width: 15%;
+    height: 150px;
+}
 /* </dtml-with> */
