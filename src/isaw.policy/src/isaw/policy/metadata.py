@@ -45,7 +45,8 @@ class OpenGraphTagViewlet(ViewletBase):
         if ctype != 'website' and modified_date and modified_date != 'None':
             self.metatags.append((u'og:updated_time', modified_date))
             if ctype == u'article':
-                self.metatags.append((u'article:modified_time', modified_date))
+                self.metatags.append((u'article:modified_time',
+                                      modified_date))
 
         if ctype == u'article':
             pub_date = self.context.EffectiveDate()
@@ -54,7 +55,8 @@ class OpenGraphTagViewlet(ViewletBase):
 
             expires_date = self.context.ExpirationDate()
             if expires_date and expires_date != 'None':
-                self.metatags.append((u'article:expiration_time', expires_date))
+                self.metatags.append((u'article:expiration_time',
+                                      expires_date))
 
             creator = self.context.Creator()
             if creator:
