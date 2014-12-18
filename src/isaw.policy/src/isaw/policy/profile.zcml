@@ -43,4 +43,13 @@
       import_steps="repositorytool"
       />
 
+  <genericsetup:upgradeDepends
+      title="Add ISAW workflows"
+      description="Configures the workflow tool"
+      profile="isaw.policy:default"
+      source="4"
+      destination="5"
+      import_steps="workflow"
+      />
+
 </configure>
