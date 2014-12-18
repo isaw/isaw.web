@@ -59,6 +59,7 @@ setup(name='isaw.policy',
           'collective.contentleadimage',
           'archetypes.schemaextender',
           'plone.app.imagecropping',
+          'ftw.calendar',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

@@ -19,5 +19,6 @@
     <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
     <dependency>profile-collective.contentleadimage:default</dependency>
     <dependency>profile-plone.app.imagecropping:default</dependency>
+    <dependency>profile-ftw.calendar:default</dependency>
   </dependencies>
 </metadata>
