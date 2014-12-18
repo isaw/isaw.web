@@ -34,4 +34,13 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeDepends
+      title="Add versioning defaults"
+      description="Configures the repository tool"
+      profile="isaw.policy:default"
+      source="3"
+      destination="4"
+      import_steps="repositorytool"
+      />
+
 </configure>
