@@ -13,5 +13,13 @@
       />
 
   <!-- profile importStep and upgradeStep declarations will go here -->
+  <genericsetup:upgradeDepends
+      title="Add versioning defaults"
+      description="Configures the repository tool"
+      profile="isaw.policy:default"
+      source="1"
+      destination="2"
+      import_steps="repositorytool"
+      />
 
 </configure>
