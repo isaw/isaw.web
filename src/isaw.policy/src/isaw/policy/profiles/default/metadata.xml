@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>5</version>
+  <version>6</version>
   <dependencies>
     <dependency>profile-isaw.theme:default</dependency>
     <dependency>profile-isaw.events:default</dependency>
@@ -20,5 +20,6 @@
     <dependency>profile-collective.contentleadimage:default</dependency>
     <dependency>profile-plone.app.imagecropping:default</dependency>
     <dependency>profile-ftw.calendar:default</dependency>
+    <dependency>profile-PressRoom:default</dependency>
   </dependencies>
 </metadata>

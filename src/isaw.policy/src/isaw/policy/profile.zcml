@@ -52,4 +52,15 @@
       import_steps="workflow"
       />
 
+  <genericsetup:upgradeSteps
+      source="5"
+      destination="6"
+      sortkey="10"
+      profile="isaw.policy:default">
+    <upgradeStep
+        title="Upgrade Dependencies"
+        handler=".setuphandlers.install_addons"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

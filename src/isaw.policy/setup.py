@@ -60,6 +60,7 @@ setup(name='isaw.policy',
           'archetypes.schemaextender',
           'plone.app.imagecropping',
           'ftw.calendar',
+          'Products.PressRoom',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

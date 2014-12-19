@@ -3,6 +3,13 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 
 
+def install_addons(context):
+    qi = getToolByName(context, 'portal_quickinstaller')
+    if not qi.isProductInstalled('Products.PressRoom'):
+        qi.installProduct('Products.PressRoom')
+    if not qi.isProductInstalled('ftw.calendar'):
+        qi.installProduct('ftw.calendar')
+
 def copy_generic_fields(event):
     event_object = event.getObject()
     temp_id = "temp_copy_of_%s" % event_object.id
