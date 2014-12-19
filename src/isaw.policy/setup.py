@@ -61,6 +61,7 @@ setup(name='isaw.policy',
           'plone.app.imagecropping',
           'ftw.calendar',
           'Products.PressRoom',
+          'Products.PloneKeywordManager',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

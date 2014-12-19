@@ -21,5 +21,6 @@
     <dependency>profile-plone.app.imagecropping:default</dependency>
     <dependency>profile-ftw.calendar:default</dependency>
     <dependency>profile-PressRoom:default</dependency>
+    <dependency>profile-Products.PloneKeywordManager:default</dependency>
   </dependencies>
 </metadata>

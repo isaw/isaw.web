@@ -9,6 +9,8 @@ def install_addons(context):
         qi.installProduct('Products.PressRoom')
     if not qi.isProductInstalled('ftw.calendar'):
         qi.installProduct('ftw.calendar')
+    if not qi.isProductInstalled('Products.PloneKeywordManager'):
+        qi.installProduct('Products.PloneKeywordManager')
 
 def copy_generic_fields(event):
     event_object = event.getObject()
