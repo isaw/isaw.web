@@ -1,0 +1,37 @@
+Instructions for setting up SSO in production.
+
+First, we need to update our own shibboleth configuration to claim the domain name ‘isaw.nyu.edu’.  This will happen in the following places:
+
+* In `/etc/shibboleth/shibboleth2.xml`
+
+  * There are three locations where the domain appears:
+
+    * in the <Site> tag near the top, the “name” attribute of the tag is set to
+      isaw4-new.atlantides.org and must be changed to isaw.nyu.edu
+
+    * In the <RequestMapper> tag, there is a <RequestMap> tag, with a
+      <Host> tag contained, the “name” attribute of which must be updated
+
+    * In the <ApplicationDefaults> tag, the “entityID” attribute needs to be
+      updated.  It must be the full URL of the new site, not just the domain
+      name.
+
+  * The <CredentialResolver> tag must be updated so that the “key” and
+    “certificate” attributes point to the valid key and certificate for the isaw.nyu.edu
+    server (I think they already do point to the right place, but check to be sure)
+
+Second, you’ll need to update the url for the shibboleth IdP to point to the nyu production provider
+
+* In `/etc/shibboleth/shibboleth2.xml`
+
+  * In the <SessionInitiator type=“Chaining"> tag, the “entityID” attribute must be updated
+  * In the contained <SessionInitiator type=“SAML2”> tag, the “entityID” attribute must be updated
+  * In the <MetadataProvider type=“Chaining”> tag, the “uri" for the first <Metadata type=“XML”> tag must be updated
+
+Third, that last metadata tag points to a file backup of the metadata from the IdP, it is called “idp-metadata.xml” and you’ll need to place the metadata from the production IdP into a file by that name in the /etc/shibboleth directory.
+
+Fourth, the `/etc/shibboleth/native.logger’, `/etc/shibboleth/syslog.logger` and `/etc/shibboleth/shibd.logger` have all been set up to use DEBUG for all logging.  This results in over-long log files and so please return all logging levels in these files to INFO.
+
+Finally, the Apache config files for http and https will need to be updated to server the correct domain names.
+
+NOTE: There's a chance the metadata produced by the new server will be needed by ISAW's SSO people to update the configuration. There's a copy of this metadata in the conf directory in this buildout.
