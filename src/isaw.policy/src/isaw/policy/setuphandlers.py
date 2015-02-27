@@ -1,3 +1,4 @@
+import transaction
 from Acquisition import aq_parent
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
@@ -20,9 +21,11 @@ def copy_generic_fields(event):
     new_event = container[temp_id]
     new_event.subtitle = event_object.subtitle()
     image_field = new_event.getField('leadImage')
-    image_field.getMutator(new_event)(event_object.getEvent_Image())
+    if image_field is not None:
+        image_field.getMutator(new_event)(event_object.getEvent_Image())
     image_caption_field = new_event.getField('leadImage_caption')
-    image_caption_field.getMutator(new_event)(event_object.getEvent_Image_caption())
+    if image_caption_field is not None:
+        image_caption_field.getMutator(new_event)(event_object.getEvent_Image_caption())
     new_event.speaker = event_object.speaker()
     new_event.startDate = event_object.start()
     new_event.endDate = event_object.end()
@@ -52,6 +55,7 @@ def remove_and_rename(event):
     event_object = event.getObject()
     container = aq_parent(event_object)
     container.manage_delObjects([event_id])
+    transaction.commit()
     container.manage_renameObject(temp_id, event_id)
     
 
