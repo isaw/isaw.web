@@ -38,18 +38,13 @@
         <tal:foldercontents define="
             folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending', 
                             'sort_on': 'start',
-                            'portal_type': ['Conference',
-                                            'Exhibition',
-                                            'General',
-                                            'Lecture', 
-                                            'Performance',
-                                            'Seminar',
-                                            'Sponsored'],
-                            'review_state': 'external'}, batch=True, b_size=100)">
+                            'portal_type': ['Event'],
+                            'start': {'query': modules['DateTime'].DateTime(), 'range': 'min'},
+                            'review_state': 'published'}, batch=True, b_size=100)">
         <tal:event repeat="event folderContents">
         
             <div class="eventListing">
-                <p class="eventDate" tal:content="python:DateTime(event.start).strftime('%B %d, %Y &mdash; %l:%M %p')">18 May 2010, 6:00 p.m.</p>
+                <p class="eventDate" tal:content="python:event.start.strftime('%B %d, %Y &mdash; %l:%M %p')">18 May 2010, 6:00 p.m.</p>
                 <h2 tal:define="event_type event/Type">
                     <a class="eventTitle" tal:attributes="href event/getURL">
                         <!-- <span class="itemTypeTitle" 
