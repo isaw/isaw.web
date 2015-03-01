@@ -1,6 +1,7 @@
 Instructions for setting up SSO in production.
 
-First, we need to update our own shibboleth configuration to claim the domain name ‘isaw.nyu.edu’.  This will happen in the following places:
+First, we need to update our own shibboleth configuration to claim the domain name ‘isaw.nyu.edu’.
+This will happen in the following places:
 
 * In `/etc/shibboleth/shibboleth2.xml`
 
@@ -24,14 +25,22 @@ Second, you’ll need to update the url for the shibboleth IdP to point to the n
 
 * In `/etc/shibboleth/shibboleth2.xml`
 
-  * In the <SessionInitiator type=“Chaining"> tag, the “entityID” attribute must be updated
-  * In the contained <SessionInitiator type=“SAML2”> tag, the “entityID” attribute must be updated
-  * In the <MetadataProvider type=“Chaining”> tag, the “uri" for the first <Metadata type=“XML”> tag must be updated
+  * In the <SessionInitiator type=“Chaining"> tag, the “entityID” attribute must be updated 
+  (urn:mace:incommon:nyu.edu)
+  * In the contained <SessionInitiator type=“SAML2”> tag, the “entityID” attribute must be updated 
+  (urn:mace:incommon:nyu.edu)
+  * In the <MetadataProvider type=“Chaining”> tag, the “uri" for the first <Metadata type=“XML”> tag must be 
+  updated (https://shibboleth.nyu.edu/idp/shibboleth)
 
-Third, that last metadata tag points to a file backup of the metadata from the IdP, it is called “idp-metadata.xml” and you’ll need to place the metadata from the production IdP into a file by that name in the /etc/shibboleth directory.
+Third, that last metadata tag points to a file backup of the metadata from the IdP, it is called “idp-metadata.xml” 
+and you’ll need to place the metadata from the production IdP into a file by that name in the /etc/shibboleth 
+directory.
 
-Fourth, the `/etc/shibboleth/native.logger’, `/etc/shibboleth/syslog.logger` and `/etc/shibboleth/shibd.logger` have all been set up to use DEBUG for all logging.  This results in over-long log files and so please return all logging levels in these files to INFO.
+Fourth, the `/etc/shibboleth/native.logger’, `/etc/shibboleth/syslog.logger` and `/etc/shibboleth/shibd.logger` 
+have all been set up to use DEBUG for all logging.  This results in over-long log files and so please return all 
+logging levels in these files to INFO.
 
 Finally, the Apache config files for http and https will need to be updated to server the correct domain names.
 
-NOTE: There's a chance the metadata produced by the new server will be needed by ISAW's SSO people to update the configuration. There's a copy of this metadata in the conf directory in this buildout.
+NOTE: There's a chance the metadata produced by the new server will be needed by ISAW's SSO people to update the 
+configuration. There's a copy of this metadata in the conf directory in this buildout.
