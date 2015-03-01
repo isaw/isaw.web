@@ -14,8 +14,11 @@ Steps for upgrading existing site:
 
 Additional Steps post-migration:
 
-* remove portal_skins/custom/main_template
-* re-save image in featured portlet
+* remove everything from portal_skins/custom/main_template
+* re-save image and featured description in featured portlet
+* run product upgrade steps, including TinyMCE from portal_setup
+* make sure login action in portal_actions point to correct SSO server
+* make sure web_server_auth configuration has correct SSO URL
 
 At this point, there are no steps required after the Plone upgrade process is
 completed. If any manual steps are identified, please include them here
