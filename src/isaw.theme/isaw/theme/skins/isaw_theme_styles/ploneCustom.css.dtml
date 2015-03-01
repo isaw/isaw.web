@@ -229,6 +229,11 @@ body {
     margin-top: -12px;
 }
 
+#search-filter {
+    margin-left: -3em;
+    background-color: #fff;
+}
+
 /* logo */
 #isaw-logo {
     position: absolute;
