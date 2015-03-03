@@ -32,7 +32,8 @@ class UtilsView(BrowserView):
                                                 'Sponsored'],
                                    end={'query': DateTime(), 'range': 'min'},
                                    sort_on='start',
-                                   review_state='external')[:limit]
+                                   review_state=['published',
+                                                 'external'])[:limit]
         print catalog
         type(catalog)
         if catalog == []:
@@ -47,7 +48,8 @@ class UtilsView(BrowserView):
         return self.portal_catalog(portal_type='News Item',
                                    sort_on='Date',
                                    sort_order='descending',
-                                   review_state='external')[:limit]
+                                   review_state=['published',
+                                                 'external'])[:limit]
 
     def getFeatured(self):
         """Grab the featured page object"""
