@@ -10,9 +10,8 @@
       <role name="Editor"/>
     </permission>
     <permission name="iterate : Check in content" acquire="True">
-      <role name="Editor"/>
+      <role name="Reviewer"/>
       <role name="Manager"/>
-      <role name="Owner"/>
       <role name="Site Administrator"/>
     </permission>
     <permission name="iterate : Check out content" acquire="True">
