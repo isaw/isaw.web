@@ -58,7 +58,7 @@
                    i18n:attributes="value label_search;"/>
             <p id="search-result-section"><span id="search-result-display">Search Results</span> - <span tal:content="len_results"/> items matching your search terms</p>
             <p class="discreet"
-                tal:condition="context/portal_syndication/isSiteSyndicationAllowed">
+                tal:condition="context/@@syndication-util/search_rss_enabled">
                 <a href=""
                    class="link-feed"
                    i18n:translate="title_rss_feed"
