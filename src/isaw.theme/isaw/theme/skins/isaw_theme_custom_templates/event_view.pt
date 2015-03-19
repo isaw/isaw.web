@@ -12,7 +12,7 @@
         <p tal:condition="context/subtitle|nothing"><em tal:content="context/subtitle"></em></p>
         <p class="eventSpeakerLanding">
             <span tal:content="context/speaker|nothing"></span>
-            <span tal:condition="context/speakerAffiliation">, <span tal:content="context/speakerAffiliation"></span></span>
+            <span tal:condition="context/speakerAffiliation|nothing">, <span tal:content="context/speakerAffiliation"></span></span>
     </div>
     <metal:content-core define-macro="content-core"
                         tal:define="kssClassesView context/@@kss_field_decorator_view;
