@@ -20,5 +20,17 @@
       <role name="Owner"/>
       <role name="Site Administrator"/>
     </permission>
+    <permission name="Request review" acquire="True">
+      <role name="Editor"/>
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Site Administrator"/>
+    </permission>
+    <permission name="Add portal events" acquire="True">
+      <role name="Manager"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+      <role name="Site Administrator"/>
+    </permission>
   </permissions>
 </rolemap>

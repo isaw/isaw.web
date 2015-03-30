@@ -63,4 +63,13 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeDepends
+      title="Workflow and Permission fixes"
+      description="ISAW custom workflow fixes."
+      profile="isaw.policy:default"
+      source="5"
+      destination="6"
+      import_steps="workflow rolemap"
+      />
+
 </configure>
