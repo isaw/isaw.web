@@ -67,8 +67,8 @@
       title="Workflow and Permission fixes"
       description="ISAW custom workflow fixes."
       profile="isaw.policy:default"
-      source="5"
-      destination="6"
+      source="6"
+      destination="7"
       import_steps="workflow rolemap"
       />
 
