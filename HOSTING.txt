@@ -1,3 +1,9 @@
+Hosts:
+
+    staging: isaw4-dev.atlantides.org = 66.35.48.8
+    production: isaw.nyu.edu = isaw4.atlantides.org = 66.35.39.43
+    
+
 The following commands are required to install required software packages and
 configure the server::
 
