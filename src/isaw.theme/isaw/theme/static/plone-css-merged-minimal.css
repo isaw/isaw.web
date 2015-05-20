@@ -1,0 +1,2240 @@
+
+/* - ++resource++jquery.css - */
+@media all {
+/* jQuery CSS */
+
+}
+
+
+/* - ++resource++jquery.select2uislider.css - */
+@media all {
+/*NEW SLIDER STYLES FOR SCALE, ETC*/
+/* slider widget */
+.ui-slider  {
+	text-decoration: none !important;
+}
+.ui-slider .ui-slider-handle  {
+	overflow: visible !important;
+}
+.ui-slider .ui-slider-tooltip {
+	display: none;
+}
+.ui-slider .screenReaderContext {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	left: -999999999px;
+}
+.ui-slider .ui-state-active .ui-slider-tooltip, .ui-slider .ui-state-focus .ui-slider-tooltip, .ui-slider .ui-state-hover .ui-slider-tooltip {
+	display: block;
+	position: absolute;
+	bottom: 2.5em;
+	text-align: center;
+	padding: .3em .2em .4em;
+	font-size: .9em;
+	width: 8em;
+	margin-left: -3.7em;
+}
+.ui-slider .ui-slider-tooltip .ui-tooltip-pointer-down, .ui-slider .ui-slider-tooltip .ui-tooltip-pointer-down-inner {
+	position: absolute; 
+	display: block;
+	width:0; 
+	height:0; 
+	border-bottom-width: 0;
+	background: none;
+}
+.ui-slider .ui-slider-tooltip .ui-tooltip-pointer-down {	
+	border-left: 7px dashed transparent; 
+	border-right: 7px dashed transparent;
+	border-top-width: 8px;
+	bottom:	-8px;
+	right: auto;
+	left: 50%;
+	margin-left: -7px;
+}
+.ui-slider .ui-slider-tooltip .ui-tooltip-pointer-down-inner {
+	border-left: 6px dashed transparent; 
+	border-right: 6px dashed transparent;
+	border-top: 7px solid #fff;
+	bottom:	auto;
+	top: -9px;
+	left: -6px;
+}
+.ui-slider a {
+	text-decoration: none;
+}
+.ui-slider ol, .ui-slider li, .ui-slider dl, .ui-slider dd, .ui-slider dt {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.ui-slider ol, .ui-slider dl {
+	position: relative;
+	top: 1.3em;
+	width: 100%;
+}
+.ui-slider dt {
+	top: 1.5em;
+	position: absolute;
+	padding-top: .2em;
+	text-align: center;
+	border-bottom: 1px dotted #ddd;
+	height: .7em;
+	color: #999;
+}
+.ui-slider dt span {
+	background: #fff;
+	padding: 0 .5em;
+}
+.ui-slider li, .ui-slider dd {
+	position: absolute;
+	overflow: visible;
+	color: #666;
+}
+.ui-slider span.ui-slider-label {
+	position: absolute;
+}
+.ui-slider li span.ui-slider-label, .ui-slider dd span.ui-slider-label {
+	display: none;
+}
+.ui-slider li span.ui-slider-label-show, .ui-slider dd span.ui-slider-label-show {
+	display: block;
+}
+.ui-slider span.ui-slider-tic {
+	position: absolute;
+	left: 0;
+	height: .8em;
+	top: -1.3em;
+}
+.ui-slider li span.ui-widget-content, .ui-slider dd span.ui-widget-content {
+	border-right: 0;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-top: 0;
+	border-bottom: 0;
+}
+.ui-slider .first .ui-slider-tic, .ui-slider .last .ui-slider-tic {
+	display: none;
+}
+
+
+}
+
+
+/* - public.css - */
+@media screen {
+/* @override
+    http://localhost:8080/4/portal_css/Sunburst%20Theme/public.css
+    http://localhost:8080/sprites/portal_css/Sunburst%20Theme/public.css
+*/
+
+/* @group CSS Reset */
+
+/* Remove implicit browser styles to have a neutral starting point:
+   - No elements should have implicit margin/padding
+   - No underline by default on links (we add it explicitly in the body text)
+   - When we want markers on lists, we will be explicit about it, and they render inline by default
+   - Browsers are inconsistent about hX/pre/code, reset
+   - Linked images should not have borders
+   */
+
+* { margin: 0; padding: 0; }
+* :link,:visited { text-decoration:none }
+* ul,ol { list-style:none; }
+* li { display: inline; }
+* h1,h2,h3,h4,h5,h6,pre,code { font-size:1em; }
+* a img,:link img,:visited img { border:none }
+a { outline: none; }
+table { border-spacing: 0; }
+img { vertical-align: text-bottom; }
+iframe { border-width: 0; border-style:none; }
+
+
+/* @end */
+
+/* @group LiveSearch */
+
+#LSResult {
+    position: absolute;
+    right: 0;
+    background: White;
+    margin: -1.5em 0 0 -7em;
+}
+
+#LSResult fieldset {
+    padding: 1em 0 0;
+    border: 0.1em solid #ccc;
+}
+
+#livesearchLegend {
+    background-color:#ccc;
+    padding:0.3em;
+}
+
+#LSResult .LSDescr {
+    font-size: 85%;
+    color: #666;
+}
+
+.LSRow,
+#LSNothingFound {
+    display: block;
+    padding: 0.5em 1em;
+    white-space: normal;
+    width:28em;
+}
+
+.LSHighlight {
+    background: #ddd;
+}
+
+/* @end */
+
+/* @group Data tables */
+
+table.listing,
+table.plain {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table.invisible td,
+table.invisible th,
+table.plain td,
+table.plain th,
+table.listing td,
+table.listing th {
+    padding: 0.5em 1em;
+    vertical-align: top;
+}
+table.plain th,
+table.plain td {
+    border: 1px solid #ddd;
+}
+
+table.listing td.listingCheckbox,
+table.listing th.listingCheckbox {
+    text-align: center;
+}
+
+
+table.listing {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+table.listing .top {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+table.listing th {
+    text-align: left;
+    color: #666;
+    border: 0.1em solid #e7e7e7;
+    border-style: solid solid none;
+    background: #ddd;
+}
+table.listing tr.odd th {
+    border: 0.1em solid #fff;
+    border-style: solid solid none none;
+}
+table.listing tbody th {
+    font-weight: bold;
+}
+table.listing tbody tr {
+    text-align:left;
+}
+table.listing tbody tr.odd {
+    background: #eee;
+}
+table.listing tbody tr td {
+    background: transparent;
+}
+table.listing tbody tr.odd td {
+    background: #eee;
+}
+table.listing td {
+    border-right: 1px solid #ddd;
+}
+table.listing a {
+    border: none;
+    display: inline-block;
+    border-bottom: none !important;
+}
+
+table.listing td.draggable {
+    text-shadow: White 1px 1px 1px;
+    background: #ddd !important;
+    border-bottom: 1px solid white;
+    padding: 0.4em 0.4em 0 0.5em;
+}
+/* Vertical table data listings */
+table.vertical {
+}
+table.vertical th {
+    text-align: right;
+}
+table.vertical td {
+    border-top: 0.1em solid #e7e7e7;
+    padding: 0.5em;
+}
+/* Grid table listings */
+table.grid td,
+table.grid th {
+    border: 1px solid #e7e7e7;
+    padding: 0.5em;
+}
+
+.dragindicator {
+    outline: 2px solid #FFD700;
+}
+
+#foldercontents-order-column {
+    padding: 0;
+}
+
+div.listingBar {
+    font-size: 80%;
+    margin: 1em 0;
+}
+
+div.listingBar .next {
+    display: inline-block;
+    float: right;
+}
+
+div.listingBar .previous {
+    display: inline-block;
+}
+
+div.listingBar a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border: 0.1em solid #ccc;
+}
+
+div.listingBar a:hover {
+    color: White;
+    background-color: #329fd7;
+    border-color: #329fd7;
+}
+
+/* @end */
+
+/* @group Status messages */
+
+dl.portalMessage {
+    margin: 1em 0;
+    font-size: 80%;
+    border: 1px solid #996;
+    background-color: #ffffe3;
+    clear:both;
+}
+dl.portalMessage a,
+#content dl.portalMessage a {
+    color: black;
+    border-bottom: 1px solid #888;
+}
+dl.portalMessage dt {
+    background-color: #996;
+    font-weight: bold;
+    float: left;
+    margin: 0 0.5em 0 0;
+    padding: 0.5em 0.75em;
+    color: White;
+    line-height: 1.25em;
+}
+dl.portalMessage dd {
+    padding: 0.5em 0.5em;
+    margin: 0;
+    line-height: 1.25em;
+}
+dl.warning {
+    border-color: #d80;
+}
+dl.warning dt {
+    background-color: #d80;
+}
+dl.error {
+    border-color: #d00;
+}
+dl.error dt {
+    background-color: #d00;
+}
+dl.warning {
+    border-color: #d80;
+}
+dl.warning dd {
+    background-color: #fd7;
+}
+dl.error {
+    border-color: red;
+}
+dl.error dd {
+    background-color: #fdc;
+}
+
+/* Additional specificity for when status is shown inside #content */
+#content dl.portalMessage {
+    font-size: 100%;
+}
+#content dl.portalMessage dt {
+    margin: 0 0.5em 0 0;
+    padding: 0.5em 0.75em;
+}
+#content dl.portalMessage dd {
+    margin: 0;
+}
+
+/* @end */
+
+/* @group Editing */
+
+/* @group Tabs */
+
+/* Color differences between the two tab types */
+#content ul.formTabs {
+    background-color: #ddd;
+    border: 0.3em solid #ddd;
+}
+#edit-bar {
+    background-color: #75ad0a;
+    border: 0.25em solid #75ad0a;
+    font-size: 80%;
+    min-height: 2em;
+    margin-bottom: 1em;
+    padding-top: 0.05em;
+}
+#content-views {
+    float: left;
+    background-color: #75ad0a;
+}
+#content-views a {
+    color: White;
+}
+
+/* Shared CSS between the two tab types */
+#edit-bar,
+#content ul.formTabs {
+    display: block;
+    border-style: solid solid none solid;
+    margin-left: 0;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-top-left-radius: 0.5em;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+#content li.formTab {
+    display: inline;
+    margin-right:0.25em;
+}
+#content-views a,
+#content li.formTab a {
+    /* this isn't supported by all browsers, so we keep it in a separate rule */
+    display: inline-block;
+}
+#content-views a,
+#content li.formTab a {
+    line-height: 2em;
+    padding: 0 0.75em;
+    text-decoration: none;
+    border: none;
+    margin: 0 ;
+}
+#content-views li.selected a,
+#content li.formTab a.selected {
+    font-weight: bold;
+}
+#content-views li.selected a,
+#content-views li a:hover,
+#content li.formTab a.selected,
+#content li.formTab a:hover {
+    background: White;
+    color: Black;
+}
+#content-views li.selected a,
+#content-views li a:hover,
+#content li.formTab a.selected,
+#content li.formTab a:hover {
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-top-left-radius: 0.5em;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+#content li.formTab a.notify {
+    background-color: red;
+    color: White;
+}
+#content li.formTab a.required span {
+    background-image: url(required.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 1em;
+}
+#content fieldset.formPanel {
+    border: none;
+}
+#content fieldset.formPanel.hidden {
+    display: none;
+}
+#content div.formControls input.hidden {
+    display: none;
+}
+
+/* @end */
+
+/* @group Pulldown menus */
+
+/* @group Personal tools pulldown */
+#portal-personaltools dl {
+}
+#portal-personaltools dt {
+    font-weight: normal;
+}
+#portal-personaltools dt.actionMenuHeader a:after {
+    content: " ▼";
+}
+#portal-personaltools dd {
+    right: 0;
+    padding-top: 0.5em;
+}
+#portal-personaltools dd {
+    background: #e3e3e3;
+    padding-bottom: 0.5em;
+}
+#portal-personaltools dd a {
+    line-height: 2em;
+    padding: 0 0.75em;
+}
+#portal-personaltools dd a:hover {
+    background: #205c90;
+    color: White;
+}
+
+/* @end */
+
+/* @group Content pulldowns */
+
+#contentActionMenus dl.actionMenu a,
+#contentActionMenus dl.actionMenu.activated dd {
+    background-color: #75ad0a;
+    color: White;
+    z-index: 5;
+}
+#contentActionMenus dl.actionMenu.activated dd {
+    border-bottom: 0.5em solid #75ad0a;
+    right: -3px;
+}
+#contentActionMenus dl.actionMenu.activated dd a:hover,
+#contentActionMenus dl.actionMenu.activated dd .actionMenuSelected {
+    background-color: White !important;
+    color: #666;
+}
+#contentActionMenus dl.actionMenu {
+    line-height: 2em;
+}
+
+#folderHeader, #contextHeader {
+        border-bottom: 2px solid white;
+}
+
+#contextHeader { margin-top: 5px; }
+
+
+/* @end */
+
+#contentActionMenus {
+    float: right;
+    background: #75ad0a;
+    margin: 0;
+    position: relative;
+    top: -0.23em;
+    right:-0.24em;
+    padding: 0.1em 0.24em 0 0;
+    border-radius: 0.5em;
+    border-top-left-radius: 0;
+    -webkit-border-radius: 0.5em;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius: 0.5em;
+    -moz-border-radius-topleft: 0;
+}
+
+.actionMenuContent {
+    padding: 0 0.25em;
+}
+
+dl.actionMenu {
+    float: right;
+    white-space: nowrap;
+    position: relative;
+    margin-left: 0.5em;
+}
+dl.actionMenu a,
+dl.actionMenu div {
+    display: block !important;
+    white-space: nowrap;
+}
+dl.actionMenu dt {
+    font-weight: normal;
+}
+span.arrowDownAlternative {
+    font-size: 80%;
+}
+dl.actionMenu.deactivated dt {
+    margin: 0 0.25em;
+}
+dl.actionMenu.deactivated dd {
+    display: none;
+}
+dl.actionMenu.activated dd {
+    position: absolute;
+    width: auto;
+    min-width: 100%;
+    border-bottom-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    -webkit-border-bottom-right-radius: 0.5em;
+    -webkit-border-bottom-left-radius: 0.5em;
+    -moz-border-radius-bottomleft: 0.5em;
+    -moz-border-radius-bottomright: 0.5em;
+}
+dl.actionMenu.activated dt a,
+dl.actionMenu.activated dd a,
+dl.actionMenu.activated dd div {
+    margin: 0 0.25em;
+}
+
+/* @end */
+
+/* @group Control panel */
+
+#setup-link {
+    font-size: 90%;
+}
+
+ul.configlets {
+    margin: 1em 0;
+    list-style-image: none;
+    list-style: none;
+}
+ul.configlets li {
+    margin-bottom: 1em;
+    list-style: none;
+    display: block;
+}
+ul.configlets li a {
+    text-decoration: none;
+    border: none;
+}
+ul.configlets li a:visited {
+    color: #436976;
+    background-color: transparent;
+}
+ul.configlets li a:active {
+    color: #436976;
+    background-color: transparent;
+}
+ul.configlets li label {
+    font-weight: bold;
+}
+ul.configletDetails {
+    margin: 0em 1em 1em 4em;
+    list-style-image: none;
+    list-style: none;
+}
+ul.configletDetails li {
+    margin-bottom: 1em;
+    display: inline;
+}
+ul.configletDetails li a {
+    text-decoration: none;
+}
+ul.configletDetails li label {
+    font-weight: bold;
+}
+ul.configletDetails li.configletDescription {
+    display: block;
+    color: #76797c;
+    margin: 0;
+}
+.inlineDisplay {
+    display:inline
+}
+table.controlpanel-listing {
+    width:100%;
+}
+table.controlpanel-listing td, table.controlpanel-listing th {
+    font-size:120%;
+}
+table.controlpanel-listing dl {
+    margin-top:0;
+}
+table.controlpanel-listing dd {
+    margin-left: 1em;
+}
+table.controlpanel-listing dl dt a .trigger{
+    font-weight:normal;
+}
+table .controlpanel-listing td {
+    vertical-align:top;
+}
+table.controlpanel-listing td.checker{
+    text-align:center;
+}
+table.controlpanel-listing th.smallcolumn {
+    width:1.5em;
+}
+.chooser-right {
+    float:right;
+    margin-right:0;
+    margin-bottom:0;
+}
+.rule-element {
+    background-color:#EEF3F5;
+    margin:0.5em 0pt 0.5em;
+    padding:0.3em 1em 0.3em 1em;
+    width:auto;
+}
+.rule-element dl {
+}
+.rule-element dl dd {
+    margin-left:1em;
+}
+.rule-updown, .rule-operations {
+    float:right;
+    padding-top:0.8em;
+}
+/* @end */
+
+/* @group Collapsible */
+dl.collapsible {
+    border: 0.1em solid #8cacbb;
+    margin: 1em 0;
+    padding: 0;
+}
+dl.collapsible dt.collapsibleHeader {
+    display: block;
+    float: left;
+    background: White;
+    line-height: 1.2em;
+    vertical-align: middle;
+    font-size: 90%;
+    position: relative;
+    top: -0.6em;
+    width: auto;
+    margin: 0 0 -0.6em 1em;
+    padding: 0 0.5em;
+}
+dl.collapsible dd.collapsibleContent {
+    margin: 0;
+    padding: 0 1em 0.4em;
+    clear: left;
+}
+
+/* for IE the following isn't needed, that's why the css2 selector is used */
+dl.collapsible dd.collapsibleContent > dl {
+    margin: 0;
+    padding: 0;
+}
+
+dl.expandedInlineCollapsible dt.collapsibleHeader,
+dl.expandedBlockCollapsible dt.collapsibleHeader {
+    padding: 0 0.5em 0 2em;
+    background: White url(treeExpanded.png) no-repeat 0.5em 50%;
+    cursor: pointer;
+}
+
+dl.collapsedBlockCollapsible {
+    border: none;
+    height: 1em;
+    width: auto;
+}
+dl.collapsedInlineCollapsible dt.collapsibleHeader,
+dl.collapsedBlockCollapsible dt.collapsibleHeader {
+    float: none;
+    position: relative;
+    margin: 0 0 0 1em;
+    padding: 0 0.5em 0 2em;
+    line-height: 1.2em;
+    cursor: pointer;
+    background: White url(treeCollapsed.png) no-repeat 0.5em 50%;
+}
+dl.collapsedInlineCollapsible dd.collapsibleContent,
+dl.collapsedBlockCollapsible dd.collapsibleContent {
+    display: none;
+}
+dl.collapsedInlineCollapsible {
+    border: none;
+    height: 1em;
+    width: auto;
+    display: inline;
+}
+dl.collapsedInlineCollapsible dt.collapsibleHeader {
+    position: static;
+    float: none;
+    margin: 0;
+    padding: 0 0 0 2em;
+    line-height: 1em;
+    cursor: pointer;
+    display: inline;
+}
+
+/* @end */
+
+/* @group Comments */
+
+.comment {
+    margin-top: 1.5em;
+    font-size: 80%;
+}
+
+.comment .documentByLine {
+    margin-left: 1em;
+}
+
+.comment .formControls {
+    margin-left: 0;
+}
+
+.commentTime {
+    color: #666;
+}
+
+.commentBody {
+    padding: 1em;
+    margin: 0.5em 0;
+    border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    box-shadow: 0 0 1em 0 #888;
+    -moz-box-shadow: 0 0 0.5em 0 #888;
+    -webkit-box-shadow: 0 0 0.5em #888;
+}
+
+.comment h1,
+.comment h2,
+.comment h3,
+.comment h4,
+.comment h5,
+.comment h6 {
+    font-weight: normal;
+}
+
+/* @end */
+
+.reviewHistory,
+.contentHistory {
+    display: inline;
+    color: Black;
+}
+.spacer {
+    margin: 1em;
+}
+
+.label {
+    font-weight: bold;
+    display: inline;
+    padding-right: 0.5em;
+}
+.optionsToggle {
+    border: 0.1em solid #8cacbb;
+    color: Black;
+    background-color: #dee7ec;
+    font-weight: normal;
+    font-size: 90%;
+}
+
+/* for highlighting of search terms */
+.highlightedSearchTerm {
+   background-color: #ffa;
+}
+
+dl.searchResults .highlightedSearchTerm {
+    background-color: transparent;
+    font-weight: bold;
+}
+/* for greying out inherited roles */
+.noInheritedRoles {
+    color: #a0a0a0;
+}
+/* for highlighting current items, like the language or today in the calendar */
+.currentItem {
+    border-collapse: collapse;
+    border: 0.2em solid #ffa500;
+    padding: 0.1em;
+}
+
+
+/* @end */
+
+/* @group Search results page */
+
+input.searchPage {
+    font-size:200% !important;
+}
+
+/* @end */
+
+
+/* @group Image alignment classes */
+
+.image-left {
+   float: left;
+   clear: both;
+   margin: 0.5em 1em 0.5em 0;
+}
+.image-right {
+   float: right;
+   clear: both;
+   margin: 0.5em;
+}
+.image-inline {
+   float: none;
+}
+/*note: the tricky thing here is that image-inline|image-left|image-right
+can both be on an image and a wrapper element e.g. a dl tag*/
+img.image-left,
+img.image-right,
+.captioned img {
+    border: 1px solid #ddd;
+}
+dd.image-caption {
+    text-align: left;
+    padding: 0 0 0 3px; /*image padding+border with*/
+    margin: 0;
+    color: #666;
+    font-size: 85%;
+}
+
+/* @end */
+
+
+/* @group Dashboard */
+
+#dashboard-actions ul,
+#dashboard-actions ul li {
+    list-style: none;
+}
+#dashboard-actions ul {
+    margin-left: 0;
+}
+
+#dashboard {
+    font-size: 125%;
+    line-height: 1em;
+}
+
+#dashboard dd {
+    margin: 0;
+}
+
+
+#dashboard dl.portlet a:link {
+    border-bottom: none;
+}
+
+#dashboard-portlets1,
+#dashboard-portlets2,
+#dashboard-portlets3 {
+    float:left;
+    width:23%;
+    padding:0.7em 1.3em 0 0;
+}
+
+#dashboard-portlets4 {
+    float:left;
+    width:23%;
+    padding-top:0.7em;
+}
+
+#dashboard-portlets1 dl.portlet,
+#dashboard-portlets2 dl.portlet,
+#dashboard-portlets3 dl.portlet,
+#dashboard-portlets4 dl.portlet {
+    margin-bottom:1.5em;
+}
+
+/* @end */
+
+/* @group Forms */
+
+fieldset,
+.editionComment {
+    line-height:1.5em;
+    margin:1em 0;
+    padding:0 1em 1em;
+    width:auto;
+}
+
+/* Emulates the styling from the h1 tag */
+#content .field input[type="text"][name$=".title"],
+#archetypes-fieldname-title input {
+    font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
+    line-height: 125%;
+    color: Black;
+    letter-spacing: -0.05em;
+    margin: inherit -0.05em;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Emulates styling from the description's view */
+#content .field textarea[name$=".description"],
+#archetypes-fieldname-description textarea#description {
+    font-family: Arial,FreeSans,sans-serif;
+    color:#666666;
+    font-size:1.25em;
+    font-weight: bold;
+}
+
+
+div.formControls {
+    margin: 1em;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    background-color: #ffffe0;
+}
+
+#content textarea {
+    font: 100% Monaco, "Courier New", Courier, monospace;
+    width: 100%;
+}
+#content select {
+    vertical-align: top;
+}
+#content fieldset {
+    border: 0.1em solid #329fd7;
+    border-style: solid none none none;
+}
+#content legend {
+    padding: 0.5em;
+    font-size: 85%;
+}
+label {
+    font-weight:bold;
+}
+
+#content label {
+}
+
+#content optgroup {
+    font-style: normal;
+    font-weight: bold;
+    color: #999;
+    padding-left: 0.25em;
+}
+#content option {
+    color: black;
+}
+#content optgroup > option {
+    padding: 0 0.25em 0 1em;
+}
+dl.enableFormTabbing dd {
+    margin-left: 0;
+    padding-top: 2em;
+}
+.searchSection {
+    color: #76797c;
+    margin-top: 0.25em;
+}
+.searchSection label:hover {
+    color: Black;
+}
+.field {
+    clear: both;
+    margin-bottom: 1em;
+}
+.field input[type="text"] {
+    /*width: 100%;*/
+}
+.field input[type="text"][name$=".title"],
+input#title {
+    width: 100%;
+}
+.field.error input[type="text"][name$=".title"],
+.error input#title {
+    width:99%;
+}
+
+.fieldRequired {
+    background: url(required.png) center left no-repeat;
+    padding: 0 0 0 1em;
+    color: White;
+}
+.fieldUploadFile {
+    text-align: right;
+    margin-right: 0.75em;
+    display: none;
+}
+.fieldTextFormat {
+    text-align: right;
+    margin-right: 0.75em
+}
+.formHelp {
+    color: #555;
+    margin: 0 0 0.2em 0;
+}
+div.field.error {
+    background-color: #fdc;
+    border:  1px solid red;
+    padding: 0.5em;
+    margin:  1em 0;
+}
+.error .fieldRequired {
+    color: #d00;
+}
+div.error.warning {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
+
+div.error.warning input {
+    border: 2px solid red;
+}
+
+input.inputLabelActive {
+    color: #76797c;
+}
+textarea#form\.description {
+    height: 6em;
+    width: 99%;
+}
+table.listing tbody tr.odd.selected td,
+tr.selected {
+    background-color: #ffa;
+}
+
+/* @group Login form */
+
+body.template-logged_out #content,
+body.template-login_form #content,
+.pb-ajax #login-form {
+    text-align: center;
+}
+
+#fieldset-openid-login input, #login-form input {
+    font-size: 150%;
+}
+
+
+body.template-register #content input,
+body.template-new-user #content input {
+    font-size: 150%;
+    width: inherit;
+
+}
+
+#fieldset-openid-login label, #login-form label {
+    margin-right:0.5em;
+    padding-top:0.2em;
+    text-align:right;
+    width: 10em;
+    display: inline-block;
+}
+
+#fieldset-openid-login .formControls input, #login-form .formControls input {
+margin-left: 0.25em;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Table of Contents */
+
+ /*Table of Contents styling - essentially a portlet with smaller fonts and aligned right + limited in width*/
+
+dl.toc {
+    float: right;
+    width: 35%;
+    font-size: 100%;
+    margin: 1em 0 0.5em 1.5em;
+}
+dl.toc dt {
+    margin-left: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+dl.toc dd {
+    margin-bottom: 0;
+    padding-left: 2em;
+}
+dl.toc dd ol {
+    margin-left: 1.5em;
+}
+
+/* @end */
+
+/* @group Sitemap */
+
+#portal-sitemap {
+    list-style: none;
+    margin-left: 0;
+    font-size: 130%;
+    font-weight: bold;
+}
+
+#portal-sitemap li {
+    list-style: none;
+    margin-left: 0;
+}
+
+#portal-sitemap a {
+    border-bottom: none;
+    display: block;
+}
+
+#portal-sitemap > li {
+    border-bottom:0.1em dotted #ddd;
+    line-height:1.8em;
+    padding:0.25em 1em;
+    margin-bottom: 0;
+}
+
+#portal-sitemap .navTreeLevel2,
+#portal-sitemap .navTreeLevel2 ul {
+    font-size: 85%;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding: 0.25em 0;
+}
+
+/* @end */
+
+/* @group Album view classes */
+.photoAlbumEntry {
+    float: left;
+    position:relative;
+    overflow: hidden;
+    height: 185px;
+    width: 143px;
+    margin: 0em;
+    padding: 0px 6px 0px 9px;
+    text-align: center;
+    background-image: url('polaroid-single.png');
+    background-repeat: no-repeat;
+}
+.photoAlbumEntry img {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 0 auto;
+}
+.photoAlbumEntryWrapper {
+    height: 130px;
+    width: 128px;
+    margin-bottom: 7px;
+}
+.photoAlbumEntry a {
+    display: block;
+    text-decoration: none;
+    font-size: 90%;
+    height: 169px;
+    width: 130px;
+    margin: 16px auto 0px;
+}
+.photoAlbumFolder {
+    background-image: url('polaroid-multi.png');
+    background-repeat: no-repeat;
+}
+.photoAlbumEntryTitle {
+    color: #76797c;
+    display: block;
+    width: 128px;
+    height: 3.6em;
+}
+
+/* @end */
+
+/* @group Invisibles */
+
+.hiddenStructure {
+    display: block;
+    background: transparent;
+    background-image: none; /* safari bug */
+    border: none;
+    height: 0.1em;
+    overflow: hidden;
+    padding: 0;
+    margin: -0.1em 0 0 -0.1em;
+    width: 1px;
+}
+
+#content .visualNoMarker {
+    list-style:none;
+    margin-left: 0;
+}
+
+.visualClear {
+    clear: both;
+}
+
+/* @end */
+
+/* @group Accessibility elements, applied by JS */
+
+body.largeText { font-size: 125%; }
+body.smallText { font-size: 85%; }
+
+/* @end */
+
+/* @group Overlay windows */
+
+/* styling for overlays (popups) */
+
+div.overlay {
+    width: auto;
+    height: auto;
+    /* initially overlay is hidden */
+    display: none;
+    /* some padding to layout nested elements nicely  */
+    margin: 1em;
+    font-size: 80%;
+}
+
+div.overlay-iframe,
+div.overlay-ajax {
+    width: 60%;
+    min-height: 100px;
+    z-index: 99; /* overlays should be above everything */
+}
+
+div.overlay-iframe {
+    height: 60%;
+}
+
+/* default close button positioned on upper-left corner */
+div.overlaybg div.close,
+div.overlay div.close {
+    background-image: url(pb_close.png);
+    position: absolute;
+    left: -14px;
+    top: -14px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
+
+.pb-ajax {
+    overflow-y: auto;
+}
+
+.pb-ajax, .pb-image {
+    background-color: #fff;
+    border: 1px solid #999;
+    white-space: normal;
+    box-shadow: 0 0 3em 0.5em #666;
+    -moz-box-shadow: 0 0 3em 0.5em #666;
+    -webkit-box-shadow: 0 0 3em #666;
+}
+
+.pb-ajax > div {
+    width: 92%;
+    padding: 1em;
+}
+
+.pb-ajax .documentActions {display:none}
+
+div.overlay div.close span {
+    display: block;
+    height: 1px;
+    margin: -1px 0 0 -1px;
+    overflow: hidden;
+    padding: 0;
+    width: 1px;
+}
+
+div.overlay textarea { width: 100%; }
+
+/* Hide form elements that don't make sense within an overlay. */
+div.overlay .link-parent { display: none; }
+div.overlay #createGroup legend { display: none; }
+div.overlay #createGroup fieldset { border: none; }
+
+/* lets play nice with paragraphs, links, tabbed pages in overlay e.g. when plone.openid is installed */
+div.overlay p {
+    margin-bottom: 1em;
+}
+div.overlay label {
+    margin-bottom: 0.25em;
+}
+div.overlay a:hover {
+    color: #75ad0a;
+}
+div.overlay a.selected {
+    color: #000000;
+}
+div.overlay .formTab {
+    margin-right:1em;
+    font-weight: bold;
+}
+div.overlay .formTab.lastFormTab {
+    margin-right:0em;
+}
+div.overlay .formControls a {
+    display: block;
+    margin: 0.75em;
+}
+
+/* @end */
+
+/* @group Content History */
+
+#content-history #history dd {
+}
+
+#content-history div.historyRecord {
+    margin-bottom: 1em;
+}
+
+
+#content-history div.historyTools ul {
+    float: right;
+    margin: 0.5em 1em;
+}
+
+#content-history div.historyTools ul li {
+    display: inline;
+    padding: 0 0.015em;
+}
+
+#content-history div.historyTools ul li a{
+    border-bottom: none;
+}
+
+#content-history div.historyTools form {
+    display: inline;
+}
+
+#content-history .historyAction {
+
+}
+
+#content-history .historyByLine {
+    background: #ddd;
+    padding: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    -webkit-border-top-right-radius: 0.5em;
+    -webkit-border-top-left-radius: 0.5em;
+    -moz-border-radius-topleft: 0.5em;
+    -moz-border-radius-topright: 0.5em;
+}
+
+#content-history div.historyLinks {
+    float: right;
+    clear: right;
+    margin: 0.5em 1em 0 0;
+}
+
+
+#content-history div.historyComment {
+    padding: 0.5em 1em;
+    border: 1px solid #ddd;
+}
+
+#content-history div.historyComment p {
+    margin: 0;
+    padding-top: 1px;
+}
+
+#content-history a.historyComparePrevious {
+    border-top: 1px dotted #ccc;
+    display: block;
+    margin-top: 3em;
+    text-align: center;
+}
+
+#content-history a.historyComparePrevious span {
+    background-color: white;
+    position: relative;
+    top: -0.75em;
+    padding: 0 0.5em;
+}
+
+/* @end */
+
+/* @group Core content type sprites */
+
+/* Generated using http://spritegen.website-performance.org, with the following
+   parameters:
+   - Build direction: Vertical
+   - Horizontal offset: (doesn't matter, but can't be 0)
+   - Vertical offset: 200px
+   - Compress image with OptiPNG: yes
+   - Class prefix: contenttype-
+   - Display width and height: no
+  Then, add 4 px to the background-position to line up the icons to text.
+
+.contenttype-document_icon { background-position: 0 0;  }
+.contenttype-event_icon { background-position: 0 -216px;  }
+.contenttype-file_icon { background-position: 0 -432px;  }
+.contenttype-folder_icon { background-position: 0 -648px;  }
+.contenttype-image_icon { background-position: 0 -864px;  }
+.contenttype-link_icon { background-position: 0 -1080px;  }
+.contenttype-newsitem_icon { background-position: 0 -1296px;  }
+.contenttype-site_icon { background-position: 0 -1512px;  }
+.contenttype-topic_icon { background-position: 0 -1728px;  }
+
+*/
+
+.icons-on .contenttype-document {
+    background: no-repeat transparent 0px 4px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-event {
+    background: no-repeat transparent 0px -212px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-folder {
+    background: no-repeat transparent 0px -644px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-link {
+    background: no-repeat transparent 0px -1076px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-news-item {
+    background: no-repeat transparent 0px -1292px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-plone-site {
+    background: no-repeat transparent 0px -1508px url(contenttypes-sprite.png);
+}
+.icons-on .contenttype-topic {
+    background: no-repeat transparent 0px -1724px url(contenttypes-sprite.png);
+}
+
+/* These should only appear in the add menu */
+.icons-on #plone-contentmenu-factories .contenttype-file {
+    background: no-repeat transparent 0px -428px url(contenttypes-sprite.png);
+}
+.icons-on #plone-contentmenu-factories .contenttype-image {
+    background: no-repeat transparent 0px -860px url(contenttypes-sprite.png);
+}
+
+.icons-on .contenttype-document,
+.icons-on .contenttype-event,
+.icons-on .contenttype-folder,
+.icons-on .contenttype-link,
+.icons-on .contenttype-news-item,
+.icons-on .contenttype-plone-site,
+.icons-on .contenttype-topic,
+.icons-on #plone-contentmenu-factories .contenttype-file,
+.icons-on #plone-contentmenu-factories .contenttype-image {
+    line-height: 2em;
+    display: inline-block;
+    *display: block;
+    padding-left: 20px !important;
+}
+
+/* @end */
+
+}
+
+/* - ploneKss.css - */
+@media screen {
+#kss-spinner {
+    display:none;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    background-position: center center;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+
+.formlibInlineEditable,
+.inlineEditable {
+    padding: 1px;
+    display: block;
+}
+
+body.kssActive .inlineEditable:hover,
+body.kssActive .formlibInlineEditable:hover {
+    padding: 0;
+    border: 1px solid #ddd;
+    border-color: #666 #ddd #ddd #666;
+    cursor: text;
+    background: White url(input_background.png) repeat-x;
+}
+
+body.kssActive .inlineEditable a:hover,
+body.kssActive .formlibInlineEditable a:hover {
+    cursor: pointer;
+}
+
+body.kssActive .formlibInlineForm:hover,
+body.kssActive .formlibInlineForm a:hover {
+    padding: 1px;
+    border: none;
+    cursor: default;
+    background: none;
+}
+
+.inlineForm .formHelp,
+.inlineForm .fieldRequired,
+.inlineForm label {
+    display: none;
+}
+
+/* In inline selection widgets the label *must* be displayed, as
+   otherwise you only see identical radio buttons without text. */
+.inlineForm .ArchetypesSelectionWidget label {
+    display: inline;
+}
+
+.inlineForm #archetypes-fieldname-title input,
+.inlineForm #archetypes-fieldname-title {
+    font-size: 100%;
+}
+
+/* Workaround for abnormally large buttons in the h1 tag */
+h1 div.formControls input {
+    font-size: 55% !important;
+}
+}
+
+
+/* - ++resource++tinymce.stylesheets/tinymce.css - */
+@media screen {
+#content ul.listTypeDisc {
+	list-style-type: disc;
+	list-style-image: none;
+}
+#content ul.listTypeSquare {
+	list-style-type: square;
+	list-style-image: none;
+}
+#content ul.listTypeCircle {
+	list-style-type: circle;
+	list-style-image: none;
+}
+#content ol.listTypeDecimal {
+	list-style-type: decimal;
+	list-style-image: none;
+}
+#content ol.listTypeLowerAlpha {
+	list-style-type: lower-alpha;
+	list-style-image: none;
+}
+#content ol.listTypeUpperAlpha {
+	list-style-type: upper-alpha;
+	list-style-image: none;
+}
+#content ol.listTypeLowerRoman {
+	list-style-type: lower-roman;
+	list-style-image: none;
+}
+#content ol.listTypeUpperRoman {
+	list-style-type: upper-roman;
+	list-style-image: none;
+}
+
+
+}
+
+
+/* - PressRoom.css - */
+@media all {
+/*
+** Press Room style sheet - Portlets
+**
+** Style sheet documentation can be found at http://plone.org/documentation
+**
+** You should preferrably use ploneCustom.css to add your own CSS classes and to
+** customize your Press Room, as these are the base fundaments of this Product and will
+** change and be refined in newer versions. Keeping your changes in
+** ploneCustom.css will make it easier to upgrade.
+**
+*/
+
+/*  (do not remove this :) */
+/*  (not this either :) */
+
+/* -=-=-=- Press Release Styles -=-=-=- */
+
+.pressroomSubhead {
+ font-style: italic;
+ font-size: 110%;
+ padding-bottom: 0.25em;
+}
+
+.itemDate, .itemPublication {
+ color: #666;
+ font-weight: normal;
+ margin-left: 1em;
+}
+
+#press-contacts-box {
+ width: 150px;
+ float: right;
+ padding: 0 5px 5px 5px;
+ margin-left: 20px;
+ border: 1px solid #CCC;
+ padding: 10px;
+ background: #ffffe1; 
+}
+#press-contacts-box dt { margin-top: 1em;}
+#press-contacts-box dd {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+.vcard-link { vertical-align: middle;}
+#press-contacts dd,
+#press-releases dd,
+#press-clips dd {
+ margin-left: 1.5em;
+ font-size: 90%;
+}
+
+.addPressRoomItem {
+ margin: .5em;
+ font-size: 8pt;
+ font-style: normal;
+}
+
+.addPressRoomItem a {
+ background: #FFA;
+ text-decoration: underline;
+}
+
+.morePressRoomItems {
+ margin: .5em 0 2em 4em;
+ font-size: 90%;
+}
+
+.release-hashes { 
+ text-align: center; 
+}
+
+.releaseTiming { 
+ text-transform: uppercase; 
+ font-weight: bold; 
+}
+
+.releaseLocation {
+ text-transform: uppercase;
+ font-weight: bold;
+}
+
+.releaseDate {
+ margin-left: 1em;
+ font-weight: bold;
+}
+
+.storydate {
+ margin-bottom: 1em;
+}
+
+/*  */
+
+
+}
+
+
+/* - faceted_view.css - */
+@media all {
+
+/* - ++resource++eea.faceted-navigation.css - */
+/* */
+.faceted-noborder {
+background:transparent none repeat scroll 0 0;
+border: medium none;
+}
+.faceted-form {
+padding: 1em 0 0 0;
+margin: 0;
+width: auto;
+}
+.faceted-widget {
+}
+#top-area {
+}
+#center-and-left-area {
+float: left;
+margin-right: -25em;
+width: 100%;
+}
+#right-area {
+float: right;
+width: 25em;
+overflow: hidden;
+}
+#center-area {
+float: right;
+margin-left: -25em;
+width: 100%;
+}
+#left-area {
+float: left;
+width: 25em;
+overflow: hidden;
+}
+#center-top-area {
+}
+#center-bottom-area {
+}
+#bottom-area {
+clear: both;
+}
+.right-area-js {
+margin-right: 25em;
+}
+.left-area-js {
+margin-left: 25em;
+}
+/* */
+.faceted-clear {
+clear: both;
+}
+.faceted-left-column div.faceted-text-widget input[type=submit] {
+float: right;
+}
+.faceted-right-column div.faceted-text-widget input[type=submit] {
+float: right;
+}
+.faceted-left-column div.faceted-text-widget input[type=text] {
+width: 99%;
+}
+.faceted-right-column div.faceted-text-widget input[type=text] {
+width: 99%;
+}
+.faceted-left-column div.faceted-select-widget select{
+width: 100%;
+}
+.faceted-right-column div.faceted-select-widget select{
+width: 100%;
+}
+.faceted-left-column div.faceted-resultsperpage-widget select{
+width: 100%;
+}
+.faceted-right-column div.faceted-resultsperpage-widget select{
+width: 100%;
+}
+.faceted-left-column div.faceted-sorting-widget select{
+width: 100%;
+}
+.faceted-right-column div.faceted-sorting-widget select{
+width: 100%;
+}
+.faceted-widget fieldset {
+margin: 0.5em ! important;
+padding: 1em 0.5em 0.5em 0.5em ! important;
+border: 1px solid #ccc ! important;
+}
+.widget-fieldset legend {
+margin-bottom: 0.5em;
+font-weight: bold;
+}
+/* */
+.faceted_loading {
+text-align: center;
+}
+/* */
+.faceted-section-header {
+}
+.ui-widget {
+font-size: 1em;
+}
+.ui-helper-reset {
+font-size: 1em;
+}
+.ui-accordion .ui-accordion-content {
+padding: 0px;
+overflow: hidden;
+border-width: 0;
+border-style: none;
+}
+.ui-accordion .ui-state-default {
+border: none;
+background: none;
+background-color: #95b229;
+margin: 0 0.5em;
+}
+.ui-accordion .ui-state-default a {
+color: #ffffff;
+font-weight: bold;
+}
+.ui-accordion .ui-state-default a:hover {
+border: none;
+color: #e9efcd;
+}
+.ui-accordion .ui-state-active {
+border: none;
+background: none;
+background-color: #e9efcd;
+margin: 0 0.5em;
+}
+.ui-accordion .ui-state-active a{
+color: #8e004d;
+font-weight: bold;
+}
+.ui-accordion .ui-state-active a:hover{
+border: none;
+cursor: text;
+}
+.faceted-widget-locked legend{
+color: #CCC;
+}
+.faceted-lock-overlay {
+background: none;
+}
+.faceted-widget-loading {
+background-image:url(../../++resource++faceted_images/ajax-loader-small.gif);
+background-position:95% 1.5em;
+background-repeat:no-repeat;
+}
+.faceted-widget-loading-msie {
+background-position: 95% 2.5em;
+}
+/* */
+.faceted-widget-error {
+display: none;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.checkbox.view.css - */
+.faceted-checkbox-item-disabled {
+color: gray;
+}
+.faceted-zero-count-hidden .faceted-checkbox-item-disabled {
+display: none ! important;
+}
+.widget-fieldset {
+}
+.widget-fieldset ul {
+margin: 0px;
+list-style: none ! important;
+}
+.widget-fieldset ul li input {
+clear: both;
+float: left;
+}
+.widget-fieldset ul li label {
+font-weight: normal;
+padding-left: 0.5em;
+}
+.faceted-checkbox-more {
+text-align: right;
+}
+.faceted-checkbox-less {
+text-align: right;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.sorting.view.css - */
+.faceted-sorting-errors {
+display: none;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.daterange.view.css - */
+.faceted-daterange-widget-form div {
+float: left;
+margin-left: 0.5em;
+}
+.faceted-daterange-widget-form div label {
+display: block;
+}
+.faceted-daterange-widget-form input {
+width: 10em;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.alphabets.view.css - */
+.faceted-zero-count-hidden .faceted-alphabetic-letter-disabled {
+display: none;
+}
+.faceted-top-column .faceted-alphabetic-widget {
+text-align: center;
+}
+.faceted-center-column .faceted-alphabetic-widget {
+text-align: center;
+}
+.faceted_letter {
+color: #95B229;
+font-weight: bold;
+font-size: 1.2em;
+cursor: pointer;
+padding: 0 0.2em 0 0.2em;
+background-color: transparent;
+}
+.faceted_letter:hover{
+color: orange;
+background-color: #ccc;
+}
+.faceted_letter_selected {
+background-color: #ccc;
+color: orange;
+font-size: 1.7em;
+}
+.faceted-alphabetic-letter-disabled {
+color: gray;
+cursor: auto;
+}
+.faceted-alphabetic-letter-disabled:hover{
+color: gray;
+background-color: transparent;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.tagscloud.view.css - */
+.tags-cloud li {
+border: none;
+text-decoration: none;
+cursor: pointer;
+color: #95B229;
+}
+.tags-cloud li:hover{
+color: orange ! important;
+}
+.faceted-tag-disabled {
+color: #ccc ! important;
+}
+li.faceted-tag-disabled:hover {
+color: #ccc ! important;
+}
+.faceted-tag-selected {
+color: orange ! important;
+font-size: 110%;
+}
+.faceted-zero-count-hidden li.faceted-tag-disabled {
+display: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.debug.view.css - */
+.faceted-debug-widget pre {
+max-height: 200px;
+}
+.faceted-debug-widget dt {
+clear: both;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.radio.view.css - */
+.faceted-radio-item-disabled {
+color: gray;
+}
+.faceted-zero-count-hidden .faceted-radio-item-disabled {
+display: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.select.view.css - */
+.faceted-select-item-disabled {
+color: gray;
+}
+.faceted-zero-count-hidden .faceted-select-item-disabled {
+display: none;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.criteria.view.css - */
+.faceted-criteria-syndication-rss {
+float: right;
+padding: 0.2em;
+}
+.faceted-criteria-syndication-skos {
+float: right;
+padding: 0.2em;
+}
+.faceted-criteria {
+text-align: left;
+}
+.faceted-criteria a {
+color: #95B229 !important;
+text-decoration: none !important;
+border: none !important;
+}
+.faceted-criteria a:visited {
+color: #95B229 !important;
+text-decoration: none !important;
+border: none !important;
+}
+.faceted-criteria span {
+padding-left: 0.2em;
+padding-right: 0.5em;
+}
+.faceted-criteria dt{
+font-weight: bold;
+}
+.faceted-criteria dd{
+margin-left: 1.5em;
+font-weight: normal;
+}
+.faceted-criteria-reset {
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.date.view.css - */
+.faceted-date-widget form {
+margin: 2em;
+margin-top: 0;
+}
+.faceted-date-widget-form .ui-slider span.ui-slider-label {
+position:relative;
+}
+.faceted-date-widget-form .ui-state-default,
+.faceted-date-widget-form .ui-widget-content .ui-state-default {
+background-image: none;
+background-color: #e9efcd;
+border-color: #95b229;
+border-width: 1px;
+border-style: solid;
+margin: 0;
+}
+.faceted-date-widget-form .ui-slider {
+border: 1px solid #95b229;
+}
+.faceted-date-widget-form .ui-slider-tooltip {
+border: 1px solid #aaa;
+}
+.faceted-date-widget-form .ui-slider-horizontal {
+margin-left:-0.6em;
+}
+.faceted-date-widget-form .ui-widget-header {
+background-image: none;
+background-color: #e9efcd;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.path.view.css - */
+.faceted-path-widget input {
+width: 99%;
+}
+.tree {
+position: absolute ! important;
+background-color: #FFFFFF;
+border: 1px dotted #CCCCCC;
+}
+.tree > .ltr > li {
+display: block ! important;
+}
+.tree li a {
+border: none ! important;
+}
+
+
+/* - ++resource++eea.facetednavigation.widgets.portlet.view.css - */
+.faceted-portlet-widget fieldset {
+margin: 0.5em;
+padding: 0em;
+}
+
+}
+
+/* custom changes for edit mode compatibility */
+.wrapper #main #content #edit-bar {
+    height: 2.2em;
+    font-size: 100%;
+}
+.wrapper #main #content #edit-bar li,
+.wrapper #main #content li.formTab {
+    display: inline;
+}
+.wrapper #main #edit-bar ul,
+.wrapper #main #content ul.formTabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+.wrapper #main #edit-bar ul#contentActionMenus {
+    padding: 0.1em 0.24em 0 0;
+}
+    
+.wrapper #main #content h5.hiddenStructure {
+    line-height: 0.1em;
+    margin: 0.1em 0 0 0.1em;
+}
+
+.wrapper #main #content #contentActionMenus a,
+.wrapper #main #content #contentActionMenus dl.actionMenu.activated dd {
+    color: white;
+    text-decoration: none;
+}
+
+.wrapper #main #content #content-views a {
+    color: white;
+}
+
+.wrapper #main #content #content-views li.selected a,
+.wrapper #main #content #content-views li a:hover,
+.wrapper #main #content li.formTab a.selected,
+.wrapper #main #content li.formTab a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.wrapper #main #content #contentActionMenus dl.actionMenu.activated dd a:hover {
+    color: #666;
+}
+
+#portal-personaltools dd {
+    z-index: 10;
+}
+
+#LSResult {
+    z-index: 11;
+}
+
+/* Faceted search customizations */
+.template-facetednavigation_view .wrapper #main #right,
+.template-configure_faceted\.html .wrapper #main #right {
+    display: none;
+}
+
+.template-facetednavigation_view .wrapper #main #content,
+.template-configure_faceted\.html .wrapper #main #content {
+    width: 100%;
+}
+
+.template-facetednavigation_view #left-area,
+.template-configure_faceted\.html #left-area,
+.template-facetednavigation_view #right-area,
+.template-configure_faceted\.html #right-area {
+    width: 15em;
+}
+
+.template-facetednavigation_view #center-area,
+.template-configure_faceted\.html #center-area {
+    margin-left: -15em;
+}
+
+.template-facetednavigation_view #center-and-left-area,
+.template-configure_faceted\.html #center-and-left-area {
+    margin-right: -15em;
+}
+
+.template-facetednavigation_view .left-area-js,
+.template-configure_faceted\.html .left-area-js {
+    margin-left: 15em;
+}
+
+.template-facetednavigation_view .right-area-js,
+.template-configure_faceted\.html .right-area-js {
+    margin-right: 15em;
+}
+
+.template-facetednavigation_view .wrapper #main #content ul,
+.template-facetednavigation_view .wrapper #main #content li,
+.template-configure_faceted\.html .wrapper #main #content ul,
+.template-configure_faceted\.html .wrapper #main #content li,
+.template-facetednavigation_view .wrapper #main #content form,
+.template-configure_faceted\.html .wrapper #main #content form {
+    margin: 0;
+    padding: 0;
+}
+
+.searchSection label, .searchSection label:hover {
+    color: white;
+}

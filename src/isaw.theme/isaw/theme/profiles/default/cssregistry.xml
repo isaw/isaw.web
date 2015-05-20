@@ -1,18 +1,44 @@
 <?xml version="1.0"?>
 <object name="portal_css">
     <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
-    enabled="True" expression="" id="faculty.css" media="" rel="stylesheet"
-    rendering="import"/>
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="faculty.css"
+                media="" rel="stylesheet" rendering="import" />
     
     <stylesheet title="" applyPrefix="False" authenticated="False"
-    cacheable="True" compression="safe" conditionalcomment="" cookable="True"
-    enabled="True" expression="" id="events.css" media="" rel="stylesheet"
-    rendering="import"/>
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="events.css"
+                media="" rel="stylesheet" rendering="import" />
 
     <!-- Remove obsolete css -->
     <stylesheet id="reset.css" remove="True" />
-    <stylesheet id="acl_users/session/refresh?session_refresh=true&amp;type=css&amp;minutes=5" remove="True" />
-    <stylesheet id="columns.css" media="" enabled="False" />
+    <stylesheet id="acl_users/session/refresh?session_refresh=true&amp;type=css&amp;minutes=5"
+                remove="True" />
+
+    <stylesheet id="columns.css"
+                expression="not:context/@@theme-enabled | nothing" media=""
+                enabled="True" />
+
+    <stylesheet id="public.css"
+                expression="not:context/@@theme-enabled | nothing" />
+    <stylesheet id="portlets.css"
+                expression="not:context/@@theme-enabled | nothing" />
+    <stylesheet id="print.css"
+                expression="not:context/@@theme-enabled | nothing" />
+
+    <!-- Add new stylesheets -->
+    <stylesheet title="" authenticated="False" cacheable="True"
+                compression="safe" conditionalcomment="" cookable="True"
+                enabled="on" expression="context/@@theme-enabled | nothing"
+                id="++theme++isaw.theme/plone-css-merged-minimal.css" media=""
+                rel="stylesheet" rendering="link" applyPrefix="true"
+                insert-before="*" />
+
+    <stylesheet title="" authenticated="False" cacheable="True"
+                compression="safe" conditionalcomment="" cookable="True"
+                enabled="on" expression="context/@@theme-enabled | nothing"
+                id="++theme++isaw.theme/theme.css" media="" rel="stylesheet"
+                rendering="link" applyPrefix="true"
+                insert-after="*" />
 
 </object>

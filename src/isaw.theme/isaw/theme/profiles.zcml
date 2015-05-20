@@ -39,4 +39,14 @@
       import_steps="cssregistry jsregistry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="2"
+      destination="3"
+      title="Update Theme to Diazo"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry jsregistry plone.app.theming actions"
+      />
+
 </configure>

@@ -1,12 +1,22 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="isaw.theme">
 
   <include package=".browser" />
   <include package=".portlets" />
   <include file="skins.zcml" />
   <include file="profiles.zcml" />
+
+  <plone:static directory="static" type="theme" />
+
+  <browser:page name="theme-enabled"
+                for="*"
+                class=".utils.ThemeSettingsView"
+                allowed_attributes="theme_blacklist is_blacklisted is_themed"
+                attribute="is_themed"
+                permission="zope.Public" />
+
 
 </configure>

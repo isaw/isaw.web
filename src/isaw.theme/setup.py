@@ -29,6 +29,8 @@ setup(name='isaw.theme',
 #          'sixfeetup.utils',
           'collective.addthis',
           'webcouturier.dropdownmenu',
+          'plone.app.theming',
+          'collective.navigationtoggle',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]
