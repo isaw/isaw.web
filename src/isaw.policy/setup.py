@@ -64,6 +64,7 @@ setup(name='isaw.policy',
           'Products.PloneKeywordManager',
           'collective.linkcheck',
           'collective.easyslider',
+          'ftw.calendar',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
