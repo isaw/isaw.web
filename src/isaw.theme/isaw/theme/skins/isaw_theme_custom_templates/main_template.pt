@@ -67,12 +67,6 @@
         <metal:javascriptslot define-slot="javascript_head_slot" />
     </tal:notajax>
 
-  <!-- Opengraph Support -->
-    <meta property="og:title" tal:attributes="content context/Title | nothing" />
-    <meta property="og:url" tal:attributes="content context/absolute_url | nothing" />
-    <meta property="og:description" tal:attributes="content context/Description | nothing"/>
-    <meta property="og:site_name" content="Institute for the Study of the Ancient World" />
-
   </head>
 
   <body tal:define="isRTL portal_state/is_rtl;
