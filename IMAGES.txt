@@ -1,0 +1,11 @@
+These are the image sizes and ratios we've defined across the site:
+
+Page Header Images (replaceable by user): 1400x500 / 2.8:1
+Homepage Slide Image: 1400x870 / 1.7 : 1
+Featured News Item: 300x 300 / 1:1
+News Item: 370x170 / 2.18 : 1
+Staff Image: 200x200 / 1:1
+
+These have been added to Plone's properties and can be edited from:
+
+http://localhost:8081/isaw/@@imaging-controlpanel
