@@ -49,4 +49,14 @@
       import_steps="cssregistry jsregistry plone.app.theming actions"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="3"
+      destination="4"
+      title="Update skins settings"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins"
+      />
+
 </configure>

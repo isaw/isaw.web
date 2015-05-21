@@ -2,8 +2,10 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="isaw.theme">
 
+  <five:registerPackage package="." initialize=".initialize" />
   <include package=".browser" />
   <include package=".portlets" />
   <include file="skins.zcml" />
@@ -17,6 +19,5 @@
                 allowed_attributes="theme_blacklist is_blacklisted is_themed"
                 attribute="is_themed"
                 permission="zope.Public" />
-
 
 </configure>

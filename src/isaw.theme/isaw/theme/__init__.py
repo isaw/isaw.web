@@ -1,1 +1,3 @@
 #
+def initialize(context):
+    pass
