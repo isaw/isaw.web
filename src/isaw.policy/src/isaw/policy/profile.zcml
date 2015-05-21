@@ -72,4 +72,14 @@
       import_steps="workflow rolemap"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="7"
+      destination="8"
+      title="Configure image sizes"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="propertiestool"
+      />
+
 </configure>
