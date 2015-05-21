@@ -22,5 +22,6 @@
     <dependency>profile-ftw.calendar:default</dependency>
     <dependency>profile-PressRoom:default</dependency>
     <dependency>profile-Products.PloneKeywordManager:default</dependency>
+    <dependency>profile-collective.easyslider:default</dependency>
   </dependencies>
 </metadata>

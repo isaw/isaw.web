@@ -63,6 +63,7 @@ setup(name='isaw.policy',
           'Products.PressRoom',
           'Products.PloneKeywordManager',
           'collective.linkcheck',
+          'collective.easyslider',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
