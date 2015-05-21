@@ -50,12 +50,11 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fff; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
-#portal-top #main-navigation ul#primary li a {color:#fff; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11.5px; font-weight:bold; letter-spacing:.4; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
-#portal-top #main-navigation ul#primary li a:after {background:url('_images/nav-arrow-down.png') center center / contain no-repeat; content:""; display:inline-block; height:8px; margin-left:10px; width:8px; }
-#portal-top #main-navigation ul#primary li.graduate a {background:#6d6054; }
-#portal-top #main-navigation ul#primary li.visiting a {background:#9d3a20; }
-#portal-top #main-navigation ul#primary li.exhibitions a {background:#9e6a4a; }
-#portal-top #main-navigation ul#primary li.events a {background:#66232b; }
+#portal-top #main-navigation ul#primary li a {background:#39302e; color:#fff; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11.5px; font-weight:bold; letter-spacing:.4; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; }
+#portal-top #main-navigation ul#primary li#portaltab-visiting-scholars a {background:#9d3a20; }
+#portal-top #main-navigation ul#primary li#portaltab-exhibitions a {background:#9e6a4a; }
+#portal-top #main-navigation ul#primary li#portaltab-events a {background:#66232b; }
 #portal-top #main-navigation ul#secondary {background:#e7e3df; display:block; height:49px; margin:0; position:absolute; right:0; text-align:right; top:0; width:100%; z-index:2; }
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
 #portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:12px; font-weight:bold; letter-spacing:.85; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
@@ -92,8 +91,8 @@ a {transition: all 0.5s ease; }
 
 #portal-breadcrumbs {color:#B0B0B0; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11px; font-weight:600; letter-spacing:.6px; line-height:100%; margin:22px auto; max-width:1154px; padding:0 20px; text-transform:uppercase; }
 
-#portal-breadcrumbs span {margin:0 14px; }
-#portal-breadcrumbs span#breadcrumbs-home {margin-left:0; }
+#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span > span {margin:0 14px; color:#8c8c8c; }
+#portal-breadcrumbs span#breadcrumbs-home a, #portal-breadcrumbs span.breadcrumbSeparator {margin-left:0; }
 #portal-breadcrumbs span a {color:#8c8c8c; text-decoration:none; }
 #portal-breadcrumbs span a:hover,
 #portal-breadcrumbs span a:focus {text-decoration:underline; }
@@ -159,7 +158,7 @@ a {transition: all 0.5s ease; }
 #portal-columns form .field .fieldRequired {color:#c64500; font-weight:bold; }
 #portal-columns form .field div,
 #portal-columns form .field div.formHelp {font-size:13px; line-height:15px; margin:0 0 8px; }
-#portal-columns form .field input[type="text"] {border:1px solid #bbb2aa; border-radius:1px; font-family: 'Roboto Slab', serif; font-size:22px; font-weight:300; line-height:30px; margin:10px 0 0; padding:12px 20px; }
+#portal-columns form .field input[type="text"], #portal-columns form .field textarea, #archetypes-fieldname-description textarea#description {border:1px solid #bbb2aa; border-radius:1px; font-family: 'Roboto Slab', serif; font-size:22px; font-weight:300; line-height:30px; margin:10px 0 0; padding:12px 20px; }
 #portal-columns form .field.collapsible {border:1px solid #e2ddd7; border-radius:2px; display:inline-block; margin:0 30px 0 0; padding:0; vertical-align:top; width:40%; }
 #portal-columns form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
 #portal-columns form .field.collapsible label.collapser.expanded { }
@@ -198,11 +197,6 @@ a {transition: all 0.5s ease; }
 #portal-columns #portal-column-first ul#section-navigation li.expanded a:before {transform:rotate(180deg); }
 #portal-columns #portal-column-first ul#section-navigation li a:hover,
 #portal-columns #portal-column-first ul#section-navigation li a:focus {text-decoration:underline; }
-#portal-columns #portal-column-first ul#section-navigation li ul.submenu { }
-#portal-columns #portal-column-first ul#section-navigation li ul.submenu li {padding:0; }
-#portal-columns #portal-column-first ul#section-navigation li ul.submenu li:before {display:none; }
-#portal-columns #portal-column-first ul#section-navigation li ul.submenu li a {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
-#portal-columns #portal-column-first ul#section-navigation li ul.submenu li a:before {display:none; }
 
 #portal-columns.single { }
 #portal-columns.single #portal-column-content {float:none; width:100% }
@@ -315,24 +309,38 @@ a {transition: all 0.5s ease; }
 
 /* Edit UI */
 #portal-columns p.hiddenStructure {margin: 0;}
-#edit-bar ul, #edit-bar dl dt, #edit-bar dl dd {font-size: 10px; text-transform: none;}
-#edit-bar ul {margin: 0; }
+#edit-bar ul, #portal-columns ul.formTabs, #edit-bar dl dt, #edit-bar dl dd {font-size: 12px; text-transform: none;}
+#edit-bar ul, #portal-columns ul.formTabs {margin: 0; }
 #edit-bar dl dt {margin: 0 0.25em; }
+#edit-bar a {transition: none; }
 #portal-columns #edit-bar ul li ul {font-size: 12px; }
 #portal-columns #edit-bar ul li ul li:before {
 	content: initial;
 	display: block;
 	margin: 0;
 }
-#edit-bar a {transition: none; }
+#portal-columns #formTabs ul li ul {font-size: 12px; }
+#portal-columns #formTabs ul li ul li:before {
+	content: initial;
+	display: block;
+	margin: 0;
+}
+
+
+#portal-columns table.mceToolbar tbody tr td {
+	border: none;
+	font-family: initial;
+	font-size: initial;
+	font-weight: initial;
+	letter-spacing: initial;
+	line-height: initial;
+	padding: 0;
+	text-transform: none;
+}
 
 @media screen and (max-width:1330px){
 	#portal-top #main-navigation ul#primary li {width:auto; }
 	#portal-top #main-navigation ul#primary li a {padding:0 30px; }
-}
-@media screen and (max-width:1190px){
-	#portal-top #main-navigation ul#primary li a::after {display:none; }
-
 }
 @media screen and (max-width:1120px){
 	#portal-top .identity {left:0; }
@@ -365,17 +373,10 @@ a {transition: all 0.5s ease; }
 	#portal-top #main-navigation ul#primary {height:auto; padding:0; position:static; right:auto; top:auto; }
 	#portal-top #main-navigation ul#primary li {display:block; }
 	#portal-top #main-navigation ul#primary li a {border-bottom:1px solid #e1ddd9; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
-	#portal-top #main-navigation ul#primary li a:after {background:url('_images/nav-arrow-white.png') center center no-repeat; content:""; display:block; height:5px; position:absolute; right:22px; top:50%; transform:translateY(-50%) rotate(270deg); width:10px; }
-	#portal-top #main-navigation ul#primary li ul.submenu { }
-	#portal-top #main-navigation ul#primary li ul.submenu li { }
-	#portal-top #main-navigation ul#primary li ul.submenu li a { }	
-	#portal-top #main-navigation ul#primary li.open a { }
-	#portal-top #main-navigation ul#primary li.open .submenu { }
 
 	#portal-top #main-navigation ul#secondary {background:rgba(231,227,223,.97) !important;  height:auto; padding:0; position:static; right:auto; top:auto; }
 	#portal-top #main-navigation ul#secondary li {display:block; }
 	#portal-top #main-navigation ul#secondary li a {border-bottom:1px solid #b0a8a0; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
-	#portal-top #main-navigation ul#secondary li a:after {background:url('_images/nav-arrow.png') center center no-repeat; content:""; display:block; height:5px; position:absolute; right:22px; top:50%; transform:translateY(-50%) rotate(270deg); width:10px; }
 
 	.footer-row #portal-footer {overflow:auto; }
 	.footer-row #portal-footer .footer-portlet.contact,

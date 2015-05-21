@@ -1,14 +1,8 @@
 <?xml version="1.0"?>
 <object name="portal_css">
-    <stylesheet title="" applyPrefix="False" authenticated="False"
-                cacheable="True" compression="safe" conditionalcomment=""
-                cookable="True" enabled="True" expression="" id="faculty.css"
-                media="" rel="stylesheet" rendering="import" />
+    <stylesheet id="faculty.css" remove="True" />
     
-    <stylesheet title="" applyPrefix="False" authenticated="False"
-                cacheable="True" compression="safe" conditionalcomment=""
-                cookable="True" enabled="True" expression="" id="events.css"
-                media="" rel="stylesheet" rendering="import" />
+    <stylesheet id="events.css" remove="True" />
 
     <!-- Remove obsolete css -->
     <stylesheet id="reset.css" remove="True" />
@@ -24,6 +18,8 @@
     <stylesheet id="portlets.css"
                 expression="not:context/@@theme-enabled | nothing" />
     <stylesheet id="print.css"
+                expression="not:context/@@theme-enabled | nothing" />
+    <stylesheet id="forms.css"
                 expression="not:context/@@theme-enabled | nothing" />
 
     <!-- Add new stylesheets -->

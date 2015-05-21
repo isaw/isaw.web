@@ -12,7 +12,9 @@
       <xsl:otherwise>one</xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-
+  <xsl:variable name="section">
+    <xsl:value-of select="//div[@id='portal-breadcrumbs']/span[2]/span[1]/a[1]/text()|//div[@id='portal-breadcrumbs']/span[2]/span[2]/span[1]/text()" />
+  </xsl:variable>
   <!-- Don't act on AJAX faceted search requests -->
   <notheme if-path="@@faceted_query @@tagscloud_counter" />
 
@@ -56,7 +58,16 @@
           attributes="href accesskey title"/>
     
     <!-- Header -->
-    
+    <replace css:theme-children="#main-navigation #secondary"
+             css:content-children="#portal-siteactions" />
+
+    <replace css:theme-children="#main-navigation #primary"
+             css:content-children="#portal-globalnav" />
+
+    <replace css:theme-children="#portal-top h2.section-title">
+      <xsl:value-of select="$section" />
+    </replace>
+
     <copy css:theme="#footer-support h3 a"
           css:content="a#support-link"
           attributes="href title" />
@@ -76,17 +87,11 @@
     <before theme-children="/html/body"
             css:content="#portal-header p.hiddenStructure" />
             
-    <!-- Breadcrumbs -->
-    <replace method="raw"
-             css:theme-children="#breadcrumbs"
-             css:content="#portal-breadcrumbs" />
-    <drop css:content="#portal-breadcrumbs" />
-
     <!-- Edit bar and portal messages -->
+    <replace css:theme="#viewlet-above-content"
+             css:content="#viewlet-above-content" />
     <before css:theme="#content"
             css:content="#edit-bar" />
-    <before css:theme="#content"
-            css:content="#viewlet-above-content" />
     <before css:theme="#content"
             css:content="#kssPortalMessage" />
     <before css:theme="#content"

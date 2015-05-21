@@ -962,6 +962,7 @@ dd.image-caption {
 
 /* @group Forms */
 
+/*
 fieldset,
 .editionComment {
     line-height:1.5em;
@@ -969,8 +970,9 @@ fieldset,
     padding:0 1em 1em;
     width:auto;
 }
-
+*/
 /* Emulates the styling from the h1 tag */
+/*
 #content .field input[type="text"][name$=".title"],
 #archetypes-fieldname-title input {
     font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
@@ -981,8 +983,9 @@ fieldset,
     font-size: 2em;
     font-weight: bold;
 }
-
+*/
 /* Emulates styling from the description's view */
+/*
 #content .field textarea[name$=".description"],
 #archetypes-fieldname-description textarea#description {
     font-family: Arial,FreeSans,sans-serif;
@@ -991,6 +994,7 @@ fieldset,
     font-weight: bold;
 }
 
+*/
 
 div.formControls {
     margin: 1em;
@@ -1001,10 +1005,13 @@ textarea:focus {
     background-color: #ffffe0;
 }
 
+/*
 #content textarea {
     font: 100% Monaco, "Courier New", Courier, monospace;
     width: 100%;
 }
+*/
+
 #content select {
     vertical-align: top;
 }
@@ -1046,13 +1053,18 @@ dl.enableFormTabbing dd {
 .searchSection label:hover {
     color: Black;
 }
+
+/*
 .field {
     clear: both;
     margin-bottom: 1em;
 }
+*/
 .field input[type="text"] {
     /*width: 100%;*/
 }
+
+/*
 .field input[type="text"][name$=".title"],
 input#title {
     width: 100%;
@@ -1061,6 +1073,7 @@ input#title {
 .error input#title {
     width:99%;
 }
+*/
 
 .fieldRequired {
     background: url(required.png) center left no-repeat;

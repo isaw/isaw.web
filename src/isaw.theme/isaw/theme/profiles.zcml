@@ -59,4 +59,14 @@
       import_steps="skins"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="4"
+      destination="5"
+      title="Disable legacy css"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry"
+      />
+
 </configure>
