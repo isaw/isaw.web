@@ -76,16 +76,14 @@ a {transition: all 0.5s ease; }
 .section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 .section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
 
-.section-isaw-home #portal-columns ul.slides {display:block; list-style:none; margin:0; padding:0; width:100%; }
-.section-isaw-home #portal-columns ul.slides li {display:block; margin:0; position:relative; right:0; }
-.section-isaw-home #portal-columns ul.slides li:nth-child(2){display:none; }
-.section-isaw-home #portal-columns ul.slides li img {display:block; height:auto; max-width:none; width:100%; }
-.section-isaw-home #portal-columns ul.slides li .content {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; }
-.section-isaw-home #portal-columns ul.slides li .content h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:23px; font-weight:800; letter-spacing:.8px; line-height:100%; margin:0 auto 20px; text-align:left; text-transform:uppercase; }
-.section-isaw-home #portal-columns ul.slides li .content p {color:#fff; font-family: 'Roboto Slab', serif; font-size:24px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
-.section-isaw-home #portal-columns ul.slides li .content p a {color:#e3ab79; text-decoration:none; }
-.section-isaw-home #portal-columns ul.slides li .content p a:hover,
-.section-isaw-home #portal-columns ul.slides li .content p a:focus {text-decoration:underline; }
+.section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
+.section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
+.section-isaw-home #portal-columns #slider .slideroverlay {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; border: none; background: transparent;}
+.section-isaw-home #portal-columns #slider .slideroverlay h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:23px; font-weight:800; letter-spacing:.8px; line-height:100%; margin:0 auto 20px; text-align:left; text-transform:uppercase; }
+.section-isaw-home #portal-columns #slider .slideroverlay p {color:#fff; font-family: 'Roboto Slab', serif; font-size:24px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
+.section-isaw-home #portal-columns #slider .slideroverlay p a {color:#e3ab79; text-decoration:none; }
+.section-isaw-home #portal-columns #slider .slideroverlay p a:hover,
+.section-isaw-home #portal-columns #slider .slideroverlay p a:focus {text-decoration:underline; }
 .section-isaw-home #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
 .section-isaw-home #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
 .section-isaw-home #portal-columns .cycle-pager span.cycle-pager-active,
@@ -396,7 +394,7 @@ a {transition: all 0.5s ease; }
 
 	.section-isaw-home.template-document_view {padding-bottom:0; }
 	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; }
-	.section-isaw-home #portal-columns ul.slides li .content {bottom:auto; left:auto; padding:30px; position:static;}
+	.section-isaw-home #portal-columns #slider .slideroverlay {bottom:auto; left:auto; padding:30px; position:static;}
 	.section-isaw-home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
 	.section-isaw-home.template-document_view #edit-bar {top: 0; }
 
@@ -512,8 +510,8 @@ a {transition: all 0.5s ease; }
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
 	.footer-row #portal-footer .footer-portlet.hours {float:none !important; padding:5% !important; width:90% !important; }
 
-	.section-isaw-home #portal-columns ul.slides li .content h3 {font-size:18px; line-height:120%; }
-	.section-isaw-home #portal-columns ul.slides li .content p {font-size:16px; }
+	.section-isaw-home #portal-columns #slider .slideroverlay h3 {font-size:18px; line-height:120%; }
+	.section-isaw-home #portal-columns #slider .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li {float:none;; margin-right:0 !important; width:100% !important; }
 
