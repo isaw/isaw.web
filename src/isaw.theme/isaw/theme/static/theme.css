@@ -180,7 +180,7 @@ a {transition: all 0.5s ease; }
 #portal-columns .bio h3 {color:#333; font-size:14px; line-height:23px; margin:0 0 10px; }
 #portal-columns .bio p {color:#4c4c4c; font-size:15px; line-height:24px; }
 
-#portal-columns h1.documentFirstHeading {margin:0 0 14px; }
+#portal-columns h1.documentFirstHeading {margin:0 0 14px; clear: both; }
 
 #plone-document-byline {color:#9a9898; margin:0 0 46px; }
 #plone-document-byline a {color:#9a9898; text-decoration:none; }
@@ -189,14 +189,23 @@ a {transition: all 0.5s ease; }
 
 #portal-columns .documentDescription {margin:0 0 42px; }
 
-#portal-columns #portal-column-first ul#section-navigation {list-style:none; margin:0 0 30px; padding:0; }
-#portal-columns #portal-column-first ul#section-navigation li {background:#f8f0e5; margin:0 0 10px; padding:15px 36px; position:relative; }
-#portal-columns #portal-column-first ul#section-navigation li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase;  }
-#portal-columns #portal-column-first ul#section-navigation li a:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
-#portal-columns #portal-column-first ul#section-navigation li.expanded:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
-#portal-columns #portal-column-first ul#section-navigation li.expanded a:before {transform:rotate(180deg); }
-#portal-columns #portal-column-first ul#section-navigation li a:hover,
-#portal-columns #portal-column-first ul#section-navigation li a:focus {text-decoration:underline; }
+#portal-columns #portal-column-first ul.navTree {list-style:none; margin:0; padding:0; }
+#portal-columns #portal-column-first ul.navTree.navTreeLevel0 {margin:0 0 30px;}
+#portal-columns #portal-column-first ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding: 15px; position:relative; }
+#portal-columns #portal-column-first ul.navTree li.navTreeFolderish {padding-left: 23px;}
+#portal-columns #portal-column-first ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
+#portal-columns #portal-column-first ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
+#portal-columns #portal-column-first ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
+#portal-columns #portal-column-first ul.navTree li.navTreeFolderish:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
+#portal-columns #portal-column-first ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
+#portal-columns #portal-column-first ul.navTree li a:hover,
+#portal-columns #portal-column-first ul.navTree li a:focus {text-decoration:underline; }
+#portal-columns #portal-column-first ul.navTree li ul li {padding: 0; }
+#portal-columns #portal-column-first ul.navTree li ul li:before {display:none; }
+#portal-columns #portal-column-first ul.navTree li ul li a {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
+#portal-columns #portal-column-first ul.navTree li ul li a:before {display:none; }
+#portal-columns #portal-column-first ul.navTree li a.navTreeFolderish {font-weight:700; line-height:100%; text-transform:uppercase; }
+#portal-columns #portal-column-first ul.navTree li a.navTreeCurrentItem { text-decoration: underline;}
 
 #portal-columns.single { }
 #portal-columns.single #portal-column-content {float:none; width:100% }
@@ -308,7 +317,7 @@ a {transition: all 0.5s ease; }
 .studies #portal-top::before {background:rgba(109,96,84,.87); }
 
 /* Edit UI */
-#portal-columns p.hiddenStructure {margin: 0;}
+#portal-columns p.hiddenStructure {margin: 0; padding: 0; height: 0;}
 #edit-bar ul, #portal-columns ul.formTabs, #edit-bar dl dt, #edit-bar dl dd {font-size: 12px; text-transform: none;}
 #edit-bar ul, #portal-columns ul.formTabs {margin: 0; }
 #edit-bar dl dt {margin: 0 0.25em; }
@@ -441,7 +450,7 @@ a {transition: all 0.5s ease; }
 	#portal-columns .documentDescription {font-size:24px; }
 	#portal-columns blockquote {padding:20px 30px; }
 	#portal-columns blockquote p {font-size:24px; }
-	#portal-columns #portal-column-first ul#section-navigation li.expanded::after {display:none; }
+	#portal-columns #portal-column-first ul.navTree li.navTreeFolderish::after {display:none; }
 	
 	.home #portal-columns {padding:0; }
 	
