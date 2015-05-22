@@ -50,7 +50,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fff; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
-#portal-top #main-navigation ul#primary li a {background:#39302e; color:#fff; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11.5px; font-weight:bold; letter-spacing:.4; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11.5px; font-weight:bold; letter-spacing:.4; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
 #portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; }
 #portal-top #main-navigation ul#primary li#portaltab-visiting-scholars a {background:#9d3a20; }
 #portal-top #main-navigation ul#primary li#portaltab-exhibitions a {background:#9e6a4a; }
@@ -145,8 +145,8 @@ a {transition: all 0.5s ease; }
 #portal-columns table {border:1px solid #e2ddd7; border-collapse:collapse; }
 #portal-columns table thead { }
 #portal-columns table thead tr { }
-#portal-columns table thead tr th {border:1px solid #e2ddd7; color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
-#portal-columns table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat #d4b982; cursor:pointer; padding-right:56px;}
+#portal-columns table thead tr th {background-color: #d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
+#portal-columns table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat; cursor:pointer; padding-right:56px;}
 #portal-columns table.sortable thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
 #portal-columns table tbody { }
 #portal-columns table tbody tr { }
@@ -335,6 +335,13 @@ a {transition: all 0.5s ease; }
 	display: block;
 	margin: 0;
 }
+.section-isaw-home #edit-bar {
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    top: 70px;
+}
+
 #portal-columns #formTabs ul li ul {font-size: 12px; }
 #portal-columns #formTabs ul li ul li:before {
 	content: initial;
@@ -370,7 +377,8 @@ a {transition: all 0.5s ease; }
 	.section-isaw-home #portal-top {position:relative; left:auto; top:auto; right:auto; }
 	.section-isaw-home #portal-columns ul.slides li .content {bottom:auto; left:auto; padding:30px; position:static;}
 	.section-isaw-home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
-	
+	.section-isaw-home #edit-bar {top: 0; }
+
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
 	#portal-top h1 {height:52px; left:34px; top:0; width:188px; }

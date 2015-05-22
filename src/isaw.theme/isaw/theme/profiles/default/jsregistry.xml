@@ -2,9 +2,6 @@
 <object name="portal_javascripts">
     <javascript authenticated="False" cacheable="True" compression="safe"
        conditionalcomment="" cookable="True" enabled="on" expression=""
-       id="jquery.jscrollpane.min.js" inline="False"/>
-    <javascript authenticated="False" cacheable="True" compression="safe"
-       conditionalcomment="" cookable="True" enabled="on" expression=""
        id="isaw.js" inline="False"/>
     <javascript id="jquery.tools.min.js" remove="True"/>
 
@@ -32,7 +29,7 @@
     <javascript cacheable="True" compression="none" cookable="True"
                 enabled="True" inline="False"
                 id="++theme++isaw.theme/_js/isaw.js"
-                insert-after="++theme++isaw.theme/_js/jquery.cycle2.min."/>
+                insert-after="++theme++isaw.theme/_js/jquery.cycle2.min.js"/>
 
 
 </object>

@@ -22,6 +22,12 @@
      insert-after="custom"/>
   <layer name="isaw_theme_styles"
      insert-after="custom" />
+  <layer name="kupu_tests"
+         remove="True" />
+  <layer name="dropdownmenu"
+         remove="True" />
+  <layer name="dropdownmenu_sunburst"
+         remove="True" />
  </skin-path>
 
 </object>
