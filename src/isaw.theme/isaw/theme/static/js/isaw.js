@@ -12,7 +12,7 @@ jQuery(function($) {
     });
 });
 
-$(document).load(function (){
+$(window).load(function (){
     function resize_slider() {
         var $slider_containers = $('#slider-container, #slider');
         var $slides = $('#slider .slide');
