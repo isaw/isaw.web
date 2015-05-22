@@ -10,9 +10,6 @@ jQuery(function($) {
             folder.addClass('collapsed');
         }
     });
-});
-
-$(window).load(function (){
     function resize_slider() {
         var $slider_containers = $('#slider-container, #slider');
         var $slides = $('#slider .slide');
@@ -33,4 +30,5 @@ $(window).load(function (){
     // Ideally we would listen for window resizes, but EasySlider sets the
     // width for scrolling one time only.
     resize_slider();
+    $(window).load(resize_slider);
 });
