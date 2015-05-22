@@ -439,6 +439,7 @@ a {transition: all 0.5s ease; }
 	#portal-column-content {clear:both; float:none; width:100%; 
 		margin-bottom:60px; 
 	}
+	.section-isaw-home.template-document_view #portal-column-content {margin-bottom: 0; }
 	#portal-column-first {
 		-webkit-box-ordinal-group: 3;   /* OLD - iOS 6-, Safari 3.1-6 */
 		-moz-box-ordinal-group: 3;      /* OLD - Firefox 19- */
