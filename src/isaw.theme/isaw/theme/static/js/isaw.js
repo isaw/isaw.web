@@ -11,10 +11,10 @@ jQuery(function($) {
         }
     });
     function resize_slider() {
-        var $slider_containers = $('#slider-container, #slider');
+        var $slider_containers = $('#slider-container, #slider, #slider .slide');
         var $slider_images = $('#slider img');
         $slider_images.css('max-width', $(window).width());
-        $slider_containers.css('max-width', $(window).width());
+        $slider_containers.css('max-width', $slider_images.width());
         $slider_containers.css('max-height', $slider_images.height());
     }
     resize_slider();
