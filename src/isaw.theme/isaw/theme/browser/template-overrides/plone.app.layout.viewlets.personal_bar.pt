@@ -43,7 +43,7 @@
   </dt>
 </dl>
 
-<a id="support-link" href="" tal:attributes="href string:${context/portal_url}/support">Support ISAW</a>
+<a id="support-link" href="" tal:attributes="href string:${context/portal_url}/support-isaw">Support ISAW</a>
 <ul id="header-links">
     <li><a href="" tal:attributes="href string:${context/portal_url}/apply">Apply to ISAW</a></li>
     <li><a href="" tal:attributes="href string:${context/portal_url}/careers">Careers at ISAW</a></li>
