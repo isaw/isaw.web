@@ -25,12 +25,10 @@
     </dt>
 
     <dd class="portletItem">
-        <table class="ploneCalendar headsection"
+        <table class="ploneCalendar bodysection"
                summary="Calendar"
                i18n:domain="plone"
                i18n:attributes="summary summary_calendar;">
-            <caption class="hiddenStructure"
-                     tal:content="view/monthName">Month name</caption>
             <thead>
                 <tr class="weekdays"
                     ><tal:data tal:repeat="weekday python:['S','M','T','W','T','F','S']"
@@ -44,13 +42,7 @@
                              tal:attributes="class string: ${firstClass} ${lastClass}">Su</th
                     ></tal:data>
                 </tr>
-            </thead>
-        </table>
-        <table class="ploneCalendar bodysection"
-               summary="Calendar"
-               i18n:domain="plone"
-               i18n:attributes="summary summary_calendar;">
-            <tbody>
+            </thead>            <tbody>
                 <tr tal:repeat="week view/getEventsForCalendar"
                     ><tal:block repeat="day week"
                         ><tal:day define="daynumber day/day;"

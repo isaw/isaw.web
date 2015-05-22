@@ -1,8 +1,20 @@
 <?xml version="1.0"?>
 <object name="portal_css">
-    <stylesheet id="faculty.css" remove="True" />
+    <stylesheet title="" applyPrefix="False" authenticated="False"
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="faculty.css"
+                media="" rel="stylesheet" rendering="import" />
     
-    <stylesheet id="events.css" remove="True" />
+    <stylesheet title="" applyPrefix="False" authenticated="False"
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="events.css"
+                media="" rel="stylesheet" rendering="import" />
+
+    <stylesheet title="" applyPrefix="False" authenticated="False"
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression=""
+                id="jquery.jscrollpane.css"
+                media="" rel="stylesheet" rendering="import" />
 
     <!-- Remove obsolete css -->
     <stylesheet id="reset.css" remove="True" />
@@ -19,23 +31,14 @@
                 expression="not:context/@@theme-enabled | nothing" />
     <stylesheet id="print.css"
                 expression="not:context/@@theme-enabled | nothing" />
-    <stylesheet id="forms.css"
-                expression="not:context/@@theme-enabled | nothing" />
 
     <!-- Add new stylesheets -->
     <stylesheet title="" authenticated="False" cacheable="True"
                 compression="safe" conditionalcomment="" cookable="True"
                 enabled="on" expression="context/@@theme-enabled | nothing"
-                id="++theme++isaw.theme/fonts.css" media=""
-                rel="stylesheet" rendering="link" applyPrefix="true"
-                insert-before="*" />
-
-    <stylesheet title="" authenticated="False" cacheable="True"
-                compression="safe" conditionalcomment="" cookable="True"
-                enabled="on" expression="context/@@theme-enabled | nothing"
                 id="++theme++isaw.theme/plone-css-merged-minimal.css" media=""
                 rel="stylesheet" rendering="link" applyPrefix="true"
-                insert-after="++theme++isaw.theme/fonts.css" />
+                insert-before="*" />
 
     <stylesheet title="" authenticated="False" cacheable="True"
                 compression="safe" conditionalcomment="" cookable="True"

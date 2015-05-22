@@ -2,10 +2,11 @@
 <object name="portal_javascripts">
     <javascript authenticated="False" cacheable="True" compression="safe"
        conditionalcomment="" cookable="True" enabled="on" expression=""
-       id="isaw.js" inline="False"/>
+       id="jquery.jscrollpane.min.js" inline="False"/>
     <javascript authenticated="False" cacheable="True" compression="safe"
-      conditionalcomment="" cookable="True" enabled="on" expression=""
-      id="jquery.tools.min.js" inline="False"/>
+       conditionalcomment="" cookable="True" enabled="on" expression=""
+       id="isaw.js" inline="False"/>
+    <javascript id="jquery.tools.min.js" remove="True"/>
 
     <!-- TinyMCE redux -->
     <javascript compression="safe"

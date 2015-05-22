@@ -21,7 +21,7 @@
   <layer name="isaw_theme_custom_templates"
      insert-after="custom"/>
   <layer name="isaw_theme_styles"
-         remove="True" />
+     insert-after="custom" />
  </skin-path>
 
 </object>

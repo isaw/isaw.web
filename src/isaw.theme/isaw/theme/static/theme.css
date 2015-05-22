@@ -63,31 +63,31 @@ a {transition: all 0.5s ease; }
 #portal-top .page-title {bottom:30px; display:block; left:0; position:absolute; right:0; width:100%; z-index:4; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; text-transform:uppercase; }
 
-.home {background:#3F3634; padding-bottom:200px; }
-.home #portal-top {background:transparent; min-height:none; position:absolute; top:0; left:0; right:0; z-index:200; }
-.home #portal-top:before {display:none; }
-.home #portal-top .page-title {display:none; }
-.home #portal-top #main-navigation ul#primary {background:rgba(243,243,243,.74); }
-.home #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,.74); }
+.section-isaw-home {background:#3F3634; padding-bottom:200px; }
+.section-isaw-home #portal-top {background:transparent; min-height:none; position:absolute; top:0; left:0; right:0; z-index:200; }
+.section-isaw-home #portal-top:before {display:none; }
+.section-isaw-home #portal-top .page-title {display:none; }
+.section-isaw-home #portal-top #main-navigation ul#primary {background:rgba(243,243,243,.74); }
+.section-isaw-home #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,.74); }
 
-.home #portal-column-content {float:none; width:100%; }
-.home #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
+#portal-columns.one #portal-column-content {float:none; width:100%; }
+.section-isaw-home #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 
-.home #portal-columns ul.slides {display:block; list-style:none; margin:0; padding:0; width:100%; }
-.home #portal-columns ul.slides li {display:block; margin:0; position:relative; right:0; }
-.home #portal-columns ul.slides li:nth-child(2){display:none; }
-.home #portal-columns ul.slides li img {display:block; height:auto; max-width:none; width:100%; }
-.home #portal-columns ul.slides li .content {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; }
-.home #portal-columns ul.slides li .content h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:23px; font-weight:800; letter-spacing:.8px; line-height:100%; margin:0 auto 20px; text-align:left; text-transform:uppercase; }
-.home #portal-columns ul.slides li .content p {color:#fff; font-family: 'Roboto Slab', serif; font-size:24px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
-.home #portal-columns ul.slides li .content p a {color:#e3ab79; text-decoration:none; }
-.home #portal-columns ul.slides li .content p a:hover,
-.home #portal-columns ul.slides li .content p a:focus {text-decoration:underline; }
-.home #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
-.home #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
-.home #portal-columns .cycle-pager span.cycle-pager-active,
-.home #portal-columns .cycle-pager span:Hover,
-.home #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
+.section-isaw-home #portal-columns ul.slides {display:block; list-style:none; margin:0; padding:0; width:100%; }
+.section-isaw-home #portal-columns ul.slides li {display:block; margin:0; position:relative; right:0; }
+.section-isaw-home #portal-columns ul.slides li:nth-child(2){display:none; }
+.section-isaw-home #portal-columns ul.slides li img {display:block; height:auto; max-width:none; width:100%; }
+.section-isaw-home #portal-columns ul.slides li .content {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; }
+.section-isaw-home #portal-columns ul.slides li .content h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:23px; font-weight:800; letter-spacing:.8px; line-height:100%; margin:0 auto 20px; text-align:left; text-transform:uppercase; }
+.section-isaw-home #portal-columns ul.slides li .content p {color:#fff; font-family: 'Roboto Slab', serif; font-size:24px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
+.section-isaw-home #portal-columns ul.slides li .content p a {color:#e3ab79; text-decoration:none; }
+.section-isaw-home #portal-columns ul.slides li .content p a:hover,
+.section-isaw-home #portal-columns ul.slides li .content p a:focus {text-decoration:underline; }
+.section-isaw-home #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
+.section-isaw-home #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
+.section-isaw-home #portal-columns .cycle-pager span.cycle-pager-active,
+.section-isaw-home #portal-columns .cycle-pager span:Hover,
+.section-isaw-home #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
 #portal-breadcrumbs {color:#B0B0B0; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11px; font-weight:600; letter-spacing:.6px; line-height:100%; margin:22px auto; max-width:1154px; padding:0 20px; text-transform:uppercase; }
 
@@ -145,13 +145,16 @@ a {transition: all 0.5s ease; }
 #portal-columns table {border:1px solid #e2ddd7; border-collapse:collapse; }
 #portal-columns table thead { }
 #portal-columns table thead tr { }
-#portal-columns table thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat #d4b982; border:1px solid #e2ddd7; color:#fff; cursor:pointer; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
-#portal-columns table thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
+#portal-columns table thead tr th {border:1px solid #e2ddd7; color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
+#portal-columns table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat #d4b982; cursor:pointer; padding-right:56px;}
+#portal-columns table.sortable thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
 #portal-columns table tbody { }
 #portal-columns table tbody tr { }
 #portal-columns table tbody tr.even {background:#f8f0e6; }
 #portal-columns table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
 #portal-columns table tbody tr td {border:1px solid #e2ddd7; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; text-transform:uppercase; }
+#portal-columns table.ploneCalendar thead tr th,  #portal-columns table.ploneCalendar tbody tr td {padding: 12px; }
+.portletCalendar a.calendarNext {float: right;}
 
 #portal-columns form { }
 #portal-columns form fieldset {border:none; }
@@ -167,7 +170,7 @@ a {transition: all 0.5s ease; }
 #portal-columns form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
 #portal-columns form .field.collapsible label.collapser.expanded { }
 #portal-columns form .field.collapsible label.collapser:after {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:inline-block; height:8px; margin:0 0 0 20px; width:13px; }
-#portal-columns form .field.collapsible label.collapser.expanded:after {transform:rotate(180deg); }
+#portal-columns form .field.collapsible label.collapser.expanded:after {transform:rotate(180deg); -webkit-transform:rotate(180deg); }
 #portal-columns form .field.collapsible .collapse {padding:20px 40px; }
 
 #portal-columns form fieldset .formControls {margin:22px 0 0; }
@@ -201,7 +204,7 @@ a {transition: all 0.5s ease; }
 #portal-columns #portal-column-first ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
 #portal-columns #portal-column-first ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
 #portal-columns #portal-column-first ul.navTree li.navTreeFolderish:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
-#portal-columns #portal-column-first ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
+#portal-columns #portal-column-first ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(180deg); -webkit-transform:rotate(180deg); }
 #portal-columns #portal-column-first ul.navTree li a:hover,
 #portal-columns #portal-column-first ul.navTree li a:focus {text-decoration:underline; }
 #portal-columns #portal-column-first ul.navTree li ul li {padding: 0; }
@@ -304,21 +307,21 @@ a {transition: all 0.5s ease; }
 
 
 /* section color schemes */
-.events #portal-columns h3,
-.events #portal-columns dl dt {color:#66232b; }
-.events #portal-top::before {background:rgba(102,35,43,.87); }
+.section-events #portal-columns h3,
+.section-events #portal-columns dl dt {color:#66232b; }
+.section-events #portal-top::before {background:rgba(102,35,43,.87); }
 
-.exhibitions #portal-columns h3,
-.exhibitions #portal-columns dl dt {color:#9e6a4a; }
-.exhibitions #portal-top::before {background:rgba(158,106,74,.87); }
+.section-exhibitions #portal-columns h3,
+.section-exhibitions #portal-columns dl dt {color:#9e6a4a; }
+.section-exhibitions #portal-top::before {background:rgba(158,106,74,.87); }
 
-.scholars #portal-columns h3,
-.scholars #portal-columns dl dt {color:#9d3a20; }
-.scholars #portal-top::before {background:rgba(157,58,32,.87); }
+.section-visiting-scholars #portal-columns h3,
+.section-visiting-scholars #portal-columns dl dt {color:#9d3a20; }
+.section-visiting-scholars #portal-top::before {background:rgba(157,58,32,.87); }
 
-.studies #portal-columns h3,
-.studies #portal-columns dl dt {color:#6d6054; }
-.studies #portal-top::before {background:rgba(109,96,84,.87); }
+.section-graduate-studies #portal-columns h3,
+.section-graduate-studies #portal-columns dl dt {color:#6d6054; }
+.section-graduate-studies #portal-top::before {background:rgba(109,96,84,.87); }
 
 /* Edit UI */
 #portal-columns p.hiddenStructure {margin: 0; padding: 0; height: 0;}
@@ -363,10 +366,10 @@ a {transition: all 0.5s ease; }
 @media screen and (max-width:959px){
 	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; }
 
-	.home {padding-bottom:0; }
-	.home #portal-top {position:relative; left:auto; top:auto; right:auto; }
-	.home #portal-columns ul.slides li .content {bottom:auto; left:auto; padding:30px; position:static;}
-	.home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
+	.section-isaw-home {padding-bottom:0; }
+	.section-isaw-home #portal-top {position:relative; left:auto; top:auto; right:auto; }
+	.section-isaw-home #portal-columns ul.slides li .content {bottom:auto; left:auto; padding:30px; position:static;}
+	.section-isaw-home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
 	
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
@@ -456,7 +459,7 @@ a {transition: all 0.5s ease; }
 	#portal-columns blockquote p {font-size:24px; }
 	#portal-columns #portal-column-first ul.navTree li.navTreeFolderish::after {display:none; }
 	
-	.home #portal-columns {padding:0; }
+	.section-isaw-home #portal-columns {padding:0; }
 	
 	#portal-columns ul.news li {display:block; margin-right:4%; width:48%; }
 	#portal-columns ul.news li:nth-child(3n){margin-right:4%; }
@@ -479,8 +482,8 @@ a {transition: all 0.5s ease; }
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
 	.footer-row #portal-footer .footer-portlet.hours {float:none !important; padding:5% !important; width:90% !important; }
 
-	.home #portal-columns ul.slides li .content h3 {font-size:18px; line-height:120%; }
-	.home #portal-columns ul.slides li .content p {font-size:16px; }
+	.section-isaw-home #portal-columns ul.slides li .content h3 {font-size:18px; line-height:120%; }
+	.section-isaw-home #portal-columns ul.slides li .content p {font-size:16px; }
 
 	#portal-columns ul.news li {float:none;; margin-right:0 !important; width:100% !important; }
 
