@@ -64,7 +64,7 @@ a {transition: all 0.5s ease; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; text-transform:uppercase; }
 
 .section-isaw-home {background:#3F3634; }
-.section-isaw-home #portal-top {background:transparent; min-height:none; position:absolute; top:0; left:0; right:0; z-index:200; }
+.section-isaw-home #portal-top {background:transparent; min-height:initial; position:absolute; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home #portal-top:before {display:none; }
 .section-isaw-home #portal-top .page-title {display:none; }
 .section-isaw-home #portal-top #main-navigation ul#primary {background:rgba(243,243,243,.74); }
@@ -154,7 +154,7 @@ a {transition: all 0.5s ease; }
 #portal-columns table tbody tr.even {background:#f8f0e6; }
 #portal-columns table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
 #portal-columns table tbody tr td {border:1px solid #e2ddd7; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; text-transform:uppercase; }
-#portal-columns table.ploneCalendar thead tr th,  #portal-columns table.ploneCalendar tbody tr td {padding: 12px; }
+#portal-columns table.ploneCalendar thead tr th,  #portal-columns table.ploneCalendar tbody tr td {padding: 13px; }
 .portletCalendar a.calendarNext {float: right;}
 
 #portal-columns form { }
@@ -338,9 +338,9 @@ a {transition: all 0.5s ease; }
 }
 .section-isaw-home #edit-bar {
     position: absolute;
-    z-index: 100;
+    z-index: 150;
     width: 100%;
-    top: 115px;
+    top: 180px;
 }
 
 #portal-columns #formTabs ul li ul {font-size: 12px; }

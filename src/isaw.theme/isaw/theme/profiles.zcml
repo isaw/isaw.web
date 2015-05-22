@@ -79,4 +79,14 @@
       import_steps="viewlets cssregistry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="6"
+      destination="7"
+      title="Update everything"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins viewlets cssregistry jsregistry actions"
+      />
+
 </configure>
