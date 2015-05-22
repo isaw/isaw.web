@@ -63,7 +63,7 @@ a {transition: all 0.5s ease; }
 #portal-top .page-title {bottom:30px; display:block; left:0; position:absolute; right:0; width:100%; z-index:4; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; text-transform:uppercase; }
 
-.section-isaw-home {background:#3F3634; padding-bottom:200px; }
+.section-isaw-home {background:#3F3634; }
 .section-isaw-home #portal-top {background:transparent; min-height:none; position:absolute; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home #portal-top:before {display:none; }
 .section-isaw-home #portal-top .page-title {display:none; }
@@ -337,9 +337,9 @@ a {transition: all 0.5s ease; }
 }
 .section-isaw-home #edit-bar {
     position: absolute;
-    z-index: 1000;
+    z-index: 100;
     width: 100%;
-    top: 70px;
+    top: 60px;
 }
 
 #portal-columns #formTabs ul li ul {font-size: 12px; }
