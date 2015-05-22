@@ -89,4 +89,14 @@
       import_steps="skins viewlets cssregistry jsregistry actions propertiestool"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="7"
+      destination="8"
+      title="Update js and props"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="jsregistry propertiestool"
+      />
+
 </configure>

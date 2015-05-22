@@ -4,6 +4,7 @@
        conditionalcomment="" cookable="True" enabled="on" expression=""
        id="isaw.js" inline="False"/>
     <javascript id="jquery.tools.min.js" remove="True"/>
+    <javascript id="++resource++plone.app.jquerytools.plugins.js" enabled="True"/>
 
     <!-- TinyMCE redux -->
     <javascript compression="safe"
