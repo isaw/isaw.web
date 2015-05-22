@@ -12,21 +12,20 @@ jQuery(function($) {
     });
     function resize_slider() {
         var $slider_containers = $('#slider-container, #slider');
-        var $slider_images = $('#slider img');
         var $slides = $('#slider .slide');
         var $slide_list = $('#slider .slider-list');
         var slide_count = $slides.length;
 
-        $slider_images.css('max-width', $(window).width());
+        $slides.css('max-width', $(window).width());
 
         $slide_list.width($slides.width()*slide_count);
         $slide_list.css('max-width', 100*slide_count + '%');
         $slides.css('max-width', 100/slide_count + '%');
         $slides.css('max-width', 100/slide_count + '%');
-        $slides.css('max-height', $slider_images.height());
+        $slides.css('max-height', $slides.height());
 
         $slider_containers.css('max-width', $(window).width());
-        $slider_containers.css('max-height', $slider_images.height());
+        $slider_containers.css('max-height', $slides.height());
     }
     resize_slider();
     $( window ).resize(resize_slider);

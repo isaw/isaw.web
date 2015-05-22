@@ -326,6 +326,8 @@ a {transition: all 0.5s ease; }
 .section-graduate-studies #portal-columns dl dt {color:#6d6054; }
 .section-graduate-studies #portal-top::before {background:rgba(109,96,84,.87); }
 
+#content img, #slider img {max-width: 100%; }
+
 /* Edit UI */
 #portal-columns p.hiddenStructure {margin: 0; padding: 0; height: 0;}
 #edit-bar ul, #portal-columns ul.formTabs, #edit-bar dl dt, #edit-bar dl dd {font-size: 12px; text-transform: none;}
