@@ -339,7 +339,7 @@ a {transition: all 0.5s ease; }
     position: absolute;
     z-index: 100;
     width: 100%;
-    top: 60px;
+    top: 115px;
 }
 
 #portal-columns #formTabs ul li ul {font-size: 12px; }
