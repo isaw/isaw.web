@@ -327,6 +327,22 @@ a {transition: all 0.5s ease; }
 .section-graduate-studies #portal-top::before {background:rgba(109,96,84,.87); }
 
 #content img, #slider img {max-width: 100%; }
+#content #slider .slide p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+#portal-columns #slider ul {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: initial;
+  margin: 0;
+  text-transform: none;
+}
 
 /* Edit UI */
 #portal-columns p.hiddenStructure {margin: 0; padding: 0; height: 0;}
