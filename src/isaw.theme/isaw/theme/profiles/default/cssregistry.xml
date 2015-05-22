@@ -26,9 +26,16 @@
     <stylesheet title="" authenticated="False" cacheable="True"
                 compression="safe" conditionalcomment="" cookable="True"
                 enabled="on" expression="context/@@theme-enabled | nothing"
-                id="++theme++isaw.theme/plone-css-merged-minimal.css" media=""
+                id="++theme++isaw.theme/fonts.css" media=""
                 rel="stylesheet" rendering="link" applyPrefix="true"
                 insert-before="*" />
+
+    <stylesheet title="" authenticated="False" cacheable="True"
+                compression="safe" conditionalcomment="" cookable="True"
+                enabled="on" expression="context/@@theme-enabled | nothing"
+                id="++theme++isaw.theme/plone-css-merged-minimal.css" media=""
+                rel="stylesheet" rendering="link" applyPrefix="true"
+                insert-after="++theme++isaw.theme/fonts.css" />
 
     <stylesheet title="" authenticated="False" cacheable="True"
                 compression="safe" conditionalcomment="" cookable="True"

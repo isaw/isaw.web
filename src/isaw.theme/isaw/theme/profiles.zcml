@@ -69,4 +69,14 @@
       import_steps="cssregistry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="5"
+      destination="6"
+      title="Add fonts css and reset viewlets"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets cssregistry"
+      />
+
 </configure>

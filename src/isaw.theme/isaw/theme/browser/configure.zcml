@@ -20,24 +20,6 @@
       directory="template-overrides"
       layer=".interfaces.IThemeSpecific" />
   
-  <!-- Viewlets registration -->
-  <browser:viewletManager
-      name="isaw.leftcol"
-      provides=".interfaces.ILeftCol"
-      permission="zope2.View"
-      class="plone.app.viewletmanager.manager.BaseOrderedViewletManager"
-      layer=".interfaces.IThemeSpecific"
-      />
-      
-  <!-- The global sections -->
-  <browser:viewlet
-      name="plone.global_sections"
-      manager=".interfaces.ILeftCol"
-      class="webcouturier.dropdownmenu.browser.dropdown.DropdownMenuViewlet"
-      permission="zope2.View"
-      layer=".interfaces.IThemeSpecific"
-      />
-
   <!-- add this -->
   <browser:viewlet
       name="collective.addthis"
@@ -48,15 +30,6 @@
       layer="collective.addthis.interfaces.IAddthisBrowserLayer"
   />
   
-  <!-- social buttons -->
-  <browser:viewlet
-      name="isaw.social"
-      manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
-      template="viewlets/social.pt"
-      permission="zope2.View"
-      layer=".interfaces.IThemeSpecific"
-      />
-
   <!-- Utils View -->
   <browser:page
      name="utils_view"

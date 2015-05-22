@@ -91,8 +91,12 @@ a {transition: all 0.5s ease; }
 
 #portal-breadcrumbs {color:#B0B0B0; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:11px; font-weight:600; letter-spacing:.6px; line-height:100%; margin:22px auto; max-width:1154px; padding:0 20px; text-transform:uppercase; }
 
-#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span > span {margin:0 14px; color:#8c8c8c; }
+#breadcrumbs-you-are-here {display: none;}
+#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span:first-child {margin:0 14px 0 10px;}
 #portal-breadcrumbs span#breadcrumbs-home a, #portal-breadcrumbs span.breadcrumbSeparator {margin-left:0; }
+#portal-breadcrumbs span {color:#8c8c8c; }
+#portal-breadcrumbs span.breadcrumbSeparator {color: transparent;}
+#portal-breadcrumbs span.breadcrumbSeparator:before {content: ">"; color:#8c8c8c;}
 #portal-breadcrumbs span a {color:#8c8c8c; text-decoration:none; }
 #portal-breadcrumbs span a:hover,
 #portal-breadcrumbs span a:focus {text-decoration:underline; }

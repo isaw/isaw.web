@@ -13,7 +13,7 @@
     </xsl:choose>
   </xsl:variable>
   <xsl:variable name="section">
-    <xsl:value-of select="//div[@id='portal-breadcrumbs']/span[2]/span[1]/a[1]/text()|//div[@id='portal-breadcrumbs']/span[2]/span[2]/span[1]/text()" />
+    <xsl:value-of select="//div[@id='portal-breadcrumbs']/span[3]/span[1]/a[1]/text()|//div[@id='portal-breadcrumbs']/span[3]/span[1]/text()" />
   </xsl:variable>
   <!-- Don't act on AJAX faceted search requests -->
   <notheme if-path="@@faceted_query @@tagscloud_counter" />
@@ -30,14 +30,12 @@
     </before>
 
     <!-- drop head elements -->
-    <drop theme="/html/head/meta" />
     <drop theme="/html/head/style" />
-    <drop theme="/html/head/link" />
     <drop theme="/html/head/title" />
     <drop theme="/html/head/script" />
     <!-- base -->
     <before css:theme-children="head" content="/html/head/base" />
-    <after css:theme-children="head" content="/html/head/comment()[contains(.,'base')]" />
+    <before css:theme-children="head" content="/html/head/comment()[contains(.,'base')]" />
     
     <!-- title -->
     <after theme-children='/html/head'
