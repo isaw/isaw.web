@@ -393,7 +393,7 @@ a {transition: all 0.5s ease; }
 	#portal-top h3.trigger.open:after {opacity:1; visibility:visible; }
 	
 	#portal-top #main-navigation {display:none; position:absolute; right:0; top:52px; width:320px; }
-	#portal-top #main-navigation.open {display:block; }	
+	#portal-top #main-navigation.open {display:block; z-index: 2000; }
 	#portal-top #main-navigation ul#primary {height:auto; padding:0; position:static; right:auto; top:auto; }
 	#portal-top #main-navigation ul#primary li {display:block; }
 	#portal-top #main-navigation ul#primary li a {border-bottom:1px solid #e1ddd9; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
