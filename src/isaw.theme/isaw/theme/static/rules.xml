@@ -36,6 +36,10 @@
     <!-- base -->
     <before css:theme-children="head" content="/html/head/base" />
     <before css:theme-children="head" content="/html/head/comment()[contains(.,'base')]" />
+
+    <replace css:content=".breadcrumbSeparator">
+      <span class="breadcrumbSeparator">&gt;</span>
+    </replace>
     
     <!-- title -->
     <after theme-children='/html/head'
@@ -91,10 +95,8 @@
              css:content="#viewlet-above-content" />
     <before css:theme="#content"
             css:content="#edit-bar" />
-    <before css:theme="#content"
-            css:content="#kssPortalMessage" />
-    <before css:theme="#content"
-            css:content=".portalMessage" />
+    <replace css:theme="#kssPortalMessage"
+             css:content="#kssPortalMessage" />
             
     <!-- hide descriptions -->
     <drop css:if-content="body.portaltype-document"
