@@ -196,23 +196,23 @@ a {transition: all 0.5s ease; }
 
 #portal-columns .documentDescription {margin:0 0 42px; }
 
-#portal-columns #portal-column-first ul.navTree {list-style:none; margin:0; padding:0; }
-#portal-columns #portal-column-first ul.navTree.navTreeLevel0 {margin:0 0 30px;}
-#portal-columns #portal-column-first ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding: 15px; position:relative; }
-#portal-columns #portal-column-first ul.navTree li.navTreeFolderish {padding-left: 23px;}
-#portal-columns #portal-column-first ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
-#portal-columns #portal-column-first ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
-#portal-columns #portal-column-first ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
-#portal-columns #portal-column-first ul.navTree li.navTreeFolderish:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
-#portal-columns #portal-column-first ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(180deg); -webkit-transform:rotate(180deg); }
-#portal-columns #portal-column-first ul.navTree li a:hover,
-#portal-columns #portal-column-first ul.navTree li a:focus {text-decoration:underline; }
-#portal-columns #portal-column-first ul.navTree li ul li {padding: 0; }
-#portal-columns #portal-column-first ul.navTree li ul li:before {display:none; }
-#portal-columns #portal-column-first ul.navTree li ul li a {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
-#portal-columns #portal-column-first ul.navTree li ul li a:before {display:none; }
-#portal-columns #portal-column-first ul.navTree li a.navTreeFolderish {font-weight:700; line-height:100%; text-transform:uppercase; }
-#portal-columns #portal-column-first ul.navTree li a.navTreeCurrentItem { text-decoration: underline;}
+#portal-columns ul.navTree {list-style:none; margin:0; padding:0; }
+#portal-columns ul.navTree.navTreeLevel0 {margin:0 0 30px;}
+#portal-columns ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding: 15px; position:relative; }
+#portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
+#portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
+#portal-columns ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
+#portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
+#portal-columns ul.navTree li.navTreeFolderish:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
+#portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(180deg); -webkit-transform:rotate(180deg); }
+#portal-columns ul.navTree li a:hover,
+#portal-columns ul.navTree li a:focus {text-decoration:underline; }
+#portal-columns ul.navTree li ul li {padding: 0; }
+#portal-columns ul.navTree li ul li:before {display:none; }
+#portal-columns ul.navTree li ul li a {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
+#portal-columns ul.navTree li ul li a:before {display:none; }
+#portal-columns ul.navTree li a.navTreeFolderish {font-weight:700; line-height:100%; text-transform:uppercase; }
+#portal-columns ul.navTree li a.navTreeCurrentItem { text-decoration: underline;}
 
 #portal-columns.single { }
 #portal-columns.single #portal-column-content {float:none; width:100% }
@@ -465,7 +465,7 @@ a {transition: all 0.5s ease; }
 	#portal-columns .documentDescription {font-size:24px; }
 	#portal-columns blockquote {padding:20px 30px; }
 	#portal-columns blockquote p {font-size:24px; }
-	#portal-columns #portal-column-first ul.navTree li.navTreeFolderish::after {display:none; }
+	#portal-columns ul.navTree li.navTreeFolderish::after {display:none; }
 	
 	.section-isaw-home #portal-columns {padding:0; }
 	
