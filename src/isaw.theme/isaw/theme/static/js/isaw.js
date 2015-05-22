@@ -15,7 +15,7 @@ jQuery(function($) {
         var $slider_images = $('#slider img');
         $slider_images.css('max-width', $(window).width());
         $slider_containers.css('max-width', $(window).width());
-        $slider_containers.css('max-height', $slider_images.width());
+        $slider_containers.css('max-height', $slider_images.height());
     }
     resize_slider();
     $( window ).resize(resize_slider);
