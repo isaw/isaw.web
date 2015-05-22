@@ -131,8 +131,8 @@
     <strip css:content="dl.portletNavigationTree dt.portletHeader a" />
     
     <!-- left column -->
-    <drop css:theme="#portal-column-one"
-          css:if-not-content="#portal-column-first" />
+    <drop css:theme="#portal-column-first"
+          css:if-not-content="#portal-column-one" />
 
     <replace css:content-children="#portal-column-one"
              css:theme-children="#portal-column-first" />

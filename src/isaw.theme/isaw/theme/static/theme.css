@@ -72,7 +72,7 @@ a {transition: all 0.5s ease; }
 .section-isaw-home.template-document_view #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,.74); }
 .section-isaw-home.template-document_view #portal-breadcrumbs {display: none; }
 
-.section-isaw-home.template-document_view #portal-column-content {min-height: 500px; }
+.section-isaw-home.template-document_view #portal-column-content {min-height: 250px; }
 .section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 .section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
 
