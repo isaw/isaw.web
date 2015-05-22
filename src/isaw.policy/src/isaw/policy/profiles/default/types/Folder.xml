@@ -5,5 +5,6 @@
     <element value="events-listing"/>
     <element value="checklist-view"/>
     <element value="highlight"/>
+    <element value="ftwcalendar_view"/>
   </property>
 </object>

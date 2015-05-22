@@ -82,4 +82,14 @@
       import_steps="propertiestool"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="8"
+      destination="9"
+      title="Configure image sizes"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
