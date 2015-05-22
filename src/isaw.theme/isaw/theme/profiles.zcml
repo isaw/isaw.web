@@ -86,7 +86,7 @@
       title="Update everything"
       description=""
       profile="isaw.theme:default"
-      import_steps="skins viewlets cssregistry jsregistry actions"
+      import_steps="skins viewlets cssregistry jsregistry actions propertiestool"
       />
 
 </configure>

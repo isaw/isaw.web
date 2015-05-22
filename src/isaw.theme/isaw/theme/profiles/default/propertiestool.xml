@@ -5,7 +5,7 @@
   </object>
   <object name="dropdown_properties" meta_type="Plone Property Sheet">
     <property name="title">Dropdown menu properties</property>
-    <property name="dropdown_depth" type="int">1</property>
+    <property name="dropdown_depth" type="int">0</property>
     <property name="enable_caching" type="boolean">False</property>
    </object>
  <object name="navtree_properties" meta_type="Plone Property Sheet">
