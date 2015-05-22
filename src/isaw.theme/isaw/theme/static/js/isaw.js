@@ -10,6 +10,9 @@ jQuery(function($) {
             folder.addClass('collapsed');
         }
     });
+});
+
+$(document).load(function (){
     function resize_slider() {
         var $slider_containers = $('#slider-container, #slider');
         var $slides = $('#slider .slide');
