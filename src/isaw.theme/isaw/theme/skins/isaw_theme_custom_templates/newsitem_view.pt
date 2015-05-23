@@ -7,40 +7,17 @@
       i18n:domain="plone">
 <body>
 
-<metal:content-core fill-slot="content-core">
+<metal:bodytext fill-slot="main">
+  <metal:block define-macro="main">
+
     <metal:block define-macro="content-core"
           tal:define="kssClassesView context/@@kss_field_decorator_view;
                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                       templateId template/getId;
                       text python:context.CookedBody(stx_level=2);
-                      len_text python:len(text.strip());
-                      item_creator creator|context/Creator|nothing;
-                      item_created CreationDate|context/CreationDate|nothing;">
+                      len_text python:len(text.strip())">
 
-        <div class="documentByLine">
-                  <tal:name tal:condition="item_creator"
-                            tal:define="pas_member context/@@pas_member;
-                              author python:pas_member.info(item_creator)">
-                    <span class="documentAuthor" i18n:translate="label_by_author">
-                      by
-                      <span 
-                         tal:replace="author/name_or_id"
-                         tal:omit-tag="not:author"
-                         i18n:name="author">Bob Dobalina</span>
-                    </span>
-                  </tal:name>
-                  &mdash;
-                  <span class="documentCreated">
-                    <tal:mod i18n:translate="box_created"></tal:mod>
-                    <span 
-                      tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;"
-                    tal:replace="python:toLocalizedTime(item_created,long_format=0)">15 Feb 2014</span>
-                  </span>
-              </div>
-
-
-
-
+      <div id="right-column">
         <div class="newsImageContainer"
              tal:condition="context/getImage|nothing">
             <a href="#"
@@ -55,6 +32,31 @@
               </metal:field>
             </p>
         </div>
+      </div>
+
+      <div id="main-column">
+        <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" tal:condition="not:ajax_load" />
+        <metal:title define-slot="content-title">
+           <metal:comment tal:content="nothing">
+               If you write a custom title always use
+               <h1 class="documentFirstHeading"></h1> for it
+           </metal:comment>
+           <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
+               Generic KSS Title. Is rendered with class="documentFirstHeading".
+           </h1>
+        </metal:title>
+        <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" tal:condition="not:ajax_load" />
+
+        <metal:description define-slot="content-description">
+           <metal:comment tal:content="nothing">
+               If you write a custom description always use
+               <div class="documentDescription"></div> for it
+           </metal:comment>
+           <div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
+               Generic KSS Description. Is rendered with class="documentDescription".
+           </div>
+        </metal:description>
+
 
         <p tal:define="is_editable context/@@plone_context_state/is_editable"
            tal:condition="python: not len_text and is_editable"
@@ -73,10 +75,12 @@
                                                    'text/x-rst', ), 'stx' + kss_class, 'plain' + kss_class)">
             <div metal:define-slot="inside" tal:replace="structure text">The body</div>
         </div>
+      </div>
+
     </metal:block>
-</metal:content-core>
 
-
+  </metal:block>
+</metal:bodytext>
 
 </body>
 </html>
