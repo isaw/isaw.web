@@ -84,7 +84,7 @@ a {transition: all 0.5s ease; }
 #content #slider .slide .slideroverlay p a {color:#e3ab79; text-decoration:none; }
 #content #slider .slide .slideroverlay p a:hover,
 #content #slider .slide .slideroverlay p a:focus {text-decoration:underline; }
-#slider-container .slider-navtype-navigation-bullets .easybutton {display: none; }
+#slider-container.slider-navtype-navigation-bullets .easybutton {display: none; }
 .section-isaw-home #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
 .section-isaw-home #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
 .section-isaw-home #portal-columns .cycle-pager span.cycle-pager-active,
