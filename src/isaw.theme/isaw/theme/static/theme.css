@@ -104,6 +104,7 @@ a {transition: all 0.5s ease; }
 #portal-breadcrumbs span a:focus {text-decoration:underline; }
 
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
+#portal-columns #portal-column-first dl dd {margin-left:0; }
 
 #portal-column-content {display:block; float:left; width:71%;}
 
@@ -200,13 +201,14 @@ a {transition: all 0.5s ease; }
 
 #portal-columns ul.navTree {list-style:none; margin:0; padding:0; }
 #portal-columns ul.navTree.navTreeLevel0 {margin:0 0 30px;}
-#portal-columns ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding: 15px; position:relative; }
+#portal-columns ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding:10px 15px; position:relative; }
 #portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
 #portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
-#portal-columns ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:100%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
-#portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
+#portal-columns ul.navTree li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; text-transform:uppercase; }
+#portal-columns ul.navTree li a.navTreeFolderish {text-decoration:none !important; }
+#portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; transform:rotate(-180deg); -webkit-transform:rotate(-180deg); }
 #portal-columns ul.navTree li.navTreeCurrentNode:after {background:url('_images/bg-nav-active.png') center center / contain no-repeat; content:""; display:block; height:44px; position:absolute; right:-14px; top:0; width:14px;}
-#portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(180deg); -webkit-transform:rotate(180deg); }
+#portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(0deg); -webkit-transform:rotate(0deg); }
 #portal-columns ul.navTree li a:hover,
 #portal-columns ul.navTree li a:focus {text-decoration:underline; }
 #portal-columns ul.navTree li ul li {padding: 0; }
