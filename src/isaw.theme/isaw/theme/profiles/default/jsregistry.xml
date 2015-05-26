@@ -30,7 +30,6 @@
     <javascript cacheable="True" compression="none" cookable="True"
                 enabled="True" inline="False"
                 id="++theme++isaw.theme/js/isaw.js"
-                insert-after="++theme++isaw.theme/_js/jquery.cycle2.min.js"/>
-
+                insert-after="++theme++isaw.theme/js/jquery.cycle2.min.js"/>
 
 </object>
