@@ -127,19 +127,20 @@ a {transition: all 0.5s ease; }
 #portal-columns blockquote {background:#f8f0e6; font-family: 'Roboto Slab', serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:140%; margin:36px 0; padding:40px 70px; }
 #portal-columns blockquote p {font-size:30px; line-height:140%; margin:0; }
 
+#portal-columns ul { }
 
-#portal-columns ul {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin:0 0 58px; text-transform:uppercase;}
-#portal-columns ul li {margin:0 0 24px; }
-#portal-columns ul li ul {color:#4c4c4c; font-family: 'Roboto', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
-#portal-columns ul li ul li {margin:0 0 16px; }
-#portal-columns ul li ul li:before {color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
+#portal-columns ul.red {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin:0 0 58px; text-transform:uppercase;}
+#portal-columns ul.red li {margin:0 0 24px; }
+#portal-columns ul.red li ul {color:#4c4c4c; font-family: 'Roboto', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
+#portal-columns ul.red li ul li {margin:0 0 16px; }
+#portal-columns ul.red li ul li:before {color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
 
-#portal-columns ol {color:#9b3a25; counter-reset:isaw-ol-counter; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; list-style:none; margin:0 0 58px; text-transform:uppercase;}
-#portal-columns ol li {margin:0 0 24px; }
-#portal-columns ol li:before {background:#9b3a25; color:#fff; content: counter(isaw-ol-counter); counter-increment:isaw-ol-counter; display:inline-block; line-height:34px; margin:0 10px 0 -45px; text-align:center; width:34px; }
-#portal-columns ol li ol {color:#4c4c4c; font-family: 'Roboto', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
-#portal-columns ol li ol li {margin:0 0 16px 40px; }
-#portal-columns ol li ol li:before {background:transparent; color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
+#portal-columns ol.red {color:#9b3a25; counter-reset:isaw-ol-counter; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; list-style:none; margin:0 0 58px; text-transform:uppercase;}
+#portal-columns ol.red li {margin:0 0 24px; }
+#portal-columns ol.red li:before {background:#9b3a25; color:#fff; content: counter(isaw-ol-counter); counter-increment:isaw-ol-counter; display:inline-block; line-height:34px; margin:0 10px 0 -45px; text-align:center; width:34px; }
+#portal-columns ol.red li ol {color:#4c4c4c; font-family: 'Roboto', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
+#portal-columns ol.red li ol li {margin:0 0 16px 40px; }
+#portal-columns ol.red li ol li:before {background:transparent; color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
 
 #portal-columns dl { }
 #portal-columns dl dt {color:#000; margin:0 0 30px; }
