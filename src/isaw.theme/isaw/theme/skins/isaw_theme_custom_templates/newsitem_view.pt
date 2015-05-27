@@ -7,56 +7,13 @@
       i18n:domain="plone">
 <body>
 
-<metal:bodytext fill-slot="main">
-  <metal:block define-macro="main">
-
+<metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core"
           tal:define="kssClassesView context/@@kss_field_decorator_view;
                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                       templateId template/getId;
                       text python:context.CookedBody(stx_level=2);
                       len_text python:len(text.strip())">
-
-      <div id="right-column">
-        <div class="newsImageContainer"
-             tal:condition="context/getImage|nothing">
-            <a href="#"
-               tal:define="here_url context/@@plone_context_state/object_url;"
-               tal:attributes="href string:$here_url/image/image_view_fullscreen"
-               id="parent-fieldname-image">
-               <img tal:replace="structure python: context.tag(scale='preview', css_class='newsImage')" src="" alt="" />
-            </a>
-            <p class="discreet" tal:condition="context/imageCaption|nothing">
-              <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
-              Image Caption
-              </metal:field>
-            </p>
-        </div>
-      </div>
-
-      <div id="main-column">
-        <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" tal:condition="not:ajax_load" />
-        <metal:title define-slot="content-title">
-           <metal:comment tal:content="nothing">
-               If you write a custom title always use
-               <h1 class="documentFirstHeading"></h1> for it
-           </metal:comment>
-           <h1 metal:use-macro="context/kss_generic_macros/macros/generic_title_view">
-               Generic KSS Title. Is rendered with class="documentFirstHeading".
-           </h1>
-        </metal:title>
-        <div id="viewlet-below-content-title" tal:content="structure provider:plone.belowcontenttitle" tal:condition="not:ajax_load" />
-
-        <metal:description define-slot="content-description">
-           <metal:comment tal:content="nothing">
-               If you write a custom description always use
-               <div class="documentDescription"></div> for it
-           </metal:comment>
-           <div metal:use-macro="context/kss_generic_macros/macros/generic_description_view">
-               Generic KSS Description. Is rendered with class="documentDescription".
-           </div>
-        </metal:description>
-
 
         <p tal:define="is_editable context/@@plone_context_state/is_editable"
            tal:condition="python: not len_text and is_editable"
@@ -75,12 +32,8 @@
                                                    'text/x-rst', ), 'stx' + kss_class, 'plain' + kss_class)">
             <div metal:define-slot="inside" tal:replace="structure text">The body</div>
         </div>
-      </div>
-
     </metal:block>
-
-  </metal:block>
-</metal:bodytext>
+</metal:content-core>
 
 </body>
 </html>
