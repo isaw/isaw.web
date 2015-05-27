@@ -109,4 +109,14 @@
       import_steps="portlets"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="9"
+      destination="10"
+      title="Tiled Listing View"
+      description="Add a tiled listing view for folders, topics and collections"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
