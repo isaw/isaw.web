@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isaw.theme">
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core"
+                    tal:define="kssClassesView context/@@kss_field_decorator_view;
+                                getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                                templateId template/getId">
+
+  <ul class="news"
+      tal:define="b_start python:request.get('b_start', 1);
+                  items python:view.listings(b_start=b_start)">
+   <tal:block tal:repeat="item items">
+    <li tal:define="item_url item/getURL;
+                    image_tag python:view.get_image(item);
+                    image_url string:${item_url}/@@images/image/blogtile;
+                    title item/Title">
+      <a href="#" tal:attributes="href item_url">
+        <img src="" title="" tal:replace="structure image_tag"/></a>
+      <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
+      <div class="post-meta" tal:define="byline python:view.get_byline(item)" tal:content="byline">[byline]</div>
+      <div class="post-excerpt">[exerpt]</div>
+      <a href="#" class="button small more" tal:attributes="href item_url">Read More</a>
+    </li>
+   </tal:block>
+  </ul>
+
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
