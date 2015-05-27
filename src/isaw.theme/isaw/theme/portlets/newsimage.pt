@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<dl class="portlet portletNewsImage"
+    i18n:domain="isaw">
+  <dt class="portletHeader">
+    <span class="portletTopLeft"></span>
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem"
+      tal:define="ctxt nocall:view/context">
+
+    <div class="newsImageContainer"
+         tal:condition="ctxt/getImage|nothing">
+        <a href="#"
+           tal:define="here_url ctxt/@@plone_context_state/object_url;"
+           tal:attributes="href string:$here_url/image/image_view_fullscreen"
+           id="parent-fieldname-image">
+           <img tal:replace="structure python: ctxt.tag(scale='preview', css_class='newsImage')" src="" alt="" />
+        </a>
+        <p class="discreet" tal:condition="ctxt/imageCaption|nothing">
+          <metal:field use-macro="python:ctxt.widget('imageCaption', mode='view')">
+          Image Caption
+          </metal:field>
+        </p>
+    </div>
+  </dd>
+</dl>
+</html>

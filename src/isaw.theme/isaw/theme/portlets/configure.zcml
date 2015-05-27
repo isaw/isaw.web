@@ -22,5 +22,14 @@
         permission="zope.Public"
         />
 
+    <plone:portlet
+        name="isaw.theme.newsimage"
+        interface=".newsimage.INewsItemImagePortlet"
+        assignment=".newsimage.Assignment"
+        renderer=".newsimage.Renderer"
+        addview=".newsimage.AddForm"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        />
 
 </configure>

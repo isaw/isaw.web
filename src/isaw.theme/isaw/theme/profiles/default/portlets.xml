@@ -14,6 +14,19 @@
    description="A portlet for attaching and linking a single image"
    />
 
+  <portlet
+    addview="isaw.theme.newsimage"
+    title="News Item Image Portlet"
+    description="Display the image for a news item (will not appear in other contexts"
+    />
+
+  <assignment 
+    name="newsitemassignment"
+    category="content_type"
+    key="News Item"
+    manager="plone.rightcolumn"
+    type="isaw.theme.newsimage"
+    visible="True"/>
 
 </portlets>
 
