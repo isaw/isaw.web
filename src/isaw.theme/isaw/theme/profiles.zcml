@@ -99,4 +99,14 @@
       import_steps="jsregistry propertiestool"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="8"
+      destination="9"
+      title="News Item Image"
+      description="Add news item image portlet and assignments"
+      profile="isaw.theme:default"
+      import_steps="portlets"
+      />
+
 </configure>
