@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
     <javascript authenticated="False" cacheable="True" compression="safe"
-       conditionalcomment="" cookable="True" enabled="on" expression=""
+       conditionalcomment="" cookable="True" enabled="True" expression=""
        id="isaw.js" inline="False"/>
     <javascript id="jquery.tools.min.js" remove="True"/>
     <javascript id="++resource++plone.app.jquerytools.plugins.js" enabled="True"/>

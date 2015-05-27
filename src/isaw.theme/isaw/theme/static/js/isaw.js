@@ -13,19 +13,19 @@ jQuery(function($) {
     function resize_slider() {
         var $slider_containers = $('#slider-container, #slider');
         var $slides = $('#slider .slide');
+        var $images = $('#slider .slide img');
         var $slide_list = $('#slider .slider-list');
         var slide_count = $slides.length;
 
-        $slides.css('max-width', $(window).width());
-        $slides.css('height', 'auto');
+        $slides.css('width', $(window).width()).css('height', 'auto');
+        $images.css('width', '100%').css('height', 'auto');
 
         $slide_list.width($slides.width()*slide_count);
         $slide_list.css('max-width', 100*slide_count + '%');
         $slides.css('max-width', 100/slide_count + '%');
-        $slides.css('max-width', 100/slide_count + '%');
 
-        $slider_containers.css('max-width', $(window).width());
-        $slider_containers.css('max-height', $slides.height());
+        $slider_containers.css('width', $(window).width());
+        $slider_containers.css('height', $slides.height());
     }
     // Ideally we would listen for window resizes, but EasySlider sets the
     // width for scrolling one time only.
