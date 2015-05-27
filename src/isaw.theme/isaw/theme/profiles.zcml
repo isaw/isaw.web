@@ -119,4 +119,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="10"
+      destination="11"
+      title="TinyMCE classes"
+      description="Add TinyMCE class for red lists"
+      profile="isaw.theme:default"
+      import_steps="tinymce_settings"
+      />
+
 </configure>
