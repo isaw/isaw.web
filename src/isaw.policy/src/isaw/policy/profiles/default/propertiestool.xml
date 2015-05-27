@@ -57,6 +57,7 @@
       <element value="header 1400:500"/>
       <element value="slider 1400:870"/>
       <element value="large 768:768"/>
+      <element value="blogtile 370:170"/>
       <element value="preview 325:325"/>
       <element value="featured 300:300"/>
       <element value="staff 200:200"/>

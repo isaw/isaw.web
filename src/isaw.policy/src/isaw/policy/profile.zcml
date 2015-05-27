@@ -92,4 +92,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="9"
+      destination="10"
+      title="Add blog tile image size"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="propertiestool"
+      />
+
 </configure>
