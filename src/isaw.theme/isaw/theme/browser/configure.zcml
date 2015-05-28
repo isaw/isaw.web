@@ -73,4 +73,15 @@
         description="List folder contents in a 3x3 grid of tiles"
         />
 
+    <browser:viewlet
+        name="isaw.theme.tiled_listing.featured_item"
+        for="*"
+        view=".interfaces.ITiledListingView"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        layer=".interfaces.IThemeSpecific"
+        class=".tiled_view.FeaturedItemViewlet"
+        permission="zope2.View"
+        />
+
+
 </configure>

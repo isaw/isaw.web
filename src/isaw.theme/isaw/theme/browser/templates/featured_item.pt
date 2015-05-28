@@ -1,0 +1,20 @@
+<tal:show tal:condition="view/show">
+  <div class="post-holder" tal:define="post view/get_item;
+                                       title post/Title;
+                                       summary post/Description;
+                                       exerpt string:This is an exerpt;
+                                       image python:view.get_image(post);
+                                       byline python:view.get_byline(post);">
+    <div class="post featured">
+      <div class="post-image" tal:content="structure image"></div>
+      <div class="post-content">
+        <h2 class="post-title" tal:content="title">[title]</h2>
+        <h3 class="post-summary" tal:content="summary">[summary]</h3>
+        <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
+        <div class="post-meta" tal:content="byline">byline</div>
+        <a href="#" class="button more"
+           tal:attributes="href post/getURL">Read More</a>
+      </div>
+    </div>
+  </div>
+</tal:show>
