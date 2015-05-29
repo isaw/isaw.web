@@ -61,7 +61,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation ul#secondary li a:hover,
 #portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; }
 #portal-top .page-title {bottom:30px; display:block; left:0; position:absolute; right:0; width:100%; z-index:4; }
-#portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; text-transform:uppercase; }
+#portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; width:100%; }
 
 .section-isaw-home.template-document_view {background:#3F3634; }
@@ -111,9 +111,9 @@ a {transition: all 0.5s ease; }
 
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:30px 20px 80px; }
 #portal-columns h1, #content h1 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; text-transform:uppercase; }
-#portal-columns h2, #content h2 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:32px; font-weight:700; letter-spacing:.8px; line-height:100%; text-transform:uppercase; }
+#portal-columns h2, #content h2 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:32px; font-weight:700; letter-spacing:.8px; line-height:100%; }
 #portal-columns h3, #content h3,
-#portal-columns dl dt, #content dl dt {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; text-transform:uppercase; }
+#portal-columns dl dt, #content dl dt {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
 #portal-columns .documentDescription {font-family: 'Roboto Slab', serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
