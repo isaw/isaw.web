@@ -68,8 +68,8 @@ a {transition: all 0.5s ease; }
 .section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:absolute; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home.template-document_view #portal-top:before {display:none; }
 .section-isaw-home.template-document_view #portal-top .page-title {display:none; }
-.section-isaw-home.template-document_view #portal-top #main-navigation ul#primary {background:rgba(243,243,243,.74); }
-.section-isaw-home.template-document_view #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,.74); }
+.section-isaw-home.template-document_view #portal-top #main-navigation ul#primary {background:rgba(243,243,243,1); }
+.section-isaw-home.template-document_view #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,1); }
 .section-isaw-home.template-document_view #portal-breadcrumbs {display: none; }
 
 .section-isaw-home.template-document_view #portal-column-content {min-height: 250px; }
