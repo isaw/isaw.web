@@ -113,7 +113,7 @@ a {transition: all 0.5s ease; }
 #portal-columns h1, #content h1 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; text-transform:uppercase; }
 #portal-columns h2, #content h2 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:32px; font-weight:700; letter-spacing:.8px; line-height:100%; }
 #portal-columns h3, #content h3,
-#portal-columns dl dt, #content dl dt {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
+#portal-columns dl dt, #content dl dt {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
 #portal-columns .documentDescription {font-family: 'Roboto Slab', serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
