@@ -1,9 +1,20 @@
 <?xml version="1.0"?>
 <object name="portal_properties" meta_type="Plone Properties Tool">
   <object name="dropdown_properties" meta_type="Plone Property Sheet">
-    <property name="dropdown_depth" type="int">1</property>
+    <property name="dropdown_depth" type="int">0</property>
+    <property name="enable_caching" type="boolean">False</property>
   </object>
   <object name="navtree_properties" meta_type="Plone Property Sheet">
+    <property name="sitemapDepth" type="int">1</property>
+    <property name="currentFolderOnlyInNavtree" type="boolean">False</property>
+    <property name="includeTop" type="boolean">True</property>
+    <property name="topLevel" type="int">0</property>
+    <property name="bottomLevel" type="int">0</property>
+    <property name="showAllParents" type="boolean">True</property>
+    <property name="idsNotToList" type="lines">
+      <element value="relations_library"/>
+      <element value="portal_college"/>
+    </property>
     <property name="metaTypesNotToList" type="lines">
       <element value="FSDCourse" remove="True"/>
       <element value="FSDFacultyStaffDirectoryTool" remove="True"/>
@@ -14,6 +25,8 @@
       <element value="Seminar"/>
       <element value="Image"/>
     </property>
+    <property name="enable_wf_state_filtering" type="boolean">False</property>
+    <property name="wf_states_to_show" type="lines"/>
   </object>
   <object name="site_properties" meta_type="Plone Property Sheet">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
