@@ -46,7 +46,7 @@
       title="Update Theme to Diazo"
       description=""
       profile="isaw.theme:default"
-      import_steps="cssregistry jsregistry plone.app.theming actions"
+      import_steps="cssregistry jsregistry plone.app.theming"
       />
 
   <genericsetup:upgradeDepends
@@ -86,7 +86,7 @@
       title="Update everything"
       description=""
       profile="isaw.theme:default"
-      import_steps="skins viewlets cssregistry jsregistry actions propertiestool"
+      import_steps="skins viewlets cssregistry jsregistry propertiestool"
       />
 
   <genericsetup:upgradeDepends
