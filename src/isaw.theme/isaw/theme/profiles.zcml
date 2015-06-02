@@ -86,7 +86,7 @@
       title="Update everything"
       description=""
       profile="isaw.theme:default"
-      import_steps="skins viewlets cssregistry jsregistry propertiestool"
+      import_steps="skins viewlets cssregistry jsregistry"
       />
 
   <genericsetup:upgradeDepends
@@ -96,7 +96,7 @@
       title="Update js and props"
       description=""
       profile="isaw.theme:default"
-      import_steps="jsregistry propertiestool"
+      import_steps="jsregistry"
       />
 
   <genericsetup:upgradeDepends
