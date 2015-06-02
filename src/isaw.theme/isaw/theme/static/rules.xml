@@ -117,8 +117,8 @@
     <!-- content area -->
     <replace css:theme-children="#content"
              css:content-children="#content" />
-    <after css:theme-children="#content"
-           css:content="#portlets-below"/>
+    <after css:theme="#content"
+           css:content="#viewlet-below-content"/>
     
     <!-- right column -->
     <drop css:theme="#portal-column-second"

@@ -18,4 +18,7 @@
   <viewlet name="plone.footer"/>
   <viewlet name="plone.colophon"/>
  </hidden>
+ <hidden manager="plone.belowcontent" skinname="NYU ISAW Theme">
+  <viewlet name="plone.belowcontenttitle.keywords"/>
+ </hidden>
 </object>

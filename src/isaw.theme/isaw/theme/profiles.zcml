@@ -129,4 +129,14 @@
       import_steps="tinymce_settings"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="11"
+      destination="12"
+      title="Hide tag viewlet"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets"
+      />
+
 </configure>
