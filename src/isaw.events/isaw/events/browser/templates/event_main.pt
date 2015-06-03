@@ -33,6 +33,11 @@
 <metal:block fill-slot="content-title" />
     
 <metal:content-core fill-slot="content-core">
+    <div>
+        <a href="" tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">
+          Calendar View
+        </a>
+    </div>
     <metal:content-core define-macro="content-core">
         <div class="scroll-pane"> 
         <tal:foldercontents define="
