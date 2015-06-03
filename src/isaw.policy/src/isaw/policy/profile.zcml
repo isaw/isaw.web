@@ -112,4 +112,14 @@
       import_steps="actions propertiestool"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="11"
+      destination="12"
+      title="Add calendar view"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
