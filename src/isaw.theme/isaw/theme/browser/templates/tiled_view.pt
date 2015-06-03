@@ -5,8 +5,38 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="isaw.theme">
-
 <body>
+
+<metal:local-javascript fill-slot="javascript_head_slot">
+<script type="text/javascript">
+$(document).ready(function () {
+    $('body.template-tiled-listing').on('click', function (evt) {
+        var target, url, pageNum;
+        target = $(evt.target);
+        container = $('ul.news');
+        if (target.is('a.view-more')) {
+            evt.preventDefault();
+            url = target.attr('href');
+            url = url.split('?')[0];
+            url += '/@@tiled-listing-page'
+            pageNum = target.data('page');
+            $.get(url, {page: pageNum}).done(function (data) {
+                var container=$('ul.news'),
+                    items=$(data),
+                    nextBtn=$('a.button.view-more'),
+                    newNextPage;
+                items.appendTo(container);
+                newNextPage = container.children(':last').data('nextpage');
+                nextBtn.data('page', newNextPage);
+                nextBtn.attr('data-page', newNextPage);
+            }).fail(function (xhr) {
+                alert('bar');
+            });
+        }
+    });
+});
+</script>
+</metal:local-javascript>
 
 <metal:supress-title fill-slot="content-title">
   <metal:block define-macro="content-title"></metal:block>
@@ -40,8 +70,10 @@
 
     <div class="buttons" tal:condition="items/has_next"
          tal:define="page_num items/nextpage;
-                     page_url string:${context/absolute_url}?page=${page_num}#listing-top">
-      <a href="#" class="button view-more" tal:attributes="href page_url">View More</a>
+                     page_url string:${context/absolute_url}?page=${page_num}">
+      <a href="#" class="button view-more" 
+         tal:attributes="href page_url;
+                         data-page page_num">View More</a>
     </div> 
   </tal:block> 
 
