@@ -83,4 +83,13 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="tiled-listing-page"
+        for="*"
+        permission="zope2.View"
+        class=".tiled_view.TiledListingView"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/tiled_list_items.pt"
+        />
+
 </configure>
