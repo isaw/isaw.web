@@ -128,6 +128,10 @@ a {transition: all 0.5s ease; }
 #portal-columns blockquote, #content blockquote {background:#f8f0e6; font-family: 'Roboto Slab', serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:140%; margin:36px 0; padding:40px 70px; }
 #portal-columns blockquote p, #content blockquote p {font-size:30px; line-height:140%; margin:0; }
 
+#portal-columns #relatedItemBox dt {color:#000; font-size:13px; margin:0 0 6px; text-transform:uppercase; }
+#portal-columns #relatedItemBox dd {font-size:14px; margin-left:0; }
+#portal-columns #relatedItemBox dd a {text-decoration:underline; }
+
 #portal-columns ul { }
 
 #portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
