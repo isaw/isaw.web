@@ -16,7 +16,7 @@
     <xsl:value-of select="//div[@id='portal-breadcrumbs']/span[3]/a[1]/text()|//div[@id='portal-breadcrumbs']/span[3]/span[1]/text()" />
   </xsl:variable>
   <!-- Don't act on AJAX faceted search requests -->
-  <notheme if-path="@@faceted_query @@tagscloud_counter" />
+  <notheme if-path="@@faceted_query @@tagscloud_counter @@tiled-listing-page" />
 
   <!-- The default theme, used for standard Plone web pages -->
   <theme href="index.html" css:if-content="#visual-portal-wrapper" />
