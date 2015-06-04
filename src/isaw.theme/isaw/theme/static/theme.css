@@ -567,3 +567,9 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	#portal-top .identity {left:20px; }
 }
 
+@media handheld, screen and (max-device-width: 480px) {
+	#portal-column-one,
+	#portal-column-two,
+	#portal-column-content {
+	margin-left: 0 !important;
+}
