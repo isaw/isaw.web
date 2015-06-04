@@ -47,8 +47,13 @@ class TileDetailsMixin(object):
         parts = [author]
         date = brain.EffectiveDate
         if date:
-            parts.append(DateTime(date).strftime("%d/%m/%Y"))
+            parts.append(self.translation_service.ulocalized_time(
+                DateTime(date), None, None, self.context, domain='plonelocales'
+            ))
         return "by " + " | ".join(parts)
+
+        self.translation_service.ulocalized_time(DateTime(date), None, None, self.context,
+                                    domain='plonelocales')
 
     def get_image(self, brain):
         scales = self.context.restrictedTraverse(brain.getPath() + '/@@images')
