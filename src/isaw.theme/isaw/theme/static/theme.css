@@ -562,3 +562,8 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 
 }
 
+@media screen and (max-width:319px){
+	#portal-top h1 {display:none; }
+	#portal-top .identity {left:20px; }
+}
+
