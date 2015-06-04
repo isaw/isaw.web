@@ -230,6 +230,7 @@ a {transition: all 0.5s ease; }
 #portal-columns ul.navTree li a.navTreeCurrentItem { text-decoration: underline;}
 
 #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#b5b2b0; }
+.section-people #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#f8f0e5; }
 .section-graduate-studies #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#6d6054; }
 .section-visiting-scholars #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#9d3a20; }
 .section-exhibitions #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#9e6a4a; }
@@ -241,10 +242,16 @@ a {transition: all 0.5s ease; }
 .section-events #portal-columns ul.navTree.navTreeLevel0 > li:first-child a {color:#fff; }
 
 #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #b5b2b0; }
+.section-people #portal-columns ul.navTree.navTreeLevel0 > li:first-child {border-left:4px solid #f8f0e5; }
 .section-graduate-studies #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #6d6054; }
 .section-visiting-scholars #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #9d3a20; }
 .section-exhibitions #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #9e6a4a; }
 .section-events #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #66232b; }
+
+.section-people #portal-columns ul.navTree.navTreeLevel1 li > a.navTreeFolderish:before,
+.section-people #portal-columns ul.navTree.navTreeLevel1 li.collapsed > a.navTreeFolderish:before {background:none; content:"";}
+.section-people #portal-columns ul.navTree li ul li {padding-left: 0px;}
+.section-people #portal-columns ul.navTree li ul li a.navTreeFolderish {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
 
 #portal-columns.single { }
 #portal-columns.single #portal-column-content {float:none; width:100% }
