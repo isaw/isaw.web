@@ -67,6 +67,9 @@
     <replace css:theme-children="#main-navigation #primary"
              css:content-children="#portal-globalnav" />
 
+    <replace css:theme="#portal-searchbox"
+             css:content="#portal-searchbox" />
+
     <replace css:theme-children="#portal-top h2.section-title">
       <xsl:value-of select="$section" />
     </replace>
