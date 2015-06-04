@@ -60,7 +60,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:12px; font-weight:bold; letter-spacing:.85; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
 #portal-top #main-navigation ul#secondary li a:hover,
 #portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; }
-#portal-top .page-title {bottom:30px; display:block; left:0; position:absolute; right:0; width:100%; z-index:4; }
+#portal-top .page-title {bottom:30px; display:none; left:0; position:absolute; right:0; width:100%; z-index:4; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; width:100%; }
 
@@ -79,8 +79,8 @@ a {transition: all 0.5s ease; }
 .section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
 .section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider .slide .slideroverlay {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; border: none; background: transparent; width: auto;}
-#content #slider .slide .slideroverlay h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:23px; font-weight:800; letter-spacing:.8px; line-height:100%; margin:0 auto 20px; text-align:left; text-transform:uppercase; }
-#content #slider .slide .slideroverlay p {color:#fff; font-family: 'Roboto Slab', serif; font-size:24px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
+#content #slider .slide .slideroverlay h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:20px; font-weight:500; letter-spacing:.4px; line-height:100%; margin:0 auto 10px; text-align:left; text-transform:uppercase; }
+#content #slider .slide .slideroverlay p {color:#fff; font-family: 'Roboto Slab', serif; font-size:18px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
 #content #slider .slide .slideroverlay p a {color:#e3ab79; text-decoration:none; }
 #content #slider .slide .slideroverlay p a:hover,
 #content #slider .slide .slideroverlay p a:focus {text-decoration:underline; }
@@ -115,7 +115,7 @@ a {transition: all 0.5s ease; }
 #portal-column-content {display:block; float:left; width:71%;}
 
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:30px 20px 80px; }
-#portal-columns h1, #content h1 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:36px; font-weight:800; line-height:100%; text-transform:uppercase; }
+#portal-columns h1, #content h1 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:36px; font-weight:800; line-height:100%; }
 #portal-columns h2, #content h2 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:30px; font-weight:700; line-height:100%; }
 #portal-columns h3, #content h3,
 #portal-columns dl dt, #content dl dt {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
