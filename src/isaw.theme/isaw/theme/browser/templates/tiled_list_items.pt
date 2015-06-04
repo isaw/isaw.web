@@ -13,5 +13,5 @@
     <a href="#" class="button small more" tal:attributes="href item_url">Read More</a>
   </li>
  </tal:listings>
- <div style="display:none;" tal:attributes="data-nextpage items/nextpage"></div>
+ <div style="display:none;" id="page-helper" tal:condition="items/has_next" tal:attributes="data-nextpage items/nextpage"></div>
 </tal:block>

@@ -24,11 +24,17 @@ $(document).ready(function () {
                 var container=$('ul.news'),
                     items=$(data),
                     nextBtn=$('a.button.view-more'),
-                    newNextPage;
+                    nextPageHelper, newNextPage;
                 items.appendTo(container);
-                newNextPage = container.children(':last').data('nextpage');
-                nextBtn.data('page', newNextPage);
-                nextBtn.attr('data-page', newNextPage);
+                nextPageHelper = container.children('div#page-helper');
+                if (nextPageHelper.length != 0) {
+                  newNextPage = nextPageHelper.data('nextpage');
+                  nextPageHelper.remove();
+                  nextBtn.data('page', newNextPage);
+                  nextBtn.attr('data-page', newNextPage);
+                } else {
+                  nextBtn.hide();
+                }
             }).fail(function (xhr) {
                 alert('bar');
             });
