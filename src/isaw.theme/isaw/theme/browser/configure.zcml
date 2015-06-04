@@ -92,4 +92,14 @@
         template="templates/tiled_list_items.pt"
         />
 
+  <!-- byline viewlet available on any contentish (non-folder) AT item -->
+  <browser:viewlet
+      name="isaw.theme.byline"
+      for="Products.ATContentTypes.interfaces.ITextContent"
+      class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      />
+
 </configure>

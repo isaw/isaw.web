@@ -1,0 +1,42 @@
+<div class="documentByLine"
+     id="plone-document-byline"
+     i18n:domain="plone"
+     tal:condition="view/show">
+     
+  <tal:creator tal:define="creator_short_form view/creator;"
+               tal:condition="creator_short_form">
+  <tal:name tal:condition="python:view.author() is not None">
+    <span class="documentAuthor">
+      by
+      <span ="view/authorname">Roland Barthes</span>
+         |
+    </span>
+  </tal:name>
+  </tal:creator>
+
+  <tal:dates define="published view/pub_date;
+                     modified context/ModificationDate;
+                     date python:published or modified">
+  <span class="documentPublished"
+        tal:condition="date">
+    <span tal:replace="python:view.toLocalizedTime(date,long_format=0)">
+      August 16, 2001 at 23:35:59
+    </span>
+  </span>
+  </tal:dates>
+
+  <tal:expired tal:condition="view/isExpired">
+    |
+    <span class="state-expired"
+          i18n:translate="time_expired">expired</span>
+  </tal:expired>
+
+  <span class="contentHistory" id="content-history"
+        tal:condition="view/show_history">
+    |
+    <a href="#"
+       tal:attributes="href string:${here/absolute_url}/@@historyview"
+       i18n:translate="label_history">History</a>
+  </span>
+
+</div>
