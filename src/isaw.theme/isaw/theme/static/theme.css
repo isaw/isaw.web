@@ -432,6 +432,10 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 #portal-searchbox {
 	display: none;
 }
+.searchResults cite {
+	display: block;
+}
+
 
 @media screen and (max-width:1330px){
 	#portal-top #main-navigation ul#primary li {width:auto; }

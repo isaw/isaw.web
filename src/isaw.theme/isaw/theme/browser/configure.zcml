@@ -102,4 +102,25 @@
       layer=".interfaces.IThemeSpecific"
       />
 
+  <browser:page
+      name="search"
+      class=".search.ISAWSearch"
+      permission="zope2.View"
+      for="*"
+      template="templates/search.pt"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+
+  <configure package="plone.app.search">
+    <browser:page
+        name="updated_search"
+        class="isaw.theme.browser.search.ISAWSearch"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        template="updated_search.pt"
+        layer="isaw.theme.browser.interfaces.IThemeSpecific"
+        />
+  </configure>
+
 </configure>
