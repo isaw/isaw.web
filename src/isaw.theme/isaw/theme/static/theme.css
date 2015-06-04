@@ -121,6 +121,7 @@ a {transition: all 0.5s ease; }
 #portal-columns dl dt, #content dl dt {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
+#portal-columns p.intro,
 #portal-columns .documentDescription {font-family: 'Roboto Slab', serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
 #portal-columns h5, #content h5,
 #plone-document-byline {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:14px; font-weight:700; letter-spacing:.1px; line-height:100%; text-transform:uppercase; }
@@ -256,7 +257,7 @@ a {transition: all 0.5s ease; }
 #portal-columns.three #portal-column-second {display:block; float:right; width:21%; }
 #portal-columns #portal-column-second dl {margin:0; }
 #portal-columns #portal-column-second dl dd {margin:0; }
-#portal-columns #portal-column-second dl dd img {display:block; max-width:100%; }
+#portal-columns #portal-column-second dl dd img {display:block; margin:0 auto; max-width:100%; }
 #portal-columns #portal-column-second dl dd .caption {font-size:14px; line-height:140%; margin:16px 10px; }
 
 #portal-columns #portal-column-second dl.event-details { }
@@ -323,7 +324,7 @@ a {transition: all 0.5s ease; }
 #portal-columns ul.news li:nth-child(3n+1){clear:left; }
 #portal-columns ul.news li a {text-decoration:none; }
 #portal-columns ul.news li a img {display:block; max-width:100%; max-height: 170px; overflow: hidden;}
-#portal-columns ul.news li a h3 {color:#000; font-size:17px; font-weight:900; letter-spacing:.2px; line-height:24px; text-align:left; text-decoration:none; text-transform:uppercase; }
+#portal-columns ul.news li a h3 {color:#000; font-size:17px; font-weight:900; letter-spacing:.2px; line-height:24px; margin: 8px 0 0; text-align:left; text-decoration:none; text-transform:uppercase; }
 #portal-columns ul.news li .post-meta {color:#8c8c8c; display:block; font-size:12px; font-weight:500; letter-spacing:.8px; line-height:120%; margin:10px 0; text-transform:uppercase; }
 #portal-columns ul.news li .post-meta img {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
 #portal-columns ul.news li .post-excerpt {color:#4c4c4c; font-size:15px; font-weight:normal; letter-spacing:.1px; line-height:21px; margin:0; text-transform:none; }
