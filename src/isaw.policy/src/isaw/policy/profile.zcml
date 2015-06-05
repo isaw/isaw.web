@@ -132,4 +132,14 @@
       import_steps="plone.app.registry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="13"
+      destination="14"
+      title="Add search action"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="actions"
+      />
+
 </configure>
