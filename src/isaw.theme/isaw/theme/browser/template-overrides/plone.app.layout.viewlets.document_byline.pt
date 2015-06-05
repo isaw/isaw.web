@@ -8,7 +8,7 @@
   <tal:name tal:condition="python:view.author() is not None">
     <span class="documentAuthor">
       by
-      <span ="view/authorname">Roland Barthes</span>
+      <span tal:replace="view/authorname">Roland Barthes</span>
          |
     </span>
   </tal:name>
