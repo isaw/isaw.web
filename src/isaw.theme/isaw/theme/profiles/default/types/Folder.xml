@@ -6,5 +6,6 @@
     <property name="view_methods" purge="False">
         <!-- We retrofit these new views for Folders in portal_types info -->
         <element value="tiled-listing"/>
+        <element value="people-listing"/>
     </property>
 </object>

@@ -111,6 +111,21 @@
       layer=".interfaces.IThemeSpecific"
       />
 
+  <browser:page
+      name="people-listing"
+      for="Products.ATContentTypes.interfaces.IATFolder"
+      template="templates/people_listing.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interfaces.IATFolder"
+        menu="plone_displayviews"
+        title="People Listing"
+        action="@@people-listing"
+        description="List person profiles in a folder, with image"
+        />
 
   <configure package="plone.app.search">
     <browser:page

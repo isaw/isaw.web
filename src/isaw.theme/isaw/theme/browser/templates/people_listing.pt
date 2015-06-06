@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isaw.theme">
+<body>
+
+<metal:content-core fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+    <div id="people" tal:define="people python:context.getFolderContents(contentFilter={'portal_type': 'profile'})">
+      <tal:faculty>
+        <div class="facultyListing" tal:repeat="brain people">
+          <tal:foo define="person_id brain/id;
+                           person_email brain/Email|nothing;
+                           person python:context[person_id];
+                           person_url person/absolute_url;
+                           has_image python:getattr(person, 'Image', False);
+                           image_url string:${person_url}/@@images/Image/staff;
+                           ">
+            <a tal:attributes="href person_url"><div class="facultyImage"><img src="" tal:condition="has_image" tal:attributes="src image_url"/><span tal:condition="not:has_image" tal:replace="string:&nbsp;"/></div></a>
+            <div class="facultyInfo">
+              <a tal:attributes="href person_url"><h2 tal:content="person/Title">Roger Bagnall</h2></a>
+                <p tal:content="structure person/Titles" class="facultyPosition">Director</p>
+                <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
+            </div>
+          </tal:foo>
+        </div>
+        
+   </tal:faculty>
+   </div>
+
+  </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
