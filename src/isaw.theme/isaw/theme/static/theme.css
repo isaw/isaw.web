@@ -242,12 +242,13 @@ a {transition: all 0.5s ease; }
 .section-events #portal-columns ul.navTree.navTreeLevel0 > li:first-child a {color:#fff; }
 
 #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #b5b2b0; }
-.section-people #portal-columns ul.navTree.navTreeLevel0 > li:first-child {border-left:4px solid #f8f0e5; }
 .section-graduate-studies #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #6d6054; }
 .section-visiting-scholars #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #9d3a20; }
 .section-exhibitions #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #9e6a4a; }
 .section-events #portal-columns ul.navTree li.navTreeCurrentNode {border-left:4px solid #66232b; }
 
+/* pull the navigation tree back up to the top */
+.section-people #portal-columns .portletNavigationTree .portletHeader.hiddenStructure {margin-bottom:0px;}
 .section-people #portal-columns ul.navTree.navTreeLevel1 li > a.navTreeFolderish:before,
 .section-people #portal-columns ul.navTree.navTreeLevel1 li.collapsed > a.navTreeFolderish:before {background:none; content:"";}
 .section-people #portal-columns ul.navTree li ul li {padding-left: 0px;}
@@ -353,6 +354,12 @@ body.template-newsitem_view #right-column {width: 30%; display: block; float: ri
 body.template-newsitem_view #main-column h1.documentFirstHeading {clear: left;}
 body.template-newsitem_view #right-column .newsImageContainer {width: 100%;}
 body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-style: italic; text-align: center;}
+
+/* people listing */
+.section-people #portal-columns .facultyListing .facultyImage {height:200px;width:200px;overflow:hidden;border:1px solid #e7e3df;padding:0px;margin-right:20px;}
+.section-people #portal-columns .facultyListing .facultyImage a {display:block;height:200px;width:200px;}
+.section-people #portal-columns .facultyListing .facultyImage img {width: 200px;}
+
 
 
 /* section color schemes 
