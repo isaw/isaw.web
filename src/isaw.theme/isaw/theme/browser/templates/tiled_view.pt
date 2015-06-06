@@ -61,7 +61,6 @@ $(document).ready(function () {
      <tal:block tal:repeat="item items">
       <li tal:define="item_url item/getURL;
                       image_tag python:view.get_image(item);
-                      image_url string:${item_url}/@@images/image/blogtile;
                       title item/Title;
                       exerpt item/Description">
         <a href="#" tal:attributes="href item_url">
