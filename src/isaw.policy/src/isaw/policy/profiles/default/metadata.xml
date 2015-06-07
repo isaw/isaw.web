@@ -3,7 +3,6 @@
   <version>14</version>
   <dependencies>
     <dependency>profile-isaw.theme:default</dependency>
-    <dependency>profile-isaw.events:default</dependency>
     <dependency>profile-isaw.facultycv:default</dependency>
     <dependency>profile-isaw.exhibitions:default</dependency>
     <dependency>profile-webcouturier.dropdownmenu:default</dependency>
