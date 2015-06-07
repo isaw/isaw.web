@@ -33,3 +33,10 @@ class ITiledListingView(Interface):
 
     This view is suitable for folders or collections
     """
+
+
+class IEventListingView(Interface):
+    """marker interface for a view providing one column listed items
+
+    This view is suitable for folders or collections
+    """

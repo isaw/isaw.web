@@ -49,6 +49,16 @@
     template="templates/tiled_view.pt"
     />
 
+  <!-- Event listing view -->
+  <browser:page
+    name="event-listing"
+    for="*"
+    permission="zope2.View"
+    class=".event_listing.EventListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/event_listing.pt"
+    />
+
     <browser:menuItem
         for="Products.ATContentTypes.interface.IATFolder"
         menu="plone_displayviews"
@@ -73,6 +83,30 @@
         description="List folder contents in a 3x3 grid of tiles"
         />
 
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
     <browser:viewlet
         name="isaw.theme.tiled_listing.featured_item"
         for="*"
@@ -90,6 +124,15 @@
         class=".tiled_view.TiledListingView"
         layer=".interfaces.IThemeSpecific"
         template="templates/tiled_list_items.pt"
+        />
+
+    <browser:page
+        name="event-listing-page"
+        for="*"
+        permission="zope2.View"
+        class=".event_listing.EventListingView"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/list_events.pt"
         />
 
   <!-- byline viewlet available on any contentish (non-folder) AT item -->

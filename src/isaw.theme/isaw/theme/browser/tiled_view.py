@@ -111,8 +111,11 @@ class TiledListingView(BrowserView, TileDetailsMixin):
         context, or the first item in the listing if the sticky item is not in
         the listing or is not set.
         """
+        featured = []
         batch = self.listings(b_start=0, b_size=1)
-        return [i for i in batch][0]
+        if batch.size > 0:
+            featured = [i for i in batch][0]
+        return featured
 
 
 class FeaturedItemViewlet(base.ViewletBase, TileDetailsMixin):
