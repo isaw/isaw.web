@@ -113,8 +113,9 @@ class TiledListingView(BrowserView, TileDetailsMixin):
         """
         featured = []
         batch = self.listings(b_start=0, b_size=1)
-        if batch.size > 0:
-            featured = [i for i in batch][0]
+        items = [i for i in batch]
+        if len(items) > 0:
+            featured = items[0]
         return featured
 
 
