@@ -159,4 +159,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="14"
+      destination="15"
+      title="Event Details"
+      description="Add event detail portlet and assignments"
+      profile="isaw.theme:default"
+      import_steps="portlets"
+      />
+
 </configure>

@@ -32,4 +32,14 @@
         edit_permission="cmf.ManagePortal"
         />
 
+    <plone:portlet
+        name="isaw.theme.eventdetail"
+        interface=".eventdetail.IEventDetailPortlet"
+        assignment=".eventdetail.Assignment"
+        renderer=".eventdetail.Renderer"
+        addview=".eventdetail.AddForm"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        />
+
 </configure>

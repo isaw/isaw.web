@@ -28,5 +28,19 @@
     type="isaw.theme.newsimage"
     visible="True"/>
 
+  <portlet
+    addview="isaw.theme.eventdetail"
+    title="Event Details Portlet"
+    description="Display the details for an event (will not appear in other contexts"
+    />
+
+  <assignment 
+    name="eventassignment"
+    category="content_type"
+    key="Event"
+    manager="plone.rightcolumn"
+    type="isaw.theme.eventdetail"
+    visible="True"/>
+
 </portlets>
 
