@@ -143,6 +143,16 @@
       sortkey="10"
       source="12"
       destination="13"
+      title="Person Listing View"
+      description="Add a listing view for folders containing person profiles"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="13"
+      destination="14"
       title="Update dynamic views"
       description=""
       profile="isaw.theme:default"
