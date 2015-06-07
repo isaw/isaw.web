@@ -15,6 +15,11 @@
 
         <span class="visualClear"><!-- --></span>
 
+        <div class="bio">
+          <h2 tal:content="context/speaker"></h2>
+          <h3 tal:content="context/speakerAffiliation"></h2>
+        </div>
+
 </metal:content-core>
 
 </body>
