@@ -5,7 +5,6 @@ Includes sources for the following addons:
 
 
  * isaw.theme - https://github.com/isawnyu/isaw.theme
- * isaw.events - https://github.com/isawnyu/isaw.events
  * isaw.facultycv - https://github.com/isawnyu/isaw.facultycv
  * isaw.register - https://github.com/isawnyu/isaw.register
  * isaw.exhibitions - https://github.com/isawnyu/isaw.exibitions
