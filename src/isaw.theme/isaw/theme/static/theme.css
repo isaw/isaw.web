@@ -308,6 +308,8 @@ a {transition: all 0.5s ease; }
 .footer-row #portal-footer ul li {margin:0 0 8px; display: block;}
 .footer-row #portal-footer ul li a {font-size:12px; font-weight:bold; letter-spacing:.8px; line-height:100%; text-transform:uppercase; }
 
+.userrole-authenticated .footer-row {height:400px; }
+
 /* blog page */
 #viewlet-above-content { }
 #viewlet-above-content .post-holder {background:#faf6f0; overflow:auto; padding:26px 20px; }
