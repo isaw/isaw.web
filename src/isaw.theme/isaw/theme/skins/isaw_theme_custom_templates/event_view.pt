@@ -15,9 +15,10 @@
 
         <span class="visualClear"><!-- --></span>
 
-        <div class="bio">
-          <h2 tal:content="context/speaker"></h2>
-          <h3 tal:content="context/speakerAffiliation"></h3>
+        <div class="bio" tal:define="speaker context/speaker|nothing;
+                                     affiliation context/speakerAffiliation|nothing;">
+          <h2 tal:condition="speaker" tal:content="speaker">Speaker</h2>
+          <h3 tal:condition="affiliation" tal:content="affiliation">Affiliation</h3>
         </div>
 
 </metal:content-core>
