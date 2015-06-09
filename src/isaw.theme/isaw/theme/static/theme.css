@@ -64,8 +64,8 @@ a {transition: all 0.5s ease; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; width:100%; }
 
+/*livesearch*/
 #portal-top #main-navigation ul#secondary li#siteaction-search a {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; }
-
 #portal-top #portal-searchbox {background:#e7e3df; display:block !important; position:absolute; right:0; top:49px; width:450px; z-index:10; }
 #portal-top #portal-searchbox form { }
 #portal-top #portal-searchbox form .LSBox {margin:10px auto; width:80%; }
@@ -87,6 +87,36 @@ a {transition: all 0.5s ease; }
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a {color:#231F20; display:block; font-size:16px; font-weight:700; margin:0 0 4px; text-decoration:none; } 
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a.advancedsearchlink { }
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow .LSDescr {color:#231F20; font-size:14px; }
+
+.template-search #portal-columns h1.documentFirstHeading {display:none; }
+fieldset#search-field {text-align:left !important; }
+#search-field input.searchPage {border:1px solid #333; display:inline-block; font-size:16px !important; height:24px; line-height:24px; padding:5px 10px; vertical-align:top; width:40%; }
+#search-field input.searchButton {background:url('_images/icon-search-white.png') center center / 20px no-repeat #333; border:none; cursor:pointer; display:inline-block; height:36px; text-align:left; text-indent:-10000px; vertical-align:top; width:40px; }
+
+#search-results-bar {background:#e7e3df; padding:0 !important; }
+#search-results-bar > span:first-child {display:inline-block; font-size:14px; height:80px; line-height:80px; margin:0; padding:0 2%; vertical-align:middle; width:31%; }
+#search-results-bar > span:first-child strong { }
+#search-results-bar dl.actionMenu {background:#f5f3f2; display:inline-block; float:none; margin:0; padding:0; width:30%; }
+#search-results-bar dl.actionMenu dt.actionMenuHeader {margin:0; }
+#search-results-bar dl.actionMenu dt.actionMenuHeader a#search-filter-toggle {color:#5f5f5f; display:block; font-size:14px !important; font-weight:bold; line-height:80px; text-align:center; text-transform:uppercase; }
+#search-results-bar dl.actionMenu dd.actionMenuContent {margin-top:0; }
+#search-results-bar dl.actionMenu dd.actionMenuContent #search-filter {background:#e7e3df !important; border:1px solid #c9c9c9; }
+#search-results-bar dl.actionMenu dd.actionMenuContent #search-filter fieldset {background:#e7e3df; }
+#search-results-bar dl.actionMenu dd.actionMenuContent #search-filter fieldset legend { }
+#search-results-bar dl.actionMenu dd.actionMenuContent #search-filter fieldset .field {background:#fff; }
+#search-results-bar #searchResultsSort {display:inline-block; float:none; font-size:14px !important; padding:0 2%; text-align:right; width:30%; }
+#search-results { }
+#search-results dl.searchResults { }
+#search-results dl.searchResults dt,
+#search-results dl.searchResults dd {background:#faf6f0; margin:0 auto; max-width:1200px; padding:4% 8%; }
+#search-results dl.searchResults dt {padding-bottom:0; }
+#search-results dl.searchResults dd {margin-bottom:1.5em; padding-top:0; }
+#portal-columns .listingBar { }
+#portal-columns .listingBar span {margin:0 4px; }
+#portal-columns .listingBar a {border:1px solid #9b3a25; color:#9b3a25; font-size:13px; font-weight:500; margin:0 4px; } 
+#portal-columns .listingBar a:hover,
+#portal-columns .listingBar a:focus {background:#9b3a25; color:#faf6f0 !important; }
+
 
 .section-isaw-home.template-document_view {background:#3F3634; }
 .section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:absolute; top:0; left:0; right:0; z-index:200; }
