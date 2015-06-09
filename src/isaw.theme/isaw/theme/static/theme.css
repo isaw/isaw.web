@@ -424,6 +424,12 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .section-people #portal-columns .facultyListing .facultyInfo p.facultyEmail {font-weight:300;  }
 
 
+/* full cal */
+#portal-columns table.fc-header,
+#portal-columns table.fc-header table,
+#portal-columns table.fc-header tbody tr td {border:none; padding:0; }
+
+
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
