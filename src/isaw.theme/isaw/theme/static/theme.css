@@ -64,6 +64,30 @@ a {transition: all 0.5s ease; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; width:100%; }
 
+#portal-top #main-navigation ul#secondary li#siteaction-search a {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; }
+
+#portal-top #portal-searchbox {background:#e7e3df; display:block !important; position:absolute; right:0; top:49px; width:450px; z-index:10; }
+#portal-top #portal-searchbox form { }
+#portal-top #portal-searchbox form .LSBox {margin:10px auto; width:80%; }
+#portal-top #portal-searchbox form .LSBox label {display:none; }
+#portal-top #portal-searchbox form .LSBox input#searchGadget {border:1px solid #333; display:inline-block; font-size:14px; height:24px; line-height:24px; padding:5px 10px; vertical-align:top; width:80%; }
+#portal-top #portal-searchbox form .LSBox input.searchButton {background:url('_images/icon-search-white.png') center center / 20px no-repeat #333; border:none; cursor:pointer; display:inline-block; height:36px; text-align:left; text-indent:-10000px; vertical-align:top; width:40px; }
+#portal-top #portal-searchbox form .LSBox .searchSection {margin:8px 4px 16px; }
+#portal-top #portal-searchbox form .LSBox .searchSection input#searchbox_currentfolder_only { }
+#portal-top #portal-searchbox form .LSBox .searchSection label {color:#333; display:inline; font-size:14px; font-weight:300; margin:0 0 0 4px }
+#portal-top #portal-searchbox form .LSBox #LSResult {margin:0 !important; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow {background:#e7e3df; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset {border:none; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset legend {background:transparent; border-bottom:1px solid #333; display:block; margin:12px; width:410px !important; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix { }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix ul.LSTable { }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow {width:418px; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow:hover,
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow.LSHighlight {background:#cac5c1 !important; }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a {color:#231F20; display:block; font-size:16px; font-weight:700; margin:0 0 4px; text-decoration:none; } 
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a.advancedsearchlink { }
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow .LSDescr {color:#231F20; font-size:14px; }
+
 .section-isaw-home.template-document_view {background:#3F3634; }
 .section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:absolute; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home.template-document_view #portal-top:before {display:none; }

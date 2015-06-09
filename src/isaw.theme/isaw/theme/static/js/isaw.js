@@ -31,4 +31,14 @@ jQuery(function($) {
     // width for scrolling one time only.
     resize_slider();
     $(window).load(resize_slider);
+    
+    /*capture the search link click and open the drawer*/
+    $('#secondary #siteaction-search a').click(function(e){
+	   e.preventDefault(); 
+	   
+	   $('#portal-searchbox').slideToggle()
+	   
+    });
+    
+    
 });
