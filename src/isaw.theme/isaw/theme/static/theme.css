@@ -62,7 +62,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; }
 #portal-top .page-title {bottom:30px; display:none; left:0; position:absolute; right:0; width:100%; z-index:4; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
-#portal-columns.one #portal-column-content {float:none; width:100%; }
+#portal-columns.one #portal-column-content {float:none; padding:0; width:100%; }
 
 /*livesearch*/
 #portal-top #main-navigation ul#secondary li#siteaction-search a {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; }
@@ -167,7 +167,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
 #portal-columns #portal-column-first dl dd {margin-left:0; }
 
-#portal-column-content {display:block; float:left; width:71%;}
+#portal-column-content {display:block; float:left; padding:20px 0 0; width:71%;}
 
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:30px 20px 80px; }
 #portal-columns h1, #content h1 {font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:36px; font-weight:800; line-height:100%; }
