@@ -196,7 +196,7 @@ a {transition: all 0.5s ease; }
 #portal-columns form fieldset .formControls input[type="button"]:focus,
 #portal-columns form fieldset .formControls input[type="submit"]:focus {background:transparent; color:#9b3a25; }
 
-#portal-columns .bio {background:#f8f0e5; display:block; margin:24px 0; padding:34px 26px; }
+#portal-columns .bio {background:#f8f0e5; clear:both; display:block; margin:24px 0; padding:34px 26px; }
 #portal-columns .bio img {display:block; float:left; margin:0 20px 20px 0; }
 #portal-columns .bio h2 {color:#66232b; font-size:22px; font-weight:900; line-height:32px; margin:0 0 6px; }
 #portal-columns .bio h3 {color:#333; font-size:14px; line-height:23px; margin:0 0 10px; }
@@ -269,7 +269,7 @@ a {transition: all 0.5s ease; }
 #portal-columns #portal-column-second dl dd .caption {font-size:14px; line-height:140%; margin:16px 10px; }
 
 #portal-columns #portal-column-second dl.event-details { }
-#portal-columns #portal-column-second dl.event-details .portletHeader { }
+#portal-columns #portal-column-second dl.event-details .portletHeader {margin:0; }
 #portal-columns #portal-column-second dl.event-details .portletHeader h2 {background:#66232b; border-radius:4px; border-bottom-left-radius:0; border-bottom-right-radius:0; color:#fff; font-size:15px; font-weight:900; letter-spacing:1px; line-height:100%; margin:0; padding:18px; text-align:center; }
 #portal-columns #portal-column-second dl.event-details .portletItem { }
 #portal-columns #portal-column-second dl.event-details .portletItem ul.details {border:1px solid #e2ddd7; border-radius:4px; border-top:none; list-style:none; margin:0 0 20px; padding:0; }
@@ -279,10 +279,10 @@ a {transition: all 0.5s ease; }
 #portal-columns #portal-column-second dl.event-details .portletItem a.button.event.inverse { }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal {border:2px solid #66232b; border-radius:2px; }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal h3 {border-bottom:2px solid #66232b; color:#66232b; font-size:13px; font-weight:bold; margin:0; padding:32px 75px 32px 0; position:relative; text-align:center;  }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal h3:after {background:url('../_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
+#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal h3:after {background:url('_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links {list-style:none; margin:0; padding:0; text-align:center; }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li {display:inline-block; margin:0 4%; width:40%; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a {background:url('../_images/icon-calendar-add.png') left center / 28px no-repeat; color:#000; display:block; font-size:14px; font-weight:bold; padding:20px 0 20px 26px; text-decoration:none; text-transform:uppercase; }
+#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a {background:url('_images/icon-calendar-add.png') left center / 28px no-repeat; color:#000; display:block; font-size:14px; font-weight:bold; padding:20px 0 20px 26px; text-decoration:none; text-transform:uppercase; }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a:focus,
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a:Hover { }
 
