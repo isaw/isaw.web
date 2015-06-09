@@ -428,6 +428,8 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 #portal-columns table.fc-header,
 #portal-columns table.fc-header table,
 #portal-columns table.fc-header tbody tr td {border:none; padding:0; }
+.fc-state-default {border:1px solid #9b3a25; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; }
+.fc-header .fc-state-default span {background:transparent; padding:15px 25px; }
 
 
 /* section color schemes 
