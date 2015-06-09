@@ -66,7 +66,7 @@ a {transition: all 0.5s ease; }
 
 /*livesearch*/
 #portal-top #main-navigation ul#secondary li#siteaction-search a {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; }
-#portal-top #portal-searchbox {background:#e7e3df; display:block !important; position:absolute; right:0; top:49px; width:450px; z-index:10; }
+#portal-top #portal-searchbox {background:#e7e3df; position:absolute; right:0; top:49px; width:450px; z-index:10; }
 #portal-top #portal-searchbox form { }
 #portal-top #portal-searchbox form .LSBox {margin:10px auto; width:80%; }
 #portal-top #portal-searchbox form .LSBox label {display:none; }
