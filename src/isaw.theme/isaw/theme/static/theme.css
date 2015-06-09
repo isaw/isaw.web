@@ -78,6 +78,7 @@ a {transition: all 0.5s ease; }
 
 .section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
 .section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
+#content #slider-container #easySlider-goToButtons {height:0; }
 #content #slider .slide .slideroverlay {bottom:9%; display:block; left:8%; max-width:892px; padding:0 20px; position:absolute; border: none; background: transparent; width: auto;}
 #content #slider .slide .slideroverlay h3 {color:#fff; font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif; font-size:20px; font-weight:500; letter-spacing:.4px; line-height:100%; margin:0 auto 10px; text-align:left; text-transform:uppercase; }
 #content #slider .slide .slideroverlay p {color:#fff; font-family: 'Roboto Slab', serif; font-size:18px; font-weight:300; letter-spacing:.1px; line-height:166%; text-transform:none; }
