@@ -542,10 +542,11 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif;
 	line-height:100%;
 	text-transform:uppercase;
+	margin-top:7px;
 }
 
 #content .ProfileTitles p {
-	margin-bottom: 0;
+	margin-bottom:3px;
 	line-height:initial;
 }
 
