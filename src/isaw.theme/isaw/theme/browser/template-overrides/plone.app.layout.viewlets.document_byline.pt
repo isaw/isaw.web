@@ -1,7 +1,10 @@
-<div class="documentByLine"
+<div class="documentByLine bbb"
      id="plone-document-byline"
      i18n:domain="plone"
-     tal:condition="view/show">
+     tal:define="show view/show;
+                 is_news python:context.portal_type == 'News Item';
+                 can_edit python:context.portal_membership.checkPermission('Modify portal content', context);"
+     tal:condition="python: show and (is_news or can_edit)">
      
   <tal:creator tal:define="creator_short_form view/creator;"
                tal:condition="creator_short_form">
