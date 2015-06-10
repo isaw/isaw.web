@@ -317,7 +317,7 @@ fieldset#search-field {text-align:left !important; }
 
 #portal-columns.three { }
 #portal-columns.three #portal-column-content {width:47% }
-#portal-columns.three #portal-column-second {display:block; float:right; width:21%; }
+#portal-columns.three #portal-column-second {display:block; float:right; padding:32px 0 0; width:21%; }
 #portal-columns #portal-column-second dl {margin:0; }
 #portal-columns #portal-column-second dl dd {margin:0; }
 #portal-columns #portal-column-second dl dd img {display:block; margin:0 auto; max-width:100%; }
