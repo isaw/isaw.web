@@ -6,7 +6,6 @@ from zope.interface import implements
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import schemata
-from plone.app.blob.field import ImageField
 
 from isaw.facultycv.interfaces import Iprofile
 from isaw.facultycv.config import PROJECTNAME
@@ -14,19 +13,16 @@ from isaw.facultycv.config import PROJECTNAME
 profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.ImageField(
-        name = 'Image',
-        sizes = { 'profile': (250,250),
-                  'big': (600,600) },
-        widget = atapi.ImageWidget(
-            label = u'Profile Image',
+        name='Image',
+        sizes=None,
+        widget=atapi.ImageWidget(
+            label=u'Profile Image',
             label_msgid='isaw.facultycv_label_ProfileImage',
             il8n_domain='isaw.facultycv',
-            ),
-
-        required = False,
-        searchable = True,
-        accessor = 'profileImage'
-
+        ),
+        required=False,
+        searchable=True,
+        accessor='profileImage',
     ),
 
     atapi.ReferenceField(
