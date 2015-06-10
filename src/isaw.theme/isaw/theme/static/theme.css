@@ -529,7 +529,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 }
 
 #content .ProfileInfo h1 {
-	margin-top: 1.25em;
+	margin-top: 0.75em;
 	color:#9b3a25;
 	font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif;
 	font-size:22px; font-weight:800;
@@ -542,6 +542,11 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	font-family:'Gotham SSm A', 'Gotham SSm B', sans-serif;
 	line-height:100%;
 	text-transform:uppercase;
+}
+
+#content .ProfileTitles p {
+	margin-bottom: 0;
+	line-height:initial;
 }
 
 .ProfileContact {
