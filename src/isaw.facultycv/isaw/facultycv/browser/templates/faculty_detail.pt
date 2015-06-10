@@ -39,7 +39,8 @@
             <div class="ProfileBlurb" tal:content="structure context/getProfile Blurb">Blurb</div>
         </div>
 
-        <div class="CVInfo" tal:define="cv nocall:context/cv">
+        <div class="CVInfo" tal:define="cv nocall:context/cv|nothing"
+             tal:condition="nocall:cv">
             <a class="DownloadCV button" href="#"
                tal:attributes="href string:${cv/absolute_url}/pdf_view">Download Curriculum Vitae</a>
             <div class="EducationCV"
