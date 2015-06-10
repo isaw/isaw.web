@@ -19,13 +19,13 @@ class EventListingView(TiledListingView):
     implements(IEventListingView)
     image_scale = 'blogtile'
     image_placeholder = '<div class="blogtile_placeholder">&nbsp;</div>'
-    batch_size = 12 
+    batch_size = 12
     page = 1
 
     def format_date(self, date):
         if date:
-           date = self.translation_service.ulocalized_time(
-                DateTime(date), True, False, self.context, domain='plonelocales')
+            date = self.translation_service.ulocalized_time(
+                DateTime(date), True, False, self.context)
         return date
 
     def listings(self, b_start=None, b_size=None):
