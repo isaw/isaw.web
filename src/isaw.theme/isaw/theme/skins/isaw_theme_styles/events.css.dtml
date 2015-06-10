@@ -132,10 +132,4 @@
     font-style: italic;
 }
 
-.section-events div.portletWrapper:nth-child(2) {
-    width: 165px;
-    padding-left: 22px;
-    padding-top: 10px;
-}
-
 /*  */
