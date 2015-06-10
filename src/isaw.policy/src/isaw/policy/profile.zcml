@@ -142,4 +142,14 @@
       import_steps="actions"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="14"
+      destination="15"
+      title="Update time formats"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="plone.app.registry"
+      />
+
 </configure>

@@ -635,4 +635,18 @@
       </field>
       <value>%m/%d/%Y</value>
     </record>
+    <record name="Products.CMFPlone.i18nl10n.override_dateformat.date_format_long">
+      <field type="plone.registry.field.ASCIILine">
+        <title>old ZMI property: localTimeFormat</title>
+        <description>Default value: %Y-%m-%d %H:%M (2038-01-19 13:55)</description>
+      </field>
+      <value>%m/%d/%Y %I:%M %p</value>
+    </record>
+    <record name="Products.CMFPlone.i18nl10n.override_dateformat.time_format">
+      <field type="plone.registry.field.ASCIILine">
+        <title>old ZMI property: localTimeFormat</title>
+        <description>Default value: %H:%M (13:55)</description>
+      </field>
+      <value>%I:%M %p</value>
+    </record>
 </registry>
