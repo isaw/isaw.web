@@ -595,6 +595,34 @@ h2.CVSectionTitle:before {
 	counter-increment: section;
 }
 
+/*event listings*/
+#portal-columns .event-listing .event-result {display:block; margin:0 0 34px; }
+#portal-columns .event-listing .event-result .event-result-header {background:#d4b982; color:#fff; overflow:auto; padding:10px 16px; }
+#portal-columns .event-listing .event-result .event-result-header span {display:block; float:left; font-size:20px; font-weight:bold; width:48%; }
+#portal-columns .event-listing .event-result .event-result-header span:last-child {float:right; text-align:right; } 
+#portal-columns .event-listing .event-result .event-result-detail {background:#f8f0e5; padding:18px; }
+#portal-columns .event-listing .event-result .event-result-detail img {display:block; float:left; margin:0 18px 18px 0; }
+#portal-columns .event-listing .event-result .event-result-detail a {color:#66262d; }
+#portal-columns .event-listing .event-result .event-result-detail a h3 {color:#66262d; font-size:20px; line-height:120%; margin:0 0 12px; }
+#portal-columns .event-listing .event-result .event-result-detail a:hover,
+#portal-columns .event-listing .event-result .event-result-detail a:focus { }
+#portal-columns .event-listing .event-result .event-result-detail a:hover h3,
+#portal-columns .event-listing .event-result .event-result-detail a:focus h3 { }
+#portal-columns .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:22px; margin:0 0 8px; }
+#portal-columns .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
+
+#portal-columns table.ploneCalendar, 
+#content table.ploneCalendar {width:100%; }
+.fc-header .fc-state-default span {border:none; }
+.fc-header .fc-state-default, .fc-header .fc-state-default a {border:none !important; }
+.fc-header .fc-state-default span {border:none !important; }
+.fc-header .fc-state-default a {border:1px solid #66232b !important; color:#66232b !important; }
+.fc-header .fc-state-default a:hover,
+.fc-header .fc-state-default a:focus {background:#66232b; color:#fff !important; }
+
+.fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; }
+.fc-grid .fc-event-time {display:block; margin:0 0 4px; }
+
 @media screen and (max-width:1330px){
 	#portal-top #main-navigation ul#primary li {width:auto; }
 	#portal-top #main-navigation ul#primary li a {padding:0 30px; }
