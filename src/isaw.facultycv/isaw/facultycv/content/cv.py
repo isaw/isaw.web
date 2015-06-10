@@ -27,6 +27,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Education and Degrees',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Education and Degrees',
             label_msgid='isaw.facultycv_label_Eddegrees',
@@ -39,6 +40,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Positions held',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Positions Held',
             label_msgid='isaw.facultycv_label_Positions',
@@ -51,6 +53,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Honors',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Academic Honors and Awards',
             label_msgid='isaw.facultycv_label_Honors',
@@ -63,6 +66,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Professional Offices and Service',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Professional Offices and Service',
             label_msgid='isaw.facultycv_label_ProfessionalOffices',
@@ -75,6 +79,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Research and works in progress',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Research',
             label_msgid='isaw.facultycv_label_Research',
@@ -87,6 +92,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Research Awards',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'Research Awards',
             label_msgid = 'isaw.facultycv_label_ResearchAwards',
@@ -99,6 +105,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'List of Courses',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'List of Courses taught',
             label_msgid = 'isaw.facultycv_label_CoursesTaught',
@@ -112,6 +119,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Graduate Supervision',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'Graduate Supervision',
             label_msgid = 'isaw.facultycv_label_GradSupervise',
@@ -125,6 +133,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Publications',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'Publications',
             label_msgid = 'isaw.facultycv_label_Publications',
@@ -137,6 +146,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Papers',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'Papers',
             label_msgid = 'isaw.facultycv_label_Papers',
@@ -149,6 +159,7 @@ CVSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Lectures',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label = u'Lectures',
             label_msgid = 'isaw.facultycv_label_Lectures',

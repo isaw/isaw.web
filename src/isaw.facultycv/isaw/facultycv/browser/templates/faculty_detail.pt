@@ -15,49 +15,91 @@
     
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
+        <div class="ProfileContent"
+             tal:define="person_email context/Email|nothing;
+                         person_url context/absolute_url;
+                         has_image python:getattr(context, 'Image', False);
+                         image_url string:${person_url}/@@images/Image/staff;">
+            <div class="ProfileHeader">
+                <div class="ProfileImage" tal:condition="has_image">
+                    <img src="" tal:attributes="src image_url" />
+                </div>
+                <div class="ProfileInfo">
+                    <h1 class="ProfileName" tal:content="context/Title">Name</h1>
+                    <div class="ProfileTitles" tal:content="structure context/getTitles" />
         
-        <div class="facultyTitles" tal:content="structure context/Titles" />
-        
-        <div class="facultyContact">
-            <span class="address" tal:content="context/Address">15 E. 84th Street New York, NY 10028</span>
-            <a tal:attributes="href string:mailto:${context/Email}" tal:content="string:${context/Email}" />
-            <span class="phone" tal:content="string:${context/Phone}"></span>
-            <div class="visualClear"><!-- --></div>
-        </div>
-       
-        <div class="facultyBlurb" tal:content="structure context/Profile Blurb" /> 
-
-        <!-- Temporarily holding, need to fix the routines here-->
-        <div id="view-full">
-            <div tal:attributes="class string:viewButton | class string:viewButton100" tal:condition="context/cv/Papers | nothing">
-                <a tal:attributes="href string:${context/absolute_url}/cv" tal:content="string:View Full CV" />
+                    <div class="ProfileContact">
+                        <a tal:attributes="href string:mailto:${context/getEmail}" tal:content="string:${context/Email}">Email</a>
+                        <span class="phone" tal:content="string:${context/getPhone}">Phone</span>
+                        <span class="address" tal:content="string:${context/getAddress}">Address</span>
+                    </div>
+                </div>
             </div>
-<!--
-            <div tal:attributes="class string:viewButton100 | class string:viewButton100" tal:condition="context/cv/Publications | nothing">
-                <a href="#view-full">View All Publications</a>
-            </div>
-    -->        
-        </div>
-        <!-- END -->
-        <div class="visualClear"><!-- --></div>
-        <h2 tal:condition="context/cv/Publications | nothing"><!-- Recent -->Publications</h2>
        
-        <div tal:condition="context/cv/Publications | nothing" class="facultyBlurb"> 
-            <span tal:define="pubs context/cv/Publications;"
-                tal:replace="structure pubs | string:No publications listed">
-            </span>
+            <div class="ProfileBlurb" tal:content="structure context/getProfile Blurb">Blurb</div>
         </div>
-            
-        <div class="visualClear"><!-- --></div>
 
+        <div class="CVInfo" tal:define="cv nocall:context/cv">
+            <a class="DownloadCV button" href="#"
+               tal:attributes="href string:${cv/absolute_url}/pdf_view">Download Curriculum Vitae</a>
+            <div class="EducationCV"
+                 tal:condition="cv/getEducation and Degrees">
+                 <h2 class="CVSectionTitle">Education and Degrees</h2>
+                 <div class="CVContent" tal:content="structure cv/getEducation and Degrees">Education</div>
+            </div>
+            <div class="PositionsCV"
+                 tal:condition="cv/getPositions held">
+                 <h2 class="CVSectionTitle">Positions Held</h2>
+                 <div class="Content" tal:content="structure cv/getPositions held">Positions</div>
+             </div>
+            <div class="HonorsCV"
+                 tal:condition="cv/getHonors">
+                 <h2 class="CVSectionTitle">Academic Honors and Awards</h2>
+                 <div class="Content" tal:content="structure cv/getHonors">Academic Honors and Awards</div>
+             </div>
+            <div class="OfficesCV"
+                 tal:condition="cv/getProfessional Offices and Service">
+                 <h2 class="CVSectionTitle">Professional Offices and Service</h2>
+                 <div class="Content" tal:content="structure cv/getProfessional Offices and Service">Professional Offices and Service</div>
+             </div>
+            <div class="ResearchCV"
+                 tal:condition="cv/getResearch and works in progress">
+                 <h2 class="CVSectionTitle">Research</h2>
+                 <div class="Content" tal:content="structure cv/getResearch and works in progress">Research</div>
+             </div>
+            <div class="AwardsCV"
+                 tal:condition="cv/getResearch Awards">
+                 <h2 class="CVSectionTitle">Research Awards</h2>
+                 <div class="Content" tal:content="structure cv/getResearch Awards">Research Awards</div>
+             </div>
+            <div class="CoursesCV"
+                 tal:condition="cv/getList of Courses">
+                 <h2 class="CVSectionTitle">List of Courses taught</h2>
+                 <div class="Content" tal:content="structure cv/getList of Courses">List of Courses Taught</div>
+             </div>
+            <div class="SupervisionCV"
+                 tal:condition="cv/getGraduate Supervision">
+                 <h2 class="CVSectionTitle">Graduate Supervision</h2>
+                 <div class="Content" tal:content="structure cv/getGraduate Supervision">Graduate Supervision</div>
+             </div>
+            <div class="PublicationsCV"
+                 tal:condition="cv/getPublications">
+                 <h2 class="CVSectionTitle">Publications</h2>
+                 <div class="Content" tal:content="structure cv/getPublications">Publications</div>
+             </div>
+            <div class="PapersCV"
+                 tal:condition="cv/getPapers">
+                 <h2 class="CVSectionTitle">Papers</h2>
+                 <div class="Content" tal:content="structure cv/getPapers">Papers</div>
+             </div>
+            <div class="LecturesCV"
+                 tal:condition="cv/getLectures">
+                 <h2 class="CVSectionTitle">Lectures</h2>
+                 <div class="Content" tal:content="structure cv/getLectures">Lectures</div>
+             </div>
+         </div>
     </metal:content-core>
 </metal:content-core>
-
-<metal:rightcolumn fill-slot="portlets_two_slot">
-    <!-- <img height="140" width="124" class="facultyImage" tal:attributes="src context/Image/absolute_url | string:portal_url/images/default-person" />-->
-    <img class="facultyImage" tal:attributes="src context/Image/absolute_url | string:portal_url/images/default-person" />
-    <tal:block replace="structure provider:plone.rightcolumn" />
-</metal:rightcolumn>
 
 </body>
 </html>

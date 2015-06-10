@@ -37,6 +37,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Titles',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Faculty Titles',
             label_msgid='isaw.facultycv_label_Titles',
@@ -49,6 +50,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name = 'Phone',
+        default_output_type='text/x-html-safe',
         widget = atapi.StringWidget(
             label=u'Phone',
             label_msgid='isaw.facultycv_label_Phone',
@@ -62,6 +64,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name = 'Email',
+        default_output_type='text/x-html-safe',
         widget = atapi.StringWidget(
             label=u'Email',
             label_msgid='isaw.facultycv_label_Email',
@@ -75,6 +78,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.StringField(
         name = 'Address',
+        default_output_type='text/x-html-safe',
         widget = atapi.StringWidget(
             label=u'Address Information',
             label_msgid='isaw.facultycv_label_Address',
@@ -88,6 +92,7 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
     atapi.TextField(
         name = 'Profile Blurb',
+        default_output_type='text/x-html-safe',
         widget = atapi.RichWidget(
             label=u'Profile Blurb',
             label_msgid='isaw.facultycv_label_Profile',
