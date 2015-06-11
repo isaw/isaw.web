@@ -8,7 +8,9 @@
       <div class="post featured">
         <div class="post-image" tal:content="structure image"></div>
         <div class="post-content">
-          <h2 class="post-title" tal:content="title">[title]</h2>
+          <h2 class="post-title">
+            <a href="#" tal:attributes="href post/getURL" tal:content="title">[title]</a>
+          </h2>
           <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
           <div class="post-meta" tal:content="byline">byline</div>
           <a href="#" class="button more"
