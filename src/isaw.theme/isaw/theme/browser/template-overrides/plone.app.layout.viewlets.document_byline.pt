@@ -1,4 +1,4 @@
-<div class="documentByLine bbb"
+<div class="documentByLine"
      id="plone-document-byline"
      i18n:domain="plone"
      tal:define="show view/show;
@@ -18,8 +18,8 @@
   </tal:creator>
 
   <tal:dates define="published view/pub_date;
-                     modified context/ModificationDate;
-                     date python:published or modified">
+                     created context/CreationDate;
+                     date python:published or created">
   <span class="documentPublished"
         tal:condition="date">
     <span tal:replace="python:view.toLocalizedTime(date,long_format=0)">

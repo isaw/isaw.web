@@ -1,6 +1,7 @@
 <tal:show tal:condition="view/show">
-  <tal:block define="post view/get_item">
-    <div class="post-holder" tal:condition="post"
+  <tal:block define="post view/get_item|nothing"
+             condition="nocall:post">
+    <div class="post-holder" tal:condition="nocall:post"
                              tal:define="title post/Title;
                                          exerpt post/Description;
                                          image python:view.get_image(post);

@@ -3,7 +3,7 @@
 
 Suitable for folders or collections
 
-Also includes a viewlet which will show the "featured_item" returned by 
+Also includes a viewlet which will show the "featured_item" returned by
 the method on the view.
 """
 from DateTime import DateTime
@@ -45,15 +45,14 @@ class TileDetailsMixin(object):
         if author == '':
             author = brain.Creator
         parts = [author]
-        date = brain.EffectiveDate
+        date = brain.Date
+        date = None if date == 'None' else date
+
         if date:
             parts.append(self.translation_service.ulocalized_time(
-                DateTime(date), None, None, self.context, domain='plonelocales'
+                DateTime(date), None, None, self.context
             ))
         return "by " + " | ".join(parts)
-
-        self.translation_service.ulocalized_time(DateTime(date), None, None, self.context,
-                                    domain='plonelocales')
 
     def get_image(self, brain):
         scales = self.context.restrictedTraverse(brain.getPath() + '/@@images')
@@ -63,7 +62,6 @@ class TileDetailsMixin(object):
         except (TypeError, AttributeError):
             # no image available, use the placeholder div
             return self.image_placeholder
-
 
 
 class TiledListingView(BrowserView, TileDetailsMixin):
@@ -80,18 +78,14 @@ class TiledListingView(BrowserView, TileDetailsMixin):
 
     def listings(self, b_start=None, b_size=None):
         """get a page of listings"""
-        if b_size == None:
+        if b_size is None:
             b_size = self.batch_size
-        if b_start == None:
+        if b_start is None:
             b_start = (getattr(self, 'page', 1) - 1) * b_size + 1
         if self.context.portal_type == 'Folder':
-            content_filter = {
-                'b_start': b_start,
-                'b_size': b_size,
-            }
-            items = self.context.getFolderContents(
-                content_filter, batch=True
-            )
+            self.request['b_start'] = b_start
+            self.request['b_size'] = b_size
+            items = self.context.getFolderContents(batch=True)
         elif self.context.portal_type == 'Topic':
             if b_start and not self.request.get('b_start'):
                 self.request['b_start'] = b_start
