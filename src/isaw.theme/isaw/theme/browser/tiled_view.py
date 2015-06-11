@@ -38,15 +38,25 @@ class TileDetailsMixin(object):
         return self._membership_tool
 
     def get_byline(self, brain):
-        author_info = self.membership_tool.getMemberInfo(brain.Creator)
+        # Only news items show bylines in tiled listings
+        if brain.portal_type != 'News Item':
+            return
+        creator = brain.Creator
+        if callable(creator):
+            creator = creator()
+        author_info = self.membership_tool.getMemberInfo(creator)
         author = ''
         if author_info:
             author = author_info.get('fullname') or author_info.get('username')
-        if author == '':
-            author = brain.Creator
+        if not author:
+            author = creator
         parts = [author]
+
         date = brain.Date
-        date = None if date == 'None' else date
+        if callable(date):
+            date = date()
+        if date == 'None':
+            date = None
 
         if date:
             parts.append(self.translation_service.ulocalized_time(
@@ -56,9 +66,12 @@ class TileDetailsMixin(object):
 
     def get_image(self, brain):
         scales = self.context.restrictedTraverse(brain.getPath() + '/@@images')
+        title = brain.Title
+        if callable(title):
+            title = title()
         try:
             scale = scales.scale('image', self.image_scale)
-            return '<img src={} alt={} />'.format(scale.url, brain.Title)
+            return '<img src={} alt={} />'.format(scale.url, title)
         except (TypeError, AttributeError):
             # no image available, use the placeholder div
             return self.image_placeholder

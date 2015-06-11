@@ -66,7 +66,8 @@ $(document).ready(function () {
         <a href="#" tal:attributes="href item_url">
           <img src="" title="" tal:replace="structure image_tag"/></a>
         <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
-        <div class="post-meta" tal:define="byline python:view.get_byline(item)" tal:content="byline">[byline]</div>
+        <div class="post-meta" tal:define="byline python:view.get_byline(item)"
+             tal:condition="byline" tal:content="byline">[byline]</div>
         <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
         <a href="#" class="button small more" tal:attributes="href item_url">Read More</a>
       </li>
