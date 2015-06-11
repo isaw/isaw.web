@@ -17,7 +17,7 @@
 
     <browser:page
         for="*"
-        name="image"
+        name="image-portlet-image"
         class=".imageview.ImageView"
         permission="zope.Public"
         />
