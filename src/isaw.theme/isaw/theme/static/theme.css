@@ -4,6 +4,22 @@
 	heading and menu font family: Questrial, 'Nimbus Sans', Univers, Verdana, Geneva, sans-serif;
 */
 
+
+/* Open Sans 
+by Steve Matteson
+Apache License, version 2.0
+*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400&subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic);
+
+/* Questrial 
+by Joe Prince
+SIL Open Font License, 1.1
+*/
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+
+
+
+
 html {background:#fffaf5; font-family:'Open Sans', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing:.2px;}
 body {color:#231f20; margin:0;}
 
