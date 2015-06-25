@@ -5,10 +5,13 @@
 	 viewBox="0 0 55.8 212.8" enable-background="new 0 0 55.8 212.8" xml:space="preserve">
 <g>
 	<g>
-		<rect x="0" y="40.4" fill="#D4B982" width="55.8" height="36.3"/>
-		<rect x="0" y="79" fill="#D4B982" width="55.8" height="36.3"/>
-		<rect x="0" y="117.6" fill="#D4B982" width="55.8" height="95.3"/>
-		<rect x="0" y="0" fill="#D4B982" width="55.8" height="38.1"/>
+		<rect x="0" y="0" fill="#FFFFFF" width="55.8" height="212.9"/>
+	</g>
+	<g>
+		<rect x="0" y="40.4" fill="#C59D51" width="55.8" height="36.3"/>
+		<rect x="0" y="79" fill="#C59D51" width="55.8" height="36.3"/>
+		<rect x="0" y="117.6" fill="#C59D51" width="55.8" height="95.3"/>
+		<rect x="0" y="0" fill="#C59D51" width="55.8" height="38.1"/>
 	</g>
 	<path fill="#FFFFFF" d="M29.8,15c0-3.1,0.2-3.3,2.4-3.5v-0.9h-8.5v0.9c2.1,0.2,2.4,0.4,2.4,3.5v10c0,3.1-0.2,3.3-2.4,3.5v0.9h8.5
 		v-0.9c-2.1-0.2-2.4-0.4-2.4-3.5V15z"/>
