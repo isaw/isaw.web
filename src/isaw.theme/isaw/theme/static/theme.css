@@ -287,6 +287,8 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns ul.navTree li:focus {background:#ebe3d9; transition: all 0.5s ease;}
 #portal-columns ul.navTree li.navTreeCurrentNode:hover,
 #portal-columns ul.navTree li.navTreeCurrentNode:focus {background:#f8f0e5;}
+#portal-columns ul.navTree li.navTreeFolderish:not(.collapsed):hover,
+#portal-columns ul.navTree li.navTreeFolderish:not(.collapsed):focus {background:#f8f0e5;}
 
 #portal-columns ul.navTree li.navTreeTopNode {margin-top: 0px;}
 #portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
