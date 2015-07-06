@@ -301,14 +301,14 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns ul.navTree li a.navTreeFolderish {line-height:100%;  }
 #portal-columns ul.navTree li a.navTreeCurrentItem { text-decoration: none;}
 
-/*#portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#b5b2b0; }
-.section-people #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#f8f0e5; }
+#portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#C59D51; }
+/* .section-people #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#f8f0e5; } */
 .section-graduate-studies #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#6d6054; }
 .section-visiting-scholars #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#9d3a20; }
 .section-exhibitions #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#9e6a4a; }
 .section-events #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#66232b; }
 #portal-columns ul.navTree.navTreeLevel0 > li:first-child:hover,
-#portal-columns ul.navTree.navTreeLevel0 > li:first-child:focus {opacity: 0.9;} */
+#portal-columns ul.navTree.navTreeLevel0 > li:first-child:focus {opacity: 0.9;} 
 
 .section-graduate-studies #portal-columns ul.navTree.navTreeLevel0 > li:first-child a,
 .section-visiting-scholars #portal-columns ul.navTree.navTreeLevel0 > li:first-child a,
