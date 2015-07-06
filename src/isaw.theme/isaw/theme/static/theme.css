@@ -444,7 +444,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .section-people #portal-columns .facultyListing .facultyInfo a { }
 .section-people #portal-columns .facultyListing .facultyInfo a h2 {font-size:22px; }
 .section-people #portal-columns .facultyListing .facultyInfo .facultyPosition {font-size:14px; font-weight:bold; }
-.section-people #portal-columns .facultyListing .facultyInfo p {margin:0 0 12px; }
+.section-people #portal-columns .facultyListing .facultyInfo p {margin:0; }
 .section-people #portal-columns .facultyListing .facultyInfo p.facultyEmail {font-weight:300;  }
 
 
