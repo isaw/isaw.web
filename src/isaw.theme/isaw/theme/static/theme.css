@@ -293,8 +293,8 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
 #portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; }
 #portal-columns ul.navTree li a.navTreeFolderish {text-decoration:none !important; }
-#portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; transform:rotate(-180deg); -webkit-transform:rotate(-180deg); }
-#portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(270deg); -webkit-transform:rotate(270deg); }
+#portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
+#portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
 #portal-columns ul.navTree li a:hover,
 #portal-columns ul.navTree li a:focus {text-decoration:none; }
 #portal-columns ul.navTree li ul li {padding: 0; }
