@@ -17,7 +17,7 @@
         <li tal:content="python:toLocalizedTime(context.start(), time_only=1)">6:00PM - 7:00PM</li>
         <li tal:content="context/location">2nd Floor Lecture Hall, ISAW</li>
     </ul>
-    <a href="#" class="button event inverse">Register Now</a>
+    <a tal:condition="context/rsvpRequired" tal:attributes="href string:${context/portal_url}/rsvp" href="#" class="button event inverse">RSVP Required</a>
     <div class="add-to-cal">
         <h3>Add Event to Calendar</h3>
         <ul class="links">
