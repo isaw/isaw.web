@@ -169,4 +169,14 @@
       import_steps="portlets"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="15"
+      destination="16"
+      title="Set Calendar Types"
+      description=""
+      profile="isaw.theme:default"
+      handler="isaw.theme.setuphandlers.set_calendar_types"
+      />
+
 </configure>
