@@ -621,6 +621,14 @@ h2.CVSectionTitle:before {
 	counter-increment: section;
 }
 
+#content dl.multipleSelectionWidget dt {
+    margin: 0;
+}
+
+#content dd.widgetPulldownMenu label {
+    display: block;
+}
+
 /*event listings*/
 #portal-columns .event-listing .event-result {display:block; margin:0 0 34px; }
 #portal-columns .event-listing .event-result .event-result-header {background:#d4b982; color:#fff; overflow:auto; padding:10px 16px; }
