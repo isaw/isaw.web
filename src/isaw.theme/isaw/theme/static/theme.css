@@ -35,9 +35,9 @@ a {transition: all 0.5s ease; }
 .button {border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
 .button:focus {background:#9b3a25; color:#fffaf5 !important; }
-.button.event.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
-.button.event.inverse:hover,
-.button.event.inverse:focus {background:#fff; color:#66232b !important; }
+.button.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
+.button.inverse:hover,
+.button.inverse:focus {background:#fff; color:#66232b !important; }
 
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
