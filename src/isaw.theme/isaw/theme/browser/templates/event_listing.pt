@@ -73,8 +73,8 @@ $(document).ready(function () {
           <p tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
           <p tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
           <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
-          <span tal:condition="item/rsvpRequired|nothing"
-             tal:content="structure string:<b>RSVP:</b> <a href='mailto:isaw@nyu.edu?subject=RSVP%20${context/title}>isaw@nyu.edu</a>"/>
+          <a class="eventRsvp button" tal:condition="item/rsvpRequired|nothing"
+             tal:attributes="href string:mailto:isaw@nyu.edu?subject=RSVP ${item/Title}"><b>RSVP</b></a>
 
         </div>
       </div>

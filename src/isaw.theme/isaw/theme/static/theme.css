@@ -626,7 +626,7 @@ h2.CVSectionTitle:before {
 #portal-columns .event-listing .event-result .event-result-header {background:#d4b982; color:#fff; overflow:auto; padding:10px 16px; }
 #portal-columns .event-listing .event-result .event-result-header span {display:block; float:left; font-size:20px; font-weight:bold; width:48%; }
 #portal-columns .event-listing .event-result .event-result-header span:last-child {float:right; text-align:right; } 
-#portal-columns .event-listing .event-result .event-result-detail {background:#f8f0e5; padding:18px; }
+#portal-columns .event-listing .event-result .event-result-detail {overflow: hidden;background:#f8f0e5; padding:18px; }
 #portal-columns .event-listing .event-result .event-result-detail img {display:block; float:left; margin:0 18px 18px 0; }
 #portal-columns .event-listing .event-result .event-result-detail a {color:#66262d; }
 #portal-columns .event-listing .event-result .event-result-detail a h3 {color:#66262d; font-size:20px; line-height:120%; margin:0 0 12px; }
@@ -636,6 +636,7 @@ h2.CVSectionTitle:before {
 #portal-columns .event-listing .event-result .event-result-detail a:focus h3 { }
 #portal-columns .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:22px; margin:0 0 8px; }
 #portal-columns .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
+.eventRsvp {float: right; margin: 0.25em 0 0 0.25em;}
 
 #portal-columns table.ploneCalendar, 
 #content table.ploneCalendar {width:100%; }

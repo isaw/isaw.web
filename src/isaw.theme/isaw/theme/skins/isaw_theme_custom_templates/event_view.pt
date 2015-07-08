@@ -20,7 +20,8 @@
           <h2 tal:condition="speaker" tal:content="speaker">Speaker</h2>
           <h3 tal:condition="affiliation" tal:content="affiliation">Affiliation</h3>
         </div>
-
+        <a class="eventRsvp button" tal:condition="context/rsvpRequired|nothing"
+           tal:attributes="href string:mailto:isaw@nyu.edu?subject=RSVP ${context/Title}"><b>RSVP</b></a>
 </metal:content-core>
 
 </body>
