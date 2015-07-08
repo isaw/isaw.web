@@ -38,7 +38,7 @@
 
                 <div class="facultyInfo">
                   <a tal:attributes="href string:${faculty/getURL}"><h2 tal:content=faculty/Title>Roger Bagnall</h2></a>
-                    <p tal:content="structure faculty/Titles" class="facultyPosition">Director</p>
+                    <div tal:content="structure faculty/Titles" class="facultyPosition">Director</div>
                     <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
                 </div>
               </tal:foo>
