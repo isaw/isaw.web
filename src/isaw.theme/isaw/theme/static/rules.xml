@@ -144,6 +144,11 @@
     <after theme-children="html/body"
            content="//*[@id='portal-siteactions']/following-sibling::*" />
 
+    <!-- event views only -->
+    <drop css:content=".calendar-view-link" />
+    <after method="raw" css:theme-children="#portal-column-second"
+           css:content=".calendar-view-link" />
+
   </rules>
   
 </rules>
