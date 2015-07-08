@@ -16,7 +16,7 @@
       <p tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
       <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
       <a class="eventRsvp button" tal:condition="item/rsvpRequired|nothing"
-         tal:attributes="href string:mailto:isaw@nyu.edu?subject=RSVP ${item/Title}"><b>RSVP</b></a>
+         tal:attributes="href string:${context/portal_url}/rsvp"><b>RSVP</b></a>
 
     </div>
   </div>
