@@ -8,6 +8,9 @@
     <extra name="index_type" value="Cosine Measure"/>
     <extra name="lexicon_id" value="htmltext_lexicon"/>
   </index>
+  <index name="rsvpRequired" meta_type="FieldIndex">
+    <indexed_attr value="rsvpRequired"/>
+  </index>
   <column value="Email"/>
   <column value="Phone"/>
   <column value="Titles"/>
@@ -15,4 +18,5 @@
   <column value="image"/>
   <column value="speaker"/>
   <column value="subtitle"/>
+  <column value="rsvpRequired"/>
 </object>

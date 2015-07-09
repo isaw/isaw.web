@@ -152,4 +152,14 @@
       import_steps="plone.app.registry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="15"
+      destination="16"
+      title="Add rsvp column"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="catalog"
+      />
+
 </configure>
