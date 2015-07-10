@@ -117,8 +117,8 @@ class TiledListingView(BrowserView, TileDetailsMixin):
         elif self.context.portal_type == 'Topic':
             if b_start and not self.request.get('b_start'):
                 self.request['b_start'] = b_start
-            query.update(self.request)
-            items = self.context.queryCatalog(query, True, b_size)
+            items = self.context.queryCatalog(self.request, True, b_size,
+                                              **query)
         elif self.context.portal_type == 'Collection':
             items = self.context.results(True, b_start, b_size,
                                          custom_query=query)
