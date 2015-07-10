@@ -31,6 +31,7 @@ setup(name='isaw.theme',
           'webcouturier.dropdownmenu',
           'plone.app.theming',
           'collective.navigationtoggle',
+          'Products.ZCatalog>=3.0.2',
       ],
       entry_points="""
       [z3c.autoinclude.plugin]
