@@ -179,4 +179,14 @@
       handler="isaw.theme.setuphandlers.set_calendar_types"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="16"
+      destination="17"
+      title="Add ISAW settings"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="plone.app.registry controlpanel"
+      />
+
 </configure>

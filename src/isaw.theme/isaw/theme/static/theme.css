@@ -658,6 +658,25 @@ h2.CVSectionTitle:before {
 .fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; }
 .fc-grid .fc-event-time {display:block; margin:0 0 4px; }
 
+#emergency-message {
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+    border: 3px solid #66232b;
+    background-color: #d4b982;
+    color: black;
+}
+
+#emergency-message .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: url("_images/trigger-close.png");
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
 @media screen and (max-width:1330px){
 
 	#portal-top #main-navigation ul#primary li {width:auto; }

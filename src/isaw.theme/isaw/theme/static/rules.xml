@@ -24,6 +24,9 @@
   <!-- Rules applying to a standard Plone web page -->
   <rules css:if-content="#visual-portal-wrapper">
 
+    <!-- Aliens have landed -->
+    <before css:theme="#visual-portal-wrapper" css:content="#emergency-message" />
+
     <!-- Replace theme columns class -->
     <before css:theme-children="#portal-columns">
       <xsl:attribute name="class"><xsl:value-of select="$columns" /></xsl:attribute>

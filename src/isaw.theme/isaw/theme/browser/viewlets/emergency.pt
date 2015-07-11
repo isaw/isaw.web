@@ -1,0 +1,4 @@
+<div id="emergency-message" tal:condition="view/message">
+    <div class="close"></div>
+    <tal:message tal:replace="structure view/message" />
+</div>
