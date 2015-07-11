@@ -43,7 +43,7 @@ jQuery(function($) {
     /* close aliens invaded message */
     $('#emergency-message .close').click(function() {
         var date = new Date();
-        date.setTime(date.getTime()+(60000));// 1*24*60*60*1000));
+        date.setTime(date.getTime()+(1*24*60*60*1000));
         var expires = "; expires="+date.toGMTString();
         document.cookie = "isaw-emergency-read=yes"+expires+"; path=/";
         $(this).parent().hide();
