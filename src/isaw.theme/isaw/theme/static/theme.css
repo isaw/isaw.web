@@ -18,9 +18,12 @@ SIL Open Font License, 1.1
 @import url(http://fonts.googleapis.com/css?family=Questrial);
 
 
+/* possible background colors:
+	seashell == #fff5ee
+	linen
+	antique white */
 
-
-html {background:#fffaf5; font-family:'Open Sans', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing:.2px;}
+html {background:#fff5ee; font-family:'Open Sans', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing:.2px;}
 body {color:#231f20; margin:0;}
 
 label.collapser:after,
