@@ -181,4 +181,17 @@
         />
   </configure>
 
+  <browser:page
+      name="isaw-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ISAWSettingsControlPanel"
+      permission="plone.app.controlpanel.Overview"
+      />
+
+  <browser:viewlet
+      name="emergency-message"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".viewlets.emergency.EmergencyMessage"
+      permission="zope2.View" />
+
 </configure>

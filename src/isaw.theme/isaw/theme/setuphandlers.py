@@ -53,3 +53,10 @@ def createHomePage(context):
         set_layout(home_page, 'home_page_view')
         publish(home_page)
         set_default_page(site, page_id)
+
+def set_calendar_types(context):
+    ct = getToolByName(context, 'portal_calendar')
+    ct.edit_configuration(show_types=('Event',),
+        use_session=False, 
+        show_states=('published', 'external', 'internally_published'),
+        firstweekday=6)

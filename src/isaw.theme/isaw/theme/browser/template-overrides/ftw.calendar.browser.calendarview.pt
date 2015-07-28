@@ -25,7 +25,7 @@
                     Description
                 </p>
 
-        <div>
+        <div class="listing-view-link">
             <a href="" tal:attributes="href string:${context/absolute_url}/event-listing">
               Listing View
             </a>

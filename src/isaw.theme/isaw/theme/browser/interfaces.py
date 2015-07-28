@@ -1,4 +1,5 @@
 from zope.interface import Interface
+from zope import schema
 from zope.viewlet.interfaces import IViewletManager
 
 from plone.theme.interfaces import IDefaultPloneLayer
@@ -40,3 +41,9 @@ class IEventListingView(Interface):
 
     This view is suitable for folders or collections
     """
+
+
+class IISAWSettings(Interface):
+    emergency_message = schema.Text(title=u"Emergency Message",
+            description=u"Any text here will be displayed at the top of the site. An empty field means do not display emergency message",
+            required=False)

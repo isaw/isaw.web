@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_controlpanel" meta_type="Plone Control Panel Tool">
+  <configlet title="Change Password" action_id="MemberPassword"
+             appId="Plone" category="Plone"
+             url_expr="string:https://start.nyu.edu" />
+  <configlet title="Themes" action_id="PortalSkin" appId="PortalSkin"
+             category="Plone"
+             icon_expr="string:$portal_url/skins_icon.png" visible="False" />
+  <configlet title="Collections (old style)"
+             action_id="portal_atct" appId="ATContentTypes"
+             category="Plone" visible="True" />
+  <configlet title="Syndication" action_id="syndication" appId="Plone"
+             category="Plone" condition_expr=""
+             icon_expr="string:$portal_url/rss.png"
+             url_expr="string:${portal_url}/@@syndication-settings" visible="True">
+    <permission>Manage portal</permission>
+  </configlet>
+  <configlet title="ISAW Settings" action_id="isaw_settings" appId="isaw.theme"
+             category="Products"
+             url_expr="string:${portal_url}/@@isaw-settings"
+             visible="True">
+    <permission>Manage portal</permission>
+  </configlet>
+</object>

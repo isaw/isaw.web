@@ -54,7 +54,7 @@ $(document).ready(function () {
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-  <p><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a></p>
+  <div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a></div>
   <tal:block tal:define="items view/listings">
     <div class="event-listing">
      <tal:block tal:repeat="item items">
@@ -73,8 +73,8 @@ $(document).ready(function () {
           <p tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
           <p tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
           <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
-          <span tal:condition="item/rsvpRequired|nothing"
-             tal:content="structure string:<b>RSVP:</b> <a href='mailto:isaw@nyu.edu?subject=RSVP%20${context/title}>isaw@nyu.edu</a>"/>
+          <a class="eventRsvp button inverse" tal:condition="item/rsvpRequired|nothing"
+             tal:attributes="href string:${context/portal_url}/rsvp"><b>RSVP</b></a>
 
         </div>
       </div>

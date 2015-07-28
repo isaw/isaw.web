@@ -38,9 +38,9 @@ a {transition: all 0.5s ease; }
 .button {border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
 .button:focus {background:#9b3a25; color:#fffaf5 !important; }
-.button.event.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
-.button.event.inverse:hover,
-.button.event.inverse:focus {background:#fff; color:#66232b !important; }
+.button.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
+.button.inverse:hover,
+.button.inverse:focus {background:#fff; color:#66232b !important; }
 
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
@@ -423,8 +423,8 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns ul.news li .post-meta img {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
 #portal-columns ul.news li .post-excerpt {font-size:17px; font-weight:normal; letter-spacing:.2px; line-height:24px; margin:0; text-transform:none; }
 #portal-columns ul.news li a.button.small {font-size:12px; margin:15px 0; padding:12px 18px; }
-#portal-columns ul.news li a div.blogtile_placeholder {background:url('images/blog-image.jpg') top center no-repeat; width:100%; height:170px;}
-#portal-columns .post-holder .post-image div.featured_placeholder {background: transparent; width: 300px; height: 300px;}
+#portal-columns ul.news li a div.blogtile_placeholder {background:url('images/news-default.png') top center no-repeat; background-size: cover; width:100%; height:170px;}
+#portal-columns .post-holder .post-image div.featured_placeholder {background:url('images/news-default.png') top center no-repeat; background-size: cover; width: 300px; height: 300px;}
 
 #portal-columns .buttons {text-align:center; }
 #portal-columns a.button.view-more, #content a.button.view-more {padding-right:80px; position:relative; }
@@ -624,12 +624,20 @@ h2.CVSectionTitle:before {
 	counter-increment: section;
 }
 
+#content dl.multipleSelectionWidget dt {
+    margin: 0;
+}
+
+#content dd.widgetPulldownMenu label {
+    display: block;
+}
+
 /*event listings*/
 #portal-columns .event-listing .event-result {display:block; margin:0 0 34px; }
 #portal-columns .event-listing .event-result .event-result-header {background:#d4b982; color:#fff; overflow:auto; padding:10px 16px; }
 #portal-columns .event-listing .event-result .event-result-header span {display:block; float:left; font-size:20px; font-weight:bold; width:48%; }
 #portal-columns .event-listing .event-result .event-result-header span:last-child {float:right; text-align:right; } 
-#portal-columns .event-listing .event-result .event-result-detail {background:#f8f0e5; padding:18px; }
+#portal-columns .event-listing .event-result .event-result-detail {overflow: hidden;background:#f8f0e5; padding:18px; }
 #portal-columns .event-listing .event-result .event-result-detail img {display:block; float:left; margin:0 18px 18px 0; }
 #portal-columns .event-listing .event-result .event-result-detail a {color:#66262d; }
 #portal-columns .event-listing .event-result .event-result-detail a h3 {color:#66262d; font-size:20px; line-height:120%; margin:0 0 12px; }
@@ -639,6 +647,7 @@ h2.CVSectionTitle:before {
 #portal-columns .event-listing .event-result .event-result-detail a:focus h3 { }
 #portal-columns .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:22px; margin:0 0 8px; }
 #portal-columns .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
+.eventRsvp {float: right; margin: 0.25em 0 0 0.25em;}
 
 #portal-columns table.ploneCalendar, 
 #content table.ploneCalendar {width:100%; }
@@ -651,6 +660,25 @@ h2.CVSectionTitle:before {
 
 .fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; }
 .fc-grid .fc-event-time {display:block; margin:0 0 4px; }
+
+#emergency-message {
+    margin: 0;
+    padding: 25px;
+    text-align: center;
+    border: 3px solid #66232b;
+    background-color: #d4b982;
+    color: black;
+}
+
+#emergency-message .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: url("_images/trigger-close.png");
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
 
 @media screen and (max-width:1330px){
 

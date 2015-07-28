@@ -15,7 +15,7 @@
          tal:condition="ctxt/getImage|nothing">
         <a href="#"
            tal:define="here_url ctxt/@@plone_context_state/object_url;"
-           tal:attributes="href string:$here_url/image-portlet-image/image_view_fullscreen"
+           tal:attributes="href string:$here_url/image/image_view_fullscreen"
            id="parent-fieldname-image">
            <img tal:replace="structure python: ctxt.tag(scale='preview', css_class='newsImage')" src="" alt="" />
         </a>

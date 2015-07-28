@@ -1,3 +1,5 @@
-#
+from .patches import allow_not_uuid
+
+
 def initialize(context):
-    pass
+    allow_not_uuid()
