@@ -44,7 +44,19 @@ a {transition: all 0.5s ease; }
 
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
-#portal-top h1 {display:block; height:78px; left:84px; margin:0; position:absolute; top:49px; width:350px; z-index:3;}
+#portal-top h1 {
+	background-image: url(_images/logo-nyu.svg);
+	background-origin: content-box;
+	background-position: top left;
+	background-repeat: no-repeat;
+	display:block;
+	height: 109px;
+	left:84px;
+	margin:0;
+	padding: 9px;
+	position:absolute;
+	z-index:3;	
+}
 #portal-top h1 a {background:url('_images/logo-nyu.png') center center / 308px no-repeat; display:block; height:78px; text-align:left; text-indent:-10000px; width:350px; } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
