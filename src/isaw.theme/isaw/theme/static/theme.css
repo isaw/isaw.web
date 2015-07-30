@@ -58,7 +58,16 @@ a {transition: all 0.5s ease; }
 	z-index:3;	
 }
 #portal-top h1 a {
-	 display:block; height:78px; text-align:left; text-indent:-10000px; width:350px; } 
+	background-image: url(_images/title-isaw.svg);
+	display:block;
+	height:78px;
+	text-align:left;
+	text-indent:-10000px;
+	width:350px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: 49px;
+ } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
 #portal-top .identity {display:block; height:179px; left:37px; position:absolute; top:0; width:47px; z-index:4; background-color: #fff;}
