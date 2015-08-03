@@ -45,13 +45,13 @@ a {transition: all 0.5s ease; }
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
 #portal-top h1 {
-	background-image: url(_images/logo-nyu.svg);
+	/* background-image: url(_images/logo-nyu.svg);
 	background-origin: content-box;
 	background-position: top left;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 	display:block;
 	height: 109px;
-	left:84px;
+	left:47px;
 	margin:0;
 	padding: 9px;
 	position:absolute;
@@ -70,7 +70,7 @@ a {transition: all 0.5s ease; }
  } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
-#portal-top .identity {display:block; height:179px; left:37px; position:absolute; top:0; width:47px; z-index:4; background-color: #fff;}
+#portal-top .identity {display:block; height:179px; left:0px; position:absolute; top:0; width:47px; z-index:4; background-color: #fff;}
 #portal-top .identity a {background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px;  }
 #portal-top .identity a:hover,
 #portal-top .identity a:focus {opacity: 0.9;}
@@ -392,7 +392,20 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a:Hover { }
 
 
-.footer-row {background:#39302e; clear:both; color:#ececec; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; font-weight:500; overflow:auto; padding:24px 20px 58px; }
+.footer-row {
+	background:#39302e; 
+	clear:both; 
+	color:#ececec; 
+	font-family:'Open Sans', Arial, Helvetica, sans-serif; 
+	font-size:15px; 
+	font-weight:500; 
+	overflow:auto; 
+	padding:24px 20px 58px;
+	background-image: url(_images/logo-nyu.svg);
+    background-origin: content-box;
+    background-position: left center;
+    background-repeat: no-repeat; 
+}
 .footer-row #portal-footer {margin:0 auto; max-width:1154px; overflow:visible; position:relative; }
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
 
@@ -708,7 +721,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation ul#primary li a {padding:0 30px; }
 }
 @media screen and (max-width:1120px){
-	#portal-top .identity {left:0; }
+/*	#portal-top .identity {left:0; } */
 	#portal-top h1 {left:37px; }
 	#portal-top #main-navigation ul#primary li a {font-size:12px; padding:0 20px; }
 }
