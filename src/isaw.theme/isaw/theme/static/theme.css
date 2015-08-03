@@ -749,6 +749,7 @@ h2.CVSectionTitle:before {
 @media screen and (max-width:959px){
 	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; }
 
+
 	.section-isaw-home.template-document_view {padding-bottom:0; }
 	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; }
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
@@ -760,8 +761,21 @@ h2.CVSectionTitle:before {
 
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
-	#portal-top h1 {height:52px; left:34px; top:0; width:188px; }
-	#portal-top h1 a {background-size:contain; height:52px; width:188px; }
+	#portal-top h1 {
+		height:52px; 
+		left:34px; 
+		top:0; 
+		width:188px;
+		padding: 6px 0; }
+	#portal-top h1 a {
+		background-size:contain; 
+		height:52px; 
+		width:188px; 
+		margin-top: 0px;
+		width: 290px;
+	    font-size: 17px;
+	    line-height: 20px;
+	}
 	#portal-top .identity,
 	#portal-top .identity a {height:91px; width:24px; }
 	#portal-top .page-title {display:none; }
