@@ -58,15 +58,24 @@ a {transition: all 0.5s ease; }
 	z-index:3;	
 }
 #portal-top h1 a {
-	background-image: url(_images/title-isaw.svg);
+	/* background-image: url(_images/title-isaw.svg); */
 	display:block;
 	height:78px;
 	text-align:left;
-	text-indent:-10000px;
+	/* text-indent:-10000px; */
 	width:350px;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-repeat: no-repeat;
+    background-size: 100%; */
     margin-top: 49px;
+    font-family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: black;
+    font-size: 24px;
+    line-height: 30px;
  } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
