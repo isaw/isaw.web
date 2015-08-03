@@ -401,7 +401,7 @@ fieldset#search-field {text-align:left !important; }
 	font-weight:500; 
 	overflow:auto; 
 	padding:24px 20px 58px;
-	background-image: url(_images/logo-nyu.svg);
+	background-image: url(_images/logo-nyu-inverse.svg);
     background-origin: content-box;
     background-position: left center;
     background-repeat: no-repeat; 
