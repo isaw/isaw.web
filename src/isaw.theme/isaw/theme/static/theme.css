@@ -401,20 +401,32 @@ fieldset#search-field {text-align:left !important; }
 	font-weight:500; 
 	overflow:auto; 
 	padding:24px 20px 58px;
-	background-image: url(_images/logo-nyu-inverse.svg);
-    background-origin: content-box;
-    background-position: left center;
-    background-repeat: no-repeat; 
 }
 .footer-row #portal-footer {margin:0 auto; max-width:1154px; overflow:visible; position:relative; }
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
 
-.footer-row #portal-footer .footer-portlet.contact {border-right:1px solid #6b6462; padding:0 5%; position:absolute; top:0; left:0; width:16%; }
+.footer-row #portal-footer .footer-portlet.contact {
+	border-right:1px solid #6b6462; 
+	padding:0 5%; position:absolute; 
+	top:0; 
+	left:0; 
+	width:16%;
+	background-image: url(_images/logo-nyu-inverse.svg);
+    background-origin: content-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+}
 .footer-row #portal-footer .footer-portlet.support {border-left:1px solid #6b6462; padding:0 5%; position:absolute; top:0; right:0; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(3){display:block; float:left; padding-left:31%; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(4){display:block; float:right; padding-right:31%; width:16%; }
 
 .footer-row #portal-footer h3 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
+.footer-row #portal-footer > div.contact > h3 {
+	display: none;
+}
+.footer-row #portal-footer > div.contact > p {
+	margin-top: 40px;
+}
 .footer-row #portal-footer h3.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:13px 15px; }
 .footer-row #portal-footer h3.support a:hover,
 .footer-row #portal-footer h3.support a:focus {background:#695450; text-decoration: none;}
