@@ -13,8 +13,8 @@ class EmergencyMessage(ViewletBase):
     def message(self):
         registry = getUtility(IRegistry)
         settings = registry.forInterface(IISAWSettings, False)
-        message = getattr(settings, 'emergency_message', '')
+        message = getattr(settings, 'emergency_message', u'')
         closed = self.request.cookies.get("isaw-emergency-read", None)
-        if closed:
-            message = ''
+        if not message or closed:
+            message = u''
         return message.strip()
