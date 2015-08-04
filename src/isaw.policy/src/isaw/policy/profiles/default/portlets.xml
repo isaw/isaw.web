@@ -19,13 +19,7 @@
     <property name="allowed_types">
       <element>Document</element>
       <element>Event</element>
-      <element>Exhibition</element>
-      <element>General</element>
-      <element>Lecture</element>
       <element>News Item</element>
-      <element>Performance</element>
-      <element>Seminar</element>
-      <element>Sponsored</element>
     </property>
     <property name="portlet_title">Related Items</property>
     <property name="display_description">True</property>
