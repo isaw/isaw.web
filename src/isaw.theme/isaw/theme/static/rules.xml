@@ -62,6 +62,9 @@
     <copy css:theme="#site-title a"
           css:content="a#portal-logo"
           attributes="href accesskey title"/>
+    <replace css:theme-children="#site-title a">
+      <xsl:value-of select="//a[@id='portal-logo']/@title" />
+    </replace>
     
     <!-- Header -->
     <replace css:theme-children="#main-navigation #secondary"
