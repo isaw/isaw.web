@@ -189,4 +189,14 @@
       import_steps="plone.app.registry controlpanel"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="17"
+      destination="18"
+      title="Update skin ordering"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins"
+      />
+
 </configure>
