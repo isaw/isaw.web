@@ -1,0 +1,36 @@
+Moving a production snapshot to development server
+==================================================
+
+In production
+-------------
+
+- Copy Data.fs to development server.
+- tar/gzip blobstorage and copy to development server.
+
+In development
+--------------
+
+- From ZMI, export isaw-home and home-slides.
+- Change directory to /srv/isaw.web.
+- Stop all supervisor processes (bin/supervisorctl stop all).
+- Copy old Data.fs (var/filestorage/Data.fs) to Data.fs.old.
+- Move blobstorage (var/blobstorage) to blobstorage.old.
+- Move Data.fs from production to filestorage directory.
+- Move blobstorage.tgz from production to var directory and untar/ungzip.
+- Make sure user.group for Data.fs and blobstorage is set to plone.jazkarta.
+- Add isaw.events to cfg/sources.cfg and cfg/base.cfg.
+- Run buildout (bin/buildout -N).
+- Start supervisor processes (bin/supervisorctl start all).
+- Browse to /isaw/portal_skins/custom/manage_main and delete everything there.
+- Browse to /isaw/portal_view_customizations/manage_main and delete everything.
+- Browse to /isaw/events/manage_interfaces and remove isaw.events interfaces.
+- Browse to /isaw/prefs_install_products_form and uninstall isaw.events.
+- From the same place uninstall Dropdown Menu and collective.navigationtoggle.
+- Browse to /isaw/plone-upgrade and run Plone upgrade steps.
+- From the same place, run upgrade steps for isaw.policy and isaw.theme.
+- Browse to /isaw/events/selectViewTemplate?templateId=event-listing
+- From ZMI, remove isaw-home. Import isaw-home and home-slides from FS.
+- Stop all supervisor processes (bin/supervisorctl stop all).
+- Remove isaw.events from cfg/sources.cfg and cfg/base.cfg.
+- Run buildout (bin/buildout -N).
+- Start supervisor processes (bin/supervisorctl start all).
