@@ -97,7 +97,7 @@ class TiledListingView(BrowserView, TileDetailsMixin):
         if b_size is None:
             b_size = self.batch_size
         if b_start is None:
-            b_start = (getattr(self, 'page', 1) - 1) * b_size + 1
+            b_start = (getattr(self, 'page', 1) - 1) * b_size
 
         if query is None:
             query = {}

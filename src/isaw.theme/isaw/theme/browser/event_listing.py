@@ -33,7 +33,7 @@ class EventListingView(TiledListingView):
         if b_size == None:
             b_size = self.batch_size
         if b_start == None:
-            b_start = (getattr(self, 'page', 1) - 1) * b_size + 1
+            b_start = (getattr(self, 'page', 1) - 1) * b_size
         if self.context.portal_type == 'Folder':
             content_filter = {
                 'b_start': b_start,
@@ -52,7 +52,7 @@ class EventListingView(TiledListingView):
                 self.request['b_start'] = b_start
             items = self.context.queryCatalog(self.request, True, b_size)
         elif self.context.portal_type == 'Collection':
-            items = self.context.results(True, b_start, b_size)
+            items = self.context.results(True, b_start=b_start, b_size=b_size)
         else:
             items = []
         return items
