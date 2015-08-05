@@ -20,5 +20,9 @@
  </hidden>
  <hidden manager="plone.belowcontent" skinname="NYU ISAW Theme">
   <viewlet name="plone.belowcontenttitle.keywords"/>
+  <viewlet name="plone.comments"/>
+ </hidden>
+ <hidden manager="plone.belowcontenttitle" skinname="NYU ISAW Theme">
+  <viewlet name="plone.belowcontenttitle.documentbyline"/>
  </hidden>
 </object>

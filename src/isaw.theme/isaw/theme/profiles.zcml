@@ -199,4 +199,14 @@
       import_steps="skins"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="18"
+      destination="19"
+      title="Update skin ordering"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets"
+      />
+
 </configure>
