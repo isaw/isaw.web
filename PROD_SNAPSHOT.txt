@@ -10,7 +10,7 @@ In production
 In development
 --------------
 
-- From ZMI, export isaw-home and home-slides.
+- From ZMI, export isaw-home and home-slides to somewhere on the file system where you can get them back later (irrelevant if you don't have an existing database that's been customized with same, e.g. on a local dev environment).
 - Change directory to /srv/isaw.web.
 - Stop all supervisor processes (bin/supervisorctl stop all).
 - Copy old Data.fs (var/filestorage/Data.fs) to Data.fs.old.
