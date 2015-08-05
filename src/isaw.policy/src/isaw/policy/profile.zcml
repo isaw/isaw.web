@@ -162,4 +162,14 @@
       import_steps="catalog"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="16"
+      destination="17"
+      title="Add rsvp column"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="propertiestool"
+      />
+
 </configure>

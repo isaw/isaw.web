@@ -58,6 +58,10 @@
               type="string">checkout_workflow_policy</property>
     <property name="displayPublicationDateInByline"
               type="boolean">True</property>
+    <property name="disable_folder_sections"
+              type="boolean">False</property>
+    <property name="disable_nonfolderish_sections"
+              type="boolean">True</property>
   </object>
   <object name="cli_properties" meta_type="Plone Property Sheet">
     <!-- some properties are set in setuphandlers -->
