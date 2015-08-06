@@ -49,5 +49,6 @@ ISAW steps:
   - Sort on: Event start date
 - Set display on collection to Event Listing
 - Use "Manage Portlets" link to add a calendar portlet to the right column
+- Set state of "Event Home" to published (submit for publication -> publish)
 - Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
 - Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
