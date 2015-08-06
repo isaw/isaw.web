@@ -34,7 +34,6 @@ Jazkarta steps:
 - From the same place uninstall Dropdown Menu and collective.navigationtoggle.
 - Browse to /isaw/plone-upgrade and run Plone upgrade steps.
 - From the same place, run upgrade steps for isaw.policy and isaw.theme.
-- Browse to /isaw/events/selectViewTemplate?templateId=event-listing
 - From ZMI, remove isaw-home. Import isaw-home and home-slides from FS.
 - Stop all supervisor processes (bin/supervisorctl stop all).
 - Remove isaw.events from cfg/sources.cfg and cfg/base.cfg.
@@ -43,4 +42,12 @@ Jazkarta steps:
 
 ISAW steps:
 
-
+- Browse to /events and add a Collection "Event Home" with criteria set to:
+  - Type: Event
+  - Event start date: After Today
+  - Review State: Published Internally, Internally Published, Published Externally
+  - Sort on: Event start date
+- Set display on collection to Event Listing
+- Use "Manage Portlets" link to add a calendar portlet to the right column
+- Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
+- Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
