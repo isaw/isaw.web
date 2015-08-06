@@ -203,7 +203,7 @@
       sortkey="10"
       source="18"
       destination="19"
-      title="Update skin ordering"
+      title="Update vewlet placement"
       description=""
       profile="isaw.theme:default"
       import_steps="viewlets"
