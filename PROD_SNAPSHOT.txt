@@ -66,8 +66,14 @@ On development server
     + each year subfolder under /people/alumni
 
 *Fix up blog listings*
-
-(main, library)
+- Browse to /news
+    + Select "display" --> "Set content item as default view" and then select "ISAW News Blog" from the listing (it is a collection with the id "collector") -- may already be set
+    + Select "display" --> "Item display" --> "Tiled listing"
+    + Open each of the first two or three pages full of news items listed and crop the image for "tiled"
+- Browse to /library/blog
+    + Select "display" --> "Set content item as default view" and then select "ISAW Library Blog" from the listing (it is a collection with the id "collector") -- may already be set
+    + Select "display" --> "Item display" --> "Tiled listing"
+    + Open each of the first two or three pages full of news items listed and crop the image for "tiled"
 
 *Check main navigation*
 
