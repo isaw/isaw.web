@@ -449,7 +449,7 @@ fieldset#search-field {text-align:left !important; }
 .footer-row #portal-footer ul li a {font-size:12px; font-weight:bold; letter-spacing:.8px; line-height:100%; text-transform:uppercase; }
 
 .userrole-authenticated .footer-row {height:300px; }
-.userrole-authenticated #portal-columns {min-height:450px; }
+.userrole-authenticated #portal-columns #column-contents {min-height:450px; }
 
 /* blog page */
 #viewlet-above-content { }
