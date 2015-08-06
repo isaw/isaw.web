@@ -14,9 +14,9 @@ On development server
 
 **Jazkarta steps:**
 
-- From ZMI, export isaw-home and home-slides to somewhere on the file system where you can get them back 
-  later (irrelevant if you don't have an existing database that's been customized with same, e.g. on a 
-  local dev environment).
+- From ZMI, export isaw-home and home-slides to somewhere on the file system
+  where you can get them back later (irrelevant if you don't have an existing
+  database that's been customized with same, e.g. on a local dev environment).
 - Change directory to /srv/isaw.web.
 - Stop all supervisor processes (bin/supervisorctl stop all).
 - Copy old Data.fs (var/filestorage/Data.fs) to Data.fs.old.
@@ -24,21 +24,12 @@ On development server
 - Move Data.fs from production to filestorage directory.
 - Move blobstorage.tgz from production to var directory and untar/ungzip.
 - Make sure user.group for Data.fs and blobstorage is set to plone.jazkarta.
-- Add isaw.events to cfg/sources.cfg and cfg/base.cfg.
-- Run buildout (bin/buildout -N).
+- Run buildout (bin/buildout -N -c production.cfg).
 - Start supervisor processes (bin/supervisorctl start all).
-- Browse to /isaw/portal_skins/custom/manage_main and delete everything there.
-- Browse to /isaw/portal_view_customizations/manage_main and delete everything.
-- Browse to /isaw/events/manage_interfaces and remove isaw.events interfaces.
-- Browse to /isaw/prefs_install_products_form and uninstall isaw.events.
+- Browse to /isaw/prefs_install_products_form
 - From the same place uninstall Dropdown Menu and collective.navigationtoggle.
-- Browse to /isaw/plone-upgrade and run Plone upgrade steps.
 - From the same place, run upgrade steps for isaw.policy and isaw.theme.
 - From ZMI, remove isaw-home. Import isaw-home and home-slides from FS.
-- Stop all supervisor processes (bin/supervisorctl stop all).
-- Remove isaw.events from cfg/sources.cfg and cfg/base.cfg.
-- Run buildout (bin/buildout -N).
-- Start supervisor processes (bin/supervisorctl start all).
 
 **ISAW steps:**
 
