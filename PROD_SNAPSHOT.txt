@@ -26,10 +26,13 @@ On development server
 - Make sure user.group for Data.fs and blobstorage is set to plone.jazkarta.
 - Run buildout (bin/buildout -N -c production.cfg).
 - Start supervisor processes (bin/supervisorctl start all).
-- Browse to /isaw/prefs_install_products_form
+- Make sure there are no customizations in /isaw/portal_skins/custom.
+- Browse to /isaw/prefs_install_products_form.
+- Make sure collective.easyslider is installed.
 - From the same place uninstall Dropdown Menu and collective.navigationtoggle.
 - From the same place, run upgrade steps for isaw.policy and isaw.theme.
 - From ZMI, remove isaw-home. Import isaw-home and home-slides from FS.
+- Browse to /isaw/events/selectViewTemplate?templateId=event-listing
 
 **ISAW steps:**
 
