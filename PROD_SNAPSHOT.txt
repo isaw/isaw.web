@@ -12,7 +12,7 @@ On production server
 On development server
 ---------------------
 
-Jazkarta steps:
+**Jazkarta steps:**
 
 - From ZMI, export isaw-home and home-slides to somewhere on the file system where you can get them back 
   later (irrelevant if you don't have an existing database that's been customized with same, e.g. on a 
@@ -40,7 +40,9 @@ Jazkarta steps:
 - Run buildout (bin/buildout -N).
 - Start supervisor processes (bin/supervisorctl start all).
 
-ISAW steps:
+**ISAW steps:**
+
+*Fix up events listing*
 
 - Browse to /events and add a Collection "Event Home" with criteria set to:
   - Type: Event
@@ -52,3 +54,30 @@ ISAW steps:
 - Set state of "Event Home" to published (submit for publication -> publish)
 - Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
 - Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
+
+*Fix up people listings*
+
+- Browse to /people/faculty and change "Display" to "People listing"
+- Do the same for:
+    + /people/staff
+    + /people/visiting-research-scholars
+    + /people/students
+    + /people/research-associates/
+    + each year subfolder under /people/alumni
+
+*Fix up blog listings*
+
+(main, library)
+
+*Check main navigation*
+
+- Secondary (top bar) should be: "About ISAW", "People", "Library", "Resources & Publications", "Research", "News", [[search icon]]
+- Primary (secondary bar) should be: "Graduate Studies", "Visiting Scholars", "Events", "Exhibitions"
+
+*Fix up secondary navigation (left nav portlets)*
+
+- Visit the following sectionss of the site and make indicated adjustments:
+    + /about/@@manage-portlets : remove the "About ISAW" (right nav) portlet
+    + 
+
+*Get rid of evil featured item portlet FOREVER!*
