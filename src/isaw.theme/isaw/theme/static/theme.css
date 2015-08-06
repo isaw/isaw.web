@@ -55,7 +55,7 @@ a {transition: all 0.5s ease; }
 	margin:0;
 	padding: 9px;
 	position:absolute;
-	z-index:3;	
+	z-index:3;
 }
 #portal-top h1 a {
 	/* background-image: url(_images/title-isaw.svg); */
@@ -79,7 +79,7 @@ a {transition: all 0.5s ease; }
  } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
-#portal-top .identity {display:block; height:179px; left:0px; position:absolute; top:0; width:47px; z-index:4; background-color: #fff;}
+#portal-top .identity {display:block; height:179px; left:0px; position:absolute; top:0; width:47px; z-index:6; background-color: #fff;}
 #portal-top .identity a {background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px;  }
 #portal-top .identity a:hover,
 #portal-top .identity a:focus {opacity: 0.9;}
@@ -94,7 +94,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation ul#primary li#portaltab-visiting-scholars a {background:#9d3a20; }
 #portal-top #main-navigation ul#primary li#portaltab-exhibitions a {background:#9e6a4a; }
 #portal-top #main-navigation ul#primary li#portaltab-events a {background:#66232b; }
-#portal-top #main-navigation ul#secondary {background-color: rgba(221,217,214,1); display:block; height:49px; margin:0; position:absolute; right:0; text-align:right; top:0; width:100%; z-index:2; }
+#portal-top #main-navigation ul#secondary {background-color: rgba(221,217,214,1); display:block; height:49px; margin:0; position:absolute; right:0; text-align:right; top:0; width:100%; z-index: 4; }
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
 #portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
 #portal-top #main-navigation ul#secondary li a:hover,
@@ -193,7 +193,7 @@ fieldset#search-field {text-align:left !important; }
 .section-isaw-home #portal-columns .cycle-pager span:Hover,
 .section-isaw-home #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
-#portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 104px; text-transform:uppercase; }
+#portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
 
 .section-graduate-studies #portal-breadcrumbs {background:#6d6054; }
 .section-visiting-scholars #portal-breadcrumbs {background:#9d3a20; }
@@ -448,7 +448,8 @@ fieldset#search-field {text-align:left !important; }
 .footer-row #portal-footer ul li {margin:0 0 8px; display: block;}
 .footer-row #portal-footer ul li a {font-size:12px; font-weight:bold; letter-spacing:.8px; line-height:100%; text-transform:uppercase; }
 
-.userrole-authenticated .footer-row {height:400px; }
+.userrole-authenticated .footer-row {height:300px; }
+.userrole-authenticated #portal-columns {min-height:450px; }
 
 /* blog page */
 #viewlet-above-content { }
