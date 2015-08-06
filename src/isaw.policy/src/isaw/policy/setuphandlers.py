@@ -1,5 +1,5 @@
 import transaction
-from Acquisition import aq_parent
+from Acquisition import aq_parent, aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 
@@ -112,3 +112,47 @@ def migrate_events(context):
         remove_and_rename(general)
 
     properties.site_properties.enable_link_integrity_checks = old_check
+
+
+RENAME = {
+    'visiting-scholar-program': {'id': 'visiting-scholars',
+                                 'title': 'Visiting Scholars'},
+    'graduate-program': {'id': 'graduate-studies',
+                         'title': 'Graduate Studies'},
+}
+RETAIN = set((
+    'events',
+    'exhibitions',
+    'visiting-scholars',
+    'graduate-studies',
+))
+
+
+def setup_portal_tabs(context):
+    if hasattr(context, 'getSite'):
+        if context.readDataFile('isaw_policy.txt') is None:
+            return
+        portal = context.getSite()
+    else:
+        portal = getToolByName(context, 'portal_url').getPortalObject()
+
+    ids = set(portal.objectIds())
+    for cid in RENAME:
+        if cid in ids:
+            new_info = RENAME[cid]
+            new_id = new_info['id']
+            portal.manage_renameObject(cid, new_id)
+            transaction.savepoint(optimistic=True)
+            new_obj = portal[new_id]
+            new_obj.setTitle(new_info['title'])
+            new_obj.reindexObject()
+
+    ids = portal.contentIds()
+    for cid in ids:
+        if cid in ids:
+            if cid not in RETAIN:
+                obj = portal[cid]
+                if not hasattr(aq_base(obj), 'setExcludeFromNav'):
+                    continue
+                obj.setExcludeFromNav(True)
+                obj.reindexObject()

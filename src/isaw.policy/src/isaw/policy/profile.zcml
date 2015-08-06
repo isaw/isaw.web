@@ -172,4 +172,14 @@
       import_steps="propertiestool"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="17"
+      destination="18"
+      title="Update portal tabs"
+      description=""
+      profile="isaw.policy:default"
+      handler=".setuphandlers.setup_portal_tabs"
+      />
+
 </configure>
