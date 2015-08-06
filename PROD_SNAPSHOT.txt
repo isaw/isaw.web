@@ -3,8 +3,8 @@ Moving a production snapshot to development server
 
 Steps to follow for testing all code for upgrade to July 2015 theme, with a snapshot of the production database.
 
-In production
--------------
+On production server
+--------------------
 
 - Copy Data.fs to development server.
 - tar/gzip blobstorage and copy to development server.
