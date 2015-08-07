@@ -10,10 +10,10 @@ jQuery(function($) {
             folder.addClass('collapsed');
         }
     });
+    var $slider_containers = $('#slider-container, #slider');
+    var $slides = $('#slider .slide');
+    var $images = $('#slider .slide img');
     function resize_slider() {
-        var $slider_containers = $('#slider-container, #slider');
-        var $slides = $('#slider .slide');
-        var $images = $('#slider .slide img');
         var $slide_list = $('#slider .slider-list');
         var slide_count = $slides.length;
 
@@ -31,13 +31,11 @@ jQuery(function($) {
     // width for scrolling one time only.
     resize_slider();
     $(window).load(resize_slider);
-    
+    $images.load(resize_slider);
     /*capture the search link click and open the drawer*/
     $('#secondary #siteaction-search a').click(function(e){
-	   e.preventDefault(); 
-	   
-	   $('#portal-searchbox').slideToggle()
-	   
+	   e.preventDefault();
+	   $('#portal-searchbox').slideToggle();
     });
     
     /* close aliens invaded message */

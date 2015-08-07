@@ -196,7 +196,7 @@
       title="Update skin ordering"
       description=""
       profile="isaw.theme:default"
-      import_steps="skins"
+      import_steps="skins jsregistry"
       />
 
   <genericsetup:upgradeDepends

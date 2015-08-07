@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
-    <javascript authenticated="False" cacheable="True" compression="safe"
-       conditionalcomment="" cookable="True" enabled="True" expression=""
-       id="isaw.js" inline="False"/>
-    <javascript id="jquery.tools.min.js" remove="True"/>
-    <javascript id="++resource++plone.app.jquerytools.plugins.js" enabled="True"/>
-
     <!-- TinyMCE redux -->
     <javascript compression="safe"
       authenticated="True"
@@ -18,18 +12,17 @@
       insert-after="jquery.tinymce.js"
       />
 
-    <!-- remove obsolete js -->
-    <javascript id="tiny_mce_init.js" remove="True" />
-    <javascript id="tiny_mce_src.js" remove="True" />
-
-    <javascript cacheable="True" compression="none" cookable="True"
-                enabled="True" inline="False"
-                id="++theme++isaw.theme/js/jquery.cycle2.min.js"
-                insert-after="jquery-integration.js"/>
+    <javascript id="++resource++plone.app.jquerytools.plugins.js" enabled="True"/>
 
     <javascript cacheable="True" compression="none" cookable="True"
                 enabled="True" inline="False"
                 id="++theme++isaw.theme/js/isaw.js"
-                insert-after="++theme++isaw.theme/js/jquery.cycle2.min.js"/>
+                insert-after="jquery-integration.js"/>
 
+    <!-- remove obsolete js -->
+    <javascript id="isaw.js" remove="True"/>
+    <javascript id="jquery.tools.min.js" remove="True"/>
+    <javascript id="tiny_mce_init.js" remove="True" />
+    <javascript id="tiny_mce_src.js" remove="True" />
+    <javascript id="++theme++isaw.theme/js/jquery.cycle2.min.js" remove="True" />
 </object>
