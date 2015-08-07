@@ -502,6 +502,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .section-people #portal-columns .facultyListing .facultyImage {max-height:200px;max-width:200px;overflow:hidden;border:1px solid #e7e3df;padding:0px;margin-right:20px; }
 .section-people #portal-columns .facultyListing .facultyImage a {display:block;height:200px;width:200px; }
 .section-people #portal-columns .facultyListing .facultyImage a img {width: 200px; }
+.section-people #portal-columns .facultyListing .facultyImage span {width: 200px; height: 200px; }
 .section-people #portal-columns .facultyListing .facultyInfo { }
 .section-people #portal-columns .facultyListing .facultyInfo a { }
 .section-people #portal-columns .facultyListing .facultyInfo a h2 {font-size:22px; }
