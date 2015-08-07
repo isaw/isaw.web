@@ -41,6 +41,24 @@ On development server
 - Browse to /@@rules-controlpanel
 - Check the checkbox labeled "Disable globally"
 
+*Fix up secondary navigation*
+
+- Browse to /people/@@manage-portlets and make the following portlet changes:
+    + remove navigation portlet from right portlet slot
+    + add navigation portlet to left portlet slot with the following settings:
+        + title: [[leave blank]]
+        + root node: "People /people"
+        + include top: YES
+        + only show...: NO
+        + start level: 0
+        + nav tree depth: 0
+- Do the same for the following sections (root nodes mutatis mutandis):
+    + /about
+    + /library
+    + /graduate-studies
+    + /visiting-scholars
+    + /support-isaw
+
 *Fix up events listing*
 
 NB: past events have speaker and affiliation information in the summary (description) field instead of in the fields designated for such content. This will be a later manual cleanup step **if** we want archived events to match new formatting. 
@@ -62,15 +80,6 @@ You will probably want to create and publish (temporarily) a couple of test even
 
 *Fix up people listings*
 
-- Browse to /people/@@manage-portlets and make the following portlet changes:
-    + remove navigation portlet from right portlet slot
-    + add navigation portlet to left portlet slot with the following settings:
-        + title: [[leave blank]]
-        + root node: "People /people"
-        + include top: YES
-        + only show...: NO
-        + start level: 0
-        + nav tree depth: 0
 - Browse to /people/faculty and change "Display" to "People listing"
 - Do the same for:
     + /people/staff
@@ -113,6 +122,8 @@ You will probably want to create and publish (temporarily) a couple of test even
             * nav tree depth: 0
 
 *Get rid of evil featured item portlet FOREVER!*
+
+*check workflow and states for guide*
 
 *GO FULLY LIVE: Turn on email notifications now that migration is complete*
 
