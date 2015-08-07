@@ -77,7 +77,7 @@
       <element value="blogtile 370:170"/>
       <element value="preview 325:325"/>
       <element value="featured 300:300"/>
-      <element value="staff 200:200"/>
+      <element value="staff 200:200" remove="True"/>
       <element value="mini 200:200"/>
       <element value="thumb 128:128"/>
       <element value="tile 64:64"/>

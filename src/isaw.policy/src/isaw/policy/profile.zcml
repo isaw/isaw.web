@@ -182,4 +182,14 @@
       handler=".setuphandlers.setup_portal_tabs"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="18"
+      destination="19"
+      title="Remove staff image scale"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="propertiestool"
+      />
+
 </configure>
