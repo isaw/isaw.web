@@ -36,7 +36,14 @@ On development server
 
 **ISAW steps:**
 
+*Turn off email notifications until migration complete*
+
+- Browse to /@@rules-controlpanel
+- Check the checkbox labeled "Disable globally"
+
 *Fix up events listing*
+
+NB: past events have speaker and affiliation information in the summary (description) field instead of in the fields designated for such content. This will be a later manual cleanup step **if** we want archived events to match new formatting. 
 
 - Browse to /events and add a Collection "Event Home" with criteria set to:
   - Type: Event
