@@ -62,13 +62,27 @@ You will probably want to create and publish (temporarily) a couple of test even
 
 *Fix up people listings*
 
+- Browse to /people/@@manage-portlets and make the following portlet changes:
+    + remove navigation portlet from right portlet slot
+    + add navigation portlet to left portlet slot with the following settings:
+        + title: [[leave blank]]
+        + root node: "People /people"
+        + include top: YES
+        + only show...: NO
+        + start level: 0
+        + nav tree depth: 0
 - Browse to /people/faculty and change "Display" to "People listing"
 - Do the same for:
     + /people/staff
     + /people/visiting-research-scholars
     + /people/students
     + /people/research-associates/
-    + each year subfolder under /people/alumni
+    + each of the following subfolders under /people/alumni:
+        * Scholars 2013-2014
+        * Scholars 2012-2013
+        * Scholars 2011-2012
+        * Scholars 2010-2011
+- Make sure the other subfolders under /people/alumni are set to "display" -> "folder_listing"
 
 *Fix up blog listings*
 - Browse to /news
