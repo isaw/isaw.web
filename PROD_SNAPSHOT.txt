@@ -58,6 +58,7 @@ You will probably want to create and publish (temporarily) a couple of test even
 - Set state of "Event Home" to published (submit for publication -> publish)
 - Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
 - Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
+- Delete any test events you created
 
 *Fix up people listings*
 
