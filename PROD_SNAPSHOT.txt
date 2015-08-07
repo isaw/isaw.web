@@ -95,3 +95,11 @@ NB: past events have speaker and affiliation information in the summary (descrip
             * nav tree depth: 0
 
 *Get rid of evil featured item portlet FOREVER!*
+
+*GO FULLY LIVE: Turn on email notifications now that migration is complete*
+
+NB: This the very final step. After this, senior leadership will start getting email notifications again on item submit etc.
+
+- Browse to /@@rules-controlpanel
+- Unheck the checkbox labeled "Disable globally"
+
