@@ -379,7 +379,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns.three #portal-column-second {display:block; float:right; padding:0; width:21%; }
 #portal-columns #portal-column-second dl {margin:0; }
 #portal-columns #portal-column-second dl dd {margin:0; }
-#portal-columns #portal-column-second dl dd img {display:block; margin:0 auto; max-width:100%; }
+#portal-columns #portal-column-second dl dd img {display:block; margin:0 auto; max-width:100%; height: auto; }
 #portal-columns #portal-column-second dl dd .caption {font-size:14px; line-height:140%; margin:16px 10px; }
 
 #portal-columns #portal-column-second dl.event-details { }

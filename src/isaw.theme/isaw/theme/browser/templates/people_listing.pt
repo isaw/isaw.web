@@ -18,7 +18,7 @@
                            person python:context[person_id];
                            person_url person/absolute_url;
                            has_image python:getattr(person, 'Image', False);
-                           image_url string:${person_url}/@@images/Image/staff;
+                           image_url string:${person_url}/@@images/Image/mini;
                            ">
             <a tal:attributes="href person_url">
               <span class="facultyImage">
