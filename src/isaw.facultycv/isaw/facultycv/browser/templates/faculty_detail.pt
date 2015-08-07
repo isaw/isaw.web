@@ -19,7 +19,7 @@
              tal:define="person_email context/Email|nothing;
                          person_url context/absolute_url;
                          has_image python:getattr(context, 'Image', False);
-                         image_url string:${person_url}/@@images/Image/staff;">
+                         image_url string:${person_url}/@@images/Image/mini;">
             <div class="ProfileHeader">
                 <div class="ProfileImage" tal:condition="has_image">
                     <img src="" tal:attributes="src image_url" />
