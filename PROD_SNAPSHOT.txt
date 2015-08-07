@@ -45,13 +45,16 @@ On development server
 
 NB: past events have speaker and affiliation information in the summary (description) field instead of in the fields designated for such content. This will be a later manual cleanup step **if** we want archived events to match new formatting. 
 
+You will probably want to create and publish (temporarily) a couple of test events in the /events folder in order to verify that the collection we set up next actually works. Recommend you set one with start date == current date and another sometime in the future.
+
 - Browse to /events and add a Collection "Event Home" with criteria set to:
   - Type: Event
+  - Location: absolute path, /events
   - Event start date: After Today
-  - Review State: Published Internally, Internally Published, Published Externally
+  - Review State: Published Externally
   - Sort on: Event start date
 - Set display on collection to Event Listing
-- Use "Manage Portlets" link to add a calendar portlet to the right column
+- Use "Manage Portlets" link to add a calendar portlet to the right column (you may see two calendar portlets as a result, because it's also presently set on the parent folder)
 - Set state of "Event Home" to published (submit for publication -> publish)
 - Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
 - Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
