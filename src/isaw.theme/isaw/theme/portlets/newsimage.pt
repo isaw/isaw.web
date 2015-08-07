@@ -15,14 +15,15 @@
          tal:condition="ctxt/getImage|nothing">
         <a href="#"
            tal:define="here_url ctxt/@@plone_context_state/object_url;"
-           tal:attributes="href string:$here_url/image/image_view_fullscreen"
+           tal:attributes="href string:${here_url}/image/image_view_fullscreen"
            id="parent-fieldname-image">
-           <img tal:replace="structure python: ctxt.tag(scale='preview', css_class='newsImage')" src="" alt="" />
+           <img class="newsImage"
+                tal:attributes="src string:${here_url}/@@images/image/preview;
+                                alt ctxt/Title|nothing" src="" alt="" />
         </a>
-        <p class="discreet" tal:condition="ctxt/imageCaption|nothing">
-          <metal:field use-macro="python:ctxt.widget('imageCaption', mode='view')">
-          Image Caption
-          </metal:field>
+        <p class="discreet" tal:define="caption ctxt/getImageCaption|nothing"
+           tal:condition="caption">
+           <span tal:content="caption">Caption</span>
         </p>
     </div>
   </dd>
