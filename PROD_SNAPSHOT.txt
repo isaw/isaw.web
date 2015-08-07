@@ -108,7 +108,9 @@ You will probably want to create and publish (temporarily) a couple of test even
 - Secondary (top bar) should be: "About ISAW", "People", "Library", "Resources & Publications", "Research", "News", [[search icon]]
 - Primary (secondary bar) should be: "Graduate Studies", "Visiting Scholars", "Events", "Exhibitions"
 
-*check workflow and states for guide*
+*check workflow and states for /guide and /about/employee*
+
+- Should have placeful workflow configured to "intranet" already
 
 *GO FULLY LIVE: Turn on email notifications now that migration is complete*
 
