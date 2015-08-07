@@ -108,19 +108,6 @@ You will probably want to create and publish (temporarily) a couple of test even
 - Secondary (top bar) should be: "About ISAW", "People", "Library", "Resources & Publications", "Research", "News", [[search icon]]
 - Primary (secondary bar) should be: "Graduate Studies", "Visiting Scholars", "Events", "Exhibitions"
 
-*Fix up secondary navigation (left nav portlets)*
-
-- Visit the following sectionss of the site and make indicated adjustments:
-    + /about/@@manage-portlets : 
-        + remove the "About ISAW" (right nav) portlet
-        + create a navigation portlet in the left slot with the following settings:
-            * title: [[leave blank]]
-            * root node: "About ISAW /about"
-            * include top: YES
-            * only show...: NO
-            * start level: 0
-            * nav tree depth: 0
-
 *Get rid of evil featured item portlet FOREVER!*
 
 *check workflow and states for guide*
