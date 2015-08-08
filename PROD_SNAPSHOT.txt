@@ -33,6 +33,7 @@ On development server
 - From the same place, run upgrade steps for isaw.policy and isaw.theme.
 - From ZMI, remove isaw-home. Import isaw-home and home-slides from FS.
 - Browse to /isaw/events/selectViewTemplate?templateId=event-listing
+- Browse to /isaw/news and unblock content portlets in the container.
 
 **ISAW steps:**
 
