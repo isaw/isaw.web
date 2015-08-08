@@ -37,18 +37,47 @@ On development server
 
 **ISAW steps:**
 
+*Turn off email notifications until migration complete*
+
+- Browse to /@@rules-controlpanel
+- Check the checkbox labeled "Disable globally"
+
+*Fix up secondary navigation*
+
+- Browse to /people/@@manage-portlets and make the following portlet changes:
+    + remove navigation portlet from right portlet slot
+    + add navigation portlet to left portlet slot with the following settings:
+        + title: [[leave blank]]
+        + root node: "People /people"
+        + include top: YES
+        + only show...: NO
+        + start level: 0
+        + nav tree depth: 0
+- Do the same for the following sections (root nodes mutatis mutandis):
+    + /about
+    + /library
+    + /graduate-studies
+    + /visiting-scholars
+    + /support-isaw
+
 *Fix up events listing*
+
+NB: past events have speaker and affiliation information in the summary (description) field instead of in the fields designated for such content. This will be a later manual cleanup step **if** we want archived events to match new formatting. 
+
+You will probably want to create and publish (temporarily) a couple of test events in the /events folder in order to verify that the collection we set up next actually works. Recommend you set one with start date == current date and another sometime in the future.
 
 - Browse to /events and add a Collection "Event Home" with criteria set to:
   - Type: Event
+  - Location: absolute path, /events
   - Event start date: After Today
-  - Review State: Published Internally, Internally Published, Published Externally
+  - Review State: Published Externally
   - Sort on: Event start date
 - Set display on collection to Event Listing
-- Use "Manage Portlets" link to add a calendar portlet to the right column
+- Use "Manage Portlets" link to add a calendar portlet to the right column (you may see two calendar portlets as a result, because it's also presently set on the parent folder)
 - Set state of "Event Home" to published (submit for publication -> publish)
 - Browse to /events and use "Manage Portlets" to disable the calendar portlet in the right column.
 - Return to /events and use the Display menu to "Select content item as default view" and select "Event Home"
+- Delete any test events you created
 
 *Fix up people listings*
 
@@ -58,7 +87,12 @@ On development server
     + /people/visiting-research-scholars
     + /people/students
     + /people/research-associates/
-    + each year subfolder under /people/alumni
+    + each of the following subfolders under /people/alumni:
+        * Scholars 2013-2014
+        * Scholars 2012-2013
+        * Scholars 2011-2012
+        * Scholars 2010-2011
+- Make sure the other subfolders under /people/alumni are set to "display" -> "folder_listing"
 
 *Fix up blog listings*
 - Browse to /news
@@ -75,17 +109,14 @@ On development server
 - Secondary (top bar) should be: "About ISAW", "People", "Library", "Resources & Publications", "Research", "News", [[search icon]]
 - Primary (secondary bar) should be: "Graduate Studies", "Visiting Scholars", "Events", "Exhibitions"
 
-*Fix up secondary navigation (left nav portlets)*
+*check workflow and states for /guide and /about/employee*
 
-- Visit the following sectionss of the site and make indicated adjustments:
-    + /about/@@manage-portlets : 
-        + remove the "About ISAW" (right nav) portlet
-        + create a navigation portlet in the left slot with the following settings:
-            * title: [[leave blank]]
-            * root node: "About ISAW /about"
-            * include top: YES
-            * only show...: NO
-            * start level: 0
-            * nav tree depth: 0
+- Should have placeful workflow configured to "intranet" already
 
-*Get rid of evil featured item portlet FOREVER!*
+*GO FULLY LIVE: Turn on email notifications now that migration is complete*
+
+NB: This the very final step. After this, senior leadership will start getting email notifications again on item submit etc.
+
+- Browse to /@@rules-controlpanel
+- Unheck the checkbox labeled "Disable globally"
+
