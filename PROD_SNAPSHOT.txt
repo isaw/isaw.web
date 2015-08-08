@@ -113,6 +113,10 @@ You will probably want to create and publish (temporarily) a couple of test even
 
 - Should have placeful workflow configured to "intranet" already
 
+*Update home page overlay text*
+
+- Grab and style appropriate bits and pieces from news (for the second slide) and events (for the third slide), if any so that we are not out of date on the home page
+
 *GO FULLY LIVE: Turn on email notifications now that migration is complete*
 
 NB: This the very final step. After this, senior leadership will start getting email notifications again on item submit etc.
