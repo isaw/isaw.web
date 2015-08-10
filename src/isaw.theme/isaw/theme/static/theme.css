@@ -899,6 +899,21 @@ h2.CVSectionTitle:before {
 
 }
 
+#content ul.scales {
+    max-height: 1000px;
+    height: auto;
+    overflow-y: scroll;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #333;
+}
+
+#content ul.scales li {
+    width: 200px;
+    height: 225px;
+    overflow: hidden;
+    float: left;
+    max-height: 180px;
+}
 
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
