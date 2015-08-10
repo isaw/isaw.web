@@ -219,6 +219,8 @@
   <object name="plone_setup" meta_type="CMF Action" i18n:domain="plone">
   </object>
   <object name="login" meta_type="CMF Action" i18n:domain="plone">
+   <property name="visible">True</property>
+  </object>
   </object>
   <object name="undo" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">False</property>
