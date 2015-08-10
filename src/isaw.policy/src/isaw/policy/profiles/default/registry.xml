@@ -104,6 +104,7 @@
       <element>Lecture</element>
       <element>Link</element>
       <element>Document</element>
+      <element>News Item</element>
       <element>Performance</element>
       <element>Plone Site</element>
       <element>profile</element>

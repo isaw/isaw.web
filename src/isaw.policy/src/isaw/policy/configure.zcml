@@ -29,4 +29,17 @@
       permission="zope2.View"
       />
 
+  <adapter
+      factory=".purging.ImagePurgePaths"
+      name="isaw.policy.baseimage" />
+
+  <adapter
+      for="Products.ATContentTypes.interfaces.IATNewsItem"
+      factory=".purging.ImagePurgePaths"
+      name="isaw.policy.baseimage" />
+
+  <adapter
+      factory=".purging.LeadimagePurgePaths"
+      name="isaw.policy.leadimage" />
+
 </configure>
