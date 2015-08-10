@@ -108,6 +108,7 @@ You will probably want to create and publish (temporarily) a couple of test even
 
 - Secondary (top bar) should be: "About ISAW", "People", "Library", "Resources & Publications", "Research", "News", [[search icon]]
 - Primary (secondary bar) should be: "Graduate Studies", "Visiting Scholars", "Events", "Exhibitions"
+- Footer should include contact info on the left under NYU logo, hours in the center (corrected), and "Support ISAW", "Jobs at ISAW" and "Login" on the right.
 
 *check workflow and states for /guide and /about/employee*
 
