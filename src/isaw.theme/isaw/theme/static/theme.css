@@ -422,6 +422,7 @@ fieldset#search-field {text-align:left !important; }
 	font-weight:500; 
 	overflow:auto; 
 	padding:24px 20px 58px;
+    height: 6.5em;
 }
 .footer-row #portal-footer {margin:0 auto; max-width:1154px; overflow:visible; position:relative; }
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
