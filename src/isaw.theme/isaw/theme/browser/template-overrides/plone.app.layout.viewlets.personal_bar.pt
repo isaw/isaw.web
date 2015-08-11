@@ -4,12 +4,11 @@
 <h5 class="hiddenStructure" i18n:translate="heading_personal_tools">Personal tools</h5>
 
 <dl class="actionMenu deactivated" id="portal-personaltools"
-    tal:condition="python:view.user_actions and not view.anonymous">
-  <tal:block condition="not: view/anonymous"> 
+    tal:condition="python:view.user_actions">
   <dt class="actionMenuHeader">
     <a id="user-name"
-       tal:attributes="href view/homelink_url"
-       tal:content="view/user_name">
+       tal:attributes="href view/homelink_url|nothing"
+       tal:content="view/user_name|nothing">
         John
     </a>
   </dt>
@@ -26,26 +25,10 @@
         </li>
     </ul>
   </dd>
-  </tal:block>
 </dl>
 
-<dl class="actionMenu deactivated" id="portal-personaltools"
-    tal:condition="view/anonymous">
-  <dt id="anon-personalbar">
-    <tal:actions repeat="action view/user_actions">
-        <a href=""
-           tal:attributes="href action/url"
-           tal:content="action/title"
-           i18n:translate="">
-            action title
-        </a>
-    </tal:actions>
-  </dt>
-</dl>
-
-<a id="support-link" href="" tal:attributes="href string:${context/portal_url}/support-isaw">Support ISAW</a>
 <ul id="header-links">
-    <li><a href="" tal:attributes="href string:${context/portal_url}/jobs">Jobs at ISAW</a></li>
+  <li><a id="support-link" href="" tal:attributes="href string:${context/portal_url}/support-isaw">Support ISAW</a></li>
 </ul>
 
 </div>
