@@ -192,4 +192,14 @@
       import_steps="propertiestool"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="19"
+      destination="20"
+      title="Update user actions"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="actions"
+      />
+
 </configure>

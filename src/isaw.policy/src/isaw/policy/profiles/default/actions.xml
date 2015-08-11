@@ -172,13 +172,24 @@
    <property name="icon_expr"></property>
    <property name="available_expr"></property>
    <property name="permissions"/>
-   <property name="visible">True</property>
+   <property name="visible">False</property>
   </object>
-  <object name="careers" meta_type="CMF Action">
+  <object name="careers" insert-before="*" meta_type="CMF Action">
    <property name="title">Careers at ISAW</property>
    <property name="description"></property>
    <property
       name="url_expr">string:${globals_view/navigationRootUrl}/jobs</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="newsrss" insert-after="careers" meta_type="CMF Action">
+   <property name="title">News RSS</property>
+   <property name="description"></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/news/RSS</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
    <property name="available_expr"></property>
@@ -202,9 +213,7 @@
   <object name="dashboard" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">False</property>
   </object>
-  <object name="preferences" meta_type="CMF Action" i18n:domain="plone">
-  </object>
-  <object name="information" meta_type="CMF Action" i18n:domain="plone">
+  <object name="information" insert-before="preferences" meta_type="CMF Action" i18n:domain="plone">
    <property name="title" i18n:translate="">Personal Information</property>
    <property name="description" i18n:translate=""></property>
    <property name="url_expr">string:${globals_view/navigationRootUrl}/@@personal-information</property>
@@ -216,11 +225,9 @@
    </property>
    <property name="visible">True</property>
   </object>
+  <object name="preferences" meta_type="CMF Action" i18n:domain="plone">
+  </object>
   <object name="plone_setup" meta_type="CMF Action" i18n:domain="plone">
-  </object>
-  <object name="login" meta_type="CMF Action" i18n:domain="plone">
-   <property name="visible">True</property>
-  </object>
   </object>
   <object name="undo" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">False</property>
@@ -228,22 +235,14 @@
   <object name="review-comments" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">True</property>
   </object>
-  <object name="logout" meta_type="CMF Action" i18n:domain="plone">
+  <object name="login" insert-after="plone_setup" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">True</property>
   </object>
-  <object name="join" meta_type="CMF Action" i18n:domain="plone">
+  <object name="logout" insert-after="login" meta_type="CMF Action" i18n:domain="plone">
+   <property name="visible">True</property>
+  </object>
+  <object name="join" insert-after="logout" meta_type="CMF Action" i18n:domain="plone">
    <property name="visible">False</property>
-  </object>
-  <object name="newsrss" meta_type="CMF Action">
-   <property name="title">News RSS</property>
-   <property name="description"></property>
-   <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/news/RSS</property>
-   <property name="link_target"></property>
-   <property name="icon_expr"></property>
-   <property name="available_expr"></property>
-   <property name="permissions"/>
-   <property name="visible">True</property>
   </object>
  </object>
  <object name="object" meta_type="CMF Action Category">
