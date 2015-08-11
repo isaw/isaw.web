@@ -88,10 +88,7 @@
              css:content-children="a#support-link" />
     
     <replace css:theme-children="#footer-support ul"
-             css:content="#header-links li" />
-    
-    <after css:theme-children="#footer-support ul"
-           css:content="#portal-personaltools ul li" />
+             css:content="#portal-personaltools ul li" />
     
     <!-- Global nav -->
 
