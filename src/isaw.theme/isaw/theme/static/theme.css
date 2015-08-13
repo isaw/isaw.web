@@ -228,6 +228,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-column-content {display:block; float:left; padding:0; width:71%;}
 
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:60px 20px 80px; }
+.template-usergroup-userprefs #portal-columns #column-contents {overflow: visible; }
 #portal-columns h1, #content h1 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
 #portal-columns h2, #content h2 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:30px; font-weight:400; letter-spacing:0.5px; line-height:100%;}
 #portal-columns h3, #content h3 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%;}
