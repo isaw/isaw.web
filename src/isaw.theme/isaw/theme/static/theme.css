@@ -170,7 +170,7 @@ fieldset#search-field {text-align:left !important; }
 
 
 .section-isaw-home.template-document_view {background:#3F3634; }
-.section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:absolute; top:0; left:0; right:0; z-index:200; }
+.section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:relative; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home.template-document_view #portal-top:before {display:none; }
 .section-isaw-home.template-document_view #portal-top .page-title {display:none; }
 .section-isaw-home.template-document_view #portal-top #main-navigation ul#primary {background:rgba(243,243,243,1); }
