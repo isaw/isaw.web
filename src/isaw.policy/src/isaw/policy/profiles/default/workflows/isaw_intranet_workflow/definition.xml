@@ -7,6 +7,7 @@
  <state state_id="draft" title="">
   <exit-transition transition_id="submit"/>
   <permission-map name="Access contents information" acquired="False">
+   <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Manager</permission-role>
@@ -26,6 +27,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Manager</permission-role>
@@ -37,7 +39,11 @@
   <description>Reviewer publishes content internally</description>
   <exit-transition transition_id="reject"/>
   <permission-map name="Access contents information" acquired="False">
-   <permission-role>Authenticated</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="False">
    <permission-role>Manager</permission-role>
@@ -48,7 +54,11 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
-   <permission-role>Authenticated</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
  <state state_id="pending" title="Pending review">
@@ -58,6 +68,7 @@
   <exit-transition transition_id="reject"/>
   <exit-transition transition_id="retract"/>
   <permission-map name="Access contents information" acquired="False">
+   <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Manager</permission-role>
@@ -65,6 +76,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
@@ -74,6 +86,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Manager</permission-role>

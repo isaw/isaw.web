@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <rolemap>
-  <roles>
-    <role name="Personnel Manager"/>
-    <role name="User Preferences Editor"/>
-  </roles>
   <permissions>
     <!-- XXX: This seems a bit crazy -->
     <permission name="View management screens" acquire="True">
@@ -15,15 +11,16 @@
       <role name="Site Administrator"/>
     </permission>
     <permission name="iterate : Check out content" acquire="True">
+      <role name="Reviewer"/>
       <role name="Editor"/>
       <role name="Manager"/>
       <role name="Owner"/>
       <role name="Site Administrator"/>
     </permission>
     <permission name="Request review" acquire="True">
+      <role name="Reviewer"/>
       <role name="Editor"/>
       <role name="Manager"/>
-      <role name="Owner"/>
       <role name="Site Administrator"/>
     </permission>
     <permission name="Add portal events" acquire="True">

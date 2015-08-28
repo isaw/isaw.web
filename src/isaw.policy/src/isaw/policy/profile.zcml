@@ -202,4 +202,14 @@
       import_steps="actions"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="20"
+      destination="21"
+      title="Update workflow and permissions"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="rolemap workflow placeful_workflow"
+      />
+
 </configure>
