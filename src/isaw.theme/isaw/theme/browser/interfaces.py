@@ -45,21 +45,11 @@ class IEventListingView(Interface):
 
 DEFAULT_FOOTER_HTML = u"""<div class="contact footer-portlet">
 <h3>Contact</h3>
-<p>15 East 84th St.<br>New York, NY 10028<br>212-992-7800<br>
-<a href="mailto:isaw@nyu.edu">isaw@nyu.edu</a></p>
+<p>15 East 84th St.<br />New York, NY 10028<br />212-992-7800<br /> <a href="mailto:isaw@nyu.edu">isaw@nyu.edu</a></p>
 </div>
-<div id="footer-support" class="support footer-portlet">
-<h3 class="support">
-<a href="http://isaw4-dev.atlantides.org/support-isaw">Support ISAW</a></h3>
-<ul><li id="personaltools-login">
-<a href="https://isaw.nyu.edu/Shibboleth.sso/login?target=https://isaw.nyu.edu/isaw-home">Log in</a>
-</li><li id="personaltools-support">
-<a href="http://isaw4-dev.atlantides.org/support-isaw">Support ISAW</a>
-</li><li id="personaltools-careers">
-<a href="http://isaw4-dev.atlantides.org/jobs">Careers at ISAW</a>
-</li><li id="personaltools-newsrss">
-<a href="http://isaw4-dev.atlantides.org/news/RSS">News RSS</a>
-</li></ul>
+<div class="support footer-portlet" id="footer-support">
+<h3 class="support"><a href="support-isaw" id="footer-support-link">Support ISAW</a></h3>
+<ul id="personal-tools-links"></ul>
 </div>
 <div class="hours footer-portlet">
 <h3>Gallery Hours</h3>
@@ -67,8 +57,9 @@ DEFAULT_FOOTER_HTML = u"""<div class="contact footer-portlet">
 </div>
 <div class="hours footer-portlet">
 <h3>Library Hours</h3>
-<p><strong>Mon-Fri</strong> 9am-5pm</p>
-</div>"""
+<p><strong>Mon-Fri</strong> 9am-6pm</p>
+</div>
+"""
 
 class IISAWSettings(Interface):
     emergency_message = schema.Text(title=u"Emergency Message",
