@@ -1,0 +1,3 @@
+<div id="portal-footer" tal:condition="view/html">
+    <tal:message replace="structure view/html" />
+</div>

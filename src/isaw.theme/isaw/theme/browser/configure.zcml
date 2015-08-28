@@ -194,4 +194,10 @@
       class=".viewlets.emergency.EmergencyMessage"
       permission="zope2.View" />
 
+  <browser:viewlet
+      name="isaw-footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.footer.SiteFooter"
+      permission="zope2.View" />
+
 </configure>

@@ -80,16 +80,20 @@
       <xsl:value-of select="$section" />
     </replace>
 
-    <copy css:theme="#footer-support h3 a"
-          css:content="a#support-link"
-          attributes="href title" />
-    
-    <replace css:theme-children="#footer-support h3 a"
-             css:content-children="a#support-link" />
-    
-    <replace css:theme-children="#footer-support ul"
-             css:content="#portal-personaltools ul li" />
-    
+    <replace css:content="#personal-tools-links">
+      <xsl:copy-of select="//dd[@class='actionMenuContent']/ul" />
+    </replace>
+
+    <replace css:content-children="#footer-support-link">
+      <xsl:attribute name="href">
+        <xsl:value-of select="//a[@id='support-link']/@href" />
+      </xsl:attribute>
+      <xsl:value-of select="//a[@id='support-link']" />
+    </replace>
+
+    <replace css:theme-children=".footer-row"
+             css:content="#portal-footer" />
+
     <!-- Global nav -->
 
     <!-- skip links -->
@@ -145,7 +149,7 @@
 
     <!-- footer credits and analytics -->
     <after theme-children="html/body"
-           content="//*[@id='portal-siteactions']/following-sibling::*" />
+           content="//*[@id='isaw-footer']/following-sibling::*" />
 
     <!-- event views only -->
     <drop css:content=".calendar-view-link" />

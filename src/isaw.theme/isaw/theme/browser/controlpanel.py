@@ -13,6 +13,7 @@ class ISAWSettingsEditForm(controlpanel.RegistryEditForm):
     def updateFields(self):
         super(ISAWSettingsEditForm, self).updateFields()
         self.fields['emergency_message'].widgetFactory = WysiwygFieldWidget
+        self.fields['footer_html'].widgetFactory = WysiwygFieldWidget
 
 
 class ISAWSettingsControlPanel(controlpanel.ControlPanelFormWrapper):

@@ -209,4 +209,14 @@
       import_steps="viewlets"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="19"
+      destination="20"
+      title="Update configuration registry"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="plone.app.registry"
+      />
+
 </configure>
