@@ -81,7 +81,7 @@
     </replace>
 
     <replace css:content="#personal-tools-links">
-      <xsl:copy-of select="//dd[@class='actionMenuContent']/ul" />
+      <xsl:copy-of select="//dl[@id='portal-personaltools']/dd/ul" />
     </replace>
 
     <replace css:content-children="#footer-support-link">
