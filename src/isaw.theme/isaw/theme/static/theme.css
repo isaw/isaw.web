@@ -181,7 +181,6 @@ fieldset#search-field {text-align:left !important; }
 .section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 .section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
 
-.section-isaw-home #portal-columns { padding-top: 127px; }
 .section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
 .section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider-container #easySlider-goToButtons {height:0; }
