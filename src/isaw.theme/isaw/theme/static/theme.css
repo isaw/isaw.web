@@ -429,7 +429,7 @@ fieldset#search-field {text-align:left !important; }
 	font-weight:500; 
 	overflow:auto; 
 	padding:24px 20px 58px;
-    height: 6.5em;
+    min-height: 6.5em;
 }
 .footer-row #portal-footer {margin:0 auto; max-width:1154px; overflow:visible; position:relative; }
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
@@ -819,7 +819,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation ul#secondary li {display:block; }
 	#portal-top #main-navigation ul#secondary li a {border-bottom:1px solid #b0a8a0; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
 
-	.footer-row #portal-footer {overflow:auto; }
+	.footer-row #portal-footer {overflow:auto;}
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:left; padding:5%; position:static; top:auto; left:auto; right:auto; width:40%; }
 	.footer-row #portal-footer .footer-portlet.hours {float:left !important; padding:5% !important; width:40% !important; }
