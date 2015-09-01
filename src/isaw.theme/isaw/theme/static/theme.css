@@ -170,7 +170,7 @@ fieldset#search-field {text-align:left !important; }
 
 
 .section-isaw-home.template-document_view {background:#3F3634; }
-.section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; position:relative; top:0; left:0; right:0; z-index:200; }
+.section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; height: 127px; position:relative; top:0; left:0; right:0; z-index:200; }
 .section-isaw-home.template-document_view #portal-top:before {display:none; }
 .section-isaw-home.template-document_view #portal-top .page-title {display:none; }
 .section-isaw-home.template-document_view #portal-top #main-navigation ul#primary {background:rgba(243,243,243,1); }
@@ -181,6 +181,7 @@ fieldset#search-field {text-align:left !important; }
 .section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 .section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
 
+.section-isaw-home #portal-columns { padding-top: 127px; }
 .section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
 .section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider-container #easySlider-goToButtons {height:0; }
@@ -773,9 +774,8 @@ h2.CVSectionTitle:before {
 @media screen and (max-width:959px){
 	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; }
 
-
 	.section-isaw-home.template-document_view {padding-bottom:0; }
-	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; }
+	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
 	#content #slider .slide .slideroverlay > * {padding:0; width:auto;}
 	#content #slider .slide .slideroverlay p,
