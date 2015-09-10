@@ -25,7 +25,7 @@ configure the server::
     chmod -R g+rwX .
 
     # For Plone < 4.3
-    python2.6 ./bootstrap.py
+    python2.7 ./bootstrap.py
     bin/buildout -c production.cfg
 
     # The buildout should be owned by the plone user, so either run it as "su
@@ -63,13 +63,28 @@ configure the server::
     service apache2 restart
 
 
-To deploy new software::
+To deploy new software to production or staging (do not use sudo for any of
+the following commands unless specified)::
 
     cd /srv/isaw.web
     git pull
     bin/buildout -c production.cfg
     chown -R plone:jazkarta .
-    su plone -c "bin/supervisorctl restart client1 client2 client3"
+    bin/supervisorctl restart client1 client2 client3
+
+You may also wish to use  `sudo service varnish restart` to clear the cache.
+If changes have been made to the supervisor config you will need to restart
+the system supervisor using `sudo service supervisor restart`.
+
+The buildout command requires that your user have ssh access to the github
+repos via an ssh key (i.e. using ssh agent forwarding), and that you can write
+to the repos checked out in sources (members of the "jazkarta" OS group can
+write, as can the "plone" user).
+
+Occasionally the permissions on the sources may need to be updated using::
+
+    sudo chown -R plone:jazkarta src/
+    sudo chmod -R g+rwX src/
 
 
 Syncing Data from ISAW production (currently 66.35.39.43, you will need to
@@ -84,4 +99,3 @@ Syncing other sites from ISAW production::
 
     cd /srv/
     sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/www-data/ www-data/
-

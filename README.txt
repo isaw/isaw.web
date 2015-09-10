@@ -182,21 +182,16 @@ And you can update the buildout itself with:
 Branches
 --------
 
-The primary buildout branch is currently `jazkarta_plone43`, which will
-eventually become `master`.  This will be the primary branch from which the
-production server is deployed, once migrated to Plone 4.3 (before that
-production will run on `jazkarta_refactor` and `jazkarta_plone43` will
-function as our staging branch).
+The primary buildout branch is currently `master`.
 
-Once we have Plone 4.3 deployed on production, we will want to develop all new
-features on distinct feature branches.  These branches will be merged as
-needed to a separate `staging` branch for testing.  This process will allow
-for multiple features at different stages of readiness to be tested on the
-staging server, and then deployed individually to production as they are
-ready.  All feature branches should be branched from the master branch, and
-then merged into the `staging` branch when ready for testing. Once tested and
-ready for deploy the feature branch should be merged directly into the master
-branch.
+We want to develop all new features on distinct feature branches.  These
+branches will be merged as needed to a separate `staging` branch for testing.
+This process will allow for multiple features at different stages of readiness
+to be tested on the staging server, and then deployed individually to
+production as they are ready.  All feature branches should be branched from
+the master branch, and then merged into the `staging` branch when ready for
+testing. Once tested and ready for deploy the feature branch should be merged
+directly into the master branch.
 
 The `staging` branch would be branched from the master and periodically
 updated with merged changes from master.  The `staging` branch should – in
@@ -212,7 +207,7 @@ The following ASCII diagram attempts to illustrate the branching and merging
 process::
 
 
-    master (jazkarta_plone43)
+    master
        |
        |----------------------------> staging
        |                                 |
