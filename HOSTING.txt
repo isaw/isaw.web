@@ -72,6 +72,11 @@ the following commands unless specified)::
     chown -R plone:jazkarta .
     bin/supervisorctl restart client1 client2 client3
 
+In production it may make sense to switch to a new tag instead of doing a `pull`::
+
+    git fetch
+    get checkout TAG_NAME
+
 You may also wish to use  `sudo service varnish restart` to clear the cache.
 If changes have been made to the supervisor config you will need to restart
 the system supervisor using `sudo service supervisor restart`.
