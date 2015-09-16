@@ -537,7 +537,14 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .fc-state-default {border:1px solid #9b3a25; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; }
 .fc-header .fc-state-default span {background:transparent; padding:15px 25px; }
 
-
+/* events */
+.section-events #content div.newsImageContainer {
+	margin: 0 10px 5px 10px;
+	position: relative;
+	width: 200px;
+	top: -118px;
+	overflow: hidden;
+}
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
