@@ -316,7 +316,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns form fieldset .formControls input[type="button"]:focus,
 #portal-columns form fieldset .formControls input[type="submit"]:focus {background:transparent; color:#9b3a25; }
 
-#portal-columns .bio {background:#f8f0e5; clear:both; display:block; margin:24px 0; padding:34px 26px; }
+#portal-columns .bio {margin:24px 0;}
 #portal-columns .bio img {display:block; float:left; margin:0 20px 20px 0; }
 #portal-columns .bio h2 {color:#66232b; font-size:22px; font-weight:900; line-height:32px; margin:0 0 6px; }
 #portal-columns .bio h3 {color:#333; font-size:14px; line-height:23px; margin:0 0 10px; }
