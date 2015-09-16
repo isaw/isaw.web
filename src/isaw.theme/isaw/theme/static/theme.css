@@ -545,6 +545,10 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	top: -118px;
 	overflow: hidden;
 }
+.section-events #content div.newsImageContainer p.discreet {
+	line-height: 19px;
+	margin: 0 0 10px;
+}
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
