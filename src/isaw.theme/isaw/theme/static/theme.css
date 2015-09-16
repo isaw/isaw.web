@@ -796,7 +796,12 @@ h2.CVSectionTitle:before {
 	#content #slider .slide .slideroverlay ul {padding-right: 65px;}
 	.section-isaw-home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
 	.section-isaw-home.template-document_view #edit-bar {top: 0; }
-
+	.section-events #content div.newsImageContainer {
+		display:none;
+	}
+	.section-events #content h1.documentFirstHeading {
+		margin-right: 0px;
+	}
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
 	#portal-top h1 {
