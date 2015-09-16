@@ -549,6 +549,10 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	line-height: 19px;
 	margin: 0 0 10px;
 }
+.section-events #content h1.documentFirstHeading {
+	margin-right: 210px;
+	text-transform: none;
+}
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
