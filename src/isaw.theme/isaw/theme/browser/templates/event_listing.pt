@@ -21,7 +21,7 @@ $(document).ready(function () {
             url += '/@@iitem-listing-page'
             pageNum = target.data('page');
             $.get(url, {page: pageNum}).done(function (data) {
-                var container=$('ul.news'),
+                var container=$('div.event-listing'),
                     items=$(data),
                     nextBtn=$('a.button.view-more'),
                     nextPageHelper, newNextPage;
