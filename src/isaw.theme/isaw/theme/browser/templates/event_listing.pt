@@ -18,7 +18,7 @@ $(document).ready(function () {
             evt.preventDefault();
             url = target.attr('href');
             url = url.split('?')[0];
-            url += '/@@iitem-listing-page'
+            url += '/@@event-listing-page'
             pageNum = target.data('page');
             $.get(url, {page: pageNum}).done(function (data) {
                 var container=$('div.event-listing'),
