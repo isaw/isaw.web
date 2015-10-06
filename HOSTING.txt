@@ -88,8 +88,8 @@ write, as can the "plone" user).
 
 Occasionally the permissions on the sources may need to be updated using::
 
-    sudo chown -R plone:jazkarta src/
-    sudo chmod -R g+rwX src/
+    sudo chown -R plone:jazkarta src/ bin/ parts/
+    sudo chmod -R g+rwX src/ bin/ parts/
 
 
 Syncing Data from ISAW production (currently 66.35.39.43, you will need to
