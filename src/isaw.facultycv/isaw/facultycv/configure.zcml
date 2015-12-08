@@ -22,4 +22,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="1"
+      destination="2"
+      title="Allow file, image and page in profiles"
+      description=""
+      profile="isaw.facultycv:default"
+      import_steps="typeinfo"
+      />
+
 </configure>

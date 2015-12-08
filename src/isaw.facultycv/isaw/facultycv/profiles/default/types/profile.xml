@@ -14,6 +14,9 @@
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
     <element value="CV" />
+    <element value="File" />
+    <element value="Image" />
+    <element value="Document" />
   </property>
   <property name="allow_discussion">False</property>
   <property name="default_view">faculty_detail</property>
