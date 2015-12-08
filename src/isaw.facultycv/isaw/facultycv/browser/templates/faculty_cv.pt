@@ -14,7 +14,6 @@
             <metal:content-core define-macro="content-core">
 
                         <p class="facultyTitles">Curriculum Vitae</p>
-                        <a tal:attributes="href string:${context/absolute_url}/pdf_view">Download PDF</a>
 
                 <div class="facultyContact">
                             <div class="address" tal:content="structure context/aq_parent/Address" />
