@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+        <div class="documentDescription" tal:condition="context/subtitle|nothing" tal:content="context/subtitle">subtitle</div>
+
+        <div class="bio" tal:define="speaker context/speaker|nothing;
+                                     affiliation context/speakerAffiliation|nothing;">
+          <h2 tal:condition="speaker" tal:content="speaker">Speaker</h2>
+          <h3 tal:condition="affiliation" tal:content="affiliation">Affiliation</h3>
+        </div>
+
+        <span class="visualClear"><!-- --></span>
+
+        <metal:field use-macro="python:context.widget('text', mode='view')">
+        Body text
+        </metal:field>
+
+        <span class="visualClear"><!-- --></span>
+
+</metal:content-core>
+
+</body>
+</html>

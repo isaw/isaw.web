@@ -1,0 +1,24 @@
+<ul id="social-buttons">
+    <li class="rss">
+        <a rel="alternate" type="application/rdf+xml" href="" tal:attributes="href string:${context/portal_url}/news/collector/RSS">News feed (RSS)</a>
+    </li>
+    <li class="fsq">
+        <a href="https://foursquare.com/v/nyu-institute-for-the-study-of-the-ancient-world-isaw/4b2ebcc5f964a520f0e524e3">Foursquare</a>
+    </li>
+    <li class="tw">
+        <a href="http://twitter.com/isawnyu">Twitter</a>
+    </li>
+    <li class="fb">
+        <a href="http://www.facebook.com/isawnyu">Facebook</a>
+    </li>
+    <li class="instagram">
+        <a href="http://instagram.com/isawnyu">Instagram</a>
+    </li>
+    <li class="gplus">
+        <a href="https://plus.google.com/102155245196696468726/posts">Google+</a>
+    </li>
+    <li class="flickr">
+        <a href="https://www.flickr.com/photos/isawnyu/">Flickr</a>
+    </li>
+
+</ul>

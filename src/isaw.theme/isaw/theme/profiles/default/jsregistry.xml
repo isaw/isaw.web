@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+    <!-- TinyMCE redux -->
+    <javascript compression="safe"
+      authenticated="True"
+      id="jquery.tinymce.js"
+      insert-after="unlockOnFormUnload.js"
+      />
+    <javascript compression="safe"
+      authenticated="True"
+      id="tiny_mce_gzip.js"
+      insert-after="jquery.tinymce.js"
+      />
+
+    <javascript id="++resource++plone.app.jquerytools.plugins.js" enabled="True"/>
+
+    <javascript cacheable="True" compression="none" cookable="True"
+                enabled="True" inline="False"
+                id="++theme++isaw.theme/js/isaw.js"
+                insert-after="jquery-integration.js"/>
+
+    <!-- remove obsolete js -->
+    <javascript id="isaw.js" remove="True"/>
+    <javascript id="jquery.tools.min.js" remove="True"/>
+    <javascript id="tiny_mce_init.js" remove="True" />
+    <javascript id="tiny_mce_src.js" remove="True" />
+    <javascript id="++theme++isaw.theme/js/jquery.cycle2.min.js" remove="True" />
+</object>

@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      tal:omit-tag="">
+<dl class="portlet event-details"
+    i18n:domain="isaw"
+    tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
+  <dt class="portletHeader">
+    <h2>Event Details</h2>
+    <span class="portletTopLeft"></span>
+    <span class="portletTopRight"></span>
+  </dt>
+  <dd class="portletItem"
+      tal:define="context  nocall:view/context">
+    <ul class="details">
+        <li tal:content="python:toLocalizedTime(context.start())">May 21, 2015</li>
+        <li tal:content="python:toLocalizedTime(context.start(), time_only=1)">6:00PM - 7:00PM</li>
+        <li tal:content="context/location">2nd Floor Lecture Hall, ISAW</li>
+    </ul>
+    <a tal:condition="context/rsvpRequired" tal:attributes="href string:${context/portal_url}/rsvp" href="#" class="button event inverse">RSVP Required</a>
+    <div class="add-to-cal">
+        <h3>Add Event to Calendar</h3>
+        <ul class="links">
+          <li><a tal:attributes="href string:${context/absolute_url}/vcs_view" href="#">VCal</a></li>
+          <li><a tal:attributes="href string:${context/absolute_url}/ics_view" href="#">iCal</a></li>
+        </ul>
+    </div>
+  </dd>
+</dl>
+</html>

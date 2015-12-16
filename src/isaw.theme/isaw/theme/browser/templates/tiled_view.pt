@@ -1,0 +1,90 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isaw.theme">
+<body>
+
+<metal:local-javascript fill-slot="javascript_head_slot">
+<script type="text/javascript">
+$(document).ready(function () {
+    $('body.template-tiled-listing').on('click', function (evt) {
+        var target, url, pageNum;
+        target = $(evt.target);
+        container = $('ul.news');
+        if (target.is('a.view-more')) {
+            evt.preventDefault();
+            url = target.attr('href');
+            url = url.split('?')[0];
+            url += '/@@tiled-listing-page'
+            pageNum = target.data('page');
+            $.get(url, {page: pageNum}).done(function (data) {
+                var container=$('ul.news'),
+                    items=$(data),
+                    nextBtn=$('a.button.view-more'),
+                    nextPageHelper, newNextPage;
+                items.appendTo(container);
+                nextPageHelper = container.children('div#page-helper');
+                if (nextPageHelper.length != 0) {
+                  newNextPage = nextPageHelper.data('nextpage');
+                  nextPageHelper.remove();
+                  nextBtn.data('page', newNextPage);
+                  nextBtn.attr('data-page', newNextPage);
+                } else {
+                  nextBtn.hide();
+                }
+            }).fail(function (xhr) {
+                alert('bar');
+            });
+        }
+    });
+});
+</script>
+</metal:local-javascript>
+
+<metal:supress-title fill-slot="content-title">
+  <metal:block define-macro="content-title"></metal:block>
+</metal:supress-title>
+<metal:supress-desc fill-slot="content-description"></metal:supress-desc>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core"
+                    tal:define="kssClassesView context/@@kss_field_decorator_view;
+                                getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                                templateId template/getId">
+  <tal:block tal:define="items view/listings">
+    <a name="listing-top"></a>
+    <ul class="news"
+        tal:define="items view/listings">
+     <tal:block tal:repeat="item items">
+      <li tal:define="item_url item/getURL;
+                      image_tag python:view.get_image(item);
+                      title item/Title;
+                      exerpt item/Description">
+        <a href="#" tal:attributes="href item_url">
+          <img src="" title="" tal:replace="structure image_tag"/></a>
+        <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
+        <div class="post-meta" tal:define="byline python:view.get_byline(item)"
+             tal:condition="byline" tal:content="byline">[byline]</div>
+        <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
+        <a href="#" class="button small more" tal:attributes="href item_url">Read More</a>
+      </li>
+     </tal:block>
+    </ul>
+
+    <div class="buttons" tal:condition="items/has_next"
+         tal:define="page_num items/nextpage;
+                     page_url string:${context/absolute_url}?page=${page_num}">
+      <a href="#" class="button view-more" 
+         tal:attributes="href page_url;
+                         data-page page_num">View More</a>
+    </div> 
+  </tal:block> 
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

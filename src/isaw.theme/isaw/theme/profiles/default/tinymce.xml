@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object>
+ <layout>
+  <styles>
+   <element value="Learn More Link|span|learnMore"/>
+   <element value="Red List|ul|red"/>
+   <element value="Red List|ol|red"/>
+  </styles>
+ </layout>
+</object>

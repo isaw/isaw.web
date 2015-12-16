@@ -1,0 +1,58 @@
+<div id="portal-breadcrumbs"
+     i18n:domain="plone"
+     tal:define="breadcrumbs view/breadcrumbs;
+                 is_rtl view/is_rtl">
+
+    <span id="breadcrumbs-home">
+        <a i18n:translate="tabs_home"
+           tal:attributes="href view/navigation_root_url">Home</a>
+        <span tal:condition="breadcrumbs" class="breadcrumbSeparator">
+            <tal:ltr condition="not: is_rtl">&gt;</tal:ltr>
+            <tal:rtl condition="is_rtl">&lt;</tal:rtl>
+        </span>
+    </span>
+    <span tal:repeat="crumb breadcrumbs"
+          tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
+                          id string:breadcrumbs-${repeat/crumb/number}">
+        <tal:item tal:define="is_last repeat/crumb/end;
+                              url crumb/absolute_url;
+                              title crumb/Title;
+                              tparts python:title.split(':');
+                              ">
+            <span tal:condition="python:len(tparts) > 1">
+              <a href="#"
+                 tal:omit-tag="not: url"
+                 tal:condition="python:not is_last"
+                 tal:attributes="href url"
+                 tal:content="python:tparts[1]">
+                  crumb
+              </a>
+            </span>
+            <span tal:condition="python:len(tparts) <= 1">
+              <a href="#"
+                 tal:omit-tag="not: url"
+                 tal:condition="python:not is_last"
+                 tal:attributes="href url"
+                 tal:content="python:[title, [title, ' '.join(title.split()[:5]) + '...'][len(title.split()) > 5]][len(title) > 30]">
+                  crumb
+              </a>
+            </span>
+            <span class="breadcrumbSeparator" tal:condition="not: is_last">
+                <tal:ltr condition="not: is_rtl">&gt;</tal:ltr>
+                <tal:rtl condition="is_rtl">&lt;</tal:rtl>
+            </span>
+            <span tal:condition="is_last">
+              <span id="breadcrumbs-current"
+                    tal:condition="python:len(tparts) > 1"
+                    tal:content="python:tparts[1]">crumb</span>
+              <span id="breadcrumbs-current"
+                    tal:condition="python:len(tparts) <= 1"
+                    tal:content="title">crumb</span>
+            </span>
+
+
+         </tal:item>
+    </span>
+    <span id="breadcrumbs-current" tal:condition="python:request.URL.endswith('search')" tal:content="string: > Search"/>
+
+</div>

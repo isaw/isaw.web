@@ -1,0 +1,46 @@
+<portlets>
+
+ <!-- Portlet type registrations -->
+
+ <portlet
+   addview="isaw.theme.feature"
+   title="Featured"
+   description="A portlet which modifies the feature on the front page"
+   />
+
+ <portlet
+   addview="isaw.theme.portlets.image.ImagePortlet"
+   title="Image Portlet"
+   description="A portlet for attaching and linking a single image"
+   />
+
+  <portlet
+    addview="isaw.theme.newsimage"
+    title="News Item Image Portlet"
+    description="Display the image for a news item (will not appear in other contexts"
+    />
+
+  <assignment 
+    name="newsitemassignment"
+    category="content_type"
+    key="News Item"
+    manager="plone.rightcolumn"
+    type="isaw.theme.newsimage"
+    visible="True"/>
+
+  <portlet
+    addview="isaw.theme.eventdetail"
+    title="Event Details Portlet"
+    description="Display the details for an event (will not appear in other contexts"
+    />
+
+  <assignment 
+    name="eventassignment"
+    category="content_type"
+    key="Event"
+    manager="plone.rightcolumn"
+    type="isaw.theme.eventdetail"
+    visible="True"/>
+
+</portlets>
+

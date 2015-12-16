@@ -1,0 +1,227 @@
+<form tal:attributes="action string:${context/absolute_url}/events_request.htm" method="post" id="form" enctype="multipart/form-data">
+                                <p><strong>Event Details</strong></p>
+                                <p><label for="rf_title">Title of Event:</label> <input name="rf_title" id="rf_title" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="department">Sponsoring Department/Faculty:</label> <input name="department" id="department" type="text" size="75" maxlength="75" /></p>
+                                <p><strong>Event Date, Time and Location</strong></p>
+                                <p><label for="start_date">Event Start Date (mm/dd/yyyy):</label><br />
+
+                                <input name="start_date" id="start_date" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="end_date">Event End Date (mm/dd/yyyy):</label><br />
+                                <input name="end_date" id="end_date" type="text" size="75" maxlength="75" /><br /></p>
+
+                                <p><label for="start_time">Start Time:</label> <select title="start_time" name="start_time" id="start_time">
+                                    <option value="blank">
+                                        -
+                                    </option>
+
+                                    <option value="7am">
+                                        7am
+                                    </option>
+                                    <option value="8am">
+                                        8am
+                                    </option>
+                                    <option value="9am">
+                                        9am
+                                    </option>
+                                    <option value="10am">
+
+                                        10am
+                                    </option>
+                                    <option value="11am">
+                                        11am
+                                    </option>
+                                    <option value="12pm">
+                                        12pm
+                                    </option>
+                                    <option value="1pm">
+                                        1pm
+                                    </option>
+
+                                    <option value="2pm">
+                                        2pm
+                                    </option>
+                                    <option value="3pm">
+                                        3pm
+                                    </option>
+                                    <option value="4pm">
+                                        4pm
+                                    </option>
+                                    <option value="5pm">
+
+                                        5pm
+                                    </option>
+                                    <option value="6pm">
+                                        6pm
+                                    </option>
+                                    <option value="7pm">
+                                        7pm
+                                    </option>
+                                    <option value="8pm">
+                                        8pm
+                                    </option>
+
+                                    <option value="9pm">
+                                        9pm
+                                    </option>
+                                    <option value="10pm">
+                                        10pm
+                                    </option>
+                                </select></p>
+                                <p><label for="end_time">End Time:</label> <select title="end_time" name="end_time" id="end_time">
+                                    <option value="blank">
+
+                                        -
+                                    </option>
+                                    <option value="7am">
+                                        7am
+                                    </option>
+                                    <option value="8am">
+                                        8am
+                                    </option>
+                                    <option value="9am">
+                                        9am
+                                    </option>
+
+                                    <option value="10am">
+                                        10am
+                                    </option>
+                                    <option value="11am">
+                                        11am
+                                    </option>
+                                    <option value="12pm">
+                                        12pm
+                                    </option>
+                                    <option value="1pm">
+
+                                        1pm
+                                    </option>
+                                    <option value="2pm">
+                                        2pm
+                                    </option>
+                                    <option value="3pm">
+                                        3pm
+                                    </option>
+                                    <option value="4pm">
+                                        4pm
+                                    </option>
+
+                                    <option value="5pm">
+                                        5pm
+                                    </option>
+                                    <option value="6pm">
+                                        6pm
+                                    </option>
+                                    <option value="7pm">
+                                        7pm
+                                    </option>
+                                    <option value="8pm">
+
+                                        8pm
+                                    </option>
+                                    <option value="9pm">
+                                        9pm
+                                    </option>
+                                    <option value="10pm">
+                                        10pm
+                                    </option>
+                                    <option value="11pm">
+                                        11pm
+                                    </option>
+
+                                    <option value="12am">
+                                        12am
+                                    </option>
+                                </select></p>
+                                <p><label for="num_people">Number of Attendees:</label> <input name="num_people" id="num_people" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="rooms">Rooms Used:</label> <input name="rooms" id="rooms" type="text" size="75" maxlength="75" /></p>
+                                <p><strong>Contact Information</strong></p>
+
+                                <p><label for="contact_name">Contact Name:</label> <input name="contact_name" id="contact_name" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="contact_phone">Contact Phone:</label><input name="contact_phone" id="contact_phone" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="contact_fax">Contact Fax:</label><input name="contact_fax" id="contact_fax" type="text" size="75" maxlength="75" /></p>
+
+                                <p><label for="contact_email">Contact Email:</label><input name="contact_email" id="contact_email" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="contact_street">Contact Street Address:</label><input name="contact_street" id="contact_street" type="text" size="75" maxlength="75" /></p>
+
+                                <p><label for="contact_city">Contact City:</label><input name="contact_city" id="contact_city" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="contact_state">Contact State:</label><input name="contact_state" id="contact_state" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="contact_zip">Contact Zip:</label><input name="contact_zip" id="contact_zip" type="text" size="75" maxlength="75" /></p>
+
+                                 <p><strong>Payment Information</strong></p>
+                                <p><label for="payment_chartfield">Chartfield:</label><input name="payment_chartfield" id="payment_chartfield" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="payment_credit_type">Type of Card:</label><input name="payment_credit_type" id="payment_credit_type" type="text" size="75" maxlength="75" /></p>
+
+                                <p><label for="payment_credit_num">Card Number:</label><input name="payment_credit_num" id="payment_credit_num" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="payment_credit_security_code">Security Code:</label><input name="payment_credit_security_code" id="payment_credit_security_code" type="text" size="75" maxlength="75" /></p>
+                                <p><strong>Additional Information</strong></p>
+                                <p><label for="url">URL with more info:</label><input name="url" id="url" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="vips">VIPs in attendance:</label><input name="vips" id="vips" type="text" size="75" maxlength="75" /></p>
+                                <p><label for="vip_names">Names of VIPs:</label><input name="vip_names" id="vip_names" type="text" size="75" maxlength="75" /></p>
+
+                                <p><label for="special">Special Instructions:</label><input name="special" id="special" type="text" size="75" maxlength="75" /></p>
+                                <p><strong>Furniture</strong></p>
+                                <p id="detail_furniture" class="detail_box">Furniture rental will be provided for an additional charge. For all banquet(s)/reception(s), furniture will include bar and buffet tables with floor length solid color cotton linens, cotton napkins, and all equipment necessary to prepare and serve the menu.</p>
+                                <p><label for="cocktail_tables" class="checkbox">Cocktail Tables</label><input type="checkbox" name="cocktail_tables" id="cocktail_tables" value="yes" /></p>
+                                <p><label for="round_tables" class="checkbox">Round Tables</label><input type="checkbox" name="round_tables" id="round_tables" value="yes" /></p>
+                                <p><label for="rectangular_tables" class="checkbox">Rectangular Tables</label><input type="checkbox" name="rectangular_tables" id="rectangular_tables" value="yes" /></p>
+
+                                <p><strong>RSVP Options</strong></p>
+                                <p><label for="RSVP">Select:</label> <select title="RSVP" name="RSVP" id="RSVP">
+                                    <option value="provide_rsvp">
+                                        Provide ISAW with final guest numbers.
+                                    </option>
+                                    <option value="email_rsvp">
+                                        RSVP by emailing isaw@nyu.edu (internal events only).
+                                    </option>
+
+                                    <option value="no_rsvp">
+                                        No RSVP required for this event.
+                                    </option>
+                                </select></p>
+                                <p><strong>Audio/Visual Requirements:</strong></p>
+                                <p><label for="projector" class="checkbox">Digital Projector and Screen</label><input type="checkbox" name="projector" id="projector" value="yes" /></p>
+                                <p><label for="laptop" class="checkbox">Laptop</label><input type="checkbox" name="laptop" id="laptop" value="yes" /></p>
+                                <p><label for="slides" class="checkbox">Slide Projector</label><input type="checkbox" name="slides" id="slides" value="yes" /></p>
+
+                                <p><label for="wireless" class="checkbox">Wireless Access</label> <input type="checkbox" name="wireless" id="wireless" value="yes" /></p>
+                                <p><strong>Meals and Level of Catering</strong></p>
+                                <p id="detail_catering" class="detail_box">We can refer excellent caterers to handle your catering needs. Generally, paper and plastic come with the catering at no charge and china and glassware can be rented or supplied at an extra charge. All catering services incur a service charge [NYU: 15%; Outside: 20% of total food bill].</p>
+                                <p><label for="catering">Select:</label> <select title="Catering" name="catering" id="catering">
+                                    <option value="catering_none">
+                                        None.
+                                    </option>
+
+                                    <option value="catering_aramark">
+                                        Aramark [NYU Catering]
+                                    </option>
+                                    <option value="catering_jasons">
+                                        Jason's Catering
+                                    </option>
+                                    <option value="catering_lepain">
+                                        Le Pain Quotidien [85th and Madison]
+                                    </option>
+                                </select></p>
+
+                                <p><strong>Additional Items</strong></p>
+                                <p><label for="house_linen" class="checkbox">House Linen</label><input type="checkbox" name="house_linen" id="house_linen" value="yes" /></p>
+                                <p><label for="votives" class="checkbox">Votives</label><input type="checkbox" name="votives" id="votives" value="yes" /></p>
+                                <p><label for="easels" class="checkbox">Easels</label><input type="checkbox" name="easels" id="easels" value="yes" /></p>
+                                <p><label for="floral_services" class="checkbox">Floral Services</label><input type="checkbox" name="floral_services" id="floral_services" value="yes" /></p>
+                                <p><label for="photographer" class="checkbox">Photographer</label><input type="checkbox" name="photographer" id="photographer" value="yes" /></p>
+
+                                <p><label for="videographer" class="checkbox">Videographer</label><input type="checkbox" name="videographer" id="videographer" value="yes" /></p>
+                                <p><label for="coat_check" class="checkbox">Coat Check</label><input type="checkbox" name="coat_check" id="coat_check" value="yes" /></p>
+                                <p><label for="security" class="checkbox">Security</label><input type="checkbox" name="security" id="security" value="yes" /></p>
+                                <p><label for="comments" style="width:500px;">Extra Comments  <br /><em>(Note: If this is for an internal ISAW event you must specify who will be introducing the speaker.)</em></label><br /><textarea id="comments" name="comments" rows="10" cols="60"></textarea></p>
+
+                           <div class="formControls">
+                                
+                                    
+<input id="form-buttons-submit" name="form.buttons.submit" class="submit-widget button-field" value="Submit" type="submit" />
+
+
+                                
+                            </div>
+                            </form> 
+
+

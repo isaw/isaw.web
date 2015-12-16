@@ -1,0 +1,203 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="isaw.theme">
+
+  <!-- 'NYU ISAW Theme' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="NYU ISAW Theme"
+      />
+  
+  <!-- For overriding templates, add z3c.jbot to the base.cfg to use -->    
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <!-- Forms package for events request etc -->
+  <include package=".forms" />
+
+  <browser:templateOverrides
+      directory="template-overrides"
+      layer=".interfaces.IThemeSpecific" />
+  
+  <!-- add this -->
+  <browser:viewlet
+      name="collective.addthis"
+      class="collective.addthis.addthis.AddThisViewlet"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      template="viewlets/addthis.pt"
+      permission="zope.Public"
+      layer="collective.addthis.interfaces.IAddthisBrowserLayer"
+  />
+  
+  <!-- Utils View -->
+  <browser:page
+     name="utils_view"
+     for="*"
+     class=".utilsview.UtilsView"
+     permission="zope.Public"
+     allowed_interface=".interfaces.IUtilsView"
+     /> 
+
+  <!-- Tiled listing view -->
+  <browser:page
+    name="tiled-listing"
+    for="*"
+    permission="zope2.View"
+    class=".tiled_view.TiledListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/tiled_view.pt"
+    />
+
+  <!-- Event listing view -->
+  <browser:page
+    name="event-listing"
+    for="*"
+    permission="zope2.View"
+    class=".event_listing.EventListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/event_listing.pt"
+    />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Tiled Listing"
+        action="@@tiled-listing"
+        description="List folder contents in a 3x3 grid of tiles"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Tiled Listing"
+        action="@@tiled-listing"
+        description="List folder contents in a 3x3 grid of tiles"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Tiled Listing"
+        action="@@tiled-listing"
+        description="List folder contents in a 3x3 grid of tiles"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:viewlet
+        name="isaw.theme.tiled_listing.featured_item"
+        for="*"
+        view=".interfaces.ITiledListingView"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        layer=".interfaces.IThemeSpecific"
+        class=".tiled_view.FeaturedItemViewlet"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="tiled-listing-page"
+        for="*"
+        permission="zope2.View"
+        class=".tiled_view.TiledListingView"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/tiled_list_items.pt"
+        />
+
+    <browser:page
+        name="event-listing-page"
+        for="*"
+        permission="zope2.View"
+        class=".event_listing.EventListingView"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/list_events.pt"
+        />
+
+  <!-- byline viewlet available on any contentish (non-folder) AT item -->
+  <browser:viewlet
+      name="isaw.theme.byline"
+      for="Products.ATContentTypes.interfaces.ITextContent"
+      class="plone.app.layout.viewlets.content.DocumentBylineViewlet"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+      permission="zope2.View"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="search"
+      class=".search.ISAWSearch"
+      permission="zope2.View"
+      for="*"
+      template="templates/search.pt"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="people-listing"
+      for="Products.ATContentTypes.interfaces.IATFolder"
+      template="templates/people_listing.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interfaces.IATFolder"
+        menu="plone_displayviews"
+        title="People Listing"
+        action="@@people-listing"
+        description="List person profiles in a folder, with image"
+        />
+
+  <configure package="plone.app.search">
+    <browser:page
+        name="updated_search"
+        class="isaw.theme.browser.search.ISAWSearch"
+        permission="zope2.View"
+        for="Products.CMFCore.interfaces.IFolderish"
+        template="updated_search.pt"
+        layer="isaw.theme.browser.interfaces.IThemeSpecific"
+        />
+  </configure>
+
+  <browser:page
+      name="isaw-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".controlpanel.ISAWSettingsControlPanel"
+      permission="plone.app.controlpanel.Overview"
+      />
+
+  <browser:viewlet
+      name="emergency-message"
+      manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+      class=".viewlets.emergency.EmergencyMessage"
+      permission="zope2.View" />
+
+  <browser:viewlet
+      name="isaw-footer"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.footer.SiteFooter"
+      permission="zope2.View" />
+
+</configure>

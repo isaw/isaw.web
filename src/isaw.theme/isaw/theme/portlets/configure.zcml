@@ -1,0 +1,45 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+    <include package="plone.app.portlets" />
+
+    <plone:portlet
+        name="isaw.theme.feature"
+        interface=".feature.IFeaturedPortlet"
+        assignment=".feature.Assignment"
+        renderer=".feature.Renderer"
+        addview=".feature.AddForm"
+        editview=".feature.EditForm"
+        />
+
+    <browser:page
+        for="*"
+        name="image-portlet-image"
+        class=".imageview.ImageView"
+        permission="zope.Public"
+        />
+
+    <plone:portlet
+        name="isaw.theme.newsimage"
+        interface=".newsimage.INewsItemImagePortlet"
+        assignment=".newsimage.Assignment"
+        renderer=".newsimage.Renderer"
+        addview=".newsimage.AddForm"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        />
+
+    <plone:portlet
+        name="isaw.theme.eventdetail"
+        interface=".eventdetail.IEventDetailPortlet"
+        assignment=".eventdetail.Assignment"
+        renderer=".eventdetail.Renderer"
+        addview=".eventdetail.AddForm"
+        view_permission="zope2.View"
+        edit_permission="cmf.ManagePortal"
+        />
+
+</configure>

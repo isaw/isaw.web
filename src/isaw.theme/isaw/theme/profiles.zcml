@@ -1,0 +1,222 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="isaw.theme">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="NYU ISAW Theme"
+      directory="profiles/default"
+      description='Extension profile for the "NYU ISAW Theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="isaw.theme.various"
+      title="NYU ISAW Theme: miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="isaw.theme.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="0"
+      destination="1"
+      title="Create isaw home page"
+      description=""
+      profile="isaw.theme:default"
+      handler="isaw.theme.setuphandlers.createHomePage"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="1"
+      destination="2"
+      title="Remove obsolete resources"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry jsregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="2"
+      destination="3"
+      title="Update Theme to Diazo"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry jsregistry plone.app.theming"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="3"
+      destination="4"
+      title="Update skins settings"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="4"
+      destination="5"
+      title="Disable legacy css"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="cssregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="5"
+      destination="6"
+      title="Add fonts css and reset viewlets"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets cssregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="6"
+      destination="7"
+      title="Update everything"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins viewlets cssregistry jsregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="7"
+      destination="8"
+      title="Update js and props"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="jsregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="8"
+      destination="9"
+      title="News Item Image"
+      description="Add news item image portlet and assignments"
+      profile="isaw.theme:default"
+      import_steps="portlets"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="9"
+      destination="10"
+      title="Tiled Listing View"
+      description="Add a tiled listing view for folders, topics and collections"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="10"
+      destination="11"
+      title="TinyMCE classes"
+      description="Add TinyMCE class for red lists"
+      profile="isaw.theme:default"
+      import_steps="tinymce_settings"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="11"
+      destination="12"
+      title="Hide tag viewlet"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="12"
+      destination="13"
+      title="Person Listing View"
+      description="Add a listing view for folders containing person profiles"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="13"
+      destination="14"
+      title="Update dynamic views"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="14"
+      destination="15"
+      title="Event Details"
+      description="Add event detail portlet and assignments"
+      profile="isaw.theme:default"
+      import_steps="portlets"
+      />
+
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="15"
+      destination="16"
+      title="Set Calendar Types"
+      description=""
+      profile="isaw.theme:default"
+      handler="isaw.theme.setuphandlers.set_calendar_types"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="16"
+      destination="17"
+      title="Add ISAW settings"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="plone.app.registry controlpanel"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="17"
+      destination="18"
+      title="Update skin ordering"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="skins jsregistry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="18"
+      destination="19"
+      title="Update vewlet placement"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="19"
+      destination="20"
+      title="Update configuration registry"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="plone.app.registry"
+      />
+
+</configure>

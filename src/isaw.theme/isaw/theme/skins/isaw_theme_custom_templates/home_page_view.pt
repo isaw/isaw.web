@@ -1,0 +1,133 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+    <head>
+        <metal:block fill-slot="top_slot"
+                     tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                                disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+    </head>
+
+    <body>
+        <metal:block fill-slot="content-title" />
+        <metal:content-core fill-slot="content-core">
+            <metal:content-core define-macro="content-core">
+
+                <div id="home-left">
+<a class="about" href="/about/">
+                    <metal:field use-macro="python:context.widget('text', mode='view')">Body text</metal:field>
+</a>
+                </div>
+
+                <div id="home-center"> <!-- open: div#home-center -->
+
+                    <div id="featured" 
+                         tal:define="utils_view context/@@utils_view;
+                                    featured utils_view/getFeatured" 
+                         tal:content="structure featured"/>
+
+                    <div class="home-right">
+                        <metal:portlets define-slot="portlets_two_slot">
+                            <tal:block replace="structure provider:plone.rightcolumn" />
+                        </metal:portlets>
+                    </div>
+
+                    <div class="scrollable">
+
+                        <div class="items">
+
+                            <div> <!-- events: open scrollable item 1 -->
+                                <div id="home-events"
+                                     tal:define="utils_view context/@@utils_view;
+                                                events utils_view/getUpcomingEvents;
+                                                noevents string:'There are currently no upcoming events.' "
+                                     tal:condition="events | noevents">
+                                    <a href="events">
+                                        <h2>Upcoming Events</h2>
+                                    </a>
+                                    <tal:events>
+                                        <div class="homeEvent" 
+                                             tal:repeat="event events">
+                                            <span class="eventDate" 
+                                                  tal:content="python:DateTime(event.start).strftime('%B %d, %Y')" />
+                                            <span class="eventTime" 
+                                                      tal:content="python:DateTime(event.start).strftime('%l:%M %p')" />
+                                            <span tal:condition="event/location">,</span>
+                                            <span tal:condition="event/location" 
+                                                  class="eventLocation" 
+                                                  tal:content="event/location" />
+                                            <h3>
+                                                <a class="eventTitle" 
+                                                   tal:attributes="href event/getURL">
+                                                    <span tal:replace="event/Title" />
+                                                </a>
+                                            </h3>
+                                            <tal:speaker condition="event/speaker">
+                                                <p class="speaker" 
+                                                   tal:content="event/speaker" />
+                                            </tal:speaker>
+                                            <p tal:define="text python:event.abstract;
+                                                             paragraph python:str(text).split('</p>')[0].replace('<p>','');
+                                                                 words python:paragraph.split(' ');
+                                                                 front python:' '.join(words[:32]);
+                                                                 back python:' '.join(words[32:]);
+                                                                 tailindex python:len(back.split('>')[0])+1;
+                                                                 tail python:str(back[:tailindex] if tailindex > 1 else '');
+                                                                 tagcount python:front.count('<');
+                                                                 abridgement python:str(front if tagcount % 2 == 0 else ' '.join((front, tail))) + ' ...';"
+                                                  tal:content="structure abridgement">Event Summary</p>
+                                        </div>
+                                    </tal:events>
+                                </div> <!-- close div#home-events -->
+                            </div> <!-- close events: scrollable item 1 -->
+
+                            <div> <!-- open news: scrollable item 2 -->
+                                <div id="home-news"
+                                     tal:define="utils_view context/@@utils_view;
+                                                news utils_view/getNewsItems"
+                                     tal:condition="news">
+                                    <a href="/news">
+                                        <h2>Latest News</h2>
+                                    </a>
+                                    <tal:newsitems>
+                                        <div class="homeNews" 
+                                             tal:repeat="item news">
+                                            <h3>
+                                                <a tal:attributes="href item/getURL;
+                                                                  title item/Description">
+                                                    <span tal:replace="item/pretty_title_or_id">News Title</span>
+                                                </a>
+                                            </h3>
+                                            <p>
+                                                <span tal:define="item_object item/getObject;
+                                                                 text item_object/text|item_object/getText|nothing;
+                                                                 desc item/Description|item/getDescription|item_object/Description|item_object/getDescription|nothing;
+                                                                 paragraph python:desc + ' ' + str(text).split('</p>')[0].replace('<p>','');
+                                                                 words python:paragraph.strip().split(' ');
+                                                                 front python:' '.join(words[:40]);
+                                                                 back python:' '.join(words[40:]);
+                                                                 tailindex python:len(back.split('>')[0])+1;
+                                                                 tail python:str(back[:tailindex] if tailindex > 1 else '');
+                                                                 tagcount python:front.count('<');
+                                                                 abridgement python:str(front if tagcount % 2 == 0 else ' '.join((front, tail))) + ' ...';"
+                                                      tal:content="structure abridgement">News Summary</span>
+                                            </p>
+                                        </div>
+                                    </tal:newsitems>
+                                </div> <!-- close div#home-news -->
+                            </div> <!-- close news: scrollable item 2 -->
+
+                        </div> <!-- close div.items -->
+                    </div> <!-- close div.scrollable -->
+                </div> <!-- close div#home-center -->
+                <div class="visualClear">
+                    <!-- -->
+                </div>
+            </metal:content-core>
+        </metal:content-core>
+    </body>
+</html>

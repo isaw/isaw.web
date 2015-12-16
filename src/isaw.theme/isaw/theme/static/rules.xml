@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- column counting -->
+  <xsl:variable name="columns">
+    <xsl:choose>
+      <xsl:when test="(//*[@id='portal-column-one'] and //*[@id='portal-column-two'])">three</xsl:when>
+      <xsl:when test="(//*[@id='portal-column-one'] and not(//*[@id='portal-column-two'])) or (//*[@id='portal-column-two'] and not(//*[@id='portal-column-one']))">two</xsl:when>
+      <xsl:otherwise>one</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:variable name="section">
+    <xsl:value-of select="//div[@id='portal-breadcrumbs']/span[3]/a[1]/text()|//div[@id='portal-breadcrumbs']/span[3]/span[1]/text()" />
+  </xsl:variable>
+  <!-- Don't act on AJAX faceted search requests -->
+  <notheme if-path="@@faceted_query @@tagscloud_counter @@tiled-listing-page" />
+
+  <!-- The default theme, used for standard Plone web pages -->
+  <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+
+  <!-- Rules applying to a standard Plone web page -->
+  <rules css:if-content="#visual-portal-wrapper">
+
+    <!-- Aliens have landed -->
+    <before css:theme="#visual-portal-wrapper" css:content="#emergency-message" />
+
+    <!-- Replace theme columns class -->
+    <before css:theme-children="#portal-columns">
+      <xsl:attribute name="class"><xsl:value-of select="$columns" /></xsl:attribute>
+    </before>
+
+    <!-- drop head elements -->
+    <drop theme="/html/head/style" />
+    <drop theme="/html/head/title" />
+    <drop theme="/html/head/script" />
+    <!-- base -->
+    <before css:theme-children="head" content="/html/head/base" />
+    <before css:theme-children="head" content="/html/head/comment()[contains(.,'base')]" />
+
+    <replace css:content=".breadcrumbSeparator">
+      <span class="breadcrumbSeparator">&gt;</span>
+    </replace>
+    
+    <!-- title -->
+    <after theme-children='/html/head'
+           content='/html/head/title' />
+    
+    <!-- Copy meta style, script and link tags in the order they appear in the content -->
+    <after
+        content="/html/head/meta | /html/head/style | /html/head/link | /html/head/comment()[contains(., 'link')] | /html/head/script"
+        theme-children="/html/head"
+        />
+    
+    <!-- Body -->
+    <merge attributes="class" css:theme="body" css:content="body" />
+      
+
+    <!-- Logo Text/Link -->
+    <copy css:theme="#site-title a"
+          css:content="a#portal-logo"
+          attributes="href accesskey title"/>
+    <replace css:theme-children="#site-title a">
+      <xsl:value-of select="//a[@id='portal-logo']/@title" />
+    </replace>
+    
+    <!-- Header -->
+    <replace css:theme-children="#main-navigation #secondary"
+             css:content-children="#portal-siteactions" />
+
+    <replace css:theme-children="#main-navigation #primary"
+             css:content-children="#portal-globalnav" />
+
+    <replace css:theme="#portal-searchbox"
+             css:content="#portal-searchbox" />
+
+    <replace css:theme-children="#portal-top h2.section-title">
+      <xsl:value-of select="$section" />
+    </replace>
+
+    <replace css:content="#personal-tools-links">
+      <xsl:copy-of select="//dl[@id='portal-personaltools']/dd/ul" />
+    </replace>
+
+    <replace css:content-children="#footer-support-link">
+      <xsl:attribute name="href">
+        <xsl:value-of select="//a[@id='support-link']/@href" />
+      </xsl:attribute>
+      <xsl:value-of select="//a[@id='support-link']" />
+    </replace>
+
+    <replace css:theme-children=".footer-row"
+             css:content="#portal-footer" />
+
+    <!-- Global nav -->
+
+    <!-- skip links -->
+    <before theme-children="/html/body"
+            css:content="#portal-header p.hiddenStructure" />
+            
+    <!-- Edit bar and portal messages -->
+    <replace css:theme="#viewlet-above-content"
+             css:content="#viewlet-above-content" />
+    <before css:theme="#content"
+            css:content="#edit-bar" />
+    <replace css:theme="#kssPortalMessage"
+             css:content="#kssPortalMessage" />
+            
+    <!-- hide descriptions -->
+    <drop css:if-content="body.portaltype-document"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-topic"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-news-item"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-event"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-pressrelease"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-pressclip"
+          css:content="#parent-fieldname-description"/>
+    <drop css:if-content="body.portaltype-formfolder"
+	        css:content=".documentDescription"/>
+      
+    <!-- content area -->
+    <replace css:theme-children="#content"
+             css:content-children="#content" />
+    <after css:theme="#content"
+           css:content="#viewlet-below-content"/>
+    
+    <!-- right column -->
+    <drop css:theme="#portal-column-second"
+          css:if-not-content="#portal-column-two" />
+
+    <replace css:content-children="#portal-column-two"
+             css:theme-children="#portal-column-second" />
+
+    <!-- strip navigation portlet header sitemap links -->
+    <strip css:content="dl.portletNavigationTree dt.portletHeader a" />
+    
+    <!-- left column -->
+    <drop css:theme="#portal-column-first"
+          css:if-not-content="#portal-column-one" />
+
+    <replace css:content-children="#portal-column-one"
+             css:theme-children="#portal-column-first" />
+
+    <!-- footer credits and analytics -->
+    <after theme-children="html/body"
+           content="//*[@id='isaw-footer']/following-sibling::*" />
+
+    <!-- event views only -->
+    <drop css:content=".calendar-view-link" />
+    <after method="raw" css:theme-children="#portal-column-second"
+           css:content=".calendar-view-link" />
+
+  </rules>
+  
+</rules>

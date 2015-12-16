@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Plone site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400&subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+
+
+    <style type="text/css">@import url("theme.css");</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="js/isaw.js"></script>
+
+</head>
+<body><div id="visual-portal-wrapper">
+	<div id="portal-top">
+		<h1 id="site-title"><a href="/">Institute for the Study of the Ancient World at NYU</a></h1>
+		<div class="identity"><a href="/">ISAW</a></div>
+		<h3 class="trigger">Menu</h3>
+		<nav id="main-navigation">
+			<ul id="primary">
+				<li class="graduate"><a href="#">Graduate Studies</a></li>
+				<li class="visiting"><a href="#">Visiting Scholars</a></li>
+				<li class="exhibitions"><a href="#">Exhibitions</a></li>
+				<li class="events"><a href="#">Events</a></li>
+			</ul>
+			<ul id="secondary">
+				<li><a href="#">About ISAW</a></li>
+				<li><a href="#">Our People</a></li>
+				<li><a href="#">Library</a></li>
+				<li><a href="#">Resources &amp; Publications</a></li>
+				<li><a href="#">Research</a></li>
+				<li><a href="#">News</a></li>
+				<li class="search"><a href="#">Search</a></li>
+			</ul>
+            <div id="portal-searchbox">
+                <form name="searchform" action="http://isaw.nyu.edu/@@search" id="livesearch0">
+
+                    <label class="hiddenStructure" for="searchGadget">Search Site</label>
+
+                    <div class="LSBox">
+                        <input name="SearchableText" type="text" size="18" value="painting" title="Search..." accesskey="4" class="searchField inputLabel" id="searchGadget" autocomplete="off"><input class="searchButton" type="submit" value="    ">
+
+                        <div class="searchSection">
+                            <input id="searchbox_currentfolder_only" class="noborder"       type="checkbox" name="path" value="/isaw">
+                            <label for="searchbox_currentfolder_only" style="cursor: pointer">
+                                only in current section
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+		</nav>
+		<div class="page-title">
+			<h2 class="section-title">Our People</h2>
+		</div>
+	</div><!-- /#portal-top -->
+    
+    <div id="portal-columns" class="three">
+		<div id="viewlet-above-content">
+			<div id="portal-breadcrumbs">
+				<span id="breadcrumbs-home"><a href="http://plonedemo.com">Home</a></span> > <span><a href="http://plonedemo.com">Our People</a></span> > <span><a href="http://plonedemo.com">Faculty</a></span>
+			</div>
+		</div>
+
+		<div id="column-contents">
+
+		<div id="portal-column-first">
+			<ul id="section-navigation">
+				<li class="expanded"><a href="#">Faculty</a>
+					<ul class="submenu">
+						<li><a href="#">Lorenzo d'Alfonso</a></li>
+						<li><a href="#">Roger Bagnall</a></li>
+						<li><a href="#">Roderick B. Campbell</a></li>
+						<li><a href="#">Sebastian Heath</a></li>
+						<li><a href="#">Robert G. Hoyland</a></li>
+						<li><a href="#">Alexander Jones</a></li>
+						<li><a href="#">Beate Pongratz-Leisten</a></li>
+						<li><a href="#">Daniel T. Potts</a></li>
+						<li><a href="#">Sören Stark</a></li>
+						<li><a href="#">Lillian Lan-ying Tseng</a></li>						
+					</ul>
+				</li>
+				<li><a href="#">Affiliated Faculty</a></li>
+				<li><a href="#">Staff</a></li>
+				<li><a href="#">Visiting Scholars</a></li>
+				<li><a href="#">Students</a></li>
+				<li><a href="#">Alumni</a></li>
+				<li><a href="#">Senior Fellows</a></li>
+				<li><a href="#">Research Associates</a></li>		
+			</ul>
+		</div>
+		
+        <div id="portal-column-content" class="cell width-3:4 position-0">
+
+
+            
+                <div class="">
+
+                    
+
+                    
+
+    <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
+        <dt>Info</dt>
+        <dd></dd>
+    </dl>
+
+
+
+                    
+                        <div id="content">
+
+                            
+
+                            
+
+<h1 class="documentFirstHeading">Plone User Interface elements test page</h1>
+
+<div class="documentDescription">
+This page lists the common user interface elements that exist in Plone, and
+shows you how they are rendered. It also tests a couple of common Internet
+Explorer rendering bugs, so you can see if your changes have triggered any
+bad behaviour on this front.
+</div>
+
+<div id="content-core">
+<pre>
+Headlines
+</pre>
+
+<h1>Headline h1</h1>
+<p>And a paragraph</p>
+<h2>Headline h2</h2>
+<p>And a paragraph</p>
+<h3>Headline h3</h3>
+<p>And a paragraph</p>
+<h4>Headline h4</h4>
+<p>And a paragraph</p>
+<h5>Headline h5</h5>
+<p>And a paragraph</p>
+<h6>Headline h6</h6>
+
+<pre>Example document rendering</pre>
+
+<dl class="portalMessage info">
+    <dt>
+        Info
+    </dt>
+    <dd>
+        The portalMessage class, can also contain <a href="#">links</a> - used to
+        give the user temporary status messages.
+    </dd>
+</dl>
+
+<h1 class="documentFirstHeading">Document Headline</h1>
+
+<div id="plone-document-byline" class="documentByLine">
+    <span class="documentAuthor">
+      by
+      <a href="http://localhost:8080/Plone/author/admin">admin</a>
+    </span>
+
+   <span class="documentModified">
+     —
+     <span>
+       last modified
+     </span>
+     May 21, 2010 10:02 AM
+   </span>
+
+   <span id="content-history" class="contentHistory">
+     —
+     <a href="http://localhost:8080/Plone/front-page/@@historyview" rel="#pb_4" class="link-overlay" style="cursor: pointer;">History</a>
+   </span>
+</div>
+
+<div class="documentDescription">
+The document description
+</div>
+
+<p>
+Normal document body text,
+<strong>strong text</strong>,
+<em>emphasised text</em>,
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo. Vestibulum vitae urna et mi volutpat luctus. Nulla auctor, lacus ut consectetuer sagittis, erat odio vulputate sapien, eu placerat diam mauris id turpis. Aenean quis ipsum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque rutrum. Sed mattis turpis sit amet ipsum viverra pharetra. Nunc facilisis, augue non dapibus gravida, risus quam vulputate quam, non venenatis dui massa in leo. Maecenas scelerisque dapibus libero. Suspendisse potenti.
+example <a href="#">Normal internal site link</a> inside a paragraph,
+example <a href="http://plone.org">External link to plone.org</a>,
+example <a href="https://plone.org">Secure (HTTPS) link to plone.org</a>,
+example <a href="mailto:some@address">Mailto link</a>,
+example <a href="ftp://some.site">FTP link</a>,
+example <a href="news://some.site">NNTP (news) link</a>,
+example <a href="webcal://some.site">WebCal link</a>,
+example <a href="feed://some.site">RSS feed link</a>,
+example <a href="irc://some.network/#channel">IRC link</a>.
+</p>
+
+<blockquote><p>Blockquote text within normal document body text lorem ipsum erat sapien placerat. </p></blockquote>
+
+<p>Normal document body text, strong text, emphasised text, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo. Vestibulum vitae urna et mi volutpat luctus. Normal document body text, strong text, emphasised text, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo.</p>
+
+<ul>
+    <li>Unordered list element 1
+        <ul>
+            <li>Unordered list subelement 1</li>
+        </ul>
+    </li>
+    <li>Unordered list element 2</li>
+    <li>Unordered list element 3</li>
+</ul>
+
+<ol>
+    <li>Ordered list element 1
+        <ol><li>Ordered list subelement 1</li></ol>
+    </li>
+    <li>Ordered list element 2</li>
+    <li>Ordered list element 3</li>
+</ol>
+
+<dl>
+    <dt>Definition list term</dt>
+    <dd>Definition List description, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo.
+    </dd>
+    <dd>Another Definition List description, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque odio sem, aliquam ut, suscipit at, aliquet non, justo.
+    </dd>
+</dl>
+
+<h2>
+Table of class <code>listing</code>
+</h2>
+
+<table class="listing" id="someid" summary="Sortable table example">
+    <!-- By giving a table an ID, it gets the sortable option.
+         Use class="nosort" to override on a table or column basis. -->
+    <thead>
+        <tr>
+            <th>Table heading</th>
+            <th>Another heading (sortable, click to sort)</th>
+            <th class="nosort">Fixed column (not sortable)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td>Odd table item</td>
+            <td>Item 1</td>
+            <td>Another item</td>
+        </tr>
+        <tr class="even">
+            <td>Even table item</td>
+            <td>Item 2</td>
+            <td>Yet another item</td>
+        </tr>
+        <tr class="odd">
+            <td>Odd table item</td>
+            <td>Item 3</td>
+            <td>And one more item</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>
+Table of class <code>vertical listing</code>
+</h2>
+
+<table class="vertical listing" summary="Vertical listing example">
+    <tbody>
+        <tr>
+            <th>Table heading</th>
+            <td>Odd table item</td>
+        </tr>
+        <tr>
+            <th>Another heading</th>
+            <td>Even table item</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Forms</h2>
+
+<form>
+    <fieldset>
+        <legend>Fieldset legend</legend>
+
+        <div class="field">
+            <label for="onefield">Text field</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This is the help for this form field. And <a href="#">links are also possible</a>.
+            </div>
+            <input type="text" id="onefield" value="Some content" />
+        </div>
+        <div class="field error">
+            <label for="anotherfield">Text field with error</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This field is just here to demonstrate an error message.
+            </div>
+            <div>This is the error message.</div>
+            <input type="text" id="anotherfield" value="Some content" />
+        </div>
+        <div class="field">
+            <label for="onecheckbox">Checkbox</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This is a checkbox field.
+            </div>
+            <input type="checkbox" id="onecheckbox" />
+        </div>
+        <div class="field error">
+            <label for="anothercheckbox">Checkbox with error</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This checkbox field is just here to demonstrate an error message.
+            </div>
+            <div>This is the error message.</div>
+            <input type="checkbox" id="anothercheckbox" />
+        </div>
+        <div class="field">
+            <label for="onestylishcheckbox">Checkbox without border</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This is a checkbox field.
+            </div>
+            <input type="checkbox" class="noborder" id="onestylishcheckbox" />
+        </div>
+        <div class="field error">
+            <label for="anotherstylishcheckbox">
+            Checkbox without border with error</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This checkbox field is just here to demonstrate an error message.
+            </div>
+            <div>This is the error message.</div>
+            <input type="checkbox" class="noborder" id="anotherstylishcheckbox" />
+        </div>
+        <div class="field">
+            <label>Radio</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This is a checkbox field.
+            </div>
+            <label>First
+            <input class="noborder" type="radio" name="radio_group1" />
+            </label>
+            <br />
+            <label>Second
+            <input class="noborder" type="radio" name="radio_group1" />
+            </label>
+            <br />
+            <label>Third
+            <input class="noborder" type="radio" name="radio_group1" />
+            </label>
+            <br />
+        </div>
+        <div class="field error">
+            <label>Radio with error</label>
+            <span class="fieldRequired" title="Required">(Required)</span>
+            <div class="formHelp">
+                This checkbox field is just here to demonstrate an error message.
+            </div>
+            <div>This is the error message.</div>
+            <label>First
+            <input class="noborder" type="radio" name="radio_group2" />
+            </label>
+            <br />
+            <label>Second
+            <input class="noborder" type="radio" name="radio_group2" />
+            </label>
+            <br />
+            <label>Third
+            <input class="noborder" type="radio" name="radio_group2" />
+            </label>
+            <br />
+        </div>
+        <div class="formControls">
+            <input class="context" type="submit" value="Context submit" />
+            <input class="standalone" type="submit" value="Standalone submit" />
+            <input class="destructive" type="submit" value="Destructive submit" />
+            <input type="submit" value="Submit" />
+        </div>
+        <div class="formControls">
+            <input class="context" type="button" value="Context button" />
+            <input class="standalone" type="button" value="Standalone button" />
+            <input class="destructive" type="button" value="Destructive button" />
+            <input type="button" value="Button" />
+        </div>
+    </fieldset>
+</form>
+
+<h2>Table with form elements</h2>
+
+<form>
+    <table id="sortable" class="listing" summary="Content listing" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="nosort">
+                    <input class="noborder" type="checkbox" src="http://plonedemo.com/select_all_icon.png" name="selectButton" title="Select all items" onclick="toggleSelect(this,'paths:list');" alt="Select all items" />
+                </th>
+                <th> Title </th>
+                <th> Stuff </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd">
+                <td>
+                   <input type="checkbox" class="noborder" name="paths:list" id="#" value="#" />
+                </td>
+                <td><a href="#">Title</a></td>
+                <td>with class noborder</td>
+            </tr>
+            <tr class="even">
+                <td>
+                   <input type="checkbox" class="noborder" name="paths:list" id="#" value="#" />
+                </td>
+                <td><a href="#">Title</a></td>
+                <td>with class noborder</td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<div>
+    <h2>Collapsible form</h2>
+    <form id="searchform" name="search" method="get" class="enableAutoFocus" action="search">
+
+        <div class="field collapsible">
+            <label class="collapser collapsed" for="created">New items since</label>
+
+            <div class="collapse" style="display: none;">
+                    <div class="formHelp">
+                    Return items added since you were last logged on, the last week, etc.
+                    </div>
+
+
+                    <select id="created" name="created:list:date">
+                        <option value="2010/09/06 17:50:45.971272 GMT-7">Last log-in</option>
+                        <option value="2010/09/05"> Yesterday </option>
+                        <option value="2010/08/30"> Last week </option>
+                        <option value="2010/08/06"> Last month </option>
+                        <option selected="selected" class="default_option" value="1970/02/01"> Ever </option>
+                    </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="field collapsible">
+            <label class="collapser collapsed" for="Creator">Author</label>
+
+            <div class="collapse" style="display: none;">
+                <div class="formHelp">
+                Return items created by a particular person.
+                </div>
+
+
+                <select id="Creator" name="Creator">
+                    <option class="default_option" value="">Any Author</option>
+
+                        <option value="admin">admin</option>
+
+                </select>
+            </div>
+        </div>
+
+        <div id="clear-space-before-submit" class="visualClear"><!-- --></div>
+
+    </form>
+</div>
+
+
+</div>
+
+
+                        </div>
+                    
+
+                    
+                </div>
+            
+
+            <div id="viewlet-below-content">
+</div>
+        </div>
+		<div id="portal-column-second">
+			<dl class="portlet">
+				<dd class="portletItem">
+					<img src="images/test.png" alt="Image Title" />
+					<div class="caption">The earliest attempt to reconstruct the Mechanism (Albert Rehm, 1905).Credit: Bayerische Staatsbibliothek, Rehmiana III/7. Used with permission.</div>
+				</dd>
+			</dl>
+		</div><!-- /portal-column-second -->
+
+        </div> <!-- /#column-contents -->
+
+        
+        <div class="visualClear"></div>
+    </div>
+
+    
+	<div class="visualClear"></div>
+    
+    <div class="footer-row">
+    </div>
+</div></body>
+</html>
