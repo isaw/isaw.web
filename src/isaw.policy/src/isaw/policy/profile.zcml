@@ -212,4 +212,14 @@
       import_steps="rolemap workflow placeful_workflow"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="21"
+      destination="22"
+      title="Fix workflow issues"
+      description="fixes image and file upload, "
+      profile="isaw.policy:default"
+      import_steps="workflow"
+      />
+
 </configure>
