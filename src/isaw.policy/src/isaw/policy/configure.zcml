@@ -1,0 +1,75 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="isaw.policy">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <includeDependencies package="." />
+
+  <include file="profile.zcml" />
+  <!-- -*- extra stuff goes here -*- -->
+
+  <adapter
+      name="isaw.policy.event_extender"
+      factory=".events.ISAWEventExtender"
+      provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+      />
+
+  <browser:viewlet
+      name="isaw.opengraph.metadata"
+      template="metadata.pt"
+      for="Products.CMFCore.interfaces.IDublinCore"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".metadata.OpenGraphTagViewlet"
+      layer=".interfaces.IISAWPolicyLayer"
+      permission="zope2.View"
+      />
+
+  <adapter
+      factory=".purging.ImagePurgePaths"
+      name="isaw.policy.baseimage" />
+
+  <adapter
+      for="Products.ATContentTypes.interfaces.IATNewsItem"
+      factory=".purging.ImagePurgePaths"
+      name="isaw.policy.baseimage" />
+
+  <adapter
+      factory=".purging.LeadimagePurgePaths"
+      name="isaw.policy.leadimage" />
+
+  <permission
+      id="plone.iterateCheckIn"
+      title="iterate : Check in content"
+      />
+
+  <permission
+      id="plone.iterateCheckOut"
+      title="iterate : Check out content"
+      />
+
+  <configure package="plone.app.iterate.browser">
+    <browser:page
+        for="..interfaces.IIterateAware"
+        name="content-checkin"
+        class=".checkin.Checkin"
+        template="checkin.pt"
+        layer="isaw.policy.interfaces.IISAWPolicyLayer"
+        permission="plone.iterateCheckOut"
+        />
+  </configure>
+
+  <browser:page
+      for="*"
+      name="iterate_control"
+      class=".iterate.ISAWIterateControl"
+      layer="isaw.policy.interfaces.IISAWPolicyLayer"
+      permission="zope2.View"
+      allowed_attributes="checkin_allowed checkout_allowed cancel_allowed"
+      />
+
+</configure>

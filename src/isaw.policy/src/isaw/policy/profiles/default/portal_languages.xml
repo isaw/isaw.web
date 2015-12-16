@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<object>
+  <set_cookie_everywhere value="True"/>
+  <use_combined_language_codes value="True"/>
+</object>

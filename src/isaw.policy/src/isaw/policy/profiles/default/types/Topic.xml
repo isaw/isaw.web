@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="Topic"
+   meta_type="Factory-based Type Information with dynamic views">
+  <property name="allowed_content_types">
+    <element value="Topic"/>
+  </property>
+  <property name="view_methods" purge="False">
+    <element value="news_view"/>
+  </property>
+</object>

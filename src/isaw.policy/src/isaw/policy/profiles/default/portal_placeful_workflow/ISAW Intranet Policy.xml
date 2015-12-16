@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<object name="ISAW Intranet Policy" meta_type="WorkflowPolicy">
+ <property name="title">ISAW Intranet Policy</property>
+ <bindings>
+  <default>
+   <bound-workflow workflow_id="isaw_intranet_workflow"/>
+  </default>
+  <type default_chain="true" type_id="CV"/>
+  <type default_chain="true" type_id="Collection"/>
+  <type default_chain="true" type_id="Document"/>
+  <type default_chain="true" type_id="Event"/>
+  <type default_chain="true" type_id="Folder"/>
+  <type default_chain="true" type_id="Link"/>
+  <type default_chain="true" type_id="News Item"/>
+  <type default_chain="true" type_id="PressClip"/>
+  <type default_chain="true" type_id="PressContact"/>
+  <type default_chain="true" type_id="PressRelease"/>
+  <type default_chain="true" type_id="PressRoom"/>
+  <type default_chain="true" type_id="Topic"/>
+  <type default_chain="true" type_id="profile"/>
+ </bindings>
+</object>
