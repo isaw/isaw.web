@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <rolemap>
   <permissions>
-    <!-- XXX: This seems a bit crazy -->
-    <permission name="View management screens" acquire="True">
-      <role name="Editor"/>
-    </permission>
     <permission name="iterate : Check in content" acquire="True">
       <role name="Reviewer"/>
       <role name="Manager"/>
