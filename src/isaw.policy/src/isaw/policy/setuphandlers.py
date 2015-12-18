@@ -156,3 +156,8 @@ def setup_portal_tabs(context):
                     continue
                 obj.setExcludeFromNav(True)
                 obj.reindexObject()
+
+
+def update_workflow_settings(context):
+    wft = getToolByName(context, 'portal_workflow')
+    wft.updateRoleMappings()

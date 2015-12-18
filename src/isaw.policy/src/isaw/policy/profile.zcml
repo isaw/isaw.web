@@ -222,4 +222,14 @@
       import_steps="workflow"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="22"
+      destination="23"
+      title="Apply workflow changes"
+      description="apply workflow changes made in previous upgrade step"
+      profile="isaw.policy:default"
+      handler=".setuphandlers.update_workflow_settings"
+      />
+
 </configure>
