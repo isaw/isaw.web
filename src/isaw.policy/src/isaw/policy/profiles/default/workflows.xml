@@ -27,8 +27,12 @@
 <type type_id="Event">
 <bound-workflow workflow_id="isaw_reviewer_workflow"/>
 </type>
-<type type_id="File"/>
-<type type_id="Image"/>
+<type type_id="File">
+ <bound-workflow workflow_id="one_state_workflow"/>
+</type>
+<type type_id="Image">
+ <bound-workflow workflow_id="one_state_workflow"/>
+</type>
 <type type_id="News Item">
 <bound-workflow workflow_id="isaw_reviewer_workflow"/>
 </type>

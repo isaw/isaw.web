@@ -3,6 +3,7 @@
  <permission>Access contents information</permission>
  <permission>Change portal events</permission>
  <permission>Modify portal content</permission>
+ <permission>iterate : Check in content</permission>
  <permission>View</permission>
  <state state_id="draft" title="">
   <exit-transition transition_id="submit"/>
@@ -26,6 +27,12 @@
    <permission-role>Owner</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Reviewer</permission-role>
    <permission-role>Editor</permission-role>
@@ -39,11 +46,7 @@
   <description>Reviewer publishes content internally</description>
   <exit-transition transition_id="reject"/>
   <permission-map name="Access contents information" acquired="False">
-   <permission-role>Reviewer</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Site Administrator</permission-role>
+   <permission-role>Authenticated</permission-role>
   </permission-map>
   <permission-map name="Change portal events" acquired="False">
    <permission-role>Manager</permission-role>
@@ -53,12 +56,13 @@
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>Reviewer</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Reader</permission-role>
+  <permission-map name="iterate : Check in content" acquired="False">
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
+   <permission-role>Reviewer</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Authenticated</permission-role>
   </permission-map>
  </state>
  <state state_id="pending" title="Pending review">
@@ -81,9 +85,13 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+   <permission-role>Reviewer</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -106,6 +114,11 @@
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="iterate : Check in content" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
