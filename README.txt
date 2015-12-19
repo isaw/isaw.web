@@ -155,7 +155,11 @@ You can now connect to the site at:
 
 Which should show you a button for creating a new Plone site.  You'll want to
 create a new site and apply the isaw.policy default profile by checking the
-corresponding checkbox.
+corresponding checkbox. Having done so, you'll see the unthemed Plone site. 
+To see the fully themed site, replace "127.0.0.1" with "localhost" in your 
+browser's location bar, thus:
+
+    http://localhost:8081/
 
 The supervisor can also be used to run the Zeo clients in the background:
 
