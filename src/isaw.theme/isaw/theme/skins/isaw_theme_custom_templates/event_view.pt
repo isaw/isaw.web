@@ -22,6 +22,11 @@
         Body text
         </metal:field>
 
+        <div tal:condition="context/contactName|nothing">
+          <h3>Contact</h3>
+          <p><strong tal:content="context/contactName">Name</strong><span tal:condition="context/contactEmail|nothing" tal:content="string:, ${context/contactEmail}">email</span><span tal:condition="context/contactPhone|nothing" tal:content="string:, ${context/contactPhone}">phone</span>.</p>
+        </div>
+
         <span class="visualClear"><!-- --></span>
 
 </metal:content-core>
