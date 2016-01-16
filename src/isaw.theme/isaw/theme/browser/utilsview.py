@@ -34,13 +34,9 @@ class UtilsView(BrowserView):
                                    sort_on='start',
                                    review_state=['published',
                                                  'external'])[:limit]
-        print catalog
-        type(catalog)
         if catalog == []:
-            print "we are here"
             return False
         else:
-            print "we are else"
             return catalog
 
     def getNewsItems(self, limit=3):
