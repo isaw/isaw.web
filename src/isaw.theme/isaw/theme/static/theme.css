@@ -253,7 +253,8 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns #relatedItemBox dd {font-size:14px; margin-left:0; }
 #portal-columns #relatedItemBox dd a {text-decoration:underline; }
 
-#portal-columns ul { margin-bottom: 28px; }
+#portal-columns ul {}
+#content-core ul { overflow: hidden; list-style-position: outside; padding-left: 32px; margin-left: 0; margin-bottom: 28px; }
 
 #portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
 #portal-columns ul.red li, #content ul.red li {margin:0 0 24px; }
