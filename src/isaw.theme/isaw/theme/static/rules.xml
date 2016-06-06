@@ -91,7 +91,9 @@
       <xsl:value-of select="//a[@id='support-link']" />
     </replace>
 
-    <replace css:theme-children=".footer-row"
+    <drop css:content="#portal-footer" />
+    <replace method="raw"
+             css:theme-children=".footer-row"
              css:content="#portal-footer" />
 
     <!-- Global nav -->
@@ -149,7 +151,7 @@
 
     <!-- footer credits and analytics -->
     <after theme-children="html/body"
-           content="//*[@id='isaw-footer']/following-sibling::*" />
+           content="//*[@id='portal-siteactions']/following-sibling::*" />
 
     <!-- event views only -->
     <drop css:content=".calendar-view-link" />
