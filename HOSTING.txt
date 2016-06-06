@@ -12,26 +12,15 @@ configure the server::
     libfreetype6-dev a2enmod rewrite ssl headers proxy proxy_http deflate
     munin munin-node
 
-    # For Python 2.6 (Plone < 4.3)
-    apt-get install software-properties-common
-    add-apt-repository ppa:fkrull/deadsnakes
-    apt-get update
-    apt-get install python2.6 python2.6-dev
-
+    # For Plone >= 4.3
     cd /srv
     git clone git@github.com:isawnyu/isaw.web
     cd isaw.web
     chown -R plone:jazkarta .
     chmod -R g+rwX .
 
-    # For Plone < 4.3
     python2.7 ./bootstrap.py
-    bin/buildout -c production.cfg
-
-    # The buildout should be owned by the plone user, so either run it as "su
-    # plone" or
-
-    chown -R plone:jazkarta .
+    su plone -c "bin/buildout -c production.cfg"
 
     cp conf/supervisor.conf /etc/init
     service supervisor restart
@@ -75,7 +64,7 @@ the following commands unless specified)::
 In production it may make sense to switch to a new tag instead of doing a `pull`::
 
     git fetch
-    get checkout TAG_NAME
+    git checkout TAG_NAME
 
 You may also wish to use  `sudo service varnish restart` to clear the cache.
 If changes have been made to the supervisor config you will need to restart
@@ -92,15 +81,21 @@ Occasionally the permissions on the sources may need to be updated using::
     sudo chmod -R g+rwX src/ bin/ parts/
 
 
-Syncing Data from ISAW production (currently 66.35.39.43, you will need to
-ensure that your user can read all blobstorage files on the production
-server)::
+To sync Data from ISAW production to staging, you will need to ensure that your 
+production user can read all blobstorage files on the production server::
 
-    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/Plone/zeocluster/var/filestorage/ var/filestorage/
-    sudo rsync -avz --delete -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/Plone/zeocluster/var/blobstorage/ var/blobstorage/
+    sudo chgrp -R jazkarta /srv/isaw.web/var/blobstorage/*
+    sudo chmod -R g+rX /srv/isaw.web/var/blobstorage/*
+
+Then login to the staging server and copy the files into place::
+
+
+    cd /srv/isaw.web
+    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/srv/isaw.web/var/filestorage/ var/filestorage/
+    sudo rsync -avz --delete -e "ssh -p 6195" *user*@66.35.39.43:/srv/isaw.web/Plone/zeocluster/var/blobstorage/ var/blobstorage/
 
 
 Syncing other sites from ISAW production::
 
-    cd /srv/
-    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/opt/isaw.nyu.edu/www-data/ www-data/
+    cd /srv
+    sudo rsync -avz -e "ssh -p 6195" *user*@66.35.39.43:/srv/www-data/ www-data/
