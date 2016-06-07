@@ -8,7 +8,7 @@
 
 <body>
 
-    <metal:content-core fill-slot="content-core">
+  <metal:content-core fill-slot="content-core">
 	<metal:content-core define-macro="content-core">
     <div>
         <!--  <p>All objects in the exhibition date to the later phases of the Temple Period, ca. 3600–2500 BCE.
@@ -20,13 +20,13 @@
 
             Several of the entries below refer to multiple objects.</p> -->
 
-    <div style="-moz-column-count:2; -webkit-column-count:2; column-count:2; ">
-	<tal:foldercontents define="
-		    folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending',
-										'portal_type': 'Image'}, full_objects=False, batch=True);
+    <tal:foldercontents define="
+        folderContents python:context.getFolderContents(contentFilter={'sort_order': 'ascending',
+                    'portal_type': 'Image'}, full_objects=False, batch=True);
         batch folderContents;
         b_start python:request.get('b_start', 0);
 ">
+    <div style="-moz-column-count:2; -webkit-column-count:2; column-count:2; ">
 		<tal:highlights>
 		<div tal:repeat="highlights folderContents">
 		<div style="padding:5px; display:inline-block;">
@@ -36,7 +36,7 @@
                          tal:attributes="src string:${highlights/getURL}/image_tile" />
 
                     <h5 class="tileHeadline"
-                        metal:define-macro="listitem" tal:content="highlights/Title" />
+                        metal:define-macro="listitem" tal:content="highlights/Title"></h5>
 
                 </div>
 
@@ -48,16 +48,17 @@
                     <div class="visualClear"><!-- --></div>
 		        </div>
 	    </div>
-        </div>
-	</tal:highlights>
-	</tal:foldercontents>
+    </div>
+    </tal:highlights>
 
-  <div metal:use-macro="context/batch_macros/macros/navigation" />
+    </div>
+    <div metal:use-macro="context/batch_macros/macros/navigation"></div>
 
-</div>
+  </tal:foldercontents>
+  </div>
 
 	</metal:content-core>
-    </metal:content-core>
+  </metal:content-core>
 
 </body>
 </html>
