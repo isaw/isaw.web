@@ -3,23 +3,53 @@
      i18n:domain="plone"
      tal:define="show view/show;
                  is_news python:context.portal_type == 'News Item';
-                 can_edit python:context.portal_membership.checkPermission('Modify portal content', context);"
+                 mtool python:context.portal_membership;
+                 portal_url python:context.portal_url;
+                 can_edit python:mtool.checkPermission('Modify portal content', context);
+                 creators here/Creators;
+                 contributors here/Contributors;"
      tal:condition="python: show and (is_news or can_edit)">
      
-  <tal:creator tal:define="creator_short_form view/creator;"
-               tal:condition="creator_short_form">
-  <tal:name tal:condition="python:view.author() is not None">
-    <span class="documentAuthor">
-      by
-      <span tal:replace="view/authorname">Roland Barthes</span>
-         |
-    </span>
-  </tal:name>
-  </tal:creator>
+  <tal:creators tal:condition="creators">
+    By
+    <tal:name tal:repeat="creator creators">
+      <span class="documentAuthor"
+            id=""
+            tal:attributes="id string:document-creator-${repeat/creator/number}"
+            tal:define="author python:mtool.getMemberInfo(creator);
+                        fullname python:author['fullname'] if author and author['fullname'] else creator;
+                        searchname python:fullname.replace(' ', '%20');">
+        <a href="#"
+           title="click here"
+           tal:attributes="href string:${portal_url}/search?SearchableText=${searchname};
+                           title string:search site for more information about ${fullname}"
+           tal:content="fullname">Ada Lovelace</a>
+        </span><span tal:condition="not:repeat/creator/end" tal:omit-tag="">, </span>
+    </tal:name>
+  </tal:creators>
+
+  <tal:contributors tal:condition="contributors">
+    <br />With
+    <tal:name tal:repeat="contributor contributors">
+      <span class="documentContributor"
+            id=""
+            tal:attributes="id string:document-contributor-${repeat/contributor/number}"
+            tal:define="author python:mtool.getMemberInfo(contributor);
+                        fullname python:author['fullname'] if author and author['fullname'] else contributor;
+                        searchname python:fullname.replace(' ', '%20');">
+        <a href="#"
+           title="click here"
+           tal:attributes="href string:${portal_url}/search?SearchableText=${searchname};
+                           title string:search site for more information about ${fullname}"
+           tal:content="fullname">Grace Hopper</a>
+        </span><span tal:condition="not:repeat/contributor/end" tal:omit-tag="">, </span>
+    </tal:name>
+  </tal:contributors>
 
   <tal:dates define="published view/pub_date;
                      created context/CreationDate;
                      date python:published or created">
+                     <br tal:condition="python:creators or contributors" />
   <span class="documentPublished"
         tal:condition="date">
     <span tal:replace="python:view.toLocalizedTime(date,long_format=0)">
