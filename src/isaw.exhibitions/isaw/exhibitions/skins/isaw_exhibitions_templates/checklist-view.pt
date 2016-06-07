@@ -49,6 +49,7 @@
 	</tal:highlights>
 	</tal:foldercontents>
 
+  <div metal:use-macro="context/batch_macros/macros/navigation" />
 
 </div>
 
