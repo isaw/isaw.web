@@ -80,10 +80,6 @@
       <xsl:value-of select="$section" />
     </replace>
 
-    <replace css:content="#personal-tools-links">
-      <xsl:copy-of select="//dl[@id='portal-personaltools']/dd/ul" />
-    </replace>
-
     <replace css:content-children="#footer-support-link">
       <xsl:attribute name="href">
         <xsl:value-of select="//a[@id='support-link']/@href" />
