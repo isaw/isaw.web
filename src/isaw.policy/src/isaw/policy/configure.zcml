@@ -4,6 +4,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="isaw.policy">
 
   <five:registerPackage package="." initialize=".initialize" />
@@ -71,5 +72,26 @@
       permission="zope2.View"
       allowed_attributes="checkin_allowed checkout_allowed cancel_allowed"
       />
+
+  <!-- Register types that have lead images as supporting cropping -->
+  <configure zcml:condition="installed plone.app.imagecropping">
+    <class class="Products.ATContentTypes.content.topic.ATTopic">
+      <implements interface="plone.app.imagecropping.at.IImageCroppingAT" />
+    </class>
+
+    <class class="plone.app.folder.folder.ATFolder">
+      <implements interface="plone.app.imagecropping.at.IImageCroppingAT" />
+    </class>
+
+    <class class="Products.ATContentTypes.content.document.ATDocument">
+      <implements interface="plone.app.imagecropping.at.IImageCroppingAT" />
+    </class>
+
+    <class class="Products.ATContentTypes.content.event.ATEvent">
+      <implements interface="plone.app.imagecropping.at.IImageCroppingAT" />
+    </class>
+
+  </configure>
+
 
 </configure>
