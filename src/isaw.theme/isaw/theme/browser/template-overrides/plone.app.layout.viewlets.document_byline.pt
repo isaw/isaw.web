@@ -23,8 +23,7 @@
            title="click here"
            tal:attributes="href string:${portal_url}/search?SearchableText=${searchname};
                            title string:search site for more information about ${fullname}"
-           tal:content="fullname">Ada Lovelace</a>
-        </span><span tal:condition="not:repeat/creator/end" tal:omit-tag="">, </span>
+           tal:content="fullname">Ada Lovelace</a></span><span tal:condition="not:repeat/creator/end" tal:omit-tag="">, </span>
     </tal:name>
   </tal:creators>
 
@@ -41,8 +40,7 @@
            title="click here"
            tal:attributes="href string:${portal_url}/search?SearchableText=${searchname};
                            title string:search site for more information about ${fullname}"
-           tal:content="fullname">Grace Hopper</a>
-        </span><span tal:condition="not:repeat/contributor/end" tal:omit-tag="">, </span>
+           tal:content="fullname">Grace Hopper</a></span><span tal:condition="not:repeat/contributor/end" tal:omit-tag="">, </span>
     </tal:name>
   </tal:contributors>
 
