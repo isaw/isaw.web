@@ -81,6 +81,7 @@ class TileDetailsMixin(object):
             scale = scales.scale(field, self.image_scale)
             if scale is not None:
                 tag = scale.tag(alt=title, title=title)
+                break
         return tag
 
 
