@@ -6,7 +6,7 @@
 <object name="isaw_standard_workflow" meta_type="Workflow"/>
 <bindings>
 <default>
-<bound-workflow workflow_id="isaw_standard_workflow"/>
+ <bound-workflow workflow_id="isaw_standard_workflow"/>
 </default>
 <type type_id="ATBooleanCriterion"/>
 <type type_id="ATCurrentAuthorCriterion"/>
@@ -22,19 +22,13 @@
 <type type_id="ATSimpleStringCriterion"/>
 <type type_id="ATSortCriterion"/>
 <type type_id="Discussion Item">
-<bound-workflow workflow_id="one_state_workflow"/>
-</type>
-<type type_id="Event">
-<bound-workflow workflow_id="isaw_reviewer_workflow"/>
+ <bound-workflow workflow_id="one_state_workflow"/>
 </type>
 <type type_id="File">
  <bound-workflow workflow_id="one_state_workflow"/>
 </type>
 <type type_id="Image">
  <bound-workflow workflow_id="one_state_workflow"/>
-</type>
-<type type_id="News Item">
-<bound-workflow workflow_id="isaw_reviewer_workflow"/>
 </type>
 <type type_id="Plone Site"/>
 </bindings>
