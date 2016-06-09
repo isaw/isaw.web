@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>23</version>
+  <version>24</version>
   <dependencies>
     <dependency>profile-isaw.theme:default</dependency>
     <dependency>profile-isaw.facultycv:default</dependency>
@@ -22,5 +22,6 @@
     <dependency>profile-PressRoom:default</dependency>
     <dependency>profile-Products.PloneKeywordManager:default</dependency>
     <dependency>profile-collective.easyslider:default</dependency>
+    <dependency>profile-Products.RedirectionTool:default</dependency>
   </dependencies>
 </metadata>

@@ -64,6 +64,7 @@ setup(name='isaw.policy',
           'collective.linkcheck',
           'collective.easyslider',
           'ftw.calendar',
+          'Products.RedirectionTool',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""

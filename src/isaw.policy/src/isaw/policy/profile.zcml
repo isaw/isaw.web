@@ -232,4 +232,15 @@
       handler=".setuphandlers.update_workflow_settings"
       />
 
+  <genericsetup:upgradeSteps
+      source="23"
+      destination="24"
+      sortkey="10"
+      profile="isaw.policy:default">
+    <upgradeStep
+        title="Upgrade Dependencies"
+        handler=".setuphandlers.install_addons"
+        />
+  </genericsetup:upgradeSteps>
+
 </configure>

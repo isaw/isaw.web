@@ -12,6 +12,8 @@ def install_addons(context):
         qi.installProduct('ftw.calendar')
     if not qi.isProductInstalled('Products.PloneKeywordManager'):
         qi.installProduct('Products.PloneKeywordManager')
+    if not qi.isProductInstalled('Products.RedirectionTool'):
+        qi.installProduct('Products.RedirectionTool')
 
 def copy_generic_fields(event):
     event_object = event.getObject()
@@ -57,7 +59,7 @@ def remove_and_rename(event):
     container.manage_delObjects([event_id])
     transaction.commit()
     container.manage_renameObject(temp_id, event_id)
-    
+
 
 def migrate_events(context):
     properties = getToolByName(context, 'portal_properties')
