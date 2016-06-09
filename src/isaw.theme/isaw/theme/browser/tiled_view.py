@@ -18,6 +18,7 @@ from isaw.theme.browser.interfaces import ITiledListingView
 
 
 STICKY_TAGS = ['featured', 'Featured', 'FEATURED']
+IMAGE_FIELDS = ['image', 'leadImage']
 
 
 class TileDetailsMixin(object):
@@ -69,16 +70,19 @@ class TileDetailsMixin(object):
         return "by " + " | ".join(parts)
 
     def get_image(self, brain):
+        tag = self.image_placeholder
         scales = self.context.restrictedTraverse(brain.getPath() + '/@@images')
         title = brain.Title
         if callable(title):
             title = title()
-        try:
-            scale = scales.scale('image', self.image_scale)
-            return '<img src={} alt={} />'.format(scale.url, title)
-        except (TypeError, AttributeError):
-            # no image available, use the placeholder div
-            return self.image_placeholder
+        # attempt to find any image field on the object, using know field names
+        # TODO: this would be a nice place for some configuration.
+        for field in IMAGE_FIELDS:
+            scale = scales.scale(field, self.image_scale)
+            if scale is not None:
+                tag = scale.tag(alt=title, title=title)
+                break
+        return tag
 
 
 class TiledListingView(BrowserView, TileDetailsMixin):
