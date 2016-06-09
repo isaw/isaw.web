@@ -5,6 +5,7 @@
    <element value="Learn More Link|span|learnMore"/>
    <element value="Red List|ul|red"/>
    <element value="Red List|ol|red"/>
+   <element value="Intro Paragraph|p|intro"/>
   </styles>
  </layout>
 </object>
