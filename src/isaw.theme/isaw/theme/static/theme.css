@@ -536,6 +536,12 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .section-people #portal-columns .facultyListing .facultyInfo p.facultyEmail {font-weight:300;  }
 
 
+/* title listing view */
+#title-listing-container ul.title-listing{
+    list-style: none;
+}
+
+
 /* full cal */
 #portal-columns table.fc-header,
 #portal-columns table.fc-header table,
