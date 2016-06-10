@@ -56,15 +56,14 @@ To deploy new software to production or staging (do not use sudo for any of
 the following commands unless specified)::
 
     cd /srv/isaw.web
-    git pull
-    bin/buildout -c production.cfg
-    chown -R plone:jazkarta .
+    sudo -u plone git pull
+    sudo -u bin/buildout -c production.cfg
     bin/supervisorctl restart client1 client2 client3
 
 In production it may make sense to switch to a new tag instead of doing a `pull`::
 
-    git fetch
-    git checkout TAG_NAME
+    sudo -u plone git fetch
+    sudo -u plone git checkout TAG_NAME
 
 You may also wish to use  `sudo service varnish restart` to clear the cache.
 If changes have been made to the supervisor config you will need to restart
