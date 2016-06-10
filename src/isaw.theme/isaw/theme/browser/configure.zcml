@@ -49,16 +49,6 @@
     template="templates/tiled_view.pt"
     />
 
-  <!-- Event listing view -->
-  <browser:page
-    name="event-listing"
-    for="*"
-    permission="zope2.View"
-    class=".event_listing.EventListingView"
-    layer=".interfaces.IThemeSpecific"
-    template="templates/event_listing.pt"
-    />
-
     <browser:menuItem
         for="Products.ATContentTypes.interface.IATFolder"
         menu="plone_displayviews"
@@ -81,30 +71,6 @@
         title="Tiled Listing"
         action="@@tiled-listing"
         description="List folder contents in a 3x3 grid of tiles"
-        />
-
-    <browser:menuItem
-        for="Products.ATContentTypes.interface.IATFolder"
-        menu="plone_displayviews"
-        title="Event Listing"
-        action="@@event-listing"
-        description="List events in single column page"
-        />
-
-    <browser:menuItem
-        for="Products.ATContentTypes.interface.IATTopic"
-        menu="plone_displayviews"
-        title="Event Listing"
-        action="@@event-listing"
-        description="List events in single column page"
-        />
-
-    <browser:menuItem
-        for="plone.app.collection.interfaces.ICollection"
-        menu="plone_displayviews"
-        title="Event Listing"
-        action="@@event-listing"
-        description="List events in single column page"
         />
 
     <browser:viewlet
@@ -126,6 +92,40 @@
         template="templates/tiled_list_items.pt"
         />
 
+  <!-- Event listing view -->
+  <browser:page
+    name="event-listing"
+    for="*"
+    permission="zope2.View"
+    class=".event_listing.EventListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/event_listing.pt"
+    />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Event Listing"
+        action="@@event-listing"
+        description="List events in single column page"
+        />
+
     <browser:page
         name="event-listing-page"
         for="*"
@@ -133,6 +133,40 @@
         class=".event_listing.EventListingView"
         layer=".interfaces.IThemeSpecific"
         template="templates/list_events.pt"
+        />
+
+  <!-- Title listing view -->
+  <browser:page
+    name="title-listing"
+    for="*"
+    permission="zope2.View"
+    class=".title_listing_view.TitleListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/title_view.pt"
+    />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Title-Only Listing"
+        action="@@title-listing"
+        description="List folder contents by title only"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Title-Only Listing"
+        action="@@title-listing"
+        description="List folder contents by title only"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Title-Only Listing"
+        action="@@title-listing"
+        description="List folder contents by title only"
         />
 
   <!-- byline viewlet available on any contentish (non-folder) AT item -->
