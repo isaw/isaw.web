@@ -54,7 +54,7 @@ $(document).ready(function () {
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-  <div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a></div>
+<div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a> <a class="eventRsvp" tal:attributes="href string:${context/absolute_url}/icalendar">.ics format</a></div>
   <tal:block tal:define="items view/listings">
     <div class="event-listing">
      <tal:block tal:repeat="item items">
