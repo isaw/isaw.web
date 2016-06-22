@@ -20,5 +20,12 @@
       description=""
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
+  <genericsetup:upgradeDepends
+      profile="isaw.exhibitions:default"
+      source="1"
+      destination="2"
+      title="Add Exhibition Object"
+      import_steps="typeinfo" />
+
 </configure>

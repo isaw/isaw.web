@@ -952,6 +952,18 @@ h2.CVSectionTitle:before {
     max-height: 200px;
 }
 
+#content .discreet a {
+    color: #666;
+}
+
+#content .ExhibitObjectText {
+    margin-top: 1.5em;
+}
+
+#content .ExhibitObjectImage {
+    margin-bottom: 1em;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }

@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="kcrw.site">
+<body>
+  <metal:core fill-slot="content-core">
+    <div class="ExhibitObjectImage"
+         tal:define="image nocall:context/@@images/image/large|nothing"
+         tal:condition="nocall:image"
+         tal:content="structure image">
+    </div>
+    <div class="discreet ExhibitObjectTitle" tal:content="context/title">Title</div>
+    <div class="discreet ExhibitObjectMedium" tal:condition="context/medium" tal:content="context/medium">Medium</div>
+    <div class="discreet ExhibitObjectDimensions" tal:condition="context/dimensions" tal:content="context/dimensions">Dimensions</div>
+    <div class="discreet ExhibitObjectContext" tal:condition="context/context" tal:content="context/context">Context</div>
+    <div class="discreet ExhibitObjectDate" tal:condition="context/date" tal:content="context/date">Date</div>
+    <div class="discreet ExhibitObjectLender" tal:condition="context/lender">
+      <a href="" title="Lender" tal:attributes="href context/lender_link|nothing" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a>
+    </div>
+
+    <div class="ExhibitObjectText"
+         tal:define="text context/text/output|nothing"
+         tal:content="structure text">
+      Rich Text Content
+    </div>
+  </metal:core>
+</body>
+</html>

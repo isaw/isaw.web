@@ -7,4 +7,11 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <browser:page
+    for="..interfaces.IExhibitionObject"
+    template="exhibition_object.pt"
+    name="view"
+    permission="zope2.View"
+    />
+
 </configure>
