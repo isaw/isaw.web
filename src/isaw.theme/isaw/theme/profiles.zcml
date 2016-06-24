@@ -239,4 +239,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="22"
+      destination="23"
+      title="Title Listing View"
+      description="Add a view for collections and folders showing item titles only"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
 </configure>

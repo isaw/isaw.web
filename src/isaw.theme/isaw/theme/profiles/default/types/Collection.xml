@@ -9,5 +9,6 @@
         <element value="event-listing"/>
         <element value="exhibition-checklist"/>
         <element value="exhibition-highlights"/>
+        <element value="title-listing"/>
     </property>
 </object>
