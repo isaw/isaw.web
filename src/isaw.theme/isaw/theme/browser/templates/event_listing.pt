@@ -68,7 +68,7 @@ $(document).ready(function () {
                     image_url string:${item_url}/@@images/image/blogtile;
                     title item/Title;
                     exerpt item/Description">
-          <img tal:condition="item/hasContentLeadImage" src="" title="" tal:attributes="src string:${item_url}/leadImage_mini" />
+          <a href="#" tal:attributes="href item_url"><img tal:condition="item/hasContentLeadImage" src="" title="" tal:attributes="src string:${item_url}/leadImage_mini" /></a>
           <a href="#" tal:attributes="href item_url"><h3 class="event-title" tal:content="item/Title">[title]</h3></a>
           <p class="event-subtitle" tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
           <p class="event-speaker" tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
