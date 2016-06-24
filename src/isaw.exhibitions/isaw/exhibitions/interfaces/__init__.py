@@ -30,7 +30,7 @@ class IExhibitionObject(model.Schema):
                                  required=False)
 
     inventory_num = schema.TextLine(title=_(u'Inventory Number'),
-                                    required=False)
+                                    required=True)
 
     lender = schema.TextLine(title=_(u'Lender'),
                              required=False)

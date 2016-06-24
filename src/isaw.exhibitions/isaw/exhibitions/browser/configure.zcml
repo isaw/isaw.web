@@ -14,4 +14,19 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    template="checklist_listing.pt"
+    name="exhibition-checklist"
+    permission="zope2.View"
+    />
+
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Exhibition Checklist"
+      action="exhibition-checklist"
+      description="Exhibition Checklist View"
+      />
+
 </configure>

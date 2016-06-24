@@ -964,6 +964,26 @@ h2.CVSectionTitle:before {
     margin-bottom: 1em;
 }
 
+#content .ExhibitionsChecklistView .listing {
+    column-count: 2;
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+}
+
+.ExhibitionChecklistItem {
+    padding: 5px;
+    display: inline-block;
+}
+
+.ExhibitionChecklistItem .tileItem img {
+    float: right;
+    margin: 0.5em 1em 0em;
+}
+
+.ExhibitionChecklistBody {
+    font: 10px Arial, sans-serif;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
