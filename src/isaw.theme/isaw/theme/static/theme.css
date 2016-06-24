@@ -276,7 +276,9 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns table, #content table {border:1px solid #e2ddd7; border-collapse:collapse; }
 #portal-columns table thead { }
 #portal-columns table thead tr { }
+
 #portal-columns table thead tr th, #content table thead tr th {background-color: #d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
+
 #portal-columns table.sortable thead tr th, #content table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat; cursor:pointer; padding-right:56px;}
 #portal-columns table.sortable thead tr th.nosort, #content table.sortable thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
 #portal-columns table tbody { }
@@ -543,6 +545,14 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .fc-state-default {border:1px solid #9b3a25; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; }
 .fc-header .fc-state-default span {background:transparent; padding:15px 25px; }
 
+#portal-columns .fc-view table tbody .fc-divider th { background-color: white; }
+
+#portal-columns .fc-view table thead tr th, #content .fc-view table thead tr th {font-size: initial; font-weight: 700; letter-spacing: initial; line-height: 100%; padding: initial; text-align: center;}
+
+#portal-columns .fc-view table tbody tr th, #content .fc-view table tbody tr th {font-size: initial; font-weight: 700; letter-spacing: initial; line-height: 100%; padding: initial; text-align: center;}
+#portal-columns .fc-view table tbody tr td, #content .fc-view table tbody tr td {font-size: initial; font-weight: 700; letter-spacing: initial; line-height: 100%; padding: initial; text-transform: none; }
+
+
 /* events */
 .section-events #content div.newsImageContainer {
 	margin: 0 10px 5px 10px;
@@ -758,7 +768,7 @@ h2.CVSectionTitle:before {
 .fc-header .fc-state-default a:hover,
 .fc-header .fc-state-default a:focus {background:#66232b; color:#fff !important; }
 
-.fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; }
+.fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; box-sizing: border-box;}
 .fc-grid .fc-event-time {display:block; margin:0 0 4px; }
 
 #emergency-message {
