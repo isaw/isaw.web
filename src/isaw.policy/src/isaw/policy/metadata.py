@@ -58,11 +58,6 @@ class OpenGraphTagViewlet(ViewletBase):
                 self.metatags.append((u'article:expiration_time',
                                       expires_date))
 
-            creator = self.context.Creator()
-            if creator:
-                self.metatags.append((u'article:author',
-                                     creator.decode('utf8')))
-
             if self.context.portal_type == 'News Item':
                 self.metatags.append((u'article:section', u'news'))
             elif self.context.portal_type == 'Event':
