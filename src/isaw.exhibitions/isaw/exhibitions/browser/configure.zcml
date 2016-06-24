@@ -21,12 +21,27 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    template="highlights_listing.pt"
+    name="exhibition-highlights"
+    permission="zope2.View"
+    />
+
   <browser:menuItem
       for="*"
       menu="plone_displayviews"
       title="Exhibition Checklist"
       action="exhibition-checklist"
       description="Exhibition Checklist View"
+      />
+
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Exhibition Highlights"
+      action="exhibition-highlights"
+      description="Exhibition Highlights View"
       />
 
 </configure>

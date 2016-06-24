@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+  <metal:define-core define-macro="content-core">
+    <div class="ExhibitionHighlightsView">
+    <metal:use-core use-macro="context/folder_listing/macros/content-core">
+      <table class="plain" metal:fill-slot="entries">
+      <tbody tal:define="items python:list(batch);
+                         pairs python:zip(items[0::2], items[1::2]) + (len(items)%2 and [(items[-1],)] or []);">
+        <tr class="ExhibitionHighlightRow" tal:repeat="pair pairs">
+          <tal:entry tal:repeat="item pair">
+            <tal:block tal:define="item_url item/getURL|item/absolute_url;
+                                   item_id item/getId|item/id;
+                                   item_title_or_id item/pretty_title_or_id;
+                                   item_description item/Description;
+                                   item_type item/portal_type;
+                                   item_type_class python:'contenttype-' + normalizeString(item_type);
+                                   item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
+                                   item_wf_state_class python:'state-' + normalizeString(item_wf_state);
+                                   item_creator item/Creator;
+                                   is_exhibit_obj python:item_type == 'isaw.exhibitions.object';">
+              <td>
+                <a href="" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title_or_id;">
+                  <img alt="" class="highlightImage"
+                       tal:attributes="src string:${item_url}/@@images/image/preview; alt item_title_or_id;" />
+                </a>
+                <br />
+                <span class="highlightHeadline">
+                  <a tal:content="item_title_or_id" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title_or_id;">Title</a>
+                </span>
+              </td>
+            </tal:block>
+          </tal:entry>
+        </tr>
+      </tbody>
+      </table>
+    </metal:use-core>
+    </div>
+  </metal:define-core>  
+</metal:content-core>
+</body>
+</html>

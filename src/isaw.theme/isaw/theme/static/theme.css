@@ -964,7 +964,7 @@ h2.CVSectionTitle:before {
     margin-bottom: 1em;
 }
 
-#content .ExhibitionsChecklistView .listing {
+#content .ExhibitionChecklistView .listing {
     column-count: 2;
     -moz-column-count: 2;
     -webkit-column-count: 2;
@@ -982,6 +982,10 @@ h2.CVSectionTitle:before {
 
 .ExhibitionChecklistBody {
     font: 10px Arial, sans-serif;
+}
+
+.ExhibitionHighlightsView table td {
+    text-align: center;
 }
 
 @media screen and (max-width:549px){

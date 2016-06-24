@@ -10,7 +10,7 @@
 
 <metal:content-core fill-slot="content-core">
   <metal:define-core define-macro="content-core">
-    <div class="ExhibitionsChecklistView">
+    <div class="ExhibitionChecklistView">
     <metal:use-core use-macro="context/folder_listing/macros/content-core">
       <div class="listing" metal:fill-slot="entries">
         <tal:entry tal:repeat="item batch" metal:define-macro="entries">
