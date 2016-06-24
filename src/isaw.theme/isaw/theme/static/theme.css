@@ -768,8 +768,8 @@ h2.CVSectionTitle:before {
 .fc-header .fc-state-default a:hover,
 .fc-header .fc-state-default a:focus {background:#66232b; color:#fff !important; }
 
-.fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding:4%; box-sizing: border-box;}
-.fc-grid .fc-event-time {display:block; margin:0 0 4px; }
+.fc-event, .fc-agenda .fc-event-time, .fc-event a {background:#66232b !important; border:1px solid #66232b !important; padding: 0; box-sizing: border-box;}
+.fc-grid .fc-event-time {display:block; margin:0 0 4px;}
 
 #emergency-message {
     margin: 0;
