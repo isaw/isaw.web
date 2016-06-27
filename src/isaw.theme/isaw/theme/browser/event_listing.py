@@ -3,14 +3,18 @@
 
 Suitable for folders or collections
 
-Also includes a viewlet which will show the "featured_item" returned by 
+Also includes a viewlet which will show the "featured_item" returned by
 the method on the view.
 """
 from DateTime import DateTime
 
+from zope.component import queryUtility
 from zope.interface import implements
 
+from plone.registry.interfaces import IRegistry
+
 from isaw.theme.browser.interfaces import IEventListingView
+from isaw.theme.browser.interfaces import IISAWSettings
 from isaw.theme.browser.tiled_view import TiledListingView
 
 
@@ -21,6 +25,7 @@ class EventListingView(TiledListingView):
     image_placeholder = '<div class="blogtile_placeholder">&nbsp;</div>'
     batch_size = 12
     page = 1
+    no_results_message = '<p>There are no upcoming events.</p>'
 
     def format_date(self, date):
         if date:
@@ -30,9 +35,9 @@ class EventListingView(TiledListingView):
 
     def listings(self, b_start=None, b_size=None):
         """get a page of listings"""
-        if b_size == None:
+        if b_size is None:
             b_size = self.batch_size
-        if b_start == None:
+        if b_start is None:
             b_start = (getattr(self, 'page', 1) - 1) * b_size
         if self.context.portal_type == 'Folder':
             content_filter = {
@@ -42,8 +47,13 @@ class EventListingView(TiledListingView):
                 'sort_on': 'start',
                 'sort_order': 'ascending',
                 'review_state': 'published',
-                'start': {'query': DateTime(), 'range': 'min'},
             }
+            text = self.request.get('SearchableText')
+            if text:
+                content_filter['SearchableText'] = text
+            search_all = self.request.get('SearchAll')
+            if search_all != 'yes':
+                content_filter['start'] = {'query': DateTime(), 'range': 'min'}
             items = self.context.getFolderContents(
                 content_filter, batch=True
             )
@@ -56,3 +66,8 @@ class EventListingView(TiledListingView):
         else:
             items = []
         return items
+
+    def get_no_results_message(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IISAWSettings)
+        return getattr(settings, 'no_results_message', self.no_results_message)

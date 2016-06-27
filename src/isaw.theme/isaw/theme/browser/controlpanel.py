@@ -14,6 +14,7 @@ class ISAWSettingsEditForm(controlpanel.RegistryEditForm):
         super(ISAWSettingsEditForm, self).updateFields()
         self.fields['emergency_message'].widgetFactory = WysiwygFieldWidget
         self.fields['footer_html'].widgetFactory = WysiwygFieldWidget
+        self.fields['no_results_message'].widgetFactory = WysiwygFieldWidget
 
 
 class ISAWSettingsControlPanel(controlpanel.ControlPanelFormWrapper):

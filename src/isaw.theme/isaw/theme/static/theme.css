@@ -416,14 +416,14 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns #portal-column-second dl.event-details .portletItem ul.details li:nth-child(even) {background:#e8dedf; }
 #portal-columns #portal-column-second dl.event-details .portletItem .note {background:#f8f0e5; color:#4e4e4d; font-size:15px; line-height:20px; margin:0 0 24px; padding:24px 26px; }
 #portal-columns #portal-column-second dl.event-details .portletItem a.button.event.inverse { }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal {border:2px solid #66232b; border-radius:2px; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal h3 {border-bottom:2px solid #66232b; color:#66232b; font-size:13px; font-weight:bold; margin:0; padding:32px 75px 32px 0; position:relative; text-align:center;  }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal h3:after {background:url('_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links {list-style:none; margin:0; padding:0; text-align:center; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li {display:inline-block; margin:0 4%; width:40%; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a {background:url('_images/icon-calendar-add.png') left center / 28px no-repeat; color:#000; display:block; font-size:14px; font-weight:bold; padding:20px 0 20px 26px; text-decoration:none; text-transform:uppercase; }
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a:focus,
-#portal-columns #portal-column-second dl.event-details .portletItem .add-to-cal ul.links li a:Hover { }
+.add-to-cal {border:2px solid #66232b; border-radius:2px; }
+.add-to-cal h3 {border-bottom:2px solid #66232b; color:#66232b; font-size:13px; font-weight:bold; margin:0; padding:32px 75px 32px 0; position:relative; text-align:center;  }
+.add-to-cal h3:after {background:url('_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
+.add-to-cal ul.links {list-style:none; margin:0; padding:0; text-align:center; }
+.add-to-cal ul.links li {display:inline-block; margin:0 4%; width:40%; }
+.add-to-cal ul.links li a {background:url('_images/icon-calendar-add.png') left center / 28px no-repeat; color:#000; display:block; font-size:14px; font-weight:bold; padding:20px 0 20px 26px; text-decoration:none; text-transform:uppercase; }
+.add-to-cal ul.links li a:focus,
+.add-to-cal ul.links li a:Hover { }
 
 
 .footer-row {

@@ -200,11 +200,17 @@
       class=".viewlets.footer.SiteFooter"
       permission="zope2.View" />
 
-    <browser:page
-        name="icalendar"
-        for="Products.CMFCore.interfaces.IFolderish"
-        class=".icalendar.ICalView"
-        permission="zope2.View"
-        />
+  <browser:page
+      name="icalendar"
+      for="Products.CMFCore.interfaces.IFolderish"
+      class=".icalendar.ICalView"
+      permission="zope2.View" />
+
+  <browser:viewlet
+      name="isaw.theme.events.search_events"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+      class=".viewlets.events.SearchEvents"
+      permission="zope2.View" />
 
 </configure>
