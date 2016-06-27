@@ -1,0 +1,12 @@
+<div id="search-events" tal:condition="view/is_event_listing">
+  <form>
+    <h5>Search Events:</h5>
+    <br />
+    <p>
+    <input name="SearchableText" type="text" size="18" title="Search events..." class="searchField inputLabel" tal:attributes="value request/SearchableText|string:"><input class="searchButton" type="submit" value="Search">
+    <br />
+    <input name="SearchAll" type="radio" value="no" tal:attributes="checked python:request.get('SearchAll') != 'yes'"> Search only future events 
+    <br />
+    <input name="SearchAll" type="radio" value="yes" tal:attributes="checked python:request.get('SearchAll') == 'yes'"> Search all events </p>
+  </form>
+</div>

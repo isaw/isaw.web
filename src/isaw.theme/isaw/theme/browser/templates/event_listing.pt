@@ -54,9 +54,10 @@ $(document).ready(function () {
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-<div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a> <a class="eventRsvp" tal:attributes="href string:${context/portal_url}/events/icalendar">.ics format</a></div>
+<div class="calendar-view-link add-to-cal"><h3>Add all events to Calendar</h3><ul class="links"><li><a tal:attributes="href string:${context/portal_url}/events/icalendar">ICal</a></li></ul></div>
+<div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a></div>
   <tal:block tal:define="items view/listings">
-    <div class="event-listing">
+    <div class="event-listing" tal:condition="items">
      <tal:block tal:repeat="item items">
       <div class="event-result">
         <div class="event-result-header">
@@ -79,6 +80,9 @@ $(document).ready(function () {
         </div>
       </div>
      </tal:block>
+    </div>
+    <div class="event-listing" tal:condition="not:items">
+      <div tal:replace="structure view/get_no_results_message" />
     </div>
 
     <div class="buttons" tal:condition="items/has_next"
