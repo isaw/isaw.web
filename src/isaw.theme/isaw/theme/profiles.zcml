@@ -249,4 +249,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="23"
+      destination="24"
+      title="Update configuration registry"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="plone.app.registry"
+      />
+
 </configure>

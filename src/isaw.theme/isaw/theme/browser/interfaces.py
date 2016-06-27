@@ -76,3 +76,5 @@ class IISAWSettings(Interface):
             description=u"The full HTML of the site footer",
             required=True,
             default=DEFAULT_FOOTER_HTML)
+    no_results_message = schema.Text(title=u'No results message for event search',
+            default=u'<p>There are no upcoming events.</p>')
