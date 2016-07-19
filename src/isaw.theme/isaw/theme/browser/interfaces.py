@@ -36,6 +36,13 @@ class ITiledListingView(Interface):
     """
 
 
+class ITitleListingView(Interface):
+    """marker interface for a view providing listing by title only
+
+    This view is suitable for folders or collections
+    """
+
+
 class IEventListingView(Interface):
     """marker interface for a view providing one column listed items
 

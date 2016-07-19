@@ -229,4 +229,14 @@
       import_steps="tinymce_settings"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="21"
+      destination="22"
+      title="Title Listing View"
+      description="Add a view for collections and folders showing item titles only"
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
