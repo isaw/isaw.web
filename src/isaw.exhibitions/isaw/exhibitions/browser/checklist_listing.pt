@@ -8,31 +8,27 @@
 
 <body>
 
-<metal:content-core fill-slot="content-core">
-  <metal:define-core define-macro="content-core">
-    <div class="ExhibitionChecklistView">
-    <metal:use-core use-macro="context/folder_listing/macros/content-core">
-      <div class="listing" metal:fill-slot="entries">
-        <tal:entry tal:repeat="item batch" metal:define-macro="entries">
-          <tal:block tal:define="item_url item/getURL|item/absolute_url;
-                                 item_id item/getId|item/id;
-                                 item_title_or_id item/pretty_title_or_id;
-                                 item_description item/Description;
-                                 item_type item/portal_type;
-                                 item_type_class python:'contenttype-' + normalizeString(item_type);
-                                 item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
-                                 item_wf_state_class python:'state-' + normalizeString(item_wf_state);
-                                 item_creator item/Creator;
-                                 is_exhibit_obj python:item_type == 'isaw.exhibitions.object';">
+<metal:content-core fill-slot="content-core"
+                    tal:define="is_collection python:context.portal_type == 'Collection';
+                                collection_view nocall:context/@@standard_view|nothing;
+                                listing nocall:context/folder_listing|nothing;
+                                base_template python:is_collection and collection_view or listing;">
+  <metal:block define-macro="listing" extend-macro="base_template/macros/content-core">
+    <metal:entries fill-slot="entries">
+      <div class="ExhibitionChecklistView">
+        <metal:block use-macro="base_template/macros/entries">
+        <metal:entry fill-slot="entry"
+                     tal:define="is_exhibit_obj python:item_type == 'isaw.exhibitions.object';
+                                 item_title item/Title;">
           <div class="ExhibitionChecklistItem">
             <div class="tileItem visualIEFloatFix">
-              <a href="" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title_or_id;">
+              <a href="" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title;">
                 <img alt=""
-                     tal:attributes="src string:${item_url}/@@images/image/tile; alt item_title_or_id;" />
+                     tal:attributes="src string:${item_url}/@@images/image/tile; alt item_title;" />
               </a>
               <h5 class="tileHeadline"
-                  tal:define="title python:(is_exhibit_obj and ('%d. '%repeat['item'].number()) or '') + item_title_or_id">
-                <a tal:content="title" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title_or_id;">Title</a>
+                  tal:define="title python:(is_exhibit_obj and ('%d. '%repeat['item'].number()) or '') + item_title">
+                <a tal:content="title" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title;">Title</a>
               </h5>
             </div>
             <div class="ExhibitionChecklistBody">
@@ -65,12 +61,11 @@
               <div class="visualClear"><!-- --></div>
             </div>
           </div>
-          </tal:block>
-        </tal:entry>
+        </metal:entry>
+        </metal:block>
       </div>
-    </metal:use-core>
-    </div>
-  </metal:define-core>  
+    </metal:entries>
+  </metal:block>
 </metal:content-core>
 </body>
 </html>
