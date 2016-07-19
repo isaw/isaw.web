@@ -11,6 +11,8 @@ from DateTime import DateTime
 from zope.component import queryUtility
 from zope.interface import implements
 
+from Products.CMFCore.utils import getToolByName
+from plone.batching import Batch
 from plone.registry.interfaces import IRegistry
 
 from isaw.theme.browser.interfaces import IEventListingView
@@ -39,33 +41,22 @@ class EventListingView(TiledListingView):
             b_size = self.batch_size
         if b_start is None:
             b_start = (getattr(self, 'page', 1) - 1) * b_size
-        if self.context.portal_type == 'Folder':
-            content_filter = {
-                'b_start': b_start,
-                'b_size': b_size,
-                'portal_type': 'Event',
-                'sort_on': 'start',
-                'sort_order': 'ascending',
-                'review_state': 'published',
-            }
-            text = self.request.get('SearchableText')
-            if text:
-                content_filter['SearchableText'] = text
-            search_all = self.request.get('SearchAll')
-            if search_all != 'yes':
-                content_filter['start'] = {'query': DateTime(), 'range': 'min'}
-            items = self.context.getFolderContents(
-                content_filter, batch=True
-            )
-        elif self.context.portal_type == 'Topic':
-            if b_start and not self.request.get('b_start'):
-                self.request['b_start'] = b_start
-            items = self.context.queryCatalog(self.request, True, b_size)
-        elif self.context.portal_type == 'Collection':
-            items = self.context.results(True, b_start=b_start, b_size=b_size)
-        else:
-            items = []
-        return items
+        catalog = getToolByName(self.context, 'portal_catalog')
+        content_filter = {
+            'portal_type': 'Event',
+            'sort_on': 'start',
+            'sort_order': 'ascending',
+            'review_state': 'published',
+        }
+        text = self.request.get('SearchableText')
+        if text:
+            content_filter['SearchableText'] = text
+        search_all = self.request.get('SearchAll')
+        if search_all != 'yes':
+            content_filter['start'] = {'query': DateTime(), 'range': 'min'}
+        items = catalog(**content_filter)
+        batch = Batch(items, b_size, b_start)
+        return batch
 
     def get_no_results_message(self):
         registry = queryUtility(IRegistry)
