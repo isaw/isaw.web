@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:content-core fill-slot="content-core"
+                    tal:define="is_collection python:context.portal_type == 'Collection';
+                                collection_view nocall:context/@@standard_view|nothing;
+                                listing nocall:context/folder_listing|nothing;
+                                base_template python:is_collection and collection_view or listing;">
+  <metal:block define-macro="listing" extend-macro="base_template/macros/content-core">
+    <metal:entries fill-slot="entries">
+      <div class="ExhibitionChecklistView">
+        <metal:block use-macro="base_template/macros/entries">
+        <metal:entry fill-slot="entry"
+                     tal:define="is_exhibit_obj python:item_type == 'isaw.exhibitions.object';
+                                 item_title item/Title;">
+          <div class="ExhibitionChecklistItem">
+            <div class="tileItem visualIEFloatFix">
+              <a href="" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title;">
+                <img alt=""
+                     tal:attributes="src string:${item_url}/@@images/image/tile; alt item_title;" />
+              </a>
+              <h5 class="tileHeadline"
+                  tal:define="title python:(is_exhibit_obj and ('%d. '%repeat['item'].number()) or '') + item_title">
+                <a tal:content="title" tal:omit-tag="python:item_type == 'Image'" tal:attributes="href item_url; title item_title;">Title</a>
+              </h5>
+            </div>
+            <div class="ExhibitionChecklistBody">
+              <p class="tileBody" tal:condition="not:is_exhibit_obj">
+                <span class="description" tal:content="item_description" />
+              </p>
+              <p class="tileBody" tal:condition="is_exhibit_obj">
+                <tal:obj define="item_obj item/getObject|nocall:item">
+                  <tal:medium tal:condition="item_obj/medium|nothing">
+                    <span class="object-medium" tal:content="item_obj/medium">Medium</span>, 
+                  </tal:medium>
+                  <tal:dimensions tal:condition="item_obj/dimensions|nothing">
+                    <span class="object-dimensions" tal:content="item_obj/dimensions">Dimensions</span>, 
+                  </tal:dimensions>
+                  <tal:date tal:condition="item_obj/date|nothing">
+                    <span class="object-date" tal:content="item_obj/date">Date</span>, 
+                  </tal:date>
+                  <tal:lender tal:condition="item_obj/lender|nothing">
+                    <span class="object-lender">
+                      <a href="" title="Lender"
+                         tal:attributes="href item_obj/lender_link|nothing" 
+                         tal:omit-tag="not:item_obj/lender_link" tal:content="item_obj/lender">Lender</a>,
+                    </span>
+                  </tal:lender>
+                  <tal:inventory-num tal:condition="item_obj/inventory_num|nothing">
+                    <span class="object-inventory-number" tal:content="item_obj/inventory_num">Inventory #</span>.
+                  </tal:inventory-num>
+                </tal:obj>
+              </p>
+              <div class="visualClear"><!-- --></div>
+            </div>
+          </div>
+        </metal:entry>
+        </metal:block>
+      </div>
+    </metal:entries>
+  </metal:block>
+</metal:content-core>
+</body>
+</html>
