@@ -233,16 +233,6 @@
       sortkey="10"
       source="21"
       destination="22"
-      title="Update folder views"
-      description=""
-      profile="isaw.theme:default"
-      import_steps="typeinfo"
-      />
-
-  <genericsetup:upgradeDepends
-      sortkey="10"
-      source="22"
-      destination="23"
       title="Title Listing View"
       description="Add a view for collections and folders showing item titles only"
       profile="isaw.theme:default"
@@ -251,12 +241,22 @@
 
   <genericsetup:upgradeDepends
       sortkey="10"
-      source="23"
-      destination="24"
+      source="22"
+      destination="23"
       title="Update configuration registry"
       description=""
       profile="isaw.theme:default"
       import_steps="plone.app.registry"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="23"
+      destination="24"
+      title="Update folder views"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
       />
 
 </configure>
