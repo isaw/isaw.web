@@ -1,0 +1,26 @@
+{
+    "items": [
+        {
+            "/Plone": {
+                "title": "Imported Exhibit Object 1",
+                "context": "Context",
+                "inventory_num": "12345",
+                "lender": "Richman",
+                "image": "images/12345",
+                "text": "Not a long text.",
+                "label": "Object label"
+            }
+        },
+        {
+            "/Plone": {
+                "title": "Imported Exhibit Object 2",
+                "context": "Context",
+                "inventory_num": "123456",
+                "lender": "Richman",
+                "image": "images/123456",
+                "text": "Not a long text.",
+                "label": "Object label"
+            }
+        }
+    ]
+}
