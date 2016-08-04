@@ -44,4 +44,20 @@
       description="Exhibition Highlights View"
       />
 
+    <browser:viewlet
+      name="plone.nextprevious"
+      manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+      class=".views.HighlightsNextPreviousViewlet"
+      for="isaw.exhibitions.interfaces.IExhibitionObject"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
+      name="plone.nextprevious.links"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      class=".views.HighlightsNextPreviousLinksViewlet"
+      for="isaw.exhibitions.interfaces.IExhibitionObject"
+      permission="zope2.View"
+      />
+
 </configure>
