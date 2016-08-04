@@ -1,10 +1,11 @@
 from AccessControl import getSecurityManager
-from Acquisition import aq_base, aq_inner, aq_parent
+from Acquisition import aq_inner, aq_parent
 from Products.CMFCore.interfaces import IContentish
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.nextprevious.view import (NextPreviousView,
                                                 NextPreviousViewlet,
                                                 NextPreviousLinksViewlet)
+from ..interfaces import IExhibitionObject
 
 
 class HighlightsNextPreviousView(NextPreviousView):
@@ -27,7 +28,7 @@ class HighlightsNextPreviousView(NextPreviousView):
     def is_highlight(self, obj=None):
         if obj is None:
             obj = self.context
-        if not callable(getattr(aq_base(obj), 'Subject', None)):
+        if not IExhibitionObject.providedBy(obj):
             return False
         if 'highlight' in obj.Subject():
             return True
