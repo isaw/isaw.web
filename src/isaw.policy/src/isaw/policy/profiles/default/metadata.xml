@@ -24,5 +24,6 @@
     <dependency>profile-collective.easyslider:default</dependency>
     <dependency>profile-collective.easytemplate:default</dependency>
     <dependency>profile-Products.RedirectionTool:default</dependency>
+    <dependency>profile-isaw.bibitems:default</dependency>
   </dependencies>
 </metadata>
