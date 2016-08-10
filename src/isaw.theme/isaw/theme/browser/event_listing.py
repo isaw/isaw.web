@@ -54,6 +54,12 @@ class EventListingView(TiledListingView):
         search_all = self.request.get('SearchAll')
         if search_all != 'yes':
             content_filter['start'] = {'query': DateTime(), 'range': 'min'}
+        start = self.request.get('start')
+        if start:
+            content_filter['start'] = start
+        end = self.request.get('end')
+        if end:
+            content_filter['end'] = end
         items = catalog(**content_filter)
         batch = Batch(items, b_size, b_start)
         return batch
