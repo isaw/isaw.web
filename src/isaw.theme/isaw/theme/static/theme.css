@@ -238,7 +238,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns dl dt, #content dl dt {font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
-#portal-columns p.intro, #content p.intro
+#portal-columns p.intro, #content p.intro,
 #portal-columns .documentDescription, #content .documentDescription {font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
 #portal-columns h5, #content h5,
 #plone-document-byline {font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; letter-spacing:.1px; line-height:100%; text-transform:uppercase; }
