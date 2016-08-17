@@ -243,4 +243,14 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="24"
+      destination="25"
+      title="Add geolocation behavior"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
