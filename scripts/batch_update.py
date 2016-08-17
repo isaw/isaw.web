@@ -39,7 +39,8 @@ def spoofRequest(app):
 
 
 def getSite(app):
-    site = app.unrestrictedTraverse("Plone")
+    site_name = args.site
+    site = app.unrestrictedTraverse(site_name)
     site.setupCurrentSkin(app.REQUEST)
     setSite(site)
     return site
@@ -49,6 +50,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Create Exhibition Objects.')
     parser.add_argument('--dry-run', action='store_true', default=False,
                         dest='dry_run', help='No changes will be made.')
+    parser.add_argument('--site',
+                        help='Path to plone site from root. Defaults to "Plone"',
+                        default='Plone')
     parser.add_argument('file', type=file, help='Path to JSON import file')
     parser.add_argument('-c', help='Optional Zope configuration file.')
 
