@@ -253,4 +253,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="10"
+      source="25"
+      destination="26"
+      title="Apply portal transforms changes"
+      description="Allow embed and script tags in tinymce"
+      profile="isaw.policy:default"
+      handler=".setuphandlers.setup_portal_transforms"
+      />
+
 </configure>
