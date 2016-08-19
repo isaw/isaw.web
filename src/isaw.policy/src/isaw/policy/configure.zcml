@@ -122,11 +122,13 @@
       <allow interface="Products.Maps.interfaces.marker.IRichMarker" />
     </class>
 
-    <!-- adapter
+    <!-- We don't want map display for individual items
+    <adapter
       for=".map_extender.IGeolocatable"
       provides="Products.Maps.interfaces.map.IMap"
       factory="Products.Maps.adapters.ContextMap"
-      / -->
+      />
+    -->
     <adapter
       name="isaw.policy.maps"
       for=".map_extender.IGeolocatable"
