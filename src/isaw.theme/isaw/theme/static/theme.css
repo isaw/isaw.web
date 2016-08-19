@@ -1054,6 +1054,34 @@ h2.CVSectionTitle:before {
     text-align: center;
 }
 
+#content form .field div.pleiades-location {
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+#content form .pleiades-location label {
+    float: left;
+    font-size: 90%;
+    vertical-align: middle;
+    margin: 0;
+    max-width: 30%;
+}
+
+#content form .pleiades-location input[type="text"] {
+    height: 1em;
+    padding: 2px;
+    margin: 0 10px;
+    max-width: 50%;
+}
+
+button.PleiadesFetch {
+    margin: 3px 0 0 0;
+    padding: 5px;
+    display: inline-block;
+    width: 4em;
+    vertical-align: top;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
