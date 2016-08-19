@@ -1068,14 +1068,16 @@ h2.CVSectionTitle:before {
 }
 
 #content form .pleiades-location input[type="text"] {
-    height: 1em;
-    padding: 2px;
+    height: 1.25em;
+    line-height: initial;
+    padding: 4px;
     margin: 0 10px;
     max-width: 50%;
+    font-size: 90%;
 }
 
 button.PleiadesFetch {
-    margin: 3px 0 0 0;
+    margin: 1px 0 0 0;
     padding: 5px;
     display: inline-block;
     width: 4em;
