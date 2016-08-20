@@ -121,6 +121,10 @@
           css:content="#parent-fieldname-description"/>
     <drop css:if-content="body.portaltype-formfolder"
 	        css:content=".documentDescription"/>
+    <drop css:if-content="body.portaltype-isaw-exhibitions-object"
+          css:content=".documentDescription"/>
+    <drop css:if-content="body.portaltype-isaw-bibitems-bibitem"
+          css:content=".documentDescription"/>
       
     <!-- content area -->
     <replace css:theme-children="#content"

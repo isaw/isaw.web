@@ -1022,12 +1022,66 @@ h2.CVSectionTitle:before {
     color: #666;
 }
 
-#content .ExhibitObjectText {
-    margin-top: 1.5em;
+.portaltype-isaw-exhibitions-object.template-view #content h1.documentFirstHeading {
+    width: 595px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #content .ExhibitObjectImage {
     margin-bottom: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+#content .ExhibitObjectImage img {
+    width: 595px;
+    max-width: 100%;
+    height: auto;
+    max-height: 625px;
+}
+
+#content .ExhibitObjectInfo {
+    background-color: white;
+    width: 595px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#content .ExhibitObjectInfo dl {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#content .ExhibitObjectInfo dl dt {
+    font-size: 0.9em;
+    line-height: 1.25em;
+    width: 37%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+#content .ExhibitObjectInfo dl dd {
+    color: #666;
+    line-height: 1.25em;
+    vertical-align: bottom;
+    font-size: 80%;
+    font-weight: normal;
+    width: 60%;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#content .ExhibitObjectText {
+    width: 595px;
+    max-width: 100%;
+    margin: 1.5em auto 0 auto;
 }
 
 #content .ExhibitionChecklistView .listing {
