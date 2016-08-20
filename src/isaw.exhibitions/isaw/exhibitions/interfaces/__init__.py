@@ -44,6 +44,12 @@ class IExhibitionObject(model.Schema):
     notes = schema.TextLine(title=_(u'Notes'),
                             required=False)
 
+    credits = schema.TextLine(title=_(u'Credit Line'),
+                              required=False)
+
+    copyright = schema.TextLine(title=_(u'Copyright Notice'),
+                                required=False)
+
     image = namedfile.NamedBlobImage(title=_(u'Lead Image'),
                                      required=False)
 
