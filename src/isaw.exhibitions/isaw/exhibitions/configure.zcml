@@ -11,7 +11,7 @@
   <include package=".browser" />
   <include package=".portlets" />
   <include file="skins.zcml" />
-  
+
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
@@ -26,6 +26,13 @@
       source="1"
       destination="2"
       title="Add Exhibition Object"
+      import_steps="typeinfo" />
+
+  <genericsetup:upgradeDepends
+      profile="isaw.exhibitions:default"
+      source="2"
+      destination="3"
+      title="Add Imagecropping support"
       import_steps="typeinfo" />
 
 </configure>
