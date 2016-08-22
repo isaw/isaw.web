@@ -263,4 +263,14 @@
       handler=".setuphandlers.setup_portal_transforms"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="26"
+      destination="27"
+      title="Add location type and geolocation behavior to exhibit objects"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
