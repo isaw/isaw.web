@@ -62,6 +62,12 @@ class IGeolocationBehavior(model.Schema):
 alsoProvides(IGeolocationBehavior, IFormFieldProvider)
 
 
+class ILocation(model.Schema):
+    geolocation = GeolocationField(
+        title=u"Geolocation",
+        description=u"Longitude and latitude",
+        required=False)
+
 
 class LocationMarker(BaseMarker):
     implements(IRichMarker)

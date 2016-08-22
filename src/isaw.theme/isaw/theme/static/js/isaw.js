@@ -1,3 +1,4 @@
+/*global google:true, jQuery:true*/
 jQuery(function($) {
 	$('h3.trigger').click(function(){
 		$(this).toggleClass('open');
@@ -72,5 +73,38 @@ jQuery(function($) {
                 return false;
             }
         );
+    }
+    var $maps = $('.template-view #content div.geolocation_wrapper .map');
+
+    var _loadgmap = function(){
+        var source,
+            script = document.createElement("script");
+
+        script.type = "text/javascript";
+        source = "https://maps.google.com/maps/api/js?libraries=geometry&sensor=false&callback=initialize_maps&language=" + window.mapsConfig.i18n.language ;
+        if (window.mapsConfig.googlemaps_keys.length){
+            source += '&key=' + window.mapsConfig.googlemaps_keys;
+        }
+        script.src = source;
+
+        document.body.appendChild(script);
+    };
+    var _init_maps = function () {
+        $maps.each(function() {
+            var $map = $(this);
+            var coord_info = $map.data('geopoints')[0];
+            var pos = {lat: coord_info.lat, lng: coord_info.lng};
+            var map_options = {
+                mapTypeId: window.mapsConfig.settings.maptype || google.maps.MapTypeId.ROADMAP,
+                center: pos,
+                zoom: window.mapsConfig.settings.zoom || 7
+            };
+            var map = new google.maps.Map($map.get(0), map_options);
+            var marker = new google.maps.Marker({title: coord_info.popup, position: pos, map: map});
+        });
+    };
+    if ($maps.length) {
+        window.initialize_maps = _init_maps;
+        _loadgmap();
     }
 });

@@ -121,19 +121,17 @@
     <class class=".map_extender.LocationMarker">
       <allow interface="Products.Maps.interfaces.marker.IRichMarker" />
     </class>
-
-    <!-- We don't want map display for individual items
     <adapter
-      for=".map_extender.IGeolocatable"
+      for=".map_extender.ILocation"
       provides="Products.Maps.interfaces.map.IMap"
       factory="Products.Maps.adapters.ContextMap"
       />
-    -->
     <adapter
       name="isaw.policy.maps"
       for=".map_extender.IGeolocatable"
       factory=".map_extender.MapSchemaExtender"
       provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
+
     <browser:page
       for=".map_extender.IGeolocatable"
       name="maps_googlemaps_view"
@@ -143,6 +141,13 @@
       />
     <browser:page
       for=".map_extender.IGeolocationBehavior"
+      name="maps_googlemaps_view"
+      class="Products.Maps.browser.map.DefaultMapView"
+      permission="zope2.View"
+      allowed_interface="Products.Maps.interfaces.map.IMapView"
+      />
+    <browser:page
+      for=".map_extender.ILocation"
       name="maps_googlemaps_view"
       class="Products.Maps.browser.map.DefaultMapView"
       permission="zope2.View"
@@ -157,6 +162,13 @@
       />
     <browser:page
       for=".map_extender.IGeolocationBehavior"
+      name="maps_googlemaps_enabled_view"
+      class="Products.Maps.browser.map.DefaultMapView"
+      permission="zope.Public"
+      allowed_interface="Products.Maps.interfaces.map.IMapEnabledView"
+      />
+    <browser:page
+      for=".map_extender.ILocation"
       name="maps_googlemaps_enabled_view"
       class="Products.Maps.browser.map.DefaultMapView"
       permission="zope.Public"
