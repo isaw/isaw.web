@@ -1130,6 +1130,11 @@ h2.CVSectionTitle:before {
     font-size: 90%;
 }
 
+.template-view #content div.geolocation_wrapper .map {
+    height: 500px;
+    width: 100%;
+}
+
 button.PleiadesFetch {
     margin: 1px 0 0 0;
     padding: 5px;
