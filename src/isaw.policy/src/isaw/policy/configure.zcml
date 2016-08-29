@@ -118,6 +118,9 @@
     <adapter factory=".map_extender.LocationMarker"
              for=".map_extender.IGeolocationBehavior"
              provides="Products.Maps.interfaces.marker.IRichMarker" />
+    <adapter factory=".map_extender.LocationMarker"
+             for=".map_extender.ILocation"
+             provides="Products.Maps.interfaces.marker.IRichMarker" />
     <class class=".map_extender.LocationMarker">
       <allow interface="Products.Maps.interfaces.marker.IRichMarker" />
     </class>
