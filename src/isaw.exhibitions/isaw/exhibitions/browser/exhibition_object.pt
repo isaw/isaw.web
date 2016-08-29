@@ -28,8 +28,8 @@
         <dt>Label:</dt>
         <dd tal:content="structure text">Rich Text Content</dd>
       </dl>
-      <dl class="ExhibitObjectCredits" tal:condition="context/credits|nothing"><dt>Credit Line:</dt><dd tal:content="context/credits">Credit Line</dd></dl>
-      <dl class="ExhibitObjectCopyright" tal:condition="context/copyright|nothing"><dt>Copyright Notice:</dt><dd tal:content="context/copyright">Copyright Notice</dd></dl>
+      <div class="ExhibitObjectCredits discreet" tal:condition="context/credits|nothing" tal:content="context/credits">Credit Line</div>
+      <div class="ExhibitObjectCopyright discreet" tal:condition="context/copyright|nothing" tal:content="context/copyright">Copyright Notice</div>
     </div>
     <div class="ExhibitObjectText"
          tal:define="text context/text/output|nothing"
