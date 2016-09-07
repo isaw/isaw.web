@@ -71,5 +71,6 @@
    <toolbar_pagebreak value="True"/>
    <toolbar_external value="True"/>
    <toolbar_cleanup value="True"/>
+   <toolbar_media value="True"/>
  </toolbar>
 </object>
