@@ -650,4 +650,19 @@
       </field>
       <value>%I:%M %p</value>
     </record>
+    <record interface="plone.app.imagecropping.browser.settings.ISettings" name="plone.app.imagecropping.browser.settings.ISettings.cropping_for">
+      <value>
+        <element>header</element>
+        <element>slider</element>
+        <element>large</element>
+        <element>blogtile</element>
+        <element>preview</element>
+        <element>featured</element>
+        <element>mini</element>
+        <element>thumb</element>
+        <element>tile</element>
+        <element>icon</element>
+        <element>listing</element>
+      </value>
+    </record>
 </registry>
