@@ -856,8 +856,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
 }
 @media screen and (max-width:959px){
-	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; }
-
+	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; padding: 14px 20px 13px 56px; }
 	.section-isaw-home.template-document_view {padding-bottom:0; }
 	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
@@ -1152,7 +1151,6 @@ button.PleiadesFetch {
 	#content #slider .slide .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li, #content ul.news li {float:none; margin-right:0 !important; width:100% !important; }
-
 }
 
 @media screen and (max-width:319px){
@@ -1165,4 +1163,5 @@ button.PleiadesFetch {
 	#portal-column-two,
 	#portal-column-content {
 	margin-left: 0 !important;
+    }
 }
