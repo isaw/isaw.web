@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isaw.theme">
+<body>
+
+<metal:supress-title fill-slot="content-title">
+  <metal:block define-macro="content-title"></metal:block>
+</metal:supress-title>
+<metal:supress-desc fill-slot="content-description"></metal:supress-desc>
+
+<metal:content-core fill-slot="content-core">
+<tal:block tal:define="items view/listings">
+  <dl>
+    <tal:listings tal:repeat="item items">
+      <tal:item tal:define="item_obj item/getObject;url item_obj/access_uri|item_obj/bibliographic_uri">
+        <dt><a tal:attributes="href url" tal:content="item_obj/title">title</a></dt>
+        <dd tal:content="item_obj/formatted_citation">Citation</dd>
+      </tal:item>
+    </tal:listings>
+  </dl>
+  <div style="display:none;" id="page-helper" tal:condition="items/has_next" tal:attributes="data-nextpage items/nextpage"></div>
+</tal:block>
+</metal:content-core>
+
+</body>
+</html>
