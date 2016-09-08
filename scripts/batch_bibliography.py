@@ -87,7 +87,7 @@ if __name__ == '__main__':
         hostname = urlparse(bib_url).hostname
         fetcher = queryUtility(IBibliographicURLIFetcher, name=hostname)
         data = fetcher.fetch(bib_url)
-        if 'error' in data:
+        if data.get('error'):
             print "Error fetching {}: {}".format(bib_url, data['error'])
             continue
         title = data.get(u'short_title') or data.get(u'title')
