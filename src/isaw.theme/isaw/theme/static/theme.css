@@ -856,7 +856,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
 }
 @media screen and (max-width:959px){
-	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; padding: 14px 20px 13px 56px; }
+	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; line-height: 16px; height: 16px; padding: 12px 20px 11px 56px}
 	.section-isaw-home.template-document_view {padding-bottom:0; }
 	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
@@ -918,8 +918,8 @@ h2.CVSectionTitle:before {
 }
 
 @media screen and (max-width:767px){
-	#portal-breadcrumbs {font-size:10px; line-height:120%; margin-bottom:22px; }
-	#portal-breadcrumbs span {margin:0; }
+	#viewlet-above-content #portal-breadcrumbs {font-size:10px; line-height:12px; height: 12px; margin-bottom:22px; padding: 14px 20px 13px 56px; text-size-adjust: none; -webkit-text-size-adjust: none;}
+	#viewlet-above-content #portal-breadcrumbs span {margin:0; }
 	/*flexbox it*/
 	#column-contents {padding:0 20px 80px 40px; 
 		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
