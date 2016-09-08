@@ -50,6 +50,13 @@ class IEventListingView(Interface):
     """
 
 
+class IBibliographicListingView(Interface):
+    """marker interface for a view providing list of bibliographic items
+
+    This view is suitable for folders or collections
+    """
+
+
 DEFAULT_FOOTER_HTML = u"""<div class="contact footer-portlet">
 <h3>Contact</h3>
 <p>15 East 84th St.<br />New York, NY 10028<br />212-992-7800<br /> <a href="mailto:isaw@nyu.edu">isaw@nyu.edu</a></p>
