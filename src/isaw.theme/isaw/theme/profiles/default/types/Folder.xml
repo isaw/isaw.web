@@ -12,5 +12,6 @@
         <element value="bibliographic-list"/>
         <element value="exhibition-checklist"/>
         <element value="exhibition-highlights"/>
+        <element value="exhibition-listing"/>
     </property>
 </object>
