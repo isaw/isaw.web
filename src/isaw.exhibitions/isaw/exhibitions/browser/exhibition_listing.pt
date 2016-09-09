@@ -9,11 +9,12 @@
   <metal:block fill-slot="style_slot">
     <style>
       .ExhibitionEntry {
-        width: 285px;
+        width: 365px;
         padding: 7px;
       }
-      .ExhibitionEntryImage {
+      .ExhibitionEntryImage img {
         width: 100%;
+        height: auto;
       }
     </style>
   </metal:block>
@@ -88,7 +89,7 @@
 
     <script>
         imagesLoaded($('#exhibition-listing'), function() {
-            $('#exhibition-listing').masonry({width: 285, itemSelector: '.ExhibitionEntry'});
+            $('#exhibition-listing').masonry({width: 365, itemSelector: '.ExhibitionEntry'});
         });
     </script>
 
