@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+  <metal:block fill-slot="style_slot">
+    <style>
+      .ExhibitionEntry {
+        width: 285px;
+        padding: 7px;
+      }
+      .ExhibitionEntryImage {
+        width: 100%;
+      }
+    </style>
+  </metal:block>
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
+                        contentFilter python:contentFilter and dict(contentFilter) or {'portal_type': 'isaw.exhibitions.object'};
+                        limit_display limit_display|request/limit_display|nothing;
+                        limit_display python:limit_display and int(limit_display) or None;
+                        more_url more_url|request/more_url|string:folder_contents;
+                        is_a_topic python:context.portal_type=='Topic';
+                        friendly_types context/@@plone_portal_state/friendly_types;
+                        dummy python:not is_a_topic and contentFilter.setdefault('portal_type', ['isaw.exhibitions.object']);
+                        folderContents folderContents|nothing;
+                        folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+                        site_properties context/portal_properties/site_properties;
+                        use_view_action site_properties/typesUseViewActionInListings|python:();
+                        Batch python:modules['Products.CMFPlone'].Batch;
+                        b_start python:request.get('b_start', 0);
+                        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, limit_display or 100, int(b_start), orphan=1);
+                        isAnon context/@@plone_portal_state/anonymous;
+                        normalizeString nocall: context/plone_utils/normalizeString;
+                        toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                        show_about python:not isAnon or site_properties.allowAnonymousViewAbout;
+                        navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                        pas_member context/@@pas_member;
+                        plone_view context/@@plone;">
+    <tal:listing condition="batch">
+
+        <div id="exhibition-listing">
+            <tal:entry tal:repeat="item batch">
+            <tal:block tal:define="item_url item/getURL|item/absolute_url;
+                                   item_id item/getId|item/id;
+                                   item_title_or_id item/pretty_title_or_id;
+                                   item_object python: item.getObject();
+                                   item_image item_object/image">
+
+                <div class="ExhibitionEntry">
+
+                    <div class="ExhibitionEntryImage">
+                          <a href="#"
+                             title="title"
+                             tal:attributes="href item_url;
+                                             title item_title_or_id">
+                            <img tal:condition="nocall:item_image"
+                                 tal:replace="structure item_object/@@images/image/large"/>
+                          </a>
+                    </div>
+                    <div class="ExhibitionEntrySummary">
+                      <h3 tal:content="item_title_or_id">Title</h3>
+                    </div>
+
+                </div>
+
+            </tal:block>
+            </tal:entry>
+        </div>
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+    </tal:listing>
+    <metal:empty>
+        <p class="discreet"
+           tal:condition="not: folderContents"
+           i18n:translate="description_no_items_in_folder">
+            There are currently no exhibition objects in this folder.
+        </p>
+    </metal:empty>
+
+    </tal:foldercontents>
+
+    <script>
+        imagesLoaded($('#exhibition-listing'), function() {
+            $('#exhibition-listing').masonry({width: 285, itemSelector: '.ExhibitionEntry'});
+        });
+    </script>
+
+</metal:content-core>
+
+</body>
+</html>
