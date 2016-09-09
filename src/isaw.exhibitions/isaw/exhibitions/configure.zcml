@@ -35,4 +35,11 @@
       title="Add Imagecropping support"
       import_steps="typeinfo" />
 
+  <genericsetup:upgradeDepends
+      profile="isaw.exhibitions:default"
+      source="3"
+      destination="4"
+      title="Add Masonry js"
+      import_steps="jsregistry" />
+
 </configure>
