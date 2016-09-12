@@ -222,6 +222,40 @@
       permission="plone.app.controlpanel.Overview"
       />
 
+  <!-- Tiled listing view -->
+  <browser:page
+    name="bibliographic-list"
+    for="*"
+    permission="zope2.View"
+    class=".bibliographic.BibliographicListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/bibliographic_view.pt"
+    />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Bibliographic List"
+        action="@@bibliographic-list"
+        description="List bibliographic entries"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Bibliographic List"
+        action="@@bibliographic-list"
+        description="List bibliographic entries"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Bibliographic List"
+        action="@@bibliographic-list"
+        description="List bibliographic entries"
+        />
+
   <browser:viewlet
       name="emergency-message"
       manager="plone.app.layout.viewlets.interfaces.IPortalTop"
