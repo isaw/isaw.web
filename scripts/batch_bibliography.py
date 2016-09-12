@@ -80,6 +80,8 @@ if __name__ == '__main__':
             folder_id = parent.invokeFactory('Folder', id=path, title=title)
             parent = folder = parent[folder_id]
             print "Created new folder {}".format(folder.absolute_url(1))
+        else:
+            parent = folder
 
     transforms = getToolByName(site, 'portal_transforms')
     for bib_url in bib_file.readlines():
