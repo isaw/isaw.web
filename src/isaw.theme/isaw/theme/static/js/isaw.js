@@ -107,4 +107,12 @@ jQuery(function($) {
         window.initialize_maps = _init_maps;
         _loadgmap();
     }
+    var $lat = $('input.geolocation-widget.latitude, input#geolocation_latitude');
+    if ($lat.length) {
+        $lat.wrap('<div />').parent().prepend('<label for="'+$lat.attr('id')+'">latitude:</label> ');
+    }
+    var $long = $('input.geolocation-widget.longitude, input#geolocation_longitude');
+    if ($long.length) {
+        $long.wrap('<div />').parent().prepend('<label for="'+$long.attr('id')+'">longitude:</label> ');
+    }
 });

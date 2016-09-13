@@ -37,7 +37,9 @@ class MapSchemaExtender(object):
             required=False,
             default=(0, 0),
             validators=('isGeoLocation',),
-            widget=LocationWidget(label='Geo Location',),
+            widget=LocationWidget(
+                label='Geolocation',
+                description="Enter a latitude and longitude in signed decimal degrees. Geodetic model is assumed to be WGS-1984."),
             schemata='Geolocation',
             ),
         ]
@@ -53,7 +55,7 @@ class IGeolocationBehavior(model.Schema):
     """Form field for geolocation behavior"""
     geolocation = GeolocationField(
         title=u"Geolocation",
-        description=u"Enter a longitude and latitude",
+        description=u"Enter a latitude and longitude in signed decimal degrees. Geodetic model is assumed to be WGS-1984.",
         required=False)
     directives.omitted('geolocation')
     directives.no_omit(IEditForm, 'geolocation')
