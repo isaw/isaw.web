@@ -18,7 +18,7 @@
            tal:attributes="href string:${here_url}/image/image_view_fullscreen"
            id="parent-fieldname-image">
            <img class="newsImage"
-                tal:attributes="src string:${here_url}/@@images/image/preview;
+                tal:attributes="src string:${here_url}/@@images/image/blogtile;
                                 alt ctxt/Title|nothing" src="" alt="" />
         </a>
         <p class="discreet" tal:define="caption ctxt/getImageCaption|nothing"
