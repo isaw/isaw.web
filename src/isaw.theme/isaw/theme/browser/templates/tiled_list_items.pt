@@ -6,7 +6,7 @@
                   title item/Title;
                   exerpt item/Description">
     <a href="#" tal:attributes="href item_url">
-      <img src="" title="" tal:replace="structure image_tag"/></a>
+      <img src="" alt="" tal:attributes="src image_url; alt title;"/></a>
     <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
     <div class="post-meta" tal:define="byline python:view.get_byline(item)"
          tal:condition="byline" tal:content="byline">[byline]</div>
