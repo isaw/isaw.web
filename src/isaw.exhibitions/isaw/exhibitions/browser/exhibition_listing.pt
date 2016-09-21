@@ -22,13 +22,12 @@
 
 <metal:content-core fill-slot="content-core">
     <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
-                        contentFilter python:contentFilter and dict(contentFilter) or {'portal_type': 'isaw.exhibitions.object'};
+                        contentFilter python:contentFilter and dict(contentFilter) or {};
                         limit_display limit_display|request/limit_display|nothing;
                         limit_display python:limit_display and int(limit_display) or None;
                         more_url more_url|request/more_url|string:folder_contents;
                         is_a_topic python:context.portal_type=='Topic';
                         friendly_types context/@@plone_portal_state/friendly_types;
-                        dummy python:not is_a_topic and contentFilter.setdefault('portal_type', ['isaw.exhibitions.object']);
                         folderContents folderContents|nothing;
                         folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
                         site_properties context/portal_properties/site_properties;
@@ -51,7 +50,7 @@
                                    item_id item/getId|item/id;
                                    item_title_or_id item/pretty_title_or_id;
                                    item_object python: item.getObject();
-                                   item_image item_object/image">
+                                   item_image item_object/image|nothing">
 
                 <div class="ExhibitionEntry">
 
@@ -62,10 +61,14 @@
                                              title item_title_or_id">
                             <img tal:condition="nocall:item_image"
                                  tal:replace="structure item_object/@@images/image/large"/>
+                            <img tal:condition="python:item_image is None"
+                                 tal:attributes="src string:${navigation_root_url}/mosaic_default.png"/>
                           </a>
                     </div>
                     <div class="ExhibitionEntrySummary">
-                      <h3 tal:content="item_title_or_id">Title</h3>
+                      <a tal:attributes="href item_url">
+                        <h3 tal:content="item_title_or_id">Title</h3>
+                      </a>
                     </div>
 
                 </div>
