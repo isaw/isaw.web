@@ -277,7 +277,7 @@
       sortkey="10"
       source="27"
       destination="28"
-      title="Add Location Type"
+      title="Add Publication Type"
       description=""
       profile="isaw.policy:default"
       import_steps="typeinfo"
