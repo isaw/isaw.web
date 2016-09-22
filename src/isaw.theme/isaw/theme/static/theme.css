@@ -316,6 +316,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns form .field input[type="text"], #portal-columns form .field textarea,
 #content form .field input[type="text"], #content form .field textarea,
 #archetypes-fieldname-description textarea#description {border:1px solid #bbb2aa; border-radius:1px; font-family: 'Roboto Slab', serif; font-size:22px; font-weight:300; line-height:30px; margin:10px 0 0; padding:12px 20px; }
+#content form .field .datagridwidget-cell input[type="text"] { padding: 0; }
 #portal-columns form .field.collapsible, #content form .field.collapsible {border:1px solid #e2ddd7; border-radius:2px; display:inline-block; margin:0 30px 0 0; padding:0; vertical-align:top; width:40%; }
 #portal-columns form .field.collapsible label.collapser, #content form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
 #portal-columns form .field.collapsible label.collapser.expanded, #content form .field.collapsible label.collapser.expanded  { }

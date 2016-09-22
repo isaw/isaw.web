@@ -273,4 +273,14 @@
       handler=".setuphandlers.setup_portal_transforms"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="27"
+      destination="28"
+      title="Add Location Type"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
 </configure>
