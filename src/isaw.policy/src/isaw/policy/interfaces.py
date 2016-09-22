@@ -53,6 +53,10 @@ class IISAWPublication(form.Schema):
     )
     form.order_before(contributors='IBibliographicItem.citation_detail')
 
+    alt_bib_uri = URI(title=_(u'Alternate Bibliographic URI'),
+                      required=False)
+    form.order_after(alt_bib_uri='IBibliographicItem.bibliographic_uri')
+
     publisher = TextLine(title=_(u'Publisher'),
                          required=False)
     form.order_after(publisher='IBibliographicItem.alternate_uri')
@@ -101,16 +105,6 @@ class PublicationAddForm(add.DefaultAddForm):
 class PublicationAddView(add.DefaultAddView):
     form = PublicationAddForm
 
-
-PubBibURILabel = widget.StaticWidgetAttribute(
-    u'Alternate Bibliographic URI',
-    context=IISAWPublication, field=IBibliographicItem['bibliographic_uri']
-)
-
-PubAddBibURILabel = widget.StaticWidgetAttribute(
-    u'Alternate Bibliographic URI',
-    view=PublicationAddForm, field=IBibliographicItem['bibliographic_uri']
-)
 
 PubTitleLabel = widget.StaticWidgetAttribute(
     u'Full Title',

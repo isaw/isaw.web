@@ -60,12 +60,6 @@
   </class>
 
   <adapter
-      factory=".interfaces.PubBibURILabel"
-      name="label" />
-  <adapter
-      factory=".interfaces.PubAddBibURILabel"
-      name="label" />
-  <adapter
       factory=".interfaces.PubTitleLabel"
       name="label" />
   <adapter
