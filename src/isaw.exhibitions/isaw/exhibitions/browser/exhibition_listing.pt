@@ -52,7 +52,7 @@
                                    item_object python: item.getObject();
                                    item_image item_object/image|nothing">
 
-                <div class="ExhibitionEntry">
+                <div class="ExhibitionEntry" tal:condition="not:item/exclude_from_nav">
 
                     <div class="ExhibitionEntryImage">
                           <a href="#"
