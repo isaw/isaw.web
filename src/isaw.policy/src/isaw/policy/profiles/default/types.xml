@@ -8,5 +8,4 @@
   -->
 <object name="portal_types" meta_type="Plone Types Tool">
   <object name="isaw.policy.location" meta_type="Dexterity FTI" />
-  <object name="isaw.policy.publication" meta_type="Dexterity FTI" />
 </object>

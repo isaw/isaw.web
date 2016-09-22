@@ -70,8 +70,6 @@ setup(name='isaw.policy',
           'archetypes.schemaextender',
           'Products.Maps',
           'plone.formwidget.geolocation',
-          'plone.app.textfield',
-          'collective.z3cform.datagridfield',
       ],
       extras_require={'test': ['plone.app.testing']},
       entry_points="""
