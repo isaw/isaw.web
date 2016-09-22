@@ -7,6 +7,9 @@
      <viewlet name="plone.searchbox" remove="True" />
      <viewlet name="plone.logo"/>
  </order>
+ <order manager="plone.abovecontent" skinname="NYU ISAW Theme">
+  <viewlet name="collective.addthis" insert-before="*" />
+ </order>
  <hidden manager="plone.portalheader" skinname="NYU ISAW Theme">
      <viewlet name="plone.global_sections" remove="True" />
  </hidden>

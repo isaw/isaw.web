@@ -27,7 +27,7 @@
       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
       template="viewlets/addthis.pt"
       permission="zope.Public"
-      layer="collective.addthis.interfaces.IAddthisBrowserLayer"
+      layer=".interfaces.IThemeSpecific"
   />
   
   <!-- Utils View -->
