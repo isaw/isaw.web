@@ -94,7 +94,7 @@ class IISAWPublication(form.Schema):
         title=_(u'Publication Date'),
         description=_(u'Enter the date on which this publication was issued'),
         required=False)
-    form.order_after(date_of_publication='doi')
+    form.order_after(date_of_publication='text')
 
     loc_subjects = List(title=_(u'LOC Subjects'),
                         value_type=DictRow(title=u'Subject',
