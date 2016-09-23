@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import List, TextLine, Text, Tuple, URI
+from zope.schema import List, TextLine, Tuple, URI
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from isaw.bibitems.interfaces import IBibliographicItem
 from isaw.policy import MessageFactory as _
@@ -89,6 +89,12 @@ class IISAWPublication(form.Schema):
         required=False,
     )
     form.order_after(text='doi')
+
+    date_of_publication = TextLine(
+        title=_(u'Publication Date'),
+        description=_(u'Enter the date on which this publication was issued'),
+        required=False)
+    form.order_after(date_of_publication='doi')
 
     loc_subjects = List(title=_(u'LOC Subjects'),
                         value_type=DictRow(title=u'Subject',
