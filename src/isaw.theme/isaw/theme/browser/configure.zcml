@@ -20,16 +20,6 @@
       directory="template-overrides"
       layer=".interfaces.IThemeSpecific" />
   
-  <!-- add this -->
-  <browser:viewlet
-      name="collective.addthis"
-      class="collective.addthis.addthis.AddThisViewlet"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-      template="viewlets/addthis.pt"
-      permission="zope.Public"
-      layer=".interfaces.IThemeSpecific"
-  />
-  
   <!-- Utils View -->
   <browser:page
      name="utils_view"

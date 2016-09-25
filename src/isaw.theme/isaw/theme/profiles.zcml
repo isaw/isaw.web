@@ -289,4 +289,14 @@
       import_steps="viewlets"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="27"
+      destination="28"
+      title="Update viewlets"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="viewlets"
+      />
+
 </configure>
