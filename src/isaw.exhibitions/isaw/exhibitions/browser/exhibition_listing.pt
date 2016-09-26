@@ -9,13 +9,18 @@
   <metal:block fill-slot="style_slot">
     <style>
       .ExhibitionEntry {
-        width: 365px;
         padding: 7px;
       }
       .ExhibitionEntryImage img {
         width: 100%;
         height: auto;
       }
+      #exhibition-listing[data-columns]::before {
+          content: '3 .column.size-1of3';
+      }
+      .column {float: left;}
+      .size-1of3 {width: 33.333%;}
+      .pagination {clear: both;}
     </style>
   </metal:block>
 <body>
@@ -44,7 +49,7 @@
                         plone_view context/@@plone;">
     <tal:listing condition="batch">
 
-        <div id="exhibition-listing">
+        <div id="exhibition-listing" data-columns>
             <tal:entry tal:repeat="item batch">
             <tal:block tal:define="item_url item/getURL|item/absolute_url;
                                    item_id item/getId|item/id;
@@ -88,15 +93,13 @@
         </p>
     </metal:empty>
 
-    </tal:foldercontents>
-
-    <script>
-        imagesLoaded($('#exhibition-listing'), function() {
-            $('#exhibition-listing').masonry({width: 365, itemSelector: '.ExhibitionEntry'});
-        });
+    <script tal:attributes="src string:${navigation_root_url}/++resource++exhibitions/salvattore.min.js">
     </script>
+
+    </tal:foldercontents>
 
 </metal:content-core>
 
 </body>
 </html>
+
