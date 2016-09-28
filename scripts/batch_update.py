@@ -27,6 +27,8 @@ FIELDS = ['title',
           'image',
           'text',
           'label',
+          'credits',
+          'copyright',
           ]
 
 
