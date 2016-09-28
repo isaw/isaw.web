@@ -59,9 +59,9 @@
   <browser:menuItem
       for="*"
       menu="plone_displayviews"
-      title="Exhibition Listing"
+      title="Mosaic Listing"
       action="exhibition-listing"
-      description="Exhibition Listing View"
+      description="Mosaic Listing View"
       />
 
     <browser:viewlet
