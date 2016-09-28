@@ -14,7 +14,7 @@ from plone.namedfile.file import NamedBlobImage
 
 FIELDS = ['title',
           'description',
-          'context',
+          'exhibition_context',
           'date',
           'not_before',
           'not_after',
