@@ -16,7 +16,7 @@
       <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt> <dd tal:content="context/medium">Medium</dd></dl>
       <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing"><dt>Dimensions:</dt><dd tal:content="context/dimensions">Dimensions</dd></dl>
-      <dl class="ExhibitObjectContext" tal:condition="context/context|nothing"><dt>Context:</dt><dd tal:content="context/exhibition_context">Context</dd></dl>
+      <dl class="ExhibitObjectContext" tal:condition="context/exhibition_context|nothing"><dt>Context:</dt><dd tal:content="context/exhibition_context">Context</dd></dl>
       <dl class="ExhibitObjectDate" tal:condition="context/date|nothing"><dt>Date:</dt><dd tal:content="context/date">Date</dd></dl>
       <dl class="ExhibitObjectInventoryNum" tal:condition="context/inventory_num|nothing"><dt>Inventory Number:</dt><dd tal:content="context/inventory_num">Inventory Number</dd></dl>
       <dl class="ExhibitObjectLender" tal:condition="context/lender|nothing">
