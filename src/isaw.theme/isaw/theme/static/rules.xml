@@ -158,6 +158,9 @@
     <after method="raw" css:theme-children="#portal-column-second"
            css:content=".calendar-view-link" />
 
+    <!-- addthis buttons are out -->
+    <drop css:content="#socialtools" />
+
   </rules>
   
 </rules>
