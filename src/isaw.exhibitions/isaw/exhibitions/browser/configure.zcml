@@ -7,6 +7,11 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <browser:resourceDirectory
+    name="exhibitions"
+    directory="static"
+    />
+
   <browser:page
     for="..interfaces.IExhibitionObject"
     template="exhibition_object.pt"
@@ -28,6 +33,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    template="exhibition_listing.pt"
+    name="exhibition-listing"
+    permission="zope2.View"
+    />
+
   <browser:menuItem
       for="*"
       menu="plone_displayviews"
@@ -42,6 +54,14 @@
       title="Exhibition Highlights"
       action="exhibition-highlights"
       description="Exhibition Highlights View"
+      />
+
+  <browser:menuItem
+      for="*"
+      menu="plone_displayviews"
+      title="Mosaic Listing"
+      action="exhibition-listing"
+      description="Mosaic Listing View"
       />
 
     <browser:viewlet

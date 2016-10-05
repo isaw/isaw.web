@@ -6,8 +6,8 @@
                  mtool python:context.portal_membership;
                  portal_url python:context.portal_url;
                  can_edit python:mtool.checkPermission('Modify portal content', context);
-                 creators here/Creators;
-                 contributors here/Contributors;"
+                 creators here/Creators|nothing;
+                 contributors here/Contributors|nothing;"
      tal:condition="python: show and (is_news or can_edit)">
      
   <tal:creators tal:condition="creators">

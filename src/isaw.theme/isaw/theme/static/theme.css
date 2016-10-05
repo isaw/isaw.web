@@ -316,6 +316,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns form .field input[type="text"], #portal-columns form .field textarea,
 #content form .field input[type="text"], #content form .field textarea,
 #archetypes-fieldname-description textarea#description {border:1px solid #bbb2aa; border-radius:1px; font-family: 'Roboto Slab', serif; font-size:22px; font-weight:300; line-height:30px; margin:10px 0 0; padding:12px 20px; }
+#content form .field .datagridwidget-cell input[type="text"] { padding: 0; }
 #portal-columns form .field.collapsible, #content form .field.collapsible {border:1px solid #e2ddd7; border-radius:2px; display:inline-block; margin:0 30px 0 0; padding:0; vertical-align:top; width:40%; }
 #portal-columns form .field.collapsible label.collapser, #content form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
 #portal-columns form .field.collapsible label.collapser.expanded, #content form .field.collapsible label.collapser.expanded  { }
@@ -522,7 +523,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns ul.news li a img, #content ul.news li a img {display:block; max-width:100%; max-height: 170px; overflow: hidden; border:1px solid #ddd;}
 #portal-columns ul.news li a h3, #content ul.news li a h3 {color:#000; font-size:25px; font-weight:400; letter-spacing:.5px; line-height:30px; margin: 8px 0 0; text-align:left; text-decoration:none; text-transform:uppercase; }
 #portal-columns ul.news li .post-meta, #content ul.news li .post-meta {color:#6a6a6a; display:block; font-size:14px; font-weight:400; letter-spacing:.8px; line-height:120%; margin:10px 0; text-transform:uppercase; }
-#portal-columns ul.news li .post-meta img, #content ul.news li .post-meta  {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
+#portal-columns ul.news li .post-meta img, #content ul.news li .post-meta img {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
 #portal-columns ul.news li .post-excerpt, #content ul.news li .post-excerpt {font-size:17px; font-weight:normal; letter-spacing:.2px; line-height:24px; margin:0; text-transform:none; }
 #portal-columns ul.news li a.button.small, #content ul.news li a.button.small {font-size:12px; margin:15px 0; padding:12px 18px; }
 #portal-columns ul.news li a div.blogtile_placeholder,
@@ -856,8 +857,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
 }
 @media screen and (max-width:959px){
-	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; }
-
+	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; line-height: 16px; height: 16px; padding: 12px 20px 11px 56px}
 	.section-isaw-home.template-document_view {padding-bottom:0; }
 	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
@@ -919,8 +919,8 @@ h2.CVSectionTitle:before {
 }
 
 @media screen and (max-width:767px){
-	#portal-breadcrumbs {font-size:10px; line-height:120%; margin-bottom:22px; }
-	#portal-breadcrumbs span {margin:0; }
+	#viewlet-above-content #portal-breadcrumbs {font-size:10px; line-height:12px; height: 12px; margin-bottom:22px; padding: 14px 20px 13px 56px; text-size-adjust: none; -webkit-text-size-adjust: none;}
+	#viewlet-above-content #portal-breadcrumbs span {margin:0; }
 	/*flexbox it*/
 	#column-contents {padding:0 20px 80px 40px; 
 		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1022,12 +1022,67 @@ h2.CVSectionTitle:before {
     color: #666;
 }
 
-#content .ExhibitObjectText {
-    margin-top: 1.5em;
+.portaltype-isaw-exhibitions-object.template-view #content h1.documentFirstHeading {
+    width: 595px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #content .ExhibitObjectImage {
+    width: 100%;
+    text-align: center;
+    max-width: 595px;
+    margin: 0 auto 1em auto;
+}
+
+#content .ExhibitObjectImage img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 625px;
+}
+
+#content .ExhibitObjectInfo {
+    background-color: white;
+    width: 595px;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#content .ExhibitObjectInfo dl {
+    overflow: hidden;
+    width: 100%;
     margin-bottom: 1em;
+}
+
+#content .ExhibitObjectInfo dl dt {
+    font-size: 0.9em;
+    line-height: 1.25em;
+    width: 37%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+#content .ExhibitObjectInfo dl dd {
+    color: #666;
+    line-height: 1.25em;
+    vertical-align: bottom;
+    font-size: 80%;
+    font-weight: normal;
+    width: 60%;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+#content .ExhibitObjectText {
+    width: 595px;
+    max-width: 100%;
+    margin: 1.5em auto 0 auto;
 }
 
 #content .ExhibitionChecklistView .listing {
@@ -1098,7 +1153,6 @@ button.PleiadesFetch {
 	#content #slider .slide .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li, #content ul.news li {float:none; margin-right:0 !important; width:100% !important; }
-
 }
 
 @media screen and (max-width:319px){
@@ -1111,4 +1165,5 @@ button.PleiadesFetch {
 	#portal-column-two,
 	#portal-column-content {
 	margin-left: 0 !important;
+    }
 }

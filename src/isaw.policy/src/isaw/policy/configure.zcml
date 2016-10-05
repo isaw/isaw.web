@@ -44,6 +44,28 @@
       factory=".purging.LeadimagePurgePaths"
       name="isaw.policy.leadimage" />
 
+  <adapter
+      for="Products.CMFCore.interfaces.IFolderish
+           zope.publisher.interfaces.browser.IDefaultBrowserLayer
+           plone.dexterity.interfaces.IDexterityFTI"
+      provides="zope.publisher.interfaces.browser.IBrowserPage"
+      factory=".interfaces.PublicationAddView"
+      name="isaw.policy.publication"
+      />
+  <class class=".interfaces.PublicationAddView">
+      <require
+          permission="cmf.AddPortalContent"
+          interface="zope.publisher.interfaces.browser.IBrowserPage"
+          />
+  </class>
+
+  <adapter
+      factory=".interfaces.PubTitleLabel"
+      name="label" />
+  <adapter
+      factory=".interfaces.PubAddTitleLabel"
+      name="label" />
+
   <permission
       id="plone.iterateCheckIn"
       title="iterate : Check in content"

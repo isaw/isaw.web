@@ -12,15 +12,26 @@
          tal:condition="nocall:image"
          tal:content="structure image">
     </div>
-    <div class="discreet ExhibitObjectTitle" tal:content="context/title">Title</div>
-    <div class="discreet ExhibitObjectMedium" tal:condition="context/medium" tal:content="context/medium">Medium</div>
-    <div class="discreet ExhibitObjectDimensions" tal:condition="context/dimensions" tal:content="context/dimensions">Dimensions</div>
-    <div class="discreet ExhibitObjectContext" tal:condition="context/context" tal:content="context/context">Context</div>
-    <div class="discreet ExhibitObjectDate" tal:condition="context/date" tal:content="context/date">Date</div>
-    <div class="discreet ExhibitObjectLender" tal:condition="context/lender">
-      <a href="" title="Lender" tal:attributes="href context/lender_link|nothing" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a>
+    <div class="ExhibitObjectInfo">
+      <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
+      <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt> <dd tal:content="context/medium">Medium</dd></dl>
+      <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing"><dt>Dimensions:</dt><dd tal:content="context/dimensions">Dimensions</dd></dl>
+      <dl class="ExhibitObjectContext" tal:condition="context/exhibition_context|nothing"><dt>Context:</dt><dd tal:content="context/exhibition_context">Context</dd></dl>
+      <dl class="ExhibitObjectDate" tal:condition="context/date|nothing"><dt>Date:</dt><dd tal:content="context/date">Date</dd></dl>
+      <dl class="ExhibitObjectInventoryNum" tal:condition="context/inventory_num|nothing"><dt>Inventory Number:</dt><dd tal:content="context/inventory_num">Inventory Number</dd></dl>
+      <dl class="ExhibitObjectLender" tal:condition="context/lender|nothing">
+        <dt>Lender:</dt>
+        <dd><a href="" title="Lender" tal:attributes="href context/lender_link" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a></dd>
+      </dl>
+      <dl class="ExhibitObjectLabel"
+          tal:define="text context/label/output|nothing"
+          tal:condition="text">
+        <dt>Label:</dt>
+        <dd tal:content="structure text">Rich Text Content</dd>
+      </dl>
+      <div class="ExhibitObjectCredits discreet" tal:condition="context/credits|nothing" tal:content="context/credits">Credit Line</div>
+      <div class="ExhibitObjectCopyright discreet" tal:condition="context/copyright|nothing" tal:content="context/copyright">Copyright Notice</div>
     </div>
-
     <div class="ExhibitObjectText"
          tal:define="text context/text/output|nothing"
          tal:content="structure text">

@@ -1,30 +1,27 @@
 <?xml version="1.0"?>
-<object name="isaw.exhibitions.object"
+<object name="isaw.policy.publication"
    meta_type="Dexterity FTI"
-   i18n:domain="isaw.exhibitions" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+   i18n:domain="isaw.policy" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Exhibition Object</property>
+  <property name="title" i18n:translate="">Publication</property>
   <property name="description"
-    i18n:translate="">Object in an Exhibition</property>
+    i18n:translate="">A Publication</property>
   <property name="icon_expr">string:${portal_url}/document_icon.png</property>
-  <property name="factory">isaw.exhibition.object</property>
+  <property name="factory">isaw.policy.publication</property>
   <property name="global_allow">True</property>
-  <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-    <element value="Image" />
-  </property>
+  <property name="filter_content_types">False</property>
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">isaw.exhibitions.interfaces.IExhibitionObject</property>
-  <property name="klass">plone.dexterity.content.Container</property>
+  <property name="schema">isaw.policy.interfaces.IISAWPublication</property>
+  <property name="klass">plone.dexterity.content.Item</property>
 
   <property name="behaviors">
+     <element value="isaw.bibitems.interfaces.IBibliographicItem"/>
+     <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
      <element value="plone.app.content.interfaces.INameFromTitle"/>
-     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
-     <element value="plone.app.imagecropping.behaviors.IImageCroppingBehavior"/>
   </property>
 
   <!-- View information -->
@@ -36,7 +33,6 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-
 
   <!-- Method aliases -->
   <alias from="(Default)" to="(dynamic view)" />

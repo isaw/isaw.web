@@ -259,4 +259,24 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="24"
+      destination="25"
+      title="Update folder views"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="25"
+      destination="26"
+      title="Update folder views"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="typeinfo"
+      />
+
 </configure>

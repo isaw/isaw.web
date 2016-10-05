@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>26</version>
+  <version>28</version>
   <dependencies>
     <dependency>profile-isaw.theme:default</dependency>
     <dependency>profile-isaw.facultycv:default</dependency>
@@ -26,5 +26,6 @@
     <dependency>profile-Products.RedirectionTool:default</dependency>
     <dependency>profile-isaw.bibitems:default</dependency>
     <dependency>profile-Products.Maps:default</dependency>
+    <dependency>profile-collective.z3cform.datagridfield:default</dependency>
   </dependencies>
 </metadata>

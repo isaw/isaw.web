@@ -14,8 +14,8 @@ class IISAWExhibitionsLayer(Interface):
 class IExhibitionObject(model.Schema):
     """Schema for Exhibition Objects."""
 
-    context = schema.TextLine(title=_(u'Context'),
-                              required=False)
+    exhibition_context = schema.TextLine(title=_(u'Context'),
+                                         required=False)
 
     date = schema.TextLine(title=_(u'Date'),
                            required=False)
@@ -43,6 +43,12 @@ class IExhibitionObject(model.Schema):
 
     notes = schema.TextLine(title=_(u'Notes'),
                             required=False)
+
+    credits = schema.TextLine(title=_(u'Credit Line'),
+                              required=False)
+
+    copyright = schema.TextLine(title=_(u'Copyright Notice'),
+                                required=False)
 
     image = namedfile.NamedBlobImage(title=_(u'Lead Image'),
                                      required=False)

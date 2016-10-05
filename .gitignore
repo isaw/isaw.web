@@ -25,6 +25,7 @@ var/*
 .installed.cfg
 .mr.developer.cfg
 src/plone.app.users
+src/isaw.bibitems
 src/plone.app.imagecropping
 
 # PyInstaller
