@@ -8,6 +8,7 @@ from Products.CMFCore.tests.base.security import PermissiveSecurityPolicy
 from Testing.makerequest import makerequest
 from zope.component.hooks import setSite
 
+from plone.app.dexterity.behaviors.metadata import ICategorization
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
 
@@ -29,6 +30,8 @@ FIELDS = ['title',
           'label',
           'credits',
           'copyright',
+          'subjects',
+          'pleiades_url',
           ]
 
 
@@ -110,6 +113,12 @@ if __name__ == '__main__':
         item = createContentInContainer(container,
                                         'isaw.exhibitions.object',
                                         **fields)
+
+        # Work around for but in dexterity createContent kwargs handling of
+        # list values
+        if 'subjects' in fields:
+            ICategorization(item).subjects = fields['subjects']
+
         print 'Created Exhibition Object with id "{}"'.format(item.id)
         print
 

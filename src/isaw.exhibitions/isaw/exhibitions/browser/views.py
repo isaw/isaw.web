@@ -1,5 +1,5 @@
 from AccessControl import getSecurityManager
-from Acquisition import aq_inner, aq_parent
+from Acquisition import aq_inner, aq_parent, aq_base
 from Products.CMFCore.interfaces import IContentish
 from Products.CMFCore.utils import getToolByName
 from plone.app.layout.nextprevious.view import (NextPreviousView,
@@ -18,11 +18,15 @@ class HighlightsNextPreviousView(NextPreviousView):
         props = getToolByName(context, 'portal_properties').site_properties
         self.vat = props.getProperty('typesUseViewActionInListings', ())
         self.security = getSecurityManager()
-        order = aq_parent(aq_inner(context)).getOrdering()
-        if not isinstance(order, list):
-            order = order.idsInOrder()
-        if not isinstance(order, list):
-            order = None
+        parent = aq_parent(aq_inner(context))
+        if getattr(aq_base(parent), 'getOrdering', None):
+            order = parent.getOrdering()
+            if not isinstance(order, list):
+                order = order.idsInOrder()
+            if not isinstance(order, list):
+                order = None
+        else:
+            order = parent.contentIds()
         self.order = order
 
     def is_highlight(self, obj=None):

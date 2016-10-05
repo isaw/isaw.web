@@ -8,7 +8,9 @@
                 "lender": "Richman",
                 "image": "images/12345",
                 "text": "Not a long text.",
-                "label": "Object label"
+                "label": "Object label",
+                "subjects": ["test 1", "test 2"],
+                "pleiades_url": "https://pleiades.stoa.org/places/579885"
             }
         },
         {
@@ -19,7 +21,9 @@
                 "lender": "Richman",
                 "image": "images/123456",
                 "text": "Not a long text.",
-                "label": "Object label"
+                "label": "Object label",
+                "subjects": ["test 3", "test 4"],
+                "pleiades_url": "https://pleiades.stoa.org/places/579885"
             }
         }
     ]
