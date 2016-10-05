@@ -9,28 +9,32 @@
   <metal:block fill-slot="style_slot">
     <style>
       .ExhibitionEntry {
-        width: 365px;
         padding: 7px;
       }
       .ExhibitionEntryImage img {
         width: 100%;
         height: auto;
       }
+      #exhibition-listing[data-columns]::before {
+          content: '3 .column.size-1of3';
+      }
+      .column {float: left;}
+      .size-1of3 {width: 33.333%;}
+      .pagination {clear: both;}
     </style>
   </metal:block>
 <body>
 
 <metal:content-core fill-slot="content-core">
     <tal:foldercontents define="contentFilter contentFilter|request/contentFilter|nothing;
-                        contentFilter python:contentFilter and dict(contentFilter) or {'portal_type': 'isaw.exhibitions.object'};
+                        contentFilter python:contentFilter and dict(contentFilter) or {};
                         limit_display limit_display|request/limit_display|nothing;
                         limit_display python:limit_display and int(limit_display) or None;
                         more_url more_url|request/more_url|string:folder_contents;
-                        is_a_topic python:context.portal_type=='Topic';
+                        is_a_collection python:context.portal_type in ['Topic', 'Collection'];
                         friendly_types context/@@plone_portal_state/friendly_types;
-                        dummy python:not is_a_topic and contentFilter.setdefault('portal_type', ['isaw.exhibitions.object']);
                         folderContents folderContents|nothing;
-                        folderContents python:folderContents or is_a_topic and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+                        folderContents python:folderContents or is_a_collection and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
                         site_properties context/portal_properties/site_properties;
                         use_view_action site_properties/typesUseViewActionInListings|python:();
                         Batch python:modules['Products.CMFPlone'].Batch;
@@ -45,15 +49,15 @@
                         plone_view context/@@plone;">
     <tal:listing condition="batch">
 
-        <div id="exhibition-listing">
+        <div id="exhibition-listing" data-columns>
             <tal:entry tal:repeat="item batch">
             <tal:block tal:define="item_url item/getURL|item/absolute_url;
                                    item_id item/getId|item/id;
                                    item_title_or_id item/pretty_title_or_id;
                                    item_object python: item.getObject();
-                                   item_image item_object/image">
+                                   item_image item_object/image|nothing">
 
-                <div class="ExhibitionEntry">
+                <div class="ExhibitionEntry" tal:condition="not:item/exclude_from_nav">
 
                     <div class="ExhibitionEntryImage">
                           <a href="#"
@@ -62,10 +66,14 @@
                                              title item_title_or_id">
                             <img tal:condition="nocall:item_image"
                                  tal:replace="structure item_object/@@images/image/large"/>
+                            <img tal:condition="python:item_image is None"
+                                 tal:attributes="src string:${navigation_root_url}/mosaic_default.png"/>
                           </a>
                     </div>
                     <div class="ExhibitionEntrySummary">
-                      <h3 tal:content="item_title_or_id">Title</h3>
+                      <a tal:attributes="href item_url">
+                        <h3 tal:content="item_title_or_id">Title</h3>
+                      </a>
                     </div>
 
                 </div>
@@ -81,19 +89,17 @@
         <p class="discreet"
            tal:condition="not: folderContents"
            i18n:translate="description_no_items_in_folder">
-            There are currently no exhibition objects in this folder.
+            There are currently no items here.
         </p>
     </metal:empty>
 
-    </tal:foldercontents>
-
-    <script>
-        imagesLoaded($('#exhibition-listing'), function() {
-            $('#exhibition-listing').masonry({width: 365, itemSelector: '.ExhibitionEntry'});
-        });
+    <script tal:attributes="src string:${navigation_root_url}/++resource++exhibitions/salvattore.min.js">
     </script>
+
+    </tal:foldercontents>
 
 </metal:content-core>
 
 </body>
 </html>
+
