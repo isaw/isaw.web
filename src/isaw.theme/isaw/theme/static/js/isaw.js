@@ -49,10 +49,11 @@ jQuery(function($) {
     });
     
     var $location_edit = $('.googleMapEdit, .geolocation_wrapper.edit');
+    var $pleiades_url = $('input#form-widgets-IGeolocationBehavior-pleiades_url, input#pleiadesUrl');
     if ($location_edit.length) {
-        var $pleiades_widget = $('<div class="pleiades-location"><label>Fetch coordinates from Pleiades URL</label><input type="text" /><button class="PleiadesFetch">Fetch</button><div>');
-        $location_edit.append($pleiades_widget);
-        $pleiades_widget.find('button').on('click',
+        var $pleiades_widget = $('<button class="PleiadesFetch">Fetch</button>');
+        $pleiades_url.after($pleiades_widget);
+        $pleiades_widget.on('click',
             function (e) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -60,11 +61,13 @@ jQuery(function($) {
                 var url = $input.val();
                 $.getJSON(url,
                     function (data) {
+                        if (!data) {
+                            window.alert('No data found in response');
+                        }
                         var repr_point = data.reprPoint;
                         if (repr_point) {
                             $location_edit.find('input#geolocation_latitude, input.geolocationfield-field.latitude').val(repr_point[1]);
                             $location_edit.find('input#geolocation_longitude, input.geolocationfield-field.longitude').val(repr_point[0]);
-                            $input.val('');
                         } else {
                             window.alert('No representative point found in response');
                         }

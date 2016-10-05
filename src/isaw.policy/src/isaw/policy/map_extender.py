@@ -1,6 +1,7 @@
 from Acquisition import aq_base
 from zope.interface import Interface, implements, alsoProvides
 from zope.component import adapts
+from zope import schema
 
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.field import ExtensionField
@@ -13,6 +14,7 @@ from plone.supermodel.directives import fieldset
 from z3c.form.interfaces import IAddForm
 from z3c.form.interfaces import IEditForm
 
+from Products.Archetypes import atapi
 from Products.Maps.field import LocationField, LocationWidget
 from Products.Maps.content.Location import LocationMarker as BaseMarker
 from Products.Maps.interfaces import IRichMarker
@@ -28,12 +30,17 @@ class ExtendedLocationField(ExtensionField, LocationField):
     pass
 
 
+class ExtendedStringField(ExtensionField, atapi.StringField):
+    pass
+
+
 class MapSchemaExtender(object):
     implements(ISchemaExtender)
 
     _fields = [
-        ExtendedLocationField('geolocation',
-            languageIndependent = 1,
+        ExtendedLocationField(
+            'geolocation',
+            languageIndependent=1,
             required=False,
             default=(0, 0),
             validators=('isGeoLocation',),
@@ -41,8 +48,18 @@ class MapSchemaExtender(object):
                 label='Geolocation',
                 description="Enter a latitude and longitude in signed decimal degrees. Geodetic model is assumed to be WGS-1984."),
             schemata='Geolocation',
-            ),
-        ]
+        ),
+        ExtendedStringField(
+            'pleiadesUrl',
+            languageIndependent=1,
+            required=False,
+            validators=('isURL',),
+            widget=atapi.StringWidget(
+                label='Fetch coordinates from Pleiades ',
+                description="Enter a pleiades place url to use to lookup place location data"),
+            schemata='Geolocation',
+        ),
+    ]
 
     def __init__(self, context):
         self.context = context
@@ -57,10 +74,13 @@ class IGeolocationBehavior(model.Schema):
         title=u"Geolocation",
         description=u"Enter a latitude and longitude in signed decimal degrees. Geodetic model is assumed to be WGS-1984.",
         required=False)
+    pleiades_url = schema.URI(title=u"Fetch coordinates from Pleiades URL",
+                              required=False)
     directives.omitted('geolocation')
     directives.no_omit(IEditForm, 'geolocation')
     directives.no_omit(IAddForm, 'geolocation')
-    fieldset('geolocation', label=u'Geolocation', fields=['geolocation'])
+    fieldset('geolocation', label=u'Geolocation',
+             fields=['geolocation', 'pleiades_url'])
 alsoProvides(IGeolocationBehavior, IFormFieldProvider)
 
 
