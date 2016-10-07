@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="kcrw.site">
+<body>
+<metal:supress-desc fill-slot="content-description"></metal:supress-desc>
+  <metal:core fill-slot="content-core">
+    <h3 class="Tagline"
+         tal:condition="context/tag_line|nothing"
+         tal:content="context/tag_line">
+         Tagline
+    </h3>
+    <div class="Byline"
+         tal:condition="view/byline|nothing"
+         tal:content="structure view/byline">
+         Byline
+    </div>
+    <div class="PublicationInfo" style="margin-bottom: 15px;">
+      <p>
+        <span tal:condition="python:context.publisher and context.publisher_uri">
+          <a tal:attributes="href context/publisher_uri"
+             tal:content="string:${context/publisher}.">Publisher</a>
+        </span>
+        <span tal:condition="python:context.publisher and not context.publisher_uri"
+              tal:content="string:${context/publisher}.">
+        </span>
+        <span tal:condition="context/date_of_publication|nothing"
+              tal:content="string:${context/date_of_publication}.">
+        </span>
+        <span tal:condition="context/isbn|nothing"
+              tal:content="string:ISBN: ${context/isbn}.">
+        </span>
+        <span tal:condition="context/issn|nothing"
+              tal:content="string:ISSN: ${context/issn}.">
+        </span>
+        <span tal:condition="context/doi|nothing"
+              tal:content="string:DOI: ${context/doi}.">
+        </span>
+      </p>
+    </div>
+    <div class="AccessLinks" tal:condition="python:getattr(context, 'access_uri', None) or getattr(context, 'alternate_uri', None)">
+      <span class="label">read:</span>
+      <a class="AccessButton button" tal:condition="context/access_uri|nothing" tal:attributes="href context/access_uri"
+         tal:content="python:view.url_domain(context.access_uri)">jstor.org</a>
+      <a class="AccessButton button" tal:condition="context/alternate_uri|nothing" tal:attributes="href context/alternate_uri"
+         tal:content="python:view.url_domain(context.alternate_uri)">jstor.org</a>
+    </div>
+    <div class="BibliographicLinks" tal:condition="context/bibliographic_uri|nothing">
+      <span class="label">bibliographic record:</span>
+      <a class="AccessButton button" tal:attributes="href context/bibliographic_uri"
+         tal:content="python:view.url_domain(context.bibliographic_uri)">jstor.org</a>
+    </div>
+    <div class="PublicationText" style="margin-top: 55px;"
+         tal:condition="context/text|nothing"
+         tal:content="structure context/text/raw">
+         Text
+    </div>
+  </metal:core>
+</body>
+</html>
