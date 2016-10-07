@@ -1,5 +1,6 @@
 import json
 import argparse
+import requests
 import transaction
 
 from AccessControl.SecurityManagement import newSecurityManager
@@ -10,6 +11,7 @@ from zope.component.hooks import setSite
 
 from plone.app.dexterity.behaviors.metadata import ICategorization
 from plone.dexterity.utils import createContentInContainer
+from plone.formwidget.geolocation import Geolocation
 from plone.namedfile.file import NamedBlobImage
 
 
@@ -118,6 +120,22 @@ if __name__ == '__main__':
         # list values
         if 'subjects' in fields:
             ICategorization(item).subjects = fields['subjects']
+        if 'pleiades_url' in fields:
+            url = fields['pleiades_url']
+            try:
+                resp = requests.get(
+                    url, headers={'accept': 'application/json'}
+                )
+                data = resp.json()
+                if data.get('reprPoint'):
+                    loc = data['reprPoint']
+                    item.geolocation = Geolocation(loc[1], loc[0])
+                else:
+                    print "No data in pleiades repsonse from: {}".format(url)
+            except requests.exceptions.RequestException:
+                print "Error fetching pleiades data from: {}".format(url)
+            except ValueError:
+                print "Error decoding json response from: {}".format(url)
 
         print 'Created Exhibition Object with id "{}"'.format(item.id)
         print
