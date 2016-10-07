@@ -6,6 +6,7 @@ from zope import schema
 from archetypes.schemaextender.interfaces import ISchemaExtender
 from archetypes.schemaextender.field import ExtensionField
 
+from plone.app.textfield import RichText
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.autoform import directives
 from plone.formwidget.geolocation.field import GeolocationField
@@ -85,10 +86,20 @@ alsoProvides(IGeolocationBehavior, IFormFieldProvider)
 
 
 class ILocation(model.Schema):
+    text = RichText(
+        title=u"Body",
+        required=False,
+        default_mime_type='text/html',
+        output_mime_type='text/html',
+        allowed_mime_types=('text/html',),
+        default=u""
+    )
     geolocation = GeolocationField(
         title=u"Geolocation",
         description=u"Longitude and latitude",
         required=False)
+    pleiades_url = schema.URI(title=u"Fetch coordinates from Pleiades URL",
+                              required=False)
 
 
 class LocationMarker(BaseMarker):

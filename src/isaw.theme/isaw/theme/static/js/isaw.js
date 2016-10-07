@@ -49,7 +49,7 @@ jQuery(function($) {
     });
     
     var $location_edit = $('.googleMapEdit, .geolocation_wrapper.edit');
-    var $pleiades_url = $('input#form-widgets-IGeolocationBehavior-pleiades_url, input#pleiadesUrl');
+    var $pleiades_url = $('input#form-widgets-IGeolocationBehavior-pleiades_url, input#form-widgets-pleiades_url, input#pleiadesUrl');
     if ($location_edit.length) {
         var $pleiades_widget = $('<button class="PleiadesFetch">Fetch</button>');
         $pleiades_url.after($pleiades_widget);
@@ -63,6 +63,14 @@ jQuery(function($) {
                     function (data) {
                         if (!data) {
                             window.alert('No data found in response');
+                        }
+                        if ($('body').hasClass('template-isaw-policy-location') || $('body').hasClass('portaltype-isaw-policy-location')) {
+                            if (data.title) {
+                                $('input#form-widgets-IDublinCore-title').val(data.title);
+                            }
+                            if (data.description) {
+                                $('textarea#form-widgets-IDublinCore-description').val(data.description);
+                            }
                         }
                         var repr_point = data.reprPoint;
                         if (repr_point) {
