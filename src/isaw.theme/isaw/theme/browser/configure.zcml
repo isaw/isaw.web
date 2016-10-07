@@ -281,4 +281,13 @@
       class=".viewlets.events.SearchEvents"
       permission="zope2.View" />
 
+  <browser:page
+    name="publication-view"
+    for="isaw.policy.interfaces.IISAWPublication"
+    permission="zope2.View"
+    class=".publication.PublicationView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/publication_view.pt"
+    />
+
 </configure>
