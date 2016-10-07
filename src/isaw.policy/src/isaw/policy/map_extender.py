@@ -86,6 +86,12 @@ alsoProvides(IGeolocationBehavior, IFormFieldProvider)
 
 
 class ILocation(model.Schema):
+    geolocation = GeolocationField(
+        title=u"Geolocation",
+        description=u"Longitude and latitude",
+        required=False)
+    pleiades_url = schema.URI(title=u"Fetch coordinates from Pleiades URL",
+                              required=False)
     text = RichText(
         title=u"Body",
         required=False,
@@ -94,12 +100,6 @@ class ILocation(model.Schema):
         allowed_mime_types=('text/html',),
         default=u""
     )
-    geolocation = GeolocationField(
-        title=u"Geolocation",
-        description=u"Longitude and latitude",
-        required=False)
-    pleiades_url = schema.URI(title=u"Fetch coordinates from Pleiades URL",
-                              required=False)
 
 
 class LocationMarker(BaseMarker):
