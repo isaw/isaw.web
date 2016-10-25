@@ -34,12 +34,12 @@
                         is_a_collection python:context.portal_type in ['Topic', 'Collection'];
                         friendly_types context/@@plone_portal_state/friendly_types;
                         folderContents folderContents|nothing;
-                        folderContents python:folderContents or is_a_collection and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 100);
+                        folderContents python:folderContents or is_a_collection and context.queryCatalog(batch=True, **contentFilter) or context.getFolderContents(contentFilter, batch=True, b_size=limit_display or 21);
                         site_properties context/portal_properties/site_properties;
                         use_view_action site_properties/typesUseViewActionInListings|python:();
                         Batch python:modules['Products.CMFPlone'].Batch;
                         b_start python:request.get('b_start', 0);
-                        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, limit_display or 100, int(b_start), orphan=1);
+                        batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, limit_display or 21, int(b_start), orphan=1);
                         isAnon context/@@plone_portal_state/anonymous;
                         normalizeString nocall: context/plone_utils/normalizeString;
                         toLocalizedTime nocall: context/@@plone/toLocalizedTime;
