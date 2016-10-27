@@ -41,27 +41,40 @@ class EventListingView(TiledListingView):
             b_size = self.batch_size
         if b_start is None:
             b_start = (getattr(self, 'page', 1) - 1) * b_size
-        catalog = getToolByName(self.context, 'portal_catalog')
-        content_filter = {
-            'portal_type': 'Event',
-            'sort_on': 'start',
-            'sort_order': 'ascending',
-            'review_state': 'published',
-        }
+        content_filter = {}
+        is_collection = self.context.portal_type == 'Collection'
+        if not is_collection:
+            content_filter = {
+                'portal_type': 'Event',
+                'sort_on': 'start',
+                'sort_order': 'ascending',
+                'review_state': 'published',
+            }
         text = self.request.get('SearchableText')
         if text:
             content_filter['SearchableText'] = text
         search_all = self.request.get('SearchAll')
         if search_all != 'yes':
             content_filter['start'] = {'query': DateTime(), 'range': 'min'}
+        else:
+            content_filter['start'] = {'query': DateTime('1900/01/01'),
+                                       'range': 'min'}
+
         start = self.request.get('start')
         if start:
             content_filter['start'] = start
         end = self.request.get('end')
         if end:
             content_filter['end'] = end
-        items = catalog(**content_filter)
-        batch = Batch(items, b_size, b_start)
+        if is_collection:
+            batch = self.context.results(batch=True, b_start=b_start,
+                                         b_size=b_size, brains=True,
+                                         custom_query=content_filter)
+        else:
+            catalog = getToolByName(self.context, 'portal_catalog')
+            items = catalog(**content_filter)
+            batch = Batch(items, b_size, b_start)
+
         return batch
 
     def get_no_results_message(self):
