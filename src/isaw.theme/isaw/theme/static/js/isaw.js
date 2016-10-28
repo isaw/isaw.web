@@ -75,7 +75,7 @@ jQuery(function($) {
                         var repr_point = data.reprPoint;
                         if (repr_point) {
                             $location_edit.find('input#geolocation_latitude, input.geolocationfield-field.latitude').val(repr_point[1]);
-                            $location_edit.find('input#geolocation_longitude, input.geolocationfield-field.longitude').val(repr_point[0]);
+                            $location_edit.find('input#geolocation_longitude, input.geolocationfield-field.longitude').val(repr_point[0]).trigger('change');
                         } else {
                             window.alert('No representative point found in response');
                         }
@@ -216,20 +216,30 @@ jQuery(function($) {
         bounds = markers.getBounds();
         map.fitBounds(bounds.pad(0.05));
         if (editable) {
-          map.on('geosearch_showlocation', function(e) {
-            map.removeLayer(markers);
-            var coords = e.Location;
-            update_inputs(coords.Y, coords.X);
-            bind_draggable_marker(e.Marker);
-          });
+            map.on('geosearch_showlocation', function(e) {
+                map.removeLayer(markers);
+                var coords = e.Location;
+                update_inputs(coords.Y, coords.X);
+                bind_draggable_marker(e.Marker);
+            });
 
-          // GEOSEARCH
-          geosearch = new L.Control.GeoSearch({
-            showMarker: true,
-            draggable: editable,
-            provider: new L.GeoSearch.Provider.Esri()
-          });
-          geosearch.addTo(map);
+            // GEOSEARCH
+            geosearch = new L.Control.GeoSearch({
+                showMarker: true,
+              draggable: editable,
+                provider: new L.GeoSearch.Provider.Esri()
+            });
+            geosearch.addTo(map);
+
+            // Follow manual changes
+            map_wrap.find('input#geolocation_latitude, input.geolocationfield-field.latitude, input#geolocation_longitude, input.geolocationfield-field.longitude').on('change', function () {
+                map.removeLayer(markers);
+                var lng = map_wrap.find('input#geolocation_longitude, input.geolocationfield-field.longitude').val();
+                var lat = map_wrap.find('input#geolocation_latitude, input.geolocationfield-field.latitude').val();
+                markers = primary_markers([{lat: lat, lng: lng}], editable);
+                map.addLayer(markers);
+                map.fitBounds(markers.getBounds());
+            });
         }
     };
 
