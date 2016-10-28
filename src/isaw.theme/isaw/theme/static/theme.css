@@ -608,6 +608,13 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	margin-right: 210px;
 	text-transform: none;
 }
+td.event, td.todayevent {
+    text-align: center;
+    background-color: #9b3a25;
+}
+td.event a, td.todayevent a {
+    color: white !important;
+}
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
