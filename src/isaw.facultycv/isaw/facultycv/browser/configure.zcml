@@ -34,6 +34,14 @@
 	/>
 
   <browser:page
+    for="isaw.facultycv.interfaces.Iprofile"
+    name="foaf.rdf"
+    permission="zope2.View"
+    class=".views.ProfileView"
+    template="templates/foaf-rdf.pt"
+    />
+
+  <browser:page
     for="..interfaces.folderview.IFolderView"
     name="folder_listing"
     permission="zope2.Public"

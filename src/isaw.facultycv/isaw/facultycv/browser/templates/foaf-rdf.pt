@@ -23,7 +23,7 @@ python:request.RESPONSE.setHeader('Content-Type',
         <sy:updateFrequency>1</sy:updateFrequency>
         <sy:updateBase tal:content="structure context/Date"></sy:updateBase>
     </foaf:Person>
-    <foaf:Organization rdf:ID="orgranization">
+    <foaf:Organization rdf:ID="organization">
         <foaf:name>Institute for the Study of the Ancient World</foaf:name>
         <foaf:homepage rdf:resource="http://isaw.nyu.edu"/>
         <foaf:mbox rdf:resource="mailto:isaw@nyu.edu"/>
