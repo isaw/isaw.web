@@ -1144,6 +1144,25 @@ button.PleiadesFetch {
     width: auto;
 }
 
+div.leaflet-control-geosearch.leaflet-control {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    right: auto;
+}
+
+#content form .field input#leaflet-control-geosearch-qry {
+    padding: 0;
+}
+
+.folder-map {
+    height: 500px;
+}
+
+.folder-map ul.markers {
+    display: none;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
