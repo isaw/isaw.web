@@ -1,11 +1,12 @@
 from zope.interface import Interface
-from zope.schema import List, TextLine, Tuple, URI
+from zope.schema import List, Text, TextLine, Tuple, URI
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from isaw.bibitems.interfaces import IBibliographicItem
 from isaw.policy import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.dexterity.browser import add
 from plone.directives import form
+from plone.namedfile import field as namedfile
 from z3c.form import widget
 
 
@@ -13,18 +14,22 @@ class IISAWPolicyLayer(Interface):
     """Marker layer interface for ISAW Site"""
 
 
-class ILOCSubject(form.Schema):
-    uri = URI(title=_(u'LOC URI'))
-    text = TextLine(title=_(u'Subject'))
-
-
 class IISAWPublication(form.Schema):
-    short_title = TextLine(title=_(u'Short Title'))
-    form.order_after(short_title='IBibliographicItem.title')
+    title = TextLine(
+        title=_(u"Title"),
+        description=_(u"The short title of the bibliographic reference."),
+    )
 
-    tag_line = TextLine(title=_(u'Tag Line'),
-                        required=False)
-    form.order_after(tag_line='IBibliographicItem.description')
+    short_title = TextLine(title=_(u'Short Title'))
+
+    description = Text(
+        title=_(u'Summary'),
+        description=_(u'Used in item listings and search results.'),
+        required=False,
+        missing_value=u'',
+    )
+
+    tag_line = TextLine(title=_(u'Tag Line'), required=False)
 
     authors = Tuple(
         title=_(u'Authors'),
@@ -33,7 +38,6 @@ class IISAWPublication(form.Schema):
         required=False,
         missing_value=(),
     )
-    form.order_before(authors='IBibliographicItem.citation_detail')
 
     editors = Tuple(
         title=_(u'Editors'),
@@ -42,7 +46,6 @@ class IISAWPublication(form.Schema):
         required=False,
         missing_value=(),
     )
-    form.order_before(editors='IBibliographicItem.citation_detail')
 
     contributors = Tuple(
         title=_(u'Contributors'),
@@ -51,35 +54,82 @@ class IISAWPublication(form.Schema):
         required=False,
         missing_value=(),
     )
-    form.order_before(contributors='IBibliographicItem.citation_detail')
 
-    alt_bib_uri = URI(title=_(u'Alternate Bibliographic URI'),
-                      required=False)
-    form.order_after(alt_bib_uri='IBibliographicItem.bibliographic_uri')
+    parent_title = TextLine(title=_(u'Parent Title'), required=False)
+
+    parent_uri = URI(title=_(u'Parent URI'), required=False)
+
+    volume = TextLine(title=_(u'Volume'), required=False)
+
+    date_of_publication = TextLine(
+        title=_(u'Publication Date'),
+        description=_(u'Enter the date on which this publication was issued'),
+        required=False)
+
+    range = TextLine(
+        title=_(u"Range"),
+        required=False,
+    )
+
+    formatted_citation = TextLine(
+        title=_(u"Formatted Citation"),
+        required=False,
+    )
+
+    zotero_uri = URI(
+        title=_(u"Zotero URI"),
+        description=_(u"This is a URI to an online bibliographic reference "
+                      u"(e.g. zotero, worldcat, openlibrary, ...)."),
+        required=False,
+    )
+
+    worldcat_uri = URI(
+        title=_(u"Worldcat URI"),
+        description=_(u"This is a URI to access the identified resource."),
+        required=False,
+    )
 
     publisher = TextLine(title=_(u'Publisher'),
                          required=False)
-    form.order_after(publisher='IBibliographicItem.alternate_uri')
 
     publisher_uri = URI(title=_(u'Publisher URI'),
                         required=False)
-    form.order_after(publisher_uri='publisher')
 
-    review_uri = URI(title=_(u'Review URI'),
-                     required=False)
-    form.order_after(review_uri='publisher_uri')
+    extent = TextLine(title=_(u'Extent'),
+                         required=False)
+
+    access_uris = List(title=_(u'Access URIs'),
+                        value_type=URI(title=u'URI'),
+                        required=False)
+
+    review_uris = List(title=_(u'Review URIs'),
+                        value_type=URI(title=u'URI'),
+                        required=False)
+
+    order_uris = List(title=_(u'Order URIs'),
+                        value_type=URI(title=u'URI'),
+                        required=False)
+
+    image = namedfile.NamedBlobImage(
+        title=_(u'label_leadimage', default=u'Lead Image'),
+        description=_(u'help_leadimage', default=u''),
+        required=False,
+    )
+
+    image_caption = TextLine(
+        title=_(u'label_leadimage_caption', default=u'Lead Image Caption'),
+        description=_(u'help_leadimage_caption', default=u''),
+        required=False,
+    )
 
     isbn = TextLine(title=_(u'ISBN'),
                     required=False)
-    form.order_after(isbn='review_uri')
 
     issn = TextLine(title=_(u'ISSN'),
                     required=False)
-    form.order_after(issn='isbn')
 
     doi = TextLine(title=_(u'DOI'),
                    required=False)
-    form.order_after(doi='issn')
 
     text = RichText(
         title=_(u'Body'),
@@ -88,20 +138,6 @@ class IISAWPublication(form.Schema):
         output_mime_type='text/x-safe-html',
         required=False,
     )
-    form.order_after(text='doi')
-
-    date_of_publication = TextLine(
-        title=_(u'Publication Date'),
-        description=_(u'Enter the date on which this publication was issued'),
-        required=False)
-    form.order_after(date_of_publication='text')
-
-    loc_subjects = List(title=_(u'LOC Subjects'),
-                        value_type=DictRow(title=u'Subject',
-                                           schema=ILOCSubject),
-                        required=False)
-    form.widget(loc_subjects=DataGridFieldFactory)
-    form.order_after(loc_subjects='*')
 
 
 class PublicationAddForm(add.DefaultAddForm):
