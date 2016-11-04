@@ -53,12 +53,13 @@ class EventListingView(TiledListingView):
         text = self.request.get('SearchableText')
         if text:
             content_filter['SearchableText'] = text
+
         search_all = self.request.get('SearchAll')
-        if search_all != 'yes':
-            content_filter['start'] = {'query': DateTime(), 'range': 'min'}
-        else:
+        if search_all == 'yes':
             content_filter['start'] = {'query': DateTime('1900/01/01'),
                                        'range': 'min'}
+        elif search_all == 'no' or not is_collection:
+            content_filter['start'] = {'query': DateTime(), 'range': 'min'}
 
         start = self.request.get('start')
         if start:
