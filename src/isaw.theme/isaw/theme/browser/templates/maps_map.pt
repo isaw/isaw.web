@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="maps">
+
+<head></head>
+
+<body>
+  <metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="
+          view context/@@maps_googlemaps_view;
+          checkPermission nocall: context/portal_membership/checkPermission;
+          ">
+
+      <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+      <h1 class="documentFirstHeading">
+        <metal:field use-macro="python:here.widget('title', mode='view')" />
+      </h1>
+
+      <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+      <p class="documentDescription"
+         tal:condition="here/Description">
+        <metal:field use-macro="python:here.widget('description', mode='view')" />
+      </p>
+
+      <div tal:replace="structure provider:plone.abovecontentbody" />
+
+      <div tal:define="text context/getText | nothing"
+           tal:condition="text">
+        <metal:field use-macro="python:here.widget('text', mode='view')" />
+      </div>
+
+      <div class="folder-map">
+        <ul class="markers" metal:define-macro="markers">
+        <li tal:repeat="marker view/getMarkers">
+          <div class="title">
+            <a href=""
+               tal:attributes="href marker/url"
+               tal:content="marker/title"> <tal:comment replace="nothing">Title</tal:comment> </a>
+          </div>
+          <div class="tab"
+              title="Description"
+              tal:condition="marker/description"
+              i18n:attributes="title label_description;">
+            <div tal:content="marker/description" />
+          </div>
+          <div class="tab"
+              tal:define="
+                contents marker/contents | nothing;
+                contents python: contents and view.showContents();
+                "
+              tal:condition="contents"
+              tal:repeat="content marker/contents"
+              tal:attributes="title content/title">
+            <div tal:replace="structure content/text" />
+            <div class="visualClear"><!-- --></div>
+          </div>
+          <div class="geo">
+            <span class="latitude" tal:content="marker/latitude" />
+            <span class="longitude" tal:content="marker/longitude" />
+          </div>
+        </li>
+        </ul>
+
+      </div>
+      <div tal:replace="structure provider:plone.belowcontentbody" />
+    </tal:main-macro>
+  </metal:main>
+</body>
+
+</html>

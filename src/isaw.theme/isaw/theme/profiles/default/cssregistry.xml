@@ -41,4 +41,16 @@
                 rendering="link" applyPrefix="true"
                 insert-after="*" />
 
+    <stylesheet title="" applyPrefix="False" authenticated="False"
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="++resource++plone.formwidget.geolocation/maps.css"
+                media="" rel="stylesheet" rendering="link"
+                insert-before="++theme++isaw.theme/theme.css" />
+
+    <stylesheet title="" applyPrefix="False" authenticated="False"
+                cacheable="True" compression="safe" conditionalcomment=""
+                cookable="True" enabled="True" expression="" id="++resource++plone.formwidget.geolocation/libs.css"
+                media="" rel="stylesheet" rendering="link"
+                insert-before="++resource++plone.formwidget.geolocation/maps.css"/>
+
 </object>

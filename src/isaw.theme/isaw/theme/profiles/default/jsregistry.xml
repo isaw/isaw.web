@@ -19,6 +19,12 @@
                 id="++theme++isaw.theme/js/isaw.js"
                 insert-after="jquery-integration.js"/>
 
+    <javascript cacheable="True" compression="none" cookable="True"
+                enabled="True" inline="False"
+                id="++resource++plone.formwidget.geolocation/libs.js"
+                insert-before="++theme++isaw.theme/js/isaw.js"/>
+
+
     <!-- remove obsolete js -->
     <javascript id="isaw.js" remove="True"/>
     <javascript id="jquery.tools.min.js" remove="True"/>
