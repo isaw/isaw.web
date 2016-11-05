@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <object name="Image"
    meta_type="Factory-based Type Information with dynamic views">
+  <property name="icon_expr">string:${portal_url}/image.png</property>
   <property name="allow_discussion">True</property>
 </object>

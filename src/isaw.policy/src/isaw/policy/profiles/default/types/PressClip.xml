@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object name="PressClip"
+   meta_type="Factory-based Type Information with dynamic views"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+  <property name="icon_expr">string:${portal_url}/newspaper--arrow.png</property>
+</object>
