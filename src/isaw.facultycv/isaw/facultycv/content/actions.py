@@ -11,7 +11,7 @@ def initial_setup(obj, event):
     obj.invokeFactory("CV", id="cv", title="Curriculum Vitae")
 
     # Set the reference of profile to the CV
-    print "Setting reference to CV" 
+    print "Setting reference to CV"
     cv = obj['cv']
     uid = cv.UID()
     print "UID OF profile folder " + uid
@@ -38,7 +38,7 @@ def initial_setup(obj, event):
     # isn't what was required by the client.
 
     # Assigned related portlet to Profile
-    #column = getUtility(IPortletManager, name='plone.rightcolumn')                                                      
+    #column = getUtility(IPortletManager, name='plone.rightcolumn')
     #manager = getMultiAdapter((obj, column,), IPortletAssignmentMapping)
     #assignment = relateditems.Assignment(
     #    count = 5,
@@ -48,3 +48,19 @@ def initial_setup(obj, event):
     #chooser = INameChooser(manager)
     #manager[chooser.chooseName(None, assignment)] = assignment
 
+
+def profile_updated(obj, event):
+    """When a Profile is updated, check for a MemberID value.
+       If it's set, find the corresponding Plone member and update their
+       ProfileReference property, to maintain a bidirectional mapping
+       between members and their Profiles.
+    """
+    import pdb; pdb.set_trace()
+    membertool = getToolByName(obj, "portal_membership")
+    memberID = obj.getMemberID()
+    if not memberID:
+        return
+
+    member = membertool.getMemberById(memberID)
+    if member is not None:
+        member.setMemberProperties({'ProfileReference': obj.UID()})

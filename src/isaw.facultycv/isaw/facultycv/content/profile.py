@@ -101,6 +101,16 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
         required=False,
         searchable=True
+    ),
+
+    atapi.StringField(
+        name='MemberID',
+        default_output_type='text/plain',
+        widget=atapi.StringWidget(
+            label=u'Associated Member ID',
+            label_msgid='isaw.facultycv_label_MemberID',
+            il8n_domain='isaw.facultycv',
+        ),
     )
 
 ))
