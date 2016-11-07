@@ -26,81 +26,81 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
     ),
 
     atapi.ReferenceField(
-        name = 'ProfileRef',
+        name='ProfileRef',
 
-        widget = atapi.ReferenceWidget(
-            label = u'Profile reference',
+        widget=atapi.ReferenceWidget(
+            label=u'Profile reference',
         ),
-        relationship = 'owned_profile',
+        relationship='owned_profile',
         multiValued=False,
     ),
 
     atapi.TextField(
-        name = 'Titles',
+        name='Titles',
         default_output_type='text/x-html-safe',
-        widget = atapi.RichWidget(
+        widget=atapi.RichWidget(
             label=u'Faculty Titles',
             label_msgid='isaw.facultycv_label_Titles',
             il8n_domain='isaw.facultycv',
-            ),
+        ),
 
-        required = False,
-        searchable = True
+        required=False,
+        searchable=True
     ),
 
     atapi.StringField(
-        name = 'Phone',
+        name='Phone',
         default_output_type='text/x-html-safe',
-        widget = atapi.StringWidget(
+        widget=atapi.StringWidget(
             label=u'Phone',
             label_msgid='isaw.facultycv_label_Phone',
             il8n_domain='isaw.facultycv',
-            ),
+        ),
 
-        required = False,
-        searchable = True
+        required=False,
+        searchable=True
 
     ),
 
     atapi.StringField(
-        name = 'Email',
+        name='Email',
         default_output_type='text/x-html-safe',
-        widget = atapi.StringWidget(
+        widget=atapi.StringWidget(
             label=u'Email',
             label_msgid='isaw.facultycv_label_Email',
             il8n_domain='isaw.facultycv',
-            ),
+        ),
 
-        required = False,
-        searchable = True
+        required=False,
+        searchable=True
 
     ),
 
     atapi.StringField(
-        name = 'Address',
+        name='Address',
         default_output_type='text/x-html-safe',
-        widget = atapi.StringWidget(
+        widget=atapi.StringWidget(
             label=u'Address Information',
             label_msgid='isaw.facultycv_label_Address',
             il8n_domain='isaw.facultycv',
-            ),
+        ),
 
-        required = False,
-        searchable = True
+        required=False,
+        searchable=True
 
     ),
 
     atapi.TextField(
-        name = 'Profile Blurb',
+        name='Profile Blurb',
         default_output_type='text/x-html-safe',
-        widget = atapi.RichWidget(
+        widget=atapi.RichWidget(
             label=u'Profile Blurb',
             label_msgid='isaw.facultycv_label_Profile',
             il8n_domain='isaw.facultycv',
-            ),
+        ),
 
-        required = False,
-        searchable = True
+        required=False,
+        searchable=True
     )
 
 ))
@@ -108,14 +108,6 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 profileSchema['title'].storage = atapi.AnnotationStorage()
 profileSchema['description'].storage = atapi.AnnotationStorage()
 
-# We hide the Title because it isn't needed or required even though
-# it is initally set at creation of a new CV and not a profile itself
-# Description is null, realistically it's not needed but I may add some default stock
-# in the future
-
-#profileSchema['title'].required = 0
-#profileSchema['title'].widget.visible = {"edit": "invisible",
-#                                        "view": "invisible"}
 profileSchema['description'].widget.visible = {"edit": "invisible"}
 profileSchema['ProfileRef'].widget.visible = {"edit": "invisible"}
 
