@@ -44,3 +44,8 @@ Finally, the Apache config files for http and https will need to be updated to s
 
 NOTE: There's a chance the metadata produced by the new server will be needed by ISAW's SSO people to update the 
 configuration. There's a copy of this metadata in the conf directory in this buildout.
+
+
+Instructions for Installing collective.saml2:
+
+  * Install `libxmlsec1`
