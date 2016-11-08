@@ -608,6 +608,13 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 	margin-right: 210px;
 	text-transform: none;
 }
+td.event, td.todayevent {
+    text-align: center;
+    background-color: #9b3a25;
+}
+td.event a, td.todayevent a {
+    color: white !important;
+}
 /* section color schemes 
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
@@ -1137,11 +1144,30 @@ h2.CVSectionTitle:before {
 }
 
 button.PleiadesFetch {
-    margin: 1px 0 0 0;
-    padding: 5px;
+    margin: 0 0 0 10px;
+    padding: 10px;
     display: inline-block;
-    width: 4em;
-    vertical-align: top;
+    vertical-align: middle;
+    width: auto;
+}
+
+div.leaflet-control-geosearch.leaflet-control {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    right: auto;
+}
+
+#content form .field input#leaflet-control-geosearch-qry {
+    padding: 0;
+}
+
+.folder-map {
+    height: 500px;
+}
+
+.folder-map ul.markers {
+    display: none;
 }
 
 @media screen and (max-width:549px){

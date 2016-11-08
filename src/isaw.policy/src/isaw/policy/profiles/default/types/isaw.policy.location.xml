@@ -7,7 +7,7 @@
   <property name="title" i18n:translate="">Location</property>
   <property name="description"
     i18n:translate="">A Location</property>
-  <property name="icon_expr">string:${portal_url}/link_icon.png</property>
+  <property name="icon_expr">string:${portal_url}/map-pin.png</property>
   <property name="factory">isaw.policy.location</property>
   <property name="global_allow">True</property>
 

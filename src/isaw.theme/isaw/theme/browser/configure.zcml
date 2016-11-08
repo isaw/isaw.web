@@ -20,16 +20,6 @@
       directory="template-overrides"
       layer=".interfaces.IThemeSpecific" />
   
-  <!-- add this -->
-  <browser:viewlet
-      name="collective.addthis"
-      class="collective.addthis.addthis.AddThisViewlet"
-      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
-      template="viewlets/addthis.pt"
-      permission="zope.Public"
-      layer="collective.addthis.interfaces.IAddthisBrowserLayer"
-  />
-  
   <!-- Utils View -->
   <browser:page
      name="utils_view"
@@ -220,6 +210,29 @@
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       class=".controlpanel.ISAWSettingsControlPanel"
       permission="plone.app.controlpanel.Overview"
+      />
+
+  <!-- Custom Maps -->
+  <browser:page
+      for="Products.ATContentTypes.interface.IATFolder"
+      name="maps_map"
+      template="templates/maps_map.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+  <browser:page
+      for="Products.ATContentTypes.interface.IATTopic"
+      name="maps_map"
+      template="templates/maps_map.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+  <browser:page
+      for="plone.app.collection.interfaces.ICollection"
+      name="maps_map"
+      template="templates/maps_map.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
       />
 
   <!-- Tiled listing view -->

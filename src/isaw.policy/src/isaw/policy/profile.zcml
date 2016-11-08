@@ -287,6 +287,16 @@
       sortkey="10"
       source="28"
       destination="29"
+      title="Add new content type icons"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="29"
+      destination="30"
       title="Add Publication Type View"
       description=""
       profile="isaw.policy:default"

@@ -12,6 +12,16 @@ Includes sources for the following addons:
 Take note that these are kept in their own seperate repositories and pulled
 into the src/ directory automatically by the mr.developer buildout extension.
 
+Fugue Icons
+-----------
+
+The icons used for the content types are (C) 2013 Yusuke Kamiyamane.
+All rights reserved.
+<http://p.yusukekamiyamane.com/>
+
+These icons are licensed under a Creative Commons
+Attribution 3.0 License.
+<http://creativecommons.org/licenses/by/3.0/>
 
 Getting Started
 ---------------
