@@ -7,18 +7,19 @@ class PublicationView(BibItemView):
     """view class"""
 
     @property
-    def byline(self):
-        by = ''
-        if self.context.authors:
-            by += 'By: '
-            members = self._get_members(self.context.authors)
-            by += ', '.join(members)
-        if self.context.contributors:
-            by += ', with contributions from '
-            members = self._get_members(self.context.contributors)
-            by += ', '.join(members)
-        by += '.'
-        return by
+    def authors(self):
+        members = self._get_members(self.context.authors)
+        return ', '.join(members)
+
+    @property
+    def contributors(self):
+        members = self._get_members(self.context.contributors)
+        return ', '.join(members)
+
+    @property
+    def editors(self):
+        members = self._get_members(self.context.editors)
+        return ', '.join(members)
 
     def _get_members(self, member_list):
         mt = getToolByName(self.context, 'portal_membership')
