@@ -49,7 +49,7 @@
         <span tal:condition="context/range">
           <span tal:content="context/range" />
         </span>
-        <br tal:condition="python:context.parent_title or context.volume or context.publication_date or context.range" />
+        <br tal:condition="python:context.parent_title or context.volume or context.date_of_publication or context.range" />
         <span tal:condition="python:context.publisher">
           <a tal:attributes="href context/publisher_uri"
              tal:condition="context/publisher_uri"
