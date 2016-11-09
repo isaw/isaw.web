@@ -297,6 +297,16 @@
       sortkey="10"
       source="29"
       destination="30"
+      title="Refactor Publication Type"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="30"
+      destination="31"
       title="Add Publication Type View"
       description=""
       profile="isaw.policy:default"
