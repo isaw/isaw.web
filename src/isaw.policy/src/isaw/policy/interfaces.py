@@ -76,10 +76,9 @@ class IISAWPublication(form.Schema):
         required=False,
     )
 
-    zotero_uri = URI(
+    bibliographic_uri = URI(
         title=_(u"Zotero URI"),
-        description=_(u"This is a URI to an online bibliographic reference "
-                      u"(e.g. zotero, worldcat, openlibrary, ...)."),
+        description=_(u"This is a URI to a Zotero bibliographic reference."),
         required=False,
     )
 
