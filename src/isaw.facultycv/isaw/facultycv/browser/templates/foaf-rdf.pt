@@ -19,6 +19,8 @@ python:request.RESPONSE.setHeader('Content-Type',
         <foaf:phone tal:attributes="rdf:resource string:${context/Phone}"/>
         <foaf:page tal:attributes="rdf:resource string:${context/absolute_url}"/>
         <foaf:depiction tal:condition="context/Image | nothing" tal:attributes="rdf:resource string:${context/Image/absolute_url}"/>
+        <foaf:primaryTopicOf tal:repeat="link context/getExternalURIs"
+            tal:attributes="rdf:resource link" />
         <sy:updatePeriod>weekly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>
         <sy:updateBase tal:content="structure context/Date"></sy:updateBase>
