@@ -51,3 +51,21 @@ class PeopleView(BrowserView):
     def getFacultyList(self, limit=10):
         return self.portal_catalog(portal_type='profile',
                                    review_state='external')[:limit]
+
+
+class MemberProfile(BrowserView):
+
+    def profile_for(self, userid):
+        membership = getToolByName(self.context, 'portal_membership')
+        member = membership.getMemberById(userid)
+        if member is None:
+            return
+        profile_uid = member.getProperty('ProfileReference')
+        if profile_uid:
+            catalog = getToolByName(self.context, 'portal_catalog')
+            brains = catalog(UID=profile_uid)
+            if brains:
+                return {
+                    'title': brains[0].Title,
+                    'url': brains[0].getURL(),
+                }
