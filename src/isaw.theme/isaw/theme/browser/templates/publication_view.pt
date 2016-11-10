@@ -25,53 +25,64 @@
          Tagline
     </h3>
     <div class="PublicationInfo" style="margin-bottom: 15px;">
-        <span tal:condition="view/authors">
+      <ul>
+        <li tal:condition="view/authors">
           <strong>by:</strong> <span tal:content="structure view/authors" />
-          <br />
-        </span>
-        <span tal:condition="view/editors">
+        </li>
+        <li tal:condition="view/editors">
           <strong>edited by:</strong> <span tal:content="structure view/editors" />
-          <br />
-        </span>
-        <span tal:condition="view/contributors">
+        </li>
+        <li tal:condition="view/contributors">
           <strong>contributors:</strong> <span tal:content="structure view/contributors" />
-          <br />
-        </span>
-        <span tal:condition="context/parent_title">
-          <span tal:content="context/parent_title" />
-        </span>
-        <span tal:condition="context/volume">
-          <span tal:content="context/volume" />,
-        </span>
-        <span tal:condition="context/date_of_publication">
-          <span tal:content="context/date_of_publication" />:
-        </span>
-        <span tal:condition="context/range">
-          <span tal:content="context/range" />
-        </span>
-        <br tal:condition="python:context.parent_title or context.volume or context.date_of_publication or context.range" />
-        <span tal:condition="python:context.publisher">
-          <a tal:attributes="href context/publisher_uri"
-             tal:condition="context/publisher_uri"
-             tal:content="string:${context/publisher}:">Publisher</a>
-          <span tal:condition="not:context/publisher_uri"
-             tal:content="string:${context/publisher}:">Publisher</span>
-        </span>
-        <span tal:condition="context/extent">
-          <span tal:content="context/extent" />
-        </span>
+        </li>
+        <li tal:condition="python:context.parent_title or context.volume or context.date_of_publication or context.range">
+          <span tal:condition="context/parent_title">
+            <span tal:content="context/parent_title" />
+          </span>
+          <span tal:condition="context/volume">
+            <span tal:content="context/volume" />,
+          </span>
+          <span tal:condition="context/date_of_publication">
+            <span tal:content="context/date_of_publication" />:
+          </span>
+          <span tal:condition="context/range">
+            <span tal:content="context/range" />
+          </span>
+        </li>
+        <li tal:condition="python:context.publisher">
+          <span tal:condition="python:context.publisher">
+            <a tal:attributes="href context/publisher_uri"
+               tal:condition="context/publisher_uri"
+               tal:content="string:${context/publisher}:">Publisher</a>
+            <span tal:condition="not:context/publisher_uri"
+               tal:content="string:${context/publisher}:">Publisher</span>
+          </span>
+          <span tal:condition="context/extent">
+            <span tal:content="context/extent" />
+          </span>
+        </li>
+      </ul>
     </div>
-    <div class="PublicationAccessLinks" tal:condition="python:getattr(context, 'access_uri', None) or getattr(context, 'alternate_uri', None)">
-      <span class="label">read:</span>
-      <a class="AccessButton button" tal:condition="context/access_uri|nothing" tal:attributes="href context/access_uri"
-         tal:content="python:view.url_domain(context.access_uri)">jstor.org</a>
-      <a class="AccessButton button" tal:condition="context/alternate_uri|nothing" tal:attributes="href context/alternate_uri"
-         tal:content="python:view.url_domain(context.alternate_uri)">jstor.org</a>
+    <div class="PublicationAccessLinks" tal:condition="context/access_uris">
+      <span class="label">Read:</span>
+      <a class="AccessButton button"
+         tal:repeat="uri context/access_uris"
+         tal:attributes="href uri"
+         tal:content="python:view.url_domain(uri)">jstor.org</a>
     </div>
-    <div class="PublicationBibliographicLinks" tal:condition="context/bibliographic_uri|nothing">
-      <span class="label">bibliographic record:</span>
-      <a class="AccessButton button" tal:attributes="href context/bibliographic_uri"
-         tal:content="python:view.url_domain(context.bibliographic_uri)">jstor.org</a>
+    <div class="PublicationReviewLinks" tal:condition="context/review_uris">
+      <span class="label">Reviews:</span>
+      <a class="AccessButton button"
+         tal:repeat="uri context/review_uris"
+         tal:attributes="href uri"
+         tal:content="python:view.url_domain(uri)">jstor.org</a>
+    </div>
+    <div class="PublicationOrderLinks" tal:condition="context/order_uris">
+      <span class="label">Order:</span>
+      <a class="AccessButton button"
+         tal:repeat="uri context/order_uris"
+         tal:attributes="href uri"
+         tal:content="python:view.url_domain(uri)">jstor.org</a>
     </div>
     </tal:defines>
     <div class="PublicationText" style="padding-top: 55px;clear: both;"
