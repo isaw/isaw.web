@@ -8,6 +8,7 @@ from plone.dexterity.browser import add
 from plone.directives import form
 from plone.namedfile import field as namedfile
 from z3c.form import widget
+from z3c.form.browser.textlines import TextLinesFieldWidget
 
 
 class IISAWPolicyLayer(Interface):
@@ -98,17 +99,21 @@ class IISAWPublication(form.Schema):
     extent = TextLine(title=_(u'Extent'),
                          required=False)
 
-    access_uris = List(title=_(u'Access URIs'),
+    access_uris = List(title=_(u'Access URIs (one per line)'),
                         value_type=URI(title=u'URI'),
                         required=False)
+    form.widget('access_uris', TextLinesFieldWidget)
 
-    review_uris = List(title=_(u'Review URIs'),
+    review_uris = List(title=_(u'Review URIs (one per line)'),
                         value_type=URI(title=u'URI'),
                         required=False)
+    form.widget('review_uris', TextLinesFieldWidget)
 
-    order_uris = List(title=_(u'Order URIs'),
+    order_uris = List(title=_(u'Order URIs (one per line)'),
                         value_type=URI(title=u'URI'),
                         required=False)
+    form.widget('order_uris', TextLinesFieldWidget)
+
 
     image = namedfile.NamedBlobImage(
         title=_(u'label_leadimage', default=u'Lead Image'),
