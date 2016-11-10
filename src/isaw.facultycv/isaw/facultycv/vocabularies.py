@@ -7,7 +7,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 def UsersVocabularyFactory(context):
 
     acl_users = getToolByName(context, 'acl_users')
-    terms = [(SimpleVocabulary.createTerm('', '', '-- choose one --'))]
+    terms = [(SimpleVocabulary.createTerm('', '', 'None'))]
 
     for user in acl_users.getUsers():
         if user is not None:
