@@ -103,15 +103,18 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
         searchable=True
     ),
 
+
     atapi.StringField(
         name='MemberID',
-        default_output_type='text/plain',
-        widget=atapi.StringWidget(
+        vocabulary_factory="isaw.facultycv.Users",
+        enforceVocabulary=True,
+        widget=atapi.SelectionWidget(
             label=u'Associated Member ID',
             label_msgid='isaw.facultycv_label_MemberID',
             il8n_domain='isaw.facultycv',
         ),
-    )
+        required=False,
+    ),
 
 ))
 
