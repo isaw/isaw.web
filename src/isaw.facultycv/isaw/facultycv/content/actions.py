@@ -46,9 +46,14 @@ def profile_updated(obj, event):
     """
     membertool = getToolByName(obj, "portal_membership")
     memberID = obj.getMemberID()
-    if not memberID:
+    if memberID:
+        member = membertool.getMemberById(memberID)
+        if member is not None:
+            member.setMemberProperties({'ProfileReference': obj.UID()})
         return
-
-    member = membertool.getMemberById(memberID)
-    if member is not None:
-        member.setMemberProperties({'ProfileReference': obj.UID()})
+    # We may have *removed* a user ID, and we don't have access to the value
+    # previously set, so we have to look at all the members:
+    for member in membertool.listMembers():
+        if member.getProperty('ProfileReference') == obj.UID():
+            member.setMemberProperties({'ProfileReference': ''})
+            break
