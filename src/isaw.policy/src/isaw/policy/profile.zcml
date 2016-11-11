@@ -313,4 +313,14 @@
       import_steps="typeinfo"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="30"
+      destination="31"
+      title="New ProfileReference memberdata property"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="memberdata-properties"
+      />
+
 </configure>
