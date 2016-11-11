@@ -37,13 +37,13 @@
         </li>
         <li tal:condition="python:context.parent_title or context.volume or context.date_of_publication or context.range">
           <span tal:condition="context/parent_title">
-            <span tal:content="context/parent_title" />
+            <em tal:content="context/parent_title"></em>
           </span>
           <span tal:condition="context/volume">
             <span tal:content="context/volume" />,
           </span>
           <span tal:condition="context/date_of_publication">
-            <span tal:content="context/date_of_publication" />:
+            <span tal:content="context/date_of_publication" /><span tal:condition="context/range">:</span>
           </span>
           <span tal:condition="context/range">
             <span tal:content="context/range" />
@@ -52,32 +52,43 @@
         <li tal:condition="python:context.publisher">
           <span tal:condition="python:context.publisher">
             <a tal:attributes="href context/publisher_uri"
+               tal:define="colon python:context.extent and ':' or ''"
                tal:condition="context/publisher_uri"
-               tal:content="string:${context/publisher}:">Publisher</a>
+                                 tal:content="string:${context/publisher}${colon}">Publisher</a>
             <span tal:condition="not:context/publisher_uri"
-               tal:content="string:${context/publisher}:">Publisher</span>
+               tal:define="colon python:context.extent and ':' or ''"
+                                 tal:content="string:${context/publisher}${colon}">Publisher</span>
           </span>
           <span tal:condition="context/extent">
             <span tal:content="context/extent" />
           </span>
         </li>
+        <li tal:condition="context/isbn">
+          <strong>ISBN:</strong> <span tal:content="context/isbn" />
+        </li>
+        <li tal:condition="context/issn">
+          <strong>ISSN:</strong> <span tal:content="context/issn" />
+        </li>
+        <li tal:condition="context/doi">
+          <strong>DOI:</strong> <span tal:content="context/doi" />
+        </li>
       </ul>
     </div>
-    <div class="PublicationAccessLinks" tal:condition="context/access_uris">
+    <div class="PublicationLinks" tal:condition="context/access_uris">
       <span class="label">Read:</span>
       <a class="AccessButton button"
          tal:repeat="uri context/access_uris"
          tal:attributes="href uri"
          tal:content="python:view.url_domain(uri)">jstor.org</a>
     </div>
-    <div class="PublicationReviewLinks" tal:condition="context/review_uris">
+    <div class="PublicationLinks" tal:condition="context/review_uris">
       <span class="label">Reviews:</span>
       <a class="AccessButton button"
          tal:repeat="uri context/review_uris"
          tal:attributes="href uri"
          tal:content="python:view.url_domain(uri)">jstor.org</a>
     </div>
-    <div class="PublicationOrderLinks" tal:condition="context/order_uris">
+    <div class="PublicationLinks" tal:condition="context/order_uris">
       <span class="label">Order:</span>
       <a class="AccessButton button"
          tal:repeat="uri context/order_uris"

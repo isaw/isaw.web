@@ -867,6 +867,10 @@ h2.CVSectionTitle:before {
     text-indent: -2em !important;
 }
 
+.PublicationLinks {
+    margin-bottom: 0.25em;
+}
+
 @media screen and (max-width:1330px){
 
 	#portal-top #main-navigation ul#primary li {width:auto; }
