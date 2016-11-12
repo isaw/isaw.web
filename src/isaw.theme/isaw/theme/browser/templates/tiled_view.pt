@@ -63,7 +63,7 @@ $(document).ready(function () {
                       image_tag python:view.get_image(item);
                       title item/Title;
                       exerpt item/Description">
-        <a href="#" tal:attributes="href item_url">
+        <a href="#" class="ImageLink" tal:attributes="href item_url">
           <img src="" title="" tal:replace="structure image_tag"/></a>
         <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
         <div class="post-meta" tal:define="byline python:view.get_byline(item)"
