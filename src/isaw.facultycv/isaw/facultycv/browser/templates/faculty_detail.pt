@@ -35,16 +35,16 @@
                         <span class="address" tal:content="string:${context/getAddress}">Address</span>
                     </div>
                 </div>
-                <ul class="ProfileLinks">
-                    <li tal:repeat="link context/profile_links">
-                        <a href="#"
-                           tal:attributes="href link/link; class link/icon;
-                                           title link/title;">
-                           <i tal:attributes="class string:fa fa-${link/icon}"></i>
-                        </a>
-                    </li>
-                </ul>
             </div>
+            <ul class="ProfileLinks">
+                <li tal:repeat="link context/profile_links">
+                    <a href="#"
+                       tal:attributes="href link/link; class link/icon;
+                                       title link/title;">
+                       <i tal:attributes="class string:fa fa-${link/icon}"></i>
+                    </a>
+                </li>
+            </ul>
        
             <div class="ProfileBlurb" tal:content="structure context/getProfile Blurb">Blurb</div>
         </div>
