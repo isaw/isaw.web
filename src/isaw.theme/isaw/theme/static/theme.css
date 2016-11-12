@@ -712,19 +712,23 @@ td.event a, td.todayevent a {
 	overflow: hidden;
 }
 
-i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
-    width: 1em;
-    text-align: left;
-    padding-right: 0.75em;
-    color: black;
-    text-decoration: none;
-}
 #content ul.ProfileLinks {
-    padding-left: 0;
-    margin-bottom: 1em;
+    padding: 0;
+    margin: 10px 0;
 }
 #content ul.ProfileLinks li {
     list-style: none;
+    display: inline;
+}
+i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
+    width: 1em;
+    text-align: left;
+    margin-right: 0.25em;
+    text-decoration: none;
+    display: inline-block;
+}
+.ProfileLinks i.fa.fa-wikipedia-w {
+    width: 1.5em;
 }
 
 #content .ProfileInfo h1 {
