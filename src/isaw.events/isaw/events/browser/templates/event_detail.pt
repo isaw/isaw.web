@@ -65,7 +65,21 @@
 
         </div>
     </div> <!-- http://schema.org/Event -->
-        
+    <script>
+      $(function () {
+        var $title = $('h1.documentFirstHeading');
+        var $breadcrumb = $('span#breadcrumbs-current');
+        var title_parts = $title.text().split(':');
+        $title.text(title_parts[0]);
+        if (title_parts.length > 1) {
+          // Join remaining parts into a sub title
+          $('<p class="subtitle"></p>').text(title_parts.slice(1).join(':')).insertAfter($title);
+        }
+        if ($breadcrumb.text().length > 70) {
+          $breadcrumb.text($breadcrumb.text().substr(0,70).split(" ").slice(0, -1).join(" ") + '\u2026');
+        }
+      });
+    </script>
     </metal:content-core>
 </metal:content-core>
 
