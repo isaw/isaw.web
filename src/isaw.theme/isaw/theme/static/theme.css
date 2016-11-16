@@ -724,7 +724,14 @@ i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
     text-align: left;
     margin-right: 0.33em;
     text-decoration: none;
+    border: none;
 }
+
+.ProfileLinks a:hover {
+    text-decoration: none;
+    border: none;
+}
+
 .ProfileLinks i.fa.fa-wikipedia-w {
     width: 1.25em;
 }
