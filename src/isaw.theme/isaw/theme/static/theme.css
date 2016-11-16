@@ -287,7 +287,7 @@ fieldset#search-field {text-align:left !important; }
 #portal-columns table tbody tr, #content table tbody  { }
 #portal-columns table tbody tr.even, #content table tbody tr.even {background:#f8f0e6; }
 #portal-columns table tbody tr th, #content table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
-#portal-columns table tbody tr td, #content table tbody tr td {border:1px solid #e2ddd7; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; text-transform:uppercase; }
+#portal-columns table tbody tr td, #content table tbody tr td {border:1px solid #e2ddd7; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; }
 .template-usergroup-userprefs #portal-columns table tbody tr th,
 .template-usergroup-groupprefs #portal-columns table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; font-weight:800; letter-spacing:1px; line-height:100%; padding:5px; text-align:left; text-transform:none; }
 .template-usergroup-userprefs #portal-columns table tbody tr td,
@@ -726,7 +726,6 @@ td.event a, td.todayevent a {
 .ProfileTitles {
 	font-family:'Open Sans', Arial, Helvetica, sans-serif;
 	line-height:100%;
-	text-transform:uppercase;
 	margin-top:7px;
 }
 
