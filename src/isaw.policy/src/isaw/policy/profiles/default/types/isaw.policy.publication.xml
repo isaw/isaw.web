@@ -10,26 +10,30 @@
   <property name="icon_expr">string:${portal_url}/lighthouse-shine.png</property>
   <property name="factory">isaw.policy.publication</property>
   <property name="global_allow">True</property>
-  <property name="filter_content_types">False</property>
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types">
+     <element value="Image" />
+  </property>
   <property name="allow_discussion">False</property>
 
   <!-- schema and class used for content items -->
   <property name="schema">isaw.policy.interfaces.IISAWPublication</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+  <property name="klass">plone.dexterity.content.Container</property>
 
   <property name="behaviors">
-     <element value="isaw.bibitems.interfaces.IBibliographicItem"/>
      <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
      <element value="plone.app.content.interfaces.INameFromTitle"/>
+     <element value="plone.app.imagecropping.behaviors.IImageCroppingBehavior"/>
      <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer"/>
   </property>
 
   <!-- View information -->
   <property name="link_target"></property>
-  <property name="immediate_view">view</property>
-  <property name="default_view">view</property>
+  <property name="immediate_view">publication-view</property>
+  <property name="default_view">publication-view</property>
   <property name="view_methods">
    <element value="view"/>
+   <element value="publication-view"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

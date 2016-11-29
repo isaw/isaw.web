@@ -875,6 +875,26 @@ h2.CVSectionTitle:before {
     cursor: pointer;
 }
 
+.PublicationImage {
+    width: 450px;
+    max-width:50%;
+}
+
+.PublicationImage img {
+    max-width:100%;
+    height: auto;
+}
+
+.PublicationInfo ul {
+    list-style: none inside !important;
+    padding-left: 2em !important;
+    text-indent: -2em !important;
+}
+
+.PublicationLinks {
+    margin-bottom: 0.25em;
+}
+
 @media screen and (max-width:1330px){
 
 	#portal-top #main-navigation ul#primary li {width:auto; }
@@ -1203,6 +1223,8 @@ div.leaflet-control-geosearch.leaflet-control {
 	#content #slider .slide .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li, #content ul.news li {float:none; margin-right:0 !important; width:100% !important; }
+    .PublicationImage { max-width: 100%; }
+    .AccessButton { font-size: 10px; padding: 6px; }
 }
 
 @media screen and (max-width:319px){
