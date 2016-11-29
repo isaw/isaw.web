@@ -2,14 +2,17 @@ from Products.Five.browser import BrowserView
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
-#facultycv requires the pisa module for pdf view
+# facultycv requires the pisa module for pdf view
 import ho.pisa as pisa
+
 
 class CvView(BrowserView):
     pass
 
+
 class ProfileView(BrowserView):
-    pass 
+    pass
+
 
 class PdfView(BrowserView):
     """ pdf view"""
@@ -25,7 +28,7 @@ class PdfView(BrowserView):
         pdf_template = ViewPageTemplateFile('templates/pdf-view.pt')(self)
 
         response.setHeader('Content-Type', 'application/pdf')
-        response.setHeader('Content-Disposition', attachment);
+        response.setHeader('Content-Disposition', attachment)
         pdf = pisa.CreatePDF(pdf_template.encode("UTF-8"), response)
         f.flush()
         f.close()
@@ -33,9 +36,10 @@ class PdfView(BrowserView):
         if not pdf.err:
             return response
         else:
-            # Something is wrong 
+            # Something is wrong
             # Fledge this out later
             pass
+
 
 class PeopleView(BrowserView):
 
@@ -46,4 +50,22 @@ class PeopleView(BrowserView):
 
     def getFacultyList(self, limit=10):
         return self.portal_catalog(portal_type='profile',
-                                    review_state='external')[:limit]   
+                                   review_state='external')[:limit]
+
+
+class MemberProfile(BrowserView):
+
+    def profile_for(self, userid):
+        membership = getToolByName(self.context, 'portal_membership')
+        member = membership.getMemberById(userid)
+        if member is None:
+            return
+        profile_uid = member.getProperty('ProfileReference')
+        if profile_uid:
+            catalog = getToolByName(self.context, 'portal_catalog')
+            brains = catalog(UID=profile_uid)
+            if brains:
+                return {
+                    'title': brains[0].Title,
+                    'url': brains[0].getURL(),
+                }

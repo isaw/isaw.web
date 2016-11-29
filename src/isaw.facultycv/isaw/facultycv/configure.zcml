@@ -4,7 +4,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="isaw.facultycv">
-    
+
   <five:registerPackage package="." initialize=".initialize" />
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
@@ -12,7 +12,14 @@
   <include package=".content" />
   <include package=".portlets" />
   <i18n:registerTranslations directory="locales" />
-  
+
+
+  <utility
+    name="isaw.facultycv.Users"
+    provides="zope.schema.interfaces.IVocabularyFactory"
+    component="isaw.facultycv.vocabularies.UsersVocabularyFactory"
+  />
+
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
@@ -21,7 +28,7 @@
       description="isaw.FacultyCV is an educational product that allows one to create curriculum vitae for faculty members. It is along the lines of the products FacultyStaffDirectory and Products.FacultyCV"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-  
+
   <genericsetup:upgradeDepends
       sortkey="10"
       source="1"

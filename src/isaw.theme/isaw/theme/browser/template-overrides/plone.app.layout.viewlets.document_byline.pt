@@ -6,10 +6,11 @@
                  mtool python:context.portal_membership;
                  portal_url python:context.portal_url;
                  can_edit python:mtool.checkPermission('Modify portal content', context);
+                 profile_view nocall:context/@@member_profile;
                  creators here/Creators|nothing;
                  contributors here/Contributors|nothing;"
      tal:condition="python: show and (is_news or can_edit)">
-     
+
   <tal:creators tal:condition="creators">
     By
     <tal:name tal:repeat="creator creators">
@@ -17,13 +18,25 @@
             id=""
             tal:attributes="id string:document-creator-${repeat/creator/number}"
             tal:define="author python:mtool.getMemberInfo(creator);
+                        profile python:profile_view.profile_for(creator);
                         fullname python:author['fullname'] if author and author['fullname'] else creator;
                         searchname python:fullname.replace(' ', '%20');">
-        <a href="#"
+        <a tal:condition="profile"
+           href="#"
+           title="click here"
+           tal:attributes="href profile/url;
+                           title string:View the profile for ${profile/title}"
+           tal:content="profile/title">Ada Lovelace</a>
+
+        <a tal:condition="not:profile"
+           href="#"
            title="click here"
            tal:attributes="href string:${portal_url}/search?SearchableText=${searchname};
                            title string:search site for more information about ${fullname}"
-           tal:content="fullname">Ada Lovelace</a></span><span tal:condition="not:repeat/creator/end" tal:omit-tag="">, </span>
+           tal:content="fullname">Ada Lovelace</a>
+
+      </span>
+      <span tal:condition="not:repeat/creator/end" tal:omit-tag="">, </span>
     </tal:name>
   </tal:creators>
 

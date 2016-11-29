@@ -4,7 +4,7 @@
     i18n_domain="isaw.facultycv">
 
   <!-- configure your content components here -->
-  
+
   <class class=".profile.profile">
     <require
         permission="zope2.View"
@@ -22,5 +22,11 @@
     for="..interfaces.Iprofile
     Products.Archetypes.interfaces.IObjectInitializedEvent"
     handler=".actions.initial_setup" />
+
+  <subscriber
+      for="..interfaces.Iprofile
+           Products.Archetypes.interfaces.IObjectEditedEvent"
+      handler=".actions.profile_updated"
+      />
 
 </configure>

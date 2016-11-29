@@ -1,9 +1,4 @@
 from Products.CMFCore.utils import getToolByName
-from zope.component import getUtility, getMultiAdapter
-from zope.container.interfaces import INameChooser
-from plone.portlets.interfaces import IPortletAssignmentMapping
-from plone.portlets.interfaces import IPortletManager
-from collective.portlet.relateditems import relateditems
 
 
 def initial_setup(obj, event):
@@ -11,7 +6,7 @@ def initial_setup(obj, event):
     obj.invokeFactory("CV", id="cv", title="Curriculum Vitae")
 
     # Set the reference of profile to the CV
-    print "Setting reference to CV" 
+    print "Setting reference to CV"
     cv = obj['cv']
     uid = cv.UID()
     print "UID OF profile folder " + uid
@@ -34,17 +29,31 @@ def initial_setup(obj, event):
     # Turn off permissions for membertool
     obj.manage_permission("Manage users", roles=['Manager', 'Authenticated', 'Owner'], acquire = 0)
 
-    # The below is commented out because the related portlet addon
-    # isn't what was required by the client.
+    # set profile UID on corresponding member:
+    memberID = obj.getMemberID()
+    if memberID:
+        linked_member = membertool.getMemberById(memberID)
 
-    # Assigned related portlet to Profile
-    #column = getUtility(IPortletManager, name='plone.rightcolumn')                                                      
-    #manager = getMultiAdapter((obj, column,), IPortletAssignmentMapping)
-    #assignment = relateditems.Assignment(
-    #    count = 5,
-    #    states=('published',),
-    #    allowed_types= ('Profile',)
-    #)
-    #chooser = INameChooser(manager)
-    #manager[chooser.chooseName(None, assignment)] = assignment
+    if linked_member is not None:
+        linked_member.setMemberProperties({'ProfileReference': obj.UID()})
 
+
+def profile_updated(obj, event):
+    """When a Profile is updated, check for a MemberID value.
+       If it's set, find the corresponding Plone member and update their
+       ProfileReference property, to maintain a bidirectional mapping
+       between members and their Profiles.
+    """
+    membertool = getToolByName(obj, "portal_membership")
+    memberID = obj.getMemberID()
+    if memberID:
+        member = membertool.getMemberById(memberID)
+        if member is not None:
+            member.setMemberProperties({'ProfileReference': obj.UID()})
+        return
+    # We may have *removed* a user ID, and we don't have access to the value
+    # previously set, so we have to look at all the members:
+    for member in membertool.listMembers():
+        if member.getProperty('ProfileReference') == obj.UID():
+            member.setMemberProperties({'ProfileReference': ''})
+            break

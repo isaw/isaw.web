@@ -49,6 +49,13 @@
     template="templates/faculty_list.pt"
     />
 
+  <browser:page
+    for="*"
+    name="member_profile"
+    permission="zope2.Public"
+    class=".views.MemberProfile"
+    />
+
 
     <class class="Products.ATContentTypes.interface.folder.IATFolder">
         <allow interface="..interfaces.folderview.IFolderView" />
