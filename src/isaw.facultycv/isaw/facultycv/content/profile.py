@@ -1,6 +1,7 @@
 """Definition of the profile content type
 """
 
+from urlparse import urlparse
 from zope.interface import implements
 
 from Products.Archetypes import atapi
@@ -101,7 +102,17 @@ profileSchema = folder.ATFolderSchema.copy() + atapi.Schema((
 
         required = False,
         searchable = True
-    )
+    ),
+
+    atapi.LinesField(
+        name='ExternalURIs',
+        required=False,
+        widget=atapi.LinesWidget(
+            label=u'External URIs (e.g. VIAF, Facebook, GitHub, etc.)',
+            label_msgid='isaw.facultycv_label_external_uris',
+            il8n_domain='isaw.facultycv',
+        ),
+    ),
 
 ))
 
@@ -127,6 +138,51 @@ schemata.finalizeATCTSchema(
 )
 
 
+DOMAIN_LINK_MAP = {
+    'facebook.com': {
+        "icon": "facebook-official",
+        "title": "{fullname}'s facebook profile"
+    },
+    'academia.edu': {
+        "icon": "university",
+        "title": "{fullname}'s profile on academia.edu"
+    },
+    'github.com': {
+        "icon": "github",
+        "title": "{fullname}'s github profile"
+    },
+    'plus.google.com': {
+        "icon": "google-plus-official",
+        "title": "{fullname}'s google plus page"
+    },
+    'linkedin.com': {
+        "icon": "linkedin-square",
+        "title": "{fullname}'s linkedin profile"
+    },
+    'orcid.org': {
+        "icon": "id-card-o",
+        "title": "{fullname}'s orcid profile"
+    },
+    'twitter.com': {
+        "icon": "twitter-square",
+        "title": "{fullname}'s twitter profile"
+    },
+    'viaf.org': {
+        "icon": "tags",
+        "title": "{fullname}'s viaf id"
+    },
+    'wikipedia.org': {
+        "icon": "wikipedia-w",
+        "title": "{fullname}'s wikipedia user profile",
+        "path": "/wiki/User"
+    },
+    'zotero.org': {
+        "icon": "book",
+        "title": "{fullname}'s zotero library"
+    },
+}
+
+
 class profile(folder.ATFolder):
     """Profile"""
     implements(Iprofile)
@@ -136,5 +192,22 @@ class profile(folder.ATFolder):
 
     title = atapi.ATFieldProperty('title')
     description = atapi.ATFieldProperty('description')
+
+    def profile_links(self):
+        links = self.getExternalURIs() or []
+        results = []
+        for link in links:
+            parts = urlparse(link)
+            for link_id in DOMAIN_LINK_MAP:
+                if not parts.hostname.endswith(link_id):
+                    continue
+                info = DOMAIN_LINK_MAP[link_id].copy()
+                if (info.get('path') and not
+                        parts.path.startswith(info['path'])):
+                    continue
+                info["title"] = info["title"].format(fullname=self.Title())
+                info["link"] = link
+                results.append(info)
+        return results
 
 atapi.registerType(profile, PROJECTNAME)

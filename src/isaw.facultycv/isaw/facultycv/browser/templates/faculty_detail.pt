@@ -9,6 +9,7 @@
 
 <metal:block fill-slot="head_slot">
     <link rel="meta" type="application/rdf+xml" title="Profile FOAF data" href="foaf.rdf" />
+    <script src="https://use.fontawesome.com/63f0007faf.js"></script>
 </metal:block>   
 
 <metal:block fill-slot="content-title" />
@@ -35,6 +36,15 @@
                     </div>
                 </div>
             </div>
+            <ul class="ProfileLinks">
+                <li tal:repeat="link context/profile_links">
+                    <a href="#"
+                       tal:attributes="href link/link; class link/icon;
+                                       title link/title;">
+                       <i tal:attributes="class string:fa fa-${link/icon}"></i>
+                    </a>
+                </li>
+            </ul>
        
             <div class="ProfileBlurb" tal:content="structure context/getProfile Blurb">Blurb</div>
         </div>
