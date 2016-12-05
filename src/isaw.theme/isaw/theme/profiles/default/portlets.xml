@@ -42,5 +42,11 @@
     type="isaw.theme.eventdetail"
     visible="True"/>
 
+ <portlet
+   addview="isaw.theme.button"
+   title="Button"
+   description="A portlet which diplays a button-style link"
+   />
+
 </portlets>
 
