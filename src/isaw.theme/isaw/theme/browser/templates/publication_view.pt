@@ -16,6 +16,14 @@
        </span>
        <br />
        <strong tal:content="context/image_caption"></strong>
+       <div tal:condition="view/images">
+         <a tal:attributes="href string:${context/absolute_url}/publication-images"
+            class="publication-images">
+         <img tal:repeat="image python:view.images[:3]" tal:attributes="src string:${image/absolute_url}/image_thumb" />
+         <br />
+         See all <span tal:content="python:len(view.images)">3</span> images.
+         </a>
+       </div>
     </div>
 
     <div class="PublicationBody">
@@ -101,6 +109,15 @@
          tal:content="structure context/text/raw">
          Text
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('.publication-images').prepOverlay({
+          subtype: 'ajax',
+          filter: '#content > *'
+        });
+        });
+    </script>
   </metal:core>
 </body>
 </html>
