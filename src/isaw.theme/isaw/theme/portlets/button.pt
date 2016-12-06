@@ -1,0 +1,3 @@
+<a class="button inverse"
+   tal:attributes="href view/url"
+   tal:content="view/text">[Go there now!]</a>

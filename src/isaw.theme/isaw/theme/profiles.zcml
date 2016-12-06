@@ -309,4 +309,14 @@
       import_steps="jsregistry cssregistry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="29"
+      destination="30"
+      title="New button portlet"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="portlets"
+      />
+
 </configure>

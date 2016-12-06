@@ -42,4 +42,13 @@
         edit_permission="cmf.ManagePortal"
         />
 
+    <plone:portlet
+        name="isaw.theme.button"
+        interface=".button.IButtonPortlet"
+        assignment=".button.Assignment"
+        renderer=".button.Renderer"
+        addview=".button.AddForm"
+        editview=".button.EditForm"
+        />
+
 </configure>
