@@ -65,7 +65,8 @@
 }
 
 .facultyInfo h2 {
-    line-height: 1em;
+    line-height: 1em !important;
+    margin: 0 !important;
 }
 
 #content .facultyListing p {
