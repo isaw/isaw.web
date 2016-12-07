@@ -816,6 +816,7 @@ h2.CVSectionTitle:before {
 #content .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:120%; margin:0 0 8px; }
 #portal-columns .event-listing .event-result .event-result-detail p.event-subtitle,
 #content .event-listing .event-result .event-result-detail p.event-subtitle {font-size: 18px; font-style: italic;}
+.template-event_view #content p.subtitle {font-family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size: 22px; font-weight: 900; }
 #portal-columns .event-listing .event-result .event-result-detail .post-excerpt,
 #content .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
 .eventRsvp {float: right; margin: 0.25em 0 0 0.25em;}
