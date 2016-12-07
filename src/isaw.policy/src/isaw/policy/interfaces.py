@@ -161,3 +161,39 @@ PubAddTitleLabel = widget.StaticWidgetAttribute(
     u'Full Title',
     view=PublicationAddForm, field=IBibliographicItem['title']
 )
+
+
+class IISAWLibCollection(form.Schema):
+
+    title = TextLine(
+        title=_(u"Title"),
+        description=_(u"The title of the Library Collection."),
+    )
+
+    id = TextLine(title=_(u'Short Title'))
+
+    description = Text(
+        title=_(u'Summary'),
+        description=_(u'Used in item listings and search results.'),
+        required=False,
+        missing_value=u'',
+    )
+
+    image = namedfile.NamedBlobImage(
+        title=_(u'label_leadimage', default=u'Lead Image'),
+        description=_(u'help_leadimage', default=u''),
+        required=False,
+    )
+
+    query_string = Text(
+        title=_(u'NYU Library Catalog Query'),
+        description=_(u'help_query_string', default=u''),
+    )
+
+    text = RichText(
+        title=_(u'Body'),
+        default_mime_type='text/html',
+        allowed_mime_types=('text/html',),
+        output_mime_type='text/x-html-safe',
+        required=False,
+    )
