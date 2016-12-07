@@ -549,13 +549,13 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 
 /* faculty listings */
 .section-people #portal-columns .facultyListing .facultyImage,
-.section-people #content .facultyListing .facultyImage {max-height:200px;max-width:200px;overflow:hidden;border:1px solid #e7e3df;padding:0px;}
+.section-people #content .facultyListing .facultyImage {max-height:200px;max-width:200px;overflow:hidden;border:1px solid #e7e3df;padding:0px;margin-right:20px; }
 .section-people #portal-columns .facultyListing .facultyImage a,
 .section-people #content .facultyListing .facultyImage a {display:block;height:200px;width:200px; }
 .section-people #portal-columns .facultyListing .facultyImage a img,
 .section-people #content .facultyListing .facultyImage a img {width: 200px; }
 .section-people #portal-columns .facultyListing .facultyInfo,
-.section-people #content .facultyListing .facultyInfo {margin-left:128px; }
+.section-people #content .facultyListing .facultyInfo {overflow: hidden }
 .section-people #portal-columns .facultyListing .facultyInfo a,
 .section-people #content .facultyListing .facultyInfo a { }
 .section-people #portal-columns .facultyListing .facultyInfo a h2,
