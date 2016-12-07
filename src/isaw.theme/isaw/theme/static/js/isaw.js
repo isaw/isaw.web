@@ -250,4 +250,10 @@ jQuery(function($) {
     };
 
     $(document).ready(initialize_map);
+
+    // Truncate breadcrumbs
+    var $breadcrumb = $('span#breadcrumbs-current');
+    if ($breadcrumb.text().length > 50) {
+        $breadcrumb.text($breadcrumb.text().substr(0,50).split(" ").slice(0, -1).join(" ") + '\u2026');
+    }
 });
