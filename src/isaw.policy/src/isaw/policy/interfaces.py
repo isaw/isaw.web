@@ -139,7 +139,7 @@ class IISAWPublication(form.Schema):
         title=_(u'Body'),
         default_mime_type='text/html',
         allowed_mime_types=('text/html',),
-        output_mime_type='text/x-safe-html',
+        output_mime_type='text/x-html-safe',
         required=False,
     )
 
