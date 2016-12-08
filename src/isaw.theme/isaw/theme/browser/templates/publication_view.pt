@@ -19,7 +19,8 @@
        <div tal:condition="view/images">
          <a tal:attributes="href string:${context/absolute_url}/publication-images"
             class="publication-images">
-         <img tal:repeat="image python:view.images[:3]" tal:attributes="src string:${image/absolute_url}/image_thumb" />
+         <img style="width: 32%;height: auto"
+              tal:repeat="image python:view.images[:3]" tal:attributes="src string:${image/absolute_url}/image_thumb" />
          <br />
          See all <span tal:content="python:len(view.images)">3</span> images.
          </a>
