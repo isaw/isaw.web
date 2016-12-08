@@ -15,7 +15,6 @@ downloads/
 eggs/
 env/
 develop-eggs/
-lib/
 lib64/
 parts/
 sdist/
