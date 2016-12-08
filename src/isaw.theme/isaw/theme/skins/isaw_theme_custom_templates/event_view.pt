@@ -28,6 +28,17 @@
         </div>
 
         <span class="visualClear"><!-- --></span>
+        <script>
+          $(function () {
+            var $title = $('h1.documentFirstHeading');
+            var title_parts = $title.text().split(':');
+            $title.text(title_parts[0]);
+            if (title_parts.length > 1) {
+              // Join remaining parts into a sub title
+              $('<p class="subtitle"></p>').text(title_parts.slice(1).join(':')).insertAfter($title);
+            }
+          });
+        </script>
 
 </metal:content-core>
 

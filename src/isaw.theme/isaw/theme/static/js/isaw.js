@@ -250,4 +250,15 @@ jQuery(function($) {
     };
 
     $(document).ready(initialize_map);
+
+    // Truncate breadcrumbs
+    var $breadcrumbs = $('#portal-breadcrumbs > span');
+    $breadcrumbs.each(function () {
+        var $breadcrumb = $(this);
+        var text = $breadcrumb.text().split(':')[0].trim();
+        if (text.length > 50) {
+            text = text.substr(0,50).split(" ").slice(0, -1).join(" ") + '\u2026'
+        }
+        $breadcrumb.text(text);
+    })
 });
