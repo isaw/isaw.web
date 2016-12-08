@@ -728,7 +728,7 @@ i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
     border: none;
 }
 
-.ProfileLinks a:hover {
+#portal-columns .ProfileLinks a:hover, #content .ProfileLinks a:hover {
     text-decoration: none;
     border: none;
 }
