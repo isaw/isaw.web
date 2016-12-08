@@ -8,12 +8,16 @@
 
 
     <style type="text/css">@import url("theme.css");</style>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-	<script src="js/jquery.cycle2.min.js"></script>
-	<script src="js/isaw.js"></script>
+    <script src="js/awld/lib/requirejs/require.min.js"></script>
+    <script src="js/awld/awld.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/isaw.js"></script>
 
 </head>
 <body><div id="visual-portal-wrapper">
+    <script type="text/javascript">
+        awld.init();
+    </script>
 	<div id="portal-top">
 		<h1 id="site-title"><a href="/">Institute for the Study of the Ancient World at NYU</a></h1>
 		<div class="identity"><a href="/">ISAW</a></div>
@@ -131,7 +135,7 @@ Headlines
 </pre>
 
 <h1>Headline h1</h1>
-<p>And a paragraph</p>
+<div class="awld-scope"><p>And a paragraph with <a class="external-link" href="http://pleiades.stoa.org/places/520998" target="_self" title="Pleiades Link">an awld link</a></p></div>
 <h2>Headline h2</h2>
 <p>And a paragraph</p>
 <h3>Headline h3</h3>
