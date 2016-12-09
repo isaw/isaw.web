@@ -1,4 +1,5 @@
 from Products.CMFCore.utils import getToolByName
+from Products.Five.browser import BrowserView
 
 from isaw.bibitems.browser.view import BibItemView
 
@@ -32,3 +33,15 @@ class PublicationView(BibItemView):
             else:
                 members.append(author)
         return members
+
+    @property
+    def images(self):
+        return self.context.objectValues()
+
+
+class PublicationImagesView(BrowserView):
+    """ images overlay """
+
+    @property
+    def images(self):
+        return self.context.objectValues()

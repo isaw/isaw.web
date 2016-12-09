@@ -303,4 +303,13 @@
     template="templates/publication_view.pt"
     />
 
+  <browser:page
+    name="publication-images"
+    for="isaw.policy.interfaces.IISAWPublication"
+    permission="zope2.View"
+    class=".publication.PublicationImagesView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/publication_images.pt"
+    />
+
 </configure>
