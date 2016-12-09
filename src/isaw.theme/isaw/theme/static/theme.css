@@ -879,11 +879,17 @@ h2.CVSectionTitle:before {
 .PublicationImage {
     width: 450px;
     max-width:50%;
+    float: left;
 }
 
 .PublicationImage img {
     max-width:100%;
     height: auto;
+}
+
+.PublicationBody {
+    width: 45%;
+    float: right;
 }
 
 .PublicationInfo ul {
