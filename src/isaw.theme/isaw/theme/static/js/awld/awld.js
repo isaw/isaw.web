@@ -412,7 +412,9 @@ if (typeof DEBUG === 'undefined') {
                         });
                     }   
                 });
-                
+                // get rid of requirejs now that we're done with it
+                window._undefined_define = window.define;
+                window.define = undefined;
             });
             
         });
