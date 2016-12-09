@@ -255,6 +255,8 @@ jQuery(function($) {
     var $breadcrumbs = $('#portal-breadcrumbs > span');
     $breadcrumbs.each(function () {
         var $breadcrumb = $(this);
+        var $link = $breadcrumb.find('a');
+        $breadcrumb = $link.length ? $link : $breadcrumb;
         var text = $breadcrumb.text().split(':')[0].trim();
         if (text.length > 50) {
             text = text.substr(0,50).split(" ").slice(0, -1).join(" ") + '\u2026'
