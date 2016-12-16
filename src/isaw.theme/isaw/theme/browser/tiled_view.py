@@ -78,7 +78,10 @@ class TileDetailsMixin(object):
         # attempt to find any image field on the object, using know field names
         # TODO: this would be a nice place for some configuration.
         for field in IMAGE_FIELDS:
-            scale = scales.scale(field, self.image_scale)
+            try:
+                scale = scales.scale(field, self.image_scale)
+            except AttributeError:
+                scale = None
             if scale is not None:
                 tag = scale.tag(alt=title, title=title)
                 break
