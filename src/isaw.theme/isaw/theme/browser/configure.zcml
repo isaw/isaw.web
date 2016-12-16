@@ -159,6 +159,40 @@
         description="List folder contents by title only"
         />
 
+  <!-- Publication listing view -->
+  <browser:page
+    name="publication-listing"
+    for="*"
+    permission="zope2.View"
+    class=".publication.PublicationListingView"
+    layer=".interfaces.IThemeSpecific"
+    template="templates/publication_listing.pt"
+    />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATFolder"
+        menu="plone_displayviews"
+        title="Publication Listing"
+        action="@@publication-listing"
+        description="List publications"
+        />
+
+    <browser:menuItem
+        for="Products.ATContentTypes.interface.IATTopic"
+        menu="plone_displayviews"
+        title="Publication Listing"
+        action="@@publication-listing"
+        description="List publications"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
+        menu="plone_displayviews"
+        title="Publication Listing"
+        action="@@publication-listing"
+        description="List publications"
+        />
+
   <!-- byline viewlet available on any contentish (non-folder) AT item -->
   <browser:viewlet
       name="isaw.theme.byline"
