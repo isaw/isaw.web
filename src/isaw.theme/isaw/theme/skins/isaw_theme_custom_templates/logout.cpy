@@ -18,7 +18,9 @@ mt.logoutUser(request)
 from Products.CMFPlone.utils import transaction_note
 transaction_note('Logged out')
 
-# After logging out of Plone, redirect to the NYU logout page:
+# After logging out of Plone, redirect to the NYU logout page.
+# Elected *not* to store this value in external_logout_url site property,
+# as this isn't exactly what that property is intended for.
 nyu_logout_url = 'https://home.nyu.edu/logout'
 request.response.redirect(nyu_logout_url)
 return
