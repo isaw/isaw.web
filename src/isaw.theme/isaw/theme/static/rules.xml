@@ -105,6 +105,8 @@
             css:content="#edit-bar" />
     <replace css:theme="#kssPortalMessage"
              css:content="#kssPortalMessage" />
+    <replace css:theme="#kssPortalMessage"
+             css:content=".portalMessage" />
             
     <!-- hide descriptions -->
     <drop css:if-content="body.portaltype-document"
