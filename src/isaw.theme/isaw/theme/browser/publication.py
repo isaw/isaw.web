@@ -26,6 +26,9 @@ class PublicationView(BibItemView):
         mt = getToolByName(self.context, 'portal_membership')
         members = []
         for author in member_list:
+            author = author.strip()
+            if not author:
+                continue
             info = mt.getMemberInfo(author)
             if info:
                 members.append('<a href="%s">%s</a>' % (info.get('home_page'),
