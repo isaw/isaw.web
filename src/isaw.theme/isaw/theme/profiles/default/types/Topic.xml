@@ -13,4 +13,5 @@
         <element value="exhibition-highlights"/>
         <element value="exhibition-listing"/>
     </property>
+    <property name="global_allow">False</property>
 </object>

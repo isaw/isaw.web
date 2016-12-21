@@ -8,4 +8,5 @@
   <property name="view_methods" purge="False">
     <element value="news_view"/>
   </property>
+  <property name="global_allow">False</property>
 </object>
