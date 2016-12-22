@@ -19,7 +19,7 @@
          tal:define="card item/getObject">
       <div class="PublicationCardImage"
            tal:define="image_view card/@@images;
-                       image_preview image_view/image|nothing">
+                       image_preview image_view/image/mini|nothing">
         <span tal:condition="image_preview"
               tal:replace="structure image_preview">
         </span>

@@ -9,7 +9,7 @@
 <metal:supress-desc fill-slot="content-description"></metal:supress-desc>
   <metal:core fill-slot="content-core">
 	<tal:defines define="image_view context/@@images;
-                         image_preview image_view/image|nothing;">
+                         image_preview image_view/image/large|nothing;">
     <div id="publication-content">
     <div class="PublicationImage">
        <span tal:condition="image_preview"
