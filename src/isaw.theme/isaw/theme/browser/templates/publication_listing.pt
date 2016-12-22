@@ -16,13 +16,12 @@
   <a tal:repeat="item view/listings"
      tal:attributes="href item/getURL">
     <div class="PublicationCard"
-         tal:define="card item/getObject">
-      <div class="PublicationCardImage"
-           tal:define="image_view card/@@images;
-                       image_preview image_view/image/mini|nothing">
-        <span tal:condition="image_preview"
-              tal:replace="structure image_preview">
-        </span>
+         tal:attributes="class python:'PublicationCard' + (image_preview and ' hasImage' or ' noImage')"
+         tal:define="card item/getObject;
+                     image_view card/@@images;
+                     image_preview image_view/image/mini|nothing">
+      <div class="PublicationCardImage" tal:condition="image_preview">
+        <span tal:replace="structure image_preview" />
       </div>
       <div class="PublicationCardBody">
         <div>

@@ -937,6 +937,12 @@ h2.CVSectionTitle:before {
     margin-left: 15px;
 }
 
+.noImage .PublicationCardBody {
+    float: none;
+    max-width: 100%;
+    width: auto;
+}
+
 @media screen and (max-width:1330px){
 
 	#portal-top #main-navigation ul#primary li {width:auto; }
