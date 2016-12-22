@@ -926,7 +926,7 @@ h2.CVSectionTitle:before {
 .PublicationCardImage img {
     max-width: 100%;
     width: auto;
-    max-height: 97px;
+    max-height: 100%;
     height: auto;
 }
 
