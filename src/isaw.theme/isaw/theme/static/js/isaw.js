@@ -1,5 +1,6 @@
 /*global google:true, jQuery:true, L:true*/
 jQuery(function($) {
+    var L = window.L || {Icon: {Default: {}}};
 	$('h3.trigger').click(function(){
 		$(this).toggleClass('open');
 		$('#main-navigation').toggleClass('open');

@@ -319,4 +319,14 @@
       import_steps="portlets"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="30"
+      destination="31"
+      title="AWLD TinyMCE Config"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="tinymce_settings jsregistry"
+      />
+
 </configure>
