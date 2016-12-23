@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="isaw.theme">
+<body>
+<metal:supress-desc fill-slot="content-description"></metal:supress-desc>
+  <metal:core fill-slot="content-core">
+    <tal:defines define="image_view context/@@images;
+                         image_preview image_view/image|nothing;">
+    <div class="PublicationImage" style="float:left; margin-right: 20px">
+       <span tal:condition="image_preview"
+       tal:content="structure image_preview">
+       </span>
+
+    </div>
+
+    <div class="PublicationInfo" style="margin-bottom: 15px;">
+      <ul>
+        <li><strong tal:content="context/id" >[the-short-name]</strong></li>
+        <li><strong>Query:</strong> <span tal:content="context/query_string" /></li>
+      </ul>
+    </div>
+    </tal:defines>
+    <div tal:condition="context/text|nothing"
+         tal:content="structure context/text/raw">
+         Text
+    </div>
+  </metal:core>
+</body>
+</html>

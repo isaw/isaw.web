@@ -323,4 +323,25 @@
       import_steps="memberdata-properties"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="31"
+      destination="32"
+      title="Add Library Collection Type"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="32"
+      destination="33"
+      title="Add Library Collection view"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo"
+      />
+
+
 </configure>
