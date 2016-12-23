@@ -555,7 +555,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 .section-people #portal-columns .facultyListing .facultyImage a img,
 .section-people #content .facultyListing .facultyImage a img {width: 200px; }
 .section-people #portal-columns .facultyListing .facultyInfo,
-.section-people #content .facultyListing .facultyInfo { }
+.section-people #content .facultyListing .facultyInfo {overflow: hidden }
 .section-people #portal-columns .facultyListing .facultyInfo a,
 .section-people #content .facultyListing .facultyInfo a { }
 .section-people #portal-columns .facultyListing .facultyInfo a h2,
