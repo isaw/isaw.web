@@ -9,20 +9,20 @@
 <metal:supress-desc fill-slot="content-description"></metal:supress-desc>
   <metal:core fill-slot="content-core">
 	<tal:defines define="image_view context/@@images;
-                         image_preview image_view/image|nothing;">
-    <div class="PublicationImage" style="float:left; margin-right: 20px">
-       <span tal:condition="image_preview"
-       tal:content="structure image_preview">
-       </span>
+                       image_preview image_view/image/large|nothing;
+                       images view/images">
+    <div id="publication-content">
+    <div class="PublicationImage" tal:condition="python:image_preview or images">
+       <span tal:content="structure image_preview" />
        <br />
        <strong tal:content="context/image_caption"></strong>
-       <div tal:condition="view/images">
+       <div tal:condition="images">
          <a tal:attributes="href string:${context/absolute_url}/publication-images"
             class="publication-images">
          <img style="width: 32%;height: auto"
-              tal:repeat="image python:view.images[:3]" tal:attributes="src string:${image/absolute_url}/image_thumb" />
+              tal:repeat="image python:images[:3]" tal:attributes="src string:${image/absolute_url}/image_thumb" />
          <br />
-         See all <span tal:content="python:len(view.images)">3</span> images.
+         See all <span tal:content="python:len(images)">3</span> images.
          </a>
        </div>
     </div>
@@ -82,27 +82,28 @@
           <strong>DOI:</strong> <span tal:content="context/doi" />
         </li>
       </ul>
+      <div class="PublicationLinks" tal:condition="context/access_uris">
+        <span class="label">Read:</span>
+        <a class="AccessButton button"
+           tal:repeat="uri context/access_uris"
+           tal:attributes="href uri"
+           tal:content="python:view.url_domain(uri)">jstor.org</a>
+      </div>
+      <div class="PublicationLinks" tal:condition="context/review_uris">
+        <span class="label">Reviews:</span>
+        <a class="AccessButton button"
+           tal:repeat="uri context/review_uris"
+           tal:attributes="href uri"
+           tal:content="python:view.url_domain(uri)">jstor.org</a>
+      </div>
+      <div class="PublicationLinks" tal:condition="context/order_uris">
+        <span class="label">Order:</span>
+        <a class="AccessButton button"
+           tal:repeat="uri context/order_uris"
+           tal:attributes="href uri"
+           tal:content="python:view.url_domain(uri)">jstor.org</a>
+      </div>
     </div>
-    <div class="PublicationLinks" tal:condition="context/access_uris">
-      <span class="label">Read:</span>
-      <a class="AccessButton button"
-         tal:repeat="uri context/access_uris"
-         tal:attributes="href uri"
-         tal:content="python:view.url_domain(uri)">jstor.org</a>
-    </div>
-    <div class="PublicationLinks" tal:condition="context/review_uris">
-      <span class="label">Reviews:</span>
-      <a class="AccessButton button"
-         tal:repeat="uri context/review_uris"
-         tal:attributes="href uri"
-         tal:content="python:view.url_domain(uri)">jstor.org</a>
-    </div>
-    <div class="PublicationLinks" tal:condition="context/order_uris">
-      <span class="label">Order:</span>
-      <a class="AccessButton button"
-         tal:repeat="uri context/order_uris"
-         tal:attributes="href uri"
-         tal:content="python:view.url_domain(uri)">jstor.org</a>
     </div>
     </tal:defines>
     <div class="PublicationText" style="padding-top: 55px;clear: both;"

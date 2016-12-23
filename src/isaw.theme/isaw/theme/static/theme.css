@@ -877,13 +877,19 @@ h2.CVSectionTitle:before {
 }
 
 .PublicationImage {
-    width: 450px;
-    max-width:50%;
+    max-width: 40%;
+    float: left;
+    margin-right: 20px;
 }
 
 .PublicationImage img {
     max-width:100%;
     height: auto;
+}
+
+.PublicationBody {
+    max-width: calc(60% - 20px);
+    overflow: hidden;
 }
 
 .PublicationInfo ul {
@@ -896,11 +902,72 @@ h2.CVSectionTitle:before {
     margin-bottom: 0.25em;
 }
 
+.PublicationCard {
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+    border: 1px solid #999999;
+    background-color: #fffbf8;
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+}
+
+.PublicationCard:hover {
+    background-color: #ffffff;
+}
+
+.PublicationCardImage {
+    float: left;
+    overflow: hidden;
+    max-width: 125px;
+}
+
+.PublicationCardImage img {
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+}
+
+.PublicationCardBody {
+    float: right;
+    max-width: 360px;
+    width: 360px;
+    margin-left: 15px;
+}
+
+.noImage .PublicationCardBody {
+    float: none;
+    max-width: 100%;
+    width: auto;
+}
+
 @media screen and (max-width:1330px){
 
 	#portal-top #main-navigation ul#primary li {width:auto; }
 	#portal-top #main-navigation ul#primary li a {padding:0 30px; }
 }
+
+@media screen and (max-width:1160px){
+    .PublicationCardBody {
+        width: auto;
+        max-width: 70%;
+        margin-left: 10px;
+        font-size: 1em;
+    }
+    .PublicationCardImage {
+        max-width: calc(30% - 10px);
+    }
+}
+@media screen and (max-width:600px){
+    .PublicationCard {
+        width: calc(100% - 20px);
+        margin: 2% 20px 2% 0;
+        height: auto;
+    }
+}
+
 @media screen and (max-width:1120px){
 /*	#portal-top .identity {left:0; } */
 	#portal-top h1 {left:46px; }
@@ -1224,7 +1291,6 @@ div.leaflet-control-geosearch.leaflet-control {
 	#content #slider .slide .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li, #content ul.news li {float:none; margin-right:0 !important; width:100% !important; }
-    .PublicationImage { max-width: 100%; }
     .AccessButton { font-size: 10px; padding: 6px; }
 }
 
