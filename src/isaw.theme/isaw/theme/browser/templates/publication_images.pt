@@ -8,8 +8,7 @@
 <body>
 <metal:supress-desc fill-slot="content-description"></metal:supress-desc>
   <metal:core fill-slot="content-core">
-    <div class="PublicationImage" style="width: 12%; float:left; margin-right: 20px"
-         tal:condition="view/images">
+    <div class="PublicationImage" style="" tal:condition="view/images">
       <div class="publication-image-preview-container"
            style="margin-bottom: 10px;"
            tal:repeat="image view/images">
@@ -23,10 +22,8 @@
       </div>
     </div>
 
-    <div class="PublicationBody" style="width: 80%; float:left; margin-bottom: 5px"
-                                 tal:define="first_image python:view.images[0]">
+    <div class="PublicationBody" tal:define="first_image python:view.images[0]">
       <img class="publication-image-view"
-           style="height: 500px;"
            tal:attributes="src string:${first_image/absolute_url}/image" />
       <h3 class="publication-image-caption"
           tal:content="first_image/Description" />
