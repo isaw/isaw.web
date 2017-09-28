@@ -14,6 +14,9 @@ class IISAWExhibitionsLayer(Interface):
 class IExhibitionObject(model.Schema):
     """Schema for Exhibition Objects."""
 
+    artist = schema.TextLine(title=_(u'Artist'),
+                             required=False)
+
     exhibition_context = schema.TextLine(title=_(u'Context'),
                                          required=False)
 
