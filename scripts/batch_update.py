@@ -15,13 +15,15 @@ from plone.formwidget.geolocation import Geolocation
 from plone.namedfile.file import NamedBlobImage
 
 
-FIELDS = ['title',
+FIELDS = ['artist',
+          'title',
           'description',
           'exhibition_context',
           'date',
           'not_before',
           'not_after',
           'dimensions',
+          'id',
           'inventory_num',
           'lender',
           'lender_link',
