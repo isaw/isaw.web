@@ -13,9 +13,13 @@
          tal:content="structure image">
     </div>
     <div class="ExhibitObjectInfo">
+      <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
       <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt> <dd tal:content="context/medium">Medium</dd></dl>
-      <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing"><dt>Dimensions:</dt><dd tal:content="context/dimensions">Dimensions</dd></dl>
+      <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing" tal:define="medium context/medium">
+          <dt tal:condition="python:medium != 'Video/installation'">Dimensions:</dt>
+          <dt tal:condition="python:medium == 'Video/installation'">Running time:</dt>
+          <dd tal:content="context/dimensions">Dimensions</dd></dl>
       <dl class="ExhibitObjectContext" tal:condition="context/exhibition_context|nothing"><dt>Context:</dt><dd tal:content="context/exhibition_context">Context</dd></dl>
       <dl class="ExhibitObjectDate" tal:condition="context/date|nothing"><dt>Date:</dt><dd tal:content="context/date">Date</dd></dl>
       <dl class="ExhibitObjectInventoryNum" tal:condition="context/inventory_num|nothing"><dt>Inventory Number:</dt><dd tal:content="context/inventory_num">Inventory Number</dd></dl>
