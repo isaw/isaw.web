@@ -668,8 +668,9 @@ td.event a, td.todayevent a {
 .section-isaw-home.template-document_view #edit-bar {
     position: absolute;
     z-index: 150;
-    width: calc(100% - 6px);
-    top: 180px;
+    width: calc(100% - 52px);
+    top: 0px;
+    left: 46px;
 }
 
 #portal-columns #formTabs ul li ul, #content #formTabs ul li ul {font-size: 12px; }
