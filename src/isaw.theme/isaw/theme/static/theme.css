@@ -171,21 +171,21 @@ fieldset#search-field {text-align:left !important; }
 #content .listingBar a:focus {background:#9b3a25; color:#fffaf5 !important; }
 
 
-.section-isaw-home.template-document_view {background:#3F3634; }
-.section-isaw-home.template-document_view #portal-top {background:transparent; min-height:initial; height: 127px; position:relative; top:0; left:0; right:0; z-index:200; }
-.section-isaw-home.template-document_view #portal-top:before {display:none; }
-.section-isaw-home.template-document_view #portal-top .page-title {display:none; }
-.section-isaw-home.template-document_view #portal-top #main-navigation ul#primary {background:rgba(243,243,243,1); }
-.section-isaw-home.template-document_view #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,1); }
-.section-isaw-home.template-document_view #portal-breadcrumbs {display: none; }
-.section-isaw-home.template-document_view #viewlet-above-content .portalMessage {display: none; }
-.section-isaw-home.template-document_view #portal-column-content .portalMessage {margin-top: 30px; margin-bottom: 0px; padding-left: 46px;}
-.section-isaw-home.template-document_view #portal-column-content {min-height: 250px; }
-.section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
-.section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
-.section-isaw-home #content div.documentByLine { display: none; }
-.section-isaw-home #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
-.section-isaw-home #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] {background:#3F3634; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top {background:transparent; min-height:initial; height: 127px; position:relative; top:0; left:0; right:0; z-index:200; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top:before {display:none; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top .page-title {display:none; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top #main-navigation ul#primary {background:rgba(243,243,243,1); }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,1); }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-breadcrumbs {display: none; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #viewlet-above-content .portalMessage {display: none; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-column-content .portalMessage {margin-top: 30px; margin-bottom: 0px; padding-left: 46px;}
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-column-content {min-height: 250px; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] h1.documentFirstHeading {display: none;}
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #content div.documentByLine { display: none; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider-container #easySlider-goToButtons {height:0; }
 #content #slider .slide .slideroverlay {top: 50%; width:80vw; max-width: 50em; padding:40px 20px 20px; border: none; display:table; background-color: rgba(57, 48, 46, 0.5); transition: all 0.75s ease-in-out;}
 #content #slider .slide .slideroverlay:hover {background-color: rgba(57, 48, 46, 0.8);}
@@ -202,11 +202,11 @@ fieldset#search-field {text-align:left !important; }
 #content #slider .slide .slideroverlay a:focus {border-bottom: 1px solid; transition: all 0.5s ease-in-out;}
 #slider-container.slider-navtype-navigation-bullets .easybutton {display: none; }
 #column-contents #slider-container {border: none; }
-.section-isaw-home #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
-.section-isaw-home #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
-.section-isaw-home #portal-columns .cycle-pager span.cycle-pager-active,
-.section-isaw-home #portal-columns .cycle-pager span:Hover,
-.section-isaw-home #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span {background:rgba(255,255,255,.7); border-radius:50%; cursor:pointer; display:inline-block; height:15px; margin:0 15px; text-indent:-10000px; width:15px; }
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span.cycle-pager-active,
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:Hover,
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
 #portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
 
@@ -666,7 +666,7 @@ td.event a, td.todayevent a {
 	display: block;
 	margin: 0;
 }
-.section-isaw-home.template-document_view #edit-bar {
+body[class*="isaw-home"][class*="section"][class*="template-document_view"] #edit-bar {
     position: absolute;
     z-index: 150;
     width: calc(100% - 52px);
@@ -998,14 +998,14 @@ h2.CVSectionTitle:before {
 }
 @media screen and (max-width:959px){
 	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; line-height: 16px; height: 16px; padding: 12px 20px 11px 56px}
-	.section-isaw-home.template-document_view {padding-bottom:0; }
-	.section-isaw-home.template-document_view #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
+	body[class*="isaw-home"][class*="section"][class*="template-document_view"] {padding-bottom:0; }
+	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
 	#content #slider .slide .slideroverlay {bottom:auto; left:auto; padding:30px; margin:0; position:static; max-width: auto; width:auto;}
 	#content #slider .slide .slideroverlay > * {padding:0; width:auto;}
 	#content #slider .slide .slideroverlay p,
 	#content #slider .slide .slideroverlay ul {padding-right: 65px;}
 	.section-isaw-home #portal-columns .cycle-pager {bottom:auto; position:static; right:auto; text-align:center; }
-	.section-isaw-home.template-document_view #edit-bar {top: 0; }
+	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #edit-bar {top: 0; }
 	.section-events #content div.newsImageContainer {
 		display:none;
 	}
@@ -1087,7 +1087,7 @@ h2.CVSectionTitle:before {
 	#portal-column-content {clear:both; float:none; width:100%; 
 		margin-bottom:60px; 
 	}
-	.section-isaw-home.template-document_view #portal-column-content {margin-bottom: 0; }
+	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-column-content {margin-bottom: 0; }
 	#portal-column-first {
 		-webkit-box-ordinal-group: 3;   /* OLD - iOS 6-, Safari 3.1-6 */
 		-moz-box-ordinal-group: 3;      /* OLD - Firefox 19- */
@@ -1122,7 +1122,7 @@ h2.CVSectionTitle:before {
 	#portal-columns blockquote p, #content blockquote p {font-size:24px; }
 	#portal-columns ul.navTree li.navTreeFolderish::after {display:none; }
 	
-	.section-isaw-home.template-document_view #portal-columns {padding:0; }
+	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns {padding:0; }
 	
 	#portal-columns ul.news li, #content ul.news li {display:block; margin-right:4%; width:48%; }
 	#portal-columns ul.news li:nth-child(3n), #content ul.news li:nth-child(3n) {margin-right:4%; }
