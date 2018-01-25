@@ -179,7 +179,7 @@ fieldset#search-field {text-align:left !important; }
 .section-isaw-home.template-document_view #portal-top #main-navigation ul#secondary {background:rgba(221,217,214,1); }
 .section-isaw-home.template-document_view #portal-breadcrumbs {display: none; }
 .section-isaw-home.template-document_view #viewlet-above-content .portalMessage {display: none; }
-
+.section-isaw-home.template-document_view #portal-column-content .portalMessage {margin-top: 30px; margin-bottom: 0px; padding-left: 46px;}
 .section-isaw-home.template-document_view #portal-column-content {min-height: 250px; }
 .section-isaw-home.template-document_view #portal-columns #column-contents {max-width:none; padding:0; position:relative; }
 .section-isaw-home.template-document_view h1.documentFirstHeading {display: none;}
