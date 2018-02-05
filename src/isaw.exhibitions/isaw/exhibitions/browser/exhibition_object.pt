@@ -15,7 +15,9 @@
     <div class="ExhibitObjectInfo">
       <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
       <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
-      <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt> <dd tal:content="context/medium">Medium</dd></dl>
+      <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Languge:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
+      <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt><dd tal:content="context/medium">Medium</dd></dl>
+      <dl class="ExhibitObjectSite" tal:condition="context/object_location|nothing"><dt>Location:</dt><dd tal:content="context/object_location">Object Location</dd></dl>
       <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing" tal:define="medium context/medium">
           <dt tal:condition="python:medium != 'Video/installation'">Dimensions:</dt>
           <dt tal:condition="python:medium == 'Video/installation'">Running time:</dt>

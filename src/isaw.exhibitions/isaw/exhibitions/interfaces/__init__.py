@@ -32,6 +32,8 @@ class IExhibitionObject(model.Schema):
     dimensions = schema.TextLine(title=_(u'Dimensions'),
                                  required=False)
 
+    object_language = schema.TextLine(title=_(u'Object Language'), required=False)
+
     inventory_num = schema.TextLine(title=_(u'Inventory Number'),
                                     required=True)
 
@@ -43,6 +45,8 @@ class IExhibitionObject(model.Schema):
 
     medium = schema.TextLine(title=_(u'Medium'),
                              required=False)
+
+    object_location = schema.TextLine(title=_(u'Object Location'), required=False)
 
     notes = schema.TextLine(title=_(u'Notes'),
                             required=False)
