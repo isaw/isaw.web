@@ -1,15 +1,15 @@
 /*
 	background cream color: #fffaf5;
-	body font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-	heading and menu font family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif;
+	body font-family: 'Noto Sans', sans-serif;
+	heading and menu font family: Questrial, 'Noto Sans', sans-serif;
 */
 
 
-/* Open Sans 
-by Steve Matteson
+/* Noto Sans 
+by Google
 Apache License, version 2.0
 */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400&subset=latin,cyrillic-ext,greek-ext,greek,latin-ext,cyrillic);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
 
 /* Questrial 
 by Joe Prince
@@ -23,7 +23,7 @@ SIL Open Font License, 1.1
 	linen
 	antique white */
 
-html {background:#fff5ee; font-family:'Open Sans', Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing:.2px;}
+html {background:#fff5ee; font-family:'Noto Sans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing:.2px;}
 body {color:#231f20; margin:0;}
 
 label.collapser:after,
@@ -35,7 +35,7 @@ a:before,
 a:after,
 a {transition: all 0.5s ease; }
 
-.button {border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
+.button {border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
 .button:focus {background:#9b3a25; color:#fffaf5 !important; }
 .button.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
@@ -67,7 +67,7 @@ a {transition: all 0.5s ease; }
     /* background-repeat: no-repeat;
     background-size: 100%; */
     margin-top: 49px;
-    font-family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif;
+    font-family: Questrial, 'Noto Sans', sans-serif;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -87,7 +87,7 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
-#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
 #portal-top #main-navigation ul#primary li a:hover,
 #portal-top #main-navigation ul#primary li a:focus {opacity: 0.9;}
 #portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; }
@@ -101,18 +101,18 @@ a {transition: all 0.5s ease; }
     margin-left: 57px;
     color: #333;
     display: block;
-    font-family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif;
+    font-family: Questrial, 'Noto Sans', sans-serif;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
     line-height: 49px;
 }
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
-#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
 #portal-top #main-navigation ul#secondary li a:hover,
 #portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; }
 #portal-top .page-title {bottom:30px; display:none; left:0; position:absolute; right:0; width:100%; z-index:4; }
-#portal-top .page-title h2.section-title {color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
+#portal-top .page-title h2.section-title {color:#fff; font-family:'Noto Sans', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; padding:0; width:100%; }
 
 /*livesearch*/
@@ -189,7 +189,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #content #slider-container #easySlider-goToButtons {height:0; }
 #content #slider .slide .slideroverlay {top: 50%; width:80vw; max-width: 50em; padding:40px 20px 20px; border: none; display:table; background-color: rgba(57, 48, 46, 0.5); transition: all 0.75s ease-in-out;}
 #content #slider .slide .slideroverlay:hover {background-color: rgba(57, 48, 46, 0.8);}
-#content #slider .slide .slideroverlay > * {padding-left: 20px; color:#fff; font-weight:400; font-family:'Open Sans', 'Arial', sans-serif; text-align:left; text-shadow: 1px 1px 3px rgb(57, 48, 46);}
+#content #slider .slide .slideroverlay > * {padding-left: 20px; color:#fff; font-weight:400; font-family:'Noto Sans', 'Arial', sans-serif; text-align:left; text-shadow: 1px 1px 3px rgb(57, 48, 46);}
 #content #slider .slide .slideroverlay h3 {font-size:24px; letter-spacing:1px; line-height:100%; margin:0 auto 20px; text-transform:uppercase; }
 #content #slider .slide .slideroverlay p, 
 #content #slider .slide .slideroverlay ul {font-size:20px; letter-spacing:.1px; line-height:166%; text-transform:none;}
@@ -208,7 +208,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:Hover,
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
-#portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
+#portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
 
 .section-graduate-studies #portal-breadcrumbs {background:#6d6054; }
 .section-visiting-scholars #portal-breadcrumbs {background:#9d3a20; }
@@ -233,23 +233,23 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:60px 20px 80px; }
 .template-usergroup-userprefs #portal-columns #column-contents,
 .template-usergroup-groupprefs #portal-columns #column-contents {overflow: visible; }
-#portal-columns h1, #content h1 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
-#portal-columns h2, #content h2 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:30px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
-#portal-columns h3, #content h3 {font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
-#portal-columns dl dt, #content dl dt {font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
+#portal-columns h1, #content h1 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
+#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:30px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns h3, #content h3 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns dl dt, #content dl dt {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
 #portal-columns p.intro, #content p.intro,
-#portal-columns .documentDescription, #content .documentDescription {font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
+#portal-columns .documentDescription, #content .documentDescription {font-family: 'Noto Sans', sans-serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
 #portal-columns h5, #content h5,
-#plone-document-byline {font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; letter-spacing:.1px; line-height:100%; text-transform:uppercase; }
-#portal-columns h6, #content h6 {font-family: 'Open Sans', Arial, Helvetica, sans-serif;; font-size:16px; font-weight:700; letter-spacing:.1px; line-height:120%; }
+#plone-document-byline {font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:700; letter-spacing:.1px; line-height:100%; text-transform:uppercase; }
+#portal-columns h6, #content h6 {font-family: 'Noto Sans', sans-serif;; font-size:16px; font-weight:700; letter-spacing:.1px; line-height:120%; }
 #portal-columns a, #content a {color:rgba(155,58,37,1); }
 #portal-columns a:hover, #content a:hover,
 #portal-columns a:focus, #content a:focus {text-decoration: underline;}
 #portal-columns p, #content p,
 #portal-columns dl dd, #content dl dd {color:#202020; font-size:17px; line-height:28px; margin:0 0 28px; }
-#portal-columns blockquote, #content blockquote {background:#f8f0e6; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-weight:300; letter-spacing:.1px; line-height:140%; margin:36px 0; padding:40px 70px; }
+#portal-columns blockquote, #content blockquote {background:#f8f0e6; font-family: 'Noto Sans', sans-serif; font-weight:300; letter-spacing:.1px; line-height:140%; margin:36px 0; padding:40px 70px; }
 #portal-columns blockquote p, #content blockquote p {font-size:30px; line-height:140%; margin:0; }
 
 #portal-columns #relatedItemBox dt {color:#000; font-size:13px; margin:0 0 6px; text-transform:uppercase; }
@@ -259,16 +259,16 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul, #content ul {}
 #content-core ul { overflow: hidden; list-style-position: outside; padding-left: 32px; margin-left: 0; margin-bottom: 28px; }
 
-#portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
+#portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
 #portal-columns ul.red li, #content ul.red li {margin:0 0 24px; }
-#portal-columns ul.red li ul, #content ul.red li ul {color:#4c4c4c; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
+#portal-columns ul.red li ul, #content ul.red li ul {color:#4c4c4c; font-family: 'Noto Sans', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
 #portal-columns ul.red li ul li, #content ul.red li ul li {margin:0 0 16px; }
 #portal-columns ul.red li ul li:before, #content ul.red li ul li:before {color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
 
-#portal-columns ol.red, #content ol.red {color:#9b3a25; counter-reset:isaw-ol-counter; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; list-style:none; margin-bottom: 58px; text-transform:uppercase;}
+#portal-columns ol.red, #content ol.red {color:#9b3a25; counter-reset:isaw-ol-counter; font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; list-style:none; margin-bottom: 58px; text-transform:uppercase;}
 #portal-columns ol.red li, #content ol.red li {margin:0 0 24px; }
 #portal-columns ol.red li:before, #content ol.red li:before {background:#9b3a25; color:#fff; content: counter(isaw-ol-counter); counter-increment:isaw-ol-counter; display:inline-block; line-height:34px; margin:0 10px 0 -45px; text-align:center; width:34px; }
-#portal-columns ol.red li ol, #content ol.red li ol {color:#4c4c4c; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
+#portal-columns ol.red li ol, #content ol.red li ol {color:#4c4c4c; font-family: 'Noto Sans', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
 #portal-columns ol.red li ol li, #content ol.red li ol li {margin:0 0 16px 40px; }
 #portal-columns ol.red li ol li:before, #content ol.red li ol li:before {background:transparent; color:#9b3a25; content:"—"; display:inline; font-weight:normal; margin-right:10px; }
 
@@ -280,19 +280,19 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns table thead, #content table thead { }
 #portal-columns table thead tr, #content table thead tr { }
 
-#portal-columns table thead tr th, #content table thead tr th {background-color: #d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
+#portal-columns table thead tr th, #content table thead tr th {background-color: #d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
 
 #portal-columns table.sortable thead tr th, #content table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat; cursor:pointer; padding-right:56px;}
 #portal-columns table.sortable thead tr th.nosort, #content table.sortable thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
 #portal-columns table tbody, #content table tbody { }
 #portal-columns table tbody tr, #content table tbody  { }
 #portal-columns table tbody tr.even, #content table tbody tr.even {background:#f8f0e6; }
-#portal-columns table tbody tr th, #content table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
-#portal-columns table tbody tr td, #content table tbody tr td {border:1px solid #e2ddd7; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; }
+#portal-columns table tbody tr th, #content table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 56px 20px 24px; text-align:left; text-transform:uppercase; }
+#portal-columns table tbody tr td, #content table tbody tr td {border:1px solid #e2ddd7; font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:700; letter-spacing:.4px; line-height:100%; padding:20px 24px; }
 .template-usergroup-userprefs #portal-columns table tbody tr th,
-.template-usergroup-groupprefs #portal-columns table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; font-weight:800; letter-spacing:1px; line-height:100%; padding:5px; text-align:left; text-transform:none; }
+.template-usergroup-groupprefs #portal-columns table tbody tr th {background:#d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Noto Sans', sans-serif; font-size:12px; font-weight:800; letter-spacing:1px; line-height:100%; padding:5px; text-align:left; text-transform:none; }
 .template-usergroup-userprefs #portal-columns table tbody tr td,
-.template-usergroup-groupprefs #portal-columns table tbody tr td {border:1px solid #e2ddd7; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:12px; letter-spacing:.4px; line-height:100%; padding:5px; text-transform:none; }
+.template-usergroup-groupprefs #portal-columns table tbody tr td {border:1px solid #e2ddd7; font-family:'Noto Sans', sans-serif; font-size:12px; letter-spacing:.4px; line-height:100%; padding:5px; text-transform:none; }
 
 #portal-columns table.invisible, #content table.invisible,
 #portal-columns table.invisible thead tr th, #content table.invisible thead tr th,
@@ -319,7 +319,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #archetypes-fieldname-description textarea#description {border:1px solid #bbb2aa; border-radius:1px; font-family: 'Roboto Slab', serif; font-size:22px; font-weight:300; line-height:30px; margin:10px 0 0; padding:12px 20px; }
 #content form .field .datagridwidget-cell input[type="text"] { padding: 0; }
 #portal-columns form .field.collapsible, #content form .field.collapsible {border:1px solid #e2ddd7; border-radius:2px; display:inline-block; margin:0 30px 0 0; padding:0; vertical-align:top; width:40%; }
-#portal-columns form .field.collapsible label.collapser, #content form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
+#portal-columns form .field.collapsible label.collapser, #content form .field.collapsible label.collapser {background:#f8f0e6; cursor:pointer; display:block; font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:700; line-height:19px; margin:0; padding:19px; text-align:center; }
 #portal-columns form .field.collapsible label.collapser.expanded, #content form .field.collapsible label.collapser.expanded  { }
 #portal-columns form .field.collapsible label.collapser:after,
 #content form .field.collapsible label.collapser:after {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:inline-block; height:8px; margin:0 0 0 20px; width:13px; }
@@ -333,7 +333,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns form fieldset .formControls input[type="button"],
 #portal-columns form fieldset .formControls input[type="submit"],
 #content form fieldset .formControls input[type="button"],
-#content form fieldset .formControls input[type="submit"] {background:#9b3a25; border:2px solid #9b3a25; border-radius:2px; color:#fff; cursor:pointer; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:13px; font-weight:bold; letter-spacing:.8px; line-height:42px; margin:0 15px 22px 0; padding:0 22px; text-align:center; text-transform:uppercase; }
+#content form fieldset .formControls input[type="submit"] {background:#9b3a25; border:2px solid #9b3a25; border-radius:2px; color:#fff; cursor:pointer; font-family:'Noto Sans', sans-serif; font-size:13px; font-weight:bold; letter-spacing:.8px; line-height:42px; margin:0 15px 22px 0; padding:0 22px; text-align:center; text-transform:uppercase; }
 #portal-columns form fieldset .formControls input[type="button"]:hover,
 #portal-columns form fieldset .formControls input[type="submit"]:hover,
 #portal-columns form fieldset .formControls input[type="button"]:focus,
@@ -373,7 +373,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul.navTree li.navTreeTopNode {margin-top: 0px;}
 #portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
 #portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
-#portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; }
+#portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; }
 #portal-columns ul.navTree li a.navTreeFolderish {text-decoration:none !important; }
 #portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
 #portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
@@ -451,7 +451,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 	background:#39302e; 
 	clear:both; 
 	color:#ececec; 
-	font-family:'Open Sans', Arial, Helvetica, sans-serif; 
+	font-family:'Noto Sans', sans-serif; 
 	font-size:15px; 
 	font-weight:500; 
 	overflow:auto; 
@@ -582,7 +582,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 #content table.fc-header,
 #content table.fc-header table,
 #content table.fc-header tbody tr td {border:none; padding:0; }
-.fc-state-default {border:1px solid #9b3a25; font-family:'Open Sans', Arial, Helvetica, sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; }
+.fc-state-default {border:1px solid #9b3a25; font-family:'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; }
 .fc-header .fc-state-default span {background:transparent; padding:15px 25px; }
 
 #portal-columns .fc-view table tbody .fc-divider th,
@@ -742,7 +742,7 @@ i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
 #content .ProfileInfo h1 {
 	margin-top: 0.75em;
 	color:#000;
-	font-family:'Open Sans', Arial, Helvetica, sans-serif;
+	font-family:'Noto Sans', sans-serif;
 	font-size:22px; font-weight:800;
 	letter-spacing:.7px;
 	line-height:100%;
@@ -750,7 +750,7 @@ i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
 }
 
 .ProfileTitles {
-	font-family:'Open Sans', Arial, Helvetica, sans-serif;
+	font-family:'Noto Sans', sans-serif;
 	line-height:100%;
 	margin-top:7px;
 }
@@ -789,7 +789,7 @@ i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
 	background-color: #d4b982;
 	border:1px solid #e2ddd7;
 	color:#fff;
-	font-family:'Open Sans', Arial, Helvetica, sans-serif;
+	font-family:'Noto Sans', sans-serif;
 	font-size:15px;
 	font-weight:800;
 	letter-spacing:1px;
@@ -842,7 +842,7 @@ h2.CVSectionTitle:before {
 #content .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:120%; margin:0 0 8px; }
 #portal-columns .event-listing .event-result .event-result-detail p.event-subtitle,
 #content .event-listing .event-result .event-result-detail p.event-subtitle {font-size: 18px; font-style: italic;}
-.template-event_view #content p.subtitle {font-family: Questrial, 'Nimbus Sans', Univers, Geneva, sans-serif; font-size: 22px; font-weight: 900; }
+.template-event_view #content p.subtitle {font-family: Questrial, 'Noto Sans', sans-serif; font-size: 22px; font-weight: 900; }
 #portal-columns .event-listing .event-result .event-result-detail .post-excerpt,
 #content .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
 .eventRsvp {float: right; margin: 0.25em 0 0 0.25em;}
@@ -1242,7 +1242,7 @@ h2.CVSectionTitle:before {
 }
 
 .ExhibitionChecklistBody {
-    font: 10px Arial, sans-serif;
+    font: 10px sans-serif;
 }
 
 .ExhibitionHighlightsView table td {
