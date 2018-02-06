@@ -36,6 +36,8 @@ FIELDS = ['artist',
           'copyright',
           'subjects',
           'pleiades_url',
+          'object_language',
+          'object_location'
           ]
 
 
