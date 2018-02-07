@@ -17,6 +17,8 @@ class IExhibitionObject(model.Schema):
     artist = schema.TextLine(title=_(u'Artist'),
                              required=False)
 
+    full_title = schema.TextLine(title=_(u'Full Title'), required=False)
+
     exhibition_context = schema.TextLine(title=_(u'Context'),
                                          required=False)
 

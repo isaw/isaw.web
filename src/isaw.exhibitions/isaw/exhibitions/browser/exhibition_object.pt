@@ -14,7 +14,11 @@
     </div>
     <div class="ExhibitObjectInfo">
       <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
-      <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
+      <dl class="ExhibitObjectTitle" tal:define="full context/full_title|nothing">
+        <dt>Title:</dt>
+        <dd tal:condition="full" tal:content="full">FULL</dd>
+        <dd tal:condition="not:full" tal:content="context/title">SHORT</dd>
+      </dl>
       <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Languge:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt><dd tal:content="context/medium">Medium</dd></dl>
       <dl class="ExhibitObjectSite" tal:condition="context/object_location|nothing"><dt>Location:</dt><dd tal:content="context/object_location">Object Location</dd></dl>
