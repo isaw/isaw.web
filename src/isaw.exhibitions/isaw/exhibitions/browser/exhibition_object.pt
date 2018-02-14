@@ -13,16 +13,15 @@
          tal:content="structure image">
     </div>
     <div class="ExhibitObjectInfo" tal:define="short context/title; full context/full_title|nothing; detail context/title_detail|nothing">
+      <div class="ExhibitObjectTitle">
+        <h2 tal:condition="full" tal:content="full">FULL</h2>
+        <h2 tal:condition="not:full" tal:content="short">SHORT</h2>
+      </div>
+      <dl class="ExhibitObjectTitleDetail" tal:condition="python:detail != full"><dt>Detail:</dt><dd tal:content="context/title_detail">Title Detail</dd></dl>
       <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
       <dl class="ExhibitObjectAuthor" tal:condition="context/author|nothing"><dt>Author:</dt><dd tal:content="context/author">Author</dd></dl>
       <dl class="ExhibitObjectCopyist" tal:condition="context/copyist|nothing"><dt>Copyist:</dt><dd tal:content="context/copyist">Copyist</dd></dl>
       <dl class="ExhibitObjectTranslator" tal:condition="context/translator|nothing"><dt>Translator:</dt><dd tal:content="context/translator">Translator</dd></dl>
-      <dl class="ExhibitObjectTitle">
-        <dt>Title:</dt>
-        <dd tal:condition="full" tal:content="full">FULL</dd>
-        <dd tal:condition="not:full" tal:content="short">SHORT</dd>
-      </dl>
-      <dl class="ExhibitObjectTitleDetail" tal:condition="python:detail != full"><dt>Detail:</dt><dd tal:content="context/title_detail">Title Detail</dd></dl>
       <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Languge:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt><dd tal:content="context/medium">Medium</dd></dl>
       <dl class="ExhibitObjectSite" tal:condition="context/object_location|nothing"><dt>Location:</dt><dd tal:content="context/object_location">Object Location</dd></dl>
