@@ -15,30 +15,32 @@ from plone.formwidget.geolocation import Geolocation
 from plone.namedfile.file import NamedBlobImage
 
 
-FIELDS = ['artist',
-          'title',
-          'description',
-          'exhibition_context',
+FIELDS = [
+          'artist',
+          'copyright',
+          'credits',
           'date',
-          'not_before',
-          'not_after',
+          'description',
           'dimensions',
+          'exhibition_context',
+          'full_title',
           'id',
+          'image',
           'inventory_num',
+          'label',
           'lender',
           'lender_link',
           'medium',
+          'not_after',
+          'not_before',
           'notes',
-          'image',
-          'text',
-          'label',
-          'credits',
-          'copyright',
-          'subjects',
-          'pleiades_url',
           'object_language',
           'object_location',
-          'full_title'
+          'pleiades_url',
+          'subjects',
+          'text',
+          'title',
+          'title_detail'
           ]
 
 
@@ -107,6 +109,7 @@ if __name__ == '__main__':
             continue
         fields = {}
         for field in FIELDS:
+            print('field: "{}"'.format(field))
             if field in values:
                 value = values[field]
                 if field == 'image':
