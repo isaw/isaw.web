@@ -17,7 +17,7 @@
         <h2 tal:condition="full" tal:content="full">FULL</h2>
         <h2 tal:condition="not:full" tal:content="short">SHORT</h2>
       </div>
-      <dl class="ExhibitObjectTitleDetail" tal:condition="python:detail != full"><dt>Detail:</dt><dd tal:content="context/title_detail">Title Detail</dd></dl>
+      <dl class="ExhibitObjectTitleDetail" tal:condition="python:detail != full"><dt>Description:</dt><dd tal:content="context/title_detail">Title Detail</dd></dl>
       <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
       <dl class="ExhibitObjectAuthor" tal:condition="context/author|nothing"><dt>Author:</dt><dd tal:content="context/author">Author</dd></dl>
       <dl class="ExhibitObjectCopyist" tal:condition="context/copyist|nothing"><dt>Copyist:</dt><dd tal:content="context/copyist">Copyist</dd></dl>
@@ -34,7 +34,14 @@
       <dl class="ExhibitObjectInventoryNum" tal:condition="context/inventory_num|nothing"><dt>Inventory Number:</dt><dd tal:content="context/inventory_num">Inventory Number</dd></dl>
       <dl class="ExhibitObjectLender" tal:condition="context/lender|nothing">
         <dt>Lender:</dt>
-        <dd><a href="" title="Lender" tal:attributes="href context/lender_link" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a></dd>
+        <dd><a href="" rel="external" title="Visit the website of the lender" tal:attributes="href context/lender_link" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a></dd>
+      </dl>
+      <dl class="ExhibitObjectDownload" tal:define="dlink context/download_link|nothing; dtext context/download_link_text|string:select link to download; dtype context/download_link_type|nothing" tal:condition="dlink">
+        <dt>Download:</dt>
+        <dd>
+          <a tal:condition="dtype" href="" title="Download the document" type="" rel="external" tal:attributes="href dlink; type dtype" tal:content="dtext">link text</a>
+          <a tal:condition="not:dtype" href="" title="Download the document" rel="external" tal:attributes="href dlink; type dtype" tal:content="dtext">link text</a>
+        </dd>
       </dl>
       <dl class="ExhibitObjectLabel"
           tal:define="text context/label/output|nothing"
