@@ -17,6 +17,8 @@ from plone.namedfile.file import NamedBlobImage
 
 FIELDS = [
           'artist',
+          'author',
+          'copyist',
           'copyright',
           'credits',
           'date',
@@ -40,7 +42,8 @@ FIELDS = [
           'subjects',
           'text',
           'title',
-          'title_detail'
+          'title_detail',
+          'translator'
           ]
 
 
@@ -109,7 +112,6 @@ if __name__ == '__main__':
             continue
         fields = {}
         for field in FIELDS:
-            print('field: "{}"'.format(field))
             if field in values:
                 value = values[field]
                 if field == 'image':
