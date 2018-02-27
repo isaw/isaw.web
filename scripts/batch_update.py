@@ -15,29 +15,38 @@ from plone.formwidget.geolocation import Geolocation
 from plone.namedfile.file import NamedBlobImage
 
 
-FIELDS = ['artist',
-          'title',
-          'description',
-          'exhibition_context',
+FIELDS = [
+          'artist',
+          'author',
+          'copyist',
+          'copyright',
+          'credits',
           'date',
-          'not_before',
-          'not_after',
+          'description',
+          'download_link',
+          'download_link_text',
+          'download_link_type',
           'dimensions',
+          'exhibition_context',
+          'full_title',
           'id',
+          'image',
           'inventory_num',
+          'label',
           'lender',
           'lender_link',
           'medium',
+          'not_after',
+          'not_before',
           'notes',
-          'image',
-          'text',
-          'label',
-          'credits',
-          'copyright',
-          'subjects',
-          'pleiades_url',
           'object_language',
-          'object_location'
+          'object_location',
+          'pleiades_url',
+          'subjects',
+          'text',
+          'title',
+          'title_detail',
+          'translator'
           ]
 
 

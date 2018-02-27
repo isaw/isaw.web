@@ -12,9 +12,16 @@
          tal:condition="nocall:image"
          tal:content="structure image">
     </div>
-    <div class="ExhibitObjectInfo">
+    <div class="ExhibitObjectInfo" tal:define="short context/title; full context/full_title|nothing; detail context/title_detail|nothing">
+      <div class="ExhibitObjectTitle">
+        <h2 tal:condition="full" tal:content="full">FULL</h2>
+        <h2 tal:condition="not:full" tal:content="short">SHORT</h2>
+      </div>
+      <dl class="ExhibitObjectTitleDetail" tal:condition="python:detail != full"><dt>Description:</dt><dd tal:content="context/title_detail">Title Detail</dd></dl>
       <dl class="ExhibitObjectArtist" tal:condition="context/artist|nothing"><dt>Artist:</dt><dd tal:content="context/artist">Artist</dd></dl>
-      <dl class="ExhibitObjectTitle"><dt>Title:</dt><dd tal:content="context/title">Title</dd></dl>
+      <dl class="ExhibitObjectAuthor" tal:condition="context/author|nothing"><dt>Author:</dt><dd tal:content="context/author">Author</dd></dl>
+      <dl class="ExhibitObjectCopyist" tal:condition="context/copyist|nothing"><dt>Copyist:</dt><dd tal:content="context/copyist">Copyist</dd></dl>
+      <dl class="ExhibitObjectTranslator" tal:condition="context/translator|nothing"><dt>Translator:</dt><dd tal:content="context/translator">Translator</dd></dl>
       <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Languge:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt><dd tal:content="context/medium">Medium</dd></dl>
       <dl class="ExhibitObjectSite" tal:condition="context/object_location|nothing"><dt>Location:</dt><dd tal:content="context/object_location">Object Location</dd></dl>
@@ -27,7 +34,14 @@
       <dl class="ExhibitObjectInventoryNum" tal:condition="context/inventory_num|nothing"><dt>Inventory Number:</dt><dd tal:content="context/inventory_num">Inventory Number</dd></dl>
       <dl class="ExhibitObjectLender" tal:condition="context/lender|nothing">
         <dt>Lender:</dt>
-        <dd><a href="" title="Lender" tal:attributes="href context/lender_link" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a></dd>
+        <dd><a href="" rel="external" title="Visit the website of the lender" tal:attributes="href context/lender_link" tal:omit-tag="not:context/lender_link" tal:content="context/lender">Lender</a></dd>
+      </dl>
+      <dl class="ExhibitObjectDownload" tal:define="dlink context/download_link|nothing; dtext context/download_link_text|string:select link to download; dtype context/download_link_type|nothing" tal:condition="dlink">
+        <dt>Download:</dt>
+        <dd>
+          <a tal:condition="dtype" href="" title="Download the document" type="" rel="external" tal:attributes="href dlink; type dtype" tal:content="dtext">link text</a>
+          <a tal:condition="not:dtype" href="" title="Download the document" rel="external" tal:attributes="href dlink; type dtype" tal:content="dtext">link text</a>
+        </dd>
       </dl>
       <dl class="ExhibitObjectLabel"
           tal:define="text context/label/output|nothing"
@@ -35,7 +49,7 @@
         <dt>Label:</dt>
         <dd tal:content="structure text">Rich Text Content</dd>
       </dl>
-      <div class="ExhibitObjectCredits discreet" tal:condition="context/credits|nothing" tal:content="context/credits">Credit Line</div>
+      <dl class="ExhibitObjectCredits" tal:condition="context/credits|nothing"><dt>Credit:</dt><dd tal:content="context/credits">Credit Line</dd></dl>
       <div class="ExhibitObjectCopyright discreet" tal:condition="context/copyright|nothing" tal:content="context/copyright">Copyright Notice</div>
     </div>
     <div class="ExhibitObjectText"
