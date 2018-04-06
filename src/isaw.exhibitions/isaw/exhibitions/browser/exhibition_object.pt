@@ -22,7 +22,7 @@
       <dl class="ExhibitObjectAuthor" tal:condition="context/author|nothing"><dt>Author:</dt><dd tal:content="context/author">Author</dd></dl>
       <dl class="ExhibitObjectCopyist" tal:condition="context/copyist|nothing"><dt>Copyist:</dt><dd tal:content="context/copyist">Copyist</dd></dl>
       <dl class="ExhibitObjectTranslator" tal:condition="context/translator|nothing"><dt>Translator:</dt><dd tal:content="context/translator">Translator</dd></dl>
-      <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Languge:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
+      <dl class="ExhibitObjectLanguage" tal:condition="context/object_language|nothing"><dt>Language:</dt><dd tal:content="context/object_language">Object Language</dd></dl>
       <dl class="ExhibitObjectMedium" tal:condition="context/medium|nothing"><dt>Medium:</dt><dd tal:content="context/medium">Medium</dd></dl>
       <dl class="ExhibitObjectSite" tal:condition="context/object_location|nothing"><dt>Location:</dt><dd tal:content="context/object_location">Object Location</dd></dl>
       <dl class="ExhibitObjectDimensions" tal:condition="context/dimensions|nothing" tal:define="medium context/medium">
