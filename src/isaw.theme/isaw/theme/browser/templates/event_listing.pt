@@ -88,10 +88,10 @@ $(document).ready(function () {
     <div class="buttons" tal:condition="items/has_next"
          tal:define="page_num items/nextpage;
                      page_url string:${context/absolute_url}?page=${page_num}">
-      <a href="#" class="button view-more" 
+      <a href="#" class="button view-more"
          tal:attributes="href page_url;
                          data-page page_num">View More</a>
-    </div> 
+    </div>
   </tal:block>
 
 </metal:block>
