@@ -9,36 +9,41 @@
 
 <metal:local-javascript fill-slot="javascript_head_slot">
 <script type="text/javascript">
+//# sourceURL=dynamicScript.js
 $(document).ready(function () {
-    $('body.template-tiled-listing').on('click', function (evt) {
-        var target, url, pageNum;
-        target = $(evt.target);
-        container = $('ul.news');
-        if (target.is('a.view-more')) {
-            evt.preventDefault();
-            url = target.attr('href');
-            url = url.split('?')[0];
-            url += '/@@tiled-listing-page'
-            pageNum = target.data('page');
-            $.get(url, {page: pageNum}).done(function (data) {
-                var container=$('ul.news'),
-                    items=$(data),
-                    nextBtn=$('a.button.view-more'),
-                    nextPageHelper, newNextPage;
-                items.appendTo(container);
-                nextPageHelper = container.children('div#page-helper');
-                if (nextPageHelper.length != 0) {
-                  newNextPage = nextPageHelper.data('nextpage');
-                  nextPageHelper.remove();
-                  nextBtn.data('page', newNextPage);
-                  nextBtn.attr('data-page', newNextPage);
-                } else {
-                  nextBtn.hide();
-                }
-            }).fail(function (xhr) {
-                alert('bar');
-            });
-        }
+    var $viewMore = $('.view-more'),
+        $newsContainer = $('ul.news');
+
+    $viewMore.on('click', function (evt) {
+        var $target = $(evt.target),
+            pageNum = $target.data('page'),
+            url;
+
+        evt.preventDefault();
+        url = $target.data('url');
+        url = url.split('?')[0];
+        url += '/@@tiled-listing-page';
+
+        $.get(url, {page: pageNum}).done(function (data) {
+            var items=$(data),
+                nextBtn=$('a.button.view-more'),
+                nextPageHelper,
+                newNextPage;
+
+            items.appendTo($newsContainer);
+            nextPageHelper = $newsContainer.children('div#page-helper');
+            if (nextPageHelper.length !== 0) {
+                newNextPage = nextPageHelper.data('nextpage');
+                nextPageHelper.remove();
+                nextBtn.data('page', newNextPage);
+                nextBtn.attr('data-page', newNextPage);
+            } else {
+                nextBtn.hide();
+            }
+        }).fail(function (xhr) {
+            alert('bar');
+        });
+
     });
 });
 </script>
@@ -79,6 +84,7 @@ $(document).ready(function () {
                      page_url string:${context/absolute_url}?page=${page_num}">
       <a href="#" class="button view-more"
          tal:attributes="href page_url;
+                         data-url page_url;
                          data-page page_num">View More</a>
     </div>
   </tal:block>
