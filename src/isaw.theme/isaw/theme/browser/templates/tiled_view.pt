@@ -26,7 +26,7 @@ $(document).ready(function () {
 
         $.get(url, {page: pageNum}).done(function (data) {
             var items=$(data),
-                nextBtn=$('a.button.view-more'),
+                nextBtn=$('button.button.view-more'),
                 nextPageHelper,
                 newNextPage;
 
@@ -82,10 +82,9 @@ $(document).ready(function () {
     <div class="buttons" tal:condition="items/has_next"
          tal:define="page_num items/nextpage;
                      page_url string:${context/absolute_url}?page=${page_num}">
-      <a href="#" class="button view-more"
-         tal:attributes="href page_url;
-                         data-url page_url;
-                         data-page page_num">View More</a>
+      <button class="button view-more" type="button"
+         tal:attributes="data-url page_url;
+                         data-page page_num">View More</button>
     </div>
   </tal:block>
 
