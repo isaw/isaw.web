@@ -9,7 +9,6 @@
 
 <metal:local-javascript fill-slot="javascript_head_slot">
 <script type="text/javascript">
-//# sourceURL=dynamicScript.js
 $(document).ready(function () {
     var $viewMore = $('.view-more'),
         $newsContainer = $('ul.news');

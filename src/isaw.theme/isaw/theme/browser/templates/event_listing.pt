@@ -10,35 +10,39 @@
 <metal:local-javascript fill-slot="javascript_head_slot">
 <script type="text/javascript">
 $(document).ready(function () {
-    $('body.template-event-listing').on('click', function (evt) {
-        var target, url, pageNum;
-        target = $(evt.target);
-        container = $('div.event-listing');
-        if (target.is('a.view-more')) {
-            evt.preventDefault();
-            url = target.attr('href');
-            url = url.split('?')[0];
-            url += '/@@event-listing-page'
-            pageNum = target.data('page');
-            $.get(url, {page: pageNum}).done(function (data) {
-                var container=$('div.event-listing'),
-                    items=$(data),
-                    nextBtn=$('a.button.view-more'),
-                    nextPageHelper, newNextPage;
-                items.appendTo(container);
-                nextPageHelper = container.children('div#page-helper');
-                if (nextPageHelper.length != 0) {
-                  newNextPage = nextPageHelper.data('nextpage');
-                  nextPageHelper.remove();
-                  nextBtn.data('page', newNextPage);
-                  nextBtn.attr('data-page', newNextPage);
-                } else {
-                  nextBtn.hide();
-                }
-            }).fail(function (xhr) {
-                alert('bar');
-            });
-        }
+    var $viewMore = $('.view-more'),
+        $eventContainer = $('div.event-listing');
+
+    $viewMore.on('click', function (evt) {
+        var $target = $(evt.target),
+            pageNum = $target.data('page'),
+            url;
+
+        evt.preventDefault();
+        url = $target.data('url');
+        url = url.split('?')[0];
+        url += '/@@event-listing-page';
+
+        $.get(url, {page: pageNum}).done(function (data) {
+            var items=$(data),
+                nextBtn=$('button.button.view-more'),
+                nextPageHelper,
+                newNextPage;
+
+            items.appendTo($eventContainer);
+            nextPageHelper = $eventContainer.children('div#page-helper');
+            if (nextPageHelper.length !== 0) {
+                newNextPage = nextPageHelper.data('nextpage');
+                nextPageHelper.remove();
+                nextBtn.data('page', newNextPage);
+                nextBtn.attr('data-page', newNextPage);
+            } else {
+                nextBtn.hide();
+            }
+        }).fail(function (xhr) {
+            alert('bar');
+        });
+
     });
 });
 </script>
@@ -88,9 +92,9 @@ $(document).ready(function () {
     <div class="buttons" tal:condition="items/has_next"
          tal:define="page_num items/nextpage;
                      page_url string:${context/absolute_url}?page=${page_num}">
-      <a href="#" class="button view-more"
-         tal:attributes="href page_url;
-                         data-page page_num">View More</a>
+      <button class="button view-more" type="button"
+         tal:attributes="data-url page_url;
+                         data-page page_num">View More</button>
     </div>
   </tal:block>
 
