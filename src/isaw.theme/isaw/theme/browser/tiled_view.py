@@ -93,7 +93,7 @@ class TiledListingView(BrowserView, TileDetailsMixin):
     implements(ITiledListingView)
     image_scale = 'blogtile'
     image_placeholder = '<div class="blogtile_placeholder">&nbsp;</div>'
-    batch_size = 2
+    batch_size = 9
     page = 1
 
     def __init__(self, request, context):
