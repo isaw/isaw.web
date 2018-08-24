@@ -25,7 +25,7 @@ class EventListingView(TiledListingView):
     implements(IEventListingView)
     image_scale = 'blogtile'
     image_placeholder = '<div class="blogtile_placeholder">&nbsp;</div>'
-    batch_size = 2
+    batch_size = 12
     page = 1
     no_results_message = '<p>There are no upcoming events.</p>'
 
