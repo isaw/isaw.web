@@ -19,9 +19,17 @@
             <action type="plone.actions.Mail">
                 <property name="subject">New ISAW file added</property>
                 <property name="exclude_actor">True</property>
-                <property name="message">${user_fullname} (${user_id}) uploaded a  new file ${title} at ${url}.
+                <property name="message">The following file has been uploaded on the website by ${user_fullname} (${user_id}). It needs to be checked for accessibility.
+
+Title: ${title}
+URL: ${url}
+Type: ${type}
+Creators: ${creators}
+Effective Date: ${effective}
+Description: ${description}
+Comment: ${change_comment}
                 </property>
-                <property name="recipients">${manager_emails}, ${reviewer_emails}</property>
+                <property name="recipients">isaw.it-group@nyu.edu, ${manager_emails}, ${reviewer_emails}</property>
             </action>
         </actions>
     </rule>
