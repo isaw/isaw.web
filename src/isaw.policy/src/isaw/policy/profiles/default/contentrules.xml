@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<contentrules>
+
+    <rule
+        name="email-for-new-files"
+        title="Email for new files"
+        description="Send email when new files are added"
+        event="zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        enabled="True"
+        stop-after="False">
+        <conditions>
+            <condition type="plone.conditions.PortalType">
+                <property name="check_types">
+                    <element>File</element>
+                </property>
+            </condition>
+        </conditions>
+        <actions>
+            <action type="plone.actions.Mail">
+                <property name="subject">New ISAW file added</property>
+                <property name="exclude_actor">True</property>
+                <property name="message">The following file has been uploaded on the website by ${user_fullname} (${user_id}). It needs to be checked for accessibility.
+
+Title: ${title}
+URL: ${url}
+Type: ${type}
+Creators: ${creators}
+Effective Date: ${effective}
+Description: ${description}
+Comment: ${change_comment}
+                </property>
+                <property name="recipients">isaw.it-group@nyu.edu, ${manager_emails}, ${reviewer_emails}</property>
+            </action>
+        </actions>
+    </rule>
+
+    <assignment
+        location="/"
+        name="email-for-new-files"
+        enabled="True"
+        bubbles="True"
+        />
+
+</contentrules>
