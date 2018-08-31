@@ -44,7 +44,11 @@ OS X Only
     $ brew install libxml2 libxslt libxmlsec1 openssl
 
 .. note:: Please note that with the exception of libxmlsec1 these are all keg-only.
-          Make note of the installation directory (It should be /usr/local/opt/<packagename>)
+          Make note of the installation directory (It should be /usr/local/Cellar/<packagename>)
+
+          Recent versions of Homebrew will add a version-specific subdirectory, and place
+          the "keg"'s /bin directory inside this subdirectory. You will need the full path
+          to the /bin directories in step 3 below, as in the example shown in that step.
 
 2. Create a virtual environment::
 
@@ -55,8 +59,12 @@ OS X Only
 3. Temporarily set your system PATH to include the installed packages' config
    binaries (**do not do this permanently**)::
 
-    $ export BASE=/usr/local/opt  # this is the install directory from step 1 above
-    $ export PATH=$BASE/libxml2/bin:$BASE/libxslt/bin:$BASE/libxmlsec1/bin:$PATH
+    $ export BASE=/usr/local/Cellar  # this is the install directory from step 1 above
+    $ export PATH=$BASE/libxml2/<version_dir>/bin:$BASE/libxslt/<version_dir>bin:$BASE/libxmlsec1/<version_dir>bin:$PATH
+
+    An example using version directories which may not match your own:
+
+    ``export PATH=$BASE/libxml2/2.9.7/bin:$BASE/libxslt/1.1.32/bin:$BASE/libxmlsec1/1.2.26/bin:$PATH``
 
 4. pip install the Python packages required::
 
@@ -83,7 +91,7 @@ Ubuntu) or skipped (on OS X).
 
 2. Delete the package::
 
-    $ rm /path/to/buildout/cache/lxml-2.3.6-py2.7-macosx-10.10-intel.egg
+    $ rm -rf /path/to/buildout/cache/lxml-2.3.6-py2.7-macosx-10.10-intel.egg
 
 3. Delete other artifacts to force full re-build::
 
