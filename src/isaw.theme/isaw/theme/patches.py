@@ -1,3 +1,5 @@
+from cgi import escape
+
 from Products.Archetypes.Field import ImageField
 from Products.PluginIndexes.UUIDIndex.UUIDIndex import UUIDIndex
 
