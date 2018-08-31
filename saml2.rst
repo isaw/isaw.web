@@ -50,9 +50,9 @@ OS X Only
           the "keg"'s /bin directory inside this subdirectory. You will need the full path
           to the /bin directories in step 3 below, as in the example shown in that step.
 
-2. Create a virtual environment::
+2. Create a virtual environment, specifying a current Python 2.7.x::
 
-    $ virtualenv saml2env
+    $ virtualenv --python /usr/local/bin/python2.7 saml2env
     $ cd saml2env
     $ bin/python -m pip install -U pip setuptools
 
@@ -65,6 +65,24 @@ OS X Only
     An example using version directories which may not match your own:
 
     ``export PATH=$BASE/libxml2/2.9.7/bin:$BASE/libxslt/1.1.32/bin:$BASE/libxmlsec1/1.2.26/bin:$PATH``
+
+4. Confirm that the necessary binaries are available in your PATH by running
+   the following commands::
+
+   $ xml2-config
+   Usage: xml2-config [OPTION]
+   ...
+
+   $ xslt-config
+   Usage: xslt-config [OPTION]...
+   ...
+
+   $ xmlsec1-config
+   Usage: xmlsec1-config [OPTION]...
+   ...
+
+   If any of these fail to echo a usage summary, then something is not right
+   with either your PATH or the installation of the system packages themselves.
 
 4. pip install the Python packages required::
 
@@ -100,14 +118,22 @@ Ubuntu) or skipped (on OS X).
 In all cases
 ------------
 
-Bootstrap the buildout::
+Bootstrap the buildout, specifying zc.buildout version 1.7.1::
 
-      OS X: $ /path/to/saml2env/bin/python bootstrap.py -c buildout.cfg
-    Ubuntu: $ python bootstrap.py -c buildout.cfg
+      OS X: $ /path/to/saml2env/bin/python bootstrap.py -v 1.7.1 -c buildout.cfg
+    Ubuntu: $ python bootstrap.py -v 1.7.1 -c buildout.cfg
 
 Run the buildout::
 
-    $ bin/buildout -c buildout.cfg
+    $ bin/buildout -v -c buildout.cfg
+
+You should see a confirmation in the logging output that lxml, pyxb, 
+dm.xmlsec.binding, and cssselect are treated as already installed::
+
+    ...
+    Egg from site-packages: dm.xmlsec.binding 1.3.2
+    Egg from site-packages: PyXB 1.2.5
+    ...
 
 
 Troubleshooting Setup
@@ -124,6 +150,7 @@ Next, attempt to import and initialize the ``dm.xmlsec.binding`` package:
 
     >>> import dm.xmlsec.binding as xmlsec
     >>> xmlsec.initialize()
+    >>>
 
 If you receive an error regarding missing Symbols from lxml.etree, then there
 is a problem with how lxml was built. It does not have access to the
