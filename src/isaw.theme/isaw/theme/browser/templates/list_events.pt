@@ -10,8 +10,11 @@
                 image_url string:${item_url}/@@images/image/blogtile;
                 title item/Title;
                 exerpt item/Description">
-      <img tal:condition="item/hasContentLeadImage"
-           tal:replace="structure item/contentLeadImageTag|string:" />
+      <a href="#" tal:attributes="href item_url"
+         tal:condition="item/hasContentLeadImage">
+        <img tal:attributes="src string:${item_url}/leadImage_mini;
+                             alt item/contentLeadImageAltText" />
+      </a>
       <a href="#" tal:attributes="href item_url"><h3 tal:content="item/Title">[title]</h3></a>
       <p tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
       <p tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
