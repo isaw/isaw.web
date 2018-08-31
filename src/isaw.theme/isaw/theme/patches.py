@@ -1,3 +1,4 @@
+from Products.Archetypes.Field import ImageField
 from Products.PluginIndexes.UUIDIndex.UUIDIndex import UUIDIndex
 
 
@@ -26,7 +27,7 @@ def _wcag_tag(self, instance, scale=None, height=None, width=None, alt=None,
     else:
         url += '/' + self.getName()
 
-    if alt is None:
+    if not alt:
         alt = instance.Title()
 
     values = {'src': url,
