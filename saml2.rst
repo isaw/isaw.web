@@ -69,24 +69,28 @@ OS X Only
 4. Confirm that the necessary binaries are available in your PATH by running
    the following commands::
 
-   $ xml2-config
-   Usage: xml2-config [OPTION]
-   ...
+    $ xml2-config
+    Usage: xml2-config [OPTION]
+    ...
 
-   $ xslt-config
-   Usage: xslt-config [OPTION]...
-   ...
+    $ xslt-config
+    Usage: xslt-config [OPTION]...
+    ...
 
-   $ xmlsec1-config
-   Usage: xmlsec1-config [OPTION]...
-   ...
+    $ xmlsec1-config
+    Usage: xmlsec1-config [OPTION]...
+    ...
 
    If any of these fail to echo a usage summary, then something is not right
    with either your PATH or the installation of the system packages themselves.
 
-4. pip install the Python packages required::
+5. pip install the Python packages required, specifying the versions used
+   in versions.cfg::
 
-    $ bin/python -m pip install lxml pyxb dm.xmlsec.binding cssselect
+    $ bin/pip install lxml==3.2.5
+    $ bin/pip install pyxb==1.2.5
+    $ bin/pip install dm.xmlsec.binding==1.3.2
+    $ bin/pip install cssselect==1.0.0
 
 All Systems
 ===========
@@ -127,8 +131,8 @@ Run the buildout::
 
     $ bin/buildout -v -c buildout.cfg
 
-You should see a confirmation in the logging output that lxml, pyxb, 
-dm.xmlsec.binding, and cssselect are treated as already installed::
+You should see a confirmation in the logging output that ``lxml``, ``pyxb``, 
+``dm.xmlsec.binding``, and ``cssselect`` are treated as already installed::
 
     ...
     Egg from site-packages: dm.xmlsec.binding 1.3.2
