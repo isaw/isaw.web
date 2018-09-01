@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="isaw.theme">
+
+  <adapter
+    provides="plone.outputfilters.interfaces.IFilter"
+    name="resolveuid_and_caption"
+    for="* *"
+    factory=".resolveuid_and_caption.WCAGResolveUIDAndCaptionFilter"
+    />
+
+</configure>
