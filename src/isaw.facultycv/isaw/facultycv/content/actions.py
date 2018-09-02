@@ -15,7 +15,8 @@ def initial_setup(obj, event):
 
     # Set the reference of the member to the CV
     if not memberdata.hasProperty("CVReference"):
-        memberdata.manage_addProperty(id="CVReference", value="", type="string")
+        memberdata.manage_addProperty(id="CVReference", value="",
+                                      type="string")
     obj.setProfileRef(uid)
     uri = obj.absolute_url()
 
@@ -38,9 +39,8 @@ def initial_setup(obj, event):
     memberID = obj.getMemberID()
     if memberID:
         linked_member = membertool.getMemberById(memberID)
-
-    if linked_member is not None:
-        linked_member.setMemberProperties({'ProfileReference': obj.UID()})
+        if linked_member is not None:
+            linked_member.setMemberProperties({'ProfileReference': obj.UID()})
 
 
 def profile_updated(obj, event):
