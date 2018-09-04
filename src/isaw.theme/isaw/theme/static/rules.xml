@@ -163,6 +163,7 @@
     <!-- addthis buttons are out -->
     <drop css:content="#socialtools" />
 
+    <drop content="//*[@accesskey='']" attributes="accesskey" />
+
   </rules>
-  
 </rules>
