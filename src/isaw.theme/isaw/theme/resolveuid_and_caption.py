@@ -71,7 +71,7 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
                     attrs = attributes.iteritems()
                 else:
                     # no caption, but we want same template
-                    self.handle_captioned_image(attributes, image, fullimage, '')
+                    self.handle_captioned_image(attributes, image)
                     return True
 
         # Add the tag to the result
@@ -82,3 +82,31 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
             self.append_data("<%s%s />" % (tag, strattrs))
         else:
             self.append_data("<%s%s>" % (tag, strattrs))
+
+    def handle_uncaptioned_image(self, attributes, image):
+        klass = attributes['class']
+        del attributes['class']
+        url = attributes['src']
+        del attributes['src']
+        tag = image.tag
+        width = image.width
+        options = {
+            'class': klass,
+            'originalwidth': attributes.get('width', None),
+            'originalalt': attributes.get('alt', None),
+            'url_path': url,
+            'caption': '',
+            'image': image,
+            'fullimage': None,
+            'tag': tag(**attributes),
+            'isfullsize': True,
+            'width': attributes.get('width', width),
+            }
+        if self.in_link:
+            # Must preserve original link, don't overwrite
+            # with a link to the image
+            options['isfullsize'] = True
+        captioned_html = self.captioned_image_template(**options)
+        if isinstance(captioned_html, unicode):
+            captioned_html = captioned_html.encode('utf8')
+        self.append_data(captioned_html)
