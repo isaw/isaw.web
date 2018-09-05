@@ -89,9 +89,9 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
             self.append_data("<%s%s>" % (tag, strattrs))
 
     def handle_uncaptioned_image(self, attributes):
-        klass = attributes['class']
-        url = attributes['src']
-        tag = attributes['tag']
+        klass = attributes.get('class', None)
+        url = attributes.get('src', None)
+        tag = attributes.get('tag', None)
         options = {
             'class': klass,
             'originalwidth': None,
