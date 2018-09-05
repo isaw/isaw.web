@@ -71,7 +71,12 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
                     attrs = attributes.iteritems()
                 else:
                     # no caption, but we want same template
-                    self.handle_uncaptioned_image(attributes, image)
+                    strattrs = "".join([' %s="%s"'
+                                        % (key, escape(value, quote=True))
+                                        for key, value in attrs])
+                    tag = "<%s%s />" % (tag, strattrs)
+                    attributes['tag'] = tag
+                    self.handle_uncaptioned_image(attributes)
                     return True
 
         # Add the tag to the result
