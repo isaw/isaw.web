@@ -88,29 +88,23 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
         else:
             self.append_data("<%s%s>" % (tag, strattrs))
 
-    def handle_uncaptioned_image(self, attributes, image):
+    def handle_uncaptioned_image(self, attributes):
         klass = attributes['class']
-        del attributes['class']
         url = attributes['src']
-        del attributes['src']
-        tag = image.tag
-        width = image.width
+        tag = attributes['tag']
         options = {
             'class': klass,
-            'originalwidth': attributes.get('width', None),
-            'originalalt': attributes.get('alt', None),
+            'originalwidth': None,
+            'originalalt': None,
             'url_path': url,
             'caption': '',
-            'image': image,
+            'image': None,
             'fullimage': None,
-            'tag': tag(**attributes),
+            'tag': tag,
             'isfullsize': True,
-            'width': attributes.get('width', width),
+            'width': attributes.get('width', None),
             }
-        if self.in_link:
-            # Must preserve original link, don't overwrite
-            # with a link to the image
-            options['isfullsize'] = True
+        options['isfullsize'] = True
         captioned_html = self.captioned_image_template(**options)
         if isinstance(captioned_html, unicode):
             captioned_html = captioned_html.encode('utf8')
