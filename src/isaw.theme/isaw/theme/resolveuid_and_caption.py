@@ -71,7 +71,7 @@ class WCAGResolveUIDAndCaptionFilter(ResolveUIDAndCaptionFilter):
                     attrs = attributes.iteritems()
                 else:
                     # no caption, but we want same template
-                    self.handle_captioned_image(attributes, image)
+                    self.handle_uncaptioned_image(attributes, image)
                     return True
 
         # Add the tag to the result
