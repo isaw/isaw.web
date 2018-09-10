@@ -12,6 +12,10 @@
 
   <includeDependencies package="." />
 
+  <!-- These two need to be included explicitly for some reason: -->
+  <include package="Products.CMFPlacefulWorkflow" />
+  <include package="plone.app.iterate" />
+
   <include file="profile.zcml" />
   <!-- -*- extra stuff goes here -*- -->
 

@@ -13,6 +13,15 @@
   <include package=".portlets" />
   <i18n:registerTranslations directory="locales" />
 
+  <permission
+      id="isaw.facultycv.AddProfile"
+      title="isaw.facultycv: Add profile"
+      />
+
+  <permission
+      id="isaw.facultycv.AddCV"
+      title="isaw.facultycv: Add CV"
+      />
 
   <utility
     name="isaw.facultycv.Users"
