@@ -25,6 +25,12 @@
       provides="archetypes.schemaextender.interfaces.ISchemaExtender"
       />
 
+  <adapter
+      name="isaw.policy.news_extender"
+      factory=".news_extender.NewsItemExtender"
+      provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+      />
+
   <browser:viewlet
       name="isaw.opengraph.metadata"
       template="metadata.pt"
