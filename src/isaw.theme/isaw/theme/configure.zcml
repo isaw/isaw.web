@@ -6,6 +6,8 @@
     i18n_domain="isaw.theme">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <includeDependencies package="." />
+  
   <include package=".browser" />
   <include package=".portlets" />
   <include file="skins.zcml" />
