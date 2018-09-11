@@ -19,7 +19,7 @@
            id="parent-fieldname-image">
            <img class="newsImage"
                 tal:attributes="src string:${here_url}/@@images/image/preview;
-                                alt python:ctxt.getField('image_alt').get(ctxt) or False" src="" alt="" />
+                                alt python:ctxt.getField('image_alt').get(ctxt)" src="" alt="" />
         </a>
         <p class="discreet" tal:define="caption ctxt/getImageCaption|nothing"
            tal:condition="caption">
