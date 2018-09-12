@@ -1,12 +1,9 @@
 import unittest2 as unittest
-
 from Products.CMFCore.utils import getToolByName
-
-from isaw.policy.testing import \
-    ISAW_POLICY_INTEGRATION_TESTING
+from isaw.policy.testing import ISAW_POLICY_INTEGRATION_TESTING
 
 
-class TestExample(unittest.TestCase):
+class TestInstallation(unittest.TestCase):
 
     layer = ISAW_POLICY_INTEGRATION_TESTING
 

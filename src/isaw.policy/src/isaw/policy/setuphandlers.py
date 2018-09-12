@@ -207,3 +207,32 @@ def setup_portal_transforms(context):
     make_config_persistent(tconfig)
     trans._p_changed = True
     trans.reload()
+
+
+def add_saml_authority_object(context):
+    from dm.zope.saml2.authority import SamlAuthority
+    portal = getToolByName(context, 'portal_url').getPortalObject()
+    portal_url = portal.absolute_url()
+    # XXX Trying to make an ID related to the instance somehow:
+    service_provider_id = portal_url.split('//')[1].replace('/', '.') + '.isaw-saml-entity'
+    authority = SamlAuthority(
+        title='SAML2 Authority',
+        entity_id=service_provider_id,
+        base_url=portal_url
+    )
+    authority.id = "saml2auth"
+    portal._setObject(authority.id, authority)
+    authority = portal._getOb(authority.id)
+
+    return authority
+
+
+def add_spsso_plugin(context):
+    from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
+    acl_users = getToolByName(context, 'acl_users')
+    plugin = IntegratedSimpleSpssoPlugin(title='SAML2 Service Provider Plugin')
+    plugin.id = 'saml2sp'
+    acl_users._setObject(plugin.id, plugin)
+    plugin = acl_users._getOb(plugin.id)
+
+    return plugin
