@@ -227,6 +227,18 @@ def add_saml_authority_object(context):
     return authority
 
 
+def add_attribute_consuming_service_to(sso_plugin):
+    from dm.zope.saml2.attribute import AttributeConsumingService
+    service = AttributeConsumingService(
+        title="SAML2 Attribute Consuming Service"
+    )
+    service.id = 'saml2sp-attribute-service'
+    sso_plugin._setObject(service.id, service)
+    service = sso_plugin._getOb(service.id)
+
+    return service
+
+
 def add_spsso_plugin(context):
     from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
     acl_users = getToolByName(context, 'acl_users')
@@ -234,5 +246,6 @@ def add_spsso_plugin(context):
     plugin.id = 'saml2sp'
     acl_users._setObject(plugin.id, plugin)
     plugin = acl_users._getOb(plugin.id)
+    add_attribute_consuming_service_to(plugin)
 
     return plugin

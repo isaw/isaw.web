@@ -20,3 +20,7 @@ class TestSAML2Setup(unittest.TestCase):
     def test_spsso_plugin_added_to_acl_users(self):
         add_spsso_plugin(self.portal)
         self.assertTrue('saml2sp' in self.portal.acl_users)
+
+    def test_spsso_plugin_has_attribute_consuming_service(self):
+        plugin = add_spsso_plugin(self.portal)
+        self.assertTrue('saml2sp-attribute-service' in plugin)
