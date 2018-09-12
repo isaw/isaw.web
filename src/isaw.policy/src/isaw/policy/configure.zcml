@@ -106,6 +106,14 @@
       allowed_attributes="checkin_allowed checkout_allowed cancel_allowed"
       />
 
+  <browser:page
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      name="setup-saml2"
+      class=".browser.SetupSAML2"
+      permission="cmf.ManagePortal"
+      layer="isaw.policy.interfaces.IISAWPolicyLayer"
+      />
+
   <!-- Register types that have lead images as supporting cropping -->
   <configure zcml:condition="installed plone.app.imagecropping">
     <class class="Products.ATContentTypes.content.topic.ATTopic">

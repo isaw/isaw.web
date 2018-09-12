@@ -2,6 +2,7 @@ import unittest2 as unittest
 from isaw.policy.testing import ISAW_POLICY_INTEGRATION_TESTING
 from isaw.policy.setuphandlers import add_saml_authority_object
 from isaw.policy.setuphandlers import add_spsso_plugin_and_its_children
+from isaw.policy.setuphandlers import setup_saml2
 
 
 class TestSAML2Setup(unittest.TestCase):
@@ -30,3 +31,6 @@ class TestSAML2Setup(unittest.TestCase):
         self.assertTrue('sn' in service)
         self.assertTrue('givenName' in service)
         self.assertTrue('eduPersonPrincipalName' in service)
+
+    def test_top_level_runner(self):
+        self.assertTrue(setup_saml2(self.portal))
