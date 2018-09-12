@@ -275,6 +275,7 @@ BrowserDialog.prototype.init = function () {
         jq('#addimage_panel h2', document).text(this.labels.label_addnewimage);
         jq('#plonebrowser', document).removeClass('link-browser').addClass('image-browser');
         jq('#linktarget', document).hide();
+        jq('#link-title', document).hide();
 
         // setup panel buttons acions
         jq('#email_link, #anchor_link', document).hide();

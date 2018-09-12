@@ -15,7 +15,7 @@
 #addimage_panel .field { margin-bottom: 10px; }
 #addimage_panel #uploadtitle { height: 20px; margin-bottom: 2px;}
 #addimage_panel #uploaddescription { padding-left: 4px; }
-#details_panel div.radioscrolllist { height: 388px; padding: 4px; }
+#details_panel div.radioscrolllist { height: 568px; padding: 4px; }
 #details_panel div.radioscrolllist #titledetails { overflow: hidden; text-overflow: ellipsis; white-space:nowrap; }
 #details_panel div.radioscrolllist #targetlist { width: 100%; }
 #details_panel div.radioscrolllist #cssstyle,
@@ -29,7 +29,7 @@
 #description { border: 1px solid #CCC; }
 #uploadbutton { margin-top: 10px; }
 #previewimagecontainer { text-align: center; }
-#internallinkcontainer { width: 100%; height: 370px; position: relative; }
+#internallinkcontainer { width: 100%; height: 550px; position: relative; }
 #internallinkcontainer div.item:hover { cursor: pointer; background-color: #EEE; }
 #internallinkcontainer .thumbnail.folderish a { color: #000; border: none!important; display: block; text-align: center; }
 #internallinkcontainer .list span { margin-left: 0.5em; }
