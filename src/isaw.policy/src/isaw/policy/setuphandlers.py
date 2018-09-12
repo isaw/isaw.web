@@ -3,6 +3,9 @@ from Acquisition import aq_parent, aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 from Products.PortalTransforms.Transform import make_config_persistent
+from dm.zope.saml2.attribute import AttributeConsumingService
+from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
+from dm.zope.saml2.attribute import RequestedAttribute
 
 
 def install_addons(context):
@@ -13,6 +16,7 @@ def install_addons(context):
         qi.installProduct('Products.PloneKeywordManager')
     if not qi.isProductInstalled('Products.RedirectionTool'):
         qi.installProduct('Products.RedirectionTool')
+
 
 def copy_generic_fields(event):
     event_object = event.getObject()
@@ -227,8 +231,41 @@ def add_saml_authority_object(context):
     return authority
 
 
+def add_saml_requested_attribute_to(attribute_service, id, title):
+    attribute = RequestedAttribute(title=title, format='uri', type='string')
+    attribute.id = id
+    attribute_service._setObject(attribute.id, attribute)
+    attribute = attribute_service._getOb(attribute.id)
+
+    return attribute
+
+
+def add_saml_requested_attributes_to(attribute_service):
+    attributes = []
+    todo = [
+        {
+            'id': 'sn',
+            'title': 'urn:oid:2.5.4.4',
+        },
+        {
+            'id': 'givenName',
+            'title': 'urn:oid:2.5.4.42',
+        },
+        {
+            'id': 'eduPersonPrincipalName',
+            'title': 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6',
+        },
+    ]
+    for item in todo:
+        attribute = add_saml_requested_attribute_to(
+            attribute_service, id=item['id'], title=item['title']
+        )
+        attributes.append(attribute)
+
+    return attributes
+
+
 def add_attribute_consuming_service_to(sso_plugin):
-    from dm.zope.saml2.attribute import AttributeConsumingService
     service = AttributeConsumingService(
         title="SAML2 Attribute Consuming Service"
     )
@@ -239,13 +276,13 @@ def add_attribute_consuming_service_to(sso_plugin):
     return service
 
 
-def add_spsso_plugin(context):
-    from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
+def add_spsso_plugin_and_its_children(context):
     acl_users = getToolByName(context, 'acl_users')
     plugin = IntegratedSimpleSpssoPlugin(title='SAML2 Service Provider Plugin')
     plugin.id = 'saml2sp'
     acl_users._setObject(plugin.id, plugin)
     plugin = acl_users._getOb(plugin.id)
-    add_attribute_consuming_service_to(plugin)
+    service = add_attribute_consuming_service_to(plugin)
+    add_saml_requested_attributes_to(service)
 
     return plugin
