@@ -373,4 +373,14 @@
       import_steps="propertiestool"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="11"
+      source="36"
+      destination="37"
+      title="Install SAML2 auth components"
+      description=""
+      profile="isaw.policy:default"
+      handler=".setuphandlers.setup_saml2"
+      />
+
 </configure>
