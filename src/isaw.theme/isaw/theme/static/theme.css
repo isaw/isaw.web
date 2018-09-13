@@ -598,9 +598,7 @@ body.template-newsitem_view .newsImageContainer p.discreet {width: 95%; font-sty
 
 /* events */
 .section-events #content div.newsImageContainer {
-	margin: -55px 10px 5px 10px;
-	position: relative;
-	z-index: -1;
+	margin: 0 0 5px 10px;
 	width: 200px;
 	overflow: hidden;
 }
