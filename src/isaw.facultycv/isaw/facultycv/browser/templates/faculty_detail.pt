@@ -20,23 +20,27 @@
              tal:define="person_email context/Email|nothing;
                          person_url context/absolute_url;
                          has_image python:getattr(context, 'Image', False);
-                         image_url string:${person_url}/@@images/Image/mini;">
+                         image_url string:${person_url}/@@images/Image/mini;
+                         email context/getEmail|nothing;
+                         phone context/getPhone|nothing;
+                         address context/getAddress|nothing">
             <div class="ProfileHeader">
                 <div class="ProfileImage" tal:condition="has_image">
                     <img src="" tal:attributes="src image_url" />
                 </div>
                 <div class="ProfileInfo">
                     <h1 class="ProfileName" tal:content="context/Title">Name</h1>
-                    <div class="ProfileTitles" tal:content="structure context/getTitles" />
-        
-                    <div class="ProfileContact">
-                        <a tal:attributes="href string:mailto:${context/getEmail}" tal:content="string:${context/Email}">Email</a>
-                        <span class="phone" tal:content="string:${context/getPhone}">Phone</span>
-                        <span class="address" tal:content="string:${context/getAddress}">Address</span>
+                    <div class="ProfileTitles" tal:condition="context/getTitles|nothing"
+                         tal:content="structure context/getTitles" />
+
+                    <div class="ProfileContact" tal:condition="python:email or phone or address">
+                        <a tal:condition="email" tal:attributes="href string:mailto:${email}" tal:content="string:${email}">Email</a>
+                        <span tal:condition="phone" class="phone" tal:content="string:${phone}">Phone</span>
+                        <span tal:condition="address" class="address" tal:content="string:${address}">Address</span>
                     </div>
                 </div>
             </div>
-            <ul class="ProfileLinks">
+            <ul class="ProfileLinks" tal:condition="context/profile_links|nothing">
                 <li tal:repeat="link context/profile_links">
                     <a href="#"
                        tal:attributes="href link/link; class link/icon;
@@ -45,8 +49,11 @@
                     </a>
                 </li>
             </ul>
-       
-            <div class="ProfileBlurb" tal:content="structure context/getProfile Blurb">Blurb</div>
+
+            <div class="ProfileBlurb"
+                 tal:define="blurb python:context.getField('Profile Blurb').get(context)"
+                 tal:condition="blurb"
+                 tal:content="structure blurb">Blurb</div>
         </div>
 
         <div class="CVInfo" tal:define="cv nocall:context/cv|nothing"
