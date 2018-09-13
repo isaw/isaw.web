@@ -1134,6 +1134,7 @@ BrowserDialog.prototype.displayPanel = function(panel, upload_allowed) {
         }
         jq('#browseimage_panel', document).removeClass('hide').addClass('row');
         jq('#insert-selection', document).attr('disabled','disabled');
+        jq('#insert-selection', document).hide();
         jq('#upload', document).removeClass('hide');
     } else {
         jq('#browseimage_panel', document).removeClass('row').addClass('hide');
@@ -1149,6 +1150,7 @@ BrowserDialog.prototype.displayPanel = function(panel, upload_allowed) {
             jq('#details-fields', document).append(jq('#common-link-fields', document).removeClass('hide'));
         }
         jq('#insert-selection', document).removeAttr('disabled');
+        jq('#insert-selection', document).show();
     } else {
         jq('#details_panel', document).addClass('hide');
     }
