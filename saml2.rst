@@ -150,7 +150,7 @@ installation of dm.xmlsec.binding. Start by firing up the ``zopepy`` interpreter
 
 Next, attempt to import and initialize the ``dm.xmlsec.binding`` package:
 
-.. code-block:: pycon
+.. code-block:: python
 
     >>> import dm.xmlsec.binding as xmlsec
     >>> xmlsec.initialize()
@@ -177,7 +177,13 @@ There are a few additional notes for this first step in the plugin documentation
 
 1. Despite the note that no certificate or key are required for setting up a
    Service Provider, the NYU IdP would like very much for there to be one
-   present. Please note that the certificate **must** be in DER format.
+   present. The .pem component of the certificate can be extracted from
+   /conf/shibboleth_metadata.xml, and then adding ``-----BEGIN CERTIFICATE-----``
+   and ``-----END CERTIFICATE-----`` lines before and after.
+   See the final part of the inspected certificate output
+   `here <https://wiki.shibboleth.net/confluence/display/CONCEPT/SAMLKeysAndCertificates>`_
+   for an example of how this should look.
+
    Instructions on determining the format of a certificate using ``openssl``
    `can be found here <https://support.ssl.com/Knowledgebase/Article/View/19/0/der-vs-crt-vs-cer-vs-pem-certificates-and-how-to-convert-them>`_.
 
