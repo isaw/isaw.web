@@ -1,5 +1,5 @@
 <span tal:attributes="class options/class; style string:display: block;; width:${options/width}px;;;">
-  <span><a tal:omit-tag="options/isfullsize" rel="lightbox"
+  <span><a rel="lightbox"
           tal:attributes="href options/url_path;"
           tal:content="structure options/tag">[image goes here]</a></span>
   <span class="image-caption"

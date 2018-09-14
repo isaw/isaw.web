@@ -151,7 +151,7 @@
                      </div>
 
                      <div class="field">
-                             <label for="uploaddescription" i18n:domain="plone.tinymce" i18n:translate="">Alt Text</label>
+                             <label for="uploaddescription" i18n:domain="plone.tinymce" i18n:translate="">Description</label>
                              <div class="widget">
                                 <textarea wrap="soft" cols="10" rows="6" id="uploaddescription" name="uploaddescription"></textarea>
                              </div>
