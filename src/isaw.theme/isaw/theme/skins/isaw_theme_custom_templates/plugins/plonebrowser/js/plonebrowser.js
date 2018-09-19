@@ -1115,6 +1115,7 @@ BrowserDialog.prototype.displayPanel = function(panel, upload_allowed) {
         jq('#external_panel', document).removeClass('hide');
         // move the common link fileds to appropriate location
         jq('#external-column', document).append(jq('#common-link-fields', document).removeClass('hide'));
+        jq('#insert-selection', document).show();
         jq('#insert-selection', document).removeAttr('disabled');
     } else {
         jq('#external_panel', document).addClass('hide');
