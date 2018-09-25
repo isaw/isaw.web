@@ -56,12 +56,11 @@
     
     <!-- Body -->
     <merge attributes="class" css:theme="body" css:content="body" />
-      
 
     <!-- Logo Text/Link -->
     <copy css:theme="#site-title a"
           css:content="a#portal-logo"
-          attributes="href accesskey title"/>
+          attributes="href accesskey"/>
     <replace css:theme-children="#site-title a">
       <xsl:value-of select="//a[@id='portal-logo']/@title" />
     </replace>
@@ -163,7 +162,10 @@
     <!-- addthis buttons are out -->
     <drop css:content="#socialtools" />
 
+    <!-- drop bad accessibility elements -->
     <drop content="//*[@accesskey='']" attributes="accesskey" />
+    <drop content="//a[@title]" attributes="title" />
+    <drop content="//img[@title]" attributes="title" />
 
   </rules>
 </rules>
