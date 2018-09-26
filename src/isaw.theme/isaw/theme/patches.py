@@ -1,8 +1,13 @@
 from cgi import escape
+from xml.sax.saxutils import quoteattr
 
 from OFS.Image import Image
 from Products.Archetypes.Field import ImageField
 from Products.PluginIndexes.UUIDIndex.UUIDIndex import UUIDIndex
+from plone.namedfile.scaling import ImageScale
+
+
+_marker = object()
 
 
 def allow_not_uuid():
@@ -95,3 +100,42 @@ def _wcag_ofs_tag(self, height=None, width=None, alt=None,
 
 def ofs_img_tag_no_title():
     Image.tag = _wcag_ofs_tag
+
+
+def _wcag_named_file_image_tag(self, height=_marker, width=_marker, alt=_marker,
+        css_class=None, title=_marker, **kwargs):
+    """Create a tag including scale
+    """
+    if height is _marker:
+        height = getattr(self, 'height', self.data._height)
+    if width is _marker:
+        width = getattr(self, 'width', self.data._width)
+
+    if alt is _marker:
+        alt = getattr(self.context, 'alt', '')
+
+    values = [
+        ('src', self.url),
+        ('alt', alt),
+        ('height', height),
+        ('width', width),
+        ('class', css_class),
+    ]
+    values.extend(kwargs.items())
+
+    parts = ['<img']
+    for k, v in values:
+        if v is None:
+            continue
+        if isinstance(v, int):
+            v = str(v)
+        elif isinstance(v, str):
+            v = unicode(v, 'utf8')
+        parts.append(u'{0}={1}'.format(k, quoteattr(v)))
+    parts.append('/>')
+
+    return u' '.join(parts)
+
+
+def named_file_image_tag():
+    ImageScale.tag =  _wcag_named_file_image_tag

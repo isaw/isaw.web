@@ -4,6 +4,8 @@ from plone.namedfile import field as namedfile
 from plone.supermodel import model
 from zope import schema
 from zope.interface import Interface
+from zope.interface import Invalid
+from zope.interface import invariant
 from isaw.exhibitions import exhibitionsMessageFactory as _
 
 
@@ -29,6 +31,7 @@ class IExhibitionObject(model.Schema):
     dimensions = schema.TextLine(title=_(u'Dimensions'), required=False)
     exhibition_context = schema.TextLine(title=_(u'Context'), required=False)
     image = namedfile.NamedBlobImage(title=_(u'Lead Image'), required=False)
+    alt = schema.TextLine(title=_(u'Alt Text'), required=False)
     inventory_num = schema.TextLine(title=_(u'Inventory Number'), required=True)
     lender = schema.TextLine(title=_(u'Lender'), required=False)
     lender_link = schema.URI(title=_(u'Lender Link'), required=False)
@@ -42,3 +45,8 @@ class IExhibitionObject(model.Schema):
     dexteritytextindexer.searchable('text')
     text = RichText(title=_(u'Body'), required=False)
     label = RichText(title=_(u'Label'), required=False)
+
+    @invariant
+    def alt_text_invariant(data):
+        if data.image and not data.alt:
+            raise Invalid(_(u'Alt text is required for images'))
