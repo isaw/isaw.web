@@ -25,12 +25,12 @@
                 <img src="" tal:condition="has_image" tal:attributes="src image_url"/>
                 <span tal:condition="not:has_image">&nbsp;</span>
               </span>
-              <div class="facultyInfo">
-                  <h2 tal:content="person/Title">Roger Bagnall</h2>
-                <div tal:content="structure person/Titles" class="facultyPosition">Director</div>
-                <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
-              </div>
+              <h2 tal:content="person/Title">Roger Bagnall</h2>
             </a>
+            <div class="facultyInfo">
+              <div tal:content="structure person/Titles" class="facultyPosition">Director</div>
+              <div tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</div>
+            </div>
           </tal:foo>
         </div>
         

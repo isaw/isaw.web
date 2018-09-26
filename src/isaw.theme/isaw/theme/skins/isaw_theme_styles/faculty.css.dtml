@@ -64,17 +64,9 @@
     *position: relative;
 }
 
-.facultyInfo h2 {
+.facultyListing h2 {
     line-height: 1em !important;
     margin: 0 !important;
-}
-
-#people .facultyListing a:hover {
-    text-decoration: none;
-}
-
-#people .facultyListing a:hover h2 {
-    text-decoration: underline;
 }
 
 #content .facultyListing p {
@@ -88,7 +80,6 @@
 
 .facultyPosition {
     color: #757575;
-    font-weight: bold;
 }
 
 .alignBottom {
