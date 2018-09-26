@@ -22,7 +22,7 @@
                            ">
             <a tal:attributes="href person_url">
               <span class="facultyImage">
-                <img src="" tal:condition="has_image" tal:attributes="src image_url"/>
+                <img src="" alt="" tal:condition="has_image" tal:attributes="src image_url"/>
                 <span tal:condition="not:has_image">&nbsp;</span>
               </span>
             </a>

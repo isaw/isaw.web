@@ -56,12 +56,11 @@
     
     <!-- Body -->
     <merge attributes="class" css:theme="body" css:content="body" />
-      
 
     <!-- Logo Text/Link -->
     <copy css:theme="#site-title a"
           css:content="a#portal-logo"
-          attributes="href accesskey title"/>
+          attributes="href accesskey"/>
     <replace css:theme-children="#site-title a">
       <xsl:value-of select="//a[@id='portal-logo']/@title" />
     </replace>
@@ -75,10 +74,6 @@
 
     <replace css:theme="#portal-searchbox"
              css:content="#portal-searchbox" />
-
-    <replace css:theme-children="#portal-top h2.section-title">
-      <xsl:value-of select="$section" />
-    </replace>
 
     <replace css:content-children="#footer-support-link">
       <xsl:attribute name="href">
@@ -163,7 +158,11 @@
     <!-- addthis buttons are out -->
     <drop css:content="#socialtools" />
 
+    <!-- drop bad accessibility elements -->
     <drop content="//*[@accesskey='']" attributes="accesskey" />
+    <drop content="//a[@title]" attributes="title" />
+    <drop content="//img[@title]" attributes="title" />
+    <drop css:content="#portal-advanced-search" />
 
   </rules>
 </rules>

@@ -16,32 +16,26 @@
           <tal:faculty>
         
             <div class="facultyListing" tal:repeat="faculty people">
-              <tal:foo define="person_id faculty/id;
+              <tal:facultyMember define="person_id faculty/id;
                              person_path python:getattr(faculty, person_id);
                              person_image python:getattr(person_path, 'profileImage');
                              person_email faculty/Email|nothing">
                 <div class="facultyImage" 
                     tal:condition="person_image">
-                    <a tal:attributes="href string:${faculty/getURL}">
-                      <img tal:define="no_image string:portal_url/images/default-person;
-                                       image_url string:${faculty/getURL}/Image;"
-                                       tal:attributes="src image_url | no_image"/></a></div>
-
-<!--
-            <img tal:define="no_image string:portal_url/images/default-person;
-                             person_id faculty/id;
-                             person_path python:getattr(faculty, person_id);
-                             person_image python:getattr(person_path, 'profileImage')"
-                 tal:condition="not:person_image"
-                 tal:attributes="src no_image"/>
--->
+                  <a tal:attributes="href string:${faculty/getURL}">
+                    <img alt=""
+                         tal:define="no_image string:portal_url/images/default-person;
+                                     image_url string:${faculty/getURL}/Image;"
+                         tal:attributes="src image_url | no_image"/>
+                  </a>
+                </div>
 
                 <div class="facultyInfo">
                   <a tal:attributes="href string:${faculty/getURL}"><h2 tal:content=faculty/Title>Roger Bagnall</h2></a>
                     <div tal:content="structure faculty/Titles" class="facultyPosition">Director</div>
                     <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
                 </div>
-              </tal:foo>
+              </tal:facultyMember>
             </div>
             
        </tal:faculty>

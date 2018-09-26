@@ -26,7 +26,7 @@
                          address context/getAddress|nothing">
             <div class="ProfileHeader">
                 <div class="ProfileImage" tal:condition="has_image">
-                    <img src="" tal:attributes="src image_url" />
+                    <img src="" alt="" tal:attributes="src image_url" />
                 </div>
                 <div class="ProfileInfo">
                     <h1 class="ProfileName" tal:content="context/Title">Name</h1>
