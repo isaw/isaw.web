@@ -104,6 +104,9 @@
         </p>
     </metal:empty>
 
+    <script type="text/javascript">
+      $('.ExhibitionEntryImage img').attr('alt', '');
+    </script>
     <script tal:attributes="src string:${navigation_root_url}/++resource++exhibitions/salvattore.min.js">
     </script>
 
