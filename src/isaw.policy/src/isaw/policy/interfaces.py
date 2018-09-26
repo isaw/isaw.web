@@ -1,4 +1,6 @@
 from zope.interface import Interface
+from zope.interface import Invalid
+from zope.interface import invariant
 from zope.schema import List, Text, TextLine, Tuple, URI
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from isaw.bibitems.interfaces import IBibliographicItem
@@ -120,6 +122,12 @@ class IISAWPublication(form.Schema):
         required=False,
     )
 
+    alt = TextLine(
+        title=_(u'label_leadimage_alt', default=u'Lead Image Alt Text'),
+        description=_(u'help_leadimage_alt', default=u''),
+        required=False,
+    )
+
     image_caption = TextLine(
         title=_(u'label_leadimage_caption', default=u'Lead Image Caption'),
         description=_(u'help_leadimage_caption', default=u''),
@@ -142,6 +150,11 @@ class IISAWPublication(form.Schema):
         output_mime_type='text/x-html-safe',
         required=False,
     )
+
+    @invariant
+    def alt_text_invariant(data):
+        if data.image and not data.alt:
+            raise Invalid(_(u'Alt text is required for images'))
 
 
 class PublicationAddForm(add.DefaultAddForm):
