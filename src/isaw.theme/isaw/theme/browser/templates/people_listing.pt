@@ -31,7 +31,7 @@
                 <a tal:attributes="href person_url"
                    tal:content="person/Title">Roger Bagnall</a>
               </h2>
-              <p tal:content="structure person/Titles" class="facultyPosition">Director</p>
+              <div tal:content="structure person/Titles" class="facultyPosition">Director</div>
               <p tal:condition="person_email" tal:content="person_email" class="facultyEmail">roger.bagnall@nyu.edu</p>
             </div>
           </tal:foo>
