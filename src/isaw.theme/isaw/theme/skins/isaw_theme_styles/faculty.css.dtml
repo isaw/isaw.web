@@ -69,6 +69,14 @@
     margin: 0 !important;
 }
 
+#people .facultyListing a:hover {
+    text-decoration: none;
+}
+
+#people .facultyListing a:hover h2 {
+    text-decoration: underline;
+}
+
 #content .facultyListing p {
     margin: 0;
 }
