@@ -64,7 +64,7 @@
     *position: relative;
 }
 
-.facultyInfo h2 {
+.facultyListing h2 {
     line-height: 1em !important;
     margin: 0 !important;
 }
@@ -80,7 +80,6 @@
 
 .facultyPosition {
     color: #757575;
-    font-weight: bold;
 }
 
 .alignBottom {
