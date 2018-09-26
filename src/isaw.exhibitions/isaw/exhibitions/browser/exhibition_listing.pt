@@ -74,22 +74,18 @@
 
                 <div class="ExhibitionEntry" tal:condition="not:item/exclude_from_nav">
 
+                  <a href="#" tal:attributes="href item_url">
                     <div class="ExhibitionEntryImage">
-                          <a href="#"
-                             title="title"
-                             tal:attributes="href item_url;
-                                             title item_title_or_id">
-                            <img tal:condition="nocall:item_image"
-                                 tal:replace="structure item_object/@@images/image/large"/>
-                            <img tal:condition="python:item_image is None"
-                                 tal:attributes="src string:${navigation_root_url}/mosaic_default.png"/>
-                          </a>
+                      <img tal:condition="nocall:item_image"
+                           tal:replace="structure item_object/@@images/image/large"/>
+                      <img alt=""
+                           tal:condition="python:item_image is None"
+                           tal:attributes="src string:${navigation_root_url}/mosaic_default.png"/>
                     </div>
                     <div class="ExhibitionEntrySummary">
-                      <a tal:attributes="href item_url">
                         <h3 tal:content="item_title_or_id">Title</h3>
-                      </a>
                     </div>
+                  </a>
 
                 </div>
 
@@ -108,6 +104,9 @@
         </p>
     </metal:empty>
 
+    <script type="text/javascript">
+      $('.ExhibitionEntryImage img').attr('alt', '');
+    </script>
     <script tal:attributes="src string:${navigation_root_url}/++resource++exhibitions/salvattore.min.js">
     </script>
 
