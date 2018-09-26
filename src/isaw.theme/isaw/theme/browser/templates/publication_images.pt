@@ -17,14 +17,15 @@
            <img tal:attributes="src string:${image/absolute_url}/image_thumb;
                                 ref string:${image/absolute_url}/image;
                                 caption image/Description;
-                                title image/title" />
+                                alt image/Description" />
          </a>
       </div>
     </div>
 
     <div class="PublicationBody" tal:define="first_image python:view.images[0]">
       <img class="publication-image-view"
-           tal:attributes="src string:${first_image/absolute_url}/image" />
+           tal:attributes="src string:${first_image/absolute_url}/image;
+                           alt first_image/Description" />
       <h3 class="publication-image-caption"
           tal:content="first_image/Description" />
     </div>
@@ -32,6 +33,7 @@
     <script type="text/javascript">
       $('.publication-image-preview').on('click', function() {
         $('.publication-image-view').attr('src', $(this).find('img').attr('ref'));
+        $('.publication-image-view').attr('alt', $(this).find('img').attr('alt'));
         $('.publication-image-caption').text($(this).find('img').attr('caption'));
         return false;
       });
