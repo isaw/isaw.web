@@ -2,6 +2,8 @@ import unittest2 as unittest
 from Products.CMFCore.utils import getToolByName
 from isaw.policy.testing import ISAW_POLICY_INTEGRATION_TESTING
 
+from isaw.policy import config
+
 
 class TestInstallation(unittest.TestCase):
 
@@ -20,3 +22,9 @@ class TestInstallation(unittest.TestCase):
         installed = [p['id'] for p in self.qi_tool.listInstalledProducts()]
         self.assertTrue(pid in installed,
                         'package appears not to have been installed')
+
+    def testIS_PRODUCTION_globalIsFalseInTests(self):
+        self.assertFalse(
+            config.IS_PRODUCTION,
+            'We should not think we are running in production!'
+        )
