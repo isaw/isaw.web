@@ -9,18 +9,16 @@
 ##parameters=
 
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import transaction_note
 
 request = context.REQUEST
 
 mt = getToolByName(context, 'portal_membership')
+ssoView = context.restrictedTraverse('@@sso_view')
+
 mt.logoutUser(request)
-
-from Products.CMFPlone.utils import transaction_note
-transaction_note('Logged out')
-
 # After logging out of Plone, redirect to the NYU logout page.
-# Elected *not* to store this value in external_logout_url site property,
-# as this isn't exactly what that property is intended for.
-dev_nyu_logout_url = 'https://shibbolethqa.es.its.nyu.edu/idp/profile/Logout'
-request.response.redirect(dev_nyu_logout_url)
+ssoView.logout()
+
+transaction_note('Logged out')
 return
