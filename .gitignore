@@ -8,6 +8,11 @@ __pycache__/
 # Distribution / packaging
 .Python
 bin/
+lib/
+setup-base/
+setup-prod/
+include/
+scripts/images
 build/
 cache/
 dist/

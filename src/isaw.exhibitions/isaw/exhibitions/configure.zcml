@@ -42,4 +42,11 @@
       title="Add Masonry js"
       import_steps="jsregistry" />
 
+  <genericsetup:upgradeDepends
+      profile="isaw.exhibitions:default"
+      source="4"
+      destination="5"
+      title="Add versioning and iterate support"
+      import_steps="typeinfo repositorytool" />
+
 </configure>

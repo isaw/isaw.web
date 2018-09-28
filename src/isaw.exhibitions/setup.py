@@ -58,6 +58,11 @@ setup(name='isaw.exhibitions',
                         # -*- Extra requirements: -*-
                         'plone.app.dexterity[grok]',
                         'collective.dexteritytextindexer',
+                        # Enable references, versioning, and iterate
+                        'plone.app.relationfield',
+                        'plone.app.referenceablebehavior',
+                        'plone.app.versioningbehavior',
+                        'plone.app.stagingbehavior',
                         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
