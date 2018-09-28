@@ -46,23 +46,18 @@ a {transition: all 0.5s ease; }
 
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
-#portal-top h1 {
-	/* background-image: url(_images/logo-nyu.svg);
-	background-origin: content-box;
-	background-position: top left;
-	background-repeat: no-repeat; */
-	display:block;
-	height: 109px;
-	left:47px;
-	margin:0;
-	padding: 9px;
-	position:absolute;
-	z-index:3;
+#portal-top a {
+    display: block;
 }
-#portal-top h1 a {
+#portal-top h1, #site-title, #page-site-title {
 	/* background-image: url(_images/title-isaw.svg); */
+	position:absolute;
+	left:47px;
+	z-index:3;
 	display:block;
-	height:78px;
+	padding: 9px;
+	margin:0;
+	height: 109px;
 	text-align:left;
 	/* text-indent:-10000px; */
 	width:350px;
@@ -81,10 +76,7 @@ a {transition: all 0.5s ease; }
  } 
 #portal-top h1 a:hover,
 #portal-top h1 a:focus {opacity: 0.8;}
-#portal-top .identity {display:block; height:179px; left:0px; position:absolute; top:0; width:47px; z-index:6; background-color: #fff;}
-#portal-top .identity a {background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px;  }
-#portal-top .identity a:hover,
-#portal-top .identity a:focus {opacity: 0.9;}
+#portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
 #portal-top h3.trigger {display:none; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
