@@ -17,6 +17,12 @@ class TestSAML2Setup(unittest.TestCase):
         add_saml_authority_object(self.portal)
         self.assertTrue('saml2auth' in self.portal)
 
+    def test_saml_authority_pem_and_der_certs_set(self):
+        authority = add_saml_authority_object(self.portal)
+        import pdb; pdb.set_trace()
+        self.assertEqual(authority.certificate, '../../conf/isaw-staging.der')
+        self.assertEqual(authority.private_key, '../../conf/isaw-staging.pem')
+
     def test_spsso_plugin_added_to_acl_users(self):
         add_spsso_plugin_and_its_children(self.portal)
         self.assertTrue('saml2sp' in self.portal.acl_users)

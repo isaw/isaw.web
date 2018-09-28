@@ -7,6 +7,7 @@ from dm.zope.saml2.attribute import AttributeConsumingService
 from dm.zope.saml2.attribute import RequestedAttribute
 from dm.zope.saml2.authority import SamlAuthority
 from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
+from isaw.policy import config
 
 
 def install_addons(context):
@@ -213,15 +214,19 @@ def setup_portal_transforms(context):
     trans._p_changed = True
     trans.reload()
 
+
 def add_saml_authority_object(context):
     portal = getToolByName(context, 'portal_url').getPortalObject()
     portal_url = portal.absolute_url()
     # XXX Trying to make an ID related to the instance somehow:
     service_provider_id = portal_url.split('//')[1].replace('/', '.') + '.isaw-saml-entity'
+
     authority = SamlAuthority(
         title='SAML2 Authority',
         entity_id=service_provider_id,
-        base_url=portal_url
+        base_url=portal_url,
+        certificate=config.SAML_CERT_PATH,
+        private_key=config.SAML_PRIVATE_KEY_PATH
     )
     authority.id = "saml2auth"
     portal._setObject(authority.id, authority)
