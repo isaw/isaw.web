@@ -66,6 +66,10 @@
     </replace>
     
     <!-- Header -->
+    <replace css:content-children="li#siteaction-search">
+      <button aria-label="search toggle">Search</button>
+    </replace>
+
     <replace css:theme-children="#main-navigation #secondary"
              css:content-children="#portal-siteactions" />
 
