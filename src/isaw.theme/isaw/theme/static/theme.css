@@ -1307,6 +1307,16 @@ div.leaflet-control-geosearch.leaflet-control {
     display: none;
 }
 
+#search-events label {
+	padding-left: 0.33em;
+	font-weight: normal;
+	vertical-align: middle;
+}
+
+#search-events input {
+	vertical-align: middle;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
