@@ -49,7 +49,7 @@ a {transition: all 0.5s ease; }
 #portal-top a {
     display: block;
 }
-#portal-top h1, #site-title, #page-site-title {
+#site-title, #page-site-title {
 	/* background-image: url(_images/title-isaw.svg); */
 	position:absolute;
 	left:47px;
@@ -60,7 +60,6 @@ a {transition: all 0.5s ease; }
 	height: 109px;
 	text-align:left;
 	/* text-indent:-10000px; */
-	width:350px;
     /* background-repeat: no-repeat;
     background-size: 100%; */
     margin-top: 49px;
@@ -74,8 +73,8 @@ a {transition: all 0.5s ease; }
     font-size: 24px;
     line-height: 30px;
  } 
-#portal-top h1 a:hover,
-#portal-top h1 a:focus {opacity: 0.8;}
+#site-title a:hover, #page-site-title a:hover,
+#site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
 #portal-top div.trigger {display:none; }
 #portal-top #main-navigation { }
@@ -986,7 +985,7 @@ h2.CVSectionTitle:before {
 
 @media screen and (max-width:1120px){
 /*	#portal-top .identity {left:0; } */
-	#portal-top h1 {left:46px; }
+	#site-title, #page-site-title {left:46px; }
 	#portal-top #main-navigation ul#primary li a {font-size:12px; padding:0 20px; }
 	#portal-top #main-navigation ul#secondary:before,
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
@@ -1009,13 +1008,13 @@ h2.CVSectionTitle:before {
 	}
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
-	#portal-top h1 {
+	#site-title, #page-site-title {
 		height:52px; 
 		left:34px; 
 		top:0; 
 		width:188px;
 		padding: 6px 0; }
-	#portal-top h1 a {
+	#site-title, #page-site-title {
 		background-size:contain; 
 		height:52px; 
 		width:188px; 
@@ -1311,7 +1310,7 @@ div.leaflet-control-geosearch.leaflet-control {
 }
 
 @media screen and (max-width:319px){
-	#portal-top h1 {display:none; }
+	#site-title, #page-site-title {display:none; }
 	#portal-top .identity {left:20px; }
 }
 
