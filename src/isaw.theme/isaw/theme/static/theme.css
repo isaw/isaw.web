@@ -29,8 +29,8 @@ body {color:#231f20; margin:0;}
 label.collapser:after,
 input,
 .cycle-pager span,
-h3.trigger:before,
-h3.trigger:after,
+div.trigger:before,
+div.trigger:after,
 button.button,
 a:before,
 a:after,
@@ -46,26 +46,21 @@ a {transition: all 0.5s ease; }
 
 #portal-top {display:block; min-height:127px; position:relative; }
 #portal-top:before {background:rgba(156,131,80,.87); bottom:0; content:""; display:block; left:0; position:absolute; right:0; top:0; z-index:1; }
-#portal-top h1 {
-	/* background-image: url(_images/logo-nyu.svg);
-	background-origin: content-box;
-	background-position: top left;
-	background-repeat: no-repeat; */
-	display:block;
-	height: 109px;
-	left:47px;
-	margin:0;
-	padding: 9px;
-	position:absolute;
-	z-index:3;
+#portal-top a {
+    display: block;
 }
-#portal-top h1 a {
+#site-title, #page-site-title {
 	/* background-image: url(_images/title-isaw.svg); */
+	position:absolute;
+	left:47px;
+	z-index:3;
 	display:block;
-	height:78px;
+	padding: 9px;
+	margin:0;
+	height: 109px;
 	text-align:left;
 	/* text-indent:-10000px; */
-	width:350px;
+    width:350px;
     /* background-repeat: no-repeat;
     background-size: 100%; */
     margin-top: 49px;
@@ -79,13 +74,10 @@ a {transition: all 0.5s ease; }
     font-size: 24px;
     line-height: 30px;
  } 
-#portal-top h1 a:hover,
-#portal-top h1 a:focus {opacity: 0.8;}
-#portal-top .identity {display:block; height:179px; left:0px; position:absolute; top:0; width:47px; z-index:6; background-color: #fff;}
-#portal-top .identity a {background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px;  }
-#portal-top .identity a:hover,
-#portal-top .identity a:focus {opacity: 0.9;}
-#portal-top h3.trigger {display:none; }
+#site-title a:hover, #page-site-title a:hover,
+#site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
+#portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
+#portal-top div.trigger {display:none; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
@@ -995,7 +987,7 @@ h2.CVSectionTitle:before {
 
 @media screen and (max-width:1120px){
 /*	#portal-top .identity {left:0; } */
-	#portal-top h1 {left:46px; }
+	#site-title, #page-site-title {left:46px; }
 	#portal-top #main-navigation ul#primary li a {font-size:12px; padding:0 20px; }
 	#portal-top #main-navigation ul#secondary:before,
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
@@ -1018,13 +1010,13 @@ h2.CVSectionTitle:before {
 	}
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
-	#portal-top h1 {
+	#site-title, #page-site-title {
 		height:52px; 
 		left:34px; 
 		top:0; 
 		width:188px;
 		padding: 6px 0; }
-	#portal-top h1 a {
+	#site-title, #page-site-title {
 		background-size:contain; 
 		height:52px; 
 		width:188px; 
@@ -1036,11 +1028,11 @@ h2.CVSectionTitle:before {
 	#portal-top .identity,
 	#portal-top .identity a {height:91px; width:24px; }
 	#portal-top .page-title {display:none; }
-	#portal-top h3.trigger {cursor:pointer; display:block; height:52px; margin:0; position:absolute; right:0; text-indent:-10000px; top:0; width:83px; }
-	#portal-top h3.trigger:before {background:url('_images/trigger-menu.png') center center / 61px no-repeat transparent; content:""; display:block; height:52px; left:0; position:absolute; top:0; width:83px; }	
-	#portal-top h3.trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }	
-	#portal-top h3.trigger.open:before {opacity:0; visibility:hidden; }	
-	#portal-top h3.trigger.open:after {opacity:1; visibility:visible; }
+	#portal-top div.trigger {cursor:pointer; display:block; height:52px; margin:0; position:absolute; right:0; text-indent:-10000px; top:0; width:83px; }
+	#portal-top div.trigger:before {background:url('_images/trigger-menu.png') center center / 61px no-repeat transparent; content:""; display:block; height:52px; left:0; position:absolute; top:0; width:83px; }	
+	#portal-top div.trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }	
+	#portal-top div.trigger.open:before {opacity:0; visibility:hidden; }	
+	#portal-top div.trigger.open:after {opacity:1; visibility:visible; }
 	
 	#portal-top #main-navigation {display:none; position:absolute; right:0; top:52px; width:320px; }
 	#portal-top #main-navigation.open {display:block; z-index: 2000; }
@@ -1330,7 +1322,7 @@ div.leaflet-control-geosearch.leaflet-control {
 }
 
 @media screen and (max-width:319px){
-	#portal-top h1 {display:none; }
+	#site-title, #page-site-title {display:none; }
 	#portal-top .identity {left:20px; }
 }
 

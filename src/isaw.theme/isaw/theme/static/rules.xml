@@ -58,10 +58,15 @@
     <merge attributes="class" css:theme="body" css:content="body" />
 
     <!-- Logo Text/Link -->
-    <copy css:theme="#site-title a"
-          css:content="a#portal-logo"
+    <drop css:theme="#page-site-title" css:if-content=".section-isaw-home" />
+    <drop css:theme="#site-title" css:if-not-content=".section-isaw-home" />
+    <copy css:theme="#portal-top a"
+          css:content-childen="a#portal-logo"
           attributes="href accesskey"/>
-    <replace css:theme-children="#site-title a">
+    <replace css:theme-children="#site-title">
+      <xsl:value-of select="//a[@id='portal-logo']/@title" />
+    </replace>
+    <replace css:theme-children="#page-site-title">
       <xsl:value-of select="//a[@id='portal-logo']/@title" />
     </replace>
     
