@@ -5,9 +5,12 @@
     <p>
       <input name="SearchableText" type="text" size="18" title="Search events..." class="searchField inputLabel" tal:attributes="value request/SearchableText|string:"><input class="searchButton" type="submit" value="Search">
       <br />
-      <input id="event-searchall-no" name="SearchAll" type="radio" value="no" tal:attributes="checked python:request.get('SearchAll') != 'yes'"><label for="event-searchall-no">Search only future events</label>
-      <br />
-      <input id="event-searchall-yes" name="SearchAll" type="radio" value="yes" tal:attributes="checked python:request.get('SearchAll') == 'yes'"><label for="event-searchall-yes">Search all events</label>
+      <fieldset>
+        <legend>When</legend>
+        <input id="event-searchall-no" name="SearchAll" type="radio" value="no" tal:attributes="checked python:request.get('SearchAll') != 'yes'"><label for="event-searchall-no">Search only future events</label>
+        <br />
+        <input id="event-searchall-yes" name="SearchAll" type="radio" value="yes" tal:attributes="checked python:request.get('SearchAll') == 'yes'"><label for="event-searchall-yes">Search all events</label>
+      </fieldset>
     </p>
   </form>
 </div>
