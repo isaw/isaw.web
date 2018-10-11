@@ -1,5 +1,5 @@
 <div id="search-events" tal:condition="view/is_event_listing">
-  <form aria-label="event search">
+  <form aria-label="event search" role="search">
     <h5>Search Events:</h5>
     <br />
     <div>
