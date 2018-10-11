@@ -236,6 +236,11 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns form fieldset legend, #content form fieldset legend,
 #portal-columns p.intro, #content p.intro,
 #portal-columns .documentDescription, #content .documentDescription {font-family: 'Noto Sans', sans-serif; font-size:30px; font-weight:300; letter-spacing:.1px; line-height:120%; margin:20px 0; }
+#portal-columns #search-events { border: 1px solid #231f20 }
+#portal-columns #search-events > form { margin: 1em }
+#portal-columns #search-events > form fieldset { padding: 0px }
+#portal-columns #search-events > form fieldset > legend { font-size: 16px; padding: 0; margin: 0; }
+#portal-columns #search-events > form fieldset > legend::after { content: ":" }
 #portal-columns h5, #content h5,
 #plone-document-byline {font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:700; letter-spacing:.1px; line-height:100%; text-transform:uppercase; }
 #portal-columns h6, #content h6 {font-family: 'Noto Sans', sans-serif;; font-size:16px; font-weight:700; letter-spacing:.1px; line-height:120%; }
