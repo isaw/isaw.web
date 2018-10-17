@@ -229,7 +229,8 @@ def add_saml_authority_object(context):
         private_key=config.SAML_PRIVATE_KEY_PATH
     )
     authority.id = "saml2auth"
-    portal._setObject(authority.id, authority)
+    if authority.id not in portal:
+        portal._setObject(authority.id, authority)
     authority = portal._getOb(authority.id)
 
     return authority
@@ -242,7 +243,8 @@ def add_saml_requested_attribute_to(attribute_service, id, title):
         type='string'
     )
     attribute.id = id
-    attribute_service._setObject(attribute.id, attribute)
+    if attribute.id not in attribute_service:
+        attribute_service._setObject(attribute.id, attribute)
     attribute = attribute_service._getOb(attribute.id)
 
     return attribute
@@ -278,7 +280,8 @@ def add_attribute_consuming_service_to(sso_plugin):
         title="SAML2 Attribute Consuming Service"
     )
     service.id = 'saml2sp-attribute-service'
-    sso_plugin._setObject(service.id, service)
+    if service.id not in sso_plugin:
+        sso_plugin._setObject(service.id, service)
     service = sso_plugin._getOb(service.id)
 
     return service
@@ -288,7 +291,8 @@ def add_spsso_plugin_and_its_children(context):
     acl_users = getToolByName(context, 'acl_users')
     plugin = IntegratedSimpleSpssoPlugin(title='SAML2 Service Provider Plugin')
     plugin.id = 'saml2sp'
-    acl_users._setObject(plugin.id, plugin)
+    if plugin.id not in acl_users:
+        acl_users._setObject(plugin.id, plugin)
     plugin = acl_users._getOb(plugin.id)
     service = add_attribute_consuming_service_to(plugin)
     add_saml_requested_attributes_to(service)

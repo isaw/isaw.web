@@ -19,7 +19,6 @@ class TestSAML2Setup(unittest.TestCase):
 
     def test_saml_authority_pem_and_der_certs_set(self):
         authority = add_saml_authority_object(self.portal)
-        import pdb; pdb.set_trace()
         self.assertEqual(authority.certificate, '../../conf/isaw-staging.der')
         self.assertEqual(authority.private_key, '../../conf/isaw-staging.pem')
 
@@ -39,4 +38,8 @@ class TestSAML2Setup(unittest.TestCase):
         self.assertTrue('eduPersonPrincipalName' in service)
 
     def test_top_level_runner(self):
+        self.assertTrue(setup_saml2(self.portal))
+
+    def test_top_level_runner_idempotent(self):
+        self.assertTrue(setup_saml2(self.portal))
         self.assertTrue(setup_saml2(self.portal))
