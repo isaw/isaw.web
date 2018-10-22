@@ -353,5 +353,14 @@
       import_steps="contentrules"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="34"
+      destination="35"
+      title="Fix caching settings to use FieldRefs"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="plone.app.registry"
+      />
 
 </configure>

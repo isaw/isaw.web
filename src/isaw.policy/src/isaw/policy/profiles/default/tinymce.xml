@@ -69,7 +69,7 @@
    <toolbar_search value="True"/>
    <toolbar_attribs value="True"/>
    <toolbar_pagebreak value="True"/>
-   <toolbar_external value="True"/>
+   <toolbar_external value="False"/>
    <toolbar_cleanup value="True"/>
    <toolbar_media value="True"/>
  </toolbar>
