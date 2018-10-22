@@ -50,7 +50,6 @@ a {transition: all 0.5s ease; }
     display: block;
 }
 #site-title, #page-site-title {
-	/* background-image: url(_images/title-isaw.svg); */
 	position:absolute;
 	left:47px;
 	z-index:3;
@@ -58,10 +57,7 @@ a {transition: all 0.5s ease; }
 	padding: 9px;
 	margin:0;
 	text-align:left;
-	/* text-indent:-10000px; */
     width:350px;
-    /* background-repeat: no-repeat;
-    background-size: 100%; */
     margin-top: 49px;
     font-family: Questrial, 'Noto Sans', sans-serif;
     font-weight: 800;
@@ -72,7 +68,7 @@ a {transition: all 0.5s ease; }
     color: black;
     font-size: 24px;
     line-height: 30px;
- } 
+} 
 #site-title a:hover, #page-site-title a:hover,
 #site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
