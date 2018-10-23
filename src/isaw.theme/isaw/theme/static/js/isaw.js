@@ -1,7 +1,7 @@
 /*global google:true, jQuery:true, L:true*/
 jQuery(function($) {
     var L = window.L || {Icon: {Default: {}}};
-	$('div.trigger').click(function(){
+	$('button.trigger').click(function(){
 		$(this).toggleClass('open');
 		$('#main-navigation').toggleClass('open');
 	});
@@ -38,7 +38,7 @@ jQuery(function($) {
     $('#secondary #siteaction-search button').click(function(e){
 	   $('#portal-searchbox').slideToggle();
     });
-    
+
     /* close aliens invaded message */
     $('#emergency-message .close').click(function() {
         var date = new Date();
@@ -47,7 +47,7 @@ jQuery(function($) {
         document.cookie = "isaw-emergency-read=yes"+expires+"; path=/";
         $(this).parent().hide();
     });
-    
+
     var $location_edit = $('.googleMapEdit, .geolocation_wrapper.edit');
     var $pleiades_url = $('input#form-widgets-IGeolocationBehavior-pleiades_url, input#form-widgets-pleiades_url, input#pleiadesUrl');
     if ($location_edit.length) {
