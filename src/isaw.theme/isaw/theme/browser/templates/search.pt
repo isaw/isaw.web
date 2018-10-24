@@ -28,6 +28,7 @@
   <div id="content-core" metal:fill-slot="main">
 
     <form name="searchform"
+          role="search"
           aria-label="site search"
           action="@@search"
           class="searchPage enableAutoFocus"
