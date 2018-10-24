@@ -259,7 +259,7 @@
                 <div class="visualClear"><!-- --></div>
 
                 <metal:searchresults define-macro="search_results">
-                    <div id="search-results"
+                    <div id="search-results" role="region" aria-live="polite"
                          tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;">
 
                         <metal:noresults tal:condition="not: batch">
