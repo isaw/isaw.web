@@ -3,6 +3,7 @@
      tal:define="navigation_root_url view/navigation_root_url;
                  search_input_id view/search_input_id;">
     <form name="searchform"
+          role="search"
           action="search"
           tal:attributes="action string:${navigation_root_url}/@@search">
 

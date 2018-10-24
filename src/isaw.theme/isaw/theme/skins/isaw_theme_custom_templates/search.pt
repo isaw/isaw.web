@@ -41,6 +41,7 @@
                  searchterm request/SearchableText|nothing;">
     <div id="content-core">
         <form name="searchform"
+              role="search"
               action="search"
               class="searchPage"
               tal:condition="not:is_advanced_search">
