@@ -350,7 +350,7 @@ BrowserDialog.prototype.init = function () {
                 scaled_image = this.parseImageScale(selected_node.attr("src"));
 
                 // Update the dimensions <select> with the corresponding value.
-                jq('#dimensions', document).val(scaled_image.scale);
+                jq('#dimensions', document).data('selectedScale', scaled_image.scale);
 
                 if (scaled_image.url.indexOf('resolveuid/') > -1) {
                     /** Handle UID linked image **/
@@ -724,7 +724,7 @@ BrowserDialog.prototype.setDetails = function (url) {
         'url': url + '/tinymce-jsondetails',
         'dataType': 'json',
         'success': function (data) {
-            var dimension = jq('#dimensions', document).val(),
+            var dimension = jq('#dimensions', document).data('selectedScale'),
                 dimensions,
                 i;
 
