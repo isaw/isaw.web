@@ -52,8 +52,9 @@ jQuery(function($) {
         $dialog.find('input:visible, button:visible, a:visible').first().focus();
 
         // Re-focus on animation end
-        $dialog.bind('oanimationend animationend webkitAnimationEnd', function() {
+        $dialog.bind('oanimationend animationend webkitAnimationEnd', function(e) {
             $dialog.find('input:visible, button:visible, a:visible').first().focus();
+            $(this).unbind(e);
          });
 
          // Set state
