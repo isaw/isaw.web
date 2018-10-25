@@ -1,10 +1,6 @@
 /*global google:true, jQuery:true, L:true*/
 jQuery(function($) {
     var L = window.L || {Icon: {Default: {}}};
-	$('button.trigger').click(function(){
-		$(this).toggleClass('open');
-		$('#main-navigation').toggleClass('open');
-	});
     var nav_folders = $('ul.navTree li.navTreeFolderish');
     nav_folders.each(function (i, e) {
         var folder = $(e);
@@ -34,10 +30,88 @@ jQuery(function($) {
     resize_slider();
     $(window).load(resize_slider);
     $images.load(resize_slider);
-    /*capture the search link click and open the drawer*/
-    $('#secondary #siteaction-search button').click(function(e){
-	   $('#portal-searchbox').slideToggle();
-    });
+
+    var $current_dialog;
+    var $current_trigger;
+    var open_dialog = function ($dialog, $trigger) {
+        // Close any open dialogs except main nav, which stays open
+        // behind other dialogs
+        if ($current_dialog && !$current_dialog.is('#main-navigation')) {
+            close_dialog();
+        }
+
+        // Add dialog role if not already set
+        $dialog.attr('role', 'dialog');
+
+        // Open dialog
+        $dialog.addClass('open');
+        $trigger.addClass('open');
+        $trigger.attr('aria-pressed', 'true');
+
+        // Focus on first visible focusable element
+        $dialog.find('input:visible, button:visible, a:visible').first().focus();
+
+        // Re-focus on animation end
+        $dialog.bind('oanimationend animationend webkitAnimationEnd', function() {
+            $dialog.find('input:visible, button:visible, a:visible').first().focus();
+         });
+
+         // Set state
+         $current_dialog = $dialog;
+         $current_trigger = $trigger;
+    };
+
+    var close_dialog = function () {
+        if (!$current_dialog) return;
+		$current_dialog.removeClass('open');
+        $current_dialog = null;
+        $current_trigger.focus();
+        $current_trigger.attr('aria-pressed', 'false');
+		$current_trigger.removeClass('open');
+        $current_trigger = null;
+        // Switch back to main nav if open
+        if ($('#main-navigation').hasClass('open')) {
+            $current_dialog = $('#main-navigation');
+            $current_trigger = $('#mobile-nav-trigger');
+        }
+    };
+
+    /* Trap focus in current dialog */
+    document.addEventListener("focus", function(event) {
+        if (!$current_dialog) return;
+        if (!$current_dialog.is(':visible')) {
+            $current_dialog = null;
+            $current_trigger = null;
+            return;
+        }
+        if (!$.contains($current_dialog[0], event.target)) {
+            event.stopPropagation();
+            $current_dialog.find('input:visible, button:visible, a:visible').first().focus();
+        }
+    }, true);
+
+    /* Close dialog on escape */
+    document.addEventListener("keydown", function(event) {
+        if (!$current_dialog) return;
+        if (!$current_dialog.is(':visible')) {
+            $current_dialog = null;
+            $current_trigger = null;
+            return;
+        }
+        if (event.keyCode == 27) {
+            close_dialog();
+        }
+    }, true);
+
+	$('button.dialog-trigger').click(function(){
+        var $trigger = $(this);
+        var $dialog = $(document.getElementById($trigger.data('dialog-id')));
+        if ($trigger.hasClass('open')) {
+            close_dialog();
+        } else {
+            open_dialog($dialog, $trigger);
+        }
+	});
 
     /* close aliens invaded message */
     $('#emergency-message .close').click(function() {

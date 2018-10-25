@@ -69,10 +69,11 @@
     <replace css:theme-children="#page-site-title">
       <xsl:value-of select="//a[@id='portal-logo']/@title" />
     </replace>
-    
+
     <!-- Header -->
     <replace css:content-children="li#siteaction-search">
-      <button aria-label="search toggle">Search</button>
+      <button aria-label="search toggle" class="dialog-trigger" role="button"
+              data-dialog-id="portal-searchbox">Search</button>
     </replace>
 
     <replace css:theme-children="#main-navigation #secondary"

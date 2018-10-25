@@ -29,7 +29,7 @@ body {color:#231f20; margin:0;}
 label.collapser:after,
 input,
 .cycle-pager span,
-button.trigger:before,
+button#mobile-nav-trigger:before,
 div.trigger:after,
 button.button,
 a:before,
@@ -72,7 +72,7 @@ a {transition: all 0.5s ease; }
 #site-title a:hover, #page-site-title a:hover,
 #site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
-#portal-top button.trigger {display:none; }
+#portal-top #mobile-nav-trigger {display:none; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
@@ -106,7 +106,20 @@ a {transition: all 0.5s ease; }
 
 /*livesearch*/
 #portal-top #main-navigation ul#secondary li#siteaction-search button {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; border: none; box-sizing: content-box; padding: 0 15px; display: block; height: 48px; background-color: transparent; cursor: pointer;}
-#portal-top #main-navigation ul#secondary li#siteaction-search button:focus {outline: none;}
+#portal-top #main-navigation ul#secondary li#siteaction-search button:focus {outline: none; background-color:#cac5c1;}
+
+#portal-top #portal-searchbox {
+    display: none;
+	overflow-y: hidden;
+    max-height: 0;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+#portal-top #portal-searchbox.open {
+    display: block;
+    max-height: 150px;
+	transition-property: max-height;
+}
 #portal-top #portal-searchbox {background:#e7e3df; position:absolute; right:0; top:49px; width:450px; z-index:10; }
 #portal-top #portal-searchbox form { }
 #portal-top #portal-searchbox form .LSBox {margin:10px auto; width:80%; }
@@ -689,9 +702,6 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #edi
 	text-transform: none;
 }
 
-#portal-searchbox {
-	display: none;
-}
 .searchResults cite {
 	display: block;
 }
@@ -1028,7 +1038,7 @@ h2.CVSectionTitle:before {
 	#portal-top .identity,
 	#portal-top .identity a {height:91px; width:24px; }
 	#portal-top .page-title {display:none; }
-	#portal-top button.trigger {
+	#portal-top #mobile-nav-trigger {
         border: none;
         cursor:pointer;
         display:block;
@@ -1040,10 +1050,10 @@ h2.CVSectionTitle:before {
         top:0;
         width:83px;
     }
-	#portal-top button.trigger:before {background:url('_images/trigger-menu.png') center center / 61px no-repeat transparent; content:""; display:block; height:52px; left:0; position:absolute; top:0; width:83px; }
-	#portal-top button.trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }
-	#portal-top button.trigger.open:before {opacity:0; visibility:hidden; }
-	#portal-top button.trigger.open:after {opacity:1; visibility:visible; }
+	#portal-top #mobile-nav-trigger:before {background:url('_images/trigger-menu.png') center center / 61px no-repeat transparent; content:""; display:block; height:52px; left:0; position:absolute; top:0; width:83px; }
+	#portal-top #mobile-nav-trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }
+	#portal-top #mobile-nav-trigger.open:before {opacity:0; visibility:hidden; }
+	#portal-top #mobile-nav-trigger.open:after {opacity:1; visibility:visible; }
 	
 	#portal-top #main-navigation {display:none; position:absolute; right:0; top:52px; width:320px; }
 	#portal-top #main-navigation.open {display:block; z-index: 2000; }
@@ -1061,8 +1071,10 @@ h2.CVSectionTitle:before {
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:left; padding:5%; position:static; top:auto; left:auto; right:auto; width:40%; }
 	.footer-row #portal-footer .footer-portlet.hours {float:left !important; padding:5% !important; width:40% !important; }
 
-	#portal-top #main-navigation {left:0; width:auto; }
-
+    #portal-top #main-navigation {left:0; width:auto; }
+    #portal-top #portal-searchbox {
+        top: 0
+    }
 }
 
 @media screen and (max-width:767px){
