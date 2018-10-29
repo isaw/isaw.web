@@ -31,15 +31,22 @@
                i18n:attributes="summary summary_calendar;">
             <thead>
                 <tr class="weekdays"
-                    ><tal:data tal:repeat="weekday python:['S','M','T','W','T','F','S']"
+                    ><tal:data tal:repeat="weekday python:[('S', 'Sunday'),
+                                                           ('M', 'Monday'),
+                                                           ('T', 'Tuesday'),
+                                                           ('W', 'Wednesday'),
+                                                           ('T', 'Thursday'),
+                                                           ('F', 'Friday'),
+                                                           ('S', 'Saturday')]"
                         ><th scope="col"
                              i18n:translate=""
                              tal:define="isFirst repeat/weekday/start;
                                          isLast repeat/weekday/end;
                                          firstClass python:isFirst and 'firstDay' or '';
                                          lastClass python:isLast and 'lastDay' or ''"
-                             tal:content="weekday"
-                             tal:attributes="class string: ${firstClass} ${lastClass}">Su</th
+                             tal:content="python:weekday[0]"
+                             tal:attributes="class string: ${firstClass} ${lastClass};
+                                             title python:weekday[1]">Su</th
                     ></tal:data>
                 </tr>
             </thead>            <tbody>
