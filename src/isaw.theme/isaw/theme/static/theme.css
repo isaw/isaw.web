@@ -190,7 +190,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #con
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #slider {display:block; list-style:none; margin:0; padding:0; width:100%; }
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider-container #easySlider-goToButtons {height:0; }
-#easySlider-goToButtons button#pauseplay { right: 20px; }  /* Combat horizontal scroll bar */
+#easySlider-goToButtons button#pauseplay { width: inherit; }  /* Combat horizontal scroll bar */
 #content #slider .slide .slideroverlay {top: 50%; width:80vw; max-width: 50em; padding:40px 20px 20px; border: none; display:table; background-color: rgba(57, 48, 46, 0.8); transition: all 0.75s ease-in-out;}
 #content #slider .slide .slideroverlay:hover {background-color: rgba(57, 48, 46, 1.0);}
 #content #slider .slide .slideroverlay > * {padding-left: 20px; color:#fff; font-weight:400; font-family:'Noto Sans', 'Arial', sans-serif; text-align:left; text-shadow: 1px 1px 3px rgb(57, 48, 46);}
