@@ -3,37 +3,19 @@
  <resourcetypes>
    <linkable>
      <element value="CV"/>
-     <element value="Exhibition"/>
-     <element value="Seminar"/>
-     <element value="Lecture"/>
-     <element value="General"/>
-     <element value="Sponsored"/>
-     <element value="Performance"/>
+     <element value="isaw.exhibitions.object"/>
      <element value="profile"/>
-     <element value="Conference"/>
    </linkable>
    <containsanchors>
      <element value="CV"/>
-     <element value="Exhibition"/>
-     <element value="Seminar"/>
-     <element value="Lecture"/>
-     <element value="General"/>
-     <element value="Sponsored"/>
-     <element value="Performance"/>
+     <element value="isaw.exhibitions.object"/>
      <element value="profile"/>
-     <element value="Conference"/>
    </containsanchors>
    <allow_captioned_images value="True"/>
    <containsobjects>
      <element value="CV"/>
-     <element value="Exhibition"/>
-     <element value="Seminar"/>
-     <element value="Lecture"/>
-     <element value="General"/>
-     <element value="Sponsored"/>
-     <element value="Performance"/>
+     <element value="isaw.exhibitions.object"/>
      <element value="profile"/>
-     <element value="Conference"/>
    </containsobjects>
    <customplugins>
      <element value="plonebrowser"/>
