@@ -17,6 +17,13 @@ class TestSAML2Setup(unittest.TestCase):
         add_saml_authority_object(self.portal)
         self.assertTrue('saml2auth' in self.portal)
 
+    def test_saml_authority_has_identity_provider_entity_added(self):
+        authority = add_saml_authority_object(self.portal)
+        self.assertIn(
+            'SSO Identity Provider',
+            authority.list_entities()[0].title
+        )
+
     def test_saml_authority_pem_and_der_certs_set(self):
         authority = add_saml_authority_object(self.portal)
         self.assertEqual(authority.certificate, '../../conf/isaw-staging.der')
