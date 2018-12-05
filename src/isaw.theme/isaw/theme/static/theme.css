@@ -268,6 +268,37 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul, #content ul {}
 #content-core ul { overflow: hidden; list-style-position: outside; padding-left: 32px; margin-left: 0; margin-bottom: 28px; }
 
+#content a, #content a:visited {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #66262d;
+}
+#content a:hover, #content a:focus {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: blue;
+}
+#content a:active {
+    color: #66262d;
+    background-color: black;
+    text-decoration: none;
+}
+#content a:active h2, #content a:active h3, #content a:active h4, #content a:active h5 {
+    background-color: black;
+}
+#content a img {
+    border: 3px solid #66262d;
+}
+#content a:hover img,
+#content a:focus img {
+    border: 3px dashed blue;
+}
+#content a:active img {
+    border: 3px solid black;
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+}
+
 #portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
 #portal-columns ul.red li, #content ul.red li {margin:0 0 24px; }
 #portal-columns ul.red li ul, #content ul.red li ul {color:#4c4c4c; font-family: 'Noto Sans', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
