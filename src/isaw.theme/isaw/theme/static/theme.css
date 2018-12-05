@@ -268,37 +268,6 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul, #content ul {}
 #content-core ul { overflow: hidden; list-style-position: outside; padding-left: 32px; margin-left: 0; margin-bottom: 28px; }
 
-#content a, #content a:visited {
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-color: #66262d;
-}
-#content a:hover, #content a:focus {
-    text-decoration-line: underline;
-    text-decoration-style: dashed;
-    text-decoration-color: blue;
-}
-#content a:active {
-    color: #66262d;
-    background-color: black;
-    text-decoration: none;
-}
-#content a:active h2, #content a:active h3, #content a:active h4, #content a:active h5 {
-    background-color: black;
-}
-#content a img {
-    border: 3px solid #66262d;
-}
-#content a:hover img,
-#content a:focus img {
-    border: 3px dashed blue;
-}
-#content a:active img {
-    border: 3px solid black;
-    -webkit-filter: sepia(1);
-    filter: sepia(1);
-}
-
 #portal-columns ul.red, #content ul.red {color:#9b3a25; font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; margin-bottom: 58px; text-transform:uppercase;}
 #portal-columns ul.red li, #content ul.red li {margin:0 0 24px; }
 #portal-columns ul.red li ul, #content ul.red li ul {color:#4c4c4c; font-family: 'Noto Sans', sans-serif; font-size:17px; line-height:28px; list-style:none; margin:16px 0 0; padding:0; text-transform:none; }
@@ -1372,6 +1341,60 @@ div.leaflet-control-geosearch.leaflet-control {
 
 #search-events input {
 	vertical-align: middle;
+}
+
+#content a, #content a:visited {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    -webkit-text-decoration-color: #66262d;
+            text-decoration-color: #66262d;
+}
+#content a:hover, #content a:focus,
+#content a:hover h2, #content a:focus h2,
+#content a:hover h3, #content a:focus h3,
+#content a:hover h4, #content a:focus h4,
+#content a:hover h5, #content a:focus h5,
+#content h2 a:hover, #content h2 a:focus,
+#content h3 a:hover, #content h3 a:focus,
+#content h4 a:hover, #content h4 a:focus,
+#content h5 a:hover, #content h5 a:focus {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-style: dashed;
+            text-decoration-style: dashed;
+    -webkit-text-decoration-color: blue;
+            text-decoration-color: blue;
+    color: blue !important;
+}
+#content a:active {
+    color: orange;
+    background-color: black;
+    background-clip: content-box;
+    text-decoration: none;
+}
+
+#content a:active h2, #content h2 a:active,
+#content a:active h3, #content h3 a:active,
+#content a:active h4, #content h4 a:active,
+#content a:active h5, #content h5 a:active {
+    color: orange !important;
+    background-color: black;
+    background-clip: content-box;
+    text-decoration: none;
+}
+#content a img {
+    border: 3px solid #66262d;
+}
+#content a:hover img,
+#content a:focus img {
+    border: 3px dashed blue;
+}
+#content a:active img {
+    border: 3px solid black;
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
 }
 
 @media screen and (max-width:549px){
