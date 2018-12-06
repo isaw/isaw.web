@@ -1069,13 +1069,13 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation {display:none; position:absolute; right:0; top:52px; width:320px; }
 	#portal-top #main-navigation.open {display:block; z-index: 2000; }
 	#portal-top #main-navigation ul#primary {height:auto; padding:0; position:static; right:auto; top:auto; }
-	#portal-top #main-navigation ul#primary li {display:block; }
-	#portal-top #main-navigation ul#primary li a {border-bottom:1px solid #e1ddd9; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
+	#portal-top #main-navigation ul#primary li {border-bottom:1px solid #e1ddd9; display:block; }
+	#portal-top #main-navigation ul#primary li a {font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
 
 	#portal-top #main-navigation ul#secondary {background:rgba(231,227,223,.97) !important;  height:auto; padding:0; position:static; right:auto; top:auto; }
 	#portal-top #main-navigation ul#secondary:before {content:none; display:none;}
-	#portal-top #main-navigation ul#secondary li {display:block; }
-	#portal-top #main-navigation ul#secondary li a {border-bottom:1px solid #b0a8a0; font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
+	#portal-top #main-navigation ul#secondary li {border-bottom: 1px solid #b0a8a0; display:block; }
+	#portal-top #main-navigation ul#secondary li a {font-size:13px; letter-spacing:.7px; line-height:100%; padding:13px 54px; position:relative; text-align:left; }
 
 	.footer-row #portal-footer {overflow:auto;}
 	.footer-row #portal-footer .footer-portlet.contact,
