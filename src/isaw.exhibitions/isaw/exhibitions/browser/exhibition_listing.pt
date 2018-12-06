@@ -83,7 +83,7 @@
                            tal:attributes="src string:${navigation_root_url}/mosaic_default.png"/>
                     </div>
                     <div class="ExhibitionEntrySummary">
-                        <h3 tal:content="item_title_or_id">Title</h3>
+                        <h2 tal:content="item_title_or_id">Title</h2>
                     </div>
                   </a>
 

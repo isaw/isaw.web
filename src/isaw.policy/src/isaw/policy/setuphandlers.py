@@ -9,8 +9,6 @@ def install_addons(context):
     qi = getToolByName(context, 'portal_quickinstaller')
     if not qi.isProductInstalled('Products.PressRoom'):
         qi.installProduct('Products.PressRoom')
-    if not qi.isProductInstalled('ftw.calendar'):
-        qi.installProduct('ftw.calendar')
     if not qi.isProductInstalled('Products.PloneKeywordManager'):
         qi.installProduct('Products.PloneKeywordManager')
     if not qi.isProductInstalled('Products.RedirectionTool'):

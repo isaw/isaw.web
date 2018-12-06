@@ -61,7 +61,6 @@ $(document).ready(function () {
 <h1 class="screen-reader-only"
     tal:content="context/Title|string:Events">Events</h1>
 <div class="calendar-view-link add-to-cal"><h3>Add all events to Calendar</h3><ul class="links"><li><a tal:attributes="href string:${context/portal_url}/events/icalendar">ICal</a></li></ul></div>
-<div class="calendar-view-link"><a tal:attributes="href string:${context/absolute_url}/ftwcalendar_view">Calendar View</a></div>
   <tal:block tal:define="items view/listings">
     <div class="event-listing" tal:condition="items">
      <tal:block tal:repeat="item items">
@@ -79,10 +78,10 @@ $(document).ready(function () {
              tal:condition="item/hasContentLeadImage">
             <img tal:attributes="src string:${item_url}/leadImage_mini;
                                  alt item/contentLeadImageAltText" />
-            <h3 class="event-title" tal:content="item/Title">[title]</h3>
+            <h2 class="event-title" tal:content="item/Title">[title]</h2>
           </a>
           <a href="#" tal:attributes="href item_url"
-                      tal:condition="not:item/hasContentLeadImage"><h3 class="event-title" tal:content="item/Title">[title]</h3></a>
+                      tal:condition="not:item/hasContentLeadImage"><h2 class="event-title" tal:content="item/Title">[title]</h2></a>
           <p class="event-subtitle" tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
           <p class="event-speaker" tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
           <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
