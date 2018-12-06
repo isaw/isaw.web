@@ -76,13 +76,13 @@ a {transition: all 0.5s ease; }
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
-#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:78px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:72px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#primary li a:hover,
-#portal-top #main-navigation ul#primary li a:focus {opacity: 0.9;}
-#portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; }
-#portal-top #main-navigation ul#primary li#portaltab-visiting-scholars a {background:#9d3a20; }
-#portal-top #main-navigation ul#primary li#portaltab-exhibitions a {background:#9e6a4a; }
-#portal-top #main-navigation ul#primary li#portaltab-events a {background:#66232b; }
+#portal-top #main-navigation ul#primary li a:focus {opacity: 0.9; border: 3px solid blue !important;}
+#portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; border: 3px solid #6d6054; }
+#portal-top #main-navigation ul#primary li#portaltab-visiting-scholars a {background:#9d3a20; border: 3px solid #9d3a20; }
+#portal-top #main-navigation ul#primary li#portaltab-exhibitions a {background:#9e6a4a; border: 3px solid #9e6a4a; }
+#portal-top #main-navigation ul#primary li#portaltab-events a {background:#66232b; border: 3px solid #66232b; }
 #portal-top #main-navigation ul#secondary {background-color: rgba(221,217,214,1); display:block; height:49px; margin:0; position:absolute; right:0; text-align:right; top:0; width:100%; z-index: 4; }
 #portal-top #main-navigation ul#secondary:before {
     content: "NEW YORK UNIVERSITY";
@@ -97,9 +97,9 @@ a {transition: all 0.5s ease; }
     line-height: 49px;
 }
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
-#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:49px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; }
+#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:43px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#secondary li a:hover,
-#portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; }
+#portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; border: 3px solid blue !important; }
 #portal-top .page-title {bottom:30px; display:none; left:0; position:absolute; right:0; width:100%; z-index:4; }
 #portal-top .page-title h2.section-title {color:#fff; font-family:'Noto Sans', sans-serif; font-size:40px; font-weight:800; letter-spacing:1px; line-height:100%; margin:0 auto; max-width:1154px; padding:0 20px; text-align:left; }
 #portal-columns.one #portal-column-content {float:none; padding:0; width:100%; }
