@@ -220,14 +220,17 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .section-events #portal-breadcrumbs {background:#66232b; }
 
 #breadcrumbs-you-are-here {display: none;}
-#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span:first-child {margin:0 14px 0 3px; }
-#portal-breadcrumbs span#breadcrumbs-home a, #portal-breadcrumbs span.breadcrumbSeparator {margin-left:0; }
+#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span:first-child {margin:0 6px 0 -5px; }
+#portal-breadcrumbs span.breadcrumbSeparator {margin-left:0; }
 #portal-breadcrumbs span {color: #333; }
 #portal-breadcrumbs span.breadcrumbSeparator {color: transparent !important;}
 #portal-breadcrumbs span.breadcrumbSeparator:before {content: ">"; color: #333;}
-#portal-breadcrumbs span a {color: #333; text-decoration:none; }
+#portal-breadcrumbs span a {color: #333; text-decoration:none; padding: 5px; border: 3px solid transparent;}
 #portal-breadcrumbs span a:hover,
-#portal-breadcrumbs span a:focus {color:#fff; text-decoration:underline; }
+#portal-breadcrumbs span a:focus {
+    color:blue !important; text-decoration: none;
+    border-color: blue;
+}
 
 .section-graduate-studies #portal-breadcrumbs span,
 .section-visiting-scholars #portal-breadcrumbs span,
@@ -242,6 +245,16 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .section-exhibitions #portal-breadcrumbs span.breadcrumbSeparator:before,
 .section-events #portal-breadcrumbs span.breadcrumbSeparator:before {
     color: #fff;
+}
+.section-graduate-studies #portal-breadcrumbs span a:focus,
+.section-graduate-studies #portal-breadcrumbs span a:hover,
+.section-visiting-scholars #portal-breadcrumbs span a:focus,
+.section-visiting-scholars #portal-breadcrumbs span a:hover,
+.section-exhibitions #portal-breadcrumbs span a:focus,
+.section-exhibitions #portal-breadcrumbs span a:hover,
+.section-events #portal-breadcrumbs span a:focus,
+.section-events #portal-breadcrumbs span a:hover {
+    background-color: seashell;
 }
 
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
