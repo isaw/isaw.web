@@ -465,7 +465,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 	font-weight:500; 
 	overflow:auto; 
 	padding:24px 20px 58px;
-    min-height: 6.5em;
+    min-height: 11em;
 }
 .footer-row #portal-footer {margin:0 auto; max-width:1154px; overflow:visible; position:relative; }
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
