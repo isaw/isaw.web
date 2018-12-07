@@ -1405,6 +1405,10 @@ div.leaflet-control-geosearch.leaflet-control {
     font-size: 80%;
     background-color: #fffaf8;
 }
+#skip a, #skip a:visited {
+    color:rgba(155,58,37,1);
+    text-decoration: underline;
+}
 #skip a:hover, #skip a:focus {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
@@ -1413,6 +1417,12 @@ div.leaflet-control-geosearch.leaflet-control {
     -webkit-text-decoration-color: blue;
             text-decoration-color: blue;
     color: blue;
+}
+#skip a:active {
+    color: orange;
+    background-color: black;
+    background-clip: content-box;
+    text-decoration: none;
 }
 
 @media screen and (max-width:549px){
