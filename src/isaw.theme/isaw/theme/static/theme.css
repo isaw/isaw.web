@@ -212,7 +212,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:Hover,
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
-#portal-breadcrumbs {background:#b5b2b0; color:#fff; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
+#portal-breadcrumbs {background: #ddd9d6; color:#fff; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
 
 .section-graduate-studies #portal-breadcrumbs {background:#6d6054; }
 .section-visiting-scholars #portal-breadcrumbs {background:#9d3a20; }
@@ -220,14 +220,29 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .section-events #portal-breadcrumbs {background:#66232b; }
 
 #breadcrumbs-you-are-here {display: none;}
-#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span:first-child {margin:0 14px 0 3px;}
+#portal-breadcrumbs > span a, #portal-breadcrumbs > span > span:first-child {margin:0 14px 0 3px; }
 #portal-breadcrumbs span#breadcrumbs-home a, #portal-breadcrumbs span.breadcrumbSeparator {margin-left:0; }
-#portal-breadcrumbs span {color:#fff; }
-#portal-breadcrumbs span.breadcrumbSeparator {color: transparent;}
-#portal-breadcrumbs span.breadcrumbSeparator:before {content: ">"; color:#fff;}
-#portal-breadcrumbs span a {color:#fff; text-decoration:none; }
+#portal-breadcrumbs span {color: #333; }
+#portal-breadcrumbs span.breadcrumbSeparator {color: transparent !important;}
+#portal-breadcrumbs span.breadcrumbSeparator:before {content: ">"; color: #333;}
+#portal-breadcrumbs span a {color: #333; text-decoration:none; }
 #portal-breadcrumbs span a:hover,
 #portal-breadcrumbs span a:focus {color:#fff; text-decoration:underline; }
+
+.section-graduate-studies #portal-breadcrumbs span,
+.section-visiting-scholars #portal-breadcrumbs span,
+.section-exhibitions #portal-breadcrumbs span,
+.section-events #portal-breadcrumbs span,
+.section-graduate-studies #portal-breadcrumbs span a,
+.section-visiting-scholars #portal-breadcrumbs span a,
+.section-exhibitions #portal-breadcrumbs span a,
+.section-events #portal-breadcrumbs span a,
+.section-graduate-studies #portal-breadcrumbs span.breadcrumbSeparator:before,
+.section-visiting-scholars #portal-breadcrumbs span.breadcrumbSeparator:before,
+.section-exhibitions #portal-breadcrumbs span.breadcrumbSeparator:before,
+.section-events #portal-breadcrumbs span.breadcrumbSeparator:before {
+    color: #fff;
+}
 
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
 #portal-columns #portal-column-first dl dd {margin-left:0; }
@@ -289,7 +304,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns table thead, #content table thead { }
 #portal-columns table thead tr, #content table thead tr { }
 
-#portal-columns table thead tr th, #content table thead tr th {background-color: #d4b982; border:1px solid #e2ddd7; color:#fff; font-family:'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
+#portal-columns table thead tr th, #content table thead tr th {background-color: #62232b; border:1px solid #e2ddd7; color:#fff; font-family:'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:100%; padding:20px 24px; text-align:left; text-transform:uppercase; }
 
 #portal-columns table.sortable thead tr th, #content table.sortable thead tr th {background:url('_images/trigger-sort.png') 94% center / 8px no-repeat; cursor:pointer; padding-right:56px;}
 #portal-columns table.sortable thead tr th.nosort, #content table.sortable thead tr th.nosort {background-image:none; cursor:auto; padding-right:24px; }
@@ -824,7 +839,7 @@ h2.CVSectionTitle:before {
 #portal-columns .event-listing .event-result,
 #content .event-listing .event-result {display:block; margin:0 0 34px; }
 #portal-columns .event-listing .event-result .event-result-header,
-#content .event-listing .event-result .event-result-header {background:#d4b982; color:#fff; overflow:auto; padding:10px 16px; }
+#content .event-listing .event-result .event-result-header {background:#62232b; color:#fff; overflow:auto; padding:10px 16px; }
 #portal-columns .event-listing .event-result .event-result-header span,
 #content .event-listing .event-result .event-result-header span {display:block; float:left; font-size:20px; font-weight:bold; width:48%; }
 #portal-columns .event-listing .event-result .event-result-header span:last-child,
