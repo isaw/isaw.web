@@ -32,6 +32,10 @@
       <xsl:attribute name="class"><xsl:value-of select="$columns" /></xsl:attribute>
     </before>
 
+
+    <!-- Drop plone skip to content/nav links -->
+    <drop content="/html/body/p[@class='hiddenStructure']" />
+
     <!-- drop head elements -->
     <drop theme="/html/head/style" />
     <drop theme="/html/head/title" />
@@ -43,7 +47,7 @@
     <replace css:content=".breadcrumbSeparator">
       <span class="breadcrumbSeparator">&gt;</span>
     </replace>
-    
+
     <!-- title -->
     <after theme-children='/html/head'
            content='/html/head/title' />
@@ -102,10 +106,6 @@
              css:content="#portal-footer" />
 
     <!-- Global nav -->
-
-    <!-- skip links -->
-    <before theme-children="/html/body"
-            css:content="#portal-header p.hiddenStructure" />
             
     <!-- Edit bar and portal messages -->
     <replace css:theme="#viewlet-above-content"
