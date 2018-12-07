@@ -17,7 +17,7 @@
         <h2 tal:content="item/Title">[title]</h2>
       </a>
       <a href="#" tal:attributes="href item_url"
-                  tal:condition="not:item/hasContentLeadImage"><h3 tal:content="item/Title">[title]</h3></a>
+                  tal:condition="not:item/hasContentLeadImage"><h2 tal:content="item/Title">[title]</h2></a>
       <p tal:condition="item/subtitle" tal:content="item/subtitle">Subtitle</p>
       <p tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
       <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>

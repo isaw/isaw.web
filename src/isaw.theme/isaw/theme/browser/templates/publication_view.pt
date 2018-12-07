@@ -30,11 +30,11 @@
     </div>
 
     <div class="PublicationBody">
-    <h3 class="Tagline"
+    <h2 class="Tagline"
          tal:condition="context/tag_line|nothing"
          tal:content="context/tag_line">
          Tagline
-    </h3>
+    </h2>
     <div class="PublicationInfo" style="margin-bottom: 15px;">
       <ul>
         <li tal:condition="view/authors">

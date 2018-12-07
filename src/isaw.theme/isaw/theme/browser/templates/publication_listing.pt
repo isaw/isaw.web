@@ -25,7 +25,7 @@
       </div>
       <div class="PublicationCardBody">
         <div>
-          <h3 tal:content="item/Title"></h3>
+          <h2 tal:content="item/Title"></h2>
           <p><b tal:content="card/tag_line"></b></p>
           <span tal:content="structure card/formatted_citation"></span>
         </div>
