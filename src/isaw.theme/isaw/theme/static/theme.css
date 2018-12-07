@@ -529,9 +529,8 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul.news li, #content ul.news li {display:block; float:left; margin:0 3% 3% 0; width:31.33%; }
 #portal-columns ul.news li:nth-child(3n), #content ul.news li:nth-child(3n) {margin-right:0; }
 #portal-columns ul.news li:nth-child(3n+1), #content ul.news li:nth-child(3n+1) {clear:left; }
-#portal-columns ul.news li a, #content ul.news li a {text-decoration:underline; }
 #portal-columns ul.news li a.ImageLink, #content ul.news li a.ImageLink {width: 100%; display: block; overflow: hidden; }
-#portal-columns ul.news li a img, #content ul.news li a img {display:block; max-width:100%; height: auto; overflow: hidden; border:1px solid #ddd;}
+#portal-columns ul.news li a img, #content ul.news li a img {display:block; max-width:100%; height: auto; overflow: hidden; }
 #portal-columns ul.news li a h2, #content ul.news li a h2 {color:#66262d; font-size:22px; font-weight:400; letter-spacing:.5px; line-height:27px; margin: 8px 0 0; text-align:left; }
 #portal-columns ul.news li .post-meta, #content ul.news li .post-meta {color:#000; display:block; font-size:14px; font-weight:400; letter-spacing:.8px; line-height:120%; margin:10px 0; font-style: italic; }
 #portal-columns ul.news li .post-meta img, #content ul.news li .post-meta img {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
