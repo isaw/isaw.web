@@ -266,7 +266,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .template-usergroup-userprefs #portal-columns #column-contents,
 .template-usergroup-groupprefs #portal-columns #column-contents {overflow: visible; }
 #portal-columns h1, #content h1 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
-#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:30px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
 #portal-columns h3, #content h3 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
 #portal-columns dl dt, #content dl dt {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
@@ -557,11 +557,10 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul.news li, #content ul.news li {display:block; float:left; margin:0 3% 3% 0; width:31.33%; }
 #portal-columns ul.news li:nth-child(3n), #content ul.news li:nth-child(3n) {margin-right:0; }
 #portal-columns ul.news li:nth-child(3n+1), #content ul.news li:nth-child(3n+1) {clear:left; }
-#portal-columns ul.news li a, #content ul.news li a {text-decoration:none; }
-#portal-columns ul.news li a.ImageLink, #content ul.news li a.ImageLink {width: 100%; display: block; overflow: hidden; max-height: 170px; }
-#portal-columns ul.news li a img, #content ul.news li a img {display:block; max-width:100%; height: auto; overflow: hidden; border:1px solid #ddd;}
-#portal-columns ul.news li a h3, #content ul.news li a h3 {color:#000; font-size:25px; font-weight:400; letter-spacing:.5px; line-height:30px; margin: 8px 0 0; text-align:left; text-decoration:none; text-transform:uppercase; }
-#portal-columns ul.news li .post-meta, #content ul.news li .post-meta {color:#6a6a6a; display:block; font-size:14px; font-weight:400; letter-spacing:.8px; line-height:120%; margin:10px 0; text-transform:uppercase; }
+#portal-columns ul.news li a.ImageLink, #content ul.news li a.ImageLink {width: 100%; display: block; overflow: hidden; }
+#portal-columns ul.news li a img, #content ul.news li a img {display:block; max-width:100%; height: auto; overflow: hidden; box-sizing:border-box;}
+#portal-columns ul.news li a h2, #content ul.news li a h2 {color:#66262d; font-size:22px; font-weight:400; letter-spacing:.5px; line-height:27px; margin: 8px 0 0; text-align:left; }
+#portal-columns ul.news li .post-meta, #content ul.news li .post-meta {color:#000; display:block; font-size:14px; font-weight:400; letter-spacing:.8px; line-height:120%; margin:10px 0; font-style: italic; }
 #portal-columns ul.news li .post-meta img, #content ul.news li .post-meta img {background:#fff; border:1px solid #bbb2aa; border-radius:50%; display:inline-block; height:29px; margin:0 15px 0 0; vertical-align:middle; width:29px; }
 #portal-columns ul.news li .post-excerpt, #content ul.news li .post-excerpt {font-size:17px; font-weight:normal; letter-spacing:.2px; line-height:24px; margin:0; text-transform:none; }
 #portal-columns ul.news li a.button.small, #content ul.news li a.button.small {font-size:12px; margin:15px 0; padding:12px 18px; }
@@ -864,7 +863,7 @@ h2.CVSectionTitle:before {
 #portal-columns .event-listing .event-result .event-result-detail a,
 #content .event-listing .event-result .event-result-detail a {color:#66262d; }
 #portal-columns .event-listing .event-result .event-result-detail a h3,
-#content .event-listing .event-result .event-result-detail a h3 {color:#66262d; font-size:20px; line-height:120%; margin:0 0 0; }
+#content .event-listing .event-result .event-result-detail a h2 {color:#66262d; font-size:20px; line-height:120%; margin:0 0 0; }
 #portal-columns .event-listing .event-result .event-result-detail a:hover,
 #portal-columns .event-listing .event-result .event-result-detail a:focus,
 #content .event-listing .event-result .event-result-detail a:hover,

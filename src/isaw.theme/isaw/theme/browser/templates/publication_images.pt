@@ -26,7 +26,7 @@
       <img class="publication-image-view"
            tal:attributes="src string:${first_image/absolute_url}/image;
                            alt first_image/Description" />
-      <h3 class="publication-image-caption"
+      <h2 class="publication-image-caption"
           tal:content="first_image/Description" />
     </div>
 

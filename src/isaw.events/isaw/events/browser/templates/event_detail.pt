@@ -19,7 +19,7 @@
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
        <br />
-        <h3 tal:content="context/subtitle | nothing" />
+        <h2 tal:content="context/subtitle | nothing" />
         <div class="eventCal">
             Add to Your Calendar:
             <ul>
