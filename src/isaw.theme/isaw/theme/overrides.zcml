@@ -12,4 +12,7 @@
     factory=".resolveuid_and_caption.WCAGResolveUIDAndCaptionFilter"
     />
 
+  <browser:resource name="easySlider.js" file="./browser/easySlider.js" />
+  <browser:resource name="easySlider.css" file="./browser/easySlider.css" />
+
 </configure>
