@@ -523,8 +523,8 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .footer-row #portal-footer .footer-portlet.hours:nth-child(3){display:block; float:left; padding-left:31%; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(4){display:block; float:right; padding-right:31%; width:16%; }
 
-.footer-row #portal-footer h3 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
-.footer-row #portal-footer > div.contact > h3 {
+.footer-row #portal-footer h3, .footer-row #portal-footer h2 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
+.footer-row #portal-footer > div.contact > h3, .footer-row #portal-footer > div.contact > h2 {
 	display: none;
 }
 .footer-row #portal-footer > div.contact > p {
