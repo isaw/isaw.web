@@ -39,7 +39,9 @@ a {transition: all 0.5s ease; }
 
 .button {background: transparent; border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
-.button:focus {background:#9b3a25; color:#fffaf5 !important; }
+.button:focus,
+#content a.button:hover,
+#content a.button:focus {background:#9b3a25; color:#fffaf5 !important; border-color: blue;}
 .button.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
 .button.inverse:hover,
 .button.inverse:focus {background:#fff; color:#66232b !important; }
@@ -1488,6 +1490,10 @@ div.leaflet-control-geosearch.leaflet-control {
 #content a.publication-images.link-overlay:hover,
 #content a.publication-images.link-overlay:focus {
     text-decoration: none;
+}
+
+.PublicationLinks a.AccessButton.button {
+    margin-bottom: 3px;
 }
 
 @media screen and (max-width:549px){
