@@ -54,7 +54,7 @@ a {transition: all 0.5s ease; }
 	left:47px;
 	z-index:3;
 	display:block;
-	padding: 9px;
+	padding: 6px;
 	margin:0;
 	text-align:left;
     width:350px;
@@ -68,9 +68,11 @@ a {transition: all 0.5s ease; }
     color: black;
     font-size: 24px;
     line-height: 30px;
+    border: 3px solid transparent;
+    box-sizing: border-box;
 } 
-#site-title a:hover, #page-site-title a:hover,
-#site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
+a:hover #site-title, #page-site-title a:hover,
+a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
 #portal-top #mobile-nav-trigger {display:none; }
 #portal-top #main-navigation { }
@@ -1063,7 +1065,7 @@ h2.CVSectionTitle:before {
 		left:34px; 
 		top:0; 
 		width:188px;
-		padding: 6px 0; }
+		padding: 3px 0;}
 	#site-title, #page-site-title {
 		background-size:contain; 
 		height:52px; 
