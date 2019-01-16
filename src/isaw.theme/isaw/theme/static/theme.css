@@ -530,9 +530,11 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .footer-row #portal-footer > div.contact > p {
 	margin-top: 40px;
 }
-.footer-row #portal-footer h3.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:10px 12px; border: 3px solid transparent; box-sizing: border-box;}
+.footer-row #portal-footer h3.support a, .footer-row #portal-footer h2.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:10px 12px; border: 3px solid transparent; box-sizing: border-box;}
 .footer-row #portal-footer h3.support a:hover,
-.footer-row #portal-footer h3.support a:focus {color:#ececec; background:#695450; text-decoration: none; border-color: blue;}
+.footer-row #portal-footer h3.support a:focus,
+.footer-row #portal-footer h2.support a:hover,
+.footer-row #portal-footer h2.support a:focus {color:#ececec; background:#695450; text-decoration: none; border-color: blue;}
 .footer-row #portal-footer p {font-size:15px; line-height:24px; margin:0; }
 .footer-row #portal-footer .footer-portlet.hours p strong {font-weight:normal; text-transform:uppercase; }
 .footer-row #portal-footer a {color:#ececec; text-decoration:none; }
