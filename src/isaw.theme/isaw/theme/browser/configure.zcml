@@ -220,8 +220,24 @@
       permission="zope2.View"
       />
 
+  <browser:page
+      name="people-listing"
+      for="plone.app.collection.interfaces.ICollection"
+      template="templates/people_listing.pt"
+      layer=".interfaces.IThemeSpecific"
+      permission="zope2.View"
+      />
+
     <browser:menuItem
         for="Products.ATContentTypes.interfaces.IATFolder"
+        menu="plone_displayviews"
+        title="People Listing"
+        action="@@people-listing"
+        description="List person profiles in a folder, with image"
+        />
+
+    <browser:menuItem
+        for="plone.app.collection.interfaces.ICollection"
         menu="plone_displayviews"
         title="People Listing"
         action="@@people-listing"
