@@ -39,7 +39,9 @@ a {transition: all 0.5s ease; }
 
 .button {background: transparent; border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
-.button:focus {background:#9b3a25; color:#fffaf5 !important; }
+.button:focus,
+#content a.button:hover,
+#content a.button:focus {background:#9b3a25; color:#fffaf5 !important; border-color: blue;}
 .button.inverse {background:#66232b; border-color:#66232b; color:#fff !important; display:block; font-size:14px; margin:0 0 15px; }
 .button.inverse:hover,
 .button.inverse:focus {background:#fff; color:#66232b !important; }
@@ -54,10 +56,10 @@ a {transition: all 0.5s ease; }
 	left:47px;
 	z-index:3;
 	display:block;
-	padding: 9px;
+	padding: 6px;
 	margin:0;
 	text-align:left;
-    width:350px;
+    width:384px;
     margin-top: 49px;
     font-family: Questrial, 'Noto Sans', sans-serif;
     font-weight: 800;
@@ -68,9 +70,11 @@ a {transition: all 0.5s ease; }
     color: black;
     font-size: 24px;
     line-height: 30px;
+    border: 3px solid transparent;
+    box-sizing: border-box;
 } 
-#site-title a:hover, #page-site-title a:hover,
-#site-title a:focus, #page-site-title a:focus {opacity: 0.8;}
+a:hover #site-title, #page-site-title a:hover,
+a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
 #portal-top #mobile-nav-trigger {display:none; }
 #portal-top #main-navigation { }
@@ -105,8 +109,9 @@ a {transition: all 0.5s ease; }
 #portal-columns.one #portal-column-content {float:none; padding:0; width:100%; }
 
 /*livesearch*/
-#portal-top #main-navigation ul#secondary li#siteaction-search button {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:20px; border: none; box-sizing: content-box; padding: 0 15px; display: block; height: 48px; background-color: transparent; cursor: pointer;}
-#portal-top #main-navigation ul#secondary li#siteaction-search button:focus {outline: none; background-color:#cac5c1;}
+#portal-top #main-navigation ul#secondary li#siteaction-search button {background-image:url('_images/icon-search-gray.png'); background-position:center center; background-size:20px; background-repeat:no-repeat; display:block; text-align:left; text-indent:-10000px; width:50px; border: none; box-sizing: content-box; padding: 0 12px; display: block; height: 48px; background-color: transparent; cursor: pointer; border: 3px solid transparent; box-sizing: border-box;}
+#portal-top #main-navigation ul#secondary li#siteaction-search button:focus,
+#portal-top #main-navigation ul#secondary li#siteaction-search button:hover {outline: none; background-color:#cac5c1; border-color: blue;}
 
 #portal-top #portal-searchbox {
     display: none;
@@ -191,19 +196,24 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns #slider li {display:block; margin:0; position:relative; right:0; }
 #content #slider-container #easySlider-goToButtons {height:0; }
 #easySlider-goToButtons button#pauseplay { width: inherit; }  /* Combat horizontal scroll bar */
+
 #content #slider .slide .slideroverlay {top: 50%; width:80vw; max-width: 50em; padding:40px 20px 20px; border: none; display:table; background-color: rgba(57, 48, 46, 0.8); transition: all 0.75s ease-in-out;}
 #content #slider .slide .slideroverlay:hover {background-color: rgba(57, 48, 46, 1.0);}
 #content #slider .slide .slideroverlay > * {padding-left: 20px; color:#fff; font-weight:400; font-family:'Noto Sans', 'Arial', sans-serif; text-align:left; text-shadow: 1px 1px 3px rgb(57, 48, 46);}
 #content #slider .slide .slideroverlay h3 {font-size:24px; letter-spacing:1px; line-height:100%; margin:0 auto 20px; text-transform:uppercase; }
-#content #slider .slide .slideroverlay p, 
+#content #slider .slide .slideroverlay h3 a {line-height: 125%;}
+#content #slider .slide .slideroverlay p,
 #content #slider .slide .slideroverlay ul {font-size:20px; letter-spacing:.1px; line-height:166%; text-transform:none;}
 #content #slider .slide .slideroverlay p {margin-bottom: 1em;}
 #content #slider .slide .slideroverlay a {color:inherit; text-decoration:none; transition: all 0.5s ease-in-out;}
-#content #slider .slide .slideroverlay p * {color:inherit; font-weight: inherit; font-size: inherit;}
+#content #slider .slide .slideroverlay p * {color:inherit; font-weight: inherit; font-size  : inherit;}
 #content #slider .slide .slideroverlay strong {font-weight:600;}
 #content #slider .slide .slideroverlay p *.discreet {font-weight:300;}
 #content #slider .slide .slideroverlay a:hover,
-#content #slider .slide .slideroverlay a:focus {border-bottom: 1px solid; transition: all 0.5s ease-in-out;}
+#content #slider .slide .slideroverlay a:focus {
+    color: #FFB00F !important; -webkit-text-decoration-color: #FFB00F;
+    text-decoration-color: #FFB00F; border-bottom: 1px dashed; transition: all 0.5s ease-in-out;
+}
 #slider-container.slider-navtype-navigation-bullets .easybutton {display: none; }
 #column-contents #slider-container {border: none; }
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager {display:block; position:absolute; bottom:40px; right:80px; z-index:1000; }
@@ -399,7 +409,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 
 #portal-columns ul.navTree {list-style:none; margin:0; padding:0; }
 #portal-columns ul.navTree.navTreeLevel0 {margin:0 0 30px;}
-#portal-columns ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding:10px 15px; position:relative; transition: all 0.5s ease;}
+#portal-columns ul.navTree li {background:#f8f0e5; margin:10px 0 10px; padding:10px 13px; position:relative; transition: all 0.5s ease;}
 #portal-columns ul.navTree li:hover,
 #portal-columns ul.navTree li:focus {background:#ebe3d9; transition: all 0.5s ease;}
 #portal-columns ul.navTree li.navTreeCurrentNode:hover,
@@ -410,12 +420,12 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul.navTree li.navTreeTopNode {margin-top: 0px;}
 #portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
 #portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
-#portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; }
+#portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; border: 3px solid transparent; box-sizing: border-box;}
 #portal-columns ul.navTree li a.navTreeFolderish {text-decoration:none !important; }
 #portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
 #portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
 #portal-columns ul.navTree li a:hover,
-#portal-columns ul.navTree li a:focus {text-decoration:none; }
+#portal-columns ul.navTree li a:focus {text-decoration:none; border-color: blue;}
 #portal-columns ul.navTree li ul li {padding: 0; }
 #portal-columns ul.navTree li ul li:before {display:none; }
 #portal-columns ul.navTree li ul li a {font-size:14px; font-weight:400; line-height:17px; text-transform:none; }
@@ -513,21 +523,31 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .footer-row #portal-footer .footer-portlet.hours:nth-child(3){display:block; float:left; padding-left:31%; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(4){display:block; float:right; padding-right:31%; width:16%; }
 
-.footer-row #portal-footer h3 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
-.footer-row #portal-footer > div.contact > h3 {
+.footer-row #portal-footer h3, .footer-row #portal-footer h2 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
+.footer-row #portal-footer > div.contact > h3, .footer-row #portal-footer > div.contact > h2 {
 	display: none;
 }
 .footer-row #portal-footer > div.contact > p {
 	margin-top: 40px;
 }
-.footer-row #portal-footer h3.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:13px 15px; }
+.footer-row #portal-footer h3.support a, .footer-row #portal-footer h2.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:10px 12px; border: 3px solid transparent; box-sizing: border-box;}
 .footer-row #portal-footer h3.support a:hover,
-.footer-row #portal-footer h3.support a:focus {background:#695450; text-decoration: none;}
+.footer-row #portal-footer h3.support a:focus,
+.footer-row #portal-footer h2.support a:hover,
+.footer-row #portal-footer h2.support a:focus {color:#ececec; background:#695450; text-decoration: none; border-color: blue;}
 .footer-row #portal-footer p {font-size:15px; line-height:24px; margin:0; }
 .footer-row #portal-footer .footer-portlet.hours p strong {font-weight:normal; text-transform:uppercase; }
 .footer-row #portal-footer a {color:#ececec; text-decoration:none; }
 .footer-row #portal-footer a:hover,
-.footer-row #portal-footer a:focus {text-decoration:underline; }
+.footer-row #portal-footer a:focus {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-style: dashed;
+            text-decoration-style: dashed;
+    -webkit-text-decoration-color: #FFB00F;
+            text-decoration-color: #FFB00F;
+    color: #FFB00F;
+}
 .footer-row #portal-footer ul {list-style:none; margin:0; padding:0; }
 .footer-row #portal-footer ul li {margin:0 0 8px; display: block;}
 .footer-row #portal-footer ul li a {font-size:12px; font-weight:bold; letter-spacing:.8px; line-height:100%; text-transform:uppercase; }
@@ -1059,19 +1079,15 @@ h2.CVSectionTitle:before {
 	#portal-top {background:#fff !important; display:block; height:52px; min-height:0; width:100%; }
 	#portal-top:before {display:none; }
 	#site-title, #page-site-title {
-		height:52px; 
-		left:34px; 
-		top:0; 
-		width:188px;
-		padding: 6px 0; }
-	#site-title, #page-site-title {
-		background-size:contain; 
-		height:52px; 
-		width:188px; 
+		left:34px;
+		top:0;
+		background-size:contain;
+		height:52px;
 		margin-top: 0px;
-		width: 290px;
-	    font-size: 17px;
-	    line-height: 20px;
+		width: 302px;
+		font-size: 17px;
+		line-height: 20px;
+		padding: 3px 0;
 	}
 	#portal-top .identity,
 	#portal-top .identity a {height:91px; width:24px; }
@@ -1087,6 +1103,11 @@ h2.CVSectionTitle:before {
         text-indent:-10000px;
         top:0;
         width:83px;
+        border: 3px solid transparent;
+        box-sizing: border-box;
+    }
+    #portal-top #mobile-nav-trigger:hover, #portal-top #mobile-nav-trigger:focus {
+        outline: none; border-color: blue; opacity: 0.8;
     }
 	#portal-top #mobile-nav-trigger:before {background:url('_images/trigger-menu.png') center center / 61px no-repeat transparent; content:""; display:block; height:52px; left:0; position:absolute; top:0; width:83px; }
 	#portal-top #mobile-nav-trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }
@@ -1413,6 +1434,7 @@ div.leaflet-control-geosearch.leaflet-control {
 }
 #content a img {
     border: 3px solid #66262d;
+    box-sizing: border-box;
 }
 #content a:hover img,
 #content a:focus img {
@@ -1450,6 +1472,27 @@ div.leaflet-control-geosearch.leaflet-control {
     background-color: black;
     background-clip: content-box;
     text-decoration: none;
+}
+
+#content-views li a {
+    color: white;
+}
+
+#content a.publication-images {
+    display: block;
+    overflow: hidden;
+    margin-top: 5px;
+    text-decoration: none;
+
+}
+
+#content a.publication-images.link-overlay:hover,
+#content a.publication-images.link-overlay:focus {
+    text-decoration: none;
+}
+
+.PublicationLinks a.AccessButton.button {
+    margin-bottom: 3px;
 }
 
 @media screen and (max-width:549px){
