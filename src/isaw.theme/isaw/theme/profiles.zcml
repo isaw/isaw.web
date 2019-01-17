@@ -333,26 +333,6 @@
       sortkey="10"
       source="31"
       destination="32"
-      title="Update login action"
-      description=""
-      profile="isaw.theme:default"
-      import_steps="actions"
-      />
-
-  <genericsetup:upgradeDepends
-      sortkey="10"
-      source="32"
-      destination="33"
-      title="New box listing view for Collections and Folders"
-      description=""
-      profile="isaw.theme:default"
-      import_steps="typeinfo"
-      />
-
-  <genericsetup:upgradeDepends
-      sortkey="10"
-      source="33"
-      destination="34"
       title="people-listing view for Collections"
       description=""
       profile="isaw.theme:default"
