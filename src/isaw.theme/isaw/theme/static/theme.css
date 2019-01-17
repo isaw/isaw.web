@@ -194,7 +194,8 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #content #slider .slide .slideroverlay {top: 50%; width:80vw; max-width: 50em; padding:40px 20px 20px; border: none; display:table; background-color: rgba(57, 48, 46, 0.8); transition: all 0.75s ease-in-out;}
 #content #slider .slide .slideroverlay:hover {background-color: rgba(57, 48, 46, 1.0);}
 #content #slider .slide .slideroverlay > * {padding-left: 20px; color:#fff; font-weight:400; font-family:'Noto Sans', 'Arial', sans-serif; text-align:left; text-shadow: 1px 1px 3px rgb(57, 48, 46);}
-#content #slider .slide .slideroverlay h3 {font-size:24px; letter-spacing:1px; line-height:100%; margin:0 auto 20px; text-transform:uppercase; }
+#content #slider .slide .slideroverlay h3,
+#content #slider .slide .slideroverlay h2 {font-size:24px; letter-spacing:1px; line-height:100%; margin:0 auto 20px; text-transform:uppercase; }
 #content #slider .slide .slideroverlay p, 
 #content #slider .slide .slideroverlay ul {font-size:20px; letter-spacing:.1px; line-height:166%; text-transform:none;}
 #content #slider .slide .slideroverlay p {margin-bottom: 1em;}
@@ -475,8 +476,10 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns #portal-column-second dl.event-details .portletItem .note {background:#f8f0e5; color:#4e4e4d; font-size:15px; line-height:20px; margin:0 0 24px; padding:24px 26px; }
 #portal-columns #portal-column-second dl.event-details .portletItem a.button.event.inverse { }
 .add-to-cal {border:2px solid #66232b; border-radius:2px; }
-.add-to-cal h3 {border-bottom:2px solid #66232b; color:#66232b; font-size:13px; font-weight:bold; margin:0; padding:32px 75px 32px 0; position:relative; text-align:center;  }
-.add-to-cal h3:after {background:url('_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
+.add-to-cal h3,
+.add-to-cal h2 {border-bottom:2px solid #66232b; color:#66232b; font-size:13px; font-weight:bold; margin:0; padding:32px 75px 32px 0; position:relative; text-align:center;  }
+.add-to-cal h3:after,
+.add-to-cal h2:after {background:url('_images/icon-calendar.png') center center / 26px no-repeat #66232b; bottom:0; content:""; display:block; position:absolute; right:0; top:0; width:75px; }
 .add-to-cal ul.links {list-style:none; margin:0; padding:0; text-align:center; }
 .add-to-cal ul.links li {display:inline-block; margin:0 4%; width:40%; }
 .add-to-cal ul.links li a {background:url('_images/icon-calendar-add.png') left center / 28px no-repeat; color:#000; display:block; font-size:14px; font-weight:bold; padding:20px 0 20px 26px; text-decoration:none; text-transform:uppercase; }
@@ -513,16 +516,20 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .footer-row #portal-footer .footer-portlet.hours:nth-child(3){display:block; float:left; padding-left:31%; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(4){display:block; float:right; padding-right:31%; width:16%; }
 
-.footer-row #portal-footer h3 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
+.footer-row #portal-footer h3,
+.footer-row #portal-footer h2 {font-size:14px; font-weight:800; line-height:100%; margin:0 0 8px; text-transform:uppercase; }
 .footer-row #portal-footer > div.contact > h3 {
 	display: none;
 }
 .footer-row #portal-footer > div.contact > p {
 	margin-top: 40px;
 }
-.footer-row #portal-footer h3.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:13px 15px; }
+.footer-row #portal-footer h3.support a,
+.footer-row #portal-footer h2.support a {background:#4f3f3c; display:block; margin-left:-15px; padding:13px 15px; }
 .footer-row #portal-footer h3.support a:hover,
-.footer-row #portal-footer h3.support a:focus {background:#695450; text-decoration: none;}
+.footer-row #portal-footer h3.support a:focus,
+.footer-row #portal-footer h2.support a:hover,
+.footer-row #portal-footer h2.support a:focus {background:#695450; text-decoration: none;}
 .footer-row #portal-footer p {font-size:15px; line-height:24px; margin:0; }
 .footer-row #portal-footer .footer-portlet.hours p strong {font-weight:normal; text-transform:uppercase; }
 .footer-row #portal-footer a {color:#ececec; text-decoration:none; }
@@ -1457,7 +1464,8 @@ div.leaflet-control-geosearch.leaflet-control {
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
 	.footer-row #portal-footer .footer-portlet.hours {float:none !important; padding:5% !important; width:90% !important; }
 
-	#content #slider .slide .slideroverlay h3 {font-size:18px; line-height:120%; }
+	#content #slider .slide .slideroverlay h3,
+    #content #slider .slide .slideroverlay h2 {font-size:18px; line-height:120%; }
 	#content #slider .slide .slideroverlay p {font-size:16px; }
 
 	#portal-columns ul.news li, #content ul.news li {float:none; margin-right:0 !important; width:100% !important; }
