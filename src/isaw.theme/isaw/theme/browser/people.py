@@ -38,4 +38,6 @@ class PeopleViewCollection(PeopleView):
     """View class for the @@people-view on Collections"""
 
     def _query(self):
-        return self.context.queryCatalog()
+        return [
+            b for b in self.context.queryCatalog() if b.portal_type == 'profile'
+        ]
