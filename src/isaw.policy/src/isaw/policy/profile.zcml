@@ -363,4 +363,14 @@
       import_steps="plone.app.registry"
       />
 
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="35"
+      destination="36"
+      title="Add fullname to new user form"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="propertiestool"
+      />
+
 </configure>

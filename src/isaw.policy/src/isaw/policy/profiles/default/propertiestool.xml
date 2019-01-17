@@ -52,6 +52,7 @@
     <property name="user_registration_fields" type="lines">
       <element value="portrait"/>
       <element value="description"/>
+      <element value="fullname" />
     </property>
     <property name="enable_checkout_workflow" type="boolean">False</property>
     <property name="checkout_workflow_policy"
