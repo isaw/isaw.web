@@ -106,6 +106,12 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
     width: 16%;
     overflow: hidden;
 }
+#portal-top #main-navigation .secondary-heading a,
+#portal-top #main-navigation .secondary-heading a:visited {
+    color: #333
+}
+#portal-top #main-navigation .secondary-heading a:hover,
+#portal-top #main-navigation .secondary-heading a:focus {opacity: 0.8; border-color: blue;}
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
 #portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:43px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#secondary li a:hover,
@@ -521,6 +527,8 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 	left:0; 
 	width:16%;
 }
+.footer-row #portal-footer .footer-portlet.contact h3 a:hover,
+.footer-row #portal-footer .footer-portlet.contact h3 a:focus {opacity: 0.8; border-color: blue;}
 .footer-row #portal-footer .footer-portlet.support {border-left:1px solid #6b6462; padding:0 5%; position:absolute; top:0; right:0; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(3){display:block; float:left; padding-left:31%; width:16%; }
 .footer-row #portal-footer .footer-portlet.hours:nth-child(4){display:block; float:right; padding-right:31%; width:16%; }
