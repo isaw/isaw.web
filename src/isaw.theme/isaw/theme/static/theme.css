@@ -527,7 +527,10 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 	left:0; 
 	width:16%;
 }
+.footer-row #portal-footer .footer-portlet.contact h2 a,
 .footer-row #portal-footer .footer-portlet.contact h3 a {border: 3px solid transparent; display:block; box-sizing: border-box}
+.footer-row #portal-footer .footer-portlet.contact h2 a:hover,
+.footer-row #portal-footer .footer-portlet.contact h2 a:focus,
 .footer-row #portal-footer .footer-portlet.contact h3 a:hover,
 .footer-row #portal-footer .footer-portlet.contact h3 a:focus {border-color: blue;}
 .footer-row #portal-footer .footer-portlet.support {border-left:1px solid #6b6462; padding:0 5%; position:absolute; top:0; right:0; width:16%; }
