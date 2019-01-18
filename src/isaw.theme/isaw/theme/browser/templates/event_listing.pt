@@ -60,7 +60,7 @@ $(document).ready(function () {
                                 templateId template/getId">
 <h1 class="screen-reader-only"
     tal:content="context/Title|string:Events">Events</h1>
-<div class="calendar-view-link add-to-cal"><h3>Add all events to Calendar</h3><ul class="links"><li><a tal:attributes="href string:${context/portal_url}/events/icalendar">ICal</a></li></ul></div>
+<div class="calendar-view-link add-to-cal"><h2>Add all events to Calendar</h2><ul class="links"><li><a tal:attributes="href string:${context/portal_url}/events/icalendar">ICal</a></li></ul></div>
   <tal:block tal:define="items view/listings">
     <div class="event-listing" tal:condition="items">
      <tal:block tal:repeat="item items">

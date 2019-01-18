@@ -19,7 +19,7 @@
     </ul>
     <a tal:condition="context/rsvpRequired" tal:attributes="href string:${context/portal_url}/rsvp" href="#" class="button event inverse">RSVP Required</a>
     <div class="add-to-cal">
-        <h3>Add Event to Calendar</h3>
+        <h2>Add Event to Calendar</h2>
         <ul class="links">
           <li><a tal:attributes="href string:${context/absolute_url}/vcs_view" href="#">VCal</a></li>
           <li><a tal:attributes="href string:${context/absolute_url}/ics_view" href="#">iCal</a></li>
