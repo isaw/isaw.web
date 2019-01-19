@@ -96,7 +96,7 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
-    line-height: 49px;
+    line-height: 43px;
     position: absolute;
     left: 47px;
     top: 0;
@@ -105,13 +105,14 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
     padding-left: 10px;
     width: 16%;
     overflow: hidden;
+    border: 3px solid transparent;
 }
 #portal-top #main-navigation .secondary-heading a,
 #portal-top #main-navigation .secondary-heading a:visited {
     color: #333;
 }
 #portal-top #main-navigation .secondary-heading:hover,
-#portal-top #main-navigation .secondary-heading:focus {border: 3px solid blue;}
+#portal-top #main-navigation .secondary-heading:focus {border-color: blue;}
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
 #portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:43px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#secondary li a:hover,
