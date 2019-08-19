@@ -12,6 +12,8 @@ SAML_PRIVATE_KEY_PATH = '../../conf/isaw-{}.pem'.format(
     'production' if IS_PRODUCTION else 'staging'
 )
 
+SSO_PLUGIN_ID = 'saml2sp'
+
 if IS_PRODUCTION:
     SAML_IDENTITY_PROVDER_URL = 'http://shibboleth.nyu.edu/idp/shibboleth'
     SAML_IDENTITY_PROVDER_TITLE = 'NYI Production SSO Identity Provider Entity'

@@ -216,6 +216,20 @@ def setup_portal_transforms(context):
     trans.reload()
 
 
+def add_loggedin_page(context):
+    portal = getToolByName(context, 'portal_url').getPortalObject()
+    if 'loggedin' in portal:
+        return
+    portal.invokeFactory(
+        'Document',
+        'loggedin',
+        Title='Loggedin',
+        text='You are now logged in via SAML2 SSO.'
+    )
+    page = portal['loggedin']
+    page.manage_setLocalRoles('Authenticated', ['Reader'])
+
+
 def add_saml_identity_provider_entity_to(saml2_authority):
     identity_provider = EntityByUrl(
         specified_title=config.SAML_IDENTITY_PROVDER_TITLE,
@@ -306,7 +320,7 @@ def add_attribute_consuming_service_to(sso_plugin):
 def add_spsso_plugin_and_its_children(context):
     acl_users = getToolByName(context, 'acl_users')
     plugin = IntegratedSimpleSpssoPlugin(title='SAML2 Service Provider Plugin')
-    plugin.id = 'saml2sp'
+    plugin.id = config.SSO_PLUGIN_ID
     if plugin.id not in acl_users:
         acl_users._setObject(plugin.id, plugin)
     plugin = acl_users._getOb(plugin.id)
@@ -316,7 +330,29 @@ def add_spsso_plugin_and_its_children(context):
     return plugin
 
 
+def activate_and_prioritize_spsso_auth_plugin(context):
+    plugin_id = config.SSO_PLUGIN_ID
+    acl_users = getToolByName(context, 'acl_users')
+    sso_plugin = acl_users[plugin_id]
+    sso_iface_info = [
+        info for info in acl_users.plugins.listPluginTypeInfo()
+        if sso_plugin.testImplements(info['interface'])
+    ]
+
+    # Activate:
+    sso_plugin.manage_activateInterfaces([i['id'] for i in sso_iface_info])
+
+    # Move into the top slot:
+    for info in sso_iface_info:
+        iface = info['interface']
+        while acl_users.plugins.listPlugins(iface)[0][0] != plugin_id:
+            acl_users.plugins.movePluginsUp(iface, [plugin_id])
+
+
 def setup_saml2(context):
+    add_loggedin_page(context)
     add_saml_authority_object(context)
     add_spsso_plugin_and_its_children(context)
+    if config.IS_PRODUCTION:
+        activate_and_prioritize_spsso_auth_plugin(context)
     return True
