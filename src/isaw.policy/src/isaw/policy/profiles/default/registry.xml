@@ -157,7 +157,7 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.file.vary">
     <field ref="plone.app.caching.moderateCaching.vary" />
-    <value />
+    <value>X-Anonymous</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.folderView.anonOnly">
     <field ref="plone.app.caching.moderateCaching.anonOnly" />
@@ -165,7 +165,13 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.folderView.etags">
     <field ref="plone.app.caching.moderateCaching.etags" />
-    <value />
+    <value>
+      <element>userid</element>
+      <element>catalogCounter</element>
+      <element>language</element>
+      <element>gzip</element>
+      <element>skin</element>
+    </value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.folderView.lastModified">
     <field ref="plone.app.caching.moderateCaching.lastModified" />
@@ -181,7 +187,7 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.folderView.vary">
     <field ref="plone.app.caching.moderateCaching.vary" />
-    <value />
+    <value>X-Anonymous</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.itemView.anonOnly">
     <field ref="plone.app.caching.moderateCaching.anonOnly" />
@@ -189,7 +195,13 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.itemView.etags">
     <field ref="plone.app.caching.moderateCaching.etags" />
-    <value />
+    <value>
+      <element>userid</element>
+      <element>catalogCounter</element>
+      <element>language</element>
+      <element>gzip</element>
+      <element>skin</element>
+    </value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.itemView.lastModified">
     <field ref="plone.app.caching.moderateCaching.lastModified" />
@@ -205,11 +217,11 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.content.itemView.vary">
     <field ref="plone.app.caching.moderateCaching.vary" />
-    <value />
+    <value>X-Anonymous</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.resource.anonOnly">
     <field ref="plone.app.caching.moderateCaching.anonOnly" />
-    <value>True</value>
+    <value>False</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.resource.etags">
     <field ref="plone.app.caching.moderateCaching.etags" />
@@ -221,7 +233,7 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.resource.ramCache">
     <field ref="plone.app.caching.moderateCaching.ramCache" />
-    <value>True</value>
+    <value>False</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.resource.smaxage">
     <field ref="plone.app.caching.moderateCaching.smaxage" />
@@ -233,7 +245,7 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.stableResource.anonOnly">
     <field ref="plone.app.caching.moderateCaching.anonOnly" />
-    <value>True</value>
+    <value>False</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.stableResource.etags">
     <field ref="plone.app.caching.moderateCaching.etags" />
@@ -245,7 +257,7 @@
   </record>
   <record name="plone.app.caching.moderateCaching.plone.stableResource.ramCache">
     <field ref="plone.app.caching.moderateCaching.ramCache" />
-    <value>True</value>
+    <value>False</value>
   </record>
   <record name="plone.app.caching.moderateCaching.plone.stableResource.smaxage">
     <field ref="plone.app.caching.moderateCaching.smaxage" />
@@ -265,7 +277,7 @@
   </record>
   <record name="plone.app.caching.strongCaching.plone.content.file.anonOnly">
     <field ref="plone.app.caching.strongCaching.anonOnly" />
-    <value>False</value>
+    <value>True</value>
   </record>
   <record name="plone.app.caching.strongCaching.plone.content.file.etags">
     <field ref="plone.app.caching.strongCaching.etags" />
@@ -289,7 +301,7 @@
   </record>
   <record name="plone.app.caching.strongCaching.plone.content.file.vary">
     <field ref="plone.app.caching.strongCaching.vary" />
-    <value />
+    <value>X-Anonymous</value>
   </record>
   <record name="plone.app.caching.strongCaching.plone.resource.lastModified">
     <field ref="plone.app.caching.strongCaching.lastModified" />
