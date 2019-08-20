@@ -6,6 +6,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
 
 from isaw.theme.browser.interfaces import IUtilsView
+from isaw.theme.browser.interfaces import ISSOView
+from isaw.policy.config import IS_PRODUCTION
 
 
 class UtilsView(BrowserView):
@@ -21,7 +23,7 @@ class UtilsView(BrowserView):
 
     def getUpcomingEvents(self, limit=3):
         """Grabbing latests news stuff for the news landing page"""
-        
+
         catalog = self.portal_catalog(portal_type=['Conference',
                                                 'Exhibition',
                                                 'Event',
@@ -53,7 +55,7 @@ class UtilsView(BrowserView):
         featured = getattr(root, "featured")
         body = featured.CookedBody()
         return body
- 
+
     def getMonthName(self, month, full=None):
         """ Translates a month int into a short name """
         month_list = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL',
@@ -64,7 +66,7 @@ class UtilsView(BrowserView):
         if type(month) is int and 0 < month < 13:
             return full and full_month_list[month-1] or month_list[month-1]
         return ''
-        
+
     def formatSiteMap(self, code):
         """ Customizes the sitemap pre-formated code to fit the comps """
         # we want to grab what's in the title attribute and drop it in a div after the element's link
@@ -80,3 +82,25 @@ class UtilsView(BrowserView):
                     utilsview.py</div>' % (insert_after, summary))
                 code = code.replace(element, new_element)
         return code
+
+
+class SSOView(BrowserView):
+    """Makes URLs for SSO login/logout accible from restricted python.
+    """
+    implements(ISSOView)
+
+    dev_logout_url = 'https://shibbolethqa.es.its.nyu.edu/idp/profile/Logout'
+    prod_logout_url = 'https://shibboleth.nyu.edu/idp/profile/Logout'
+
+    def logout(self):
+        self.request.response.redirect(self.logout_url)
+
+    @property
+    def logout_url(self):
+        if self.is_prod:
+            return self.prod_logout_url
+        return self.dev_logout_url
+
+    @property
+    def is_prod(self):
+        return IS_PRODUCTION

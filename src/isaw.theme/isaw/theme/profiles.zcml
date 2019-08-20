@@ -337,6 +337,16 @@
       description=""
       profile="isaw.theme:default"
       import_steps="typeinfo"
-      />      
+      />
+
+  <genericsetup:upgradeDepends
+      sortkey="10"
+      source="33"
+      destination="33"
+      title="Update login action"
+      description=""
+      profile="isaw.theme:default"
+      import_steps="actions"
+      />
 
 </configure>

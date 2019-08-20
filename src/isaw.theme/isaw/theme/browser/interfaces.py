@@ -29,6 +29,14 @@ class IUtilsView(Interface):
         """ Customizes the sitemap pre-formated code to fit the comps """
 
 
+class ISSOView(Interface):
+    """View for interacting with NYU SSO"""
+
+    def logout():
+        """Redirect to a staging or production URL at NYU.
+        """
+
+
 class ITiledListingView(Interface):
     """marker interface for a view providing tiled view listed items
 

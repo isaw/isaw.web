@@ -3,6 +3,12 @@ from Acquisition import aq_parent, aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import _createObjectByType
 from Products.PortalTransforms.Transform import make_config_persistent
+from dm.zope.saml2.attribute import AttributeConsumingService
+from dm.zope.saml2.attribute import RequestedAttribute
+from dm.zope.saml2.authority import SamlAuthority
+from dm.zope.saml2.entity import EntityByUrl
+from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
+from isaw.policy import config
 
 
 def install_addons(context):
@@ -13,6 +19,7 @@ def install_addons(context):
         qi.installProduct('Products.PloneKeywordManager')
     if not qi.isProductInstalled('Products.RedirectionTool'):
         qi.installProduct('Products.RedirectionTool')
+
 
 def copy_generic_fields(event):
     event_object = event.getObject()
@@ -207,3 +214,145 @@ def setup_portal_transforms(context):
     make_config_persistent(tconfig)
     trans._p_changed = True
     trans.reload()
+
+
+def add_loggedin_page(context):
+    portal = getToolByName(context, 'portal_url').getPortalObject()
+    if 'loggedin' in portal:
+        return
+    portal.invokeFactory(
+        'Document',
+        'loggedin',
+        Title='Loggedin',
+        text='You are now logged in via SAML2 SSO.'
+    )
+    page = portal['loggedin']
+    page.manage_setLocalRoles('Authenticated', ['Reader'])
+
+
+def add_saml_identity_provider_entity_to(saml2_authority):
+    identity_provider = EntityByUrl(
+        specified_title=config.SAML_IDENTITY_PROVDER_TITLE,
+        url=config.SAML_IDENTITY_PROVDER_URL
+    )
+    identity_provider.id = config.SAML_IDENTITY_PROVDER_URL
+    if identity_provider not in saml2_authority:
+        saml2_authority._setObject(identity_provider.id, identity_provider)
+    identity_provider = saml2_authority._getOb(identity_provider.id)
+
+    return identity_provider
+
+
+def add_saml_authority_object(context):
+    portal = getToolByName(context, 'portal_url').getPortalObject()
+    portal_url = portal.absolute_url()
+    # XXX Trying to make an ID related to the instance somehow:
+    service_provider_id = portal_url.split('//')[1].replace('/', '.') + '.isaw-saml-entity'
+
+    authority = SamlAuthority(
+        title='SAML2 Authority',
+        entity_id=service_provider_id,
+        base_url=portal_url,
+        certificate=config.SAML_CERT_PATH,
+        private_key=config.SAML_PRIVATE_KEY_PATH
+    )
+    authority.id = "saml2auth"
+    if authority.id not in portal:
+        portal._setObject(authority.id, authority)
+    authority = portal._getOb(authority.id)
+
+    add_saml_identity_provider_entity_to(authority)
+
+    return authority
+
+
+def add_saml_requested_attribute_to(attribute_service, id, title):
+    attribute = RequestedAttribute(
+        title=title,
+        format='urn:oasis:names:tc:SAML:2.0:attrname-format:uri',
+        type='string'
+    )
+    attribute.id = id
+    if attribute.id not in attribute_service:
+        attribute_service._setObject(attribute.id, attribute)
+    attribute = attribute_service._getOb(attribute.id)
+
+    return attribute
+
+
+def add_saml_requested_attributes_to(attribute_service):
+    attributes = []
+    todo = [
+        {
+            'id': 'sn',  # abbreviation for surname
+            'title': 'urn:oid:2.5.4.4',
+        },
+        {
+            'id': 'givenName',
+            'title': 'urn:oid:2.5.4.42',
+        },
+        {
+            'id': 'eduPersonPrincipalName',  # email address, and our shared ID
+            'title': 'urn:oid:1.3.6.1.4.1.5923.1.1.1.6',
+        },
+    ]
+    for item in todo:
+        attribute = add_saml_requested_attribute_to(
+            attribute_service, id=item['id'], title=item['title']
+        )
+        attributes.append(attribute)
+
+    return attributes
+
+
+def add_attribute_consuming_service_to(sso_plugin):
+    service = AttributeConsumingService(
+        title="SAML2 Attribute Consuming Service"
+    )
+    service.id = 'saml2sp-attribute-service'
+    if service.id not in sso_plugin:
+        sso_plugin._setObject(service.id, service)
+    service = sso_plugin._getOb(service.id)
+
+    return service
+
+
+def add_spsso_plugin_and_its_children(context):
+    acl_users = getToolByName(context, 'acl_users')
+    plugin = IntegratedSimpleSpssoPlugin(title='SAML2 Service Provider Plugin')
+    plugin.id = config.SSO_PLUGIN_ID
+    if plugin.id not in acl_users:
+        acl_users._setObject(plugin.id, plugin)
+    plugin = acl_users._getOb(plugin.id)
+    service = add_attribute_consuming_service_to(plugin)
+    add_saml_requested_attributes_to(service)
+
+    return plugin
+
+
+def activate_and_prioritize_spsso_auth_plugin(context):
+    plugin_id = config.SSO_PLUGIN_ID
+    acl_users = getToolByName(context, 'acl_users')
+    sso_plugin = acl_users[plugin_id]
+    sso_iface_info = [
+        info for info in acl_users.plugins.listPluginTypeInfo()
+        if sso_plugin.testImplements(info['interface'])
+    ]
+
+    # Activate:
+    sso_plugin.manage_activateInterfaces([i['id'] for i in sso_iface_info])
+
+    # Move into the top slot:
+    for info in sso_iface_info:
+        iface = info['interface']
+        while acl_users.plugins.listPlugins(iface)[0][0] != plugin_id:
+            acl_users.plugins.movePluginsUp(iface, [plugin_id])
+
+
+def setup_saml2(context):
+    add_loggedin_page(context)
+    add_saml_authority_object(context)
+    add_spsso_plugin_and_its_children(context)
+    if config.IS_PRODUCTION:
+        activate_and_prioritize_spsso_auth_plugin(context)
+    return True
