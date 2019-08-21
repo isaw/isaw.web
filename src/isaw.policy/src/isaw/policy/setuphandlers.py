@@ -227,7 +227,7 @@ def add_loggedin_page(context):
         text='You are now logged in via SAML2 SSO.'
     )
     page = portal['loggedin']
-    page.manage_setLocalRoles('Authenticated', ['Reader'])
+    page.manage_setLocalRoles('AuthenticatedUsers', ['Reader'])
 
 
 def add_saml_identity_provider_entity_to(saml2_authority):
