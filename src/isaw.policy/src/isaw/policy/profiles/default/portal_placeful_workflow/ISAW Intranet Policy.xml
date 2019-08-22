@@ -12,10 +12,6 @@
   <type default_chain="true" type_id="Folder"/>
   <type default_chain="true" type_id="Link"/>
   <type default_chain="true" type_id="News Item"/>
-  <type default_chain="true" type_id="PressClip"/>
-  <type default_chain="true" type_id="PressContact"/>
-  <type default_chain="true" type_id="PressRelease"/>
-  <type default_chain="true" type_id="PressRoom"/>
   <type default_chain="true" type_id="Topic"/>
   <type default_chain="true" type_id="profile"/>
  </bindings>

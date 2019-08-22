@@ -390,4 +390,14 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeDepends
+      sortkey="11"
+      source="37"
+      destination="38"
+      title="Remove PressRoom"
+      description=""
+      profile="isaw.policy:default"
+      import_steps="typeinfo workflow"
+      />
+
 </configure>

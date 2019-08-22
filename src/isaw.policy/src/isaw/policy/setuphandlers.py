@@ -13,8 +13,6 @@ from isaw.policy import config
 
 def install_addons(context):
     qi = getToolByName(context, 'portal_quickinstaller')
-    if not qi.isProductInstalled('Products.PressRoom'):
-        qi.installProduct('Products.PressRoom')
     if not qi.isProductInstalled('Products.PloneKeywordManager'):
         qi.installProduct('Products.PloneKeywordManager')
     if not qi.isProductInstalled('Products.RedirectionTool'):

@@ -25,13 +25,11 @@ class IsawpolicyLayer(PloneSandboxLayer):
         # Install products that use an old-style initialize() function
         z2.installProduct(app, 'Products.WebServerAuth')
         z2.installProduct(app, 'Products.CMFPlacefulWorkflow')
-        z2.installProduct(app, 'Products.PressRoom')
 
     def tearDownZope(self, app):
         # Uninstall products installed above
         z2.uninstallProduct(app, 'Products.WebServerAuth')
         z2.uninstallProduct(app, 'Products.CMFPlacefulWorkflow')
-        z2.uninstallProduct(app, 'Products.PressRoom')
 
     def setUpPloneSite(self, portal):
         applyProfile(portal, 'isaw.policy:default')
