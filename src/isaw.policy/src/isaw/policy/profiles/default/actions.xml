@@ -189,7 +189,7 @@
    <property name="title">News RSS</property>
    <property name="description"></property>
    <property
-      name="url_expr">string:${globals_view/navigationRootUrl}/news/RSS</property>
+      name="url_expr">string:${globals_view/navigationRootUrl}/news/collector/RSS</property>
    <property name="link_target"></property>
    <property name="icon_expr"></property>
    <property name="available_expr"></property>
