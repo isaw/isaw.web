@@ -1218,6 +1218,7 @@ h2.CVSectionTitle:before {
 	#portal-columns ul.news li:nth-child(2n), #content ul.news li:nth-child(2n) {margin-right:0; }
 	#portal-columns ul.news li:nth-child(2n+1), #content ul.news li:nth-child(2n+1) {clear:left; }
 
+    #slider-container, #slider { height: auto !important; }
 	#viewlet-above-content .post.featured .post-image,
 	#viewlet-above-content .post.featured .post-content {float:none; width:auto; }
 	#viewlet-above-content .post.featured .post-image {margin-bottom:20px; }
