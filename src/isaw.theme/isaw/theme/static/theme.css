@@ -290,7 +290,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .template-usergroup-userprefs #portal-columns #column-contents,
 .template-usergroup-groupprefs #portal-columns #column-contents {overflow: visible; }
 #portal-columns h1, #content h1 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
-#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:26px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
 #portal-columns h3, #content h3 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
 #portal-columns dl dt, #content dl dt {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
@@ -1065,7 +1065,7 @@ h2.CVSectionTitle:before {
     }
 }
 
-@media screen and (max-width:1120px){
+@media screen and (max-width:1180px){
 /*	#portal-top .identity {left:0; } */
 	#site-title, #page-site-title {left:46px; }
 	#portal-top #main-navigation ul#primary li a {font-size:12px; padding:0 20px; }
@@ -1463,7 +1463,6 @@ div.leaflet-control-geosearch.leaflet-control {
     line-height: 1rem;
     vertical-align: middle;
     padding: 4px;
-    font-size: 80%;
     background-color: #fffaf8;
 }
 #skip a, #skip a:visited {
