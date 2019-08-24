@@ -1072,7 +1072,7 @@ h2.CVSectionTitle:before {
 	#portal-top #main-navigation .secondary-heading,
 	#portal-top #main-navigation ul#secondary li a {font-size:11px;}
 }
-@media screen and (max-width:959px){
+@media screen and (max-width:1020px){
 	#viewlet-above-content #portal-breadcrumbs {padding-left:34px; line-height: 16px; height: 16px; padding: 12px 20px 11px 56px}
 	body[class*="isaw-home"][class*="section"][class*="template-document_view"] {padding-bottom:0; }
 	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-top {position:relative; left:auto; top:auto; right:auto; height: 52px;}
@@ -1145,6 +1145,10 @@ h2.CVSectionTitle:before {
     #portal-top #main-navigation {left:0; width:auto; }
     #portal-top #portal-searchbox {
         top: 0
+    }
+
+    #skip {
+	font-size: 100%;
     }
 }
 
@@ -1464,6 +1468,7 @@ div.leaflet-control-geosearch.leaflet-control {
     vertical-align: middle;
     padding: 4px;
     background-color: #fffaf8;
+    font-size: 80%;
 }
 #skip a, #skip a:visited {
     color:rgba(155,58,37,1);
