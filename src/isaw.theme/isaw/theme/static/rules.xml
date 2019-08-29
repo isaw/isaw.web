@@ -60,6 +60,7 @@
     
     <!-- Body -->
     <merge attributes="class" css:theme="body" css:content="body" />
+    <copy css:theme="body" css:content="body" attributes="*" />
 
     <!-- Logo Text/Link -->
     <drop css:theme="#page-site-title" css:if-content=".section-isaw-home" />
