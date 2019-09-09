@@ -1,21 +1,15 @@
 /*
 	background cream color: #fffaf5;
 	body font-family: 'Noto Sans', sans-serif;
-	heading and menu font family: Questrial, 'Noto Sans', sans-serif;
+	heading and menu font family: 'Noto Sans', sans-serif;
 */
 
 
-/* Noto Sans 
+/* Noto Sans
 by Google
 Apache License, version 2.0
 */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext');
-
-/* Questrial 
-by Joe Prince
-SIL Open Font License, 1.1
-*/
-@import url(https://fonts.googleapis.com/css?family=Questrial);
 
 
 /* possible background colors:
@@ -37,7 +31,7 @@ a:after,
 a {transition: all 0.5s ease; }
 
 
-.button {background: transparent; border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
+.button {background: transparent; border:2px solid #9b3a25; border-radius:2px; color:#9b3a25; display:inline-block; font-family:'Noto Sans', sans-serif; font-size:13px; font-weight:700; letter-spacing:.8px; line-height:100%; padding:15px 25px; text-align:center; text-decoration:none !important; text-transform:uppercase; }
 .button:hover,
 .button:focus,
 #content a.button:hover,
@@ -61,7 +55,7 @@ a {transition: all 0.5s ease; }
 	text-align:left;
     width:384px;
     margin-top: 49px;
-    font-family: Questrial, 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -72,7 +66,7 @@ a {transition: all 0.5s ease; }
     line-height: 30px;
     border: 3px solid transparent;
     box-sizing: border-box;
-} 
+}
 a:hover #site-title, #page-site-title a:hover,
 a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;}
 #portal-top .identity {position: absolute; top:0; left:0; background:url('_images/logo-isaw.svg') center center / contain no-repeat #fff; display:block; height:179px; text-indent:-10000px; width:47px; z-index:6}
@@ -80,7 +74,7 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
 #portal-top #main-navigation { }
 #portal-top #main-navigation ul#primary {background:#fffaf5; display:block; height:78px; margin:0; position:absolute; right:0; text-align:right; top:49px; width:100%; z-index:2; }
 #portal-top #main-navigation ul#primary li {display:inline-block; position:relative; text-align:right; vertical-align:top; width:220px; }
-#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:72px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
+#portal-top #main-navigation ul#primary li a {background:#9c8350; color:#fff; display:block; font-family: 'Noto Sans', sans-serif; font-size:15px; font-weight:800; letter-spacing:1px; line-height:72px; padding:0; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#primary li a:hover,
 #portal-top #main-navigation ul#primary li a:focus {opacity: 0.9; border: 3px solid blue !important;}
 #portal-top #main-navigation ul#primary li#portaltab-graduate-studies a {background:#6d6054; border: 3px solid #6d6054; }
@@ -92,7 +86,7 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
     color: #333;
     background-color: rgba(221,217,214,1);
     display: block;
-    font-family: Questrial, 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -114,7 +108,7 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
 #portal-top #main-navigation .secondary-heading:hover,
 #portal-top #main-navigation .secondary-heading:focus {border-color: blue;}
 #portal-top #main-navigation ul#secondary li {display:inline-block; }
-#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:43px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
+#portal-top #main-navigation ul#secondary li a {color:#333; display:block; font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; line-height:43px; padding:0 15px; text-align:center; text-decoration:none; text-transform:uppercase; border: 3px solid transparent; }
 #portal-top #main-navigation ul#secondary li a:hover,
 #portal-top #main-navigation ul#secondary li a:focus {background:#cac5c1; border: 3px solid blue !important; }
 #portal-top .page-title {bottom:30px; display:none; left:0; position:absolute; right:0; width:100%; z-index:4; }
@@ -156,7 +150,7 @@ a:focus #site-title, #page-site-title a:focus {opacity: 0.8; border-color: blue;
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow {width:418px; }
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow:hover,
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow.LSHighlight {background:#cac5c1 !important; }
-#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a {color:#231F20; display:block; font-size:16px; font-weight:700; margin:0 0 4px; text-decoration:none; } 
+#portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a {color:#231F20; display:block; font-size:16px; font-weight:700; margin:0 0 4px; text-decoration:none; }
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow a.advancedsearchlink { }
 #portal-top #portal-searchbox form .LSBox #LSResult #LSShadow fieldset .LSIEFix .LSRow .LSDescr {color:#231F20; font-size:14px; }
 
@@ -216,7 +210,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #content #slider .slide .slideroverlay h3,
 #content #slider .slide .slideroverlay h2 {font-size:24px; letter-spacing:1px; line-height:100%; margin:0 auto 20px; text-transform:uppercase; }
 #content #slider .slide .slideroverlay h3 a {line-height: 125%;}
-#content #slider .slide .slideroverlay p, 
+#content #slider .slide .slideroverlay p,
 #content #slider .slide .slideroverlay ul {font-size:20px; letter-spacing:.1px; line-height:166%; text-transform:none;}
 #content #slider .slide .slideroverlay p {margin-bottom: 1em;}
 #content #slider .slide .slideroverlay a {color:inherit; text-decoration:none; transition: all 0.5s ease-in-out;}
@@ -236,7 +230,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:Hover,
 body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns .cycle-pager span:focus {background:rgba(255,255,255,1); }
 
-#portal-breadcrumbs {background: #ddd9d6; color:#fff; font-family:Questrial, 'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
+#portal-breadcrumbs {background: #ddd9d6; color:#fff; font-family:'Noto Sans', sans-serif; font-size:14px; font-weight:800; letter-spacing:.5px; line-height:12px; margin:0; padding:21px 20px 20px 56px; text-transform:uppercase; }
 
 .section-graduate-studies #portal-breadcrumbs {background:#6d6054; }
 .section-visiting-scholars #portal-breadcrumbs {background:#9d3a20; }
@@ -289,9 +283,9 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns #column-contents {margin:0 auto; max-width:1154px; overflow:auto; padding:60px 20px 80px; }
 .template-usergroup-userprefs #portal-columns #column-contents,
 .template-usergroup-groupprefs #portal-columns #column-contents {overflow: visible; }
-#portal-columns h1, #content h1 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
-#portal-columns h2, #content h2 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:26px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
-#portal-columns h3, #content h3 {font-family:Questrial, 'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns h1, #content h1 {font-family:'Noto Sans', sans-serif; font-size:36px; font-weight:400; letter-spacing:0.5px; text-transform:uppercase; line-height:100%; }
+#portal-columns h2, #content h2 {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
+#portal-columns h3, #content h3 {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:400; letter-spacing:0.5px; line-height:100%; margin:0 0 28px;}
 #portal-columns dl dt, #content dl dt {font-family:'Noto Sans', sans-serif; font-size:22px; font-weight:800; letter-spacing:.7px; line-height:100%; }
 #portal-columns h4, #content h4,
 #portal-columns form fieldset legend, #content form fieldset legend,
@@ -434,7 +428,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 #portal-columns ul.navTree li.navTreeTopNode {margin-top: 0px;}
 #portal-columns ul.navTree li.navTreeFolderish {padding-left: 23px;}
 #portal-columns ul.navTree.navTreeLevel0 > li.navTreeFolderish {padding-left: 36px;}
-#portal-columns ul.navTree li a {color:#333; display:block; font-family:Questrial, 'Noto Sans', sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; border: 3px solid transparent; box-sizing: border-box;}
+#portal-columns ul.navTree li a {color:#333; display:block; font-family:'Noto Sans', sans-serif; font-size:17px; font-weight:400; letter-spacing:.5px; padding:0; line-height:120%; margin:0; position:relative; text-decoration:none; border: 3px solid transparent; box-sizing: border-box;}
 #portal-columns ul.navTree li a.navTreeFolderish {text-decoration:none !important; }
 #portal-columns ul.navTree li > a.navTreeFolderish:before {background:url('_images/arrow-down.png') center center / contain no-repeat; content:""; display:block; height:8px; left:-24px; position:absolute; top:3px; width:13px; }
 #portal-columns ul.navTree li.collapsed > a.navTreeFolderish:before {transform:rotate(-90deg); -webkit-transform:rotate(-90deg); }
@@ -454,7 +448,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 .section-exhibitions #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#9e6a4a; }
 .section-events #portal-columns ul.navTree.navTreeLevel0 > li:first-child {background:#66232b; }
 #portal-columns ul.navTree.navTreeLevel0 > li:first-child:hover,
-#portal-columns ul.navTree.navTreeLevel0 > li:first-child:focus {opacity: 0.9;} 
+#portal-columns ul.navTree.navTreeLevel0 > li:first-child:focus {opacity: 0.9;}
 
 .section-graduate-studies #portal-columns ul.navTree.navTreeLevel0 > li:first-child a,
 .section-visiting-scholars #portal-columns ul.navTree.navTreeLevel0 > li:first-child a,
@@ -511,13 +505,13 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 
 
 .footer-row {
-	background:#39302e; 
-	clear:both; 
-	color:#ececec; 
-	font-family:'Noto Sans', sans-serif; 
-	font-size:15px; 
-	font-weight:500; 
-	overflow:auto; 
+	background:#39302e;
+	clear:both;
+	color:#ececec;
+	font-family:'Noto Sans', sans-serif;
+	font-size:15px;
+	font-weight:500;
+	overflow:auto;
 	padding:24px 20px 58px;
     min-height: 11em;
 }
@@ -525,10 +519,10 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 //.footer-row #portal-footer .footer-portlet {display:block; float:left; padding:0 5%; width:16%; }
 
 .footer-row #portal-footer .footer-portlet.contact {
-	border-right:1px solid #6b6462; 
-	padding:0 5%; position:absolute; 
-	top:0; 
-	left:0; 
+	border-right:1px solid #6b6462;
+	padding:0 5%; position:absolute;
+	top:0;
+	left:0;
 	width:16%;
 }
 .footer-row #portal-footer .footer-portlet.contact h2 a,
@@ -686,7 +680,7 @@ td.event, td.todayevent {
 td.event a, td.todayevent a {
     color: white !important;
 }
-/* section color schemes 
+/* section color schemes
 .section-events #portal-columns h3,
 .section-events #portal-columns dl dt {color:#66232b; }
 .section-events #portal-top::before {background:rgba(102,35,43,.87); }
@@ -908,12 +902,12 @@ h2.CVSectionTitle:before {
 #content .event-listing .event-result .event-result-detail p {color:#343433; font-size:17px; line-height:120%; margin:0 0 8px; }
 #portal-columns .event-listing .event-result .event-result-detail p.event-subtitle,
 #content .event-listing .event-result .event-result-detail p.event-subtitle {font-size: 18px; font-style: italic;}
-.template-event_view #content p.subtitle {font-family: Questrial, 'Noto Sans', sans-serif; font-size: 22px; font-weight: 900; }
+.template-event_view #content p.subtitle {font-family: 'Noto Sans', sans-serif; font-size: 22px; font-weight: 900; }
 #portal-columns .event-listing .event-result .event-result-detail .post-excerpt,
 #content .event-listing .event-result .event-result-detail .post-excerpt {color:#575756; }
 .eventRsvp {float: right; margin: 0.25em 0 0 0.25em;}
 
-#portal-columns table.ploneCalendar, 
+#portal-columns table.ploneCalendar,
 #content table.ploneCalendar {width:100%; }
 .fc-header .fc-state-default span {border:none; }
 .fc-header .fc-state-default, .fc-header .fc-state-default a {border:none !important; }
@@ -1125,7 +1119,7 @@ h2.CVSectionTitle:before {
 	#portal-top #mobile-nav-trigger:after {background:url('_images/trigger-close.png') center center / 16px no-repeat transparent; content:""; display:block; height:52px; opacity:0; right:0; position:absolute; top:0; visibility:hidden; width:38px; }
 	#portal-top #mobile-nav-trigger.open:before {opacity:0; visibility:hidden; }
 	#portal-top #mobile-nav-trigger.open:after {opacity:1; visibility:visible; }
-	
+
 	#portal-top #main-navigation {display:none; position:absolute; right:0; top:52px; width:320px; }
 	#portal-top #main-navigation.open {display:block; z-index: 2000; }
 	#portal-top #main-navigation ul#primary {height:auto; padding:0; position:static; right:auto; top:auto; }
@@ -1156,7 +1150,7 @@ h2.CVSectionTitle:before {
 	#viewlet-above-content #portal-breadcrumbs {font-size:10px; line-height:12px; height: 12px; margin-bottom:22px; padding: 14px 20px 13px 56px; text-size-adjust: none; -webkit-text-size-adjust: none;}
 	#viewlet-above-content #portal-breadcrumbs span {margin:0; }
 	/*flexbox it*/
-	#column-contents {padding:0 20px 80px 40px; 
+	#column-contents {padding:0 20px 80px 40px;
 		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
 		display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
 		display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -1164,7 +1158,7 @@ h2.CVSectionTitle:before {
 		display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 		-ms-flex-direction: column;
 		-webkit-flex-direction: column;
-		flex-direction:column; 
+		flex-direction:column;
 	}
 
 	body.template-newsitem_view #main-column,
@@ -1178,8 +1172,8 @@ h2.CVSectionTitle:before {
 	#portal-columns.three #portal-column-content,
 	#portal-columns.three #portal-column-second,
 	#portal-column-first,
-	#portal-column-content {clear:both; float:none; width:100%; 
-		margin-bottom:60px; 
+	#portal-column-content {clear:both; float:none; width:100%;
+		margin-bottom:60px;
 	}
 	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-column-content {margin-bottom: 0; }
 	#portal-column-first {
@@ -1190,24 +1184,24 @@ h2.CVSectionTitle:before {
 		order: 3;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
 	}
 	#portal-column-content {
-		-webkit-box-ordinal-group: 1;  
-		-moz-box-ordinal-group: 1;     
-		-ms-flex-order: 1;     
-		-webkit-order: 1;  
+		-webkit-box-ordinal-group: 1;
+		-moz-box-ordinal-group: 1;
+		-ms-flex-order: 1;
+		-webkit-order: 1;
 		order: 1;
 	}
 	#portal-column-second {
-		-webkit-box-ordinal-group: 2;  
-		-moz-box-ordinal-group: 2;     
-		-ms-flex-order: 2;     
-		-webkit-order: 2;  
-		order: 2;		
+		-webkit-box-ordinal-group: 2;
+		-moz-box-ordinal-group: 2;
+		-ms-flex-order: 2;
+		-webkit-order: 2;
+		order: 2;
 	}
 
 	#portal-columns h1, #content h1 {font-size:32px; }
 	#portal-columns h2, #content h2 {font-size:26px; }
-	#portal-columns h4, 
-	#portal-columns form fieldset legend, 
+	#portal-columns h4,
+	#portal-columns form fieldset legend,
 	#portal-columns .documentDescription,
     #content h4,
     #content form fieldset legend,
@@ -1215,9 +1209,9 @@ h2.CVSectionTitle:before {
 	#portal-columns blockquote, #content blockquote {padding:20px 30px; }
 	#portal-columns blockquote p, #content blockquote p {font-size:24px; }
 	#portal-columns ul.navTree li.navTreeFolderish::after {display:none; }
-	
+
 	body[class*="isaw-home"][class*="section"][class*="template-document_view"] #portal-columns {padding:0; }
-	
+
 	#portal-columns ul.news li, #content ul.news li {display:block; margin-right:4%; width:48%; }
 	#portal-columns ul.news li:nth-child(3n), #content ul.news li:nth-child(3n) {margin-right:4%; }
 	#portal-columns ul.news li:nth-child(3n+1), #content ul.news li:nth-child(3n+1) {clear:none; }
