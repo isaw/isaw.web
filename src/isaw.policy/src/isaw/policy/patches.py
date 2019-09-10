@@ -9,9 +9,12 @@ def patch_saml_login():
     from dm.zope.saml2.spsso.plugin import IntegratedSimpleSpssoPlugin
 
     def authenticateCredentials(self, credentials):
-        userid, login = super(
+        result = super(
             IntegratedSimpleSpssoPlugin, self
         ).authenticateCredentials(credentials)
+        if not result or len(result) != 2:
+            return result
+        userid, login = result
         if userid == login:
             try:
                 acl = getToolByName(self, 'acl_users')
