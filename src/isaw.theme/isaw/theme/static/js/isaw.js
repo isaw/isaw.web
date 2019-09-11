@@ -338,9 +338,10 @@ jQuery(function($) {
         }
         $breadcrumb.text(text);
     });
-    $('a[id^="personaltools-login"]').click(function () {
+    $('li[id^="personaltools-login"] a').click(function () {
         if (window.createCookie !== undefined) {
             window.createCookie('came_from', window.location.href);
         }
+        return true;
     });
 });
