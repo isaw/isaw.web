@@ -5,10 +5,14 @@
     <permission name="isaw.facultycv: Add profile" acquire="False">
       <role name="Manager" />
       <role name="Contributor" />
+      <role name="Owner" />
+      <role name="Site Administrator" />
     </permission>
     <permission name="isaw.facultycv: Add CV" acquire="False">
       <role name="Manager" />
       <role name="Contributor" />
+      <role name="Owner" />
+      <role name="Site Administrator" />
     </permission>
   </permissions>
 </rolemap>
