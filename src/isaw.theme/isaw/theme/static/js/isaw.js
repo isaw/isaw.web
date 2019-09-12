@@ -337,5 +337,11 @@ jQuery(function($) {
             text = text.substr(0,50).split(" ").slice(0, -1).join(" ") + '\u2026'
         }
         $breadcrumb.text(text);
-    })
+    });
+    $('li[id^="personaltools-login"] a').click(function () {
+        if (window.createCookie !== undefined) {
+            window.createCookie('came_from', window.location.href);
+        }
+        return true;
+    });
 });
