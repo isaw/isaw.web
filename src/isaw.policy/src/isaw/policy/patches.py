@@ -33,7 +33,9 @@ def patch_saml_login():
         elif len(userids) > 1:
             logger.info('Too many matching userids found for login '
                         '{}, falling back to default'.format(login))
-        elif len(userids) > 1:
+        else:
             logger.info('No matching userids found for login '
                         '{}, falling back to default'.format(login))
         return userid, login
+
+    IntegratedSimpleSpssoPlugin.authenticateCredentials = authenticateCredentials
