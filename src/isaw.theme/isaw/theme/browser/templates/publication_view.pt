@@ -7,6 +7,9 @@
       i18n:domain="kcrw.site">
 <body>
 <metal:supress-desc fill-slot="content-description"></metal:supress-desc>
+<metal:replace-title fill-slot="content-title">
+  <h1 class="documentFirstHeading" tal:content="context/full_title" />
+</metal:replace-title>
   <metal:core fill-slot="content-core">
 	<tal:defines define="image_view context/@@images;
                        image_preview image_view/image/large|nothing;
