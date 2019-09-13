@@ -1,0 +1,4 @@
+<link rel="alternate" type="text/html" tal:condition="view/html_ref|nothing"
+      tal:attributes="href view/html_ref" />
+<link rel="alternate" type="application/json" tal:condition="view/json_ref|nothing"
+      tal:attributes="href view/json_ref" />
