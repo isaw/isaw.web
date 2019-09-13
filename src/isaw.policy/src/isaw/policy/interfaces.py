@@ -2,7 +2,6 @@ from zope.interface import Interface
 from zope.interface import Invalid
 from zope.interface import invariant
 from zope.schema import List, Text, TextLine, Tuple, URI
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from isaw.bibitems.interfaces import IBibliographicItem
 from isaw.policy import MessageFactory as _
 from plone.app.textfield import RichText
@@ -74,8 +73,11 @@ class IISAWPublication(form.Schema):
         required=False,
     )
 
-    formatted_citation = TextLine(
-        title=_(u"Formatted Citation"),
+    formatted_citation = RichText(
+        title=_(u'Formatted Citation'),
+        default_mime_type='text/html',
+        allowed_mime_types=('text/html',),
+        output_mime_type='text/x-html-safe',
         required=False,
     )
 
