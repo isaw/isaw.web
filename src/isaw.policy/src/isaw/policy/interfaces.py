@@ -25,6 +25,12 @@ class IISAWPublication(form.Schema):
         description=_(u'The full bibliographic title of the publication'),
     )
 
+    bibliographic_uri = URI(
+        title=_(u"Zotero URI"),
+        description=_(u"This is a URI to a Zotero bibliographic reference."),
+        required=False,
+    )
+
     description = Text(
         title=_(u'Summary'),
         description=_(u'Used in item listings and search results.'),
@@ -79,12 +85,6 @@ class IISAWPublication(form.Schema):
         default_mime_type='text/html',
         allowed_mime_types=('text/html',),
         output_mime_type='text/x-html-safe',
-        required=False,
-    )
-
-    bibliographic_uri = URI(
-        title=_(u"Zotero URI"),
-        description=_(u"This is a URI to a Zotero bibliographic reference."),
         required=False,
     )
 
