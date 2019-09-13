@@ -1,8 +1,10 @@
+import re
 from urlparse import urlparse
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.layout.viewlets.common import ViewletBase
 
 ZOTERO_JSON_BASE = 'https://api.zotero.org{}?v=3&format=json'
+Z_MATCH = re.compile(r'^/(groups|users)/\d+/items/[A-Z1-9]+$')
 
 
 class PublicationZoteroViewlet(ViewletBase):
@@ -12,7 +14,11 @@ class PublicationZoteroViewlet(ViewletBase):
 
     def update(self):
         zotero_url = getattr(self.context, 'bibliographic_uri', None)
-        if zotero_url and zotero_url.startswith('https://www.zotero.org/users/'):
+        if not zotero_url:
+            return
+        parsed = urlparse(zotero_url)
+        zotero_path = parsed.path
+        domain = parsed.netloc
+        if domain == 'www.zotero.org' and Z_MATCH.match(zotero_path):
             self.html_ref = zotero_url
-            zotero_path = urlparse(zotero_url).path
             self.json_ref = ZOTERO_JSON_BASE.format(zotero_path)
