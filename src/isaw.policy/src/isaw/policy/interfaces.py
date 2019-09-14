@@ -2,14 +2,11 @@ from zope.interface import Interface
 from zope.interface import Invalid
 from zope.interface import invariant
 from zope.schema import List, Text, TextLine, Tuple, URI
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
-from isaw.bibitems.interfaces import IBibliographicItem
 from isaw.policy import MessageFactory as _
 from plone.app.textfield import RichText
 from plone.dexterity.browser import add
 from plone.directives import form
 from plone.namedfile import field as namedfile
-from z3c.form import widget
 from z3c.form.browser.textlines import TextLinesFieldWidget
 
 
@@ -19,11 +16,20 @@ class IISAWPolicyLayer(Interface):
 
 class IISAWPublication(form.Schema):
     title = TextLine(
-        title=_(u"Title"),
-        description=_(u"The short title of the bibliographic reference."),
+        title=_(u"Short Title"),
+        description=_(u"The short title of this publication"),
     )
 
-    short_title = TextLine(title=_(u'Short Title'))
+    full_title = TextLine(
+        title=_(u'Full Title'),  # Legacy attribute name is unfortunate. Sorry!
+        description=_(u'The full bibliographic title of the publication'),
+    )
+
+    bibliographic_uri = URI(
+        title=_(u"Zotero URI"),
+        description=_(u"This is a URI to a Zotero bibliographic reference."),
+        required=False,
+    )
 
     description = Text(
         title=_(u'Summary'),
@@ -74,14 +80,11 @@ class IISAWPublication(form.Schema):
         required=False,
     )
 
-    formatted_citation = TextLine(
-        title=_(u"Formatted Citation"),
-        required=False,
-    )
-
-    bibliographic_uri = URI(
-        title=_(u"Zotero URI"),
-        description=_(u"This is a URI to a Zotero bibliographic reference."),
+    formatted_citation = RichText(
+        title=_(u'Formatted Citation'),
+        default_mime_type='text/html',
+        allowed_mime_types=('text/html',),
+        output_mime_type='text/x-html-safe',
         required=False,
     )
 
@@ -163,17 +166,6 @@ class PublicationAddForm(add.DefaultAddForm):
 
 class PublicationAddView(add.DefaultAddView):
     form = PublicationAddForm
-
-
-PubTitleLabel = widget.StaticWidgetAttribute(
-    u'Full Title',
-    context=IISAWPublication, field=IBibliographicItem['title']
-)
-
-PubAddTitleLabel = widget.StaticWidgetAttribute(
-    u'Full Title',
-    view=PublicationAddForm, field=IBibliographicItem['title']
-)
 
 
 class IISAWLibCollection(form.Schema):

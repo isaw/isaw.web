@@ -120,6 +120,16 @@ def migrate_events(context):
     properties.site_properties.enable_link_integrity_checks = old_check
 
 
+def migrate_publication_title_fields(context):
+    catalog = getToolByName(context, 'portal_catalog')
+    pub_brains = catalog(object_provides=['isaw.policy.interfaces.IISAWPublication'])
+    for brain in pub_brains:
+        pub = brain.getObject()
+        if hasattr(pub, 'short_title'):
+            pub.full_title = pub.short_title
+            delattr(pub, 'short_title')
+
+
 RENAME = {
     'visiting-scholar-program': {'id': 'visiting-scholars',
                                  'title': 'Visiting Scholars'},

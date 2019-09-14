@@ -400,4 +400,14 @@
       import_steps="typeinfo workflow"
       />
 
+  <genericsetup:upgradeStep
+      sortkey="11"
+      source="38"
+      destination="39"
+      title="Update Publication shema"
+      description="Copy short_title to full_title"
+      profile="isaw.policy:default"
+      handler=".setuphandlers.migrate_publication_title_fields"
+      />
+
 </configure>

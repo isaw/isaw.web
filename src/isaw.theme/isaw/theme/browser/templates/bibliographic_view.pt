@@ -18,7 +18,7 @@
     <tal:listings tal:repeat="item items">
     <tal:item tal:define="item_obj item/getObject;url item_obj/access_uri|item_obj/bibliographic_uri|item_obj/absolute_url">
         <dt><a tal:attributes="href url" tal:content="item_obj/title">title</a></dt>
-        <dd tal:content="structure item_obj/formatted_citation|string:">Citation</dd>
+        <dd tal:content="structure item_obj/formatted_citation/output|string:">Citation</dd>
       </tal:item>
     </tal:listings>
   </dl>

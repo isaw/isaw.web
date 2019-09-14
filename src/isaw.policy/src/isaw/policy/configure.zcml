@@ -69,13 +69,6 @@
           />
   </class>
 
-  <adapter
-      factory=".interfaces.PubTitleLabel"
-      name="label" />
-  <adapter
-      factory=".interfaces.PubAddTitleLabel"
-      name="label" />
-
   <permission
       id="plone.iterateCheckIn"
       title="iterate : Check in content"
