@@ -278,7 +278,8 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 /* captioned images */
 span.captioned, span.captioned * {
     max-width: 100%;
-    max-height: auto;
+    max-height: unset;
+    height: auto !important;
 }
 
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
