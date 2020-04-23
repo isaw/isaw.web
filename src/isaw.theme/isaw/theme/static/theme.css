@@ -276,7 +276,7 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
 }
 
 /* captioned images */
-span.captioned {
+span.captioned, span.captioned * {
     max-width: 100%;
     max-height: auto;
 }
