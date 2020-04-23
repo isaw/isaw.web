@@ -275,6 +275,12 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #por
     background-color: seashell;
 }
 
+/* captioned images */
+span.captioned {
+    max-width: 100%;
+    max-height: auto;
+}
+
 #portal-column-first {display:block; float:left; margin:0 5% 0 0; width:24%; }
 #portal-columns #portal-column-first dl dd {margin-left:0; }
 
