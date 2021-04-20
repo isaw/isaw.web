@@ -43,9 +43,8 @@
             <ul class="ProfileLinks" tal:condition="context/profile_links|nothing">
                 <li tal:repeat="link context/profile_links">
                     <a href="#"
-                       tal:attributes="href link/link; class link/icon;
-                                       title link/title;">
-                       <i tal:attributes="class string:fa fa-${link/icon}"></i>
+                       tal:attributes="href link/link" tal:content="link/text">
+                       Text
                     </a>
                 </li>
             </ul>

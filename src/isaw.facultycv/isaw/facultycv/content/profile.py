@@ -1,6 +1,6 @@
 """Definition of the profile content type
 """
-
+import re
 from urlparse import urlparse
 from zope.interface import implements
 
@@ -141,48 +141,46 @@ schemata.finalizeATCTSchema(
     moveDiscussion=False
 )
 
-
 DOMAIN_LINK_MAP = {
     'facebook.com': {
-        "icon": "facebook-official",
-        "title": "{fullname}'s facebook profile"
+        "title": "Facebook: {user}",
     },
     'academia.edu': {
-        "icon": "university",
-        "title": "{fullname}'s profile on academia.edu"
+        "title": "Academia.edu: {user}",
     },
-    'github.com': {
-        "icon": "github",
-        "title": "{fullname}'s github profile"
-    },
-    'plus.google.com': {
-        "icon": "google-plus-official",
-        "title": "{fullname}'s google plus page"
+    'doodle.com': {
+        "title": "Doodle Calendar: {user}",
     },
     'linkedin.com': {
-        "icon": "linkedin-square",
-        "title": "{fullname}'s linkedin profile"
+        "title": "LinkedIn: {user}",
     },
     'orcid.org': {
-        "icon": "id-card-o",
-        "title": "{fullname}'s orcid profile"
+        "title": "ORCID: {user}"
+    },
+    'github.com': {
+        "title": "GitHub: {user}",
+        "regexps": [r'^https?://github.com/(?P<id>[^/]+).*$'],
+    },
+    'hcommons.org': {
+        "title": "Humanities Commons: {user}",
+        "regexps": [r'^https?://hcommons.org/members/(?P<id>[^/]+).*$'],
     },
     'twitter.com': {
-        "icon": "twitter-square",
-        "title": "{fullname}'s twitter profile"
+        "title": "Twitter: {user}",
+        "regexps": [r'^https?://twitter\.com/(?P<id>[^/]+).*$'],
     },
     'viaf.org': {
-        "icon": "tags",
-        "title": "{fullname}'s viaf id"
+        "title": "VIAF: {user}",
+        "regexps": [r'^https?://viaf\.org/viaf/(?P<id>[^/]+).*$'],
     },
     'wikipedia.org': {
-        "icon": "wikipedia-w",
-        "title": "{fullname}'s wikipedia user profile",
-        "path": "/wiki/User"
+        "title": "Wikipedia: {user}",
+        "regexps": [r'^https?://[^/]+\.wikipedia\.org/wiki/User:(?P<id>[^/]+).*$',
+                    r'^https?://[^/]+\.wikipedia\.org/wiki/(?!User:)(?P<id>[^/]+).*$'],
     },
     'zotero.org': {
-        "icon": "book",
-        "title": "{fullname}'s zotero library"
+        "title": "Zotero: {user}",
+        "regexps": [r'^https?://www\.zotero\.org/(?P<id>[^/]+).*$'],
     },
 }
 
@@ -200,18 +198,30 @@ class profile(folder.ATFolder):
     def profile_links(self):
         links = self.getExternalURIs() or []
         results = []
+        fullname = self.Title()
         for link in links:
-            parts = urlparse(link)
-            for link_id in DOMAIN_LINK_MAP:
-                if not parts.hostname.endswith(link_id):
+            info = {'link': link, 'text': link}
+            results.append(info)
+            user = fullname
+            parsed = urlparse(link)
+            host = '.'.join(parsed.hostname.split('.')[-2:])
+            domain_info = DOMAIN_LINK_MAP.get(host)
+            if not domain_info:
+                link_parts = link.split('|')
+                if len(link_parts) > 1:
+                    info['link'] = link_parts[0]
+                    info['text'] = link_parts[1]
+                continue
+            text = domain_info['title']
+            for pattern in domain_info.get('regexps', ()):
+                match = re.match(pattern, link)
+                if not match:
                     continue
-                info = DOMAIN_LINK_MAP[link_id].copy()
-                if (info.get('path') and not
-                        parts.path.startswith(info['path'])):
-                    continue
-                info["title"] = info["title"].format(fullname=self.Title())
-                info["link"] = link
-                results.append(info)
+                groups = match.groups()
+                if groups:
+                    user = groups[0]
+                    break
+            info['text'] = text.format(user=user)
         return results
 
 atapi.registerType(profile, PROJECTNAME)

@@ -793,22 +793,12 @@ body[class*="isaw-home"][class*="section"][class*="template-document_view"] #edi
 }
 #content ul.ProfileLinks li {
     list-style: none;
-    display: inline;
 }
-i.fa, a i.fa, a:visited i.fa, a:hover i.fa, .ProfileLinks a i.fa {
+i.fa, a i.fa, a:visited i.fa, a:hover i.fa {
     text-align: left;
     margin-right: 0.33em;
     text-decoration: none;
     border: none;
-}
-
-#portal-columns .ProfileLinks a:hover, #content .ProfileLinks a:hover {
-    text-decoration: none;
-    border: none;
-}
-
-.ProfileLinks i.fa.fa-wikipedia-w {
-    width: 1.25em;
 }
 
 #content .ProfileInfo h1 {
