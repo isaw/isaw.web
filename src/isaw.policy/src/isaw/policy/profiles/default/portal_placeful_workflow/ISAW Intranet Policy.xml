@@ -14,5 +14,6 @@
   <type default_chain="true" type_id="News Item"/>
   <type default_chain="true" type_id="Topic"/>
   <type default_chain="true" type_id="profile"/>
+  <type default_chain="true" type_id="File"/>
  </bindings>
 </object>
