@@ -16,6 +16,7 @@ from plone.namedfile.file import NamedBlobImage
 
 
 FIELDS = [
+          'alt',
           'artist',
           'author',
           'copyist',
