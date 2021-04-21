@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <ul class="ProfileLinks" tal:condition="context/profile_links|nothing">
+            <ul class="ProfileLinks discreet" tal:condition="context/profile_links|nothing">
                 <li tal:repeat="link context/profile_links">
                     <a href="#"
                        tal:attributes="href link/link" tal:content="link/text">
