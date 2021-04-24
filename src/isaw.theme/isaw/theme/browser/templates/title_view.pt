@@ -12,7 +12,7 @@
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-  <div id="title-listing-container" tal:define="items view/listings">
+  <div id="title-listing-container" tal:define="items view/listings; batch nocall:items;">
     <ul class="title-listing">
      <tal:block tal:repeat="item items">
       <li tal:define="title item/Title;
@@ -23,6 +23,7 @@
       </li>
      </tal:block>
     </ul>
+    <div metal:use-macro="context/batch_macros/macros/navigation" />
   </div>
 </metal:block>
 </metal:content-core>
