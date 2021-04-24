@@ -12,7 +12,10 @@
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-  <div id="title-listing-container" tal:define="items view/listings; batch nocall:items;">
+  <div id="title-listing-container"
+       tal:define="b_start python:request.get('b_start', 0);
+                   items python:view.listings(b_start=b_start);
+                   batch nocall:items;">
     <ul class="title-listing">
      <tal:block tal:repeat="item items">
       <li tal:define="title item/Title;
