@@ -2,11 +2,10 @@
  <tal:listings tal:repeat="item items">
   <li tal:define="item_url item/getURL;
                   image_tag python:view.get_image(item);
-                  image_url string:${item_url}/@@images/image/blogtile;
                   title item/Title;
                   exerpt item/Description">
     <a href="#" tal:attributes="href item_url">
-      <img src="" alt="" tal:attributes="src image_url; alt title;"/>
+      <img src="" title="" tal:replace="structure image_tag"/>
       <h2 tal:content="item/Title">[title]</h2>
     </a>
     <div class="post-meta" tal:define="byline python:view.get_byline(item)"
