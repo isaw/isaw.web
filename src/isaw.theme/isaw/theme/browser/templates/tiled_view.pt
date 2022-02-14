@@ -58,9 +58,11 @@ $(document).ready(function () {
                     tal:define="kssClassesView context/@@kss_field_decorator_view;
                                 getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                                 templateId template/getId">
-  <h1 class="screen-reader-only"
+    <aside><div style="text-align: right; float: right; height: 32px; margin-bottom: 10px; font-style: italic"><span style="vertical-align: middle">follow ISAW on social media: </span><a href="https://www.facebook.com/isawnyu" title="" target="_self" class="external-link"><img src="resolveuid/bee11c656be54eecaee6776948f1766c/@@images/image/icon" alt="Facebook icon: a white, lower-case &quot;f&quot; on a blue circular background" class="image-inline" style="border: 0; vertical-align: middle"></a>&nbsp;&nbsp;<a href="https://www.instagram.com/isawnyu/" title="" target="_self" class="external-link"><img src="resolveuid/50cb27af5dcf44bc8a3c1d2db23e80a3/@@images/image/icon" alt="Instagram icon: a stylized, rectangular camera on a blue, circular background" class="image-inline" style="border: 0; vertical-align: middle"></a>&nbsp;&nbsp;<a href="https://twitter.com/isawnyu" title="" target="_self" class="external-link"><img src="resolveuid/66b2c94813de4f11abd7c68213fe2bd6/@@images/image/icon" alt="Twitter icon: a white, stylized flying bird in profile on a bright, light-blue circular background" class="image-inline" style="border: 0; vertical-align: middle"></a></div></aside>
+  <h1
       tal:content="context/Title|string:News">News</h1>
   <tal:block tal:define="items view/listings">
+    <div style="clear: both; height: 10px"></div>
     <a name="listing-top"></a>
     <ul class="news"
         tal:define="items view/listings">

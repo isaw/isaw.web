@@ -15,6 +15,16 @@
         width: 100%;
         height: auto;
       }
+      .ExhibitionEntry {
+        margin-bottom: 15px;
+      }
+      .ExhibitionEntrySummary {
+        margin-top: 5px;
+      }
+      .subsection-social .ExhibitionEntrySummary h2 {
+        margin-bottom: 5px !important;
+        word-wrap: break-word;
+      }
 	  @media screen and (max-width: 480px){
 		  #exhibition-listing[data-columns]::before {
 			  content: '1 .column.size-1of1';
@@ -70,7 +80,10 @@
                                    item_id item/getId|item/id;
                                    item_title_or_id item/pretty_title_or_id;
                                    item_object python: item.getObject();
-                                   item_image item_object/image|nothing">
+                                   item_image item_object/image|nothing;
+                                   context_url context/getURL|context/absolute_url;
+                                   item_summary item/Description;
+                                   item_date item/Date">
 
                 <div class="ExhibitionEntry" tal:condition="not:item/exclude_from_nav">
 
@@ -86,6 +99,10 @@
                         <h2 tal:content="item_title_or_id">Title</h2>
                     </div>
                   </a>
+                  <div class="ExhibitionEntryExtract" tal:condition="python:context_url.startswith('https://isaw.nyu.edu/news/social')">
+                     <span tal:replace="python:toLocalizedTime(item_date, long_format=0)">date</span>:
+                     <span  tal:replace="item_summary">social</span>
+                  </div>
 
                 </div>
 
@@ -116,4 +133,3 @@
 
 </body>
 </html>
-

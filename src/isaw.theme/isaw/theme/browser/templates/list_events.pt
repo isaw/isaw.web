@@ -22,7 +22,7 @@
       <p tal:condition="item/speaker" tal:content="item/speaker">Speaker</p>
       <div class="post-excerpt" tal:content="exerpt">[exerpt]</div>
       <a class="eventRsvp button inverse" tal:condition="item/rsvpRequired|nothing"
-         tal:attributes="href string:${context/portal_url}/rsvp"><b>RSVP</b></a>
+         tal:attributes="href item_url"><b>RSVP</b></a>
 
     </div>
   </div>
