@@ -1522,6 +1522,10 @@ div.leaflet-control-geosearch.leaflet-control {
     margin-left: 0;
 }
 
+.template-folder_leadimage_view .tileItem p.tileFooter {
+    display: none;
+}
+
 @media screen and (max-width:549px){
 	.footer-row #portal-footer .footer-portlet.contact,
 	.footer-row #portal-footer .footer-portlet.support {border:none; display:block; float:none; padding:5%; position:static; top:auto; left:auto; right:auto; width:90%; }
