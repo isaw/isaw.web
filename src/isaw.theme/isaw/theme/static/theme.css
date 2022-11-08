@@ -615,6 +615,61 @@ span.captioned, span.captioned * {
 #portal-columns button.view-more:hover:before, #content button.view-more:hover:before {opacity:1; visibility:visible; }
 #portal-columns button.view-more:hover:after, #content button.view-more:hover:after {opacity:0; visibility:hidden; }
 
+/* Simple Tiled Listing */
+.template-simple-tiled-listing #content ul.news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+    column-gap: 2%;
+    row-gap: 20px;
+}
+.template-simple-tiled-listing #content ul.news li {
+    float: none;
+    clear: none;
+    width: auto;
+    flex: 0 1 32%;
+    margin: 0;
+}
+
+@media screen and (max-width:767px) {
+    .template-simple-tiled-listing #content ul.news li {
+        flex: 0 0 48%;
+    }
+}
+.template-simple-tiled-listing #content a.TileLink, .template-simple-tiled-listing #content a.TileLink:link, .template-simple-tiled-listing #content a.TileLink:visited {
+    display: block;
+    padding: 2px 17px 17px;
+    border: 1px solid #66262d;
+    text-decoration: none;
+    color: #000;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+.template-simple-tiled-listing #content a.TileLink:hover, .template-simple-tiled-listing #content a.TileLink:active {
+    text-decoration: none;
+    color: #000 !important;
+    border: 3px solid blue;
+    padding: 0 15px 15px;
+}
+.template-simple-tiled-listing #content a.TileLink h2 {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #66262d;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.template-simple-tiled-listing #content a.TileLink:active h2 {
+    background-color: transparent;
+}
+.template-simple-tiled-listing #content a.TileLink:hover h2 {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: blue;
+    color: blue !important;
+}
+
 /* news item */
 body.template-newsitem_view #main-column {width: 66%;}
 body.template-newsitem_view #right-column {width: 30%; display: block; float: right;}
