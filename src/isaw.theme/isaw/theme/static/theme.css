@@ -628,6 +628,7 @@ span.captioned, span.captioned * {
     float: none;
     clear: none;
     width: auto;
+    align-self: stretch;
     flex: 0 1 32%;
     margin: 0;
 }
@@ -645,6 +646,7 @@ span.captioned, span.captioned * {
     color: #000;
     background-color: transparent;
     box-sizing: border-box;
+    height: 100%;
 }
 .template-simple-tiled-listing #content a.TileLink:hover, .template-simple-tiled-listing #content a.TileLink:active {
     text-decoration: none;
